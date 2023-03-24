@@ -42,12 +42,11 @@
             this.ts = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsNenhuma = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnConsulta = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.rgEspecialista = new System.Windows.Forms.Label();
             this.cpfEspecialista = new System.Windows.Forms.Label();
-            this.masktxtRGEspecialista = new System.Windows.Forms.MaskedTextBox();
-            this.masktxtCPFEspecialista = new System.Windows.Forms.MaskedTextBox();
+            this.maskRGDent = new System.Windows.Forms.MaskedTextBox();
+            this.maskCPFDent = new System.Windows.Forms.MaskedTextBox();
             this.especialidade1 = new System.Windows.Forms.Label();
             this.comboxEspecialidade1 = new System.Windows.Forms.ComboBox();
             this.especialidade2 = new System.Windows.Forms.Label();
@@ -185,30 +184,14 @@
             this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpar.Location = new System.Drawing.Point(355, 348);
+            this.btnLimpar.Location = new System.Drawing.Point(285, 347);
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(94, 100);
-            this.btnLimpar.TabIndex = 18;
+            this.btnLimpar.TabIndex = 17;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // btnConsulta
-            // 
-            this.btnConsulta.BackColor = System.Drawing.Color.Transparent;
-            this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsulta.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsulta.Location = new System.Drawing.Point(228, 348);
-            this.btnConsulta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(94, 100);
-            this.btnConsulta.TabIndex = 17;
-            this.btnConsulta.Text = "Consultar";
-            this.btnConsulta.UseVisualStyleBackColor = false;
-            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            this.btnLimpar.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // btnSalvar
             // 
@@ -217,7 +200,7 @@
             this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(98, 348);
+            this.btnSalvar.Location = new System.Drawing.Point(155, 347);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(94, 100);
@@ -244,21 +227,21 @@
             this.cpfEspecialista.TabIndex = 85;
             this.cpfEspecialista.Text = "CPF";
             // 
-            // masktxtRGEspecialista
+            // maskRGDent
             // 
-            this.masktxtRGEspecialista.Location = new System.Drawing.Point(224, 72);
-            this.masktxtRGEspecialista.Mask = "00.000.000-C";
-            this.masktxtRGEspecialista.Name = "masktxtRGEspecialista";
-            this.masktxtRGEspecialista.Size = new System.Drawing.Size(104, 26);
-            this.masktxtRGEspecialista.TabIndex = 87;
+            this.maskRGDent.Location = new System.Drawing.Point(224, 72);
+            this.maskRGDent.Mask = "00.000.000-C";
+            this.maskRGDent.Name = "maskRGDent";
+            this.maskRGDent.Size = new System.Drawing.Size(104, 26);
+            this.maskRGDent.TabIndex = 87;
             // 
-            // masktxtCPFEspecialista
+            // maskCPFDent
             // 
-            this.masktxtCPFEspecialista.Location = new System.Drawing.Point(397, 72);
-            this.masktxtCPFEspecialista.Mask = "000.000.000-00";
-            this.masktxtCPFEspecialista.Name = "masktxtCPFEspecialista";
-            this.masktxtCPFEspecialista.Size = new System.Drawing.Size(122, 26);
-            this.masktxtCPFEspecialista.TabIndex = 86;
+            this.maskCPFDent.Location = new System.Drawing.Point(397, 72);
+            this.maskCPFDent.Mask = "000.000.000-00";
+            this.maskCPFDent.Name = "maskCPFDent";
+            this.maskCPFDent.Size = new System.Drawing.Size(122, 26);
+            this.maskCPFDent.TabIndex = 86;
             // 
             // especialidade1
             // 
@@ -314,7 +297,7 @@
             this.comboxEspecialidade2.Size = new System.Drawing.Size(155, 28);
             this.comboxEspecialidade2.TabIndex = 91;
             // 
-            // frmCadDentista
+            // FrmCadDentista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -325,10 +308,9 @@
             this.Controls.Add(this.comboxEspecialidade2);
             this.Controls.Add(this.rgEspecialista);
             this.Controls.Add(this.cpfEspecialista);
-            this.Controls.Add(this.masktxtRGEspecialista);
-            this.Controls.Add(this.masktxtCPFEspecialista);
+            this.Controls.Add(this.maskRGDent);
+            this.Controls.Add(this.maskCPFDent);
             this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtCRO);
@@ -344,7 +326,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.Name = "frmCadDentista";
+            this.Name = "FrmCadDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Dentistas";
             this.statusStrip1.ResumeLayout(false);
@@ -369,12 +351,11 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel ts;
         private System.Windows.Forms.ToolStripStatusLabel tsNenhuma;
-        private System.Windows.Forms.Button btnConsulta;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Label rgEspecialista;
         private System.Windows.Forms.Label cpfEspecialista;
-        private System.Windows.Forms.MaskedTextBox masktxtRGEspecialista;
-        private System.Windows.Forms.MaskedTextBox masktxtCPFEspecialista;
+        private System.Windows.Forms.MaskedTextBox maskRGDent;
+        private System.Windows.Forms.MaskedTextBox maskCPFDent;
         private System.Windows.Forms.Label especialidade1;
         private System.Windows.Forms.ComboBox comboxEspecialidade1;
         private System.Windows.Forms.Label especialidade2;

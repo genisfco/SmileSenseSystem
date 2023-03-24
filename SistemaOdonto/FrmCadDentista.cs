@@ -21,7 +21,6 @@ namespace SistemaOdonto
         public FrmCadDentista()
         {
             InitializeComponent();
-            txtNome.Text = txtCelular.Text;
         }
 
         private string ValidarCad()
@@ -29,59 +28,96 @@ namespace SistemaOdonto
             ts.ForeColor = Color.Red;
             if(txtNome.Text == string.Empty)
             {
+                txtNome.Focus();
                 return "Preencha o campo Nome!";
-            }else if(txtCelular.Text == string.Empty)
+
+            }
+            else if (txtCRO.Text == string.Empty)
             {
+                txtCRO.Focus();
+                return "Preencha o campo CRO";
+            }
+            else if (maskRGDent.Text == string.Empty)
+            {
+                maskRGDent.Focus();
+                return "Preencha o campo RG";
+            }
+            else if (maskCPFDent.Text == string.Empty)
+            {
+                maskCPFDent.Focus();
+                return "Preencha o campo CPF";
+            }
+            else if (comboxEspecialidade1.SelectedIndex == -1)
+            {
+                comboxEspecialidade1.Focus();
+                return "Escolha uma Especialidade";
+            }
+            else if(txtCelular.Text == string.Empty)
+            {
+                txtCelular.Focus();
                 return "Preencha o campo Celular";
             }
             else if (txtTelefone.Text == string.Empty)
             {
+                txtTelefone.Focus();
                 return "Preencha o campo Telefone";
             }
             else if (txtEmail.Text == string.Empty)
             {
+                txtEmail.Focus();
                 return "Preencha o campo Email";
-            }
-            else if (txtCRO.Text == string.Empty)
-            {
-                return "Preencha o campo CRO";
-            }
+            }            
             else
             {
                 ts.ForeColor = Color.Black;
-                return "Sucesso";
+                return "Dados preenchidos";
             }
-
-
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            tsNenhuma.Text = "";
-            try
+            tsNenhuma.Text = "";            
+            
+            ts.Text = ValidarCad();
+            if(ts.Text == "Dados preenchidos")
             {
-                ts.Text = ValidarCad();
-                if(ts.Text == "Sucesso")
-                {
-                    service.Cadastrar(objGerado());
-                    MessageBox.Show("Cadastro Efetuado com Sucesso");
-                    this.Close();
-                }
                 
-            }
-            catch (Exception ex)
-            {
+                if (ClassValidation.ValidationDocs.validarCpf(maskCPFDent.Text) == false)
+                {                        
+                    MessageBox.Show("CPF inválido!");
+                    maskCPFDent.Focus();
+                }
+                else if (ClassValidation.ValidationDocs.validarRg(maskRGDent.Text) == false)
+                {                        
+                    MessageBox.Show("RG inválido!");
+                    maskRGDent.Focus();
+                }
+                else
+                {
+                    try
+                    {
+                        service.Cadastrar(objGerado());
+                        MessageBox.Show("Dentita Cadastrado com Sucesso!");
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
 
-                MessageBox.Show("Erro ao Salvar " + ex.Message);
-            }
+                        MessageBox.Show("Erro ao Salvar " + ex.Message);
+                    }
+
+                }
+                    
+            }           
+            
         }
 
 
         public Dentista objGerado()
         {
             //TRATAMENTO DADOS RG E CPF Dentista
-            string rgdentista = masktxtRGEspecialista.Text;
-            string cpfdentista = masktxtCPFEspecialista.Text;
+            string rgdentista = maskRGDent.Text;
+            string cpfdentista = maskCPFDent.Text;
 
             rgdentista = rgdentista.Replace(",", "").Replace("-", "");
             cpfdentista = cpfdentista.Replace(",", "").Replace("-", "");
@@ -99,26 +135,24 @@ namespace SistemaOdonto
             obj.Celular = txtCelular.Text != "" ? Convert.ToInt64(txtCelular.Text) : 0;
 
             return obj;
-        }
-
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-            FrmDadosDentista frm = new FrmDadosDentista();
-            frm.ShowDialog();
-        }
+        }              
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-            Limpar();
+            LimparForm();
         }
 
-        public void Limpar()
+        public void LimparForm()
         {
             txtNome.Text = "";
             txtEmail.Text = "";
             txtCRO.Text = string.Empty;
+            maskCPFDent.Text = string.Empty;
+            maskRGDent.Text = string.Empty;
             txtTelefone.Text = string.Empty;
             txtCelular.Text = string.Empty;
+            comboxEspecialidade1.Text = string.Empty;
+            comboxEspecialidade2 .Text = string.Empty;
         }
     }
 }

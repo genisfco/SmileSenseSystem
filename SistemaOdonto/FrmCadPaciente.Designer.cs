@@ -333,36 +333,36 @@
             // 
             // txtNum
             // 
-            this.txtNum.Location = new System.Drawing.Point(563, 37);
+            this.txtNum.Location = new System.Drawing.Point(596, 37);
             this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(75, 26);
+            this.txtNum.Size = new System.Drawing.Size(42, 26);
             this.txtNum.TabIndex = 76;
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(26, 82);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(145, 26);
+            this.txtBairro.Size = new System.Drawing.Size(166, 26);
             this.txtBairro.TabIndex = 77;
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(264, 82);
+            this.txtCidade.Location = new System.Drawing.Point(244, 82);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(145, 26);
+            this.txtCidade.Size = new System.Drawing.Size(165, 26);
             this.txtCidade.TabIndex = 78;
             // 
             // txtUF
             // 
-            this.txtUF.Location = new System.Drawing.Point(561, 82);
+            this.txtUF.Location = new System.Drawing.Point(596, 82);
             this.txtUF.Name = "txtUF";
-            this.txtUF.Size = new System.Drawing.Size(77, 26);
+            this.txtUF.Size = new System.Drawing.Size(42, 26);
             this.txtUF.TabIndex = 79;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(527, 43);
+            this.label7.Location = new System.Drawing.Point(564, 43);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(26, 20);
             this.label7.TabIndex = 80;
@@ -383,7 +383,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Endereço";
             // 
-            // frmCadPaciente
+            // FrmCadPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -415,7 +415,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.Name = "frmCadPaciente";
+            this.Name = "FrmCadPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pacientes";
             this.statusStrip1.ResumeLayout(false);

@@ -39,7 +39,6 @@
             this.txtAnotacoes = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.dtFim = new System.Windows.Forms.DateTimePicker();
             this.dtInicio = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -152,22 +151,12 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(132, 28);
+            this.lblCodigo.Location = new System.Drawing.Point(1, -2);
             this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(27, 20);
             this.lblCodigo.TabIndex = 63;
             this.lblCodigo.Text = "01";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 29);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 20);
-            this.label3.TabIndex = 62;
-            this.label3.Text = "Código";
             // 
             // dtFim
             // 
@@ -287,7 +276,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.dtHora);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbDentista);
@@ -323,7 +311,6 @@
         private System.Windows.Forms.TextBox txtAnotacoes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtFim;
         private System.Windows.Forms.DateTimePicker dtInicio;
         private System.Windows.Forms.Label label6;

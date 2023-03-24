@@ -392,6 +392,10 @@
     <Content Include="Resources\sair.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassValidation\ClassValidation.csproj">
+      <Project>{09e871a3-4508-488e-a23f-5ecad79e1a32}</Project>
+      <Name>ClassValidation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{F0C358DB-79C7-4EF7-AB79-2F541D57CDA2}</Project>
       <Name>Entidades</Name>

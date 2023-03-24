@@ -22,7 +22,9 @@ namespace SistemaOdonto
         public FrmEditarPaciente(Paciente obj)
         {
             InitializeComponent();
+            lblCodigo.Visible = false;
             IniciarFormulario(obj);
+
         }
 
         private void IniciarFormulario(Paciente objP)

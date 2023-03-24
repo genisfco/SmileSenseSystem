@@ -21,6 +21,7 @@ namespace SistemaOdonto
         public FrmEditarDentista(Dentista obj)
         {
             InitializeComponent();
+            lblCodigo.Visible = false;
             IniciarFormulario(obj);
         }
 

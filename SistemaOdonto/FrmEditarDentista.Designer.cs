@@ -34,7 +34,6 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.especialidade1 = new System.Windows.Forms.Label();
             this.comboxEspecialidade1 = new System.Windows.Forms.ComboBox();
             this.especialidade2 = new System.Windows.Forms.Label();
@@ -118,22 +117,12 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(80, 9);
+            this.lblCodigo.Location = new System.Drawing.Point(-1, 0);
             this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(27, 20);
             this.lblCodigo.TabIndex = 18;
             this.lblCodigo.Text = "01";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Código";
             // 
             // especialidade1
             // 
@@ -346,7 +335,6 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
@@ -367,7 +355,6 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripStatusLabel tsNenhuma;
         private System.Windows.Forms.Label especialidade1;
         private System.Windows.Forms.ComboBox comboxEspecialidade1;

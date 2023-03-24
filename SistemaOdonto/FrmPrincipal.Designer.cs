@@ -89,21 +89,21 @@
             // menuConsulta
             // 
             this.menuConsulta.Name = "menuConsulta";
-            this.menuConsulta.Size = new System.Drawing.Size(230, 34);
+            this.menuConsulta.Size = new System.Drawing.Size(270, 34);
             this.menuConsulta.Text = "Nova Consulta";
             this.menuConsulta.Click += new System.EventHandler(this.menuConsulta_Click);
             // 
             // menuDentista
             // 
             this.menuDentista.Name = "menuDentista";
-            this.menuDentista.Size = new System.Drawing.Size(230, 34);
+            this.menuDentista.Size = new System.Drawing.Size(270, 34);
             this.menuDentista.Text = "Novo Dentista";
             this.menuDentista.Click += new System.EventHandler(this.menuDentista_Click);
             // 
             // menuPaciente
             // 
             this.menuPaciente.Name = "menuPaciente";
-            this.menuPaciente.Size = new System.Drawing.Size(230, 34);
+            this.menuPaciente.Size = new System.Drawing.Size(270, 34);
             this.menuPaciente.Text = "Novo Paciente";
             this.menuPaciente.Click += new System.EventHandler(this.menuPaciente_Click);
             // 
@@ -119,14 +119,14 @@
             // menuDadosDentistas
             // 
             this.menuDadosDentistas.Name = "menuDadosDentistas";
-            this.menuDadosDentistas.Size = new System.Drawing.Size(270, 34);
+            this.menuDadosDentistas.Size = new System.Drawing.Size(187, 34);
             this.menuDadosDentistas.Text = "Dentistas";
             this.menuDadosDentistas.Click += new System.EventHandler(this.menuDadosDentistas_Click);
             // 
             // menuDadosPacientes
             // 
             this.menuDadosPacientes.Name = "menuDadosPacientes";
-            this.menuDadosPacientes.Size = new System.Drawing.Size(270, 34);
+            this.menuDadosPacientes.Size = new System.Drawing.Size(187, 34);
             this.menuDadosPacientes.Text = "Pacientes";
             this.menuDadosPacientes.Click += new System.EventHandler(this.menuDadosPacientes_Click);
             // 
@@ -142,8 +142,8 @@
             // menuAgConsultas
             // 
             this.menuAgConsultas.Name = "menuAgConsultas";
-            this.menuAgConsultas.Size = new System.Drawing.Size(286, 34);
-            this.menuAgConsultas.Text = "Consultas Agendadas";
+            this.menuAgConsultas.Size = new System.Drawing.Size(220, 34);
+            this.menuAgConsultas.Text = "Abrir Agenda";
             this.menuAgConsultas.Click += new System.EventHandler(this.menuAgConsultas_Click);
             // 
             // MAjuda
@@ -300,7 +300,7 @@
             this.panel1.Size = new System.Drawing.Size(1500, 462);
             this.panel1.TabIndex = 4;
             // 
-            // frmPrincipal
+            // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -318,8 +318,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.Name = "frmPrincipal";
-            this.Text = "Sistema Odonto";
+            this.Name = "FrmPrincipal";
+            this.Text = "SmileSense";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

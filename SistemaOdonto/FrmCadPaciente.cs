@@ -31,6 +31,12 @@ namespace SistemaOdonto
             {
                 return "Preencha o campo Nome!";
             }
+
+
+
+
+
+
             else if (txtCelular.Text == string.Empty)
             {
                 return "Preencha o campo Celular";
@@ -47,7 +53,7 @@ namespace SistemaOdonto
             else
             {
                 ts.ForeColor = Color.Black;
-                return "Sucesso";
+                return "Dados preenchidos!";
             }
 
         }
@@ -58,7 +64,7 @@ namespace SistemaOdonto
             try
             {
                 ts.Text = ValidarCad();
-                if (ts.Text == "Sucesso")
+                if (ts.Text == "Dados preenchidos!")
                 {         
 
                     service.Cadastrar(objGerado());

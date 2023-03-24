@@ -22,6 +22,7 @@ namespace SistemaOdonto
         public frmEditarConsulta(Consulta c)
         {
             InitializeComponent();
+            lblCodigo.Visible = false;
             IniciarFormulario(c);
         }
 
