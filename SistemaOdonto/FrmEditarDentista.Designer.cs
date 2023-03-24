@@ -201,6 +201,7 @@
             this.masktxtRGEspecialista.Location = new System.Drawing.Point(224, 112);
             this.masktxtRGEspecialista.Mask = "00.000.000-C";
             this.masktxtRGEspecialista.Name = "masktxtRGEspecialista";
+            this.masktxtRGEspecialista.ReadOnly = true;
             this.masktxtRGEspecialista.Size = new System.Drawing.Size(104, 26);
             this.masktxtRGEspecialista.TabIndex = 105;
             // 
@@ -209,6 +210,7 @@
             this.masktxtCPFEspecialista.Location = new System.Drawing.Point(397, 112);
             this.masktxtCPFEspecialista.Mask = "000.000.000-00";
             this.masktxtCPFEspecialista.Name = "masktxtCPFEspecialista";
+            this.masktxtCPFEspecialista.ReadOnly = true;
             this.masktxtCPFEspecialista.Size = new System.Drawing.Size(122, 26);
             this.masktxtCPFEspecialista.TabIndex = 104;
             // 
@@ -218,6 +220,7 @@
             this.txtCRO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCRO.Mask = "?? 00-000";
             this.txtCRO.Name = "txtCRO";
+            this.txtCRO.ReadOnly = true;
             this.txtCRO.Size = new System.Drawing.Size(87, 26);
             this.txtCRO.TabIndex = 101;
             this.txtCRO.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
@@ -340,7 +343,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmEditarDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consulta de Dentistas";
+            this.Text = "Alterar Dados Dentista";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);

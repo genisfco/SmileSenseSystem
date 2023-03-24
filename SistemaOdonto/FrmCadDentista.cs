@@ -57,16 +57,16 @@ namespace SistemaOdonto
                 txtCelular.Focus();
                 return "Preencha o campo Celular";
             }
-            else if (txtTelefone.Text == string.Empty)
+            /*else if (txtTelefone.Text == string.Empty)
             {
                 txtTelefone.Focus();
                 return "Preencha o campo Telefone";
-            }
+            }                                               CAMPOS NÃO OBRIGATÓRIOS
             else if (txtEmail.Text == string.Empty)
             {
                 txtEmail.Focus();
                 return "Preencha o campo Email";
-            }            
+            }  */          
             else
             {
                 ts.ForeColor = Color.Black;

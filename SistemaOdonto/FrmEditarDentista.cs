@@ -44,7 +44,7 @@ namespace SistemaOdonto
         {
             tsNenhuma.Text = "";
             ts.Text = ValidarCad();
-            if(ts.Text == "Sucesso")
+            if(ts.Text == "Dados obrigatórios preenchidos!")
             {
                 if(lblCodigo.Text != this.obj.Id.ToString())
                 {
@@ -71,6 +71,8 @@ namespace SistemaOdonto
                     obj.Telefone = txtTelefone.Text != "" ? Convert.ToInt64(txtTelefone.Text) : 0;
                     obj.Celular = txtCelular.Text != "" ? Convert.ToInt64(txtCelular.Text) : 0;
                     service.Editar(this.obj);
+
+                    MessageBox.Show("Dados do Dentista Atualizados!");
                     this.Close();
                 }
             }
@@ -83,28 +85,34 @@ namespace SistemaOdonto
             ts.ForeColor = Color.Red;
             if (txtNome.Text == string.Empty)
             {
+                txtNome.Focus();
                 return "Preencha o campo Nome!";
             }
             else if (txtCelular.Text == string.Empty)
             {
+                txtCelular.Focus(); 
                 return "Preencha o campo Celular";
             }
-            else if (txtTelefone.Text == string.Empty)
+            /*else if (txtTelefone.Text == string.Empty)
             {
+                txtTelefone.Focus();
                 return "Preencha o campo Telefone";
             }
             else if (txtEmail.Text == string.Empty)
             {
+                txtEmail.Focus();
                 return "Preencha o campo Email";
-            }
-            else if (txtCRO.Text == string.Empty)
+            }*/
+            else if (comboxEspecialidade1.Text == "")
             {
-                return "Preencha o campo CRO";
+                comboxEspecialidade1.Focus();
+                return "Informe a Especialidade";
             }
+            
             else
             {
                 ts.ForeColor = Color.Black;
-                return "Sucesso";
+                return "Dados obrigatórios preenchidos!";
             }
         }
 
@@ -114,7 +122,7 @@ namespace SistemaOdonto
             if (ValidarExclusao())
             {
                 service.Deletar(this.obj.Id);
-                MessageBox.Show("Excluido com sucesso!");
+                MessageBox.Show("Excluído com sucesso!");
                 status = "apagado";
                 this.Close();
             }
