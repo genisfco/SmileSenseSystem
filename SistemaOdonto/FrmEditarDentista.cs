@@ -72,7 +72,7 @@ namespace SistemaOdonto
                     obj.Celular = txtCelular.Text != "" ? Convert.ToInt64(txtCelular.Text) : 0;
                     service.Editar(this.obj);
 
-                    MessageBox.Show("Dados do Dentista Atualizados!");
+                    MessageBox.Show("Dados Atualizados!");
                     this.Close();
                 }
             }
