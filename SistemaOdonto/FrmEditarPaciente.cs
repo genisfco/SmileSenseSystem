@@ -175,5 +175,17 @@ namespace SistemaOdonto
                 }
             }
         }
+
+        private void btnAbrirAnamnese_Click(object sender, EventArgs e)
+        {
+            FrmAnamnese frm = new FrmAnamnese();
+            frm.ShowDialog();
+        }
+
+        private void btnAbrirOdontograma_Click(object sender, EventArgs e)
+        {
+            FrmOdontograma frm = new FrmOdontograma();
+            frm.ShowDialog();
+        }
     }
 }
