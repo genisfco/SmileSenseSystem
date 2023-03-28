@@ -167,10 +167,7 @@ namespace SistemaOdonto
             Application.Exit();
         }
 
-        private void cbDentista_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void cbDentista_SelectionChangeCommitted(object sender, EventArgs e)
         {

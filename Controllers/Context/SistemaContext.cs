@@ -13,12 +13,17 @@ namespace Controllers.Context
 {
     class SistemaContext : DbContext
     {
-        public SistemaContext() : base("Server=ACERASPIRE-5\\SQLEXPRESS; Database=SmileSense; Integrated Security=True;")
+        /*public SistemaContext() : base("Server=ACERASPIRE-5\\SQLEXPRESS; Database=SmileSense; Integrated Security=True;")
         {
+                // BANCO LOCAL
+        }*/
+        
+        public SistemaContext() : base("workstation id = SmileSense.mssql.somee.com; packet size = 4096; user id = genis_SQLLogin_1; pwd=qe4hpfhfjo;data source = SmileSense.mssql.somee.com; persist security info=False;initial catalog = SmileSense")
+        {
+            // BANCO HOSPEDADO
+        }
 
-        } 
 
-       
 
         public DbSet<Consulta> Consultas{ get; set;}
         public DbSet<Paciente> Pacientes { get; set; }
@@ -32,7 +37,5 @@ namespace Controllers.Context
             modelBuilder.Configurations.Add(new ConsultaMap());
             base.OnModelCreating(modelBuilder);
         }
-
-
     }
 }

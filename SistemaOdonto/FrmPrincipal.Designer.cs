@@ -197,7 +197,6 @@
             this.cbDentista.Name = "cbDentista";
             this.cbDentista.Size = new System.Drawing.Size(313, 28);
             this.cbDentista.TabIndex = 2;
-            this.cbDentista.SelectedIndexChanged += new System.EventHandler(this.cbDentista_SelectedIndexChanged);
             this.cbDentista.SelectionChangeCommitted += new System.EventHandler(this.cbDentista_SelectionChangeCommitted);
             this.cbDentista.Click += new System.EventHandler(this.cbDentista_Click);
             // 
