@@ -76,7 +76,6 @@ namespace SistemaOdonto
             this.txtPaciente = new System.Windows.Forms.TextBox();
             this.lbPaciente = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -617,21 +616,11 @@ namespace SistemaOdonto
             this.pictureBox1.TabIndex = 77;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(133, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 21);
-            this.button1.TabIndex = 91;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // FrmOdontograma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 462);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAnotar);
             this.Controls.Add(this.btnFecharFichaClinica);
             this.Controls.Add(this.btnSalvarFichaClinica);
@@ -710,6 +699,5 @@ namespace SistemaOdonto
         private System.Windows.Forms.TextBox txtPaciente;
         private System.Windows.Forms.Label lbPaciente;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
     }
 }

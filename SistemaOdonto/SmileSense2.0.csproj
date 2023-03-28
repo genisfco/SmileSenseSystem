@@ -60,6 +60,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="FrmAnamnese.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnamnese.Designer.cs">
+      <DependentUpon>FrmAnamnese.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAnotacoes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAnamnese.resx">
+      <DependentUpon>FrmAnamnese.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAnotacoes.resx">
       <DependentUpon>FrmAnotacoes.cs</DependentUpon>
     </EmbeddedResource>
