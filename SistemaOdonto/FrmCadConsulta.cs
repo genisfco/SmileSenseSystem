@@ -98,6 +98,15 @@ namespace SistemaOdonto
             }
 
         }
+       
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            FrmConsultas frm = new FrmConsultas();
+            frm.ShowDialog();
+        }
+
+
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -136,12 +145,6 @@ namespace SistemaOdonto
             obj.Status = "Nao confirmado";
 
             return obj;
-        }
-
-        private void btnConsulta_Click(object sender, EventArgs e)
-        {
-            FrmConsultas frm = new FrmConsultas();
-            frm.ShowDialog();
         }
     }
 }

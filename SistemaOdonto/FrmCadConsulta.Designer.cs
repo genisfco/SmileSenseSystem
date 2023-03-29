@@ -42,7 +42,6 @@
             this.ts = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsNenhuma = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnConsulta = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -176,59 +175,43 @@
             // 
             // btnConsulta
             // 
-            this.btnConsulta.BackColor = System.Drawing.Color.Transparent;
-            this.btnConsulta.BackgroundImage = global::SistemaOdonto.Properties.Resources.btnLimpar_BackgroundImage;
             this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsulta.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsulta.Image = global::SistemaOdonto.Properties.Resources.btnLimpar_BackgroundImage;
             this.btnConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsulta.Location = new System.Drawing.Point(495, 312);
+            this.btnConsulta.Location = new System.Drawing.Point(544, 329);
             this.btnConsulta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(94, 100);
+            this.btnConsulta.Size = new System.Drawing.Size(212, 83);
             this.btnConsulta.TabIndex = 55;
-            this.btnConsulta.UseVisualStyleBackColor = false;
+            this.btnConsulta.Text = "Consultar Agenda";
+            this.btnConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConsulta.UseVisualStyleBackColor = true;
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpar.BackgroundImage = global::SistemaOdonto.Properties.Resources.btnConsulta_BackgroundImage;
-            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpar.Location = new System.Drawing.Point(368, 312);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(94, 100);
-            this.btnLimpar.TabIndex = 54;
-            this.btnLimpar.UseVisualStyleBackColor = false;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.BackgroundImage = global::SistemaOdonto.Properties.Resources.btnSalvar_BackgroundImage;
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Image = global::SistemaOdonto.Properties.Resources.btnSalvar_BackgroundImage;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(238, 312);
+            this.btnSalvar.Location = new System.Drawing.Point(144, 329);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(94, 100);
-            this.btnSalvar.TabIndex = 53;
-            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Size = new System.Drawing.Size(212, 83);
+            this.btnSalvar.TabIndex = 56;
+            this.btnSalvar.Text = "Cadastrar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // frmCadConsulta
+            // FrmCadConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 474);
-            this.Controls.Add(this.btnConsulta);
-            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dtHora);
             this.Controls.Add(this.label2);
@@ -243,7 +226,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.Name = "frmCadConsulta";
+            this.Name = "FrmCadConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Consultas";
             this.statusStrip1.ResumeLayout(false);
@@ -269,7 +252,6 @@
         private System.Windows.Forms.ToolStripStatusLabel ts;
         private System.Windows.Forms.ToolStripStatusLabel tsNenhuma;
         private System.Windows.Forms.Button btnConsulta;
-        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSalvar;
     }
 }
