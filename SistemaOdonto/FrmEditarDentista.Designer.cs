@@ -181,7 +181,7 @@
             // rgEspecialista
             // 
             this.rgEspecialista.AutoSize = true;
-            this.rgEspecialista.Location = new System.Drawing.Point(186, 118);
+            this.rgEspecialista.Location = new System.Drawing.Point(189, 118);
             this.rgEspecialista.Name = "rgEspecialista";
             this.rgEspecialista.Size = new System.Drawing.Size(34, 20);
             this.rgEspecialista.TabIndex = 102;
@@ -190,7 +190,7 @@
             // cpfEspecialista
             // 
             this.cpfEspecialista.AutoSize = true;
-            this.cpfEspecialista.Location = new System.Drawing.Point(351, 118);
+            this.cpfEspecialista.Location = new System.Drawing.Point(345, 118);
             this.cpfEspecialista.Name = "cpfEspecialista";
             this.cpfEspecialista.Size = new System.Drawing.Size(40, 20);
             this.cpfEspecialista.TabIndex = 103;
@@ -198,7 +198,7 @@
             // 
             // masktxtRGEspecialista
             // 
-            this.masktxtRGEspecialista.Location = new System.Drawing.Point(224, 112);
+            this.masktxtRGEspecialista.Location = new System.Drawing.Point(232, 112);
             this.masktxtRGEspecialista.Mask = "00.000.000-C";
             this.masktxtRGEspecialista.Name = "masktxtRGEspecialista";
             this.masktxtRGEspecialista.ReadOnly = true;
@@ -207,7 +207,7 @@
             // 
             // masktxtCPFEspecialista
             // 
-            this.masktxtCPFEspecialista.Location = new System.Drawing.Point(397, 112);
+            this.masktxtCPFEspecialista.Location = new System.Drawing.Point(394, 112);
             this.masktxtCPFEspecialista.Mask = "000.000.000-00";
             this.masktxtCPFEspecialista.Name = "masktxtCPFEspecialista";
             this.masktxtCPFEspecialista.ReadOnly = true;
@@ -216,12 +216,12 @@
             // 
             // txtCRO
             // 
-            this.txtCRO.Location = new System.Drawing.Point(76, 112);
+            this.txtCRO.Location = new System.Drawing.Point(77, 112);
             this.txtCRO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCRO.Mask = "?? 00-000";
+            this.txtCRO.Mask = "LL 00-000";
             this.txtCRO.Name = "txtCRO";
             this.txtCRO.ReadOnly = true;
-            this.txtCRO.Size = new System.Drawing.Size(87, 26);
+            this.txtCRO.Size = new System.Drawing.Size(103, 26);
             this.txtCRO.TabIndex = 101;
             this.txtCRO.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 

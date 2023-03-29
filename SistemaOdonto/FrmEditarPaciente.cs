@@ -178,7 +178,7 @@ namespace SistemaOdonto
 
         private void btnAbrirAnamnese_Click(object sender, EventArgs e)
         {
-            FrmAnamnese frm = new FrmAnamnese();
+            FrmAnamnese frm = new FrmAnamnese();           
             frm.ShowDialog();
         }
 

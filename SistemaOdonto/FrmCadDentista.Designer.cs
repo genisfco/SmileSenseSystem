@@ -142,11 +142,11 @@
             // 
             // txtCRO
             // 
-            this.txtCRO.Location = new System.Drawing.Point(76, 72);
+            this.txtCRO.Location = new System.Drawing.Point(77, 72);
             this.txtCRO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCRO.Mask = "?? 00-000";
+            this.txtCRO.Mask = "LL 000-000";
             this.txtCRO.Name = "txtCRO";
-            this.txtCRO.Size = new System.Drawing.Size(87, 26);
+            this.txtCRO.Size = new System.Drawing.Size(103, 26);
             this.txtCRO.TabIndex = 11;
             this.txtCRO.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -212,7 +212,7 @@
             // rgEspecialista
             // 
             this.rgEspecialista.AutoSize = true;
-            this.rgEspecialista.Location = new System.Drawing.Point(186, 78);
+            this.rgEspecialista.Location = new System.Drawing.Point(189, 78);
             this.rgEspecialista.Name = "rgEspecialista";
             this.rgEspecialista.Size = new System.Drawing.Size(34, 20);
             this.rgEspecialista.TabIndex = 84;
@@ -221,7 +221,7 @@
             // cpfEspecialista
             // 
             this.cpfEspecialista.AutoSize = true;
-            this.cpfEspecialista.Location = new System.Drawing.Point(351, 78);
+            this.cpfEspecialista.Location = new System.Drawing.Point(345, 78);
             this.cpfEspecialista.Name = "cpfEspecialista";
             this.cpfEspecialista.Size = new System.Drawing.Size(40, 20);
             this.cpfEspecialista.TabIndex = 85;
@@ -229,7 +229,7 @@
             // 
             // maskRGDent
             // 
-            this.maskRGDent.Location = new System.Drawing.Point(224, 72);
+            this.maskRGDent.Location = new System.Drawing.Point(232, 72);
             this.maskRGDent.Mask = "00.000.000-C";
             this.maskRGDent.Name = "maskRGDent";
             this.maskRGDent.Size = new System.Drawing.Size(104, 26);
@@ -237,7 +237,7 @@
             // 
             // maskCPFDent
             // 
-            this.maskCPFDent.Location = new System.Drawing.Point(397, 72);
+            this.maskCPFDent.Location = new System.Drawing.Point(394, 72);
             this.maskCPFDent.Mask = "000.000.000-00";
             this.maskCPFDent.Name = "maskCPFDent";
             this.maskCPFDent.Size = new System.Drawing.Size(122, 26);
