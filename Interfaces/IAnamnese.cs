@@ -19,7 +19,7 @@ namespace Interfaces
         Anamnese Buscar(int id);
 
         [OperationContract(Name = "BuscarPorPaciente")]
-        IQueryable<Anamnese> Buscar(Anamnese anamnese);    
+        IQueryable<Anamnese> Buscar(Anamnese anamnese);   
 
 
 
