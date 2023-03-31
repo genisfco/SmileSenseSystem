@@ -35,13 +35,10 @@ namespace Controllers.Repositorios
 
         public IQueryable<Consulta> Buscar(Dentista dentista)
         {
-
             var ctx = new SistemaContext();
             Paciente p = new Paciente();
             var Consultas = ctx.Consultas.Where(c => c.IdDentista == dentista.Id);
             return Consultas;
-
-
         }
 
 

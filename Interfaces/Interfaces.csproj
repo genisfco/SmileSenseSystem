@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAnamnese.cs" />
     <Compile Include="IConsulta.cs" />
     <Compile Include="IDentista.cs" />
     <Compile Include="IPaciente.cs" />
