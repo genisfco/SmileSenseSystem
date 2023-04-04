@@ -15,12 +15,11 @@ namespace SistemaOdonto
     public partial class FrmCadPaciente : Form
     {
 
-        PacienteService service = new PacienteService();
+        PacienteService serviceP = new PacienteService();
 
         public FrmCadPaciente()
         {
             InitializeComponent();
-            cbSexo.Text = "Masculino";
         }
 
 
@@ -31,24 +30,34 @@ namespace SistemaOdonto
             {
                 return "Preencha o campo Nome!";
             }
-
-
-
-
-
-
+            else if (cbSexo.SelectedIndex == -1)
+            {
+                cbSexo.Focus();
+                return "Selecione o Sexo";
+            }            
+            else if (masktxtRGPaciente.Text == string.Empty)
+            {
+                masktxtRGPaciente.Focus();
+                return "Preencha o RG completo";
+            }
+            else if (masktxtCPFPaciente.Text.Length != 14)
+            {
+                masktxtCPFPaciente.Focus() ;
+                return "Preencha o CPF completo";
+            }
             else if (txtCelular.Text == string.Empty)
             {
+                txtCelular.Focus();
                 return "Preencha o campo Celular";
             }
-            else if (txtTelefone.Text == string.Empty)
+            /*else if (txtTelefone.Text == string.Empty)
             {
                 return "Preencha o campo Telefone";
             }
             else if (txtEmail.Text == string.Empty)
             {
                 return "Preencha o campo Email";
-            }
+            }*/
 
             else
             {
@@ -61,22 +70,37 @@ namespace SistemaOdonto
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             tsNenhuma.Text = "";
-            try
-            {
-                ts.Text = ValidarCad();
-                if (ts.Text == "Dados preenchidos!")
-                {         
 
-                    service.Cadastrar(objGerado());
-                    MessageBox.Show("Cadastro Efetuado com Sucesso");
-                    this.Close();
+            ts.Text = ValidarCad();
+            if (ts.Text == "Dados preenchidos!")
+            {
+
+                if (ClassValidation.ValidationDocs.validarCpf(masktxtCPFPaciente.Text) == false)
+                {
+                    MessageBox.Show("CPF inválido!");
+                    masktxtCPFPaciente.Focus();
+                }
+                else if (ClassValidation.ValidationDocs.validarRg(masktxtRGPaciente.Text) == false)
+                {
+                    MessageBox.Show("RG inválido!");
+                    masktxtRGPaciente.Focus();
+                }
+                else
+                {
+                    try
+                    {
+                        serviceP.Cadastrar(objGerado());
+                        MessageBox.Show("Novo Paciente Cadastrado com Sucesso!");
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Erro ao Salvar " + ex.Message);
+                    }
+
                 }
 
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Erro ao Salvar " + ex.Message);
             }
         }
        
@@ -110,8 +134,8 @@ namespace SistemaOdonto
             obj.Nascimento = Convert.ToDateTime(dtDataNasc.Value);
             obj.Sexo = cbSexo.Text;
             obj.Email = txtEmail.Text;
-            obj.Telefone = txtTelefone.Text != "" ? Convert.ToInt64(txtTelefone.Text) : 0;
             obj.Celular = txtCelular.Text != "" ? Convert.ToInt64(txtCelular.Text) : 0;
+            obj.Telefone = txtTelefone.Text != "" ? Convert.ToInt64(txtTelefone.Text) : 0;
             obj.CEP = txtCEP.Text;
             obj.Endereco = enderecoCompleto;
 

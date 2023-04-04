@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WcfService;
 
 namespace SistemaOdonto
 {
     public partial class FrmAnamnese : Form
     {
+        AnamneseService serviceA = new AnamneseService();
+
         public FrmAnamnese()
         {
             InitializeComponent();

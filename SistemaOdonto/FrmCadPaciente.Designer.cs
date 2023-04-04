@@ -44,7 +44,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtEndereco = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dtDataNasc = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -60,6 +59,11 @@
             this.txtUF = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtEndereco = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -235,14 +239,6 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Nome:";
             // 
-            // txtEndereco
-            // 
-            this.txtEndereco.Location = new System.Drawing.Point(26, 37);
-            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(383, 26);
-            this.txtEndereco.TabIndex = 35;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -340,14 +336,14 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(26, 82);
+            this.txtBairro.Location = new System.Drawing.Point(104, 82);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(166, 26);
             this.txtBairro.TabIndex = 77;
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(244, 82);
+            this.txtCidade.Location = new System.Drawing.Point(371, 82);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(165, 26);
             this.txtCidade.TabIndex = 78;
@@ -370,6 +366,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtEndereco);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtNum);
@@ -382,6 +382,50 @@
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Endereço";
+            // 
+            // txtEndereco
+            // 
+            this.txtEndereco.Location = new System.Drawing.Point(104, 40);
+            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Size = new System.Drawing.Size(432, 26);
+            this.txtEndereco.TabIndex = 35;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 20);
+            this.label1.TabIndex = 81;
+            this.label1.Text = "Logradouro";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(46, 88);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 20);
+            this.label10.TabIndex = 82;
+            this.label10.Text = "Bairro";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(306, 88);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 20);
+            this.label11.TabIndex = 83;
+            this.label11.Text = "Cidade";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(555, 88);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 20);
+            this.label12.TabIndex = 84;
+            this.label12.Text = "UF:";
             // 
             // FrmCadPaciente
             // 
@@ -445,7 +489,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtDataNasc;
         private System.Windows.Forms.Label label9;
@@ -461,5 +504,10 @@
         private System.Windows.Forms.TextBox txtUF;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtEndereco;
     }
 }

@@ -30,19 +30,18 @@ namespace SistemaOdonto
             {
                 txtNome.Focus();
                 return "Preencha o campo Nome!";
-
             }
             else if (txtCRO.Text == string.Empty)
             {
                 txtCRO.Focus();
                 return "Preencha o campo CRO";
             }
-            else if (maskRGDent.Text == string.Empty)
+            else if (maskRGDent.Text.Length != 11)
             {
                 maskRGDent.Focus();
                 return "Preencha o campo RG";
             }
-            else if (maskCPFDent.Text == string.Empty)
+            else if (maskCPFDent.Text.Length != 14)
             {
                 maskCPFDent.Focus();
                 return "Preencha o campo CPF";
@@ -97,7 +96,7 @@ namespace SistemaOdonto
                     try
                     {
                         service.Cadastrar(objGerado());
-                        MessageBox.Show("Dentita Cadastrado com Sucesso!");
+                        MessageBox.Show("Novo Dentista Cadastrado com Sucesso!");
                         this.Close();
                     }
                     catch (Exception ex)
