@@ -31,10 +31,16 @@ namespace SistemaOdonto
         {
             this.obj = objP;
             
-            //DISTRIBUINDO OS DADOS NAS TEXTBOXES
+            //DISTRIBUINDO OS DADOS NO FORMS
             lblCodigo.Text = this.obj.Id.ToString();
             txtNome.Text = this.obj.Nome;
             cbSexo.Text = this.obj.Sexo;
+
+            //DISTRIBUIR A DATA DE NASCIMENTO
+            cbDia.Text = this.obj.Nascimento.ToString("dd");
+            cbMes.Text = this.obj.Nascimento.ToString("MM");
+            cbAno.Text = this.obj.Nascimento.Year.ToString();
+
             masktxtRGPaciente.Text = this.obj.RG;
             masktxtCPFPaciente.Text = this.obj.CPF;
             txtEmail.Text = this.obj.Email;
@@ -66,6 +72,10 @@ namespace SistemaOdonto
                 }
                 else
                 {
+                    //TRATAMENTO DATA DE NASCIMENTO
+                    string dataNascimento = $"{cbAno.Text}-{cbMes.SelectedIndex + 1:00}-{cbDia.Text:00}";
+
+
                     //TRATAMENTO DADOS RG E CPF PACIENTE
                     string rgpaciente = masktxtRGPaciente.Text;
                     string cpfpaciente = masktxtCPFPaciente.Text;
@@ -93,7 +103,7 @@ namespace SistemaOdonto
                     this.obj.Sexo = cbSexo.Text;
                     this.obj.RG = rgpaciente;
                     this.obj.CPF = cpfpaciente;
-                    this.obj.Nascimento = Convert.ToDateTime(dtDataNasc.Text);
+                    this.obj.Nascimento = Convert.ToDateTime(dataNascimento);
                     this.obj.Email = txtEmail.Text;
                     obj.Telefone = txtTelefone.Text != "" ? Convert.ToInt64(txtTelefone.Text) : 0;
                     obj.Celular = txtCelular.Text != "" ? Convert.ToInt64(txtCelular.Text) : 0;
@@ -187,5 +197,7 @@ namespace SistemaOdonto
             FrmOdontograma frm = new FrmOdontograma();
             frm.ShowDialog();
         }
+
+        
     }
 }

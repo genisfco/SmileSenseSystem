@@ -33,9 +33,15 @@ namespace SistemaOdonto
             else if (cbSexo.SelectedIndex == -1)
             {
                 cbSexo.Focus();
-                return "Selecione o Sexo";
-            }            
-            else if (masktxtRGPaciente.Text == string.Empty)
+                return "Selecione o Sexo!";
+            }
+            else if (cbDia.SelectedIndex == -1 || cbMes.SelectedIndex == -1 || cbAno.SelectedIndex == -1)
+            {
+                cbDia.Focus();
+                return "Selecione a Data completa de Nascimento!";
+            }
+
+            else if (masktxtRGPaciente.Text.Length != 12)
             {
                 masktxtRGPaciente.Focus();
                 return "Preencha o RG completo";
@@ -135,7 +141,6 @@ namespace SistemaOdonto
             obj.Nome = txtNome.Text;
             obj.RG = rgpaciente;
             obj.CPF = cpfpaciente;
-            //obj.Nascimento = Convert.ToDateTime(dtDataNasc.Value);
             obj.Nascimento = Convert.ToDateTime(dataNascimento);             
             obj.Sexo = cbSexo.Text;
             obj.Email = txtEmail.Text;

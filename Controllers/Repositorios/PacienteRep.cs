@@ -57,6 +57,8 @@ namespace Controllers.Repositorios
             {
                 Paciente objAntigo = ctx.Pacientes.Find(objNovo.Id);
                 objAntigo.Nome = objNovo.Nome;
+                objAntigo.Sexo = objNovo.Sexo;
+                objAntigo.Nascimento = objNovo.Nascimento;
                 objAntigo.Telefone = objNovo.Telefone;
                 objAntigo.Celular = objNovo.Celular;
                 objAntigo.Email = objNovo.Email;
