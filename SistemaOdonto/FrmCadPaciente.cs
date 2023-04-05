@@ -106,6 +106,10 @@ namespace SistemaOdonto
        
         public Paciente objGerado()
         {
+            //TRATAMENTO DATA DE NASCIMENTO
+            string dataNascimento = $"{cbAno.Text}-{cbMes.SelectedIndex + 1:00}-{cbDia.Text:00}";
+
+
             //TRATAMENTO DADOS RG E CPF PACIENTE
             string rgpaciente = masktxtRGPaciente.Text;
             string cpfpaciente = masktxtCPFPaciente.Text;
@@ -131,7 +135,8 @@ namespace SistemaOdonto
             obj.Nome = txtNome.Text;
             obj.RG = rgpaciente;
             obj.CPF = cpfpaciente;
-            obj.Nascimento = Convert.ToDateTime(dtDataNasc.Value);
+            //obj.Nascimento = Convert.ToDateTime(dtDataNasc.Value);
+            obj.Nascimento = Convert.ToDateTime(dataNascimento);             
             obj.Sexo = cbSexo.Text;
             obj.Email = txtEmail.Text;
             obj.Celular = txtCelular.Text != "" ? Convert.ToInt64(txtCelular.Text) : 0;
