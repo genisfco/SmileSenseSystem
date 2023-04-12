@@ -36,10 +36,10 @@ namespace SistemaOdonto
                 txtCRO.Focus();
                 return "Preencha o campo CRO";
             }
-            else if (maskRGDent.Text.Length != 11)
+            else if (maskRGDent.Text.Length != 12)
             {
                 maskRGDent.Focus();
-                return "Preencha o campo RG";
+                return "Preencha o RG completo";
             }
             else if (maskCPFDent.Text.Length != 14)
             {
