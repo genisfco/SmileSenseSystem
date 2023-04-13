@@ -17,23 +17,14 @@ namespace SistemaOdonto
 {
     public partial class FrmAnamnese : Form
     {
-        Paciente objPcte = new Paciente();
-        Anamnese objAnm = new Anamnese();
-
+        AnamneseService serviceAnm = new AnamneseService();
 
         public FrmAnamnese()
         {
             InitializeComponent();
-            //BuscarIDPaciente(objPcte);
+            btnAtualizarAnm.Visible = false;
         }
-
-        //private void BuscarIDPaciente(Paciente objP)
-        //{
-        //    this.objPcte = objP;
-
-        //    lblCodigo.Text = this.objPcte.Id.ToString();
-
-        //    MessageBox.Show(lblCodigo.Text.ToString());
+        
 
 
         //    //txtUsoQualMedicamento.Text = this.obj.Medicamento_Continuo.ToString();
@@ -44,7 +35,7 @@ namespace SistemaOdonto
 
 
         private void FrmAnamnese_Load(object sender, EventArgs e)
-        {           
+        {         
             
             //    Obter o ID do paciente 
             int idPaciente = int.Parse(lblCodigo.Text);
@@ -62,6 +53,8 @@ namespace SistemaOdonto
             {
                 //Preencher os campos do formulário com os dados da anamnese
                 MessageBox.Show("TESTE- encontrada anamnese");
+                btnSalvarAnamnese.Visible = false;
+                btnAtualizarAnm.Visible = true;
 
             }
             else
@@ -98,19 +91,128 @@ namespace SistemaOdonto
             else
                 FormValido = true;
             return FormValido;
-        }        
+        }
+
+
+        //public Anamnese ObjGerado()
+        //{
+
+        //    //VERIFICANDO SE O FORM ESTÁ VALIDO
+        //    if (ValidarForm() == false)
+        //    {
+        //        MessageBox.Show("Ficha Anamnese não preenchida corretamente!");
+        //    }
+
+        //    else
+        //    {
+        //        string diabetes = "X";
+        //        string hipertensao = "X";
+        //        string cardiopatia = "X";
+        //        string uso_continuo = "X";
+        //        string alergia_medic = "X";
+        //        string probl_hemorrag = "X";
+        //        string compl_odonto = "X";
+        //        string doenca_cong = "X";
+
+        //        if (chboxDiabetesSIM.Checked == true && chboxDiabetesNAO.Checked == false)
+        //        {
+        //            diabetes = "S";
+        //        }
+        //        else if (chboxDiabetesSIM.Checked == false && chboxDiabetesNAO.Checked == true)
+        //        {
+        //            diabetes = "N";
+        //        }
+
+        //        if (chboxHipertensaoSIM.Checked == true && chboxHipertensaoNAO.Checked == false)
+        //        {
+        //            hipertensao = "S";
+        //        }
+        //        else if (chboxHipertensaoSIM.Checked == false && chboxHipertensaoNAO.Checked == true)
+        //        {
+        //            hipertensao = "N";
+        //        }
+
+        //        if (chboxCardiopatiaSIM.Checked == true && chboxCardiopatiaNAO.Checked == false)
+        //        {
+        //            cardiopatia = "S";
+        //        }
+        //        else if (chboxCardiopatiaSIM.Checked == false && chboxCardiopatiaNAO.Checked == true)
+        //        {
+        //            cardiopatia = "N";
+        //        }
+
+        //        if (chboxUsoMedicamentosSIM.Checked == true && chboxUsoMedicamentosNAO.Checked == false)
+        //        {
+        //            uso_continuo = "S";
+        //        }
+        //        else if (chboxUsoMedicamentosSIM.Checked == false && chboxUsoMedicamentosNAO.Checked == true)
+        //        {
+        //            uso_continuo = "N";
+        //        }
+
+        //        if (chboxAlergiaMedicamentosaSIM.Checked == true && chboxAlergiaMedicamentosaNAO.Checked == false)
+        //        {
+        //            alergia_medic = "S";
+        //        }
+        //        else if (chboxAlergiaMedicamentosaSIM.Checked == false && chboxAlergiaMedicamentosaNAO.Checked == true)
+        //        {
+        //            alergia_medic = "N";
+        //        }
+
+        //        if (chboxProblHemorragSIM.Checked == true && chboxProblHemorragNAO.Checked == false)
+        //        {
+        //            probl_hemorrag = "S";
+        //        }
+        //        else if (chboxProblHemorragSIM.Checked == false && chboxProblHemorragNAO.Checked == true)
+        //        {
+        //            probl_hemorrag = "N";
+        //        }
+
+        //        if (chboxComplOdontoSIM.Checked == true && chboxComplOdontoNAO.Checked == false)
+        //        {
+        //            compl_odonto = "S";
+        //        }
+        //        else if (chboxComplOdontoSIM.Checked == false && chboxComplOdontoNAO.Checked == true)
+        //        {
+        //            compl_odonto = "N";
+        //        }
+
+        //        if (chboxDoencaCongSIM.Checked == true && chboxDoencaCongNAO.Checked == false)
+        //        {
+        //            doenca_cong = "S";
+        //        }
+        //        else if (chboxDoencaCongSIM.Checked == false && chboxDoencaCongNAO.Checked == true)
+        //        {
+        //            doenca_cong = "N";
+        //        }
+
+        //        //GERANDO O OBJETO PARA CADASTRAR NO BANCO.
+        //        Anamnese objAnm = new Anamnese();
+        //        objAnm.IdPaciente = Convert.ToInt32(lblCodigo.Text);
+        //        objAnm.Diabetes = diabetes;
+        //        objAnm.Hipertensao = hipertensao;
+        //        objAnm.Cardiopatia = cardiopatia;
+        //        objAnm.Uso_Continuo = uso_continuo;
+        //        objAnm.Medicamento_Continuo = txtUsoQualMedicamento.Text;
+        //        objAnm.Alergia_Medicamento = alergia_medic;
+        //        objAnm.Alergia_Qual_Medicamento = txtAlergiaQualMedicamento.Text;
+        //        objAnm.Problemas_Hemorragicos = probl_hemorrag;
+        //        objAnm.Motivo_Problemas = txtMotivoProblemas.Text;
+        //        objAnm.Complicacoes_Odonto = compl_odonto;
+        //        objAnm.Porque_Complicacoes = txtComplicacoes.Text;
+        //        objAnm.Doenca_Cong = doenca_cong;
+        //        objAnm.Qual_Doenca = txtDoenca.Text;
+
+        //        return objAnm;                
+
+        //    }
+
+
+        //}
 
 
         public Anamnese ObjGerado()
         {
-            //VERIFICANDO SE O FORM ESTÁ VALIDO
-            if (ValidarForm() == false)
-            {
-                MessageBox.Show("Ficha Anamnese não preenchida corretamente!");
-            }
-
-            else
-            {
                 string diabetes = "X";
                 string hipertensao = "X";
                 string cardiopatia = "X";
@@ -208,25 +310,29 @@ namespace SistemaOdonto
                 objAnm.Porque_Complicacoes = txtComplicacoes.Text;
                 objAnm.Doenca_Cong = doenca_cong;
                 objAnm.Qual_Doenca = txtDoenca.Text;
-               
-            }
-            return objAnm;
+
+                return objAnm;
         }
 
         private void btnSalvarAnamnese_Click(object sender, EventArgs e)
         {
-            try
+            //VERIFICANDO SE O FORM ESTÁ VALIDO
+            if (ValidarForm() == false)
             {
-                AnamneseService serviceSave = new AnamneseService();
-
-                serviceSave.Cadastrar(ObjGerado());
-                MessageBox.Show("Anamnese Cadastrada com Sucesso!");
-
+                MessageBox.Show("Ficha Anamnese não preenchida corretamente!");
             }
-            catch (Exception ex)
+            else
             {
-
-                throw ex;
+                try
+                {
+                    serviceAnm.Cadastrar(ObjGerado());
+                    MessageBox.Show("Anamnese do Paciente Cadastrada com Sucesso!");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao Salvar " + ex.Message);
+                }
             }            
         }        
     }

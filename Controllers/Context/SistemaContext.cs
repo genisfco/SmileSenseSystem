@@ -31,7 +31,6 @@ namespace Controllers.Context
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Dentista> Dentistas { get; set; }
         public DbSet<Anamnese> Anamneses { get; set; }
-
         public DbSet<Odontograma> Odontogramas { get; set; }
 
 

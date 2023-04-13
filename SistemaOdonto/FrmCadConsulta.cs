@@ -117,7 +117,7 @@ namespace SistemaOdonto
                 if (ts.Text == "Sucesso")
                 {
                     service.Cadastrar(objGerado());
-                    MessageBox.Show("Consulta Efetuada com Sucesso");
+                    MessageBox.Show("Consulta Cadastrada com Sucesso");
                     this.Close();
                 }
 

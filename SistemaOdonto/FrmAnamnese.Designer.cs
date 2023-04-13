@@ -70,6 +70,7 @@ namespace SistemaOdonto
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbPaciente = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
+            this.btnAtualizarAnm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFecharAnamnese
@@ -452,11 +453,22 @@ namespace SistemaOdonto
             this.lblCodigo.TabIndex = 114;
             this.lblCodigo.Text = "cod";
             // 
+            // btnAtualizarAnm
+            // 
+            this.btnAtualizarAnm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAtualizarAnm.Location = new System.Drawing.Point(12, 454);
+            this.btnAtualizarAnm.Name = "btnAtualizarAnm";
+            this.btnAtualizarAnm.Size = new System.Drawing.Size(446, 48);
+            this.btnAtualizarAnm.TabIndex = 115;
+            this.btnAtualizarAnm.Text = "Atualizar Anamnese";
+            this.btnAtualizarAnm.UseVisualStyleBackColor = false;
+            // 
             // FrmAnamnese
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 518);
+            this.Controls.Add(this.btnAtualizarAnm);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.btnFecharAnamnese);
             this.Controls.Add(this.btnSalvarAnamnese);
@@ -551,5 +563,6 @@ namespace SistemaOdonto
         public System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lbPaciente;
         public System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Button btnAtualizarAnm;
     }
 }
