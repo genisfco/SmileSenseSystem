@@ -47,12 +47,12 @@ namespace Controllers.Repositorios
 
 
 
-        public IQueryable<Anamnese> Buscar(Paciente paciente)
-        {
-            var ctx = new SistemaContext();
-            var Anamneses = ctx.Anamneses.Where(anm => anm.IdPaciente == paciente.Id);
-            return Anamneses;
-        }    
+        //public IQueryable<Anamnese> Buscar(Paciente paciente)
+        //{
+        //    var ctx = new SistemaContext();
+        //    var Anamneses = ctx.Anamneses.Where(anm => anm.IdPaciente == paciente.Id);
+        //    return Anamneses;
+        //}    
 
 
         public void Deletar(int id)

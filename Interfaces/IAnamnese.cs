@@ -15,12 +15,11 @@ namespace Interfaces
         [OperationContract]
         void Cadastrar(Anamnese obj);
 
-        [OperationContract(Name = "BuscarPorId")]
+        [OperationContract(Name = "BuscarPorIdPacte")]
         Anamnese Buscar(int id);
 
-        [OperationContract(Name = "BuscarPorPaciente")]
-        IQueryable<Anamnese> Buscar(Anamnese anamnese);   
-
+        //[OperationContract(Name = "BuscarPorPaciente")]
+        //IQueryable<Anamnese> Buscar(Anamnese anamnese);   
 
 
         [OperationContract]
