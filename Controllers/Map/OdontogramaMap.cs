@@ -9,16 +9,16 @@ using Entidades;
 
 namespace Controllers.Map
 {
-    //class OdontogramaMap : EntityTypeConfiguration<Odontograma>
-    //{
-    //    public OdontogramaMap()
-    //    {
-    //        this.ToTable("Odontograma");
-    //        this.HasKey(odt => odt.IdOdontograma);
-    //        this.Property(odt => odt.IdOdontograma).HasColumnName("ID_ODONTOGRAMA");
-    //        this.Property(odt => odt.IdPaciente).HasColumnName("ID_PACIENTE");
-    //        this.Property(odt => odt.Procedimentos).HasColumnName("PROCEDIMENTOS");
-    //        this.Property(odt => odt.Imagem).HasColumnName("IMAGEM");
-    //    }
-    //}
+    class OdontogramaMap : EntityTypeConfiguration<Odontograma>
+    {
+        public OdontogramaMap()
+        {
+            this.ToTable("Odontograma");
+            this.HasKey(odt => odt.IdOdontograma);
+            this.Property(odt => odt.IdOdontograma).HasColumnName("ID_ODONTOGRAMA");
+            this.Property(odt => odt.IdPaciente).HasColumnName("ID_PACIENTE");
+            this.Property(odt => odt.Procedimentos).HasColumnName("PROCEDIMENTOS");
+            this.Property(odt => odt.Imagem).HasColumnName("IMAGEM");
+        }
+    }
 }

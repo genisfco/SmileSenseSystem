@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Odontograma
+    public class Odontograma
     {
         public int IdOdontograma { get; set; }
         public int IdPaciente { get; set; }

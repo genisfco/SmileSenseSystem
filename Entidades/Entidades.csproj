@@ -44,6 +44,7 @@
     <Compile Include="Anamnese.cs" />
     <Compile Include="Consulta.cs" />
     <Compile Include="Dentista.cs" />
+    <Compile Include="Odontograma.cs" />
     <Compile Include="Paciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

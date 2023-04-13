@@ -233,6 +233,26 @@ namespace SistemaOdonto.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap odontograma2_2 {
+            get {
+                object obj = ResourceManager.GetObject("odontograma2.2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap odontograma21 {
+            get {
+                object obj = ResourceManager.GetObject("odontograma21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap panel1_BackgroundImage {
             get {
                 object obj = ResourceManager.GetObject("panel1.BackgroundImage", resourceCulture);

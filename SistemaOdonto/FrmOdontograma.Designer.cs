@@ -29,7 +29,6 @@ namespace SistemaOdonto
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOdontograma));
             this.btnAnotar = new System.Windows.Forms.Button();
             this.btnFecharFichaClinica = new System.Windows.Forms.Button();
             this.btnSalvarFichaClinica = new System.Windows.Forms.Button();
@@ -86,10 +85,9 @@ namespace SistemaOdonto
             // btnAnotar
             // 
             this.btnAnotar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnAnotar.Location = new System.Drawing.Point(416, 172);
-            this.btnAnotar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAnotar.Location = new System.Drawing.Point(624, 265);
             this.btnAnotar.Name = "btnAnotar";
-            this.btnAnotar.Size = new System.Drawing.Size(649, 45);
+            this.btnAnotar.Size = new System.Drawing.Size(974, 69);
             this.btnAnotar.TabIndex = 90;
             this.btnAnotar.Text = "Anotar / Editar Procedimentos";
             this.btnAnotar.UseVisualStyleBackColor = false;
@@ -97,10 +95,9 @@ namespace SistemaOdonto
             // btnFecharFichaClinica
             // 
             this.btnFecharFichaClinica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnFecharFichaClinica.Location = new System.Drawing.Point(15, 403);
-            this.btnFecharFichaClinica.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFecharFichaClinica.Location = new System.Drawing.Point(22, 620);
             this.btnFecharFichaClinica.Name = "btnFecharFichaClinica";
-            this.btnFecharFichaClinica.Size = new System.Drawing.Size(385, 45);
+            this.btnFecharFichaClinica.Size = new System.Drawing.Size(578, 69);
             this.btnFecharFichaClinica.TabIndex = 89;
             this.btnFecharFichaClinica.Text = "Fechar Ficha";
             this.btnFecharFichaClinica.UseVisualStyleBackColor = false;
@@ -108,10 +105,9 @@ namespace SistemaOdonto
             // btnSalvarFichaClinica
             // 
             this.btnSalvarFichaClinica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSalvarFichaClinica.Location = new System.Drawing.Point(15, 301);
-            this.btnSalvarFichaClinica.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalvarFichaClinica.Location = new System.Drawing.Point(22, 463);
             this.btnSalvarFichaClinica.Name = "btnSalvarFichaClinica";
-            this.btnSalvarFichaClinica.Size = new System.Drawing.Size(385, 45);
+            this.btnSalvarFichaClinica.Size = new System.Drawing.Size(578, 69);
             this.btnSalvarFichaClinica.TabIndex = 88;
             this.btnSalvarFichaClinica.Text = "Salvar Ficha Clínica";
             this.btnSalvarFichaClinica.UseVisualStyleBackColor = false;
@@ -119,20 +115,18 @@ namespace SistemaOdonto
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(413, 222);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(620, 342);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.Size = new System.Drawing.Size(115, 20);
             this.label1.TabIndex = 87;
             this.label1.Text = "Procedimentos";
             // 
             // txtObservacoes
             // 
-            this.txtObservacoes.Location = new System.Drawing.Point(414, 237);
-            this.txtObservacoes.Margin = new System.Windows.Forms.Padding(2);
+            this.txtObservacoes.Location = new System.Drawing.Point(621, 365);
             this.txtObservacoes.Multiline = true;
             this.txtObservacoes.Name = "txtObservacoes";
-            this.txtObservacoes.Size = new System.Drawing.Size(650, 213);
+            this.txtObservacoes.Size = new System.Drawing.Size(973, 326);
             this.txtObservacoes.TabIndex = 86;
             // 
             // groupBox4
@@ -145,11 +139,9 @@ namespace SistemaOdonto
             this.groupBox4.Controls.Add(this.checkBox33);
             this.groupBox4.Controls.Add(this.checkBox32);
             this.groupBox4.Controls.Add(this.checkBox31);
-            this.groupBox4.Location = new System.Drawing.Point(747, 110);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Location = new System.Drawing.Point(1120, 169);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(317, 58);
+            this.groupBox4.Size = new System.Drawing.Size(476, 89);
             this.groupBox4.TabIndex = 84;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Inferiores Esquerdo";
@@ -157,10 +149,9 @@ namespace SistemaOdonto
             // checkBox38
             // 
             this.checkBox38.AutoSize = true;
-            this.checkBox38.Location = new System.Drawing.Point(280, 28);
-            this.checkBox38.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox38.Location = new System.Drawing.Point(420, 43);
             this.checkBox38.Name = "checkBox38";
-            this.checkBox38.Size = new System.Drawing.Size(38, 17);
+            this.checkBox38.Size = new System.Drawing.Size(53, 24);
             this.checkBox38.TabIndex = 7;
             this.checkBox38.Text = "38";
             this.checkBox38.UseVisualStyleBackColor = true;
@@ -168,10 +159,9 @@ namespace SistemaOdonto
             // checkBox37
             // 
             this.checkBox37.AutoSize = true;
-            this.checkBox37.Location = new System.Drawing.Point(240, 28);
-            this.checkBox37.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox37.Location = new System.Drawing.Point(360, 43);
             this.checkBox37.Name = "checkBox37";
-            this.checkBox37.Size = new System.Drawing.Size(38, 17);
+            this.checkBox37.Size = new System.Drawing.Size(53, 24);
             this.checkBox37.TabIndex = 6;
             this.checkBox37.Text = "37";
             this.checkBox37.UseVisualStyleBackColor = true;
@@ -179,10 +169,9 @@ namespace SistemaOdonto
             // checkBox36
             // 
             this.checkBox36.AutoSize = true;
-            this.checkBox36.Location = new System.Drawing.Point(201, 28);
-            this.checkBox36.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox36.Location = new System.Drawing.Point(302, 43);
             this.checkBox36.Name = "checkBox36";
-            this.checkBox36.Size = new System.Drawing.Size(38, 17);
+            this.checkBox36.Size = new System.Drawing.Size(53, 24);
             this.checkBox36.TabIndex = 5;
             this.checkBox36.Text = "36";
             this.checkBox36.UseVisualStyleBackColor = true;
@@ -190,10 +179,9 @@ namespace SistemaOdonto
             // checkBox35
             // 
             this.checkBox35.AutoSize = true;
-            this.checkBox35.Location = new System.Drawing.Point(161, 28);
-            this.checkBox35.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox35.Location = new System.Drawing.Point(242, 43);
             this.checkBox35.Name = "checkBox35";
-            this.checkBox35.Size = new System.Drawing.Size(38, 17);
+            this.checkBox35.Size = new System.Drawing.Size(53, 24);
             this.checkBox35.TabIndex = 4;
             this.checkBox35.Text = "35";
             this.checkBox35.UseVisualStyleBackColor = true;
@@ -201,10 +189,9 @@ namespace SistemaOdonto
             // checkBox34
             // 
             this.checkBox34.AutoSize = true;
-            this.checkBox34.Location = new System.Drawing.Point(122, 28);
-            this.checkBox34.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox34.Location = new System.Drawing.Point(183, 43);
             this.checkBox34.Name = "checkBox34";
-            this.checkBox34.Size = new System.Drawing.Size(38, 17);
+            this.checkBox34.Size = new System.Drawing.Size(53, 24);
             this.checkBox34.TabIndex = 3;
             this.checkBox34.Text = "34";
             this.checkBox34.UseVisualStyleBackColor = true;
@@ -212,10 +199,9 @@ namespace SistemaOdonto
             // checkBox33
             // 
             this.checkBox33.AutoSize = true;
-            this.checkBox33.Location = new System.Drawing.Point(83, 28);
-            this.checkBox33.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox33.Location = new System.Drawing.Point(124, 43);
             this.checkBox33.Name = "checkBox33";
-            this.checkBox33.Size = new System.Drawing.Size(38, 17);
+            this.checkBox33.Size = new System.Drawing.Size(53, 24);
             this.checkBox33.TabIndex = 2;
             this.checkBox33.Text = "33";
             this.checkBox33.UseVisualStyleBackColor = true;
@@ -223,10 +209,9 @@ namespace SistemaOdonto
             // checkBox32
             // 
             this.checkBox32.AutoSize = true;
-            this.checkBox32.Location = new System.Drawing.Point(43, 28);
-            this.checkBox32.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox32.Location = new System.Drawing.Point(64, 43);
             this.checkBox32.Name = "checkBox32";
-            this.checkBox32.Size = new System.Drawing.Size(38, 17);
+            this.checkBox32.Size = new System.Drawing.Size(53, 24);
             this.checkBox32.TabIndex = 1;
             this.checkBox32.Text = "32";
             this.checkBox32.UseVisualStyleBackColor = true;
@@ -234,10 +219,9 @@ namespace SistemaOdonto
             // checkBox31
             // 
             this.checkBox31.AutoSize = true;
-            this.checkBox31.Location = new System.Drawing.Point(4, 28);
-            this.checkBox31.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox31.Location = new System.Drawing.Point(6, 43);
             this.checkBox31.Name = "checkBox31";
-            this.checkBox31.Size = new System.Drawing.Size(38, 17);
+            this.checkBox31.Size = new System.Drawing.Size(53, 24);
             this.checkBox31.TabIndex = 0;
             this.checkBox31.Text = "31";
             this.checkBox31.UseVisualStyleBackColor = true;
@@ -252,11 +236,9 @@ namespace SistemaOdonto
             this.groupBox3.Controls.Add(this.checkBox46);
             this.groupBox3.Controls.Add(this.checkBox47);
             this.groupBox3.Controls.Add(this.checkBox48);
-            this.groupBox3.Location = new System.Drawing.Point(416, 110);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Location = new System.Drawing.Point(624, 169);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(317, 58);
+            this.groupBox3.Size = new System.Drawing.Size(476, 89);
             this.groupBox3.TabIndex = 85;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Inferiores Direito";
@@ -264,10 +246,9 @@ namespace SistemaOdonto
             // checkBox41
             // 
             this.checkBox41.AutoSize = true;
-            this.checkBox41.Location = new System.Drawing.Point(280, 28);
-            this.checkBox41.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox41.Location = new System.Drawing.Point(420, 43);
             this.checkBox41.Name = "checkBox41";
-            this.checkBox41.Size = new System.Drawing.Size(38, 17);
+            this.checkBox41.Size = new System.Drawing.Size(53, 24);
             this.checkBox41.TabIndex = 7;
             this.checkBox41.Text = "41";
             this.checkBox41.UseVisualStyleBackColor = true;
@@ -275,10 +256,9 @@ namespace SistemaOdonto
             // checkBox42
             // 
             this.checkBox42.AutoSize = true;
-            this.checkBox42.Location = new System.Drawing.Point(240, 28);
-            this.checkBox42.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox42.Location = new System.Drawing.Point(360, 43);
             this.checkBox42.Name = "checkBox42";
-            this.checkBox42.Size = new System.Drawing.Size(38, 17);
+            this.checkBox42.Size = new System.Drawing.Size(53, 24);
             this.checkBox42.TabIndex = 6;
             this.checkBox42.Text = "42";
             this.checkBox42.UseVisualStyleBackColor = true;
@@ -286,10 +266,9 @@ namespace SistemaOdonto
             // checkBox43
             // 
             this.checkBox43.AutoSize = true;
-            this.checkBox43.Location = new System.Drawing.Point(201, 28);
-            this.checkBox43.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox43.Location = new System.Drawing.Point(302, 43);
             this.checkBox43.Name = "checkBox43";
-            this.checkBox43.Size = new System.Drawing.Size(38, 17);
+            this.checkBox43.Size = new System.Drawing.Size(53, 24);
             this.checkBox43.TabIndex = 5;
             this.checkBox43.Text = "43";
             this.checkBox43.UseVisualStyleBackColor = true;
@@ -297,10 +276,9 @@ namespace SistemaOdonto
             // checkBox44
             // 
             this.checkBox44.AutoSize = true;
-            this.checkBox44.Location = new System.Drawing.Point(161, 28);
-            this.checkBox44.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox44.Location = new System.Drawing.Point(242, 43);
             this.checkBox44.Name = "checkBox44";
-            this.checkBox44.Size = new System.Drawing.Size(38, 17);
+            this.checkBox44.Size = new System.Drawing.Size(53, 24);
             this.checkBox44.TabIndex = 4;
             this.checkBox44.Text = "44";
             this.checkBox44.UseVisualStyleBackColor = true;
@@ -308,10 +286,9 @@ namespace SistemaOdonto
             // checkBox45
             // 
             this.checkBox45.AutoSize = true;
-            this.checkBox45.Location = new System.Drawing.Point(122, 28);
-            this.checkBox45.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox45.Location = new System.Drawing.Point(183, 43);
             this.checkBox45.Name = "checkBox45";
-            this.checkBox45.Size = new System.Drawing.Size(38, 17);
+            this.checkBox45.Size = new System.Drawing.Size(53, 24);
             this.checkBox45.TabIndex = 3;
             this.checkBox45.Text = "45";
             this.checkBox45.UseVisualStyleBackColor = true;
@@ -319,10 +296,9 @@ namespace SistemaOdonto
             // checkBox46
             // 
             this.checkBox46.AutoSize = true;
-            this.checkBox46.Location = new System.Drawing.Point(83, 28);
-            this.checkBox46.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox46.Location = new System.Drawing.Point(124, 43);
             this.checkBox46.Name = "checkBox46";
-            this.checkBox46.Size = new System.Drawing.Size(38, 17);
+            this.checkBox46.Size = new System.Drawing.Size(53, 24);
             this.checkBox46.TabIndex = 2;
             this.checkBox46.Text = "46";
             this.checkBox46.UseVisualStyleBackColor = true;
@@ -330,10 +306,9 @@ namespace SistemaOdonto
             // checkBox47
             // 
             this.checkBox47.AutoSize = true;
-            this.checkBox47.Location = new System.Drawing.Point(43, 28);
-            this.checkBox47.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox47.Location = new System.Drawing.Point(64, 43);
             this.checkBox47.Name = "checkBox47";
-            this.checkBox47.Size = new System.Drawing.Size(38, 17);
+            this.checkBox47.Size = new System.Drawing.Size(53, 24);
             this.checkBox47.TabIndex = 1;
             this.checkBox47.Text = "47";
             this.checkBox47.UseVisualStyleBackColor = true;
@@ -341,10 +316,9 @@ namespace SistemaOdonto
             // checkBox48
             // 
             this.checkBox48.AutoSize = true;
-            this.checkBox48.Location = new System.Drawing.Point(4, 28);
-            this.checkBox48.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox48.Location = new System.Drawing.Point(6, 43);
             this.checkBox48.Name = "checkBox48";
-            this.checkBox48.Size = new System.Drawing.Size(38, 17);
+            this.checkBox48.Size = new System.Drawing.Size(53, 24);
             this.checkBox48.TabIndex = 0;
             this.checkBox48.Text = "48";
             this.checkBox48.UseVisualStyleBackColor = true;
@@ -359,11 +333,9 @@ namespace SistemaOdonto
             this.groupBox2.Controls.Add(this.checkBox23);
             this.groupBox2.Controls.Add(this.checkBox22);
             this.groupBox2.Controls.Add(this.checkBox21);
-            this.groupBox2.Location = new System.Drawing.Point(747, 41);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Location = new System.Drawing.Point(1120, 63);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(317, 58);
+            this.groupBox2.Size = new System.Drawing.Size(476, 89);
             this.groupBox2.TabIndex = 83;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Superiores Esquerdo";
@@ -371,10 +343,9 @@ namespace SistemaOdonto
             // checkBox28
             // 
             this.checkBox28.AutoSize = true;
-            this.checkBox28.Location = new System.Drawing.Point(280, 28);
-            this.checkBox28.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox28.Location = new System.Drawing.Point(420, 43);
             this.checkBox28.Name = "checkBox28";
-            this.checkBox28.Size = new System.Drawing.Size(38, 17);
+            this.checkBox28.Size = new System.Drawing.Size(53, 24);
             this.checkBox28.TabIndex = 7;
             this.checkBox28.Text = "28";
             this.checkBox28.UseVisualStyleBackColor = true;
@@ -382,10 +353,9 @@ namespace SistemaOdonto
             // checkBox27
             // 
             this.checkBox27.AutoSize = true;
-            this.checkBox27.Location = new System.Drawing.Point(240, 28);
-            this.checkBox27.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox27.Location = new System.Drawing.Point(360, 43);
             this.checkBox27.Name = "checkBox27";
-            this.checkBox27.Size = new System.Drawing.Size(38, 17);
+            this.checkBox27.Size = new System.Drawing.Size(53, 24);
             this.checkBox27.TabIndex = 6;
             this.checkBox27.Text = "27";
             this.checkBox27.UseVisualStyleBackColor = true;
@@ -393,10 +363,9 @@ namespace SistemaOdonto
             // checkBox26
             // 
             this.checkBox26.AutoSize = true;
-            this.checkBox26.Location = new System.Drawing.Point(201, 28);
-            this.checkBox26.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox26.Location = new System.Drawing.Point(302, 43);
             this.checkBox26.Name = "checkBox26";
-            this.checkBox26.Size = new System.Drawing.Size(38, 17);
+            this.checkBox26.Size = new System.Drawing.Size(53, 24);
             this.checkBox26.TabIndex = 5;
             this.checkBox26.Text = "26";
             this.checkBox26.UseVisualStyleBackColor = true;
@@ -404,10 +373,9 @@ namespace SistemaOdonto
             // checkBox25
             // 
             this.checkBox25.AutoSize = true;
-            this.checkBox25.Location = new System.Drawing.Point(161, 28);
-            this.checkBox25.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox25.Location = new System.Drawing.Point(242, 43);
             this.checkBox25.Name = "checkBox25";
-            this.checkBox25.Size = new System.Drawing.Size(38, 17);
+            this.checkBox25.Size = new System.Drawing.Size(53, 24);
             this.checkBox25.TabIndex = 4;
             this.checkBox25.Text = "25";
             this.checkBox25.UseVisualStyleBackColor = true;
@@ -415,10 +383,9 @@ namespace SistemaOdonto
             // checkBox24
             // 
             this.checkBox24.AutoSize = true;
-            this.checkBox24.Location = new System.Drawing.Point(122, 28);
-            this.checkBox24.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox24.Location = new System.Drawing.Point(183, 43);
             this.checkBox24.Name = "checkBox24";
-            this.checkBox24.Size = new System.Drawing.Size(38, 17);
+            this.checkBox24.Size = new System.Drawing.Size(53, 24);
             this.checkBox24.TabIndex = 3;
             this.checkBox24.Text = "24";
             this.checkBox24.UseVisualStyleBackColor = true;
@@ -426,10 +393,9 @@ namespace SistemaOdonto
             // checkBox23
             // 
             this.checkBox23.AutoSize = true;
-            this.checkBox23.Location = new System.Drawing.Point(83, 28);
-            this.checkBox23.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox23.Location = new System.Drawing.Point(124, 43);
             this.checkBox23.Name = "checkBox23";
-            this.checkBox23.Size = new System.Drawing.Size(38, 17);
+            this.checkBox23.Size = new System.Drawing.Size(53, 24);
             this.checkBox23.TabIndex = 2;
             this.checkBox23.Text = "23";
             this.checkBox23.UseVisualStyleBackColor = true;
@@ -437,10 +403,9 @@ namespace SistemaOdonto
             // checkBox22
             // 
             this.checkBox22.AutoSize = true;
-            this.checkBox22.Location = new System.Drawing.Point(43, 28);
-            this.checkBox22.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox22.Location = new System.Drawing.Point(64, 43);
             this.checkBox22.Name = "checkBox22";
-            this.checkBox22.Size = new System.Drawing.Size(38, 17);
+            this.checkBox22.Size = new System.Drawing.Size(53, 24);
             this.checkBox22.TabIndex = 1;
             this.checkBox22.Text = "22";
             this.checkBox22.UseVisualStyleBackColor = true;
@@ -448,10 +413,9 @@ namespace SistemaOdonto
             // checkBox21
             // 
             this.checkBox21.AutoSize = true;
-            this.checkBox21.Location = new System.Drawing.Point(4, 28);
-            this.checkBox21.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox21.Location = new System.Drawing.Point(6, 43);
             this.checkBox21.Name = "checkBox21";
-            this.checkBox21.Size = new System.Drawing.Size(38, 17);
+            this.checkBox21.Size = new System.Drawing.Size(53, 24);
             this.checkBox21.TabIndex = 0;
             this.checkBox21.Text = "21";
             this.checkBox21.UseVisualStyleBackColor = true;
@@ -466,11 +430,9 @@ namespace SistemaOdonto
             this.groupBox1.Controls.Add(this.checkBox16);
             this.groupBox1.Controls.Add(this.checkBox17);
             this.groupBox1.Controls.Add(this.checkBox18);
-            this.groupBox1.Location = new System.Drawing.Point(416, 41);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(624, 63);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(317, 58);
+            this.groupBox1.Size = new System.Drawing.Size(476, 89);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Superiores Direito";
@@ -478,10 +440,9 @@ namespace SistemaOdonto
             // checkBox11
             // 
             this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(280, 28);
-            this.checkBox11.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox11.Location = new System.Drawing.Point(420, 43);
             this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(38, 17);
+            this.checkBox11.Size = new System.Drawing.Size(53, 24);
             this.checkBox11.TabIndex = 7;
             this.checkBox11.Text = "11";
             this.checkBox11.UseVisualStyleBackColor = true;
@@ -489,10 +450,9 @@ namespace SistemaOdonto
             // checkBox12
             // 
             this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(240, 28);
-            this.checkBox12.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox12.Location = new System.Drawing.Point(360, 43);
             this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(38, 17);
+            this.checkBox12.Size = new System.Drawing.Size(53, 24);
             this.checkBox12.TabIndex = 6;
             this.checkBox12.Text = "12";
             this.checkBox12.UseVisualStyleBackColor = true;
@@ -500,10 +460,9 @@ namespace SistemaOdonto
             // checkBox13
             // 
             this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(201, 28);
-            this.checkBox13.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox13.Location = new System.Drawing.Point(302, 43);
             this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(38, 17);
+            this.checkBox13.Size = new System.Drawing.Size(53, 24);
             this.checkBox13.TabIndex = 5;
             this.checkBox13.Text = "13";
             this.checkBox13.UseVisualStyleBackColor = true;
@@ -511,10 +470,9 @@ namespace SistemaOdonto
             // checkBox14
             // 
             this.checkBox14.AutoSize = true;
-            this.checkBox14.Location = new System.Drawing.Point(161, 28);
-            this.checkBox14.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox14.Location = new System.Drawing.Point(242, 43);
             this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(38, 17);
+            this.checkBox14.Size = new System.Drawing.Size(53, 24);
             this.checkBox14.TabIndex = 4;
             this.checkBox14.Text = "14";
             this.checkBox14.UseVisualStyleBackColor = true;
@@ -522,10 +480,9 @@ namespace SistemaOdonto
             // checkBox15
             // 
             this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(122, 28);
-            this.checkBox15.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox15.Location = new System.Drawing.Point(183, 43);
             this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(38, 17);
+            this.checkBox15.Size = new System.Drawing.Size(53, 24);
             this.checkBox15.TabIndex = 3;
             this.checkBox15.Text = "15";
             this.checkBox15.UseVisualStyleBackColor = true;
@@ -533,10 +490,9 @@ namespace SistemaOdonto
             // checkBox16
             // 
             this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(83, 28);
-            this.checkBox16.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox16.Location = new System.Drawing.Point(124, 43);
             this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(38, 17);
+            this.checkBox16.Size = new System.Drawing.Size(53, 24);
             this.checkBox16.TabIndex = 2;
             this.checkBox16.Text = "16";
             this.checkBox16.UseVisualStyleBackColor = true;
@@ -544,10 +500,9 @@ namespace SistemaOdonto
             // checkBox17
             // 
             this.checkBox17.AutoSize = true;
-            this.checkBox17.Location = new System.Drawing.Point(43, 28);
-            this.checkBox17.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox17.Location = new System.Drawing.Point(64, 43);
             this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(38, 17);
+            this.checkBox17.Size = new System.Drawing.Size(53, 24);
             this.checkBox17.TabIndex = 1;
             this.checkBox17.Text = "17";
             this.checkBox17.UseVisualStyleBackColor = true;
@@ -555,10 +510,9 @@ namespace SistemaOdonto
             // checkBox18
             // 
             this.checkBox18.AutoSize = true;
-            this.checkBox18.Location = new System.Drawing.Point(4, 28);
-            this.checkBox18.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox18.Location = new System.Drawing.Point(6, 43);
             this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(38, 17);
+            this.checkBox18.Size = new System.Drawing.Size(53, 24);
             this.checkBox18.TabIndex = 0;
             this.checkBox18.Text = "18";
             this.checkBox18.UseVisualStyleBackColor = true;
@@ -566,61 +520,55 @@ namespace SistemaOdonto
             // lbCPF
             // 
             this.lbCPF.AutoSize = true;
-            this.lbCPF.Location = new System.Drawing.Point(12, 17);
-            this.lbCPF.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCPF.Location = new System.Drawing.Point(18, 26);
             this.lbCPF.Name = "lbCPF";
-            this.lbCPF.Size = new System.Drawing.Size(27, 13);
+            this.lbCPF.Size = new System.Drawing.Size(40, 20);
             this.lbCPF.TabIndex = 81;
             this.lbCPF.Text = "CPF";
             // 
             // masktxtCPFPaciente
             // 
             this.masktxtCPFPaciente.BackColor = System.Drawing.SystemColors.Control;
-            this.masktxtCPFPaciente.Location = new System.Drawing.Point(44, 13);
-            this.masktxtCPFPaciente.Margin = new System.Windows.Forms.Padding(2);
+            this.masktxtCPFPaciente.Location = new System.Drawing.Point(66, 20);
             this.masktxtCPFPaciente.Mask = "000.000.000-00";
             this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
             this.masktxtCPFPaciente.ReadOnly = true;
-            this.masktxtCPFPaciente.Size = new System.Drawing.Size(83, 20);
+            this.masktxtCPFPaciente.Size = new System.Drawing.Size(122, 26);
             this.masktxtCPFPaciente.TabIndex = 80;
             this.masktxtCPFPaciente.TabStop = false;
             // 
             // txtPaciente
             // 
-            this.txtPaciente.Location = new System.Drawing.Point(235, 15);
-            this.txtPaciente.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPaciente.Location = new System.Drawing.Point(352, 23);
             this.txtPaciente.Name = "txtPaciente";
             this.txtPaciente.ReadOnly = true;
-            this.txtPaciente.Size = new System.Drawing.Size(176, 20);
+            this.txtPaciente.Size = new System.Drawing.Size(262, 26);
             this.txtPaciente.TabIndex = 79;
             this.txtPaciente.TabStop = false;
             // 
             // lbPaciente
             // 
             this.lbPaciente.AutoSize = true;
-            this.lbPaciente.Location = new System.Drawing.Point(182, 18);
-            this.lbPaciente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbPaciente.Location = new System.Drawing.Point(273, 28);
             this.lbPaciente.Name = "lbPaciente";
-            this.lbPaciente.Size = new System.Drawing.Size(49, 13);
+            this.lbPaciente.Size = new System.Drawing.Size(71, 20);
             this.lbPaciente.TabIndex = 78;
             this.lbPaciente.Text = "Paciente";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(4, 41);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 63);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(407, 244);
+            this.pictureBox1.Size = new System.Drawing.Size(610, 375);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 77;
             this.pictureBox1.TabStop = false;
             // 
             // FrmOdontograma
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 462);
+            this.ClientSize = new System.Drawing.Size(1604, 711);
             this.Controls.Add(this.btnAnotar);
             this.Controls.Add(this.btnFecharFichaClinica);
             this.Controls.Add(this.btnSalvarFichaClinica);
@@ -635,6 +583,7 @@ namespace SistemaOdonto
             this.Controls.Add(this.txtPaciente);
             this.Controls.Add(this.lbPaciente);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmOdontograma";
             this.Text = "Odontograma";
             this.groupBox4.ResumeLayout(false);

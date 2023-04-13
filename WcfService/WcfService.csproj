@@ -64,6 +64,7 @@
     <Content Include="AnamneseService.svc" />
     <Content Include="ConsultaService.svc" />
     <Content Include="DentistaService.svc" />
+    <Content Include="OdontogramaService.svc" />
     <Content Include="PacienteService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -76,6 +77,9 @@
     </Compile>
     <Compile Include="DentistaService.svc.cs">
       <DependentUpon>DentistaService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="OdontogramaService.svc.cs">
+      <DependentUpon>OdontogramaService.svc</DependentUpon>
     </Compile>
     <Compile Include="PacienteService.svc.cs">
       <DependentUpon>PacienteService.svc</DependentUpon>

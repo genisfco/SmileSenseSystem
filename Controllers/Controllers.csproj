@@ -53,11 +53,13 @@
     <Compile Include="Map\AnamneseMap.cs" />
     <Compile Include="Map\ConsultaMap.cs" />
     <Compile Include="Map\DentistaMap.cs" />
+    <Compile Include="Map\OdontogramaMap.cs" />
     <Compile Include="Map\PacienteMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\AnamneseRep.cs" />
     <Compile Include="Repositorios\ConsultaRep.cs" />
     <Compile Include="Repositorios\DentistaRep.cs" />
+    <Compile Include="Repositorios\OdontrogramaRep.cs" />
     <Compile Include="Repositorios\PacienteRep.cs" />
   </ItemGroup>
   <ItemGroup>

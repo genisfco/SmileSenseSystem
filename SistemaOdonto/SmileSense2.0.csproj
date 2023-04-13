@@ -405,6 +405,8 @@
     <Content Include="Resources\dentista.ico" />
     <Content Include="Resources\MAjuda.Image.png" />
     <Content Include="Resources\MSair.Image.png" />
+    <None Include="Resources\odontograma2.2.jpg" />
+    <None Include="Resources\odontograma2.21.jpg" />
     <Content Include="Resources\panel1.BackgroundImage.jpg" />
     <Content Include="Resources\panel1.BackgroundImage.png" />
     <Content Include="Resources\sair.ico" />

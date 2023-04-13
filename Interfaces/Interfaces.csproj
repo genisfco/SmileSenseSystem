@@ -52,6 +52,7 @@
     <Compile Include="IAnamnese.cs" />
     <Compile Include="IConsulta.cs" />
     <Compile Include="IDentista.cs" />
+    <Compile Include="IOdontograma.cs" />
     <Compile Include="IPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
