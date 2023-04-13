@@ -213,8 +213,6 @@ namespace SistemaOdonto
             return objAnm;
         }
 
-
-
         private void btnSalvarAnamnese_Click(object sender, EventArgs e)
         {
             try
