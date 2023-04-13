@@ -498,9 +498,11 @@ namespace SistemaOdonto
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lbPaciente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAnamnese";
             this.Text = "Ficha Anamnese";
+            this.Load += new System.EventHandler(this.FrmAnamnese_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

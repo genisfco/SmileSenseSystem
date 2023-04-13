@@ -188,12 +188,12 @@ namespace SistemaOdonto
 
         private void btnAbrirAnamnese_Click(object sender, EventArgs e)
         {
-            FrmAnamnese frm = new FrmAnamnese();
+            FrmAnamnese frmAnm = new FrmAnamnese();
 
-            frm.lblCodigo.Text = lblCodigo.Text;
-            frm.txtNome.Text = txtNome.Text;
-            frm.maskCPFPaciente.Text = masktxtCPFPaciente.Text;
-            frm.ShowDialog();
+            frmAnm.lblCodigo.Text = lblCodigo.Text;
+            frmAnm.txtNome.Text = txtNome.Text;
+            frmAnm.maskCPFPaciente.Text = masktxtCPFPaciente.Text;
+            frmAnm.ShowDialog();
 
         }
 

@@ -139,7 +139,7 @@ namespace SistemaOdonto
             catch (Exception ex)
             {
 
-                MessageBox.Show("Erro ao selecionar o dentista " + ex.Message);
+                MessageBox.Show("Erro ao selecionar o Paciente " + ex.Message);
             }
         }
 

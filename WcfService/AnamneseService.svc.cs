@@ -31,10 +31,10 @@ namespace WcfService
             throw new NotImplementedException();
         }
 
-        public IQueryable<Anamnese> Buscar(Paciente paciente)
-        {
-            return rep.Buscar(paciente);
-        }        
+        //public IQueryable<Anamnese> Buscar(Paciente paciente)
+        //{
+        //    return rep.Buscar(paciente);
+        //}        
 
 
         public void Deletar(int id)

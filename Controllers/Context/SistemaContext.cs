@@ -13,16 +13,17 @@ namespace Controllers.Context
 {
     class SistemaContext : DbContext
     {
-        //public SistemaContext() : base("Server = ACERASPIRE - 5\\SQLEXPRESS; Database = SmileSense; Integrated Security = True;")
-        //{
-        //    // BANCO LOCAL  MYSQL Server=localhost;Database=SmileSense;Uid=root;Pwd='1234'; convert zero datetime=True
-        //    // SQL                Server = ACERASPIRE - 5\\SQLEXPRESS; Database = SmileSense; Integrated Security = True
-        //}
-
-        public SistemaContext() : base("workstation id=SmileSense.mssql.somee.com;packet size=4096;user id=genis_SQLLogin_1;pwd=#Tcc2023;data source=SmileSense.mssql.somee.com;persist security info=False;initial catalog=SmileSense")
+        public SistemaContext() : base("Server=ACERASPIRE-5\\SQLEXPRESS;Database=SmileSense;Integrated Security=True;")
         {
-            // BANCO HOSPEDADO
+            // BANCO LOCAL  MYSQL Server=localhost;Database=SmileSense;Uid=root;Pwd='1234'; convert zero datetime=True;
+
+            // BANCO LOCAL  SQL   Server=ACERASPIRE-5\\SQLEXPRESS;Database=SmileSense;Integrated Security=True;
         }
+
+        //public SistemaContext() : base("workstation id=SmileSense.mssql.somee.com;packet size=4096;user id=genis_SQLLogin_1;pwd=#Tcc2023;data source=SmileSense.mssql.somee.com;persist security info=False;initial catalog=SmileSense")
+        //{
+        //    // BANCO HOSPEDADO
+        //}
 
 
 

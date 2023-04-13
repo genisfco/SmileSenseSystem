@@ -21,22 +21,35 @@ namespace Controllers.Repositorios
 
         }
 
+        //BUSCA ANAMNESE PELO ID DA ANAMNESES
+        //public Anamnese Buscar(int id)    
+        //{
+        //    Anamnese obj = new Anamnese();
+        //    using (var ctx = new SistemaContext())
+        //    {
+        //        obj = ctx.Anamneses.Find(id);
+        //    }
+        //    return obj;
+        //}
 
-        public Anamnese Buscar(int id)
+
+        //BUSCA ANAMNESE PELO ID DO PACIENTE
+        public Anamnese Buscar(int idPaciente)
         {
             Anamnese obj = new Anamnese();
             using (var ctx = new SistemaContext())
             {
-                obj = ctx.Anamneses.Find(id);
+                obj = ctx.Anamneses.FirstOrDefault(anm => anm.IdPaciente == idPaciente);
             }
             return obj;
         }
+        ///////////////
+
 
 
         public IQueryable<Anamnese> Buscar(Paciente paciente)
         {
             var ctx = new SistemaContext();
-            Paciente p = new Paciente();
             var Anamneses = ctx.Anamneses.Where(anm => anm.IdPaciente == paciente.Id);
             return Anamneses;
         }    
