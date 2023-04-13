@@ -27,7 +27,7 @@ namespace SistemaOdonto
 
         private bool ValidarForm()
         {
-            // FAZ A VALIDAÇÃO DO FORMULÁRIO ANAMNESE, PARA VERIFICAR SE FOI PREENCHIDO CORRETAMENTE.
+            /// FAZ A VALIDAÇÃO DO FORMULÁRIO ANAMNESE, PARA VERIFICAR SE FOI PREENCHIDO CORRETAMENTE.
             bool FormValido;
 
             if (chboxDiabetesSIM.Checked == true && chboxDiabetesNAO.Checked == true)
