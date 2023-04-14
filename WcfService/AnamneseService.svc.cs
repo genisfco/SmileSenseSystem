@@ -34,7 +34,12 @@ namespace WcfService
         //public IQueryable<Anamnese> Buscar(Paciente paciente)
         //{
         //    return rep.Buscar(paciente);
-        //}        
+        //}
+        //
+        public List<Anamnese> Listar()
+        {
+            return rep.Listar();
+        }
 
 
         public void Deletar(int id)

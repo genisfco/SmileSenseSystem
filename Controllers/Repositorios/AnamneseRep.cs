@@ -18,7 +18,6 @@ namespace Controllers.Repositorios
                 ctx.SaveChanges();
             }
 
-
         }
 
         //BUSCA ANAMNESE PELO ID DA ANAMNESES
@@ -54,6 +53,15 @@ namespace Controllers.Repositorios
         //    return Anamneses;
         //}    
 
+        public List<Anamnese> Listar()
+        {
+            using (var ctx = new SistemaContext())
+            {
+                var Anamneses = (from obj in ctx.Anamneses select obj).OrderBy(x => x.IdPaciente).ToList();
+                return Anamneses;
+            }
+        }
+
 
         public void Deletar(int id)
         {
@@ -64,7 +72,6 @@ namespace Controllers.Repositorios
                 ctx.SaveChanges();
             }
         }
-
 
         public void Editar(Anamnese objNovo)
         {

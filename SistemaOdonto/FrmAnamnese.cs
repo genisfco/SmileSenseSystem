@@ -13,6 +13,7 @@ using System.Xml.Linq;
 using WcfService;
 using Exception = System.Exception;
 
+
 namespace SistemaOdonto
 {
     public partial class FrmAnamnese : Form
@@ -24,7 +25,6 @@ namespace SistemaOdonto
             InitializeComponent();
             btnAtualizarAnm.Visible = false;
         }
-        
 
 
         //    //txtUsoQualMedicamento.Text = this.obj.Medicamento_Continuo.ToString();
@@ -35,8 +35,8 @@ namespace SistemaOdonto
 
 
         private void FrmAnamnese_Load(object sender, EventArgs e)
-        {         
-            
+        {
+
             //    Obter o ID do paciente 
             int idPaciente = int.Parse(lblCodigo.Text);
 
@@ -51,21 +51,110 @@ namespace SistemaOdonto
             //    Verificar se a anamnese foi encontrada
             if (anamnese != null)
             {
-                //Preencher os campos do formulário com os dados da anamnese
+                //Obter os dados da Anamnese e Preencher os campos
                 MessageBox.Show("TESTE- encontrada anamnese");
                 btnSalvarAnamnese.Visible = false;
-                btnAtualizarAnm.Visible = true;
+                btnAtualizarAnm.Visible=true;
 
+                string diabetes = anamnese.Diabetes.ToString();
+                string hipertensao = anamnese.Hipertensao.ToString();
+                string cardiopatia = anamnese.Cardiopatia.ToString();
+                string uso_cont = anamnese.Uso_Continuo.ToString();
+                string medic_cont = anamnese.Medicamento_Continuo.ToString();
+                string alerg_medic = anamnese.Alergia_Medicamento.ToString();
+                string alergqual_medic = anamnese.Alergia_Qual_Medicamento.ToString();
+                string probl_hemor = anamnese.Problemas_Hemorragicos.ToString();                
+                string motivo_probl = anamnese.Motivo_Problemas.ToString(); 
+                string compl_odont = anamnese.Complicacoes_Odonto.ToString();
+                string porq_compl = anamnese.Porque_Complicacoes.ToString();
+                string doen_cong = anamnese.Doenca_Cong.ToString();
+                string qual_doen = anamnese.Qual_Doenca.ToString();
+
+                txtUsoQualMedicamento.Text = medic_cont;
+                txtAlergiaQualMedicamento.Text = alergqual_medic;
+                txtMotivoProblemas.Text = motivo_probl;
+                txtComplicacoes.Text = porq_compl;
+                txtDoenca.Text = qual_doen;
+
+                if (diabetes == "S")
+                {
+                    chboxDiabetesSIM.Checked = true;
+                }
+                else if (diabetes == "N")
+                {
+                    chboxDiabetesNAO.Checked = true;
+                }
+
+                if (hipertensao == "S")
+                {
+                    chboxHipertensaoSIM.Checked = true;
+                }
+                else if (hipertensao == "N")
+                {
+                    chboxHipertensaoNAO.Checked = true;
+                }
+
+                if (cardiopatia == "S")
+                {
+                    chboxCardiopatiaSIM.Checked = true;
+                }
+                else if (cardiopatia == "N")
+                {
+                    chboxCardiopatiaNAO.Checked = true;
+                }
+
+                if (uso_cont == "S")
+                {
+                    chboxUsoMedicamentosSIM.Checked = true;
+                }
+                else if (uso_cont == "N")
+                {
+                    chboxUsoMedicamentosNAO.Checked = true;
+                }
+
+                if (alerg_medic == "S")
+                {
+                    chboxAlergiaMedicamentosaSIM.Checked = true;
+                }
+                else if (alerg_medic == "N")
+                {
+                    chboxAlergiaMedicamentosaNAO.Checked = true;
+                }
+
+                if (probl_hemor == "S")
+                {
+                    chboxProblHemorragSIM.Checked = true;
+                }
+                else if (probl_hemor == "N")
+                {
+                    chboxProblHemorragNAO.Checked = true;
+                }
+
+                if (compl_odont == "S")
+                {
+                    chboxComplOdontoSIM.Checked = true;
+                }
+                else if (compl_odont == "N")
+                {
+                    chboxComplOdontoNAO.Checked = true;
+                }
+
+                if (doen_cong == "S")
+                {
+                    chboxDoencaCongSIM.Checked = true;
+                }
+                else if (doen_cong == "N")
+                {
+                    chboxDoencaCongNAO.Checked = true;
+                }
             }
             else
             {
                 //Se não foi encontrada nenhuma anamnese para o paciente, exibir uma mensagem informando ao usuário
                 MessageBox.Show("Não foi encontrada Anamnese para o Paciente. Preencha e Salve a Ficha Anamnese!");
-            } 
-            
+
+            }
         }
-
-
 
         private bool ValidarForm()
         {

@@ -21,6 +21,8 @@ namespace Interfaces
         //[OperationContract(Name = "BuscarPorPaciente")]
         //IQueryable<Anamnese> Buscar(Anamnese anamnese);   
 
+        [OperationContract]
+        List<Anamnese> Listar();
 
         [OperationContract]
         void Deletar(int id);
