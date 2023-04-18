@@ -20,18 +20,6 @@ namespace Controllers.Repositorios
 
         }
 
-        //BUSCA ANAMNESE PELO ID DA ANAMNESES
-        //public Anamnese Buscar(int id)    
-        //{
-        //    Anamnese obj = new Anamnese();
-        //    using (var ctx = new SistemaContext())
-        //    {
-        //        obj = ctx.Anamneses.Find(id);
-        //    }
-        //    return obj;
-        //}
-
-
         //BUSCA ANAMNESE PELO ID DO PACIENTE
         public Anamnese Buscar(int idPaciente)
         {
@@ -42,16 +30,7 @@ namespace Controllers.Repositorios
             }
             return obj;
         }
-        ///////////////
-
-
-
-        //public IQueryable<Anamnese> Buscar(Paciente paciente)
-        //{
-        //    var ctx = new SistemaContext();
-        //    var Anamneses = ctx.Anamneses.Where(anm => anm.IdPaciente == paciente.Id);
-        //    return Anamneses;
-        //}    
+                
 
         public List<Anamnese> Listar()
         {
@@ -84,7 +63,7 @@ namespace Controllers.Repositorios
                 objAntigo.Cardiopatia = objNovo.Cardiopatia;
                 objAntigo.Uso_Continuo = objNovo.Uso_Continuo;
                 objAntigo.Medicamento_Continuo = objNovo.Medicamento_Continuo;
-                objAntigo.Alergia_Medicamento = objNovo.Medicamento_Continuo;
+                objAntigo.Alergia_Medicamento = objNovo.Alergia_Medicamento;
                 objAntigo.Alergia_Qual_Medicamento = objNovo.Alergia_Qual_Medicamento;
                 objAntigo.Problemas_Hemorragicos = objNovo.Problemas_Hemorragicos;
                 objAntigo.Motivo_Problemas = objNovo.Motivo_Problemas;

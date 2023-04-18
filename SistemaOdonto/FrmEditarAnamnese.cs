@@ -1,5 +1,4 @@
 ﻿using Entidades;
-using SistemaOdonto.WSCorreios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,23 +8,127 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using WcfService;
-using Exception = System.Exception;
-
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemaOdonto
 {
-    public partial class FrmAnamnese : Form
+    public partial class FrmEditarAnamnese : Form
     {
+
+        Anamnese obj = new Anamnese();
         AnamneseService serviceAnm = new AnamneseService();
 
-        public FrmAnamnese()
+
+        public FrmEditarAnamnese(Anamnese obj)
         {
             InitializeComponent();
             lblCodigo.Visible = false;
-        } 
-        
+            lblCodAnm.Visible = false;
+            IniciarFormulario(obj);
+
+        }
+
+        private void IniciarFormulario(Anamnese objA)
+        {
+            //BUSCANDO OS DADOS DA TABELA
+            this.obj = objA;
+
+            string diabetes = this.obj.Diabetes.ToString();
+            string hipertensao = this.obj.Hipertensao.ToString();
+            string cardiopatia = this.obj.Cardiopatia.ToString();
+            string uso_cont = this.obj.Uso_Continuo.ToString();
+            string medic_cont = this.obj.Medicamento_Continuo.ToString();
+            string alerg_medic = this.obj.Alergia_Medicamento.ToString();
+            string alergqual_medic = this.obj.Alergia_Qual_Medicamento.ToString();
+            string probl_hemor = this.obj.Problemas_Hemorragicos.ToString();
+            string motivo_probl = this.obj.Motivo_Problemas.ToString();
+            string compl_odont = this.obj.Complicacoes_Odonto.ToString();
+            string porq_compl = this.obj.Porque_Complicacoes.ToString();
+            string doen_cong = this.obj.Doenca_Cong.ToString();
+            string qual_doen = this.obj.Qual_Doenca.ToString();
+            
+            //ANALISANDO OS DADOS PARA PREENCHER O FORMS
+            if (diabetes == "S")
+            {
+                chboxDiabetesSIM.Checked = true;
+            }
+            else if (diabetes == "N")
+            {
+                chboxDiabetesNAO.Checked = true;
+            }
+
+            if (hipertensao == "S")
+            {
+                chboxHipertensaoSIM.Checked = true;
+            }
+            else if (hipertensao == "N")
+            {
+                chboxHipertensaoNAO.Checked = true;
+            }
+
+            if (cardiopatia == "S")
+            {
+                chboxCardiopatiaSIM.Checked = true;
+            }
+            else if (cardiopatia == "N")
+            {
+                chboxCardiopatiaNAO.Checked = true;
+            }
+
+            if (uso_cont == "S")
+            {
+                chboxUsoMedicamentosSIM.Checked = true;
+            }
+            else if (uso_cont == "N")
+            {
+                chboxUsoMedicamentosNAO.Checked = true;
+            }
+
+            if (alerg_medic == "S")
+            {
+                chboxAlergiaMedicamentosaSIM.Checked = true;
+            }
+            else if (alerg_medic == "N")
+            {
+                chboxAlergiaMedicamentosaNAO.Checked = true;
+            }
+
+            if (probl_hemor == "S")
+            {
+                chboxProblHemorragSIM.Checked = true;
+            }
+            else if (probl_hemor == "N")
+            {
+                chboxProblHemorragNAO.Checked = true;
+            }
+
+            if (compl_odont == "S")
+            {
+                chboxComplOdontoSIM.Checked = true;
+            }
+            else if (compl_odont == "N")
+            {
+                chboxComplOdontoNAO.Checked = true;
+            }
+
+            if (doen_cong == "S")
+            {
+                chboxDoencaCongSIM.Checked = true;
+            }
+            else if (doen_cong == "N")
+            {
+                chboxDoencaCongNAO.Checked = true;
+            }
+
+            txtUsoQualMedicamento.Text = medic_cont;
+            txtAlergiaQualMedicamento.Text = alergqual_medic;
+            txtMotivoProblemas.Text = motivo_probl;
+            txtComplicacoes.Text = porq_compl;
+            txtDoenca.Text = qual_doen;        
+
+        }
 
         private bool ValidarForm()
         {
@@ -52,10 +155,17 @@ namespace SistemaOdonto
                 FormValido = true;
             return FormValido;
         }
-        
 
-        public Anamnese ObjGerado()
+
+        private void btnAtualizarAnm_Click(object sender, EventArgs e)
         {
+            //VERIFICANDO SE O FORM ESTÁ VALIDO
+            if (ValidarForm() == false)
+            {
+                MessageBox.Show("Ficha Anamnese não preenchida corretamente. Verifique campos duplicados!");
+            }
+            else
+            {
                 string diabetes = "X";
                 string hipertensao = "X";
                 string cardiopatia = "X";
@@ -137,46 +247,34 @@ namespace SistemaOdonto
                     doenca_cong = "N";
                 }
 
-                //GERANDO O OBJETO PARA CADASTRAR NO BANCO.
-                Anamnese objAnm = new Anamnese();
-                objAnm.IdPaciente = Convert.ToInt32(lblCodigo.Text);
-                objAnm.Diabetes = diabetes;
-                objAnm.Hipertensao = hipertensao;
-                objAnm.Cardiopatia = cardiopatia;
-                objAnm.Uso_Continuo = uso_continuo;
-                objAnm.Medicamento_Continuo = txtUsoQualMedicamento.Text;
-                objAnm.Alergia_Medicamento = alergia_medic;
-                objAnm.Alergia_Qual_Medicamento = txtAlergiaQualMedicamento.Text;
-                objAnm.Problemas_Hemorragicos = probl_hemorrag;
-                objAnm.Motivo_Problemas = txtMotivoProblemas.Text;
-                objAnm.Complicacoes_Odonto = compl_odonto;
-                objAnm.Porque_Complicacoes = txtComplicacoes.Text;
-                objAnm.Doenca_Cong = doenca_cong;
-                objAnm.Qual_Doenca = txtDoenca.Text;
-
-                return objAnm;
-        }
-
-        private void btnSalvarAnamnese_Click(object sender, EventArgs e)
-        {
-            //VERIFICANDO SE O FORM ESTÁ VALIDO
-            if (ValidarForm() == false)
-            {
-                MessageBox.Show("Ficha Anamnese não preenchida corretamente. Verifique campos duplicados!");
-            }
-            else
-            {
                 try
                 {
-                    serviceAnm.Cadastrar(ObjGerado());
-                    MessageBox.Show("Anamnese do Paciente Cadastrada com Sucesso!");
+                    this.obj.Diabetes = diabetes;
+                    this.obj.Hipertensao = hipertensao;
+                    this.obj.Cardiopatia = cardiopatia;
+                    this.obj.Uso_Continuo = uso_continuo;
+                    this.obj.Medicamento_Continuo = txtUsoQualMedicamento.Text;
+                    this.obj.Alergia_Medicamento = alergia_medic;
+                    this.obj.Alergia_Qual_Medicamento = txtAlergiaQualMedicamento.Text;
+                    this.obj.Problemas_Hemorragicos = probl_hemorrag;
+                    this.obj.Motivo_Problemas = txtMotivoProblemas.Text;
+                    this.obj.Complicacoes_Odonto = compl_odonto;
+                    this.obj.Porque_Complicacoes = txtComplicacoes.Text;
+                    this.obj.Doenca_Cong = doenca_cong;
+                    this.obj.Qual_Doenca = txtDoenca.Text;
+
+                    serviceAnm.Editar(this.obj);
+                    MessageBox.Show("Anamnese do Paciente Atualizada com Sucesso!");
                     this.Close();
+
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao Salvar " + ex.Message);
+                    MessageBox.Show("Erro ao Salvar " + ex.Message);                    
                 }
-            }            
+                
+            }          
+                     
         }
 
         private void btnFecharAnamnese_Click(object sender, EventArgs e)

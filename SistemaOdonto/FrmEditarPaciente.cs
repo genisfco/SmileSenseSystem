@@ -19,6 +19,7 @@ namespace SistemaOdonto
         Paciente obj = new Paciente();
         PacienteService service = new PacienteService();
 
+
         public FrmEditarPaciente(Paciente obj)
         {
             InitializeComponent();
@@ -188,12 +189,37 @@ namespace SistemaOdonto
 
         private void btnAbrirAnamnese_Click(object sender, EventArgs e)
         {
-            FrmAnamnese frmAnm = new FrmAnamnese();
+            //    Obter o ID do paciente 
+            int idPaciente = int.Parse(lblCodigo.Text);
 
-            frmAnm.lblCodigo.Text = lblCodigo.Text;
-            frmAnm.txtNome.Text = txtNome.Text;
-            frmAnm.maskCPFPaciente.Text = masktxtCPFPaciente.Text;
-            frmAnm.ShowDialog();
+            //    Criar uma instância do serviço de anamnese
+            AnamneseService serviceA = new AnamneseService();
+
+            //    Buscar a anamnese do paciente pelo ID do paciente
+            Anamnese anamnese = serviceA.Buscar(idPaciente);
+
+            //    Verificar se a anamnese foi encontrada
+            if (anamnese != null)
+            {
+                FrmEditarAnamnese frmEdtAnm = new FrmEditarAnamnese(anamnese);
+
+                frmEdtAnm.lblCodigo.Text = lblCodigo.Text;
+                frmEdtAnm.lblCodAnm.Text = anamnese.IdAnamnese.ToString();
+                frmEdtAnm.txtNome.Text = txtNome.Text;
+                frmEdtAnm.maskCPFPaciente.Text = masktxtCPFPaciente.Text;
+                frmEdtAnm.ShowDialog();
+            }
+            else if(anamnese == null)
+            {
+                MessageBox.Show("O Paciente não possui Ficha Anamnese. Preencha e Salve a Ficha!");
+
+                FrmAnamnese frmAnm = new FrmAnamnese();
+
+                frmAnm.lblCodigo.Text = lblCodigo.Text;
+                frmAnm.txtNome.Text = txtNome.Text;
+                frmAnm.maskCPFPaciente.Text = masktxtCPFPaciente.Text;
+                frmAnm.ShowDialog();
+            }
 
         }
 

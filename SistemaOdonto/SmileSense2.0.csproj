@@ -112,6 +112,12 @@
     <Compile Include="FrmConsultas.Designer.cs">
       <DependentUpon>FrmConsultas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEditarAnamnese.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarAnamnese.Designer.cs">
+      <DependentUpon>FrmEditarAnamnese.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEditarConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultas.resx">
       <DependentUpon>FrmConsultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarAnamnese.resx">
+      <DependentUpon>FrmEditarAnamnese.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEditarConsulta.resx">
       <DependentUpon>FrmEditarConsulta.cs</DependentUpon>

@@ -46,5 +46,6 @@ namespace WcfService
         {
             rep.Editar(objNovo);
         }
+        
     }
 }

@@ -137,9 +137,9 @@
             this.lblCodigo.Location = new System.Drawing.Point(0, -2);
             this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(27, 20);
+            this.lblCodigo.Size = new System.Drawing.Size(39, 20);
             this.lblCodigo.TabIndex = 35;
-            this.lblCodigo.Text = "01";
+            this.lblCodigo.Text = "cod.";
             // 
             // btnBuscaCEP
             // 

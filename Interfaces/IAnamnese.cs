@@ -18,9 +18,6 @@ namespace Interfaces
         [OperationContract(Name = "BuscarPorIdPacte")]
         Anamnese Buscar(int id);
 
-        //[OperationContract(Name = "BuscarPorPaciente")]
-        //IQueryable<Anamnese> Buscar(Anamnese anamnese);   
-
         [OperationContract]
         List<Anamnese> Listar();
 
