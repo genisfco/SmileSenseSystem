@@ -422,6 +422,9 @@
     <None Include="Resources\odontograma2.21.jpg" />
     <Content Include="Resources\panel1.BackgroundImage.jpg" />
     <Content Include="Resources\panel1.BackgroundImage.png" />
+    <None Include="Resources\penBlack.jpg" />
+    <None Include="Resources\penBlue.jpg" />
+    <None Include="Resources\penRed2.0.jpg" />
     <Content Include="Resources\sair.ico" />
   </ItemGroup>
   <ItemGroup>

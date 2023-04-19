@@ -124,14 +124,14 @@
   <data name="btnConsulta.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnConsulta.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnLimpar.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnLimpar.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="agendasToolStripMenuItem.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agendasToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Circle_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Circle_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Circle_Orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Circle_Orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnExcluir.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnExcluir.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,11 +139,11 @@
   <data name="btnEditar.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnEditar.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="odontograma2.2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\odontograma2.2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="panel11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panel1.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnSalvar.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnSalvar.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MAjuda.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MAjuda.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,14 +151,20 @@
   <data name="Circle_Grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Circle_Grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="panel1.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel1.BackgroundImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btnEditar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnEditar.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Circle_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Circle_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="panel1.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\panel1.BackgroundImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnSalvar.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSalvar.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="odontograma21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\odontograma2.21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MSair.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSair.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +172,8 @@
   <data name="address171" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\address171.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Circle_Orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Circle_Orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnLimpar.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnLimpar.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Circle_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Circle_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,10 +181,13 @@
   <data name="Circle_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Circle_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="odontograma2.2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\odontograma2.2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="penBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\penBlack.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="odontograma21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\odontograma2.21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="penBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\penBlue.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="penRed2.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\penRed2.0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
