@@ -14,10 +14,11 @@ using System.Windows.Forms;
 
 namespace SistemaOdonto
 {
-
+    
     
     public partial class FrmOdontograma : Form
-    {
+    {       
+        
         //OPÇÃO DE CORES PARA DESENHO
         private Color color1 = Color.Black;
         private Color color2 = Color.Blue;
@@ -38,12 +39,15 @@ namespace SistemaOdonto
             _bitmap = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
             pbImgOdontograma.Image = _bitmap;
             Stack<Bitmap> undoStack = new Stack<Bitmap>();
+
+            btnUndoCircle.Visible = false;
+            btnUndo.Visible = false;
+            btnColor.Enabled = false;
         }
 
 
         private void pbImgOdontograma_MouseDown(object sender, MouseEventArgs e)
-        {
-            
+        {            
             _isDrawing = true;
             _startPoint = e.Location;
         }
@@ -65,13 +69,14 @@ namespace SistemaOdonto
                 _startPoint = e.Location;
                 pbImgOdontograma.Invalidate();
             }            
-        }       
-
-        
+        }        
 
         //ESCOLHER OUTRAS CORES
         private void btnColor_Click(object sender, EventArgs e)
         {
+            btnUndoCircle.Visible=false;
+            btnUndo.Visible = true;
+
             ColorDialog colorDialog = new ColorDialog();
 
             if (colorDialog.ShowDialog() == DialogResult.OK)
@@ -88,9 +93,11 @@ namespace SistemaOdonto
             pbPenBlue.BorderStyle = BorderStyle.Fixed3D;
             pbPenRed.BorderStyle = BorderStyle.Fixed3D;
             pbCircle.BorderStyle = BorderStyle.FixedSingle;
+            btnUndoCircle.Visible = true;
+            btnUndo.Visible = false;
+            btnColor.Enabled = false;
 
             _pen.Color = Color.Green;
-
         }
 
 
@@ -101,6 +108,9 @@ namespace SistemaOdonto
             pbPenBlue.BorderStyle = BorderStyle.Fixed3D;
             pbPenRed.BorderStyle = BorderStyle.Fixed3D;
             pbCircle.BorderStyle = BorderStyle.Fixed3D;
+            btnUndo.Visible = true;
+            btnUndoCircle.Visible = false;
+            btnColor.Enabled = true;
 
             _pen.Color = color1;
         }
@@ -111,7 +121,9 @@ namespace SistemaOdonto
             pbPenBlue.BorderStyle = BorderStyle.FixedSingle;
             pbPenRed.BorderStyle = BorderStyle.Fixed3D;
             pbCircle.BorderStyle = BorderStyle.Fixed3D;
-
+            btnUndo.Visible = true;
+            btnUndoCircle.Visible = false;
+            btnColor.Enabled = true;
 
             _pen.Color = color2;
         }
@@ -122,35 +134,35 @@ namespace SistemaOdonto
             pbPenBlue.BorderStyle = BorderStyle.Fixed3D;
             pbPenRed.BorderStyle = BorderStyle.FixedSingle;
             pbCircle.BorderStyle = BorderStyle.Fixed3D;
-
+            btnUndo.Visible = true;
+            btnUndoCircle.Visible = false;
+            btnColor.Enabled = true;
 
             _pen.Color = color3;
         }
         ///////////////////////////////////////////////////////////////
-        
+
+        private void btnUndoCircle_Click(object sender, EventArgs e)
+        {
+            int numUndos = 1; // Defina o número de traços a serem desfeitos
+            while (_undoStack.Count > 0 && numUndos > 0)
+            {
+                _bitmap = _undoStack.Pop();
+                numUndos--;
+            }
+            pbImgOdontograma.Image = _bitmap;
+            pbImgOdontograma.Invalidate();
+        }
+
+
         private void btnUndo_Click(object sender, EventArgs e)
         {
-            if(pbCircle.BorderStyle == BorderStyle.FixedSingle)
+            int numUndos = 10; // Defina o número de traços a serem desfeitos
+            while (_undoStack.Count > 0 && numUndos > 0)
             {
-                int numUndos = 1; // Defina o número de traços a serem desfeitos
-                while (_undoStack.Count > 0 && numUndos > 0)
-                {
-                    _bitmap = _undoStack.Pop();
-                    numUndos--;
-                }
+                _bitmap = _undoStack.Pop();
+                numUndos--;
             }
-            else if (pbPenBlack.BorderStyle == BorderStyle.FixedSingle || pbPenBlue.BorderStyle == BorderStyle.FixedSingle || pbPenRed.BorderStyle == BorderStyle.FixedSingle)
-            {
-                int numUndos = 10; // Defina o número de traços a serem desfeitos
-                while (_undoStack.Count > 0 && numUndos > 0)
-                {
-                    _bitmap = _undoStack.Pop();
-                    numUndos--;
-                }
-
-            }
-
-            
             pbImgOdontograma.Image = _bitmap;
             pbImgOdontograma.Invalidate();
         }
@@ -221,9 +233,6 @@ namespace SistemaOdonto
                 pbImgOdontograma.Invalidate();
             }
         }
-
-        
-
 
 
         ////////////////////////////////////////////////////////////

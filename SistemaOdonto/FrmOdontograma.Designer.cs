@@ -82,6 +82,7 @@ namespace SistemaOdonto
             this.pbPenBlue = new System.Windows.Forms.PictureBox();
             this.pbPenRed = new System.Windows.Forms.PictureBox();
             this.pbCircle = new System.Windows.Forms.PictureBox();
+            this.btnUndoCircle = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -568,9 +569,9 @@ namespace SistemaOdonto
             // 
             // btnUndo
             // 
-            this.btnUndo.Location = new System.Drawing.Point(466, 101);
+            this.btnUndo.Location = new System.Drawing.Point(330, 89);
             this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(76, 29);
+            this.btnUndo.Size = new System.Drawing.Size(86, 41);
             this.btnUndo.TabIndex = 97;
             this.btnUndo.Text = "Desfazer";
             this.btnUndo.UseVisualStyleBackColor = true;
@@ -578,9 +579,9 @@ namespace SistemaOdonto
             // 
             // btnColor
             // 
-            this.btnColor.Location = new System.Drawing.Point(280, 89);
+            this.btnColor.Location = new System.Drawing.Point(252, 89);
             this.btnColor.Name = "btnColor";
-            this.btnColor.Size = new System.Drawing.Size(103, 41);
+            this.btnColor.Size = new System.Drawing.Size(59, 41);
             this.btnColor.TabIndex = 93;
             this.btnColor.Text = "Cores";
             this.btnColor.UseVisualStyleBackColor = true;
@@ -601,7 +602,7 @@ namespace SistemaOdonto
             this.pbPenBlack.BackColor = System.Drawing.Color.Black;
             this.pbPenBlack.BackgroundImage = global::SistemaOdonto.Properties.Resources.penBlack;
             this.pbPenBlack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPenBlack.Location = new System.Drawing.Point(110, 89);
+            this.pbPenBlack.Location = new System.Drawing.Point(82, 89);
             this.pbPenBlack.Name = "pbPenBlack";
             this.pbPenBlack.Size = new System.Drawing.Size(36, 41);
             this.pbPenBlack.TabIndex = 94;
@@ -629,7 +630,7 @@ namespace SistemaOdonto
             this.pbPenBlue.BackColor = System.Drawing.Color.Black;
             this.pbPenBlue.BackgroundImage = global::SistemaOdonto.Properties.Resources.penBlue;
             this.pbPenBlue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPenBlue.Location = new System.Drawing.Point(166, 89);
+            this.pbPenBlue.Location = new System.Drawing.Point(138, 89);
             this.pbPenBlue.Name = "pbPenBlue";
             this.pbPenBlue.Size = new System.Drawing.Size(36, 41);
             this.pbPenBlue.TabIndex = 98;
@@ -641,7 +642,7 @@ namespace SistemaOdonto
             this.pbPenRed.BackColor = System.Drawing.Color.Black;
             this.pbPenRed.BackgroundImage = global::SistemaOdonto.Properties.Resources.penRed2_0;
             this.pbPenRed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPenRed.Location = new System.Drawing.Point(220, 89);
+            this.pbPenRed.Location = new System.Drawing.Point(192, 89);
             this.pbPenRed.Name = "pbPenRed";
             this.pbPenRed.Size = new System.Drawing.Size(36, 41);
             this.pbPenRed.TabIndex = 99;
@@ -660,11 +661,22 @@ namespace SistemaOdonto
             this.pbCircle.TabStop = false;
             this.pbCircle.Click += new System.EventHandler(this.pbCircle_Click);
             // 
+            // btnUndoCircle
+            // 
+            this.btnUndoCircle.Location = new System.Drawing.Point(330, 89);
+            this.btnUndoCircle.Name = "btnUndoCircle";
+            this.btnUndoCircle.Size = new System.Drawing.Size(86, 41);
+            this.btnUndoCircle.TabIndex = 101;
+            this.btnUndoCircle.Text = "Desfazer";
+            this.btnUndoCircle.UseVisualStyleBackColor = true;
+            this.btnUndoCircle.Click += new System.EventHandler(this.btnUndoCircle_Click);
+            // 
             // FrmOdontograma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1832, 778);
+            this.Controls.Add(this.btnUndoCircle);
             this.Controls.Add(this.pbCircle);
             this.Controls.Add(this.pbPenRed);
             this.Controls.Add(this.pbPenBlue);
@@ -767,5 +779,6 @@ namespace SistemaOdonto
         private System.Windows.Forms.PictureBox pbPenBlue;
         private System.Windows.Forms.PictureBox pbPenRed;
         private System.Windows.Forms.PictureBox pbCircle;
+        private System.Windows.Forms.Button btnUndoCircle;
     }
 }

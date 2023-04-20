@@ -52,7 +52,6 @@ namespace SistemaOdonto
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Erro ao carregar a lista!" + ex.Message);
             }
         }
@@ -74,7 +73,6 @@ namespace SistemaOdonto
             if(con == null)
             {
                 MessageBox.Show("Este dentista não tem pacientes hoje!!");
-
             }
             else
             {
