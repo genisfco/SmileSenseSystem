@@ -14,7 +14,6 @@ namespace SistemaOdonto
 {
     public partial class FrmPrincipal : Form
     {
-
         ConsultaService service = new ConsultaService();
         DentistaService serviceD = new DentistaService();
         PacienteService serviceP = new PacienteService();
@@ -22,12 +21,15 @@ namespace SistemaOdonto
         public FrmPrincipal()
         {
             InitializeComponent();
+
+            FrmLogin login = new FrmLogin(this);
+            login.ShowDialog();
+
             IniciarFormulario();
         }
 
         private void IniciarFormulario()
         {
-
             atualizarCb();
         }
 
@@ -252,6 +254,46 @@ namespace SistemaOdonto
         {
             FrmDadosPaciente frm = new FrmDadosPaciente();
             frm.ShowDialog();
+        }
+
+        private void stripNovoUser_Click(object sender, EventArgs e)
+        {
+            if (Globais.Global.logado == true)
+            {
+                if (Globais.Global.nivel == 3)
+                {
+                    FrmNovoUser abrirTelaNovoUser = new FrmNovoUser();
+                    abrirTelaNovoUser.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Acesso não permitido!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Necessário ter um Usuário logado!");
+            }
+        }
+
+        private void stripGestaoUser_Click(object sender, EventArgs e)
+        {
+            if (Globais.Global.logado == true)
+            {
+                if (Globais.Global.nivel == 3)
+                {
+                    FrmGestaoUser abrirTelaGestaoUsers = new FrmGestaoUser();
+                    abrirTelaGestaoUsers.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Acesso não permitido!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Necessário ter um Usuário logado!");
+            }
         }
     }
 }
