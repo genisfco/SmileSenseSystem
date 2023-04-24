@@ -19,7 +19,7 @@ namespace Globais
 
         private static MySqlConnection ConexaoBanco()
         {
-            string connection_mysql = @"Server=localhost;Database=smilesenseusers;Uid=root;Pwd='1234'";
+            string connection_mysql = @"Server=localhost; Database=smilesenseusers; Uid=root; Pwd='1234'";
 
             MySqlConnection msConnection = new MySqlConnection();
             msConnection.ConnectionString = connection_mysql;
@@ -69,6 +69,7 @@ namespace Globais
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 throw ex;
               
             }
