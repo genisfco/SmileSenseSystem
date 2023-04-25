@@ -1,31 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using System.Data;
-using System.Windows;
 using System.Windows.Forms;
-using Globais;
-//using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Globais
 {
     public class DataConnection
     {
-        private static MySqlConnection msConnection;
+        public static MySqlConnection msConnection;
 
         private static MySqlConnection ConexaoBanco()
         {
-            string connection_mysql = @"Server=localhost; Database=smilesenseusers; Uid=root; Pwd='1234'";
+            string connection_mysql = @"Server =localhost;Database=smilesenseusers;Uid=root;Pwd=1234";
 
             MySqlConnection msConnection = new MySqlConnection();
             msConnection.ConnectionString = connection_mysql;
-            msConnection.Open();
-
-            return msConnection;
+            try { 
+                msConnection.Open();
+                return msConnection;
+            } 
+            catch (Exception err) { 
+                MessageBox.Show(err.Message);
+                return null;
+            }        
         }
 
 
@@ -60,6 +57,11 @@ namespace Globais
             try
             {
                 var vcon = ConexaoBanco();
+                if (vcon==null)
+                {
+                    MessageBox.Show("Não foi possivel estabelecer a conexão com o banco de dados");
+                    return null;
+                }
                 var cmd = vcon.CreateCommand();
                 cmd.CommandText = sql;
                 msdAdapter = new MySqlDataAdapter(cmd.CommandText, vcon);
@@ -69,11 +71,8 @@ namespace Globais
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 throw ex;
-              
             }
-
         }
 
 
@@ -102,9 +101,9 @@ namespace Globais
                 MessageBox.Show("Novo Usuário Cadastrado!");
                 vcon.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao gravar novo usuário!");
+                MessageBox.Show("Erro ao gravar novo usuário!" + ex);
             }
         }
 
@@ -227,7 +226,8 @@ namespace Globais
                 throw ex;
             }
         }
-        
     }
-
 }
+        // FIM DAS FUNÇOES TELA GESTÃO USUARIOS
+
+

@@ -34,10 +34,8 @@ namespace SistemaOdonto
                 return;
             }
 
-
-            string sql = "SELECT * FROM usuarios WHERE username='" + username + "' AND senha_user='" + senha + "'";
+            string sql = "SELECT * FROM Usuarios WHERE username='" + username + "' AND senha_user='" + senha + "'";
             dt = DataConnection.consulta(sql);
-
 
 
             if (dt.Rows.Count == 1)
@@ -46,8 +44,8 @@ namespace SistemaOdonto
                 frmPrincipal.lb_NomeUsuario.Text = dt.Rows[0].Field<string>("nome_user");
                 frmPrincipal.pb_ledLogado.Image = Properties.Resources.Circle_Green;
 
-                Globais.Global.nivel = int.Parse(dt.Rows[0].Field<int>("nivel_user").ToString());
-                Globais.Global.logado = true;
+                Global.nivel = int.Parse(dt.Rows[0].Field<int>("nivel_user").ToString());
+                Global.logado = true;
 
                 this.Close();
             }

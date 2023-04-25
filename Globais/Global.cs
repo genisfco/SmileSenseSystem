@@ -15,12 +15,12 @@ namespace Globais
 }
 
 
-    /* DADOS DA TABELA USUARIOS
-    id_user
-    nome_user
-    username
-    senha_user
-    status_user
-    nivel_user
-     */
 
+/* DADOS DA TABELA USUARIOS
+id_user
+nome_user
+username
+senha_user
+status_user
+nivel_user
+ */
