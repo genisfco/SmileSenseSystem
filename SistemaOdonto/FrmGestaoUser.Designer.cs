@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_Usuarios = new System.Windows.Forms.DataGridView();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnExcluirUser = new System.Windows.Forms.Button();
@@ -59,14 +59,14 @@
             // 
             this.dgv_Usuarios.AllowUserToAddRows = false;
             this.dgv_Usuarios.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Usuarios.EnableHeadersVisualStyles = false;
             this.dgv_Usuarios.Location = new System.Drawing.Point(359, 30);
@@ -77,16 +77,16 @@
             this.dgv_Usuarios.RowHeadersWidth = 62;
             this.dgv_Usuarios.RowTemplate.Height = 28;
             this.dgv_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Usuarios.Size = new System.Drawing.Size(507, 296);
+            this.dgv_Usuarios.Size = new System.Drawing.Size(423, 296);
             this.dgv_Usuarios.TabIndex = 46;
             this.dgv_Usuarios.SelectionChanged += new System.EventHandler(this.dgv_Usuarios_SelectionChanged);
             // 
             // btnFechar
             // 
             this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFechar.Location = new System.Drawing.Point(687, 3);
+            this.btnFechar.Location = new System.Drawing.Point(632, 3);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(179, 45);
+            this.btnFechar.Size = new System.Drawing.Size(151, 45);
             this.btnFechar.TabIndex = 3;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
@@ -123,7 +123,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 365);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(869, 54);
+            this.panel1.Size = new System.Drawing.Size(800, 54);
             this.panel1.TabIndex = 45;
             // 
             // btnNovoUser
@@ -287,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 419);
+            this.ClientSize = new System.Drawing.Size(800, 419);
             this.Controls.Add(this.dgv_Usuarios);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label9);
@@ -306,7 +306,7 @@
             this.Controls.Add(this.txt_Username);
             this.Controls.Add(this.txt_NomeUsuario);
             this.Name = "FrmGestaoUser";
-            this.Text = "FrmGestaoUser";
+            this.Text = "Gestão de Usuários";
             this.Load += new System.EventHandler(this.FrmGestaoUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Usuarios)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -254,7 +254,7 @@
             this.Controls.Add(this.txt_Username);
             this.Controls.Add(this.txt_NomeUsuario);
             this.Name = "FrmNovoUser";
-            this.Text = "FrmNovoUser";
+            this.Text = "Novo Usuário";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nup_Nivel)).EndInit();
             this.ResumeLayout(false);

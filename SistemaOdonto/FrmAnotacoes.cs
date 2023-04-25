@@ -12,7 +12,6 @@ namespace SistemaOdonto
 {
     public partial class FrmAnotacoes : Form
     {
-
         public string texto { get; set; }
         public Color cor { get; set; }
 
@@ -25,9 +24,7 @@ namespace SistemaOdonto
         {
             this.BackColor = Color.FromArgb(252, 254, 156);
             this.cor = Color.FromArgb(252, 254, 156);
-        }
-
-      
+        }    
 
 
 

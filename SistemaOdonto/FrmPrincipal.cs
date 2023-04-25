@@ -164,7 +164,7 @@ namespace SistemaOdonto
 
         private void menuSair_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            
         }
 
         
@@ -227,16 +227,16 @@ namespace SistemaOdonto
             frm.ShowDialog();
 
             RichTextBox post = new RichTextBox();
-            post.ReadOnly = true;
+            post.ReadOnly = false;
             post.BorderStyle = BorderStyle.None;
             post.Font = new Font(FontFamily.GenericSansSerif, 15F);
             post.ForeColor = Color.FromArgb(64, 64, 64);
-            post.Width = 200;
-            post.Height = 200;
+            post.Width = 150;
+            post.Height = 150;
             post.BackColor = frm.cor;
             post.Text = frm.texto;
             anot.Controls.Add(post);
-     
+
         }
 
         private void cbDentista_Click(object sender, EventArgs e)
@@ -293,6 +293,36 @@ namespace SistemaOdonto
             else
             {
                 MessageBox.Show("Necessário ter um Usuário logado!");
+            }
+        }
+
+        private void MSair_Click(object sender, EventArgs e)
+        {           
+
+            if (MessageBox.Show("Tem certeza de que deseja sair?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                lb_Acesso.Text = "0";
+                lb_NomeUsuario.Text = "---";
+                pb_ledLogado.Image = Properties.Resources.Circle_Red;
+
+                Globais.Global.nivel = 0;
+                Globais.Global.logado = false;
+
+                Application.Exit();
+            }            
+        }
+
+        private void btnLimparNotes_Click(object sender, EventArgs e)
+        {
+            // Itera sobre todos os controles dentro do painel anot.Controls
+            foreach (Control control in anot.Controls)
+            {
+                // Verifica se o controle é uma instância da classe RichTextBox
+                if (control is RichTextBox)
+                {
+                    // Remove o controle
+                    anot.Controls.Remove(control);
+                }
             }
         }
     }

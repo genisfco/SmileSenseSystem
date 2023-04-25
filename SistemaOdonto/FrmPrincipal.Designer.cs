@@ -41,10 +41,9 @@
             this.MAjuda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSuporte = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stripGestaoUser = new System.Windows.Forms.ToolStripMenuItem();
             this.stripNovoUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.stripGestaoUser = new System.Windows.Forms.ToolStripMenuItem();
             this.MSair = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.cbDentista = new System.Windows.Forms.ComboBox();
             this.dg = new System.Windows.Forms.DataGridView();
@@ -56,13 +55,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.anot = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlBarraLogin = new System.Windows.Forms.Panel();
             this.lb_NomeUsuario = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.lb_Acesso = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.pb_ledLogado = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLimparNotes = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.pnlBarraLogin.SuspendLayout();
@@ -83,7 +83,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(2055, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1294, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,8 +94,9 @@
             this.menuDentista,
             this.menuPaciente});
             this.cadastrosToolStripMenuItem.Image = global::SistemaOdonto.Properties.Resources.cadastrosToolStripMenuItem_Image;
+            this.cadastrosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(127, 29);
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(119, 29);
             this.cadastrosToolStripMenuItem.Text = "Cadastrar";
             // 
             // menuConsulta
@@ -147,8 +148,9 @@
             this.agendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAgConsultas});
             this.agendasToolStripMenuItem.Image = global::SistemaOdonto.Properties.Resources.agendasToolStripMenuItem_Image;
+            this.agendasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.agendasToolStripMenuItem.Name = "agendasToolStripMenuItem";
-            this.agendasToolStripMenuItem.Size = new System.Drawing.Size(114, 29);
+            this.agendasToolStripMenuItem.Size = new System.Drawing.Size(106, 29);
             this.agendasToolStripMenuItem.Text = "Agenda";
             // 
             // menuAgConsultas
@@ -163,8 +165,9 @@
             this.MAjuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuSuporte});
             this.MAjuda.Image = global::SistemaOdonto.Properties.Resources.MAjuda_Image;
+            this.MAjuda.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MAjuda.Name = "MAjuda";
-            this.MAjuda.Size = new System.Drawing.Size(98, 29);
+            this.MAjuda.Size = new System.Drawing.Size(90, 29);
             this.MAjuda.Text = "Ajuda";
             // 
             // menuSuporte
@@ -183,35 +186,28 @@
             this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             // 
-            // stripGestaoUser
-            // 
-            this.stripGestaoUser.Name = "stripGestaoUser";
-            this.stripGestaoUser.Size = new System.Drawing.Size(270, 34);
-            this.stripGestaoUser.Text = "Gestão de Usuários";
-            this.stripGestaoUser.Click += new System.EventHandler(this.stripGestaoUser_Click);
-            // 
             // stripNovoUser
             // 
             this.stripNovoUser.Name = "stripNovoUser";
-            this.stripNovoUser.Size = new System.Drawing.Size(270, 34);
+            this.stripNovoUser.Size = new System.Drawing.Size(267, 34);
             this.stripNovoUser.Text = "Novo Usuário";
             this.stripNovoUser.Click += new System.EventHandler(this.stripNovoUser_Click);
             // 
+            // stripGestaoUser
+            // 
+            this.stripGestaoUser.Name = "stripGestaoUser";
+            this.stripGestaoUser.Size = new System.Drawing.Size(267, 34);
+            this.stripGestaoUser.Text = "Gestão de Usuários";
+            this.stripGestaoUser.Click += new System.EventHandler(this.stripGestaoUser_Click);
+            // 
             // MSair
             // 
-            this.MSair.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuSair});
             this.MSair.Image = global::SistemaOdonto.Properties.Resources.MSair_Image;
+            this.MSair.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MSair.Name = "MSair";
-            this.MSair.Size = new System.Drawing.Size(81, 29);
+            this.MSair.Size = new System.Drawing.Size(73, 29);
             this.MSair.Text = "Sair";
-            // 
-            // menuSair
-            // 
-            this.menuSair.Name = "menuSair";
-            this.menuSair.Size = new System.Drawing.Size(143, 34);
-            this.menuSair.Text = "Sair";
-            this.menuSair.Click += new System.EventHandler(this.menuSair_Click);
+            this.MSair.Click += new System.EventHandler(this.MSair_Click);
             // 
             // label1
             // 
@@ -249,7 +245,7 @@
             this.dg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dg.Name = "dg";
             this.dg.RowHeadersWidth = 62;
-            this.dg.Size = new System.Drawing.Size(486, 1108);
+            this.dg.Size = new System.Drawing.Size(486, 816);
             this.dg.TabIndex = 3;
             this.dg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_CellContentClick);
             // 
@@ -294,7 +290,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(550, 562);
+            this.label2.Location = new System.Drawing.Point(550, 443);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 25);
@@ -308,10 +304,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(681, 558);
+            this.button1.Location = new System.Drawing.Point(664, 439);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 35);
+            this.button1.Size = new System.Drawing.Size(49, 35);
             this.button1.TabIndex = 6;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = false;
@@ -319,20 +315,12 @@
             // 
             // anot
             // 
-            this.anot.Location = new System.Drawing.Point(555, 609);
+            this.anot.AutoScroll = true;
+            this.anot.Location = new System.Drawing.Point(555, 473);
             this.anot.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.anot.Name = "anot";
-            this.anot.Size = new System.Drawing.Size(1245, 692);
+            this.anot.Size = new System.Drawing.Size(1245, 456);
             this.anot.TabIndex = 7;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::SistemaOdonto.Properties.Resources.panel11;
-            this.panel1.Location = new System.Drawing.Point(555, 63);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1500, 462);
-            this.panel1.TabIndex = 4;
             // 
             // pnlBarraLogin
             // 
@@ -343,9 +331,9 @@
             this.pnlBarraLogin.Controls.Add(this.label26);
             this.pnlBarraLogin.Controls.Add(this.pb_ledLogado);
             this.pnlBarraLogin.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBarraLogin.Location = new System.Drawing.Point(0, 1301);
+            this.pnlBarraLogin.Location = new System.Drawing.Point(0, 937);
             this.pnlBarraLogin.Name = "pnlBarraLogin";
-            this.pnlBarraLogin.Size = new System.Drawing.Size(2055, 38);
+            this.pnlBarraLogin.Size = new System.Drawing.Size(1294, 38);
             this.pnlBarraLogin.TabIndex = 29;
             // 
             // lb_NomeUsuario
@@ -386,6 +374,7 @@
             // 
             // pb_ledLogado
             // 
+            this.pb_ledLogado.Image = global::SistemaOdonto.Properties.Resources.Circle_Red;
             this.pb_ledLogado.Location = new System.Drawing.Point(4, 4);
             this.pb_ledLogado.Name = "pb_ledLogado";
             this.pb_ledLogado.Size = new System.Drawing.Size(30, 31);
@@ -393,13 +382,38 @@
             this.pb_ledLogado.TabIndex = 0;
             this.pb_ledLogado.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::SistemaOdonto.Properties.Resources.banner2_2;
+            this.panel1.Location = new System.Drawing.Point(555, 63);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1245, 366);
+            this.panel1.TabIndex = 4;
+            // 
+            // btnLimparNotes
+            // 
+            this.btnLimparNotes.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLimparNotes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimparNotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimparNotes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLimparNotes.Location = new System.Drawing.Point(721, 439);
+            this.btnLimparNotes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLimparNotes.Name = "btnLimparNotes";
+            this.btnLimparNotes.Size = new System.Drawing.Size(49, 35);
+            this.btnLimparNotes.TabIndex = 30;
+            this.btnLimparNotes.Text = "-";
+            this.btnLimparNotes.UseVisualStyleBackColor = false;
+            this.btnLimparNotes.Click += new System.EventHandler(this.btnLimparNotes_Click);
+            // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1392, 975);
+            this.ClientSize = new System.Drawing.Size(1294, 975);
+            this.Controls.Add(this.btnLimparNotes);
             this.Controls.Add(this.pnlBarraLogin);
             this.Controls.Add(this.anot);
             this.Controls.Add(this.button1);
@@ -438,7 +452,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuConsulta;
         private System.Windows.Forms.ToolStripMenuItem menuAgConsultas;
         private System.Windows.Forms.ToolStripMenuItem menuSuporte;
-        private System.Windows.Forms.ToolStripMenuItem menuSair;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbDentista;
         private System.Windows.Forms.DataGridView dg;
@@ -454,15 +467,16 @@
         private System.Windows.Forms.ToolStripMenuItem consultarDadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuDadosDentistas;
         private System.Windows.Forms.ToolStripMenuItem menuDadosPacientes;
+        private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stripGestaoUser;
+        private System.Windows.Forms.ToolStripMenuItem stripNovoUser;
         private System.Windows.Forms.Panel pnlBarraLogin;
         public System.Windows.Forms.Label lb_NomeUsuario;
         private System.Windows.Forms.Label label24;
         public System.Windows.Forms.Label lb_Acesso;
         private System.Windows.Forms.Label label26;
         public System.Windows.Forms.PictureBox pb_ledLogado;
-        private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stripGestaoUser;
-        private System.Windows.Forms.ToolStripMenuItem stripNovoUser;
+        private System.Windows.Forms.Button btnLimparNotes;
     }
 }
 
