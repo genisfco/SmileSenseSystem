@@ -90,17 +90,17 @@ namespace SistemaOdonto
 
 
 
-            //_isDrawing = false;
+            _isDrawing = false;
 
-            //// Determine qual dente foi selecionado
-            //foreach (var checkBox in _checkboxes)
-            //{
-            //    if (checkBox.Tag != null && checkBox.Tag.ToString() == "dente" + e.X + "," + e.Y)
-            //    {
-            //        checkBox.Checked = true;
-            //        break;
-            //    }
-            //}
+            // Determine qual dente foi selecionado
+            foreach (var checkBox in _checkboxes)
+            {
+                if (checkBox.Tag != null && checkBox.Tag.ToString() == "dente" + e.X + "," + e.Y)
+                {
+                    checkBox.Checked = true;
+                    break;
+                }
+            }
         }
 
 
@@ -383,7 +383,7 @@ namespace SistemaOdonto
             this.Close();
         }
 
-        private void cboxElementos_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboxElementos_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             // Limpa a cboxFaces
             cboxFaces.Items.Clear();
@@ -391,17 +391,17 @@ namespace SistemaOdonto
             // Verifica o valor selecionado na cboxElementos
             switch (cboxElementos.SelectedItem.ToString())
             {
-                case "11":                    
-                case "12":                    
+                case "11":
+                case "12":
                 case "13":
                 case "21":
                 case "22":
-                case "23":                    
+                case "23":
                     cboxFaces.Items.Add("Mesial");
                     cboxFaces.Items.Add("Distal");
                     cboxFaces.Items.Add("Vestibular");
                     cboxFaces.Items.Add("Palatina");
-                    break;                
+                    break;
 
                 case "31":
                 case "32":
@@ -429,9 +429,9 @@ namespace SistemaOdonto
                     cboxFaces.Items.Add("Distal");
                     cboxFaces.Items.Add("Vestibular");
                     cboxFaces.Items.Add("Palatina");
-                    cboxFaces.Items.Add("Oclusal");                    
+                    cboxFaces.Items.Add("Oclusal");
                     break;
-                
+
                 case "34":
                 case "35":
                 case "36":
@@ -446,15 +446,18 @@ namespace SistemaOdonto
                     cboxFaces.Items.Add("Distal");
                     cboxFaces.Items.Add("Vestibular");
                     cboxFaces.Items.Add("Lingual");
-                    cboxFaces.Items.Add("Oclusal");                    
+                    cboxFaces.Items.Add("Oclusal");
                     break;
 
                 default:
                     // Adiciona um valor padrão na cboxFaces
-                    cboxFaces.Items.Add("Selecione o Elemento");                        
+                    cboxFaces.Items.Add("Selecione o Elemento");
                     break;
             }
+
         }
+
+       
 
         private void cboxEspecialidade_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -505,7 +508,6 @@ namespace SistemaOdonto
                     cboxProcedimento.Items.Add("Frenulectonia Labial");
                     cboxProcedimento.Items.Add("Frenulotomia Labial");
                     cboxProcedimento.Items.Add("Frenulotomia Lingual");
-                    cboxProcedimento.Items.Add("dkjhd");
                     break;
 
                 default:
@@ -520,6 +522,11 @@ namespace SistemaOdonto
         {
             e.KeyChar = char.ToUpper(e.KeyChar);
         }
+
+        
+
+
+
 
 
 

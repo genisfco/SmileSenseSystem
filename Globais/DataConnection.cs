@@ -1,20 +1,21 @@
 ﻿using System;
-using MySql.Data.MySqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Globais
 {
     public class DataConnection
     {
-        public static MySqlConnection msConnection;
+        public static SqlConnection msConnection;
 
-        private static MySqlConnection ConexaoBanco()
+        private static SqlConnection ConexaoBanco()
         {
-            string connection_mysql = @"Server =localhost;Database=smilesenseusers;Uid=root;Pwd=1234";
+            string connection_sql = @"Server=ACERASPIRE-5\SQLEXPRESS;Database=SmileSense;Integrated Security=True;";
+            //string connection_sql = @"Server =localhost;Database=smilesenseusers;Uid=root;Pwd=1234";
 
-            MySqlConnection msConnection = new MySqlConnection();
-            msConnection.ConnectionString = connection_mysql;
+            SqlConnection msConnection = new SqlConnection();
+            msConnection.ConnectionString = connection_sql;
             try { 
                 msConnection.Open();
                 return msConnection;
@@ -28,7 +29,7 @@ namespace Globais
 
         public static DataTable ObterTodosUsuarios()
         {
-            MySqlDataAdapter msdAdapter = null;
+            SqlDataAdapter msdAdapter = null;
             DataTable dt = new DataTable();
 
             try
@@ -36,7 +37,7 @@ namespace Globais
                 var vcon = ConexaoBanco();
                 var cmd = vcon.CreateCommand();
                 cmd.CommandText = "SELECT * FROM usuarios";
-                msdAdapter = new MySqlDataAdapter(cmd.CommandText, vcon);
+                msdAdapter = new SqlDataAdapter(cmd.CommandText, vcon);
                 msdAdapter.Fill(dt);
                 vcon.Close();
 
@@ -51,7 +52,7 @@ namespace Globais
 
         public static DataTable consulta(string sql)
         {
-            MySqlDataAdapter msdAdapter = null;
+            SqlDataAdapter msdAdapter = null;
             DataTable dt = new DataTable();
 
             try
@@ -64,7 +65,7 @@ namespace Globais
                 }
                 var cmd = vcon.CreateCommand();
                 cmd.CommandText = sql;
-                msdAdapter = new MySqlDataAdapter(cmd.CommandText, vcon);
+                msdAdapter = new SqlDataAdapter(cmd.CommandText, vcon);
                 msdAdapter.Fill(dt);
                 vcon.Close();
                 return dt;
@@ -111,13 +112,13 @@ namespace Globais
         public static bool existeUserName(Usuario user)
         {
             bool res;
-            MySqlDataAdapter msdAdapter = null;
+            SqlDataAdapter msdAdapter = null;
             DataTable dt = new DataTable();
 
             var vcon = ConexaoBanco();
             var cmd = vcon.CreateCommand();
             cmd.CommandText = "SELECT username FROM usuarios WHERE username='" + user.username + "'";
-            msdAdapter = new MySqlDataAdapter(cmd.CommandText, vcon);
+            msdAdapter = new SqlDataAdapter(cmd.CommandText, vcon);
             msdAdapter.Fill(dt);
 
             if (dt.Rows.Count > 0)
@@ -139,7 +140,7 @@ namespace Globais
 
         public static DataTable ObterUsuariosIdNome()
         {
-            MySqlDataAdapter msdAdapter = null;
+            SqlDataAdapter msdAdapter = null;
             DataTable dt = new DataTable();
 
             try
@@ -147,7 +148,7 @@ namespace Globais
                 var vcon = ConexaoBanco();
                 var cmd = vcon.CreateCommand();
                 cmd.CommandText = "SELECT id_user as 'ID Usuário', nome_user as 'Nome Usuário' FROM usuarios";
-                msdAdapter = new MySqlDataAdapter(cmd.CommandText, vcon);
+                msdAdapter = new SqlDataAdapter(cmd.CommandText, vcon);
                 msdAdapter.Fill(dt);
                 vcon.Close();
 
@@ -163,7 +164,7 @@ namespace Globais
 
         public static DataTable ObterDadosUsuarios(string id)
         {
-            MySqlDataAdapter msdAdapter = null;
+            SqlDataAdapter msdAdapter = null;
             DataTable dt = new DataTable();
 
             try
@@ -171,7 +172,7 @@ namespace Globais
                 var vcon = ConexaoBanco();
                 var cmd = vcon.CreateCommand();
                 cmd.CommandText = "SELECT * FROM usuarios WHERE id_user =" + id;
-                msdAdapter = new MySqlDataAdapter(cmd.CommandText, vcon);
+                msdAdapter = new SqlDataAdapter(cmd.CommandText, vcon);
                 msdAdapter.Fill(dt);
                 vcon.Close();
 
@@ -186,7 +187,7 @@ namespace Globais
 
         public static void AtualizarDadosUsuario(Usuario u)
         {
-            MySqlDataAdapter msdAdapter = null;
+            SqlDataAdapter msdAdapter = null;
             DataTable dt = new DataTable();
 
             try
@@ -195,7 +196,7 @@ namespace Globais
                 var cmd = vcon.CreateCommand();
                 cmd.CommandText = "UPDATE usuarios SET nome_user='" + u.nome + "', username='" + u.username + "', senha_user='" + u.password + "', status_user='" + u.status + "', nivel_user=" + u.nivel + " WHERE id_user=" + u.id;
 
-                msdAdapter = new MySqlDataAdapter(cmd.CommandText, vcon);
+                msdAdapter = new SqlDataAdapter(cmd.CommandText, vcon);
                 cmd.ExecuteNonQuery();
                 vcon.Close();
             }
@@ -208,7 +209,7 @@ namespace Globais
 
         public static void ExcluirDadosUsuario(string id)
         {
-            MySqlDataAdapter msdAdapter = null;
+            SqlDataAdapter msdAdapter = null;
             DataTable dt = new DataTable();
 
             try
@@ -217,7 +218,7 @@ namespace Globais
                 var cmd = vcon.CreateCommand();
                 cmd.CommandText = "DELETE FROM usuarios WHERE id_user=" + id;
 
-                msdAdapter = new MySqlDataAdapter(cmd.CommandText, vcon);
+                msdAdapter = new SqlDataAdapter(cmd.CommandText, vcon);
                 cmd.ExecuteNonQuery();
                 vcon.Close();
             }
