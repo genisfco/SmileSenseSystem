@@ -153,5 +153,10 @@ namespace SistemaOdonto
             comboxEspecialidade1.Text = string.Empty;
             comboxEspecialidade2 .Text = string.Empty;
         }
+
+        private void txtCRO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.ToUpper(e.KeyChar);
+        }
     }
 }

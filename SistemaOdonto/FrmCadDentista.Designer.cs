@@ -149,6 +149,7 @@
             this.txtCRO.Size = new System.Drawing.Size(103, 26);
             this.txtCRO.TabIndex = 11;
             this.txtCRO.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtCRO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCRO_KeyPress);
             // 
             // statusStrip1
             // 
