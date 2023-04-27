@@ -82,7 +82,7 @@ namespace SistemaOdonto
             this.checkBox38 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridProcedimentos = new System.Windows.Forms.DataGridView();
             this.cboxFaces = new System.Windows.Forms.ComboBox();
             this.cboxProcedimento = new System.Windows.Forms.ComboBox();
             this.cboxEspecialidade = new System.Windows.Forms.ComboBox();
@@ -93,6 +93,7 @@ namespace SistemaOdonto
             this.Especialidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Procedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbPenBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgOdontograma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPenBlue)).BeginInit();
@@ -103,7 +104,7 @@ namespace SistemaOdonto
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProcedimentos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFecharFichaClinica
@@ -222,9 +223,9 @@ namespace SistemaOdonto
             this.pbImgOdontograma.BackgroundImage = global::SistemaOdonto.Properties.Resources.odontograma2_2;
             this.pbImgOdontograma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbImgOdontograma.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbImgOdontograma.Location = new System.Drawing.Point(22, 164);
+            this.pbImgOdontograma.Location = new System.Drawing.Point(17, 164);
             this.pbImgOdontograma.Name = "pbImgOdontograma";
-            this.pbImgOdontograma.Size = new System.Drawing.Size(762, 618);
+            this.pbImgOdontograma.Size = new System.Drawing.Size(767, 618);
             this.pbImgOdontograma.TabIndex = 91;
             this.pbImgOdontograma.TabStop = false;
             this.pbImgOdontograma.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbImgOdontograma_MouseClick);
@@ -668,7 +669,7 @@ namespace SistemaOdonto
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.dataGridView1);
+            this.groupBox5.Controls.Add(this.dataGridProcedimentos);
             this.groupBox5.Controls.Add(this.cboxFaces);
             this.groupBox5.Controls.Add(this.cboxProcedimento);
             this.groupBox5.Controls.Add(this.cboxEspecialidade);
@@ -681,23 +682,24 @@ namespace SistemaOdonto
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Procedimentos";
             // 
-            // dataGridView1
+            // dataGridProcedimentos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridProcedimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridProcedimentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Elemento,
             this.Face,
             this.Especialidade,
             this.Procedimento,
             this.Data});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 83);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1054, 606);
-            this.dataGridView1.TabIndex = 112;
+            this.dataGridProcedimentos.Location = new System.Drawing.Point(6, 83);
+            this.dataGridProcedimentos.Name = "dataGridProcedimentos";
+            this.dataGridProcedimentos.RowHeadersVisible = false;
+            this.dataGridProcedimentos.RowHeadersWidth = 62;
+            this.dataGridProcedimentos.RowTemplate.Height = 28;
+            this.dataGridProcedimentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridProcedimentos.Size = new System.Drawing.Size(1054, 606);
+            this.dataGridProcedimentos.TabIndex = 112;
+            this.dataGridProcedimentos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridProcedimentos_KeyDown);
             // 
             // cboxFaces
             // 
@@ -732,17 +734,20 @@ namespace SistemaOdonto
             "PROTESE",
             "RADIOLOGIA",
             "TESTES E EXAMES",
-            "URGÊNCIA/EMERGÊNCIA"});
+            "URGÊNCIA/EMERGÊNCIA",
+            "NENHUM(a)"});
             this.cboxEspecialidade.Location = new System.Drawing.Point(236, 36);
             this.cboxEspecialidade.Name = "cboxEspecialidade";
             this.cboxEspecialidade.Size = new System.Drawing.Size(234, 28);
             this.cboxEspecialidade.TabIndex = 109;
+            this.cboxEspecialidade.SelectedIndexChanged += new System.EventHandler(this.cboxEspecialidade_SelectedIndexChanged);
             // 
             // cboxElementos
             // 
             this.cboxElementos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxElementos.FormattingEnabled = true;
             this.cboxElementos.Items.AddRange(new object[] {
+            "---",
             "11",
             "12",
             "13",
@@ -790,6 +795,7 @@ namespace SistemaOdonto
             this.btnAnotar.TabIndex = 107;
             this.btnAnotar.Text = "Adicionar";
             this.btnAnotar.UseVisualStyleBackColor = false;
+            this.btnAnotar.Click += new System.EventHandler(this.btnAnotar_Click);
             // 
             // Elemento
             // 
@@ -797,7 +803,7 @@ namespace SistemaOdonto
             this.Elemento.MinimumWidth = 8;
             this.Elemento.Name = "Elemento";
             this.Elemento.ReadOnly = true;
-            this.Elemento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Elemento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Elemento.Width = 50;
             // 
             // Face
@@ -806,6 +812,7 @@ namespace SistemaOdonto
             this.Face.MinimumWidth = 8;
             this.Face.Name = "Face";
             this.Face.ReadOnly = true;
+            this.Face.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Especialidade
             // 
@@ -813,6 +820,7 @@ namespace SistemaOdonto
             this.Especialidade.MinimumWidth = 8;
             this.Especialidade.Name = "Especialidade";
             this.Especialidade.ReadOnly = true;
+            this.Especialidade.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Especialidade.Width = 170;
             // 
             // Procedimento
@@ -829,13 +837,24 @@ namespace SistemaOdonto
             this.Data.MinimumWidth = 8;
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
+            this.Data.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Data.Width = 150;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(826, 941);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(479, 20);
+            this.label2.TabIndex = 113;
+            this.label2.Text = "* Para excluir procedimentos: Selecione a(s) linha(s) e tecle Delete.";
             // 
             // FrmOdontograma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1896, 950);
+            this.ClientSize = new System.Drawing.Size(1896, 966);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.btnUndoCircle);
             this.Controls.Add(this.pbCircle);
@@ -865,7 +884,6 @@ namespace SistemaOdonto
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Odontograma";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmOdontograma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbPenBlack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgOdontograma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPenBlue)).EndInit();
@@ -880,7 +898,7 @@ namespace SistemaOdonto
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProcedimentos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -940,7 +958,7 @@ namespace SistemaOdonto
         private System.Windows.Forms.CheckBox checkBox38;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridProcedimentos;
         private System.Windows.Forms.ComboBox cboxFaces;
         private System.Windows.Forms.ComboBox cboxProcedimento;
         private System.Windows.Forms.ComboBox cboxEspecialidade;
@@ -951,5 +969,6 @@ namespace SistemaOdonto
         private System.Windows.Forms.DataGridViewTextBoxColumn Especialidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Procedimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.Label label2;
     }
 }

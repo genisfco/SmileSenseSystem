@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace SistemaOdonto
@@ -298,85 +299,9 @@ namespace SistemaOdonto
             }
         }
 
-        private void FrmOdontograma_Load(object sender, EventArgs e)
-        {
-            _areas.Add(new Rectangle(100, 100, 500, 500));  // Exemplo de área retangular
-            _areas.Add(new Rectangle(200, 200, 300, 300));  // Outro exemplo de área retangular
-            _areas.Add(new Rectangle(300, 300, 300, 300));  // Outro exemplo de área retangular
-            _areas.Add(new Rectangle(400, 400, 300, 300));  // Outro exemplo de área retangular
-            _areas.Add(new Rectangle(500, 500, 300, 300));  // Outro exemplo de área retangular
-            _areas.Add(new Rectangle(600, 600, 300, 300));  // Outro exemplo de área retangular
-            _areas.Add(new Rectangle(700, 700, 300, 300));  // Outro exemplo de área retangular
-            _areas.Add(new Rectangle(800, 800, 300, 300));  // Outro exemplo de área retangular
-            _areas.Add(new Rectangle(900, 900, 300, 300));  // Outro exemplo de área retangular
-            _areas.Add(new Rectangle(1000, 1000, 300, 300));  // Outro exemplo de área retangular
-                                                          // Adicione mais áreas conforme necessário
+        
 
-
-
-            _checkboxes.Add(checkBox18); //
-            _checkboxes.Add(checkBox17); //
-            _checkboxes.Add(checkBox16); //
-            _checkboxes.Add(checkBox15); //SUPERIORES DIR.
-            _checkboxes.Add(checkBox14); //
-            _checkboxes.Add(checkBox13); //
-            _checkboxes.Add(checkBox12); //
-            _checkboxes.Add(checkBox11); //
-
-            _checkboxes.Add(checkBox21); //
-            _checkboxes.Add(checkBox22); //
-            _checkboxes.Add(checkBox23); //
-            _checkboxes.Add(checkBox24); //SUPERIORES ESQ.
-            _checkboxes.Add(checkBox25); //
-            _checkboxes.Add(checkBox26); //
-            _checkboxes.Add(checkBox27); //
-            _checkboxes.Add(checkBox28); //
-
-            _checkboxes.Add(checkBox48); //
-            _checkboxes.Add(checkBox47); //
-            _checkboxes.Add(checkBox46); //
-            _checkboxes.Add(checkBox45); //INFERIORES ESQ.
-            _checkboxes.Add(checkBox44); //
-            _checkboxes.Add(checkBox43); // 
-            _checkboxes.Add(checkBox42); //
-            _checkboxes.Add(checkBox41); //
-
-            _checkboxes.Add(checkBox31); //
-            _checkboxes.Add(checkBox32); //
-            _checkboxes.Add(checkBox33); //
-            _checkboxes.Add(checkBox34); //INFERIORES DIR.
-            _checkboxes.Add(checkBox35); //
-            _checkboxes.Add(checkBox36); // 
-            _checkboxes.Add(checkBox37); //
-            _checkboxes.Add(checkBox38); //
-
-            
-        }
-
-        private void btnAnotar_Click(object sender, EventArgs e)
-        {
-            int count = 0;
-            foreach (System.Windows.Forms.CheckBox checkBox in _checkboxes)
-            {
-                if (checkBox.Checked)
-                {
-                    count++;
-                }
-            }
-
-
-
-            int index = _checkboxes.FindIndex(cb => cb.Checked);
-            for (int i = 0; i < count; i++)
-            {
-                TextBox textBox = new TextBox();
-                textBox.Location = new Point(565, 235 + i * 30);
-                textBox.Size = new Size(22, 20);
-                textBox.Text = _checkboxes[index + i].Name.Replace("checkBox", "");
-                this.Controls.Add(textBox);
-            }
-
-        }
+        
 
         private void btnFecharFichaClinica_Click(object sender, EventArgs e)
         {
@@ -451,16 +376,24 @@ namespace SistemaOdonto
 
                 default:
                     // Adiciona um valor padrão na cboxFaces
-                    cboxFaces.Items.Add("Selecione o Elemento");
+                    cboxFaces.Items.Add("Não informado");
                     break;
             }
 
-        }
+        }    
 
-       
+        
+
+        private void cboxEspecialidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.ToUpper(e.KeyChar);
+        }
 
         private void cboxEspecialidade_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Limpa a cboxProcedimentos
+            cboxProcedimento.Items.Clear();
+
             switch (cboxEspecialidade.SelectedItem.ToString())
             {
                 case "CIRURGIA":
@@ -510,25 +443,91 @@ namespace SistemaOdonto
                     cboxProcedimento.Items.Add("Frenulotomia Lingual");
                     break;
 
+                case "CONDICIONAMENTO":
+                    cboxProcedimento.Items.Add("PROCEDIMENTOS DE CONDICIONAMENTO");
+                    break;
+
+                case "DENTÍSTICA":
+                    cboxProcedimento.Items.Add("PROCEDIMENTOS DE DENSTISTICA");
+                    break;
+                
+                case "DIAGNÓSTICO":
+                    cboxProcedimento.Items.Add("PROCEDIMENTOS DE DIAGNOSTICO");
+                    break;
+
+                case "ENDODONTIA":
+                    cboxProcedimento.Items.Add("PROCEDIMENTOS DE ENDODONTIA");
+                    break;
+
+                case "IMPLANTODONTIA":
+                    cboxProcedimento.Items.Add("PROCEDIMENTOS DE IMPLANTODONTIA");
+                    break;
+
+                case "ODONTOPEDIATRIA":
+                    cboxProcedimento.Items.Add("PROCEDIMENTOS DE ODONTOPEDIATRIA");
+                    break;
+
+                case "ORTODONTIA":
+                    cboxProcedimento.Items.Add("PROCEDIMENTOS DE ORTODONTIA");
+                    break;
+
+                case "PERIODONTIA":
+                    cboxProcedimento.Items.Add("PROCEDIMENTOS DE PERIODONTIA");
+                    break;
+
+                case "PROTESE":
+                    cboxProcedimento.Items.Add("PROCEDIMENTOS DE PROTESE");
+                    break;
+
+                case "RADIOLOGIA":
+                    cboxProcedimento.Items.Add("PROCEDIMENTOS DE RADIOLOGIA");
+                    break;
+
+                case "TESTES E EXAMES":
+                    cboxProcedimento.Items.Add("PROCEDIMENTOS DE TESTES E EXAMES");
+                    break;
+
+                case "URGÊNCIA/EMERGÊNCIA":
+                    cboxProcedimento.Items.Add("PROCEDIMENTOS DE URGENCIA E EMERGENCIA");
+                    break;
+
                 default:
-                    // Adiciona um valor padrão na cboxFaces
-                    cboxProcedimento.Items.Add("Selecione a Especialidade");
+                    // Adiciona um valor padrão na cboxProcedimento
+                    cboxProcedimento.Items.Add("Procedimento não informado");
                     break;
             }
-
         }
 
-        private void cboxEspecialidade_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnAnotar_Click(object sender, EventArgs e)
         {
-            e.KeyChar = char.ToUpper(e.KeyChar);
+            // Obtém os valores selecionados ou textos digitados nos ComboBoxes
+            string elemento = cboxElementos.SelectedItem?.ToString() ?? "---";
+            string face = cboxFaces.SelectedItem?.ToString() ?? "Não informado";
+            string especialidade = cboxEspecialidade.Text.Trim();
+            string procedimento = cboxProcedimento.Text.Trim();
+            DateTime data = DateTime.Now;
+
+            // Verifica se a especialidade e o procedimento foram selecionados ou digitados
+            if (string.IsNullOrEmpty(especialidade) || string.IsNullOrEmpty(procedimento))
+            {
+                MessageBox.Show("Escreva ou selecione a Especialidade e o Procedimento.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return; // Sai do evento do botão para interromper a execução
+            }
+
+            // Adiciona os valores como uma nova linha no DataGridView
+            dataGridProcedimentos.Rows.Add(elemento, face, especialidade, procedimento, data);
         }
 
-        
-
-
-
-
-
+        private void dataGridProcedimentos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (dataGridProcedimentos.SelectedRows.Count > 1)
+                {
+                    dataGridProcedimentos.Rows.RemoveAt(dataGridProcedimentos.SelectedRows[0].Index);
+                }
+            }
+        }
 
         ////////////////////////////////////////////////////////////
 
