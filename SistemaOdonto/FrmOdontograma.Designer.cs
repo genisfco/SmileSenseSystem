@@ -23,10 +23,7 @@ namespace SistemaOdonto
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+        
         private void InitializeComponent()
         {
             this.btnFecharFichaClinica = new System.Windows.Forms.Button();
@@ -87,13 +84,14 @@ namespace SistemaOdonto
             this.cboxProcedimento = new System.Windows.Forms.ComboBox();
             this.cboxEspecialidade = new System.Windows.Forms.ComboBox();
             this.cboxElementos = new System.Windows.Forms.ComboBox();
-            this.btnAnotar = new System.Windows.Forms.Button();
+            this.btnAdicionarProcedimento = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.Elemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Face = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Especialidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Procedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbPenBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgOdontograma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPenBlue)).BeginInit();
@@ -110,9 +108,9 @@ namespace SistemaOdonto
             // btnFecharFichaClinica
             // 
             this.btnFecharFichaClinica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnFecharFichaClinica.Location = new System.Drawing.Point(22, 863);
+            this.btnFecharFichaClinica.Location = new System.Drawing.Point(6, 863);
             this.btnFecharFichaClinica.Name = "btnFecharFichaClinica";
-            this.btnFecharFichaClinica.Size = new System.Drawing.Size(762, 69);
+            this.btnFecharFichaClinica.Size = new System.Drawing.Size(852, 69);
             this.btnFecharFichaClinica.TabIndex = 89;
             this.btnFecharFichaClinica.Text = "Fechar Ficha";
             this.btnFecharFichaClinica.UseVisualStyleBackColor = false;
@@ -121,9 +119,9 @@ namespace SistemaOdonto
             // btnSalvarFichaClinica
             // 
             this.btnSalvarFichaClinica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSalvarFichaClinica.Location = new System.Drawing.Point(22, 788);
+            this.btnSalvarFichaClinica.Location = new System.Drawing.Point(6, 788);
             this.btnSalvarFichaClinica.Name = "btnSalvarFichaClinica";
-            this.btnSalvarFichaClinica.Size = new System.Drawing.Size(762, 69);
+            this.btnSalvarFichaClinica.Size = new System.Drawing.Size(852, 69);
             this.btnSalvarFichaClinica.TabIndex = 88;
             this.btnSalvarFichaClinica.Text = "Salvar Ficha Clínica";
             this.btnSalvarFichaClinica.UseVisualStyleBackColor = false;
@@ -140,7 +138,7 @@ namespace SistemaOdonto
             // lbCPF
             // 
             this.lbCPF.AutoSize = true;
-            this.lbCPF.Location = new System.Drawing.Point(18, 26);
+            this.lbCPF.Location = new System.Drawing.Point(12, 26);
             this.lbCPF.Name = "lbCPF";
             this.lbCPF.Size = new System.Drawing.Size(40, 20);
             this.lbCPF.TabIndex = 81;
@@ -149,7 +147,7 @@ namespace SistemaOdonto
             // masktxtCPFPaciente
             // 
             this.masktxtCPFPaciente.BackColor = System.Drawing.SystemColors.Control;
-            this.masktxtCPFPaciente.Location = new System.Drawing.Point(66, 20);
+            this.masktxtCPFPaciente.Location = new System.Drawing.Point(60, 20);
             this.masktxtCPFPaciente.Mask = "000.000.000-00";
             this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
             this.masktxtCPFPaciente.ReadOnly = true;
@@ -159,7 +157,7 @@ namespace SistemaOdonto
             // 
             // txtPaciente
             // 
-            this.txtPaciente.Location = new System.Drawing.Point(352, 23);
+            this.txtPaciente.Location = new System.Drawing.Point(426, 21);
             this.txtPaciente.Name = "txtPaciente";
             this.txtPaciente.ReadOnly = true;
             this.txtPaciente.Size = new System.Drawing.Size(432, 26);
@@ -169,7 +167,7 @@ namespace SistemaOdonto
             // lbPaciente
             // 
             this.lbPaciente.AutoSize = true;
-            this.lbPaciente.Location = new System.Drawing.Point(273, 28);
+            this.lbPaciente.Location = new System.Drawing.Point(347, 26);
             this.lbPaciente.Name = "lbPaciente";
             this.lbPaciente.Size = new System.Drawing.Size(71, 20);
             this.lbPaciente.TabIndex = 78;
@@ -177,7 +175,7 @@ namespace SistemaOdonto
             // 
             // btnUndo
             // 
-            this.btnUndo.Location = new System.Drawing.Point(347, 100);
+            this.btnUndo.Location = new System.Drawing.Point(341, 100);
             this.btnUndo.Name = "btnUndo";
             this.btnUndo.Size = new System.Drawing.Size(86, 41);
             this.btnUndo.TabIndex = 97;
@@ -187,7 +185,7 @@ namespace SistemaOdonto
             // 
             // btnColor
             // 
-            this.btnColor.Location = new System.Drawing.Point(247, 100);
+            this.btnColor.Location = new System.Drawing.Point(241, 100);
             this.btnColor.Name = "btnColor";
             this.btnColor.Size = new System.Drawing.Size(72, 41);
             this.btnColor.TabIndex = 93;
@@ -197,11 +195,11 @@ namespace SistemaOdonto
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(602, 80);
+            this.btnClear.Location = new System.Drawing.Point(676, 80);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(182, 61);
             this.btnClear.TabIndex = 92;
-            this.btnClear.Text = "Limpar";
+            this.btnClear.Text = "Limpar Desenhos";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -210,7 +208,7 @@ namespace SistemaOdonto
             this.pbPenBlack.BackColor = System.Drawing.Color.Black;
             this.pbPenBlack.BackgroundImage = global::SistemaOdonto.Properties.Resources.penBlack;
             this.pbPenBlack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPenBlack.Location = new System.Drawing.Point(77, 100);
+            this.pbPenBlack.Location = new System.Drawing.Point(71, 100);
             this.pbPenBlack.Name = "pbPenBlack";
             this.pbPenBlack.Size = new System.Drawing.Size(36, 41);
             this.pbPenBlack.TabIndex = 94;
@@ -223,11 +221,12 @@ namespace SistemaOdonto
             this.pbImgOdontograma.BackgroundImage = global::SistemaOdonto.Properties.Resources.odontograma2_2;
             this.pbImgOdontograma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbImgOdontograma.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbImgOdontograma.Location = new System.Drawing.Point(17, 164);
+            this.pbImgOdontograma.Location = new System.Drawing.Point(6, 164);
             this.pbImgOdontograma.Name = "pbImgOdontograma";
-            this.pbImgOdontograma.Size = new System.Drawing.Size(767, 618);
+            this.pbImgOdontograma.Size = new System.Drawing.Size(852, 618);
             this.pbImgOdontograma.TabIndex = 91;
             this.pbImgOdontograma.TabStop = false;
+            this.pbImgOdontograma.Paint += new System.Windows.Forms.PaintEventHandler(this.pbImgOdontograma_Paint);
             this.pbImgOdontograma.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbImgOdontograma_MouseClick);
             this.pbImgOdontograma.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbImgOdontograma_MouseDown);
             this.pbImgOdontograma.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbImgOdontograma_MouseMove);
@@ -238,7 +237,7 @@ namespace SistemaOdonto
             this.pbPenBlue.BackColor = System.Drawing.Color.Black;
             this.pbPenBlue.BackgroundImage = global::SistemaOdonto.Properties.Resources.penBlue;
             this.pbPenBlue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPenBlue.Location = new System.Drawing.Point(133, 100);
+            this.pbPenBlue.Location = new System.Drawing.Point(127, 100);
             this.pbPenBlue.Name = "pbPenBlue";
             this.pbPenBlue.Size = new System.Drawing.Size(36, 41);
             this.pbPenBlue.TabIndex = 98;
@@ -250,7 +249,7 @@ namespace SistemaOdonto
             this.pbPenRed.BackColor = System.Drawing.Color.Black;
             this.pbPenRed.BackgroundImage = global::SistemaOdonto.Properties.Resources.penRed2_0;
             this.pbPenRed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPenRed.Location = new System.Drawing.Point(187, 100);
+            this.pbPenRed.Location = new System.Drawing.Point(181, 100);
             this.pbPenRed.Name = "pbPenRed";
             this.pbPenRed.Size = new System.Drawing.Size(36, 41);
             this.pbPenRed.TabIndex = 99;
@@ -262,7 +261,7 @@ namespace SistemaOdonto
             this.pbCircle.BackColor = System.Drawing.Color.Transparent;
             this.pbCircle.BackgroundImage = global::SistemaOdonto.Properties.Resources.Circle_Green;
             this.pbCircle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbCircle.Location = new System.Drawing.Point(17, 100);
+            this.pbCircle.Location = new System.Drawing.Point(11, 100);
             this.pbCircle.Name = "pbCircle";
             this.pbCircle.Size = new System.Drawing.Size(37, 41);
             this.pbCircle.TabIndex = 100;
@@ -271,7 +270,7 @@ namespace SistemaOdonto
             // 
             // btnUndoCircle
             // 
-            this.btnUndoCircle.Location = new System.Drawing.Point(347, 100);
+            this.btnUndoCircle.Location = new System.Drawing.Point(341, 100);
             this.btnUndoCircle.Name = "btnUndoCircle";
             this.btnUndoCircle.Size = new System.Drawing.Size(86, 41);
             this.btnUndoCircle.TabIndex = 101;
@@ -288,6 +287,7 @@ namespace SistemaOdonto
             this.checkBox18.TabIndex = 0;
             this.checkBox18.Text = "18";
             this.checkBox18.UseVisualStyleBackColor = true;
+            this.checkBox18.CheckedChanged += new System.EventHandler(this.checkBox18_CheckedChanged);
             // 
             // checkBox17
             // 
@@ -298,6 +298,7 @@ namespace SistemaOdonto
             this.checkBox17.TabIndex = 1;
             this.checkBox17.Text = "17";
             this.checkBox17.UseVisualStyleBackColor = true;
+            this.checkBox17.CheckedChanged += new System.EventHandler(this.checkBox17_CheckedChanged);
             // 
             // checkBox16
             // 
@@ -308,6 +309,7 @@ namespace SistemaOdonto
             this.checkBox16.TabIndex = 2;
             this.checkBox16.Text = "16";
             this.checkBox16.UseVisualStyleBackColor = true;
+            this.checkBox16.CheckedChanged += new System.EventHandler(this.checkBox16_CheckedChanged);
             // 
             // checkBox15
             // 
@@ -369,7 +371,7 @@ namespace SistemaOdonto
             this.groupBox1.Controls.Add(this.checkBox16);
             this.groupBox1.Controls.Add(this.checkBox17);
             this.groupBox1.Controls.Add(this.checkBox18);
-            this.groupBox1.Location = new System.Drawing.Point(824, 25);
+            this.groupBox1.Location = new System.Drawing.Point(879, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(498, 89);
             this.groupBox1.TabIndex = 82;
@@ -466,7 +468,7 @@ namespace SistemaOdonto
             this.groupBox2.Controls.Add(this.checkBox23);
             this.groupBox2.Controls.Add(this.checkBox22);
             this.groupBox2.Controls.Add(this.checkBox21);
-            this.groupBox2.Location = new System.Drawing.Point(1386, 25);
+            this.groupBox2.Location = new System.Drawing.Point(1405, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(498, 89);
             this.groupBox2.TabIndex = 83;
@@ -482,6 +484,7 @@ namespace SistemaOdonto
             this.checkBox48.TabIndex = 0;
             this.checkBox48.Text = "48";
             this.checkBox48.UseVisualStyleBackColor = true;
+            this.checkBox48.CheckedChanged += new System.EventHandler(this.checkBox48_CheckedChanged);
             // 
             // checkBox47
             // 
@@ -492,6 +495,7 @@ namespace SistemaOdonto
             this.checkBox47.TabIndex = 1;
             this.checkBox47.Text = "47";
             this.checkBox47.UseVisualStyleBackColor = true;
+            this.checkBox47.CheckedChanged += new System.EventHandler(this.checkBox47_CheckedChanged);
             // 
             // checkBox46
             // 
@@ -502,6 +506,7 @@ namespace SistemaOdonto
             this.checkBox46.TabIndex = 2;
             this.checkBox46.Text = "46";
             this.checkBox46.UseVisualStyleBackColor = true;
+            this.checkBox46.CheckedChanged += new System.EventHandler(this.checkBox46_CheckedChanged);
             // 
             // checkBox45
             // 
@@ -563,7 +568,7 @@ namespace SistemaOdonto
             this.groupBox3.Controls.Add(this.checkBox46);
             this.groupBox3.Controls.Add(this.checkBox47);
             this.groupBox3.Controls.Add(this.checkBox48);
-            this.groupBox3.Location = new System.Drawing.Point(824, 131);
+            this.groupBox3.Location = new System.Drawing.Point(879, 118);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(498, 89);
             this.groupBox3.TabIndex = 85;
@@ -660,7 +665,7 @@ namespace SistemaOdonto
             this.groupBox4.Controls.Add(this.checkBox33);
             this.groupBox4.Controls.Add(this.checkBox32);
             this.groupBox4.Controls.Add(this.checkBox31);
-            this.groupBox4.Location = new System.Drawing.Point(1386, 131);
+            this.groupBox4.Location = new System.Drawing.Point(1405, 118);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(498, 89);
             this.groupBox4.TabIndex = 84;
@@ -674,10 +679,10 @@ namespace SistemaOdonto
             this.groupBox5.Controls.Add(this.cboxProcedimento);
             this.groupBox5.Controls.Add(this.cboxEspecialidade);
             this.groupBox5.Controls.Add(this.cboxElementos);
-            this.groupBox5.Controls.Add(this.btnAnotar);
-            this.groupBox5.Location = new System.Drawing.Point(824, 243);
+            this.groupBox5.Controls.Add(this.btnAdicionarProcedimento);
+            this.groupBox5.Location = new System.Drawing.Point(879, 243);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1070, 695);
+            this.groupBox5.Size = new System.Drawing.Size(1025, 695);
             this.groupBox5.TabIndex = 108;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Procedimentos";
@@ -705,7 +710,7 @@ namespace SistemaOdonto
             // 
             this.cboxFaces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxFaces.FormattingEnabled = true;
-            this.cboxFaces.Location = new System.Drawing.Point(84, 36);
+            this.cboxFaces.Location = new System.Drawing.Point(84, 38);
             this.cboxFaces.Name = "cboxFaces";
             this.cboxFaces.Size = new System.Drawing.Size(133, 28);
             this.cboxFaces.TabIndex = 111;
@@ -713,7 +718,7 @@ namespace SistemaOdonto
             // cboxProcedimento
             // 
             this.cboxProcedimento.FormattingEnabled = true;
-            this.cboxProcedimento.Location = new System.Drawing.Point(489, 36);
+            this.cboxProcedimento.Location = new System.Drawing.Point(489, 38);
             this.cboxProcedimento.Name = "cboxProcedimento";
             this.cboxProcedimento.Size = new System.Drawing.Size(467, 28);
             this.cboxProcedimento.TabIndex = 110;
@@ -736,7 +741,7 @@ namespace SistemaOdonto
             "TESTES E EXAMES",
             "URGÊNCIA/EMERGÊNCIA",
             "NENHUM(a)"});
-            this.cboxEspecialidade.Location = new System.Drawing.Point(236, 36);
+            this.cboxEspecialidade.Location = new System.Drawing.Point(236, 38);
             this.cboxEspecialidade.Name = "cboxEspecialidade";
             this.cboxEspecialidade.Size = new System.Drawing.Size(234, 28);
             this.cboxEspecialidade.TabIndex = 109;
@@ -780,22 +785,42 @@ namespace SistemaOdonto
             "46",
             "47",
             "48"});
-            this.cboxElementos.Location = new System.Drawing.Point(6, 36);
+            this.cboxElementos.Location = new System.Drawing.Point(6, 38);
             this.cboxElementos.Name = "cboxElementos";
             this.cboxElementos.Size = new System.Drawing.Size(59, 28);
             this.cboxElementos.TabIndex = 108;
-            this.cboxElementos.SelectedIndexChanged += new System.EventHandler(this.cboxElementos_SelectedIndexChanged_1);
+            this.cboxElementos.SelectedIndexChanged += new System.EventHandler(this.cboxElementos_SelectedIndexChanged);
             // 
-            // btnAnotar
+            // btnAdicionarProcedimento
             // 
-            this.btnAnotar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnAnotar.Location = new System.Drawing.Point(962, 25);
-            this.btnAnotar.Name = "btnAnotar";
-            this.btnAnotar.Size = new System.Drawing.Size(104, 52);
-            this.btnAnotar.TabIndex = 107;
-            this.btnAnotar.Text = "Adicionar";
-            this.btnAnotar.UseVisualStyleBackColor = false;
-            this.btnAnotar.Click += new System.EventHandler(this.btnAnotar_Click);
+            this.btnAdicionarProcedimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnAdicionarProcedimento.Location = new System.Drawing.Point(963, 25);
+            this.btnAdicionarProcedimento.Name = "btnAdicionarProcedimento";
+            this.btnAdicionarProcedimento.Size = new System.Drawing.Size(56, 52);
+            this.btnAdicionarProcedimento.TabIndex = 107;
+            this.btnAdicionarProcedimento.Text = "Adicionar";
+            this.btnAdicionarProcedimento.UseVisualStyleBackColor = false;
+            this.btnAdicionarProcedimento.Click += new System.EventHandler(this.btnAdicionarProcedimento_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label2.Location = new System.Drawing.Point(881, 941);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(479, 20);
+            this.label2.TabIndex = 113;
+            this.label2.Text = "* Para excluir procedimentos: Selecione a(s) linha(s) e tecle Delete.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label3.Location = new System.Drawing.Point(881, 210);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(575, 20);
+            this.label3.TabIndex = 114;
+            this.label3.Text = "*Selecione um Elemento e um Procedimento por vez, depois clique em Adicionar";
             // 
             // Elemento
             // 
@@ -840,20 +865,12 @@ namespace SistemaOdonto
             this.Data.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Data.Width = 150;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(826, 941);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(479, 20);
-            this.label2.TabIndex = 113;
-            this.label2.Text = "* Para excluir procedimentos: Selecione a(s) linha(s) e tecle Delete.";
-            // 
             // FrmOdontograma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1896, 966);
+            this.ClientSize = new System.Drawing.Size(1915, 966);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.btnUndoCircle);
@@ -876,14 +893,16 @@ namespace SistemaOdonto
             this.Controls.Add(this.masktxtCPFPaciente);
             this.Controls.Add(this.txtPaciente);
             this.Controls.Add(this.lbPaciente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.MaximumSize = new System.Drawing.Size(1940, 1080);
             this.MinimumSize = new System.Drawing.Size(1918, 1006);
             this.Name = "FrmOdontograma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Odontograma";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmOdontograma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbPenBlack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgOdontograma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPenBlue)).EndInit();
@@ -963,12 +982,13 @@ namespace SistemaOdonto
         private System.Windows.Forms.ComboBox cboxProcedimento;
         private System.Windows.Forms.ComboBox cboxEspecialidade;
         private System.Windows.Forms.ComboBox cboxElementos;
-        private System.Windows.Forms.Button btnAnotar;
+        private System.Windows.Forms.Button btnAdicionarProcedimento;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Elemento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Face;
         private System.Windows.Forms.DataGridViewTextBoxColumn Especialidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Procedimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
-        private System.Windows.Forms.Label label2;
     }
 }

@@ -36,15 +36,18 @@ namespace SistemaOdonto
         //LISTA DE CHECKBOXES DOS DENTES
         private List<System.Windows.Forms.CheckBox> _checkboxes = new List<System.Windows.Forms.CheckBox>();
 
-        //LISTA DE ÁREAS DA IMAGEM
-        private List<Rectangle> _areas = new List<Rectangle>();
+        // dicionário para mapear as checkboxes aos retângulos
+        private Dictionary<System.Windows.Forms.CheckBox, Rectangle> retangulosCheckbox = new Dictionary<System.Windows.Forms.CheckBox, Rectangle>();
+
+        //private bool isCheckboxChecked = false;
+        //private Rectangle retanguloCheckbox;
 
 
 
         public FrmOdontograma()
         {
             InitializeComponent();
-            _pen = new Pen(Color.Black, 3);
+            _pen = new Pen(Color.Black, 2);
             _bitmap = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
             pbImgOdontograma.Image = _bitmap;
             Stack<Bitmap> undoStack = new Stack<Bitmap>();
@@ -52,6 +55,26 @@ namespace SistemaOdonto
             btnUndoCircle.Visible = false;
             btnUndo.Visible = false;
             btnColor.Enabled = false;
+        }
+
+        private void FrmOdontograma_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void pbImgOdontograma_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (pbCircle.BorderStyle == BorderStyle.FixedSingle)
+            {
+                _undoStack.Push(new Bitmap(_bitmap)); // empilha a imagem atual
+                Graphics g = Graphics.FromImage(_bitmap);
+                int diameter = 8; // definir o diâmetro do círculo
+                int x = e.X - diameter / 2;
+                int y = e.Y - diameter / 2;
+                g.DrawEllipse(_pen, x, y, diameter, diameter);
+                pbImgOdontograma.Invalidate();
+            }
         }
 
 
@@ -63,45 +86,7 @@ namespace SistemaOdonto
 
         private void pbImgOdontograma_MouseUp(object sender, MouseEventArgs e)
         {
-            _isDrawing = false;
-
-            // Verifique se o círculo desenhado está dentro de uma área
-            bool isInsideArea = false;
-            foreach (var area in _areas)
-            {
-                if (area.Contains(e.Location))
-                {
-                    isInsideArea = true;
-                    break;
-                }
-            }
-
-            // Se estiver dentro de uma área, marque a checkbox correspondente
-            if (isInsideArea)
-            {
-                foreach (var checkBox in _checkboxes)
-                {
-                    if (checkBox.Tag != null && checkBox.Tag.ToString() == "dente" + e.X + "," + e.Y)
-                    {
-                        checkBox.Checked = true;
-                        break;
-                    }
-                }
-            }
-
-
-
-            _isDrawing = false;
-
-            // Determine qual dente foi selecionado
-            foreach (var checkBox in _checkboxes)
-            {
-                if (checkBox.Tag != null && checkBox.Tag.ToString() == "dente" + e.X + "," + e.Y)
-                {
-                    checkBox.Checked = true;
-                    break;
-                }
-            }
+            _isDrawing = false;           
         }
 
 
@@ -111,17 +96,7 @@ namespace SistemaOdonto
             {
                 _undoStack.Push(new Bitmap(_bitmap)); // empilha a imagem atual
                 Graphics g = Graphics.FromImage(_bitmap);
-                g.DrawEllipse(_pen, _startPoint.X, _startPoint.Y, e.X - _startPoint.X, e.Y - _startPoint.Y);
-
-                // Associe as coordenadas do círculo desenhado a um dente específico
-                foreach (var checkBox in _checkboxes)
-                {
-                    if (checkBox.Tag != null && checkBox.Tag.ToString() == "dente" + _startPoint.X + "," + _startPoint.Y)
-                    {
-                        checkBox.Tag = "dente" + e.X + "," + e.Y;
-                        break;
-                    }
-                }
+                g.DrawEllipse(_pen, _startPoint.X, _startPoint.Y, e.X - _startPoint.X, e.Y - _startPoint.Y);                
 
                 pbImgOdontograma.Invalidate();
             }
@@ -135,6 +110,26 @@ namespace SistemaOdonto
                 pbImgOdontograma.Invalidate();
             }
         }
+
+
+
+        private void pbImgOdontograma_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (var kvp in retangulosCheckbox)
+            {
+                System.Windows.Forms.CheckBox checkbox = kvp.Key;
+                Rectangle retangulo = kvp.Value;
+
+                if (checkbox.Checked)
+                {
+                    using (Pen pen = new Pen(Color.Black, 1))
+                    {
+                        e.Graphics.DrawRectangle(pen, retangulo);
+                    }
+                }
+            }            
+        }
+
 
         //ESCOLHER OUTRAS CORES
         private void btnColor_Click(object sender, EventArgs e)
@@ -285,22 +280,6 @@ namespace SistemaOdonto
                 }
         }
 
-        private void pbImgOdontograma_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (pbCircle.BorderStyle == BorderStyle.FixedSingle)
-            {
-                _undoStack.Push(new Bitmap(_bitmap)); // empilha a imagem atual
-                Graphics g = Graphics.FromImage(_bitmap);
-                int diameter = 7; // definir o diâmetro do círculo
-                int x = e.X - diameter / 2;
-                int y = e.Y - diameter / 2;
-                g.DrawEllipse(_pen, x, y, diameter, diameter);
-                pbImgOdontograma.Invalidate();
-            }
-        }
-
-        
-
         
 
         private void btnFecharFichaClinica_Click(object sender, EventArgs e)
@@ -308,7 +287,7 @@ namespace SistemaOdonto
             this.Close();
         }
 
-        private void cboxElementos_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void cboxElementos_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Limpa a cboxFaces
             cboxFaces.Items.Clear();
@@ -379,10 +358,7 @@ namespace SistemaOdonto
                     cboxFaces.Items.Add("Não informado");
                     break;
             }
-
-        }    
-
-        
+        }
 
         private void cboxEspecialidade_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -498,7 +474,7 @@ namespace SistemaOdonto
             }
         }
 
-        private void btnAnotar_Click(object sender, EventArgs e)
+        private void btnAdicionarProcedimento_Click(object sender, EventArgs e)
         {
             // Obtém os valores selecionados ou textos digitados nos ComboBoxes
             string elemento = cboxElementos.SelectedItem?.ToString() ?? "---";
@@ -518,6 +494,9 @@ namespace SistemaOdonto
             dataGridProcedimentos.Rows.Add(elemento, face, especialidade, procedimento, data);
         }
 
+
+
+        //DELEÇÃO DE LINHAS DA DATAGRID PROCEDIMENTOS POR TECLA DELETE
         private void dataGridProcedimentos_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)
@@ -528,6 +507,130 @@ namespace SistemaOdonto
                 }
             }
         }
+
+        /// SELEÇÃO DAS CHECKBOX PARA "SELECIONAR" ELEMENTOS NA IMAGEM (CRIA UM RETANGULO)
+        private void checkBox18_CheckedChanged(object sender, EventArgs e)
+        {
+            var checkbox = (System.Windows.Forms.CheckBox)sender;
+
+            if (checkbox.Checked)
+            {
+                Rectangle retangulo = new Rectangle(12, 15, 33, 180);
+                retangulosCheckbox[checkbox] = retangulo;
+                cboxElementos.Text = "18";
+            }
+            else
+            {
+                retangulosCheckbox.Remove(checkbox);
+                cboxElementos.Text = "---";
+            }
+
+            pbImgOdontograma.Invalidate();            
+        }
+
+
+        private void checkBox48_CheckedChanged(object sender, EventArgs e)
+        {
+            var checkbox = (System.Windows.Forms.CheckBox)sender;
+
+            if (checkbox.Checked)
+            {
+                Rectangle retangulo = new Rectangle(12, 204, 33, 180);
+                retangulosCheckbox[checkbox] = retangulo;
+                cboxElementos.Text = "48";
+            }
+            else
+            {
+                retangulosCheckbox.Remove(checkbox);
+                cboxElementos.Text = "---";
+            }
+
+            pbImgOdontograma.Invalidate();
+        }
+
+        private void checkBox17_CheckedChanged(object sender, EventArgs e)
+        {
+            var checkbox = (System.Windows.Forms.CheckBox)sender;
+
+            if (checkbox.Checked)
+            {
+                Rectangle retangulo = new Rectangle(47, 15, 32, 180);
+                retangulosCheckbox[checkbox] = retangulo;
+                cboxElementos.Text = "17";
+            }
+            else
+            {
+                retangulosCheckbox.Remove(checkbox);
+                cboxElementos.Text = "---";
+            }
+
+            pbImgOdontograma.Invalidate();
+
+        }
+
+        private void checkBox47_CheckedChanged(object sender, EventArgs e)
+        {
+            var checkbox = (System.Windows.Forms.CheckBox)sender;
+
+            if (checkbox.Checked)
+            {
+                Rectangle retangulo = new Rectangle(47, 204, 32, 180);
+                retangulosCheckbox[checkbox] = retangulo;
+                cboxElementos.Text = "47";
+            }
+            else
+            {
+                retangulosCheckbox.Remove(checkbox);
+                cboxElementos.Text = "---";
+            }
+
+            pbImgOdontograma.Invalidate();
+
+        }
+
+        private void checkBox16_CheckedChanged(object sender, EventArgs e)
+        {
+            var checkbox = (System.Windows.Forms.CheckBox)sender;
+
+            if (checkbox.Checked)
+            {
+                Rectangle retangulo = new Rectangle(81, 15, 32, 180);
+                retangulosCheckbox[checkbox] = retangulo;
+                cboxElementos.Text = "16";
+            }
+            else
+            {
+                retangulosCheckbox.Remove(checkbox);
+                cboxElementos.Text = "---";
+            }
+
+            pbImgOdontograma.Invalidate();
+
+        }
+
+        private void checkBox46_CheckedChanged(object sender, EventArgs e)
+        {
+            var checkbox = (System.Windows.Forms.CheckBox)sender;
+
+            if (checkbox.Checked)
+            {
+                Rectangle retangulo = new Rectangle(81, 204, 32, 180);
+                retangulosCheckbox[checkbox] = retangulo;
+                cboxElementos.Text = "46";
+            }
+            else
+            {
+                retangulosCheckbox.Remove(checkbox);
+                cboxElementos.Text = "---";
+            }
+
+            pbImgOdontograma.Invalidate();
+
+        }
+
+
+
+
 
         ////////////////////////////////////////////////////////////
 
@@ -566,7 +669,10 @@ namespace SistemaOdonto
         //        // Exibe o Bitmap na PictureBox
         //        pbImgOdontograma.Image = bitmap;
         //    }
+        //}
 
-    }   //}
-                
+
+
+    }
+
 }

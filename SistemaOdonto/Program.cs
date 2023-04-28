@@ -16,7 +16,7 @@ namespace SistemaOdonto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmOdontograma());
+            Application.Run(new FrmPrincipal());
         }
     }
 }
