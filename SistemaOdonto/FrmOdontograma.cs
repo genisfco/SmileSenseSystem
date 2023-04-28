@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaOdonto.WSCorreios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WcfService;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
@@ -42,11 +44,13 @@ namespace SistemaOdonto
         //private bool isCheckboxChecked = false;
         //private Rectangle retanguloCheckbox;
 
+        DentistaService serviceD = new DentistaService();
 
 
         public FrmOdontograma()
         {
             InitializeComponent();
+            ListarDentistas();
             _pen = new Pen(Color.Black, 2);
             _bitmap = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
             pbImgOdontograma.Image = _bitmap;
@@ -56,6 +60,32 @@ namespace SistemaOdonto
             btnUndo.Visible = false;
             btnColor.Enabled = false;
         }
+
+        private void ListarDentistas()
+        {
+            try
+            {
+                var lista = serviceD.Listar();
+                var listaD = new Dictionary<int, string>();
+                listaD.Add(0, "Selecione um Dentista");
+                foreach (var item in lista)
+                {
+                    listaD.Add(item.Id, item.Nome);
+                }
+                cboxDentista.DataSource = new BindingSource(listaD, null);
+                cboxDentista.DisplayMember = "value";
+                cboxDentista.ValueMember = "key";
+            }
+            catch (System.Exception ex)
+            {
+
+                MessageBox.Show("Erro ao carregar a lista!" + ex.Message);
+            }
+        }
+
+
+
+
 
         private void FrmOdontograma_Load(object sender, EventArgs e)
         {
@@ -272,7 +302,7 @@ namespace SistemaOdonto
                     command.ExecuteNonQuery();
                     connection.Close();
                 }
-                catch (Exception)
+                catch (System.Exception)
                 {
                     MessageBox.Show("Não foi possível salvar a imagem");
 
@@ -477,6 +507,7 @@ namespace SistemaOdonto
         private void btnAdicionarProcedimento_Click(object sender, EventArgs e)
         {
             // Obtém os valores selecionados ou textos digitados nos ComboBoxes
+            string dentista = cboxDentista.Text.Trim();
             string elemento = cboxElementos.SelectedItem?.ToString() ?? "---";
             string face = cboxFaces.SelectedItem?.ToString() ?? "Não informado";
             string especialidade = cboxEspecialidade.Text.Trim();
@@ -484,14 +515,20 @@ namespace SistemaOdonto
             DateTime data = DateTime.Now;
 
             // Verifica se a especialidade e o procedimento foram selecionados ou digitados
-            if (string.IsNullOrEmpty(especialidade) || string.IsNullOrEmpty(procedimento))
+            if (dentista == "Selecione um Dentista")
+            {
+                MessageBox.Show("Dentista não informado: Selecione o Cirugião Dentista");
+                return; // Sai do evento do botão para interromper a execução
+            }
+
+            else if (string.IsNullOrEmpty(especialidade) || string.IsNullOrEmpty(procedimento))
             {
                 MessageBox.Show("Escreva ou selecione a Especialidade e o Procedimento.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return; // Sai do evento do botão para interromper a execução
             }
 
             // Adiciona os valores como uma nova linha no DataGridView
-            dataGridProcedimentos.Rows.Add(elemento, face, especialidade, procedimento, data);
+            dataGridProcedimentos.Rows.Add(elemento, face, dentista, procedimento, data);
         }
 
 
@@ -627,6 +664,8 @@ namespace SistemaOdonto
             pbImgOdontograma.Invalidate();
 
         }
+
+        
 
 
 

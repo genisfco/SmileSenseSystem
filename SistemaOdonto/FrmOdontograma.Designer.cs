@@ -79,6 +79,7 @@ namespace SistemaOdonto
             this.checkBox38 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cboxDentista = new System.Windows.Forms.ComboBox();
             this.dataGridProcedimentos = new System.Windows.Forms.DataGridView();
             this.cboxFaces = new System.Windows.Forms.ComboBox();
             this.cboxProcedimento = new System.Windows.Forms.ComboBox();
@@ -89,7 +90,7 @@ namespace SistemaOdonto
             this.label3 = new System.Windows.Forms.Label();
             this.Elemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Face = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Especialidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dentista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Procedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPenBlack)).BeginInit();
@@ -674,6 +675,7 @@ namespace SistemaOdonto
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.cboxDentista);
             this.groupBox5.Controls.Add(this.dataGridProcedimentos);
             this.groupBox5.Controls.Add(this.cboxFaces);
             this.groupBox5.Controls.Add(this.cboxProcedimento);
@@ -687,22 +689,31 @@ namespace SistemaOdonto
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Procedimentos";
             // 
+            // cboxDentista
+            // 
+            this.cboxDentista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxDentista.FormattingEnabled = true;
+            this.cboxDentista.Location = new System.Drawing.Point(7, 38);
+            this.cboxDentista.Name = "cboxDentista";
+            this.cboxDentista.Size = new System.Drawing.Size(463, 28);
+            this.cboxDentista.TabIndex = 113;
+            // 
             // dataGridProcedimentos
             // 
             this.dataGridProcedimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridProcedimentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Elemento,
             this.Face,
-            this.Especialidade,
+            this.Dentista,
             this.Procedimento,
             this.Data});
-            this.dataGridProcedimentos.Location = new System.Drawing.Point(6, 83);
+            this.dataGridProcedimentos.Location = new System.Drawing.Point(6, 131);
             this.dataGridProcedimentos.Name = "dataGridProcedimentos";
             this.dataGridProcedimentos.RowHeadersVisible = false;
             this.dataGridProcedimentos.RowHeadersWidth = 62;
             this.dataGridProcedimentos.RowTemplate.Height = 28;
             this.dataGridProcedimentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridProcedimentos.Size = new System.Drawing.Size(1054, 606);
+            this.dataGridProcedimentos.Size = new System.Drawing.Size(1054, 558);
             this.dataGridProcedimentos.TabIndex = 112;
             this.dataGridProcedimentos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridProcedimentos_KeyDown);
             // 
@@ -710,7 +721,7 @@ namespace SistemaOdonto
             // 
             this.cboxFaces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxFaces.FormattingEnabled = true;
-            this.cboxFaces.Location = new System.Drawing.Point(84, 38);
+            this.cboxFaces.Location = new System.Drawing.Point(84, 88);
             this.cboxFaces.Name = "cboxFaces";
             this.cboxFaces.Size = new System.Drawing.Size(133, 28);
             this.cboxFaces.TabIndex = 111;
@@ -718,7 +729,7 @@ namespace SistemaOdonto
             // cboxProcedimento
             // 
             this.cboxProcedimento.FormattingEnabled = true;
-            this.cboxProcedimento.Location = new System.Drawing.Point(489, 38);
+            this.cboxProcedimento.Location = new System.Drawing.Point(489, 88);
             this.cboxProcedimento.Name = "cboxProcedimento";
             this.cboxProcedimento.Size = new System.Drawing.Size(467, 28);
             this.cboxProcedimento.TabIndex = 110;
@@ -741,7 +752,7 @@ namespace SistemaOdonto
             "TESTES E EXAMES",
             "URGÊNCIA/EMERGÊNCIA",
             "NENHUM(a)"});
-            this.cboxEspecialidade.Location = new System.Drawing.Point(236, 38);
+            this.cboxEspecialidade.Location = new System.Drawing.Point(236, 88);
             this.cboxEspecialidade.Name = "cboxEspecialidade";
             this.cboxEspecialidade.Size = new System.Drawing.Size(234, 28);
             this.cboxEspecialidade.TabIndex = 109;
@@ -785,7 +796,7 @@ namespace SistemaOdonto
             "46",
             "47",
             "48"});
-            this.cboxElementos.Location = new System.Drawing.Point(6, 38);
+            this.cboxElementos.Location = new System.Drawing.Point(6, 88);
             this.cboxElementos.Name = "cboxElementos";
             this.cboxElementos.Size = new System.Drawing.Size(59, 28);
             this.cboxElementos.TabIndex = 108;
@@ -794,11 +805,12 @@ namespace SistemaOdonto
             // btnAdicionarProcedimento
             // 
             this.btnAdicionarProcedimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnAdicionarProcedimento.Location = new System.Drawing.Point(963, 25);
+            this.btnAdicionarProcedimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionarProcedimento.Location = new System.Drawing.Point(963, 82);
             this.btnAdicionarProcedimento.Name = "btnAdicionarProcedimento";
-            this.btnAdicionarProcedimento.Size = new System.Drawing.Size(56, 52);
+            this.btnAdicionarProcedimento.Size = new System.Drawing.Size(56, 43);
             this.btnAdicionarProcedimento.TabIndex = 107;
-            this.btnAdicionarProcedimento.Text = "Adicionar";
+            this.btnAdicionarProcedimento.Text = "+";
             this.btnAdicionarProcedimento.UseVisualStyleBackColor = false;
             this.btnAdicionarProcedimento.Click += new System.EventHandler(this.btnAdicionarProcedimento_Click);
             // 
@@ -839,14 +851,12 @@ namespace SistemaOdonto
             this.Face.ReadOnly = true;
             this.Face.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // Especialidade
+            // Dentista
             // 
-            this.Especialidade.HeaderText = "Especialidade";
-            this.Especialidade.MinimumWidth = 8;
-            this.Especialidade.Name = "Especialidade";
-            this.Especialidade.ReadOnly = true;
-            this.Especialidade.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Especialidade.Width = 170;
+            this.Dentista.HeaderText = "Cirurgião";
+            this.Dentista.MinimumWidth = 8;
+            this.Dentista.Name = "Dentista";
+            this.Dentista.Width = 170;
             // 
             // Procedimento
             // 
@@ -985,9 +995,10 @@ namespace SistemaOdonto
         private System.Windows.Forms.Button btnAdicionarProcedimento;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboxDentista;
         private System.Windows.Forms.DataGridViewTextBoxColumn Elemento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Face;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Especialidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dentista;
         private System.Windows.Forms.DataGridViewTextBoxColumn Procedimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
     }
