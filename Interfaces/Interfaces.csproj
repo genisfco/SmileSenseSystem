@@ -57,6 +57,7 @@
     <Compile Include="IDentista.cs" />
     <Compile Include="IOdontograma.cs" />
     <Compile Include="IPaciente.cs" />
+    <Compile Include="IProcedimento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

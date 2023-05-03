@@ -10,7 +10,6 @@ namespace Entidades
     {
         public int IdOdontograma { get; set; }
         public int IdPaciente { get; set; }
-        public string Procedimentos { get; set; }
         public string Imagem { get; set; }
     }
 }

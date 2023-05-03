@@ -30,6 +30,7 @@ namespace Controllers.Context
         public DbSet<Dentista> Dentistas { get; set; }
         public DbSet<Anamnese> Anamneses { get; set; }
         public DbSet<Odontograma> Odontogramas { get; set; }
+        public DbSet<Procedimento> Procedimentos { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -40,6 +41,7 @@ namespace Controllers.Context
             modelBuilder.Configurations.Add(new ConsultaMap());
             modelBuilder.Configurations.Add(new AnamneseMap());
             modelBuilder.Configurations.Add(new OdontogramaMap());
+            modelBuilder.Configurations.Add(new ProcedimentoMap());
 
             base.OnModelCreating(modelBuilder);
         }

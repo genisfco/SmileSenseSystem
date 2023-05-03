@@ -46,6 +46,7 @@
     <Compile Include="Dentista.cs" />
     <Compile Include="Odontograma.cs" />
     <Compile Include="Paciente.cs" />
+    <Compile Include="Procedimento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

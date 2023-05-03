@@ -12,27 +12,23 @@ using System.Text;
 
 namespace WcfService
 {
-    public class AnamneseService : IAnamnese
+    public class ProcedimentoService : IProcedimento
     {
-        private AnamneseRep rep = new AnamneseRep();
+        private ProcedimentoRep rep = new ProcedimentoRep();
 
-        public void Cadastrar(Anamnese obj)
+        public void Cadastrar(Procedimento obj)
         {
             rep.Cadastrar(obj);
         }
 
-        public Anamnese Buscar(int id)
+        public Procedimento Buscar(int id)
         {
             return rep.Buscar(id);
         }
 
-        //public IQueryable<Anamnese> Buscar(Anamnese anamnese)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
         
-        public List<Anamnese> Listar()
+
+        public List<Procedimento> Listar()
         {
             return rep.Listar();
         }
@@ -43,11 +39,10 @@ namespace WcfService
             rep.Deletar(id);
         }
 
-        public void Editar(Anamnese objNovo)
+        public void Editar(Procedimento objNovo)
         {
             rep.Editar(objNovo);
         }
 
-        
     }
 }

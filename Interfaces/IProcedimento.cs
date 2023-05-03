@@ -10,21 +10,21 @@ using System.Xml.Linq;
 namespace Interfaces
 {
     [ServiceContract]
-    public interface IOdontograma
+    public interface IProcedimento
     {
         [OperationContract]
-        void Cadastrar(Odontograma obj);
+        void Cadastrar(Procedimento obj);
 
-        [OperationContract(Name = "BuscarPorIdPacte")]
-        Odontograma Buscar(int id);
+        [OperationContract(Name = "BuscarPorIdOdontograma")]
+        Procedimento Buscar(int id);
 
-        //[OperationContract(Name = "BuscarPorPaciente")]
-        //IQueryable<Odontograma> Buscar(Odontograma odontograma);
+        [OperationContract]
+        List<Procedimento> Listar();
 
         [OperationContract]
         void Deletar(int id);
 
         [OperationContract]
-        void Editar(Odontograma objNovo);
+        void Editar(Procedimento objNovo);
     }
 }
