@@ -17,10 +17,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace SistemaOdonto
 {
-
-
     public partial class FrmOdontograma : Form
     {
+        DentistaService serviceD = new DentistaService();
 
         //OPÇÃO DE CORES PARA DESENHO
         private Color color1 = Color.Black;
@@ -33,19 +32,11 @@ namespace SistemaOdonto
         private Bitmap _bitmap;
 
         //PILHA DE IMAGENS
-        private Stack<Bitmap> _undoStack = new Stack<Bitmap>();
-
-
-        //LISTA DE CHECKBOXES DOS DENTES
-        private List<System.Windows.Forms.CheckBox> _checkboxes = new List<System.Windows.Forms.CheckBox>();
+        private Stack<Bitmap> _undoStack = new Stack<Bitmap>();        
 
         // dicionário para mapear as checkboxes aos retângulos
         private Dictionary<System.Windows.Forms.CheckBox, Rectangle> retangulosCheckbox = new Dictionary<System.Windows.Forms.CheckBox, Rectangle>();
-
-        //private bool isCheckboxChecked = false;
-        //private Rectangle retanguloCheckbox;
-
-        DentistaService serviceD = new DentistaService();
+               
 
 
         public FrmOdontograma()
@@ -60,6 +51,21 @@ namespace SistemaOdonto
             btnUndoCircle.Visible = false;
             btnUndo.Visible = false;
             btnColor.Enabled = false;
+        }
+
+        private void FrmOdontograma_Load(object sender, EventArgs e)
+        {
+            // Exibir caixa de diálogo com instruções
+            MessageBox.Show("Bem-vindo ao Odontograma!" +
+                "\n\nInstruções de como preencher corretamente os Procedimentos:" +
+                "\n\n1. Selecione o checkbox do Elemento desejado no canto superior direito." +
+                "\n\n2. No quadro de Procedimentos Selecione o Dentista." +
+                "\n\n3. Selecione a Face do Elemento, a Especialidade e selecione ou digite o Procedimento." +
+                "\n\n4. Clique no botão + para adicionar o Procedimento na lista." +
+                "\n\n5. Repita o processo para cada Elemento." +
+                "\n\n6. Na imagem de Odontograma do quadro esquerdo faça as anotações necessárias." +
+                "\n\n7. Para salvar as informações: Clique em Salvar Odontograma." +
+                "", "Instruções para Preenchimento dos Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ListarDentistas()
@@ -85,14 +91,7 @@ namespace SistemaOdonto
         }
 
 
-
-
-
-        private void FrmOdontograma_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
 
         private void pbImgOdontograma_MouseClick(object sender, MouseEventArgs e)
         {
@@ -141,8 +140,6 @@ namespace SistemaOdonto
                 pbImgOdontograma.Invalidate();
             }
         }
-
-
 
         private void pbImgOdontograma_Paint(object sender, PaintEventArgs e)
         {
@@ -811,17 +808,32 @@ namespace SistemaOdonto
                 return; // Sai do evento do botão para interromper a execução
             }
 
+            else if (string.IsNullOrEmpty(especialidade) && !string.IsNullOrEmpty(procedimento))
+            {
+                especialidade = "NÃO INFORMADO";
+            }
+
+            else if (!string.IsNullOrEmpty(especialidade) && string.IsNullOrEmpty(procedimento))
+            {
+                MessageBox.Show("Necessário informar o Procedimento. Selecione ou Digite.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            else if (especialidade == "NENHUM(a)" && string.IsNullOrEmpty(procedimento))
+            {
+                MessageBox.Show("Necessário informar o Procedimento. Selecione ou Digite.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }            
+
             else if (string.IsNullOrEmpty(especialidade) || string.IsNullOrEmpty(procedimento))
             {
-                MessageBox.Show("Escreva ou selecione a Especialidade e o Procedimento.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Selecione a Especialidade e o Procedimento.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return; // Sai do evento do botão para interromper a execução
-            }
+            }            
 
             // Adiciona os valores como uma nova linha no DataGridView
             dataGridProcedimentos.Rows.Add(elemento, face, dentista, procedimento, data);
         }
-
-
 
         //DELEÇÃO DE LINHAS DA DATAGRID PROCEDIMENTOS POR TECLA DELETE
         private void dataGridProcedimentos_KeyDown(object sender, KeyEventArgs e)
@@ -835,129 +847,184 @@ namespace SistemaOdonto
             }
         }
 
-        /// SELEÇÃO DAS CHECKBOX PARA "SELECIONAR" ELEMENTOS NA IMAGEM (CRIA UM RETANGULO)
-        private void checkBox18_CheckedChanged(object sender, EventArgs e)
+        /// FUNÇÃO PARA CRIAR OS RETANGULOS DE SELEÇÃO NA IMAGEM ODONTOGRAMA
+        private void CriarRetangulo(object sender, EventArgs e, int x, int y, int width, int height, string elemento)
         {
             var checkbox = (System.Windows.Forms.CheckBox)sender;
 
             if (checkbox.Checked)
             {
-                Rectangle retangulo = new Rectangle(12, 15, 33, 180);
+                Rectangle retangulo = new Rectangle(x, y, width, height);
                 retangulosCheckbox[checkbox] = retangulo;
-                cboxElementos.Text = "18";
+                cboxElementos.Text = elemento;
             }
             else
             {
                 retangulosCheckbox.Remove(checkbox);
                 cboxElementos.Text = "---";
             }
-
-            pbImgOdontograma.Invalidate();            
+            pbImgOdontograma.Invalidate();
         }
 
+        private void checkBox18_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 12, 15, 33, 180, "18");
+        }
 
         private void checkBox48_CheckedChanged(object sender, EventArgs e)
         {
-            var checkbox = (System.Windows.Forms.CheckBox)sender;
-
-            if (checkbox.Checked)
-            {
-                Rectangle retangulo = new Rectangle(12, 204, 33, 180);
-                retangulosCheckbox[checkbox] = retangulo;
-                cboxElementos.Text = "48";
-            }
-            else
-            {
-                retangulosCheckbox.Remove(checkbox);
-                cboxElementos.Text = "---";
-            }
-
-            pbImgOdontograma.Invalidate();
+            CriarRetangulo(sender, e, 12, 204, 33, 180, "48");
         }
 
         private void checkBox17_CheckedChanged(object sender, EventArgs e)
         {
-            var checkbox = (System.Windows.Forms.CheckBox)sender;
-
-            if (checkbox.Checked)
-            {
-                Rectangle retangulo = new Rectangle(47, 15, 32, 180);
-                retangulosCheckbox[checkbox] = retangulo;
-                cboxElementos.Text = "17";
-            }
-            else
-            {
-                retangulosCheckbox.Remove(checkbox);
-                cboxElementos.Text = "---";
-            }
-
-            pbImgOdontograma.Invalidate();
-
+            CriarRetangulo(sender, e, 47, 15, 32, 180, "17");
         }
 
         private void checkBox47_CheckedChanged(object sender, EventArgs e)
         {
-            var checkbox = (System.Windows.Forms.CheckBox)sender;
-
-            if (checkbox.Checked)
-            {
-                Rectangle retangulo = new Rectangle(47, 204, 32, 180);
-                retangulosCheckbox[checkbox] = retangulo;
-                cboxElementos.Text = "47";
-            }
-            else
-            {
-                retangulosCheckbox.Remove(checkbox);
-                cboxElementos.Text = "---";
-            }
-
-            pbImgOdontograma.Invalidate();
-
+            CriarRetangulo(sender, e, 47, 204, 32, 180, "47");
         }
 
         private void checkBox16_CheckedChanged(object sender, EventArgs e)
         {
-            var checkbox = (System.Windows.Forms.CheckBox)sender;
-
-            if (checkbox.Checked)
-            {
-                Rectangle retangulo = new Rectangle(81, 15, 32, 180);
-                retangulosCheckbox[checkbox] = retangulo;
-                cboxElementos.Text = "16";
-            }
-            else
-            {
-                retangulosCheckbox.Remove(checkbox);
-                cboxElementos.Text = "---";
-            }
-
-            pbImgOdontograma.Invalidate();
-
+            CriarRetangulo(sender, e, 81, 15, 32, 180, "16");
         }
 
         private void checkBox46_CheckedChanged(object sender, EventArgs e)
         {
-            var checkbox = (System.Windows.Forms.CheckBox)sender;
-
-            if (checkbox.Checked)
-            {
-                Rectangle retangulo = new Rectangle(81, 204, 32, 180);
-                retangulosCheckbox[checkbox] = retangulo;
-                cboxElementos.Text = "46";
-            }
-            else
-            {
-                retangulosCheckbox.Remove(checkbox);
-                cboxElementos.Text = "---";
-            }
-
-            pbImgOdontograma.Invalidate();
-
+            CriarRetangulo(sender, e, 81, 204, 32, 180, "46");
         }
 
-        
+        private void checkBox15_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 115, 15, 32, 180, "15");
+        }
 
+        private void checkBox45_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 115, 204, 32, 180, "45");
+        }
 
+        private void checkBox14_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 149, 15, 32, 180, "14");
+        }
+
+        private void checkBox44_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 149, 204, 32, 180, "44");
+        }
+
+        private void checkBox13_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 183, 15, 32, 180, "13");
+        }
+
+        private void checkBox43_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 183, 204, 32, 180, "43");
+        }
+
+        private void checkBox12_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 217, 15, 31, 180, "12");
+        }
+
+        private void checkBox42_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 217, 204, 31, 180, "42");
+        }
+
+        private void checkBox11_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 250, 15, 32, 180, "11");
+        }
+
+        private void checkBox41_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 250, 204, 32, 180, "41");
+        }
+
+        private void checkBox21_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 285, 15, 32, 180, "21");
+        }
+
+        private void checkBox31_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 285, 204, 32, 180, "31");
+        }
+
+        private void checkBox22_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 319, 15, 31, 180, "22");
+        }
+
+        private void checkBox32_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 319, 204, 31, 180, "32");
+        }
+
+        private void checkBox23_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 352, 15, 32, 180, "23");
+        }
+
+        private void checkBox33_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 352, 204, 32, 180, "33");
+        }
+
+        private void checkBox24_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 386, 15, 32, 180, "24");
+        }
+
+        private void checkBox34_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 386, 204, 32, 180, "34");
+        }
+
+        private void checkBox25_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 420, 15, 32, 180, "25");
+        }
+
+        private void checkBox35_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 420, 204, 32, 180, "35");
+        }
+
+        private void checkBox26_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 454, 15, 32, 180, "26");
+        }
+
+        private void checkBox36_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 454, 204, 32, 180, "36");
+        }
+
+        private void checkBox27_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 488, 15, 32, 180, "27");
+        }
+
+        private void checkBox37_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 488, 204, 32, 180, "37");
+        }
+
+        private void checkBox28_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 522, 15, 33, 180, "28");
+        }
+
+        private void checkBox38_CheckedChanged(object sender, EventArgs e)
+        {
+            CriarRetangulo(sender, e, 522, 204, 33, 180, "38");
+        }
 
 
 

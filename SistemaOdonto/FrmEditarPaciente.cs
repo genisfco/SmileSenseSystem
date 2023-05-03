@@ -225,10 +225,36 @@ namespace SistemaOdonto
 
         private void btnAbrirOdontograma_Click(object sender, EventArgs e)
         {
-            FrmOdontograma frm = new FrmOdontograma();
-            frm.ShowDialog();
-        }
+            //    Obter o ID do paciente 
+            int idPaciente = int.Parse(lblCodigo.Text);
 
+            OdontogramaService serviceO = new OdontogramaService();
+
+            Odontograma odontograma = serviceO.Buscar(idPaciente);
+
+            //    Verificar se a Odontograma foi encontrado
+            if (odontograma != null)
+            {
+                //FrmEditarAnamnese frmEdtAnm = new FrmEditarAnamnese(anamnese);
+
+                //frmEdtAnm.lblCodigo.Text = lblCodigo.Text;
+                //frmEdtAnm.lblCodAnm.Text = anamnese.IdAnamnese.ToString();
+                //frmEdtAnm.txtNome.Text = txtNome.Text;
+                //frmEdtAnm.maskCPFPaciente.Text = masktxtCPFPaciente.Text;
+                //frmEdtAnm.ShowDialog();
+            }
+            else if (odontograma == null)
+            {
+                MessageBox.Show("O Paciente não possui Odontograma cadastrado. Preencha e Salve a Ficha!");
+
+                FrmOdontograma frmOdo = new FrmOdontograma();
+
+                frmOdo.lblCodigo.Text = lblCodigo.Text;
+                frmOdo.txtNome.Text = txtNome.Text;                
+                frmOdo.masktxtCPFPaciente.Text = masktxtCPFPaciente.Text;
+                frmOdo.ShowDialog();
+            }
+        }
         
     }
 }

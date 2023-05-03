@@ -31,7 +31,7 @@ namespace SistemaOdonto
             this.label1 = new System.Windows.Forms.Label();
             this.lbCPF = new System.Windows.Forms.Label();
             this.masktxtCPFPaciente = new System.Windows.Forms.MaskedTextBox();
-            this.txtPaciente = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.lbPaciente = new System.Windows.Forms.Label();
             this.btnUndo = new System.Windows.Forms.Button();
             this.btnColor = new System.Windows.Forms.Button();
@@ -81,6 +81,11 @@ namespace SistemaOdonto
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cboxDentista = new System.Windows.Forms.ComboBox();
             this.dataGridProcedimentos = new System.Windows.Forms.DataGridView();
+            this.Elemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Face = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dentista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Procedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboxFaces = new System.Windows.Forms.ComboBox();
             this.cboxProcedimento = new System.Windows.Forms.ComboBox();
             this.cboxEspecialidade = new System.Windows.Forms.ComboBox();
@@ -88,11 +93,7 @@ namespace SistemaOdonto
             this.btnAdicionarProcedimento = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Elemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Face = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dentista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Procedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblCodigo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbPenBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgOdontograma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPenBlue)).BeginInit();
@@ -156,14 +157,14 @@ namespace SistemaOdonto
             this.masktxtCPFPaciente.TabIndex = 80;
             this.masktxtCPFPaciente.TabStop = false;
             // 
-            // txtPaciente
+            // txtNome
             // 
-            this.txtPaciente.Location = new System.Drawing.Point(426, 21);
-            this.txtPaciente.Name = "txtPaciente";
-            this.txtPaciente.ReadOnly = true;
-            this.txtPaciente.Size = new System.Drawing.Size(432, 26);
-            this.txtPaciente.TabIndex = 79;
-            this.txtPaciente.TabStop = false;
+            this.txtNome.Location = new System.Drawing.Point(426, 21);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.ReadOnly = true;
+            this.txtNome.Size = new System.Drawing.Size(432, 26);
+            this.txtNome.TabIndex = 79;
+            this.txtNome.TabStop = false;
             // 
             // lbPaciente
             // 
@@ -321,6 +322,7 @@ namespace SistemaOdonto
             this.checkBox15.TabIndex = 3;
             this.checkBox15.Text = "15";
             this.checkBox15.UseVisualStyleBackColor = true;
+            this.checkBox15.CheckedChanged += new System.EventHandler(this.checkBox15_CheckedChanged);
             // 
             // checkBox14
             // 
@@ -331,6 +333,7 @@ namespace SistemaOdonto
             this.checkBox14.TabIndex = 4;
             this.checkBox14.Text = "14";
             this.checkBox14.UseVisualStyleBackColor = true;
+            this.checkBox14.CheckedChanged += new System.EventHandler(this.checkBox14_CheckedChanged);
             // 
             // checkBox13
             // 
@@ -341,6 +344,7 @@ namespace SistemaOdonto
             this.checkBox13.TabIndex = 5;
             this.checkBox13.Text = "13";
             this.checkBox13.UseVisualStyleBackColor = true;
+            this.checkBox13.CheckedChanged += new System.EventHandler(this.checkBox13_CheckedChanged);
             // 
             // checkBox12
             // 
@@ -351,6 +355,7 @@ namespace SistemaOdonto
             this.checkBox12.TabIndex = 6;
             this.checkBox12.Text = "12";
             this.checkBox12.UseVisualStyleBackColor = true;
+            this.checkBox12.CheckedChanged += new System.EventHandler(this.checkBox12_CheckedChanged);
             // 
             // checkBox11
             // 
@@ -361,6 +366,7 @@ namespace SistemaOdonto
             this.checkBox11.TabIndex = 7;
             this.checkBox11.Text = "11";
             this.checkBox11.UseVisualStyleBackColor = true;
+            this.checkBox11.CheckedChanged += new System.EventHandler(this.checkBox11_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -388,6 +394,7 @@ namespace SistemaOdonto
             this.checkBox21.TabIndex = 0;
             this.checkBox21.Text = "21";
             this.checkBox21.UseVisualStyleBackColor = true;
+            this.checkBox21.CheckedChanged += new System.EventHandler(this.checkBox21_CheckedChanged);
             // 
             // checkBox22
             // 
@@ -398,6 +405,7 @@ namespace SistemaOdonto
             this.checkBox22.TabIndex = 1;
             this.checkBox22.Text = "22";
             this.checkBox22.UseVisualStyleBackColor = true;
+            this.checkBox22.CheckedChanged += new System.EventHandler(this.checkBox22_CheckedChanged);
             // 
             // checkBox23
             // 
@@ -408,6 +416,7 @@ namespace SistemaOdonto
             this.checkBox23.TabIndex = 2;
             this.checkBox23.Text = "23";
             this.checkBox23.UseVisualStyleBackColor = true;
+            this.checkBox23.CheckedChanged += new System.EventHandler(this.checkBox23_CheckedChanged);
             // 
             // checkBox24
             // 
@@ -418,6 +427,7 @@ namespace SistemaOdonto
             this.checkBox24.TabIndex = 3;
             this.checkBox24.Text = "24";
             this.checkBox24.UseVisualStyleBackColor = true;
+            this.checkBox24.CheckedChanged += new System.EventHandler(this.checkBox24_CheckedChanged);
             // 
             // checkBox25
             // 
@@ -428,6 +438,7 @@ namespace SistemaOdonto
             this.checkBox25.TabIndex = 4;
             this.checkBox25.Text = "25";
             this.checkBox25.UseVisualStyleBackColor = true;
+            this.checkBox25.CheckedChanged += new System.EventHandler(this.checkBox25_CheckedChanged);
             // 
             // checkBox26
             // 
@@ -438,6 +449,7 @@ namespace SistemaOdonto
             this.checkBox26.TabIndex = 5;
             this.checkBox26.Text = "26";
             this.checkBox26.UseVisualStyleBackColor = true;
+            this.checkBox26.CheckedChanged += new System.EventHandler(this.checkBox26_CheckedChanged);
             // 
             // checkBox27
             // 
@@ -448,6 +460,7 @@ namespace SistemaOdonto
             this.checkBox27.TabIndex = 6;
             this.checkBox27.Text = "27";
             this.checkBox27.UseVisualStyleBackColor = true;
+            this.checkBox27.CheckedChanged += new System.EventHandler(this.checkBox27_CheckedChanged);
             // 
             // checkBox28
             // 
@@ -458,6 +471,7 @@ namespace SistemaOdonto
             this.checkBox28.TabIndex = 7;
             this.checkBox28.Text = "28";
             this.checkBox28.UseVisualStyleBackColor = true;
+            this.checkBox28.CheckedChanged += new System.EventHandler(this.checkBox28_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -518,6 +532,7 @@ namespace SistemaOdonto
             this.checkBox45.TabIndex = 3;
             this.checkBox45.Text = "45";
             this.checkBox45.UseVisualStyleBackColor = true;
+            this.checkBox45.CheckedChanged += new System.EventHandler(this.checkBox45_CheckedChanged);
             // 
             // checkBox44
             // 
@@ -528,6 +543,7 @@ namespace SistemaOdonto
             this.checkBox44.TabIndex = 4;
             this.checkBox44.Text = "44";
             this.checkBox44.UseVisualStyleBackColor = true;
+            this.checkBox44.CheckedChanged += new System.EventHandler(this.checkBox44_CheckedChanged);
             // 
             // checkBox43
             // 
@@ -538,6 +554,7 @@ namespace SistemaOdonto
             this.checkBox43.TabIndex = 5;
             this.checkBox43.Text = "43";
             this.checkBox43.UseVisualStyleBackColor = true;
+            this.checkBox43.CheckedChanged += new System.EventHandler(this.checkBox43_CheckedChanged);
             // 
             // checkBox42
             // 
@@ -548,6 +565,7 @@ namespace SistemaOdonto
             this.checkBox42.TabIndex = 6;
             this.checkBox42.Text = "42";
             this.checkBox42.UseVisualStyleBackColor = true;
+            this.checkBox42.CheckedChanged += new System.EventHandler(this.checkBox42_CheckedChanged);
             // 
             // checkBox41
             // 
@@ -558,6 +576,7 @@ namespace SistemaOdonto
             this.checkBox41.TabIndex = 7;
             this.checkBox41.Text = "41";
             this.checkBox41.UseVisualStyleBackColor = true;
+            this.checkBox41.CheckedChanged += new System.EventHandler(this.checkBox41_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -585,6 +604,7 @@ namespace SistemaOdonto
             this.checkBox31.TabIndex = 0;
             this.checkBox31.Text = "31";
             this.checkBox31.UseVisualStyleBackColor = true;
+            this.checkBox31.CheckedChanged += new System.EventHandler(this.checkBox31_CheckedChanged);
             // 
             // checkBox32
             // 
@@ -595,6 +615,7 @@ namespace SistemaOdonto
             this.checkBox32.TabIndex = 1;
             this.checkBox32.Text = "32";
             this.checkBox32.UseVisualStyleBackColor = true;
+            this.checkBox32.CheckedChanged += new System.EventHandler(this.checkBox32_CheckedChanged);
             // 
             // checkBox33
             // 
@@ -605,6 +626,7 @@ namespace SistemaOdonto
             this.checkBox33.TabIndex = 2;
             this.checkBox33.Text = "33";
             this.checkBox33.UseVisualStyleBackColor = true;
+            this.checkBox33.CheckedChanged += new System.EventHandler(this.checkBox33_CheckedChanged);
             // 
             // checkBox34
             // 
@@ -615,6 +637,7 @@ namespace SistemaOdonto
             this.checkBox34.TabIndex = 3;
             this.checkBox34.Text = "34";
             this.checkBox34.UseVisualStyleBackColor = true;
+            this.checkBox34.CheckedChanged += new System.EventHandler(this.checkBox34_CheckedChanged);
             // 
             // checkBox35
             // 
@@ -625,6 +648,7 @@ namespace SistemaOdonto
             this.checkBox35.TabIndex = 4;
             this.checkBox35.Text = "35";
             this.checkBox35.UseVisualStyleBackColor = true;
+            this.checkBox35.CheckedChanged += new System.EventHandler(this.checkBox35_CheckedChanged);
             // 
             // checkBox36
             // 
@@ -635,6 +659,7 @@ namespace SistemaOdonto
             this.checkBox36.TabIndex = 5;
             this.checkBox36.Text = "36";
             this.checkBox36.UseVisualStyleBackColor = true;
+            this.checkBox36.CheckedChanged += new System.EventHandler(this.checkBox36_CheckedChanged);
             // 
             // checkBox37
             // 
@@ -645,6 +670,7 @@ namespace SistemaOdonto
             this.checkBox37.TabIndex = 6;
             this.checkBox37.Text = "37";
             this.checkBox37.UseVisualStyleBackColor = true;
+            this.checkBox37.CheckedChanged += new System.EventHandler(this.checkBox37_CheckedChanged);
             // 
             // checkBox38
             // 
@@ -655,6 +681,7 @@ namespace SistemaOdonto
             this.checkBox38.TabIndex = 7;
             this.checkBox38.Text = "38";
             this.checkBox38.UseVisualStyleBackColor = true;
+            this.checkBox38.CheckedChanged += new System.EventHandler(this.checkBox38_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -717,6 +744,48 @@ namespace SistemaOdonto
             this.dataGridProcedimentos.TabIndex = 112;
             this.dataGridProcedimentos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridProcedimentos_KeyDown);
             // 
+            // Elemento
+            // 
+            this.Elemento.HeaderText = "Dente";
+            this.Elemento.MinimumWidth = 8;
+            this.Elemento.Name = "Elemento";
+            this.Elemento.ReadOnly = true;
+            this.Elemento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Elemento.Width = 50;
+            // 
+            // Face
+            // 
+            this.Face.HeaderText = "Face";
+            this.Face.MinimumWidth = 8;
+            this.Face.Name = "Face";
+            this.Face.ReadOnly = true;
+            this.Face.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Face.Width = 150;
+            // 
+            // Dentista
+            // 
+            this.Dentista.HeaderText = "Cirurgião";
+            this.Dentista.MinimumWidth = 8;
+            this.Dentista.Name = "Dentista";
+            this.Dentista.Width = 170;
+            // 
+            // Procedimento
+            // 
+            this.Procedimento.HeaderText = "Procedimento";
+            this.Procedimento.MinimumWidth = 8;
+            this.Procedimento.Name = "Procedimento";
+            this.Procedimento.ReadOnly = true;
+            this.Procedimento.Width = 310;
+            // 
+            // Data
+            // 
+            this.Data.HeaderText = "Data";
+            this.Data.MinimumWidth = 8;
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
+            this.Data.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Data.Width = 150;
+            // 
             // cboxFaces
             // 
             this.cboxFaces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -736,6 +805,7 @@ namespace SistemaOdonto
             // 
             // cboxEspecialidade
             // 
+            this.cboxEspecialidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxEspecialidade.FormattingEnabled = true;
             this.cboxEspecialidade.Items.AddRange(new object[] {
             "CIRURGIA",
@@ -820,9 +890,9 @@ namespace SistemaOdonto
             this.label2.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label2.Location = new System.Drawing.Point(881, 941);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(479, 20);
+            this.label2.Size = new System.Drawing.Size(542, 20);
             this.label2.TabIndex = 113;
-            this.label2.Text = "* Para excluir procedimentos: Selecione a(s) linha(s) e tecle Delete.";
+            this.label2.Text = "* Para excluir procedimentos: Selecione a(s) linha(s) e aperte a tecla Delete.";
             // 
             // label3
             // 
@@ -834,52 +904,21 @@ namespace SistemaOdonto
             this.label3.TabIndex = 114;
             this.label3.Text = "*Selecione um Elemento e um Procedimento por vez, depois clique em Adicionar";
             // 
-            // Elemento
+            // lblCodigo
             // 
-            this.Elemento.HeaderText = "Dente";
-            this.Elemento.MinimumWidth = 8;
-            this.Elemento.Name = "Elemento";
-            this.Elemento.ReadOnly = true;
-            this.Elemento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Elemento.Width = 50;
-            // 
-            // Face
-            // 
-            this.Face.HeaderText = "Face";
-            this.Face.MinimumWidth = 8;
-            this.Face.Name = "Face";
-            this.Face.ReadOnly = true;
-            this.Face.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Dentista
-            // 
-            this.Dentista.HeaderText = "Cirurgião";
-            this.Dentista.MinimumWidth = 8;
-            this.Dentista.Name = "Dentista";
-            this.Dentista.Width = 170;
-            // 
-            // Procedimento
-            // 
-            this.Procedimento.HeaderText = "Procedimento";
-            this.Procedimento.MinimumWidth = 8;
-            this.Procedimento.Name = "Procedimento";
-            this.Procedimento.ReadOnly = true;
-            this.Procedimento.Width = 310;
-            // 
-            // Data
-            // 
-            this.Data.HeaderText = "Data";
-            this.Data.MinimumWidth = 8;
-            this.Data.Name = "Data";
-            this.Data.ReadOnly = true;
-            this.Data.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Data.Width = 150;
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(228, 27);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(39, 20);
+            this.lblCodigo.TabIndex = 115;
+            this.lblCodigo.Text = "cod.";
             // 
             // FrmOdontograma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1915, 966);
+            this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox5);
@@ -901,7 +940,7 @@ namespace SistemaOdonto
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbCPF);
             this.Controls.Add(this.masktxtCPFPaciente);
-            this.Controls.Add(this.txtPaciente);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lbPaciente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -938,8 +977,6 @@ namespace SistemaOdonto
         private System.Windows.Forms.Button btnSalvarFichaClinica;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbCPF;
-        private System.Windows.Forms.MaskedTextBox masktxtCPFPaciente;
-        private System.Windows.Forms.TextBox txtPaciente;
         private System.Windows.Forms.Label lbPaciente;
         private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.PictureBox pbPenBlack;
@@ -1001,5 +1038,8 @@ namespace SistemaOdonto
         private System.Windows.Forms.DataGridViewTextBoxColumn Dentista;
         private System.Windows.Forms.DataGridViewTextBoxColumn Procedimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        public System.Windows.Forms.Label lblCodigo;
+        public System.Windows.Forms.MaskedTextBox masktxtCPFPaciente;
+        public System.Windows.Forms.TextBox txtNome;
     }
 }
