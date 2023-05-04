@@ -8,12 +8,14 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WcfService;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace SistemaOdonto
 {
@@ -36,7 +38,10 @@ namespace SistemaOdonto
 
         // dicionário para mapear as checkboxes aos retângulos
         private Dictionary<System.Windows.Forms.CheckBox, Rectangle> retangulosCheckbox = new Dictionary<System.Windows.Forms.CheckBox, Rectangle>();
-               
+
+        //dicionário para mapear as checkboxes
+        private Dictionary<string, System.Windows.Forms.CheckBox> elementoCheckboxMap = new Dictionary<string, System.Windows.Forms.CheckBox>();
+
 
 
         public FrmOdontograma()
@@ -51,6 +56,39 @@ namespace SistemaOdonto
             btnUndoCircle.Visible = false;
             btnUndo.Visible = false;
             btnColor.Enabled = false;
+
+            elementoCheckboxMap["11"] = checkBox11;
+            elementoCheckboxMap["12"] = checkBox12;
+            elementoCheckboxMap["13"] = checkBox13;
+            elementoCheckboxMap["14"] = checkBox14;
+            elementoCheckboxMap["15"] = checkBox15;
+            elementoCheckboxMap["16"] = checkBox16;
+            elementoCheckboxMap["17"] = checkBox17;
+            elementoCheckboxMap["18"] = checkBox18;
+            elementoCheckboxMap["21"] = checkBox21;
+            elementoCheckboxMap["22"] = checkBox22;
+            elementoCheckboxMap["23"] = checkBox23;
+            elementoCheckboxMap["24"] = checkBox24;
+            elementoCheckboxMap["25"] = checkBox25;
+            elementoCheckboxMap["26"] = checkBox26;
+            elementoCheckboxMap["27"] = checkBox27;
+            elementoCheckboxMap["28"] = checkBox28;
+            elementoCheckboxMap["31"] = checkBox31;
+            elementoCheckboxMap["32"] = checkBox32;
+            elementoCheckboxMap["33"] = checkBox33;
+            elementoCheckboxMap["34"] = checkBox34;
+            elementoCheckboxMap["35"] = checkBox35;
+            elementoCheckboxMap["36"] = checkBox36;
+            elementoCheckboxMap["37"] = checkBox37;
+            elementoCheckboxMap["38"] = checkBox38;
+            elementoCheckboxMap["41"] = checkBox41;
+            elementoCheckboxMap["42"] = checkBox42;
+            elementoCheckboxMap["43"] = checkBox43;
+            elementoCheckboxMap["44"] = checkBox44;
+            elementoCheckboxMap["45"] = checkBox45;
+            elementoCheckboxMap["46"] = checkBox46;
+            elementoCheckboxMap["47"] = checkBox47;
+            elementoCheckboxMap["48"] = checkBox48;            
         }
 
         private void FrmOdontograma_Load(object sender, EventArgs e)
@@ -66,6 +104,7 @@ namespace SistemaOdonto
                 "\n\n6. Na imagem de Odontograma do quadro esquerdo faça as anotações necessárias." +
                 "\n\n7. Para salvar as informações: Clique em Salvar Odontograma." +
                 "", "Instruções para Preenchimento dos Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void ListarDentistas()
@@ -834,18 +873,7 @@ namespace SistemaOdonto
             // Adiciona os valores como uma nova linha no DataGridView
             dataGridProcedimentos.Rows.Add(elemento, face, dentista, procedimento, data);
         }
-
-        //DELEÇÃO DE LINHAS DA DATAGRID PROCEDIMENTOS POR TECLA DELETE
-        private void dataGridProcedimentos_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Delete)
-            {
-                if (dataGridProcedimentos.SelectedRows.Count > 1)
-                {
-                    dataGridProcedimentos.Rows.RemoveAt(dataGridProcedimentos.SelectedRows[0].Index);
-                }
-            }
-        }
+       
 
         /// FUNÇÃO PARA CRIAR OS RETANGULOS DE SELEÇÃO NA IMAGEM ODONTOGRAMA
         private void CriarRetangulo(object sender, EventArgs e, int x, int y, int width, int height, string elemento)
@@ -1027,8 +1055,40 @@ namespace SistemaOdonto
         }
 
 
+        private void dataGridProcedimentos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                // Exibe a caixa de diálogo de confirmação
+                DialogResult result = MessageBox.Show("Você está excluindo um Procedimento, após a exclusão verifique" +
+                    " se as seleções e informações dos outros Elementos e Procedimentos estão corretas." +
+                    "\n\nTem certeza que deseja excluir este Procedimento?", "ATENÇÃO: Exclusão de Procedimento!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-        ////////////////////////////////////////////////////////////
+                if (result == DialogResult.Yes)
+                {
+                    if (dataGridProcedimentos.SelectedRows.Count >= 1)
+                    {
+                        var rowToRemove = dataGridProcedimentos.SelectedRows[0];
+
+                        string elemento = rowToRemove.Cells["Elemento"].Value.ToString();
+
+                        if (elementoCheckboxMap.ContainsKey(elemento))
+                        {
+                            var checkbox = elementoCheckboxMap[elemento];
+                            checkbox.Checked = false;
+                        }                        
+                    }
+
+                }
+                else
+                {
+                    e.SuppressKeyPress = true; // Cancela o evento KeyDown
+                    SendKeys.Send("{ESC}"); // Simula um pressionamento da tecla Escape
+                }                
+            }           
+        }
+
+       ////////////////////////////////////////
 
         ////CONSULTA DA IMAGEM NO BANCO
         //private void btnConsultarImagem_Click(object sender, EventArgs e)

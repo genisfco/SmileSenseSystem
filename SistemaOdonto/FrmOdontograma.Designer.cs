@@ -727,6 +727,7 @@ namespace SistemaOdonto
             // 
             // dataGridProcedimentos
             // 
+            this.dataGridProcedimentos.AllowUserToAddRows = false;
             this.dataGridProcedimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridProcedimentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Elemento,
@@ -735,7 +736,9 @@ namespace SistemaOdonto
             this.Procedimento,
             this.Data});
             this.dataGridProcedimentos.Location = new System.Drawing.Point(6, 131);
+            this.dataGridProcedimentos.MultiSelect = false;
             this.dataGridProcedimentos.Name = "dataGridProcedimentos";
+            this.dataGridProcedimentos.ReadOnly = true;
             this.dataGridProcedimentos.RowHeadersVisible = false;
             this.dataGridProcedimentos.RowHeadersWidth = 62;
             this.dataGridProcedimentos.RowTemplate.Height = 28;
@@ -767,6 +770,7 @@ namespace SistemaOdonto
             this.Dentista.HeaderText = "Cirurgião";
             this.Dentista.MinimumWidth = 8;
             this.Dentista.Name = "Dentista";
+            this.Dentista.ReadOnly = true;
             this.Dentista.Width = 170;
             // 
             // Procedimento
@@ -890,9 +894,10 @@ namespace SistemaOdonto
             this.label2.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label2.Location = new System.Drawing.Point(881, 941);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(542, 20);
+            this.label2.Size = new System.Drawing.Size(575, 20);
             this.label2.TabIndex = 113;
-            this.label2.Text = "* Para excluir procedimentos: Selecione a(s) linha(s) e aperte a tecla Delete.";
+            this.label2.Text = "* Para excluir procedimentos: Selecione a linha desejada e aperte a tecla Delete." +
+    "";
             // 
             // label3
             // 
