@@ -1,10 +1,12 @@
-﻿using SistemaOdonto.WSCorreios;
+﻿using Entidades;
+using SistemaOdonto.WSCorreios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
@@ -22,6 +24,9 @@ namespace SistemaOdonto
     public partial class FrmOdontograma : Form
     {
         DentistaService serviceD = new DentistaService();
+
+        OdontogramaService serviceOdt = new OdontogramaService();
+        ProcedimentoService serviceProcd = new ProcedimentoService();
 
         //OPÇÃO DE CORES PARA DESENHO
         private Color color1 = Color.Black;
@@ -130,7 +135,24 @@ namespace SistemaOdonto
         }
 
 
-        
+
+        // Função para gerar a imagem combinada
+        byte[] GerarImagem(PictureBox pictureBox)
+        {
+            // Cria uma nova imagem Bitmap com o tamanho da pictureBox
+            Bitmap bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
+
+            // Desenha a pictureBox na imagem Bitmap
+            pictureBox.DrawToBitmap(bitmap, pictureBox.ClientRectangle);
+
+            // Converte a imagem Bitmap em um array de bytes
+            using (MemoryStream ms = new MemoryStream())
+            {
+                bitmap.Save(ms, ImageFormat.Jpeg); // Escolha o formato de imagem adequado
+
+                return ms.ToArray();
+            }
+        }
 
         private void pbImgOdontograma_MouseClick(object sender, MouseEventArgs e)
         {
@@ -1088,7 +1110,59 @@ namespace SistemaOdonto
             }           
         }
 
-       ////////////////////////////////////////
+        private void btnSalvarFichaClinica_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                serviceOdt.Cadastrar(ObjOdontogramaGerado());
+                MessageBox.Show("Odontograma salvo com sucesso!");
+                this.Close();
+
+
+
+
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Erro ao Salvar " + ex.Message);
+            }
+        }        
+
+
+        public Odontograma ObjOdontogramaGerado()
+        {
+            //PEGANDO A IMAGEM GERADA NA FUNÇÃO
+            byte[] imagemBytes = GerarImagem(pbImgOdontograma);
+            
+            Odontograma objOdt = new Odontograma();
+            objOdt.IdPaciente = Convert.ToInt32(lblCodigo.Text);
+            objOdt.Imagem = imagemBytes;      
+
+            return objOdt;
+        }       
+
+        //public Procedimento ObjProcedimentoGerado()
+        //{
+        //    //Busca do id do Dentista pelo nome selecionado na combobox
+        //    string nomeDentista = cboxDentista.SelectedItem.ToString();
+        //    Dentista dentistaEncontrado = serviceD.BuscarPorNome(nomeDentista);
+        //    int idDentista = dentistaEncontrado.Id;
+
+
+        //    //GERANDO O OBJETO PROCEDIMENTO PARA CADASTRAR NO BANCO.
+        //    Procedimento objProcd = new Procedimento();
+        //    objProcd.IdDentista = idDentista;
+        //    //objProcd.IdOdontograma =         
+
+        //    return objProcd;
+        //}
+
+        
+
+
+
+        ////////////////////////////////////////
 
         ////CONSULTA DA IMAGEM NO BANCO
         //private void btnConsultarImagem_Click(object sender, EventArgs e)

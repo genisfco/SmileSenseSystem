@@ -18,6 +18,9 @@ namespace Interfaces
         Dentista Buscar(int id);
 
         [OperationContract]
+        Dentista BuscarPorNome(string nome);
+
+        [OperationContract]
         List<Dentista>Listar();
 
         [OperationContract]

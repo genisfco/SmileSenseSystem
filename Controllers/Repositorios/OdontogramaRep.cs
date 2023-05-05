@@ -21,7 +21,7 @@ namespace Controllers.Repositorios
         }
 
 
-        public Odontograma Buscar(int id)
+        public Odontograma BuscarOdontograma(int id)
         {
             Odontograma obj = new Odontograma();
             using (var ctx = new SistemaContext())
@@ -32,13 +32,16 @@ namespace Controllers.Repositorios
         }
 
 
-        public IQueryable<Odontograma> Buscar(Paciente paciente)
+        public Odontograma BuscarOdtPorIdPaciente(int idPaciente)
         {
-            var ctx = new SistemaContext();
-            Paciente p = new Paciente();
-            var Odontogramas = ctx.Odontogramas.Where(anm => anm.IdPaciente == paciente.Id);
-            return Odontogramas;
+            using (var ctx = new SistemaContext())
+            {
+                Odontograma obj = ctx.Odontogramas.FirstOrDefault(o => o.IdPaciente == idPaciente);
+                return obj;
+            }
         }
+
+
 
 
         public void Deletar(int id)

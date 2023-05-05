@@ -27,6 +27,11 @@ namespace WcfService
             return rep.Buscar(id);
         }
 
+        public Dentista BuscarPorNome(string nome)
+        {
+            return rep.BuscarPorNome(nome);
+        }
+
 
         public List<Dentista> Listar()
         {

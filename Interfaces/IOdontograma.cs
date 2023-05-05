@@ -15,11 +15,11 @@ namespace Interfaces
         [OperationContract]
         void Cadastrar(Odontograma obj);
 
-        [OperationContract(Name = "BuscarPorIdPacte")]
-        Odontograma Buscar(int id);
+        [OperationContract(Name = "BuscarOdontograma")]
+        Odontograma BuscarOdontograma(int id);
 
-        //[OperationContract(Name = "BuscarPorPaciente")]
-        //IQueryable<Odontograma> Buscar(Odontograma odontograma);
+        [OperationContract]
+        Odontograma BuscarOdtPorIdPaciente(int idPaciente);
 
         [OperationContract]
         void Deletar(int id);

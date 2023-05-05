@@ -21,21 +21,15 @@ namespace WcfService
             rep.Cadastrar(obj);
         }
 
-        public Odontograma Buscar(int id)
+        public Odontograma BuscarOdontograma(int id)
         {
-            return rep.Buscar(id);
+            return rep.BuscarOdontograma(id);
         }
 
-        public IQueryable<Odontograma> Buscar(Odontograma odontograma)
+        public Odontograma BuscarOdtPorIdPaciente(int idPaciente)
         {
-            throw new NotImplementedException();
+            return rep.BuscarOdtPorIdPaciente(idPaciente);
         }
-
-        public IQueryable<Odontograma> Buscar(Paciente paciente)
-        {
-            return rep.Buscar(paciente);
-        }
-
 
         public void Deletar(int id)
         {

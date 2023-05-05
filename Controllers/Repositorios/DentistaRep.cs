@@ -30,6 +30,15 @@ namespace Controllers.Repositorios
             return obj;
         }
 
+        public Dentista BuscarPorNome(string nome)
+        {
+            using (var ctx = new SistemaContext())
+            {
+                var dentista = ctx.Dentistas.FirstOrDefault(d => d.Nome == nome);
+                return dentista;
+            }
+        }
+
 
         public List<Dentista> Listar()
         {

@@ -228,13 +228,19 @@ namespace SistemaOdonto
             //    Obter o ID do paciente 
             int idPaciente = int.Parse(lblCodigo.Text);
 
+            string id = idPaciente.ToString();
+
+            MessageBox.Show(id);
+
             OdontogramaService serviceO = new OdontogramaService();
 
-            Odontograma odontograma = serviceO.Buscar(idPaciente);
+            Odontograma odontograma = serviceO.BuscarOdtPorIdPaciente(idPaciente);
 
             //    Verificar se a Odontograma foi encontrado
             if (odontograma != null)
             {
+
+                MessageBox.Show("PACIENTE JÁ TEM ODONTOGRAMA!");
                 //FrmEditarAnamnese frmEdtAnm = new FrmEditarAnamnese(anamnese);
 
                 //frmEdtAnm.lblCodigo.Text = lblCodigo.Text;

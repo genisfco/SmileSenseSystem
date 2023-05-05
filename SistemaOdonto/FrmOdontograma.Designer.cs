@@ -127,6 +127,7 @@ namespace SistemaOdonto
             this.btnSalvarFichaClinica.TabIndex = 88;
             this.btnSalvarFichaClinica.Text = "Salvar Ficha Clínica";
             this.btnSalvarFichaClinica.UseVisualStyleBackColor = false;
+            this.btnSalvarFichaClinica.Click += new System.EventHandler(this.btnSalvarFichaClinica_Click);
             // 
             // label1
             // 
