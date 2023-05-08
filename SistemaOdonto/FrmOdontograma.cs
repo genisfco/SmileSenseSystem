@@ -62,6 +62,8 @@ namespace SistemaOdonto
             btnUndo.Visible = false;
             btnColor.Enabled = false;
 
+            btnSalvarFichaClinica.Enabled = false;
+
             elementoCheckboxMap["11"] = checkBox11;
             elementoCheckboxMap["12"] = checkBox12;
             elementoCheckboxMap["13"] = checkBox13;
@@ -93,7 +95,10 @@ namespace SistemaOdonto
             elementoCheckboxMap["45"] = checkBox45;
             elementoCheckboxMap["46"] = checkBox46;
             elementoCheckboxMap["47"] = checkBox47;
-            elementoCheckboxMap["48"] = checkBox48;            
+            elementoCheckboxMap["48"] = checkBox48;
+
+            //dataGridProcedimentos.RowsAdded += dataGridProcedimentos_RowsAdded;
+            //dataGridProcedimentos.RowsRemoved += dataGridProcedimentos_RowsRemoved;
         }
 
         private void FrmOdontograma_Load(object sender, EventArgs e)
@@ -135,7 +140,6 @@ namespace SistemaOdonto
         }
 
 
-
         // Função para gerar a imagem combinada
         byte[] GerarImagem(PictureBox pictureBox)
         {
@@ -153,6 +157,24 @@ namespace SistemaOdonto
                 return ms.ToArray();
             }
         }
+
+
+
+        public int ObterIdDentistaPorNome(string nomeDentista)
+        {
+            Dentista dentistaEncontrado = serviceD.BuscarPorNome(nomeDentista);
+            int idDentista = dentistaEncontrado.Id;
+            return idDentista;
+        }
+
+        public int ObterIdOdontogramaPorIdPaciente(int idPaciente)
+        {
+            Odontograma odontogramaEncontrado = serviceOdt.BuscarOdtPorIdPaciente(idPaciente);
+            int idOdontograma = odontogramaEncontrado.IdOdontograma;
+            return idOdontograma;
+        }
+
+
 
         private void pbImgOdontograma_MouseClick(object sender, MouseEventArgs e)
         {
@@ -321,54 +343,6 @@ namespace SistemaOdonto
             _bitmap = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
             pbImgOdontograma.Image = _bitmap;
         }
-
-
-        private void btnSalvarImagem_Click(object sender, EventArgs e)
-        {
-            // cria uma nova imagem Bitmap com o tamanho da pictureBox
-            Bitmap bitmap = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
-
-            // desenha a pictureBox na imagem Bitmap
-            pbImgOdontograma.DrawToBitmap(bitmap, pbImgOdontograma.ClientRectangle);
-
-            // salva a imagem Bitmap no banco de dados como um blob
-            using (MemoryStream ms = new MemoryStream())
-
-
-                try
-                {
-                    bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-
-                    // salvar os dados da imagemBytes no banco de dados como um blob
-
-
-                    // Conexão com o banco de dados
-                    string connectionString = "Server=ACERASPIRE-5\\SQLEXPRESS; Database=Odonto; Integrated Security=True;";
-                    SqlConnection connection = new SqlConnection(connectionString);
-
-                    // Comando SQL para inserir a imagem no banco de dados
-                    string sql = "INSERT INTO ODONTOGRAMA (imagem) VALUES (@imagem)";
-
-                    // Parâmetro da imagem como byte[]
-                    byte[] imageBytes = ms.ToArray();
-
-                    // Cria um comando SQL com o parâmetro da imagem
-                    SqlCommand command = new SqlCommand(sql, connection);
-                    command.Parameters.AddWithValue("@imagem", imageBytes);
-
-                    // Abre a conexão com o banco de dados e executa o comando
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-                }
-                catch (System.Exception)
-                {
-                    MessageBox.Show("Não foi possível salvar a imagem");
-
-                    throw;
-                }
-        }
-
         
 
         private void btnFecharFichaClinica_Click(object sender, EventArgs e)
@@ -890,12 +864,42 @@ namespace SistemaOdonto
             {
                 MessageBox.Show("Selecione a Especialidade e o Procedimento.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return; // Sai do evento do botão para interromper a execução
-            }            
+            }
+
+
+            switch (face)
+            {
+                case "Mesial":
+                    face = "M";
+                    break;
+                case "Distal":
+                    face = "D";
+                    break;
+                case "Vestibular":
+                    face = "V";
+                    break;
+                case "Palatina":
+                    face = "P";
+                    break;
+                case "Lingual":
+                    face = "L";
+                    break;
+                case "Oclusal":
+                    face = "O";
+                    break;
+
+                default:
+                    // caso nenhum dos casos anteriores seja atendido
+                    face = "---";
+                    break;
+            }
 
             // Adiciona os valores como uma nova linha no DataGridView
-            dataGridProcedimentos.Rows.Add(elemento, face, dentista, procedimento, data);
+            dataGridProcedimentos.Rows.Add(elemento, face, dentista, especialidade, procedimento, data);
+            dataGridProcedimentos.CurrentCell = null;
+
         }
-       
+
 
         /// FUNÇÃO PARA CRIAR OS RETANGULOS DE SELEÇÃO NA IMAGEM ODONTOGRAMA
         private void CriarRetangulo(object sender, EventArgs e, int x, int y, int width, int height, string elemento)
@@ -1110,24 +1114,53 @@ namespace SistemaOdonto
             }           
         }
 
+        private void dataGridProcedimentos_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (dataGridProcedimentos.Rows.Count > 0)
+            {
+                btnSalvarFichaClinica.Enabled = true;
+            }
+        }
+
+        private void dataGridProcedimentos_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (dataGridProcedimentos.Rows.Count == 0)
+            {
+                btnSalvarFichaClinica.Enabled = false;
+            }
+        }
+
+
+
         private void btnSalvarFichaClinica_Click(object sender, EventArgs e)
         {
-
             try
-            {
+            {               
+
+                List<Procedimento> procedimentos = ObjProcedimentoGerado();
+
+                if (procedimentos.Count == 0)
+                {
+                    MessageBox.Show("Não há procedimentos para serem salvos.");
+                    return;
+                }
+
+                foreach (Procedimento procedimento in procedimentos)
+                {
+                    serviceProcd.Cadastrar(procedimento);
+                }
+
                 serviceOdt.Cadastrar(ObjOdontogramaGerado());
-                MessageBox.Show("Odontograma salvo com sucesso!");
+
+                MessageBox.Show("Odontograma e Procedimentos salvos com sucesso!");
                 this.Close();
-
-
-
-
             }
             catch (System.Exception ex)
             {
                 MessageBox.Show("Erro ao Salvar " + ex.Message);
             }
-        }        
+
+        }
 
 
         public Odontograma ObjOdontogramaGerado()
@@ -1140,26 +1173,50 @@ namespace SistemaOdonto
             objOdt.Imagem = imagemBytes;      
 
             return objOdt;
-        }       
+        }
 
-        //public Procedimento ObjProcedimentoGerado()
-        //{
-        //    //Busca do id do Dentista pelo nome selecionado na combobox
-        //    string nomeDentista = cboxDentista.SelectedItem.ToString();
-        //    Dentista dentistaEncontrado = serviceD.BuscarPorNome(nomeDentista);
-        //    int idDentista = dentistaEncontrado.Id;
+        public List<Procedimento> ObjProcedimentoGerado()
+        {
+            int idPaciente = Convert.ToInt32(lblCodigo.Text);
+
+            List<Procedimento> procedimentos = new List<Procedimento>();
+
+            // Percorre todas as linhas do DataGridView
+            foreach (DataGridViewRow row in dataGridProcedimentos.Rows)
+            {
+                // Lê os dados da linha atual
+                string elemento = row.Cells[0].Value.ToString();
+                string face = row.Cells[1].Value.ToString();
+                string dentista = row.Cells[2].Value.ToString();
+                string especialidade = row.Cells[3].Value.ToString();
+                string procedimento = row.Cells[4].Value.ToString();
+                DateTime data = Convert.ToDateTime(row.Cells[5].Value);
+
+                //Buscando id do Dentista pelo nome do dentista na linha atual
+                int idDentista = ObterIdDentistaPorNome(dentista);
+
+                // Busca o ID do odontograma a partir do ID do paciente
+                int idOdontograma = ObterIdOdontogramaPorIdPaciente(idPaciente);
 
 
-        //    //GERANDO O OBJETO PROCEDIMENTO PARA CADASTRAR NO BANCO.
-        //    Procedimento objProcd = new Procedimento();
-        //    objProcd.IdDentista = idDentista;
-        //    //objProcd.IdOdontograma =         
+                //GERANDO O OBJETO PROCEDIMENTO PARA CADASTRAR NO BANCO.
+                Procedimento objProcd = new Procedimento();
+                objProcd.IdDentista = idDentista;
+                objProcd.IdOdontograma = idOdontograma;
+                objProcd.Cirurgiao = dentista;
+                objProcd.Elemento = elemento;
+                objProcd.Face = face;
+                objProcd.Especialidade = especialidade;
+                objProcd.Procedimento_realizado = procedimento;
+                objProcd.Data = data;
 
-        //    return objProcd;
-        //}
+                procedimentos.Add(objProcd);
+            }
 
-        
+            return procedimentos;
+        }
 
+       
 
 
         ////////////////////////////////////////

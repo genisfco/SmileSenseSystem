@@ -226,14 +226,10 @@ namespace SistemaOdonto
         private void btnAbrirOdontograma_Click(object sender, EventArgs e)
         {
             //    Obter o ID do paciente 
-            int idPaciente = int.Parse(lblCodigo.Text);
+            int idPaciente = int.Parse(lblCodigo.Text);         
 
-            string id = idPaciente.ToString();
-
-            MessageBox.Show(id);
-
+            //Buscar odontograma pelo IdPaciente
             OdontogramaService serviceO = new OdontogramaService();
-
             Odontograma odontograma = serviceO.BuscarOdtPorIdPaciente(idPaciente);
 
             //    Verificar se a Odontograma foi encontrado

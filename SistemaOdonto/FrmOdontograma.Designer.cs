@@ -26,6 +26,10 @@ namespace SistemaOdonto
         
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnFecharFichaClinica = new System.Windows.Forms.Button();
             this.btnSalvarFichaClinica = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -84,6 +88,7 @@ namespace SistemaOdonto
             this.Elemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Face = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dentista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Especialidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Procedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboxFaces = new System.Windows.Forms.ComboBox();
@@ -734,6 +739,7 @@ namespace SistemaOdonto
             this.Elemento,
             this.Face,
             this.Dentista,
+            this.Especialidade,
             this.Procedimento,
             this.Data});
             this.dataGridProcedimentos.Location = new System.Drawing.Point(6, 131);
@@ -746,36 +752,56 @@ namespace SistemaOdonto
             this.dataGridProcedimentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridProcedimentos.Size = new System.Drawing.Size(1054, 558);
             this.dataGridProcedimentos.TabIndex = 112;
+            this.dataGridProcedimentos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridProcedimentos_RowsAdded);
+            this.dataGridProcedimentos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridProcedimentos_RowsRemoved);
             this.dataGridProcedimentos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridProcedimentos_KeyDown);
             // 
             // Elemento
             // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            this.Elemento.DefaultCellStyle = dataGridViewCellStyle9;
             this.Elemento.HeaderText = "Dente";
             this.Elemento.MinimumWidth = 8;
             this.Elemento.Name = "Elemento";
             this.Elemento.ReadOnly = true;
             this.Elemento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Elemento.Width = 50;
+            this.Elemento.Width = 45;
             // 
             // Face
             // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.Face.DefaultCellStyle = dataGridViewCellStyle10;
             this.Face.HeaderText = "Face";
             this.Face.MinimumWidth = 8;
             this.Face.Name = "Face";
             this.Face.ReadOnly = true;
             this.Face.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Face.Width = 150;
+            this.Face.Width = 40;
             // 
             // Dentista
             // 
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Dentista.DefaultCellStyle = dataGridViewCellStyle11;
             this.Dentista.HeaderText = "Cirurgião";
             this.Dentista.MinimumWidth = 8;
             this.Dentista.Name = "Dentista";
             this.Dentista.ReadOnly = true;
-            this.Dentista.Width = 170;
+            this.Dentista.Width = 120;
+            // 
+            // Especialidade
+            // 
+            this.Especialidade.HeaderText = "Especialidade";
+            this.Especialidade.MinimumWidth = 8;
+            this.Especialidade.Name = "Especialidade";
+            this.Especialidade.ReadOnly = true;
+            this.Especialidade.Width = 120;
             // 
             // Procedimento
             // 
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Info;
+            this.Procedimento.DefaultCellStyle = dataGridViewCellStyle12;
             this.Procedimento.HeaderText = "Procedimento";
             this.Procedimento.MinimumWidth = 8;
             this.Procedimento.Name = "Procedimento";
@@ -1039,13 +1065,14 @@ namespace SistemaOdonto
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboxDentista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Elemento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Face;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dentista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Procedimento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         public System.Windows.Forms.Label lblCodigo;
         public System.Windows.Forms.MaskedTextBox masktxtCPFPaciente;
         public System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Elemento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Face;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dentista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Especialidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Procedimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
     }
 }
