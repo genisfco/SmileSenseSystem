@@ -42,8 +42,6 @@ namespace Controllers.Repositorios
         }
 
 
-
-
         public void Deletar(int id)
         {
             using (var ctx = new SistemaContext())

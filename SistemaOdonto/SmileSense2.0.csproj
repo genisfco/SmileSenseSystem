@@ -130,6 +130,12 @@
     <Compile Include="FrmEditarDentista.Designer.cs">
       <DependentUpon>FrmEditarDentista.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEditarOdtProcedimentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarOdtProcedimentos.Designer.cs">
+      <DependentUpon>FrmEditarOdtProcedimentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEditarPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,11 +160,11 @@
     <Compile Include="FrmNovoUser.Designer.cs">
       <DependentUpon>FrmNovoUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmOdontograma.cs">
+    <Compile Include="FrmOdtProcedimentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmOdontograma.Designer.cs">
-      <DependentUpon>FrmOdontograma.cs</DependentUpon>
+    <Compile Include="FrmOdtProcedimentos.Designer.cs">
+      <DependentUpon>FrmOdtProcedimentos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -207,6 +213,9 @@
     <EmbeddedResource Include="FrmEditarDentista.resx">
       <DependentUpon>FrmEditarDentista.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarOdtProcedimentos.resx">
+      <DependentUpon>FrmEditarOdtProcedimentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEditarPaciente.resx">
       <DependentUpon>FrmEditarPaciente.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,8 +228,8 @@
     <EmbeddedResource Include="FrmNovoUser.resx">
       <DependentUpon>FrmNovoUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmOdontograma.resx">
-      <DependentUpon>FrmOdontograma.cs</DependentUpon>
+    <EmbeddedResource Include="FrmOdtProcedimentos.resx">
+      <DependentUpon>FrmOdtProcedimentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

@@ -220,7 +220,6 @@ namespace SistemaOdonto
                 frmAnm.maskCPFPaciente.Text = masktxtCPFPaciente.Text;
                 frmAnm.ShowDialog();
             }
-
         }
 
         private void btnAbrirOdontograma_Click(object sender, EventArgs e)
@@ -231,30 +230,35 @@ namespace SistemaOdonto
             //Buscar odontograma pelo IdPaciente
             OdontogramaService serviceO = new OdontogramaService();
             Odontograma odontograma = serviceO.BuscarOdtPorIdPaciente(idPaciente);
+            
 
             //    Verificar se a Odontograma foi encontrado
             if (odontograma != null)
             {
+                MessageBox.Show(" Teste de DEV -- PACIENTE JÁ TEM ODONTOGRAMA!");
 
-                MessageBox.Show("PACIENTE JÁ TEM ODONTOGRAMA!");
-                //FrmEditarAnamnese frmEdtAnm = new FrmEditarAnamnese(anamnese);
+                //Obter o ID Odontograma
+                int idOdontograma = odontograma.IdOdontograma;
 
-                //frmEdtAnm.lblCodigo.Text = lblCodigo.Text;
-                //frmEdtAnm.lblCodAnm.Text = anamnese.IdAnamnese.ToString();
-                //frmEdtAnm.txtNome.Text = txtNome.Text;
-                //frmEdtAnm.maskCPFPaciente.Text = masktxtCPFPaciente.Text;
-                //frmEdtAnm.ShowDialog();
+                ProcedimentoService serviceP = new ProcedimentoService();
+                Procedimento procedimento = serviceP.BuscarProcdporIdOdt(idOdontograma);
+
+                FrmEditarOdtProcedimentos frmEdtOdtProcd = new FrmEditarOdtProcedimentos(odontograma, procedimento);
+                frmEdtOdtProcd.lblCodigo.Text = lblCodigo.Text;
+                frmEdtOdtProcd.txtNome.Text = txtNome.Text;
+                frmEdtOdtProcd.masktxtCPFPaciente.Text = masktxtCPFPaciente.Text;
+                frmEdtOdtProcd.ShowDialog();               
+
             }
             else if (odontograma == null)
             {
                 MessageBox.Show("O Paciente não possui Odontograma cadastrado. Preencha e Salve a Ficha!");
 
-                FrmOdontograma frmOdo = new FrmOdontograma();
-
-                frmOdo.lblCodigo.Text = lblCodigo.Text;
-                frmOdo.txtNome.Text = txtNome.Text;                
-                frmOdo.masktxtCPFPaciente.Text = masktxtCPFPaciente.Text;
-                frmOdo.ShowDialog();
+                FrmOdtProcedimentos frmOdtProcd = new FrmOdtProcedimentos();
+                frmOdtProcd.lblCodigo.Text = lblCodigo.Text;
+                frmOdtProcd.txtNome.Text = txtNome.Text;
+                frmOdtProcd.masktxtCPFPaciente.Text = masktxtCPFPaciente.Text;
+                frmOdtProcd.ShowDialog();
             }
         }
         

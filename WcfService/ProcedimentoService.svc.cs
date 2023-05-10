@@ -9,6 +9,7 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
+using Controllers;
 
 namespace WcfService
 {
@@ -19,18 +20,16 @@ namespace WcfService
         public void Cadastrar(Procedimento obj)
         {
             rep.Cadastrar(obj);
+        }        
+
+        public Procedimento BuscarProcdporIdOdt(int idOdontograma)
+        {
+            return rep.BuscarProcdporIdOdt(idOdontograma);
         }
 
-        public Procedimento Buscar(int id)
+        public List<Procedimento> ListarProcedimentosPorIdOdontograma(int idOdontograma)
         {
-            return rep.Buscar(id);
-        }
-
-        
-
-        public List<Procedimento> Listar()
-        {
-            return rep.Listar();
+            return rep.ListarProcedsporIdOdontograma(idOdontograma);
         }
 
 

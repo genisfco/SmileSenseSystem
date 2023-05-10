@@ -25,11 +25,7 @@ namespace WcfService
         {
             return rep.Buscar(id);
         }
-
-        //public IQueryable<Anamnese> Buscar(Anamnese anamnese)
-        //{
-        //    throw new NotImplementedException();
-        //}
+       
 
         
         public List<Anamnese> Listar()

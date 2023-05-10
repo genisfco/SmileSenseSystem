@@ -19,25 +19,22 @@ namespace Controllers.Repositorios
             }
 
         }
+        
 
-        //BUSCA PROCEDIMENTO PELO ID DO ODONTOGRAMA
-        public Procedimento Buscar(int idOdontograma)
+        public Procedimento BuscarProcdporIdOdt(int idOdontograma)
         {
-            Procedimento obj = new Procedimento();
             using (var ctx = new SistemaContext())
             {
-                obj = ctx.Procedimentos.FirstOrDefault(anm => anm.IdOdontograma == idOdontograma);
+                Procedimento obj = ctx.Procedimentos.FirstOrDefault(procd => procd.IdOdontograma == idOdontograma);
+                return obj;
             }
-            return obj;
         }
 
-
-        public List<Procedimento> Listar()
+        public List<Procedimento> ListarProcedsporIdOdontograma(int idOdontograma)
         {
             using (var ctx = new SistemaContext())
             {
-                var Procedimentos = (from obj in ctx.Procedimentos select obj).OrderBy(x => x.IdOdontograma).ToList();
-                return Procedimentos;
+                return ctx.Procedimentos.Where(p => p.IdOdontograma == idOdontograma).ToList();
             }
         }
 

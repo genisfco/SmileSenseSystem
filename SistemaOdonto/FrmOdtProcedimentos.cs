@@ -21,9 +21,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace SistemaOdonto
 {
-    public partial class FrmOdontograma : Form
+    public partial class FrmOdtProcedimentos : Form
     {
-        DentistaService serviceD = new DentistaService();
+        DentistaService serviceD = new DentistaService();       
 
         OdontogramaService serviceOdt = new OdontogramaService();
         ProcedimentoService serviceProcd = new ProcedimentoService();
@@ -47,9 +47,9 @@ namespace SistemaOdonto
         //dicionário para mapear as checkboxes
         private Dictionary<string, System.Windows.Forms.CheckBox> elementoCheckboxMap = new Dictionary<string, System.Windows.Forms.CheckBox>();
 
+        
 
-
-        public FrmOdontograma()
+        public FrmOdtProcedimentos()
         {
             InitializeComponent();
             ListarDentistas();
@@ -96,12 +96,9 @@ namespace SistemaOdonto
             elementoCheckboxMap["46"] = checkBox46;
             elementoCheckboxMap["47"] = checkBox47;
             elementoCheckboxMap["48"] = checkBox48;
-
-            //dataGridProcedimentos.RowsAdded += dataGridProcedimentos_RowsAdded;
-            //dataGridProcedimentos.RowsRemoved += dataGridProcedimentos_RowsRemoved;
         }
 
-        private void FrmOdontograma_Load(object sender, EventArgs e)
+        private void FrmOdtProcedimentos_Load(object sender, EventArgs e)
         {
             // Exibir caixa de diálogo com instruções
             MessageBox.Show("Bem-vindo ao Odontograma!" +
@@ -114,8 +111,9 @@ namespace SistemaOdonto
                 "\n\n6. Na imagem de Odontograma do quadro esquerdo faça as anotações necessárias." +
                 "\n\n7. Para salvar as informações: Clique em Salvar Odontograma." +
                 "", "Instruções para Preenchimento dos Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
+
+       
 
         private void ListarDentistas()
         {
@@ -158,8 +156,6 @@ namespace SistemaOdonto
             }
         }
 
-
-
         public int ObterIdDentistaPorNome(string nomeDentista)
         {
             Dentista dentistaEncontrado = serviceD.BuscarPorNome(nomeDentista);
@@ -173,7 +169,6 @@ namespace SistemaOdonto
             int idOdontograma = odontogramaEncontrado.IdOdontograma;
             return idOdontograma;
         }
-
 
 
         private void pbImgOdontograma_MouseClick(object sender, MouseEventArgs e)
@@ -364,10 +359,30 @@ namespace SistemaOdonto
                 case "21":
                 case "22":
                 case "23":
-                    cboxFaces.Items.Add("Mesial");
-                    cboxFaces.Items.Add("Distal");
-                    cboxFaces.Items.Add("Vestibular");
-                    cboxFaces.Items.Add("Palatina");
+                    //1 face
+                    cboxFaces.Items.Add("M");
+                    cboxFaces.Items.Add("D");
+                    cboxFaces.Items.Add("V");
+                    cboxFaces.Items.Add("P");
+                    //2 faces
+                    cboxFaces.Items.Add("M/D");
+                    cboxFaces.Items.Add("M/V");
+                    cboxFaces.Items.Add("M/P");
+                    
+                    cboxFaces.Items.Add("D/V");
+                    cboxFaces.Items.Add("D/P");
+
+                    cboxFaces.Items.Add("V/P");
+
+                    //3faces
+                    cboxFaces.Items.Add("M/V/D");
+                    cboxFaces.Items.Add("M/P/D");
+                    cboxFaces.Items.Add("V/M/P");
+                    cboxFaces.Items.Add("V/D/P");
+
+                    //4 faces
+                    cboxFaces.Items.Add("V/M/D/P");   ////ok             
+
                     break;
 
                 case "31":
@@ -376,10 +391,30 @@ namespace SistemaOdonto
                 case "41":
                 case "42":
                 case "43":
-                    cboxFaces.Items.Add("Mesial");
-                    cboxFaces.Items.Add("Distal");
-                    cboxFaces.Items.Add("Vestibular");
-                    cboxFaces.Items.Add("Lingual");
+                    //1 face
+                    cboxFaces.Items.Add("M");
+                    cboxFaces.Items.Add("D");
+                    cboxFaces.Items.Add("V");
+                    cboxFaces.Items.Add("L");
+
+                    //2 faces
+                    cboxFaces.Items.Add("M/D");
+                    cboxFaces.Items.Add("M/V");
+                    cboxFaces.Items.Add("M/L");
+
+                    cboxFaces.Items.Add("D/V");
+                    cboxFaces.Items.Add("D/L");
+
+                    cboxFaces.Items.Add("V/L");
+
+                    //3faces
+                    cboxFaces.Items.Add("M/V/D");
+                    cboxFaces.Items.Add("M/L/D");
+                    cboxFaces.Items.Add("V/M/L");
+                    cboxFaces.Items.Add("V/D/L");
+
+                    //4 faces
+                    cboxFaces.Items.Add("V/M/D/L"); ///////OK
                     break;
 
                 case "14":
@@ -392,11 +427,52 @@ namespace SistemaOdonto
                 case "26":
                 case "27":
                 case "28":
-                    cboxFaces.Items.Add("Mesial");
-                    cboxFaces.Items.Add("Distal");
-                    cboxFaces.Items.Add("Vestibular");
-                    cboxFaces.Items.Add("Palatina");
-                    cboxFaces.Items.Add("Oclusal");
+                    //1 face
+                    cboxFaces.Items.Add("M");
+                    cboxFaces.Items.Add("D");
+                    cboxFaces.Items.Add("V");
+                    cboxFaces.Items.Add("P");
+                    cboxFaces.Items.Add("O");
+
+                    //2 faces
+                    cboxFaces.Items.Add("M/D");
+                    cboxFaces.Items.Add("M/V");
+                    cboxFaces.Items.Add("M/P");
+                    cboxFaces.Items.Add("M/O");
+
+                    cboxFaces.Items.Add("D/V");
+                    cboxFaces.Items.Add("D/P");
+                    cboxFaces.Items.Add("D/O");
+
+                    cboxFaces.Items.Add("O/V"); 
+
+                    cboxFaces.Items.Add("V/P");
+
+                    //3 faces
+                    cboxFaces.Items.Add("M/V/D");
+                    cboxFaces.Items.Add("M/P/D");
+                    cboxFaces.Items.Add("M/O/D");
+                    cboxFaces.Items.Add("M/O/V");
+                    cboxFaces.Items.Add("M/O/P");
+
+                    cboxFaces.Items.Add("D/O/V");
+                    cboxFaces.Items.Add("D/O/P");
+
+                    cboxFaces.Items.Add("V/M/P");
+                    cboxFaces.Items.Add("V/D/P");
+                    cboxFaces.Items.Add("V/O/P");
+
+                    //4 FACES
+                    cboxFaces.Items.Add("M/O/D/P");
+                    cboxFaces.Items.Add("M/O/D/V");
+                    cboxFaces.Items.Add("M/O/V/P");
+
+                    cboxFaces.Items.Add("D/O/V/P");
+
+                    cboxFaces.Items.Add("V/M/D/P");
+
+                    //5 FACES
+                    cboxFaces.Items.Add("M/O/D/V/P");
                     break;
 
                 case "34":
@@ -409,21 +485,59 @@ namespace SistemaOdonto
                 case "46":
                 case "47":
                 case "48":
-                    cboxFaces.Items.Add("Mesial");
-                    cboxFaces.Items.Add("Distal");
-                    cboxFaces.Items.Add("Vestibular");
-                    cboxFaces.Items.Add("Lingual");
-                    cboxFaces.Items.Add("Oclusal");
+                    //1 FACE
+                    cboxFaces.Items.Add("M");
+                    cboxFaces.Items.Add("D");
+                    cboxFaces.Items.Add("V");
+                    cboxFaces.Items.Add("L");
+                    cboxFaces.Items.Add("O");
+
+                    //2 faces
+                    cboxFaces.Items.Add("M/D");
+                    cboxFaces.Items.Add("M/V");
+                    cboxFaces.Items.Add("M/L");
+                    cboxFaces.Items.Add("M/O");
+
+                    cboxFaces.Items.Add("D/V");
+                    cboxFaces.Items.Add("D/L");
+                    cboxFaces.Items.Add("D/O");
+
+                    cboxFaces.Items.Add("O/L");
+
+                    //3 faces
+                    cboxFaces.Items.Add("M/V/D");
+                    cboxFaces.Items.Add("M/O/D");
+                    cboxFaces.Items.Add("M/O/V");
+                    cboxFaces.Items.Add("M/L/D");
+                    cboxFaces.Items.Add("M/O/L");
+
+                    cboxFaces.Items.Add("D/O/V");
+                    cboxFaces.Items.Add("D/O/L");
+
+                    cboxFaces.Items.Add("V/M/L");
+                    cboxFaces.Items.Add("V/D/L");
+                    cboxFaces.Items.Add("V/O/L");
+
+                    //4 FACES
+                    cboxFaces.Items.Add("M/O/D/V");
+                    cboxFaces.Items.Add("M/O/D/L");
+                    cboxFaces.Items.Add("M/O/V/L");
+
+                    cboxFaces.Items.Add("D/O/V/L");
+                    cboxFaces.Items.Add("V/M/D/L");
+
+                    //5 FACES
+                    cboxFaces.Items.Add("M/O/D/V/L");                   
                     break;
 
                 default:
                     // Adiciona um valor padrão na cboxFaces
-                    cboxFaces.Items.Add("Não informado");
+                    cboxFaces.Items.Add("---");
                     break;
             }
         }
 
-        private void cboxEspecialidade_KeyPress(object sender, KeyPressEventArgs e)
+        private void cboxEspecialidade_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.KeyChar = char.ToUpper(e.KeyChar);
         }
@@ -831,7 +945,7 @@ namespace SistemaOdonto
             // Obtém os valores selecionados ou textos digitados nos ComboBoxes
             string dentista = cboxDentista.Text.Trim();
             string elemento = cboxElementos.SelectedItem?.ToString() ?? "---";
-            string face = cboxFaces.SelectedItem?.ToString() ?? "Não informado";
+            string face = cboxFaces.SelectedItem?.ToString() ?? "---";
             string especialidade = cboxEspecialidade.Text.Trim();
             string procedimento = cboxProcedimento.Text.Trim();
             DateTime data = DateTime.Now;
@@ -867,32 +981,32 @@ namespace SistemaOdonto
             }
 
 
-            switch (face)
-            {
-                case "Mesial":
-                    face = "M";
-                    break;
-                case "Distal":
-                    face = "D";
-                    break;
-                case "Vestibular":
-                    face = "V";
-                    break;
-                case "Palatina":
-                    face = "P";
-                    break;
-                case "Lingual":
-                    face = "L";
-                    break;
-                case "Oclusal":
-                    face = "O";
-                    break;
+            //switch (face)
+            //{
+            //    case "Mesial":
+            //        face = "M";
+            //        break;
+            //    case "Distal":
+            //        face = "D";
+            //        break;
+            //    case "Vestibular":
+            //        face = "V";
+            //        break;
+            //    case "Palatina":
+            //        face = "P";
+            //        break;
+            //    case "Lingual":
+            //        face = "L";
+            //        break;
+            //    case "Oclusal":
+            //        face = "O";
+            //        break;
 
-                default:
-                    // caso nenhum dos casos anteriores seja atendido
-                    face = "---";
-                    break;
-            }
+            //    default:
+            //        // caso nenhum dos casos anteriores seja atendido
+            //        face = "---";
+            //        break;
+            
 
             // Adiciona os valores como uma nova linha no DataGridView
             dataGridProcedimentos.Rows.Add(elemento, face, dentista, especialidade, procedimento, data);
@@ -1134,8 +1248,24 @@ namespace SistemaOdonto
 
         private void btnSalvarFichaClinica_Click(object sender, EventArgs e)
         {
+            //SALVANDO ODONTOGRAMA 
             try
-            {               
+            {
+                serviceOdt.Cadastrar(ObjOdontogramaGerado());
+
+            }
+            catch (System.Exception ex)
+            {
+
+                MessageBox.Show("Erro ao Salvar " + ex.Message);
+                return;
+
+            }
+
+
+            // SALVANDO PROCEDIMENTOS
+            try
+            {
 
                 List<Procedimento> procedimentos = ObjProcedimentoGerado();
 
@@ -1148,17 +1278,18 @@ namespace SistemaOdonto
                 foreach (Procedimento procedimento in procedimentos)
                 {
                     serviceProcd.Cadastrar(procedimento);
-                }
+                }               
 
-                serviceOdt.Cadastrar(ObjOdontogramaGerado());
-
-                MessageBox.Show("Odontograma e Procedimentos salvos com sucesso!");
-                this.Close();
+                
             }
             catch (System.Exception ex)
             {
                 MessageBox.Show("Erro ao Salvar " + ex.Message);
+                return;
             }
+
+            MessageBox.Show("Odontograma e Procedimentos salvos com sucesso!");
+            this.Close();
 
         }
 
@@ -1198,7 +1329,6 @@ namespace SistemaOdonto
                 // Busca o ID do odontograma a partir do ID do paciente
                 int idOdontograma = ObterIdOdontogramaPorIdPaciente(idPaciente);
 
-
                 //GERANDO O OBJETO PROCEDIMENTO PARA CADASTRAR NO BANCO.
                 Procedimento objProcd = new Procedimento();
                 objProcd.IdDentista = idDentista;
@@ -1216,50 +1346,7 @@ namespace SistemaOdonto
             return procedimentos;
         }
 
-       
-
-
-        ////////////////////////////////////////
-
-        ////CONSULTA DA IMAGEM NO BANCO
-        //private void btnConsultarImagem_Click(object sender, EventArgs e)
-        //{
-        //    // Conexão com o banco de dados
-        //    string connectionString = "Server=ACERASPIRE-5\\SQLEXPRESS; Database=Odonto; Integrated Security=True;";
-        //    SqlConnection connection = new SqlConnection(connectionString);
-
-        //    // Comando SQL para selecionar a imagem do banco de dados
-        //    string sql = "SELECT imagem FROM ODONTOGRAMA WHERE ID_ODONTOGRAMA = @ID";
-
-        //    // ID da imagem a ser recuperada
-        //    int imageID = 1;
-
-        //    // Cria um comando SQL com o parâmetro do ID da imagem
-        //    SqlCommand command = new SqlCommand(sql, connection);
-        //    command.Parameters.AddWithValue("@ID", imageID);
-
-        //    // Abre a conexão com o banco de dados e executa o comando
-        //    connection.Open();
-
-        //    // Lê os dados da imagem do banco de dados como um array de bytes
-        //    byte[] imageBytes = (byte[])command.ExecuteScalar();
-
-        //    // Fecha a conexão com o banco de dados
-        //    connection.Close();
-
-        //    // Cria um objeto MemoryStream a partir dos bytes da imagem
-        //    using (MemoryStream ms = new MemoryStream(imageBytes))
-        //    {
-        //        // Cria um objeto Bitmap a partir do MemoryStream
-        //        Bitmap bitmap = new Bitmap(ms);
-
-        //        // Exibe o Bitmap na PictureBox
-        //        pbImgOdontograma.Image = bitmap;
-        //    }
-        //}
-
-
-
+        
     }
 
 }

@@ -16,10 +16,11 @@ namespace Interfaces
         void Cadastrar(Procedimento obj);
 
         [OperationContract(Name = "BuscarPorIdOdontograma")]
-        Procedimento Buscar(int id);
+        Procedimento BuscarProcdporIdOdt(int idOdontograma);
 
-        [OperationContract]
-        List<Procedimento> Listar();
+        [OperationContract(Name = "ListarPorIdOdontograma")]
+        List<Procedimento> ListarProcedimentosPorIdOdontograma(int idOdontograma);
+
 
         [OperationContract]
         void Deletar(int id);
