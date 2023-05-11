@@ -19,6 +19,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
+
 namespace SistemaOdonto
 {
     public partial class FrmOdtProcedimentos : Form
@@ -96,6 +97,8 @@ namespace SistemaOdonto
             elementoCheckboxMap["46"] = checkBox46;
             elementoCheckboxMap["47"] = checkBox47;
             elementoCheckboxMap["48"] = checkBox48;
+
+            lblCodigo.Visible = false;            
         }
 
         private void FrmOdtProcedimentos_Load(object sender, EventArgs e)
@@ -103,7 +106,7 @@ namespace SistemaOdonto
             // Exibir caixa de diálogo com instruções
             MessageBox.Show("Bem-vindo ao Odontograma!" +
                 "\n\nInstruções de como preencher corretamente os Procedimentos:" +
-                "\n\n1. Selecione o checkbox do Elemento desejado no canto superior direito." +
+                "\n\n1. Selecione o Elemento desejado no canto superior direito." +
                 "\n\n2. No quadro de Procedimentos Selecione o Dentista." +
                 "\n\n3. Selecione a Face do Elemento, a Especialidade e selecione ou digite o Procedimento." +
                 "\n\n4. Clique no botão + para adicionar o Procedimento na lista." +
@@ -111,9 +114,7 @@ namespace SistemaOdonto
                 "\n\n6. Na imagem de Odontograma do quadro esquerdo faça as anotações necessárias." +
                 "\n\n7. Para salvar as informações: Clique em Salvar Odontograma." +
                 "", "Instruções para Preenchimento dos Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-       
+        }       
 
         private void ListarDentistas()
         {
@@ -381,7 +382,7 @@ namespace SistemaOdonto
                     cboxFaces.Items.Add("V/D/P");
 
                     //4 faces
-                    cboxFaces.Items.Add("V/M/D/P");   ////ok             
+                    cboxFaces.Items.Add("V/M/D/P");                
 
                     break;
 
@@ -977,35 +978,9 @@ namespace SistemaOdonto
             else if (string.IsNullOrEmpty(especialidade) || string.IsNullOrEmpty(procedimento))
             {
                 MessageBox.Show("Selecione a Especialidade e o Procedimento.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return; // Sai do evento do botão para interromper a execução
-            }
-
-
-            //switch (face)
-            //{
-            //    case "Mesial":
-            //        face = "M";
-            //        break;
-            //    case "Distal":
-            //        face = "D";
-            //        break;
-            //    case "Vestibular":
-            //        face = "V";
-            //        break;
-            //    case "Palatina":
-            //        face = "P";
-            //        break;
-            //    case "Lingual":
-            //        face = "L";
-            //        break;
-            //    case "Oclusal":
-            //        face = "O";
-            //        break;
-
-            //    default:
-            //        // caso nenhum dos casos anteriores seja atendido
-            //        face = "---";
-            //        break;
+                return; 
+            }             
+            
             
 
             // Adiciona os valores como uma nova linha no DataGridView
@@ -1259,9 +1234,7 @@ namespace SistemaOdonto
 
                 MessageBox.Show("Erro ao Salvar " + ex.Message);
                 return;
-
             }
-
 
             // SALVANDO PROCEDIMENTOS
             try
@@ -1342,11 +1315,7 @@ namespace SistemaOdonto
 
                 procedimentos.Add(objProcd);
             }
-
             return procedimentos;
-        }
-
-        
+        }        
     }
-
 }

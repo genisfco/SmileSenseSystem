@@ -77,8 +77,8 @@
             this.cadastrosToolStripMenuItem,
             this.consultarDadosToolStripMenuItem,
             this.agendasToolStripMenuItem,
-            this.MAjuda,
             this.usuáriosToolStripMenuItem,
+            this.MAjuda,
             this.MSair});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -156,7 +156,7 @@
             // menuAgConsultas
             // 
             this.menuAgConsultas.Name = "menuAgConsultas";
-            this.menuAgConsultas.Size = new System.Drawing.Size(220, 34);
+            this.menuAgConsultas.Size = new System.Drawing.Size(270, 34);
             this.menuAgConsultas.Text = "Abrir Agenda";
             this.menuAgConsultas.Click += new System.EventHandler(this.menuAgConsultas_Click);
             // 
@@ -189,14 +189,14 @@
             // stripNovoUser
             // 
             this.stripNovoUser.Name = "stripNovoUser";
-            this.stripNovoUser.Size = new System.Drawing.Size(267, 34);
+            this.stripNovoUser.Size = new System.Drawing.Size(270, 34);
             this.stripNovoUser.Text = "Novo Usuário";
             this.stripNovoUser.Click += new System.EventHandler(this.stripNovoUser_Click);
             // 
             // stripGestaoUser
             // 
             this.stripGestaoUser.Name = "stripGestaoUser";
-            this.stripGestaoUser.Size = new System.Drawing.Size(267, 34);
+            this.stripGestaoUser.Size = new System.Drawing.Size(270, 34);
             this.stripGestaoUser.Text = "Gestão de Usuários";
             this.stripGestaoUser.Click += new System.EventHandler(this.stripGestaoUser_Click);
             // 
