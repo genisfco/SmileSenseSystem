@@ -24,6 +24,10 @@ namespace SistemaOdonto
 {
     public partial class FrmEditarOdtProcedimentos : Form
     {
+        private bool isDrawingLine = false;
+        private Point lineStartPoint;
+        private Pen linePen;
+
         DentistaService serviceD = new DentistaService();
 
         Odontograma objOdt = new Odontograma();
@@ -59,7 +63,14 @@ namespace SistemaOdonto
         {
             InitializeComponent();
             ListarDentistas();
-            _pen = new Pen(Color.Black, 2);
+
+            _pen = new Pen(Color.Black, 2); // Manter a configuração padrão da caneta
+            linePen = new Pen(Color.Black, 2); // Inicializa a cor da linha com a cor preta padrão
+
+            pbPenBlack.BorderStyle = BorderStyle.FixedSingle; // Define a borda da pbPenBlack como selecionada
+
+
+            //_pen = new Pen(Color.Black, 2);
             _bitmap = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
             pbImgOdontograma.Image = _bitmap;
             Stack<Bitmap> undoStack = new Stack<Bitmap>();
@@ -233,13 +244,25 @@ namespace SistemaOdonto
 
         private void pbImgOdontograma_MouseDown(object sender, MouseEventArgs e)
         {
-            _isDrawing = true;
-            _startPoint = e.Location;
+            if (e.Button == MouseButtons.Left)
+            {
+                isDrawingLine = true;
+                lineStartPoint = e.Location;
+            }
         }
 
         private void pbImgOdontograma_MouseUp(object sender, MouseEventArgs e)
         {
-            _isDrawing = false;
+            if (e.Button == MouseButtons.Left)
+            {
+                if (isDrawingLine)
+                {
+                    isDrawingLine = false;
+                    Graphics g = Graphics.FromImage(_bitmap);
+                    g.DrawLine(linePen, lineStartPoint, e.Location);
+                    pbImgOdontograma.Invalidate();
+                }
+            }
         }
 
         private void pbImgOdontograma_MouseMove(object sender, MouseEventArgs e)
@@ -266,6 +289,11 @@ namespace SistemaOdonto
 
         private void pbImgOdontograma_Paint(object sender, PaintEventArgs e)
         {
+            if (isDrawingLine)
+            {
+                pbImgOdontograma.Invalidate();
+            }
+
             foreach (var kvp in retangulosCheckbox)
             {
                 System.Windows.Forms.CheckBox checkbox = kvp.Key;
@@ -279,6 +307,8 @@ namespace SistemaOdonto
                     }
                 }
             }
+
+            
 
         }
 
@@ -320,7 +350,7 @@ namespace SistemaOdonto
             btnUndoCircle.Visible = false;
             btnColor.Enabled = true;
 
-            _pen.Color = color1;
+            linePen.Color = color1;
 
         }
 
@@ -334,7 +364,7 @@ namespace SistemaOdonto
             btnUndoCircle.Visible = false;
             btnColor.Enabled = true;
 
-            _pen.Color = color2;
+            linePen.Color = color2;
 
         }
 
@@ -348,7 +378,7 @@ namespace SistemaOdonto
             btnUndoCircle.Visible = false;
             btnColor.Enabled = true;
 
-            _pen.Color = color3;
+            linePen.Color = color3;
 
         }
 
@@ -1039,8 +1069,6 @@ namespace SistemaOdonto
             // Adiciona os valores como uma nova linha no DataGridView
             dataGridProcedimentos.Rows.Add(elemento, face, dentista, especialidade, procedimento, data);
             dataGridProcedimentos.CurrentCell = null;
-
-
         }
 
         /// FUNÇÃO PARA CRIAR OS RETANGULOS DE SELEÇÃO NA IMAGEM ODONTOGRAMA

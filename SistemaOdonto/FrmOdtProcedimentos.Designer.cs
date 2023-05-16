@@ -37,7 +37,6 @@ namespace SistemaOdonto
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbPaciente = new System.Windows.Forms.Label();
             this.btnUndo = new System.Windows.Forms.Button();
-            this.btnColor = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnUndoCircle = new System.Windows.Forms.Button();
             this.checkBox18 = new System.Windows.Forms.CheckBox();
@@ -173,23 +172,13 @@ namespace SistemaOdonto
             // 
             // btnUndo
             // 
-            this.btnUndo.Location = new System.Drawing.Point(341, 100);
+            this.btnUndo.Location = new System.Drawing.Point(315, 100);
             this.btnUndo.Name = "btnUndo";
             this.btnUndo.Size = new System.Drawing.Size(86, 41);
             this.btnUndo.TabIndex = 97;
-            this.btnUndo.Text = "Desfazer";
+            this.btnUndo.Text = "undoline";
             this.btnUndo.UseVisualStyleBackColor = true;
             this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
-            // 
-            // btnColor
-            // 
-            this.btnColor.Location = new System.Drawing.Point(241, 100);
-            this.btnColor.Name = "btnColor";
-            this.btnColor.Size = new System.Drawing.Size(72, 41);
-            this.btnColor.TabIndex = 93;
-            this.btnColor.Text = "Cores";
-            this.btnColor.UseVisualStyleBackColor = true;
-            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // btnClear
             // 
@@ -203,11 +192,11 @@ namespace SistemaOdonto
             // 
             // btnUndoCircle
             // 
-            this.btnUndoCircle.Location = new System.Drawing.Point(341, 100);
+            this.btnUndoCircle.Location = new System.Drawing.Point(223, 100);
             this.btnUndoCircle.Name = "btnUndoCircle";
             this.btnUndoCircle.Size = new System.Drawing.Size(86, 41);
             this.btnUndoCircle.TabIndex = 101;
-            this.btnUndoCircle.Text = "Desfazer";
+            this.btnUndoCircle.Text = "undocircle";
             this.btnUndoCircle.UseVisualStyleBackColor = true;
             this.btnUndoCircle.Click += new System.EventHandler(this.btnUndoCircle_Click);
             // 
@@ -874,7 +863,7 @@ namespace SistemaOdonto
             // pbCircle
             // 
             this.pbCircle.BackColor = System.Drawing.Color.Transparent;
-            this.pbCircle.BackgroundImage = global::SistemaOdonto.Properties.Resources.Circle_Green;
+            this.pbCircle.BackgroundImage = global::SistemaOdonto.Properties.Resources.Circle_Red;
             this.pbCircle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbCircle.Location = new System.Drawing.Point(11, 100);
             this.pbCircle.Name = "pbCircle";
@@ -951,7 +940,6 @@ namespace SistemaOdonto
             this.Controls.Add(this.pbPenBlue);
             this.Controls.Add(this.btnUndo);
             this.Controls.Add(this.pbPenBlack);
-            this.Controls.Add(this.btnColor);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.pbImgOdontograma);
             this.Controls.Add(this.btnFecharFichaClinica);
@@ -973,7 +961,6 @@ namespace SistemaOdonto
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Odontograma";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmOdtProcedimentos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1001,7 +988,6 @@ namespace SistemaOdonto
         private System.Windows.Forms.Label lbPaciente;
         private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.PictureBox pbPenBlack;
-        private System.Windows.Forms.Button btnColor;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.PictureBox pbImgOdontograma;
         private System.Windows.Forms.PictureBox pbPenBlue;

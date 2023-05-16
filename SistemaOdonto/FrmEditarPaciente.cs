@@ -225,12 +225,12 @@ namespace SistemaOdonto
         private void btnAbrirOdontograma_Click(object sender, EventArgs e)
         {
             //    Obter o ID do paciente 
-            int idPaciente = int.Parse(lblCodigo.Text);         
+            int idPaciente = int.Parse(lblCodigo.Text);
 
             //Buscar odontograma pelo IdPaciente
             OdontogramaService serviceO = new OdontogramaService();
             Odontograma odontograma = serviceO.BuscarOdtPorIdPaciente(idPaciente);
-            
+
 
             //    Verificar se a Odontograma foi encontrado
             if (odontograma != null)
@@ -247,7 +247,7 @@ namespace SistemaOdonto
                 frmEdtOdtProcd.lblCodigo.Text = lblCodigo.Text;
                 frmEdtOdtProcd.txtNome.Text = txtNome.Text;
                 frmEdtOdtProcd.masktxtCPFPaciente.Text = masktxtCPFPaciente.Text;
-                frmEdtOdtProcd.ShowDialog();               
+                frmEdtOdtProcd.ShowDialog();
 
             }
             else if (odontograma == null)
@@ -261,6 +261,6 @@ namespace SistemaOdonto
                 frmOdtProcd.ShowDialog();
             }
         }
-        
+
     }
 }
