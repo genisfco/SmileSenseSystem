@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WcfService;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.LinkLabel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
@@ -53,23 +54,8 @@ namespace SistemaOdonto
         //dicionário para mapear as checkboxes
         private Dictionary<string, System.Windows.Forms.CheckBox> elementoCheckboxMap = new Dictionary<string, System.Windows.Forms.CheckBox>();
 
-        // Classe para armazenar informações do desenho
-        //public class Desenho
-        //{
-        //    public int X { get; set; }
-        //    public int Y { get; set; }
-        //    public Color FillColor { get; set; }
-
-        //    public Desenho(int x, int y, Color fillColor)
-        //    {
-        //        X = x;
-        //        Y = y;
-        //        FillColor = fillColor;
-        //    }
-        //}
-
-        //private List<Desenho> selecoesAtualizar = new List<Desenho>();
-
+        // Caminho da pasta principal onde as imagens serão armazenadas
+        string imageFolderPath = "C:\\Users\\genis\\OneDrive\\Área de Trabalho\\SistemaOdonto\\SistemaOdonto\\Resource\\Odontogramas";
 
         public FrmOdtProcedimentos()
         {
@@ -83,7 +69,6 @@ namespace SistemaOdonto
             pbPenBlue.BorderStyle = BorderStyle.Fixed3D;
             pbPenRed.BorderStyle = BorderStyle.Fixed3D;
             pbCircle.BorderStyle = BorderStyle.Fixed3D;
-
 
             _bitmap = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
             pbImgOdontograma.Image = _bitmap;
@@ -130,22 +115,20 @@ namespace SistemaOdonto
             lblCodigo.Visible = false;            
         }
 
-        
-
-        //private void FrmOdtProcedimentos_Load(object sender, EventArgs e)
-        //{
-        //    // Exibir caixa de diálogo com instruções
-        //    MessageBox.Show("Bem-vindo ao Odontograma!" +
-        //        "\n\nInstruções de como preencher corretamente os Procedimentos:" +
-        //        "\n\n1. Selecione o Elemento desejado no canto superior direito." +
-        //        "\n\n2. No quadro de Procedimentos Selecione o Dentista." +
-        //        "\n\n3. Selecione a Face do Elemento, a Especialidade e selecione ou digite o Procedimento." +
-        //        "\n\n4. Clique no botão + para adicionar o Procedimento na lista." +
-        //        "\n\n5. Repita o processo para cada Elemento." +
-        //        "\n\n6. Na imagem de Odontograma do quadro esquerdo faça as anotações necessárias." +
-        //        "\n\n7. Para salvar as informações: Clique em Salvar Odontograma." +
-        //        "", "Instruções para Preenchimento dos Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //}       
+        private void FrmOdtProcedimentos_Load(object sender, EventArgs e)
+        {
+            // Exibir caixa de diálogo com instruções
+            MessageBox.Show("Bem-vindo ao Odontograma!" +
+                "\n\nInstruções de como preencher corretamente os Procedimentos:" +
+                "\n\n1. Selecione o Elemento desejado no canto superior direito." +
+                "\n\n2. No quadro de Procedimentos Selecione o Dentista." +
+                "\n\n3. Selecione a Face do Elemento, a Especialidade e selecione ou digite o Procedimento." +
+                "\n\n4. Clique no botão + para adicionar o Procedimento na lista." +
+                "\n\n5. Repita o processo para cada Elemento." +
+                "\n\n6. Na imagem de Odontograma do quadro esquerdo faça as anotações necessárias." +
+                "\n\n7. Para salvar as informações: Clique em Salvar Odontograma." +
+                "", "Instruções para Preenchimento dos Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
         private void ListarDentistas()
         {
@@ -170,23 +153,7 @@ namespace SistemaOdonto
         }
 
 
-        // Função para gerar a imagem combinada
-        byte[] GerarImagem(PictureBox pictureBox)
-        {
-            // Cria uma nova imagem Bitmap com o tamanho da pictureBox
-            Bitmap bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
-
-            // Desenha a pictureBox na imagem Bitmap
-            pictureBox.DrawToBitmap(bitmap, pictureBox.ClientRectangle);
-
-            // Converte a imagem Bitmap em um array de bytes
-            using (MemoryStream ms = new MemoryStream())
-            {
-                bitmap.Save(ms, ImageFormat.Jpeg); // Escolha o formato de imagem adequado
-
-                return ms.ToArray();
-            }
-        }
+        
 
         public int ObterIdDentistaPorNome(string nomeDentista)
         {
@@ -274,8 +241,10 @@ namespace SistemaOdonto
                 {
                     _undoStack.Push(new Bitmap(_bitmap)); // empilha a imagem atual
                     Graphics g = Graphics.FromImage(_bitmap);
-                    g.DrawLine(_pen, _startPoint, e.Location);
-                    _startPoint = e.Location;
+                    g.DrawLine(linePen, lineStartPoint, e.Location);
+
+                    //g.DrawLine(_pen, _startPoint, e.Location);
+                    //_startPoint = e.Location;
                     pbImgOdontograma.Invalidate();
 
                     AtualizarSelecaoFaces();
@@ -306,10 +275,7 @@ namespace SistemaOdonto
                 }
             }
 
-        }
-
-
-       
+        }       
 
         private void pbCircle_Click(object sender, EventArgs e)
         {
@@ -324,7 +290,6 @@ namespace SistemaOdonto
         }
 
 
-        //ESCOLHA DAS CORES CONFORME FERRAMENTAS PEN (PRETO, AZUL, VERMELHO)
         private void pbPenBlack_Click(object sender, EventArgs e)
         {
             pbPenBlack.BorderStyle = BorderStyle.FixedSingle;
@@ -379,7 +344,7 @@ namespace SistemaOdonto
 
         private void btnUndo_Click(object sender, EventArgs e)
         {
-            int numUndos = 100; // Defina o número de traços a serem desfeitos
+            int numUndos = 1; // Defina o número de traços a serem desfeitos
             while (_undoStack.Count > 0 && numUndos > 0)
             {
                 _bitmap = _undoStack.Pop();
@@ -1010,35 +975,35 @@ namespace SistemaOdonto
             string procedimento = cboxProcedimento.Text.Trim();
             DateTime data = DateTime.Now;
 
-            //// Verifica se a especialidade e o procedimento foram selecionados ou digitados
-            //if (dentista == "Selecione um Dentista")
-            //{
-            //    MessageBox.Show("Dentista não informado: Selecione o Cirugião Dentista");
-            //    return; // Sai do evento do botão para interromper a execução
-            //}
+            // Verifica se a especialidade e o procedimento foram selecionados ou digitados
+            if (dentista == "Selecione um Dentista")
+            {
+                MessageBox.Show("Dentista não informado: Selecione o Cirugião Dentista");
+                return; // Sai do evento do botão para interromper a execução
+            }
 
-            //else if (string.IsNullOrEmpty(especialidade) && !string.IsNullOrEmpty(procedimento))
-            //{
-            //    especialidade = "NÃO INFORMADO";
-            //}
+            else if (string.IsNullOrEmpty(especialidade) && !string.IsNullOrEmpty(procedimento))
+            {
+                especialidade = "NÃO INFORMADO";
+            }
 
-            //else if (!string.IsNullOrEmpty(especialidade) && string.IsNullOrEmpty(procedimento))
-            //{
-            //    MessageBox.Show("Necessário informar o Procedimento. Selecione ou Digite.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    return;
-            //}
+            else if (!string.IsNullOrEmpty(especialidade) && string.IsNullOrEmpty(procedimento))
+            {
+                MessageBox.Show("Necessário informar o Procedimento. Selecione ou Digite.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
-            //else if (especialidade == "NENHUM(a)" && string.IsNullOrEmpty(procedimento))
-            //{
-            //    MessageBox.Show("Necessário informar o Procedimento. Selecione ou Digite.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    return;
-            //}            
+            else if (especialidade == "NENHUM(a)" && string.IsNullOrEmpty(procedimento))
+            {
+                MessageBox.Show("Necessário informar o Procedimento. Selecione ou Digite.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
-            //else if (string.IsNullOrEmpty(especialidade) || string.IsNullOrEmpty(procedimento))
-            //{
-            //    MessageBox.Show("Selecione a Especialidade e o Procedimento.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    return; 
-            //} 
+            else if (string.IsNullOrEmpty(especialidade) || string.IsNullOrEmpty(procedimento))
+            {
+                MessageBox.Show("Selecione a Especialidade e o Procedimento.", "Erro no Preechimento de Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             // Adiciona os valores como uma nova linha no DataGridView
             dataGridProcedimentos.Rows.Add(elemento, face, dentista, especialidade, procedimento, data);
@@ -1193,16 +1158,12 @@ namespace SistemaOdonto
             {
                 Rectangle retangulo = new Rectangle(x, y, width, height);
                 retangulosCheckbox[checkbox] = retangulo;
-                cboxElementos.Text = elemento;
-
-                
+                cboxElementos.Text = elemento;                
             }
             else
             {
                 retangulosCheckbox.Remove(checkbox);
-                cboxElementos.Text = "---";
-
-                
+                cboxElementos.Text = "---";                
             }
             pbImgOdontograma.Invalidate();
 
@@ -1532,18 +1493,30 @@ namespace SistemaOdonto
 
             MessageBox.Show("Odontograma e Procedimentos salvos com sucesso!");
             this.Close();
-
         }
 
 
         public Odontograma ObjOdontogramaGerado()
-        {
-            //PEGANDO A IMAGEM GERADA NA FUNÇÃO
-            byte[] imagemBytes = GerarImagem(pbImgOdontograma);
-            
+        {            
             Odontograma objOdt = new Odontograma();
             objOdt.IdPaciente = Convert.ToInt32(lblCodigo.Text);
-            objOdt.Imagem = imagemBytes;      
+
+            // Cria uma subpasta para o paciente usando o ID e o nome do paciente
+            string nomePaciente = txtNome.Text;
+            string pacienteFolderPath = Path.Combine(imageFolderPath, $"{objOdt.IdPaciente}_{nomePaciente}");
+            Directory.CreateDirectory(pacienteFolderPath);            
+
+            // Salva a imagem na pasta do paciente
+            string nomeArquivo = objOdt.IdOdontograma + ".jpg"; // nomeia a imagem com o ID do registro na tabela
+            string caminhoCompleto = Path.Combine(pacienteFolderPath, nomeArquivo);
+
+            Bitmap bitmap = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
+            pbImgOdontograma.DrawToBitmap(bitmap, new Rectangle(0, 0, pbImgOdontograma.Width, pbImgOdontograma.Height));
+
+            bitmap.Save(caminhoCompleto, ImageFormat.Jpeg);
+
+            // Salva o caminho da imagem na tabela Odontograma
+            objOdt.CaminhoImagem = caminhoCompleto;            
 
             return objOdt;
         }
@@ -1586,5 +1559,6 @@ namespace SistemaOdonto
             }
             return procedimentos;
         }        
+
     }
 }

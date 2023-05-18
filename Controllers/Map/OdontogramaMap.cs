@@ -17,7 +17,7 @@ namespace Controllers.Map
             this.HasKey(odt => odt.IdOdontograma);
             this.Property(odt => odt.IdOdontograma).HasColumnName("ID_ODONTOGRAMA");
             this.Property(odt => odt.IdPaciente).HasColumnName("ID_PACIENTE");
-            this.Property(odt => odt.Imagem).HasColumnName("IMAGEM");
+            this.Property(odt => odt.CaminhoImagem).HasColumnName("CAMINHO_IMAGEM");
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WcfService;
@@ -31,10 +32,7 @@ namespace SistemaOdonto
         DentistaService serviceD = new DentistaService();
 
         Odontograma objOdt = new Odontograma();
-        //Procedimento objProcd = new Procedimento();
-
-        //OdontogramaService objOdtService = new OdontogramaService();
-        //ProcedimentoService objProcdService = new ProcedimentoService();
+        //Procedimento objProcd = new Procedimento();       
 
         OdontogramaService serviceOdt = new OdontogramaService();
         ProcedimentoService serviceProcd = new ProcedimentoService();
@@ -47,37 +45,34 @@ namespace SistemaOdonto
         private Pen _pen;
         private bool _isDrawing = false;
         private Point _startPoint;
-        private Bitmap _bitmap;
 
         //PILHA DE IMAGENS
         private Stack<Bitmap> _undoStack = new Stack<Bitmap>();
+
+        private Image imagemCarregada;
 
         // dicionário para mapear as checkboxes aos retângulos
         private Dictionary<System.Windows.Forms.CheckBox, Rectangle> retangulosCheckbox = new Dictionary<System.Windows.Forms.CheckBox, Rectangle>();
 
         //dicionário para mapear as checkboxes
         private Dictionary<string, System.Windows.Forms.CheckBox> elementoCheckboxMap = new Dictionary<string, System.Windows.Forms.CheckBox>();
-               
+
 
         public FrmEditarOdtProcedimentos(Odontograma objOdt, Procedimento objProcd)
         {
             InitializeComponent();
+            
             ListarDentistas();
 
             _pen = new Pen(Color.Black, 2); // Manter a configuração padrão da caneta
-            linePen = new Pen(Color.Black, 2); // Inicializa a cor da linha com a cor preta padrão
+            linePen = new Pen(Color.Black, 2); // Inicializa a cor da linha com a cor preta padrão            
 
-            pbPenBlack.BorderStyle = BorderStyle.FixedSingle; // Define a borda da pbPenBlack como selecionada
+            IniciarFormulario(objOdt, objProcd);
 
-
-            //_pen = new Pen(Color.Black, 2);
-            _bitmap = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
-            pbImgOdontograma.Image = _bitmap;
-            Stack<Bitmap> undoStack = new Stack<Bitmap>();
+            pbCircle.BorderStyle = BorderStyle.FixedSingle; // Define a borda da pbPenBlack como selecionada            
 
             btnUndoCircle.Visible = false;
             btnUndo.Visible = false;
-            btnColor.Enabled = false;
 
             btnAtualizarOdtProcds.Enabled = false;
 
@@ -116,7 +111,8 @@ namespace SistemaOdonto
 
             lblCodigo.Visible = false;
             lblCodOdt.Visible = false;
-            IniciarFormulario(objOdt, objProcd);
+           
+            AtualizarSelecaoFaces();
         }
 
         private void FrmEditarOdtProcedimentos_Load(object sender, EventArgs e)
@@ -140,16 +136,19 @@ namespace SistemaOdonto
 
             int idOdontograma = this.objOdt.IdOdontograma;
             int idPaciente = this.objOdt.IdPaciente;
-            byte[] imageBytes = this.objOdt.Imagem;
+            string caminhoImagem = this.objOdt.CaminhoImagem;
+
+            if (!string.IsNullOrEmpty(caminhoImagem) && File.Exists(caminhoImagem))
+            {
+                // Carrega a imagem a partir do caminho e atribui à variável imagemCarregada
+                imagemCarregada = Image.FromFile(caminhoImagem);
+                pbImgOdontograma.Image = imagemCarregada;
+
+            }
 
             lblCodOdt.Text = idOdontograma.ToString();
-            lblCodigo.Text = idPaciente.ToString();
+            lblCodigo.Text = idPaciente.ToString();           
 
-            using (MemoryStream ms = new MemoryStream(imageBytes))
-            {
-                Image image = Image.FromStream(ms);
-                pbImgOdontograma.Image = image;
-            }            
 
             // Limpa as linhas existentes na DataGridView
             dataGridProcedimentos.Rows.Clear();
@@ -169,8 +168,9 @@ namespace SistemaOdonto
                 row.Cells[4].Value = procedimento.Procedimento_realizado;
                 row.Cells[5].Value = procedimento.Data;
             }
-
+            
         }        
+        
 
         private void ListarDentistas()
         {
@@ -189,29 +189,10 @@ namespace SistemaOdonto
             }
             catch (System.Exception ex)
             {
-
                 MessageBox.Show("Erro ao carregar a lista!" + ex.Message);
             }
         }
-
-
-        // Função para gerar a imagem combinada
-        byte[] GerarImagem(PictureBox pictureBox)
-        {
-            // Cria uma nova imagem Bitmap com o tamanho da pictureBox
-            Bitmap bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
-
-            // Desenha a pictureBox na imagem Bitmap
-            pictureBox.DrawToBitmap(bitmap, pictureBox.ClientRectangle);
-
-            // Converte a imagem Bitmap em um array de bytes
-            using (MemoryStream ms = new MemoryStream())
-            {
-                bitmap.Save(ms, ImageFormat.Jpeg); // Escolha o formato de imagem adequado
-
-                return ms.ToArray();
-            }
-        }
+        
 
         public int ObterIdDentistaPorNome(string nomeDentista)
         {
@@ -231,23 +212,32 @@ namespace SistemaOdonto
         {
             if (pbCircle.BorderStyle == BorderStyle.FixedSingle)
             {
-                _undoStack.Push(new Bitmap(_bitmap)); // empilha a imagem atual
-                Graphics g = Graphics.FromImage(_bitmap);
+                _undoStack.Push(new Bitmap(imagemCarregada)); // empilha a imagem atual
+                Graphics g = Graphics.FromImage(imagemCarregada);
                 int diameter = 8; // definir o diâmetro do círculo
-                int x = e.X - diameter / 2;
-                int y = e.Y - diameter / 2;
+                int x = e.X - diameter / 4;
+                int y = e.Y - diameter / 4;
                 g.DrawEllipse(_pen, x, y, diameter, diameter);
                 pbImgOdontograma.Invalidate();
-            }
 
+                AtualizarSelecaoFaces();
+            }
+            
         }
 
         private void pbImgOdontograma_MouseDown(object sender, MouseEventArgs e)
         {
+            if (pbCircle.BorderStyle == BorderStyle.FixedSingle)
+            {
+                return;
+            }
+
             if (e.Button == MouseButtons.Left)
             {
                 isDrawingLine = true;
                 lineStartPoint = e.Location;
+
+                AtualizarSelecaoFaces();
             }
         }
 
@@ -258,32 +248,41 @@ namespace SistemaOdonto
                 if (isDrawingLine)
                 {
                     isDrawingLine = false;
-                    Graphics g = Graphics.FromImage(_bitmap);
+                    Graphics g = Graphics.FromImage(imagemCarregada);
                     g.DrawLine(linePen, lineStartPoint, e.Location);
                     pbImgOdontograma.Invalidate();
+
+                    AtualizarSelecaoFaces();
                 }
             }
         }
 
         private void pbImgOdontograma_MouseMove(object sender, MouseEventArgs e)
         {
-            if (_isDrawing && pbCircle.BorderStyle == BorderStyle.FixedSingle)
+            if (pbCircle.BorderStyle == BorderStyle.FixedSingle)
             {
-                _undoStack.Push(new Bitmap(_bitmap)); // empilha a imagem atual
-                Graphics g = Graphics.FromImage(_bitmap);
-                g.DrawEllipse(_pen, _startPoint.X, _startPoint.Y, e.X - _startPoint.X, e.Y - _startPoint.Y);
+                if (_isDrawing)
+                {
+                    _undoStack.Push(new Bitmap(imagemCarregada)); // empilha a imagem atual
+                    Graphics g = Graphics.FromImage(imagemCarregada);
+                    g.DrawEllipse(_pen, _startPoint.X, _startPoint.Y, e.X - _startPoint.X, e.Y - _startPoint.Y);
+                    pbImgOdontograma.Invalidate();
 
-                pbImgOdontograma.Invalidate();
+                    AtualizarSelecaoFaces();
+                }
             }
-
-            if (_isDrawing && ((pbPenBlack.BorderStyle == BorderStyle.FixedSingle || pbPenBlue.BorderStyle == BorderStyle.FixedSingle || pbPenRed.BorderStyle == BorderStyle.FixedSingle) || pbCircle.BorderStyle == BorderStyle.FixedSingle))
+            else if ((pbPenBlack.BorderStyle == BorderStyle.FixedSingle || pbPenBlue.BorderStyle == BorderStyle.FixedSingle || pbPenRed.BorderStyle == BorderStyle.FixedSingle) || pbCircle.BorderStyle == BorderStyle.FixedSingle)
             {
-                _undoStack.Push(new Bitmap(_bitmap)); // empilha a imagem atual
-                Graphics g = Graphics.FromImage(_bitmap);
-                g.DrawLine(_pen, _startPoint, e.Location);
-                _startPoint = e.Location;
-                pbImgOdontograma.Invalidate();
-            }
+                if (_isDrawing)
+                {
+                    _undoStack.Push(new Bitmap(imagemCarregada)); // empilha a imagem atual
+                    Graphics g = Graphics.FromImage(imagemCarregada);
+                    g.DrawLine(linePen, lineStartPoint, e.Location);
+                    pbImgOdontograma.Invalidate();
+
+                    AtualizarSelecaoFaces();
+                }
+            }   
 
         }
 
@@ -306,26 +305,10 @@ namespace SistemaOdonto
                         e.Graphics.DrawRectangle(pen, retangulo);
                     }
                 }
-            }
-
-            
-
+            } 
         }
 
-        private void btnColor_Click(object sender, EventArgs e)
-        {
-            btnUndoCircle.Visible = false;
-            btnUndo.Visible = true;
-
-            ColorDialog colorDialog = new ColorDialog();
-
-            if (colorDialog.ShowDialog() == DialogResult.OK)
-            {
-                _pen.Color = colorDialog.Color;
-                btnColor.BackColor = colorDialog.Color;
-            }
-
-        }
+        
 
         private void pbCircle_Click(object sender, EventArgs e)
         {
@@ -335,9 +318,8 @@ namespace SistemaOdonto
             pbCircle.BorderStyle = BorderStyle.FixedSingle;
             btnUndoCircle.Visible = true;
             btnUndo.Visible = false;
-            btnColor.Enabled = false;
 
-            _pen.Color = Color.Green;
+            _pen.Color = Color.Red;
         }
 
         private void pbPenBlack_Click(object sender, EventArgs e)
@@ -348,10 +330,8 @@ namespace SistemaOdonto
             pbCircle.BorderStyle = BorderStyle.Fixed3D;
             btnUndo.Visible = true;
             btnUndoCircle.Visible = false;
-            btnColor.Enabled = true;
 
             linePen.Color = color1;
-
         }
 
         private void pbPenBlue_Click(object sender, EventArgs e)
@@ -362,10 +342,8 @@ namespace SistemaOdonto
             pbCircle.BorderStyle = BorderStyle.Fixed3D;
             btnUndo.Visible = true;
             btnUndoCircle.Visible = false;
-            btnColor.Enabled = true;
 
             linePen.Color = color2;
-
         }
 
         private void pbPenRed_Click(object sender, EventArgs e)
@@ -376,10 +354,8 @@ namespace SistemaOdonto
             pbCircle.BorderStyle = BorderStyle.Fixed3D;
             btnUndo.Visible = true;
             btnUndoCircle.Visible = false;
-            btnColor.Enabled = true;
 
             linePen.Color = color3;
-
         }
 
         private void btnUndoCircle_Click(object sender, EventArgs e)
@@ -387,12 +363,13 @@ namespace SistemaOdonto
             int numUndos = 1; // Defina o número de traços a serem desfeitos
             while (_undoStack.Count > 0 && numUndos > 0)
             {
-                _bitmap = _undoStack.Pop();
+                imagemCarregada = _undoStack.Pop();
                 numUndos--;
             }
-            pbImgOdontograma.Image = _bitmap;
+            pbImgOdontograma.Image = imagemCarregada;
             pbImgOdontograma.Invalidate();
 
+            AtualizarSelecaoFaces();
         }
 
         private void btnUndo_Click(object sender, EventArgs e)
@@ -400,29 +377,32 @@ namespace SistemaOdonto
             int numUndos = 10; // Defina o número de traços a serem desfeitos
             while (_undoStack.Count > 0 && numUndos > 0)
             {
-                _bitmap = _undoStack.Pop();
+                imagemCarregada = _undoStack.Pop();
                 numUndos--;
             }
-            pbImgOdontograma.Image = _bitmap;
+            pbImgOdontograma.Image = imagemCarregada;
             pbImgOdontograma.Invalidate();
+
+            AtualizarSelecaoFaces();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            //byte[] imageBytes = this.objOdt.Imagem;            
+            imagemCarregada = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
+            pbImgOdontograma.Image = imagemCarregada;
+            Stack<Bitmap> undoStack = new Stack<Bitmap>();
 
-            //// Cria um objeto MemoryStream a partir dos bytes da imagem
-            //using (System.IO.MemoryStream ms = new System.IO.MemoryStream(imageBytes))
-            //{
-            //    // Cria um objeto Bitmap a partir do MemoryStream
-            //    Bitmap bitmap = new Bitmap(ms);
+            string caminhoImagem = this.objOdt.CaminhoImagem;
 
-            //    // Exibe o Bitmap na PictureBox
-            //    pbImgOdontograma.Image = bitmap;
-            //}
+            // Verifica se o caminho da imagem é válido
+            if (!string.IsNullOrEmpty(caminhoImagem) && File.Exists(caminhoImagem))
+            {
+                // Carrega a imagem a partir do caminho e atribui à PictureBox
+                Image imagem = Image.FromFile(caminhoImagem);
+                pbImgOdontograma.Image = imagem;
+            }            
 
-            _bitmap = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
-            pbImgOdontograma.Image = _bitmap;
+            _undoStack.Clear();
         }
 
         private void btnFecharFichaClinica_Click(object sender, EventArgs e)
@@ -1071,6 +1051,143 @@ namespace SistemaOdonto
             dataGridProcedimentos.CurrentCell = null;
         }
 
+        private void AtualizarSelecaoFaces()
+        {
+            // Limpa a PictureBox antes de desenhar novamente
+            pbImgOdontograma.Refresh();
+
+            // Itera sobre as linhas da DataGridView
+            foreach (DataGridViewRow row in dataGridProcedimentos.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    // Obtém os valores da coluna "Elemento" e "Face" da linha atual
+                    string elemento = row.Cells["Elemento"].Value?.ToString();
+                    string face = row.Cells["Face"].Value?.ToString();
+
+                    // Verifica os valores de "Elemento" e "Face" e adiciona o desenho à lista
+                    if (elemento == "18")
+                    {
+
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 36, 159, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 19, 159, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 25, 162, 10, 14);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 23, 152, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 23, 178, 14, 8);
+                            }
+                        }
+                    }
+                    else if (elemento == "17")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 70, 159, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 53, 159, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 59, 162, 10, 14);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 57, 152, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 57, 178, 14, 8);
+                            }
+                        }
+                    }
+                    else if (elemento == "16")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 104, 159, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 87, 159, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 93, 162, 10, 14);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 91, 152, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 91, 178, 14, 8);
+                            }
+                        }
+                    }
+                    else if (elemento == "15")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 138, 159, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 121, 159, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 127, 162, 10, 14);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 125, 152, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 125, 178, 14, 8);
+                            }
+                        }
+                    }
+                    else if (elemento == "14")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 172, 159, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 155, 159, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 161, 162, 10, 14);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 159, 152, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 159, 178, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "13")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 206, 159, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 189, 159, 5, 20);
+
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 192, 152, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 192, 178, 14, 8);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
         /// FUNÇÃO PARA CRIAR OS RETANGULOS DE SELEÇÃO NA IMAGEM ODONTOGRAMA
         private void CriarRetangulo(object sender, EventArgs e, int x, int y, int width, int height, string elemento)
         {
@@ -1094,193 +1211,223 @@ namespace SistemaOdonto
         private void checkBox18_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 12, 15, 33, 180, "18");
-
+            AtualizarSelecaoFaces();
         }
 
         private void checkBox48_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 12, 204, 33, 180, "48");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox17_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 47, 15, 32, 180, "17");
-
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox47_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 47, 204, 32, 180, "47");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox16_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 81, 15, 32, 180, "16");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox46_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 81, 204, 32, 180, "46");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox15_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 115, 15, 32, 180, "15");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox45_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 115, 204, 32, 180, "45");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox14_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 149, 15, 32, 180, "14");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox44_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 149, 204, 32, 180, "44");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox13_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 183, 15, 32, 180, "13");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox43_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 183, 204, 32, 180, "43");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox12_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 217, 15, 31, 180, "12");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox42_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 217, 204, 31, 180, "42");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox11_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 250, 15, 32, 180, "11");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox41_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 250, 204, 32, 180, "41");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox21_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 285, 15, 32, 180, "21");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox31_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 285, 204, 32, 180, "31");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox22_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 319, 15, 31, 180, "22");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox32_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 319, 204, 31, 180, "32");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox23_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 352, 15, 32, 180, "23");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox33_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 352, 204, 32, 180, "33");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox24_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 386, 15, 32, 180, "24");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox34_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 386, 204, 32, 180, "34");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox25_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 420, 15, 32, 180, "25");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox35_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 420, 204, 32, 180, "35");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox26_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 454, 15, 32, 180, "26");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox36_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 454, 204, 32, 180, "36");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox27_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 488, 15, 32, 180, "27");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox37_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 488, 204, 32, 180, "37");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox28_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 522, 15, 33, 180, "28");
+            AtualizarSelecaoFaces();
 
         }
 
         private void checkBox38_CheckedChanged(object sender, EventArgs e)
         {
             CriarRetangulo(sender, e, 522, 204, 33, 180, "38");
+            AtualizarSelecaoFaces();
 
         }
 
@@ -1295,7 +1442,7 @@ namespace SistemaOdonto
 
                 if (result == DialogResult.Yes)
                 {
-                    if (dataGridProcedimentos.SelectedRows.Count >= 1)
+                    if (dataGridProcedimentos.SelectedRows.Count == 1)
                     {
                         var rowToRemove = dataGridProcedimentos.SelectedRows[0];
 
@@ -1320,6 +1467,8 @@ namespace SistemaOdonto
 
         private void dataGridProcedimentos_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
+            AtualizarSelecaoFaces();
+
             if (dataGridProcedimentos.Rows.Count > 0)
             {
                 btnAtualizarOdtProcds.Enabled = true;
@@ -1328,6 +1477,8 @@ namespace SistemaOdonto
 
         private void dataGridProcedimentos_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
+            AtualizarSelecaoFaces();
+
             if (dataGridProcedimentos.Rows.Count == 0)
             {
                 btnAtualizarOdtProcds.Enabled = false;
@@ -1335,16 +1486,15 @@ namespace SistemaOdonto
         }
 
         private void btnAtualizarOdtProcds_Click(object sender, EventArgs e)
-        {               
-
+        {
             try
             {
-                //PEGANDO A IMAGEM GERADA NA FUNÇÃO
-                byte[] novaImagem = GerarImagem(pbImgOdontograma);
+                // Salvar a imagem modificada com os desenhos
+                SalvarImagemModificada();
 
-                //ATUALIZANDO IMAGEM
-                this.objOdt.Imagem = novaImagem;
-                serviceOdt.Editar(this.objOdt);
+                //ExcluirArquivoAnterior(caminhoDestino);
+                //RenomearNovoArquivo(caminhoDestinoModificado, caminhoDestino);
+
 
                 //ADICIONANDO OS NOVOS PROCEDIMENTOS
                 List<Procedimento> procedimentos = ObjProcedimentoGerado();
@@ -1358,7 +1508,7 @@ namespace SistemaOdonto
                 foreach (Procedimento procedimento in procedimentos)
                 {
                     serviceProcd.Cadastrar(procedimento);
-                }                
+                }
 
                 MessageBox.Show("Odontograma e Procedimentos salvos com sucesso!");
                 this.Close();
@@ -1366,10 +1516,43 @@ namespace SistemaOdonto
             catch (System.Exception ex)
             {
                 MessageBox.Show("Erro ao Salvar " + ex.Message);
-            }
+            }            
         }
 
-       
+        private void SalvarImagemModificada()
+        {
+            // Defina o caminho de destino para salvar a imagem modificada
+            string caminhoDestino = this.objOdt.CaminhoImagem;
+            string nomeArquivo = Path.GetFileNameWithoutExtension(caminhoDestino);
+            string novaExtensao = ".jpg";
+            string novoNomeArquivo = nomeArquivo + "_modificado" + novaExtensao;
+            string caminhoDestinoModificado = Path.Combine(Path.GetDirectoryName(caminhoDestino), novoNomeArquivo);
+
+            using (Bitmap bmp = (Bitmap)imagemCarregada.Clone())
+            {
+                bmp.Save(caminhoDestinoModificado, ImageFormat.Jpeg);
+            }
+
+            MessageBox.Show("Nova Imagem Odontograma salva com sucesso!");
+
+            // Aguardar um curto período de tempo para garantir que o arquivo anterior seja liberado
+            Thread.Sleep(500);
+
+            ExcluirArquivoAnterior(caminhoDestino);
+            RenomearNovoArquivo(caminhoDestinoModificado, caminhoDestino);            
+        }
+
+
+        private void ExcluirArquivoAnterior(string caminhoArquivo)
+        {
+            File.Delete(caminhoArquivo);
+        }
+
+        private void RenomearNovoArquivo(string caminhoArquivoNovo, string caminhoArquivoAntigo)
+        {
+            File.Move(caminhoArquivoNovo, caminhoArquivoAntigo);
+        }
+
 
         public List<Procedimento> ObjProcedimentoGerado()
         {

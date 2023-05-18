@@ -59,7 +59,7 @@ namespace Controllers.Repositorios
             {
                 Odontograma objAntigo = ctx.Odontogramas.Find(objNovo.IdOdontograma);
                 objAntigo.IdPaciente = objNovo.IdPaciente;
-                objAntigo.Imagem = objNovo.Imagem;
+                objAntigo.CaminhoImagem = objNovo.CaminhoImagem;
 
                 ctx.SaveChanges();
             }

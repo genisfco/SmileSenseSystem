@@ -52,6 +52,12 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cboxDentista = new System.Windows.Forms.ComboBox();
             this.dataGridProcedimentos = new System.Windows.Forms.DataGridView();
+            this.Elemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Face = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dentista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Especialidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Procedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboxFaces = new System.Windows.Forms.ComboBox();
             this.cboxProcedimento = new System.Windows.Forms.ComboBox();
             this.cboxEspecialidade = new System.Windows.Forms.ComboBox();
@@ -68,7 +74,6 @@
             this.btnUndoCircle = new System.Windows.Forms.Button();
             this.btnUndo = new System.Windows.Forms.Button();
             this.pbPenBlack = new System.Windows.Forms.PictureBox();
-            this.btnColor = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnFecharFichaClinica = new System.Windows.Forms.Button();
             this.btnAtualizarOdtProcds = new System.Windows.Forms.Button();
@@ -95,12 +100,6 @@
             this.checkBox22 = new System.Windows.Forms.CheckBox();
             this.checkBox21 = new System.Windows.Forms.CheckBox();
             this.lblCodOdt = new System.Windows.Forms.Label();
-            this.Elemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Face = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dentista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Especialidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Procedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProcedimentos)).BeginInit();
@@ -357,6 +356,66 @@
             this.dataGridProcedimentos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridProcedimentos_RowsRemoved);
             this.dataGridProcedimentos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridProcedimentos_KeyDown);
             // 
+            // Elemento
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.Elemento.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Elemento.HeaderText = "Dente";
+            this.Elemento.MinimumWidth = 8;
+            this.Elemento.Name = "Elemento";
+            this.Elemento.ReadOnly = true;
+            this.Elemento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Elemento.Width = 45;
+            // 
+            // Face
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.Face.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Face.HeaderText = "Face";
+            this.Face.MinimumWidth = 8;
+            this.Face.Name = "Face";
+            this.Face.ReadOnly = true;
+            this.Face.Width = 40;
+            // 
+            // Dentista
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Dentista.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Dentista.HeaderText = "Cirurgião";
+            this.Dentista.MinimumWidth = 8;
+            this.Dentista.Name = "Dentista";
+            this.Dentista.ReadOnly = true;
+            this.Dentista.Width = 120;
+            // 
+            // Especialidade
+            // 
+            this.Especialidade.HeaderText = "Especialidade";
+            this.Especialidade.MinimumWidth = 8;
+            this.Especialidade.Name = "Especialidade";
+            this.Especialidade.ReadOnly = true;
+            this.Especialidade.Width = 120;
+            // 
+            // Procedimento
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Info;
+            this.Procedimento.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Procedimento.HeaderText = "Procedimento";
+            this.Procedimento.MinimumWidth = 8;
+            this.Procedimento.Name = "Procedimento";
+            this.Procedimento.ReadOnly = true;
+            this.Procedimento.Width = 310;
+            // 
+            // Data
+            // 
+            this.Data.HeaderText = "Data";
+            this.Data.MinimumWidth = 8;
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
+            this.Data.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Data.Width = 150;
+            // 
             // cboxFaces
             // 
             this.cboxFaces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -506,7 +565,7 @@
             // pbCircle
             // 
             this.pbCircle.BackColor = System.Drawing.Color.Transparent;
-            this.pbCircle.BackgroundImage = global::SistemaOdonto.Properties.Resources.Circle_Green;
+            this.pbCircle.BackgroundImage = global::SistemaOdonto.Properties.Resources.Circle_Red;
             this.pbCircle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbCircle.Location = new System.Drawing.Point(13, 97);
             this.pbCircle.Name = "pbCircle";
@@ -542,7 +601,6 @@
             // pbImgOdontograma
             // 
             this.pbImgOdontograma.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pbImgOdontograma.BackgroundImage = global::SistemaOdonto.Properties.Resources.odontograma2_2;
             this.pbImgOdontograma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbImgOdontograma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbImgOdontograma.Location = new System.Drawing.Point(8, 158);
@@ -558,11 +616,11 @@
             // 
             // btnUndoCircle
             // 
-            this.btnUndoCircle.Location = new System.Drawing.Point(343, 97);
+            this.btnUndoCircle.Location = new System.Drawing.Point(240, 97);
             this.btnUndoCircle.Name = "btnUndoCircle";
             this.btnUndoCircle.Size = new System.Drawing.Size(86, 41);
             this.btnUndoCircle.TabIndex = 134;
-            this.btnUndoCircle.Text = "Desfazer";
+            this.btnUndoCircle.Text = "undocircle";
             this.btnUndoCircle.UseVisualStyleBackColor = true;
             this.btnUndoCircle.Click += new System.EventHandler(this.btnUndoCircle_Click);
             // 
@@ -572,7 +630,7 @@
             this.btnUndo.Name = "btnUndo";
             this.btnUndo.Size = new System.Drawing.Size(86, 41);
             this.btnUndo.TabIndex = 130;
-            this.btnUndo.Text = "Desfazer";
+            this.btnUndo.Text = "undoline";
             this.btnUndo.UseVisualStyleBackColor = true;
             this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
@@ -587,16 +645,6 @@
             this.pbPenBlack.TabIndex = 129;
             this.pbPenBlack.TabStop = false;
             this.pbPenBlack.Click += new System.EventHandler(this.pbPenBlack_Click);
-            // 
-            // btnColor
-            // 
-            this.btnColor.Location = new System.Drawing.Point(243, 97);
-            this.btnColor.Name = "btnColor";
-            this.btnColor.Size = new System.Drawing.Size(72, 41);
-            this.btnColor.TabIndex = 128;
-            this.btnColor.Text = "Cores";
-            this.btnColor.UseVisualStyleBackColor = true;
-            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // btnClear
             // 
@@ -887,66 +935,6 @@
             this.lblCodOdt.TabIndex = 139;
             this.lblCodOdt.Text = "Id Odt";
             // 
-            // Elemento
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.Elemento.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Elemento.HeaderText = "Dente";
-            this.Elemento.MinimumWidth = 8;
-            this.Elemento.Name = "Elemento";
-            this.Elemento.ReadOnly = true;
-            this.Elemento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Elemento.Width = 45;
-            // 
-            // Face
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.Face.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Face.HeaderText = "Face";
-            this.Face.MinimumWidth = 8;
-            this.Face.Name = "Face";
-            this.Face.ReadOnly = true;
-            this.Face.Width = 40;
-            // 
-            // Dentista
-            // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Dentista.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Dentista.HeaderText = "Cirurgião";
-            this.Dentista.MinimumWidth = 8;
-            this.Dentista.Name = "Dentista";
-            this.Dentista.ReadOnly = true;
-            this.Dentista.Width = 120;
-            // 
-            // Especialidade
-            // 
-            this.Especialidade.HeaderText = "Especialidade";
-            this.Especialidade.MinimumWidth = 8;
-            this.Especialidade.Name = "Especialidade";
-            this.Especialidade.ReadOnly = true;
-            this.Especialidade.Width = 120;
-            // 
-            // Procedimento
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Info;
-            this.Procedimento.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Procedimento.HeaderText = "Procedimento";
-            this.Procedimento.MinimumWidth = 8;
-            this.Procedimento.Name = "Procedimento";
-            this.Procedimento.ReadOnly = true;
-            this.Procedimento.Width = 310;
-            // 
-            // Data
-            // 
-            this.Data.HeaderText = "Data";
-            this.Data.MinimumWidth = 8;
-            this.Data.Name = "Data";
-            this.Data.ReadOnly = true;
-            this.Data.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Data.Width = 150;
-            // 
             // FrmEditarOdtProcedimentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -966,7 +954,6 @@
             this.Controls.Add(this.btnUndoCircle);
             this.Controls.Add(this.btnUndo);
             this.Controls.Add(this.pbPenBlack);
-            this.Controls.Add(this.btnColor);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnFecharFichaClinica);
             this.Controls.Add(this.btnAtualizarOdtProcds);
@@ -1043,7 +1030,6 @@
         private System.Windows.Forms.Button btnUndoCircle;
         private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.PictureBox pbPenBlack;
-        private System.Windows.Forms.Button btnColor;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnFecharFichaClinica;
         private System.Windows.Forms.Button btnAtualizarOdtProcds;
