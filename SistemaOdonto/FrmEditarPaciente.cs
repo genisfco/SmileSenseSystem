@@ -235,7 +235,6 @@ namespace SistemaOdonto
             //    Verificar se a Odontograma foi encontrado
             if (odontograma != null)
             {
-                MessageBox.Show(" Teste de DEV -- PACIENTE JÁ TEM ODONTOGRAMA!");
 
                 //Obter o ID Odontograma
                 int idOdontograma = odontograma.IdOdontograma;

@@ -74,7 +74,6 @@
             this.btnUndoCircle = new System.Windows.Forms.Button();
             this.btnUndo = new System.Windows.Forms.Button();
             this.pbPenBlack = new System.Windows.Forms.PictureBox();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnFecharFichaClinica = new System.Windows.Forms.Button();
             this.btnAtualizarOdtProcds = new System.Windows.Forms.Button();
             this.lbCPF = new System.Windows.Forms.Label();
@@ -646,16 +645,6 @@
             this.pbPenBlack.TabStop = false;
             this.pbPenBlack.Click += new System.EventHandler(this.pbPenBlack_Click);
             // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(678, 77);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(182, 61);
-            this.btnClear.TabIndex = 127;
-            this.btnClear.Text = "Limpar Desenhos";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // btnFecharFichaClinica
             // 
             this.btnFecharFichaClinica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -940,6 +929,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1915, 966);
+            this.ControlBox = false;
             this.Controls.Add(this.lblCodOdt);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox5);
@@ -954,7 +944,6 @@
             this.Controls.Add(this.btnUndoCircle);
             this.Controls.Add(this.btnUndo);
             this.Controls.Add(this.pbPenBlack);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnFecharFichaClinica);
             this.Controls.Add(this.btnAtualizarOdtProcds);
             this.Controls.Add(this.lbCPF);
@@ -1030,7 +1019,6 @@
         private System.Windows.Forms.Button btnUndoCircle;
         private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.PictureBox pbPenBlack;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnFecharFichaClinica;
         private System.Windows.Forms.Button btnAtualizarOdtProcds;
         private System.Windows.Forms.Label lbCPF;

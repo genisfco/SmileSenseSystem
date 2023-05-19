@@ -49,7 +49,9 @@ namespace SistemaOdonto
         //PILHA DE IMAGENS
         private Stack<Bitmap> _undoStack = new Stack<Bitmap>();
 
+        private Image imagemBackup;
         private Image imagemCarregada;
+        private Image imagemModificada;
 
         // dicionário para mapear as checkboxes aos retângulos
         private Dictionary<System.Windows.Forms.CheckBox, Rectangle> retangulosCheckbox = new Dictionary<System.Windows.Forms.CheckBox, Rectangle>();
@@ -127,27 +129,42 @@ namespace SistemaOdonto
                 "\n\n5. Repita o processo para cada Elemento." +
                 "\n\n6. Na imagem de Odontograma do quadro esquerdo faça as anotações necessárias." +
                 "\n\n7. Para salvar as informações: Clique em Salvar Odontograma." +
-                "", "Instruções para Preenchimento dos Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                "", "Instruções para Preenchimento dos Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);           
         }
+
+
 
         private void IniciarFormulario(Odontograma objOdt, Procedimento objProcd)
         {
             this.objOdt = objOdt;
 
-            int idOdontograma = this.objOdt.IdOdontograma;
-            int idPaciente = this.objOdt.IdPaciente;
+            // Caminho pré-determinado do arquivo de imagem
             string caminhoImagem = this.objOdt.CaminhoImagem;
 
-            if (!string.IsNullOrEmpty(caminhoImagem) && File.Exists(caminhoImagem))
-            {
-                // Carrega a imagem a partir do caminho e atribui à variável imagemCarregada
-                imagemCarregada = Image.FromFile(caminhoImagem);
-                pbImgOdontograma.Image = imagemCarregada;
-
-            }
+            int idOdontograma = this.objOdt.IdOdontograma;
+            int idPaciente = this.objOdt.IdPaciente;
 
             lblCodOdt.Text = idOdontograma.ToString();
-            lblCodigo.Text = idPaciente.ToString();           
+            lblCodigo.Text = idPaciente.ToString();
+
+            imagemBackup = BackupImageOdontograma();
+            imagemBackup.Dispose();
+            imagemBackup = null;
+
+            // Copiar a imagem original para um novo local
+            string tempFilePath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "temp_image.jpg");
+            System.IO.File.Copy(caminhoImagem, tempFilePath, true);
+
+            imagemCarregada = new Bitmap(tempFilePath);
+            imagemModificada = new Bitmap(imagemCarregada);
+            pbImgOdontograma.Image = imagemModificada;
+
+            // Liberar o arquivo original
+            imagemCarregada.Dispose();
+            imagemCarregada = null;
+
+            // Excluir o arquivo original
+            System.IO.File.Delete(caminhoImagem);
 
 
             // Limpa as linhas existentes na DataGridView
@@ -169,8 +186,45 @@ namespace SistemaOdonto
                 row.Cells[5].Value = procedimento.Data;
             }
             
-        }        
-        
+        }
+
+        private Bitmap BackupImageOdontograma()
+        {
+            // Tentar carregar a imagem original
+            string ImagemOriginal = objOdt.CaminhoImagem;
+            if (File.Exists(ImagemOriginal))
+            {
+                return new Bitmap(ImagemOriginal);
+            }
+
+            // Caso a imagem original não exista, carregar a imagem de backup
+            string ImagemBackup = Path.Combine(Path.GetDirectoryName(ImagemOriginal), "odontogramaBackup.jpg");
+            if (File.Exists(ImagemBackup))
+            {
+                // Fazer uma cópia da imagem de backup com o nome original
+                string caminhoDestino = ImagemOriginal;
+                File.Copy(ImagemBackup, caminhoDestino, true);
+
+                return new Bitmap(caminhoDestino);
+            }
+
+            // Caso não tenho nenhuma imagem, carregar a imagem odontograma padrão
+            string ImagemPadrao = "C:\\Users\\genis\\OneDrive\\Área de Trabalho\\SistemaOdonto\\SistemaOdonto\\Resource\\ImagemPadrao\\odontogramaPadrao.jpg";
+            if (File.Exists(ImagemPadrao))
+            {
+                // Fazer uma cópia do arquivo da outra pasta com o nome odontogramaOriginal
+                string caminhoDestino = Path.Combine(Path.GetDirectoryName(ImagemOriginal), "odontogramaOriginal.jpg");
+                File.Copy(ImagemPadrao, caminhoDestino, true);
+
+                return new Bitmap(caminhoDestino);
+            }
+
+            MessageBox.Show("Não foi possível localizar a Imagem Odontograma do Paciente! Entre em contato com o Nosso Suporte!");
+            return null;
+        }
+
+
+
 
         private void ListarDentistas()
         {
@@ -212,8 +266,8 @@ namespace SistemaOdonto
         {
             if (pbCircle.BorderStyle == BorderStyle.FixedSingle)
             {
-                _undoStack.Push(new Bitmap(imagemCarregada)); // empilha a imagem atual
-                Graphics g = Graphics.FromImage(imagemCarregada);
+                _undoStack.Push(new Bitmap(imagemModificada)); // empilha a imagem atual
+                Graphics g = Graphics.FromImage(imagemModificada);
                 int diameter = 8; // definir o diâmetro do círculo
                 int x = e.X - diameter / 4;
                 int y = e.Y - diameter / 4;
@@ -248,7 +302,7 @@ namespace SistemaOdonto
                 if (isDrawingLine)
                 {
                     isDrawingLine = false;
-                    Graphics g = Graphics.FromImage(imagemCarregada);
+                    Graphics g = Graphics.FromImage(imagemModificada);
                     g.DrawLine(linePen, lineStartPoint, e.Location);
                     pbImgOdontograma.Invalidate();
 
@@ -263,8 +317,8 @@ namespace SistemaOdonto
             {
                 if (_isDrawing)
                 {
-                    _undoStack.Push(new Bitmap(imagemCarregada)); // empilha a imagem atual
-                    Graphics g = Graphics.FromImage(imagemCarregada);
+                    _undoStack.Push(new Bitmap(imagemModificada)); // empilha a imagem atual
+                    Graphics g = Graphics.FromImage(imagemModificada);
                     g.DrawEllipse(_pen, _startPoint.X, _startPoint.Y, e.X - _startPoint.X, e.Y - _startPoint.Y);
                     pbImgOdontograma.Invalidate();
 
@@ -275,8 +329,8 @@ namespace SistemaOdonto
             {
                 if (_isDrawing)
                 {
-                    _undoStack.Push(new Bitmap(imagemCarregada)); // empilha a imagem atual
-                    Graphics g = Graphics.FromImage(imagemCarregada);
+                    _undoStack.Push(new Bitmap(imagemModificada)); // empilha a imagem atual
+                    Graphics g = Graphics.FromImage(imagemModificada);
                     g.DrawLine(linePen, lineStartPoint, e.Location);
                     pbImgOdontograma.Invalidate();
 
@@ -363,10 +417,10 @@ namespace SistemaOdonto
             int numUndos = 1; // Defina o número de traços a serem desfeitos
             while (_undoStack.Count > 0 && numUndos > 0)
             {
-                imagemCarregada = _undoStack.Pop();
+                imagemModificada = _undoStack.Pop();
                 numUndos--;
             }
-            pbImgOdontograma.Image = imagemCarregada;
+            pbImgOdontograma.Image = imagemModificada;
             pbImgOdontograma.Invalidate();
 
             AtualizarSelecaoFaces();
@@ -380,33 +434,16 @@ namespace SistemaOdonto
                 imagemCarregada = _undoStack.Pop();
                 numUndos--;
             }
-            pbImgOdontograma.Image = imagemCarregada;
+            pbImgOdontograma.Image = imagemModificada;
             pbImgOdontograma.Invalidate();
 
             AtualizarSelecaoFaces();
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            imagemCarregada = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
-            pbImgOdontograma.Image = imagemCarregada;
-            Stack<Bitmap> undoStack = new Stack<Bitmap>();
-
-            string caminhoImagem = this.objOdt.CaminhoImagem;
-
-            // Verifica se o caminho da imagem é válido
-            if (!string.IsNullOrEmpty(caminhoImagem) && File.Exists(caminhoImagem))
-            {
-                // Carrega a imagem a partir do caminho e atribui à PictureBox
-                Image imagem = Image.FromFile(caminhoImagem);
-                pbImgOdontograma.Image = imagem;
-            }            
-
-            _undoStack.Clear();
-        }
+        }       
 
         private void btnFecharFichaClinica_Click(object sender, EventArgs e)
         {
+            SalvarImagemModificada();
+            SalvarImagemBackup();
             this.Close();
         }
 
@@ -1490,11 +1527,8 @@ namespace SistemaOdonto
             try
             {
                 // Salvar a imagem modificada com os desenhos
-                SalvarImagemModificada();
-
-                //ExcluirArquivoAnterior(caminhoDestino);
-                //RenomearNovoArquivo(caminhoDestinoModificado, caminhoDestino);
-
+                SalvarImagemModificada(); 
+                SalvarImagemBackup();
 
                 //ADICIONANDO OS NOVOS PROCEDIMENTOS
                 List<Procedimento> procedimentos = ObjProcedimentoGerado();
@@ -1520,43 +1554,41 @@ namespace SistemaOdonto
         }
 
         private void SalvarImagemModificada()
-        {
-            // Defina o caminho de destino para salvar a imagem modificada
+        {            
+            // Caminho pré-determinado para salvar o arquivo modificado
             string caminhoDestino = this.objOdt.CaminhoImagem;
-            string nomeArquivo = Path.GetFileNameWithoutExtension(caminhoDestino);
-            string novaExtensao = ".jpg";
-            string novoNomeArquivo = nomeArquivo + "_modificado" + novaExtensao;
-            string caminhoDestinoModificado = Path.Combine(Path.GetDirectoryName(caminhoDestino), novoNomeArquivo);
 
-            using (Bitmap bmp = (Bitmap)imagemCarregada.Clone())
-            {
-                bmp.Save(caminhoDestinoModificado, ImageFormat.Jpeg);
-            }
+            imagemModificada.Save(caminhoDestino);
 
-            MessageBox.Show("Nova Imagem Odontograma salva com sucesso!");
-
-            // Aguardar um curto período de tempo para garantir que o arquivo anterior seja liberado
-            Thread.Sleep(500);
-
-            ExcluirArquivoAnterior(caminhoDestino);
-            RenomearNovoArquivo(caminhoDestinoModificado, caminhoDestino);            
+            // Renomear o arquivo modificado para ter o mesmo nome do arquivo original
+            string newFilePath = System.IO.Path.GetDirectoryName(caminhoDestino) + "\\odontogramaOriginal.jpg";
+            System.IO.File.Move(caminhoDestino, newFilePath);
         }
 
 
-        private void ExcluirArquivoAnterior(string caminhoArquivo)
+        private void SalvarImagemBackup()
         {
-            File.Delete(caminhoArquivo);
+            // Caminho pré-determinado para o arquivo de backup
+            string caminhoBackup = Path.Combine(Path.GetDirectoryName(objOdt.CaminhoImagem), "odontogramaBackup.jpg");
+
+            
+            // Copiar a imagem modificada para o arquivo de backup
+            imagemModificada.Save(caminhoBackup);
         }
 
-        private void RenomearNovoArquivo(string caminhoArquivoNovo, string caminhoArquivoAntigo)
-        {
-            File.Move(caminhoArquivoNovo, caminhoArquivoAntigo);
-        }
+        //private void SalvarImagemBackup()
+        //{
+        //    // Caminho pré-determinado para salvar o arquivo de backup
+        //    string caminhoBackup = Path.Combine(Path.GetDirectoryName(objOdt.CaminhoImagem), "odontogramaBackup.jpg");
+
+        //    // Salvar a imagem modificada como o arquivo de backup
+        //    imagemModificada.Save(caminhoBackup);
+        //}
+
 
 
         public List<Procedimento> ObjProcedimentoGerado()
         {
-
             int idPaciente = Convert.ToInt32(lblCodigo.Text);
 
             List<Procedimento> procedimentos = new List<Procedimento>();

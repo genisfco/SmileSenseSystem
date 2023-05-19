@@ -10,8 +10,7 @@ namespace Interfaces
 {
     [ServiceContract]
     public interface IPaciente
-    {
-        
+    {       
        
             [OperationContract]
             void Cadastrar(Paciente obj);

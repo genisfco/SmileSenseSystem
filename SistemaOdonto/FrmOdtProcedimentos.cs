@@ -1497,7 +1497,7 @@ namespace SistemaOdonto
 
 
         public Odontograma ObjOdontogramaGerado()
-        {            
+        {
             Odontograma objOdt = new Odontograma();
             objOdt.IdPaciente = Convert.ToInt32(lblCodigo.Text);
 
@@ -1507,7 +1507,7 @@ namespace SistemaOdonto
             Directory.CreateDirectory(pacienteFolderPath);            
 
             // Salva a imagem na pasta do paciente
-            string nomeArquivo = objOdt.IdOdontograma + ".jpg"; // nomeia a imagem com o ID do registro na tabela
+            string nomeArquivo = "odontogramaOriginal.jpg"; 
             string caminhoCompleto = Path.Combine(pacienteFolderPath, nomeArquivo);
 
             Bitmap bitmap = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
@@ -1516,7 +1516,13 @@ namespace SistemaOdonto
             bitmap.Save(caminhoCompleto, ImageFormat.Jpeg);
 
             // Salva o caminho da imagem na tabela Odontograma
-            objOdt.CaminhoImagem = caminhoCompleto;            
+            objOdt.CaminhoImagem = caminhoCompleto;
+
+            // Cria uma cópia de backup da imagem no caminho da pasta
+            string nomeArquivoBackup = "odontogramaBackup.jpg"; 
+            string caminhoCompletoBackup = Path.Combine(pacienteFolderPath, nomeArquivoBackup);
+
+            bitmap.Save(caminhoCompletoBackup, ImageFormat.Jpeg);
 
             return objOdt;
         }
@@ -1558,7 +1564,8 @@ namespace SistemaOdonto
                 procedimentos.Add(objProcd);
             }
             return procedimentos;
-        }        
+        }
 
+       
     }
 }
