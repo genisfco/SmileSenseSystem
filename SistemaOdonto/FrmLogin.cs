@@ -58,5 +58,15 @@ namespace SistemaOdonto
         {
             Application.Exit(); 
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
