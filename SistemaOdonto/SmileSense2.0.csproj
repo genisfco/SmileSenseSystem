@@ -428,6 +428,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\user-online.ico" />
+    <None Include="Resources\user2.ico" />
+    <None Include="Resources\user-offline.ico" />
     <None Include="Resources\users.ico" />
     <None Include="Connected Services\WSCorreios\configuration91.svcinfo" />
     <None Include="Connected Services\WSCorreios\configuration.svcinfo" />
@@ -435,6 +438,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Resources\add-user.ico" />
     <Content Include="Resources\add.ico" />
     <None Include="Resources\address171.png" />
     <Content Include="Resources\agenda.ico" />
@@ -457,11 +461,13 @@
     <Content Include="Resources\btnSalvar.BackgroundImage.png" />
     <Content Include="Resources\cadastrosToolStripMenuItem.Image.png" />
     <None Include="Resources\delete.ico" />
+    <None Include="Resources\delete-user.ico" />
     <Content Include="Resources\dentista.ico" />
     <None Include="Resources\logo.jpeg" />
     <None Include="Resources\logo2.jpg" />
     <None Include="Resources\logo21.jpg" />
     <None Include="Resources\lock.ico" />
+    <None Include="Resources\file.ico" />
     <Content Include="Resources\MAjuda.Image.png" />
     <Content Include="Resources\MSair.Image.png" />
     <None Include="Resources\odontograma2.2.jpg" />
@@ -471,6 +477,7 @@
     <None Include="Resources\penBlack.jpg" />
     <None Include="Resources\penBlue.jpg" />
     <None Include="Resources\penRed2.0.jpg" />
+    <None Include="Resources\reload.ico" />
     <Content Include="Resources\sair.ico" />
   </ItemGroup>
   <ItemGroup>
