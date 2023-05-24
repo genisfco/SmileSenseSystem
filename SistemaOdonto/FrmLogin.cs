@@ -68,5 +68,17 @@ namespace SistemaOdonto
         {
 
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                txt_Senha.PasswordChar = '\0';
+            }
+            else
+            {
+               txt_Senha.PasswordChar = '*';
+            }
+        }
     }
 }
