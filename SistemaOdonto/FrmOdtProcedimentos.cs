@@ -1960,7 +1960,8 @@ namespace SistemaOdonto
 
 
         private void btnSalvarFichaClinica_Click(object sender, EventArgs e)
-        {        
+        {
+            DesmarcarCheckBoxes(this);
 
 
             //SALVANDO ODONTOGRAMA 
@@ -2003,6 +2004,21 @@ namespace SistemaOdonto
 
             MessageBox.Show("Odontograma e Procedimentos salvos com sucesso!");
             this.Close();
+        }
+
+        private void DesmarcarCheckBoxes(Control control)
+        {
+            foreach (Control childControl in control.Controls)
+            {
+                if (childControl is System.Windows.Forms.CheckBox checkBox)
+                {
+                    checkBox.Checked = false;
+                }
+                else if (childControl.HasChildren)
+                {
+                    DesmarcarCheckBoxes(childControl);
+                }
+            }
         }
 
 
