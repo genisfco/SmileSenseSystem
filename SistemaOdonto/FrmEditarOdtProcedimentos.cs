@@ -208,8 +208,11 @@ namespace SistemaOdonto
                 return new Bitmap(caminhoDestino);
             }
 
+            string diretorioInstalacao = AppDomain.CurrentDomain.BaseDirectory;
+            string ImagemPadrao = Path.Combine(diretorioInstalacao, "Resource", "ImagemPadrao", "odontogramaPadrao.jpg");
+
             // Caso não tenho nenhuma imagem, carregar a imagem odontograma padrão
-            string ImagemPadrao = "C:\\Users\\genis\\OneDrive\\Área de Trabalho\\SistemaOdonto\\SistemaOdonto\\Resource\\ImagemPadrao\\odontogramaPadrao.jpg";
+            //string ImagemPadrao = "C:\\Users\\genis\\OneDrive\\Área de Trabalho\\SistemaOdonto\\SistemaOdonto\\Resource\\ImagemPadrao\\odontogramaPadrao.jpg";
             if (File.Exists(ImagemPadrao))
             {
                 // Fazer uma cópia do arquivo da outra pasta com o nome odontogramaOriginal

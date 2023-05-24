@@ -55,7 +55,8 @@ namespace SistemaOdonto
         private Dictionary<string, System.Windows.Forms.CheckBox> elementoCheckboxMap = new Dictionary<string, System.Windows.Forms.CheckBox>();
 
         // Caminho da pasta principal onde as imagens serão armazenadas
-        string imageFolderPath = "C:\\Users\\genis\\OneDrive\\Área de Trabalho\\SistemaOdonto\\SistemaOdonto\\Resource\\Odontogramas";
+        //string imageFolderPath = "C:\\Users\\genis\\OneDrive\\Área de Trabalho\\SistemaOdonto\\SistemaOdonto\\Resource\\Odontogramas";
+
 
         public FrmOdtProcedimentos()
         {
@@ -1959,7 +1960,9 @@ namespace SistemaOdonto
 
 
         private void btnSalvarFichaClinica_Click(object sender, EventArgs e)
-        {
+        {        
+
+
             //SALVANDO ODONTOGRAMA 
             try
             {
@@ -2007,6 +2010,10 @@ namespace SistemaOdonto
         {
             Odontograma objOdt = new Odontograma();
             objOdt.IdPaciente = Convert.ToInt32(lblCodigo.Text);
+
+            string diretorioInstalacao = AppDomain.CurrentDomain.BaseDirectory;
+            string imageFolderPath = Path.Combine(diretorioInstalacao, "Resource", "Odontogramas");
+
 
             // Cria uma subpasta para o paciente usando o ID e o nome do paciente
             string nomePaciente = txtNome.Text;
