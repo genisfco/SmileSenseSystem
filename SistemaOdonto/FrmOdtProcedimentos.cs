@@ -73,10 +73,8 @@ namespace SistemaOdonto
 
             _bitmap = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
             pbImgOdontograma.Image = _bitmap;
-            Stack<Bitmap> undoStack = new Stack<Bitmap>();
 
             btnUndoCircle.Visible = false;
-            btnUndo.Visible = false;
 
             btnSalvarFichaClinica.Enabled = false;
 
@@ -215,6 +213,9 @@ namespace SistemaOdonto
                     g.DrawLine(linePen, lineStartPoint, e.Location);
                     pbImgOdontograma.Invalidate();
 
+                    // Empilha a imagem atual para desfazer posteriormente
+                    _undoStack.Push(new Bitmap(_bitmap));
+
                     AtualizarSelecaoFaces();
                 }
             }
@@ -230,7 +231,7 @@ namespace SistemaOdonto
                     _undoStack.Push(new Bitmap(_bitmap)); // empilha a imagem atual
                     Graphics g = Graphics.FromImage(_bitmap);
                     g.DrawEllipse(_pen, _startPoint.X, _startPoint.Y, e.X - _startPoint.X, e.Y - _startPoint.Y);
-                    pbImgOdontograma.Invalidate();
+                    pbImgOdontograma.Invalidate();                    
 
                     AtualizarSelecaoFaces();
 
@@ -244,9 +245,10 @@ namespace SistemaOdonto
                     Graphics g = Graphics.FromImage(_bitmap);
                     g.DrawLine(linePen, lineStartPoint, e.Location);
 
-                    //g.DrawLine(_pen, _startPoint, e.Location);
-                    //_startPoint = e.Location;
                     pbImgOdontograma.Invalidate();
+
+                    // Empilha a imagem atual para desfazer posteriormente
+                    _undoStack.Push(new Bitmap(_bitmap));
 
                     AtualizarSelecaoFaces();
 
@@ -285,7 +287,6 @@ namespace SistemaOdonto
             pbPenRed.BorderStyle = BorderStyle.Fixed3D;
             pbCircle.BorderStyle = BorderStyle.FixedSingle;
             btnUndoCircle.Visible = true;
-            btnUndo.Visible = false;
 
             _pen.Color = Color.Red;
         }
@@ -297,8 +298,7 @@ namespace SistemaOdonto
             pbPenBlue.BorderStyle = BorderStyle.Fixed3D;
             pbPenRed.BorderStyle = BorderStyle.Fixed3D;
             pbCircle.BorderStyle = BorderStyle.Fixed3D;
-            btnUndo.Visible = true;
-            btnUndoCircle.Visible = false;
+            btnUndoCircle.Visible = true;
 
             linePen.Color = color1;
         }
@@ -309,8 +309,7 @@ namespace SistemaOdonto
             pbPenBlue.BorderStyle = BorderStyle.FixedSingle;
             pbPenRed.BorderStyle = BorderStyle.Fixed3D;
             pbCircle.BorderStyle = BorderStyle.Fixed3D;
-            btnUndo.Visible = true;
-            btnUndoCircle.Visible = false;
+            btnUndoCircle.Visible = true;
 
             linePen.Color = color2;
         }
@@ -321,8 +320,7 @@ namespace SistemaOdonto
             pbPenBlue.BorderStyle = BorderStyle.Fixed3D;
             pbPenRed.BorderStyle = BorderStyle.FixedSingle;
             pbCircle.BorderStyle = BorderStyle.Fixed3D;
-            btnUndo.Visible = true;
-            btnUndoCircle.Visible = false;
+            btnUndoCircle.Visible = true;
 
             linePen.Color = color3;
         }
@@ -343,24 +341,13 @@ namespace SistemaOdonto
         }
 
 
-        private void btnUndo_Click(object sender, EventArgs e)
-        {
-            int numUndos = 1; // Defina o número de traços a serem desfeitos
-            while (_undoStack.Count > 0 && numUndos > 0)
-            {
-                _bitmap = _undoStack.Pop();
-                numUndos--;
-            }
-            pbImgOdontograma.Image = _bitmap;
-            pbImgOdontograma.Invalidate();
-
-            AtualizarSelecaoFaces();
-        }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             _bitmap = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
             pbImgOdontograma.Image = _bitmap;
+
+            // Limpa a pilha de desfazer
+            _undoStack.Clear();
 
             AtualizarSelecaoFaces();
         }

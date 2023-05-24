@@ -32,7 +32,6 @@ namespace SistemaOdonto
         DentistaService serviceD = new DentistaService();
 
         Odontograma objOdt = new Odontograma();
-        //Procedimento objProcd = new Procedimento();       
 
         OdontogramaService serviceOdt = new OdontogramaService();
         ProcedimentoService serviceProcd = new ProcedimentoService();
@@ -74,7 +73,6 @@ namespace SistemaOdonto
             pbCircle.BorderStyle = BorderStyle.FixedSingle; // Define a borda da pbPenBlack como selecionada            
 
             btnUndoCircle.Visible = false;
-            btnUndo.Visible = false;
 
             btnAtualizarOdtProcds.Enabled = false;
 
@@ -211,8 +209,7 @@ namespace SistemaOdonto
             string diretorioInstalacao = AppDomain.CurrentDomain.BaseDirectory;
             string ImagemPadrao = Path.Combine(diretorioInstalacao, "Resource", "ImagemPadrao", "odontogramaPadrao.jpg");
 
-            // Caso não tenho nenhuma imagem, carregar a imagem odontograma padrão
-            //string ImagemPadrao = "C:\\Users\\genis\\OneDrive\\Área de Trabalho\\SistemaOdonto\\SistemaOdonto\\Resource\\ImagemPadrao\\odontogramaPadrao.jpg";
+            // Caso não tenha nenhuma imagem, carregar a imagem odontograma padrão
             if (File.Exists(ImagemPadrao))
             {
                 // Fazer uma cópia do arquivo da outra pasta com o nome odontogramaOriginal
@@ -309,6 +306,9 @@ namespace SistemaOdonto
                     g.DrawLine(linePen, lineStartPoint, e.Location);
                     pbImgOdontograma.Invalidate();
 
+                    // Empilha a imagem atual para desfazer posteriormente
+                    _undoStack.Push(new Bitmap(imagemModificada));
+
                     AtualizarSelecaoFaces();
                 }
             }
@@ -336,6 +336,9 @@ namespace SistemaOdonto
                     Graphics g = Graphics.FromImage(imagemModificada);
                     g.DrawLine(linePen, lineStartPoint, e.Location);
                     pbImgOdontograma.Invalidate();
+
+                    // Empilha a imagem atual para desfazer posteriormente
+                    _undoStack.Push(new Bitmap(imagemModificada));
 
                     AtualizarSelecaoFaces();
                 }
@@ -374,7 +377,6 @@ namespace SistemaOdonto
             pbPenRed.BorderStyle = BorderStyle.Fixed3D;
             pbCircle.BorderStyle = BorderStyle.FixedSingle;
             btnUndoCircle.Visible = true;
-            btnUndo.Visible = false;
 
             _pen.Color = Color.Red;
         }
@@ -385,8 +387,7 @@ namespace SistemaOdonto
             pbPenBlue.BorderStyle = BorderStyle.Fixed3D;
             pbPenRed.BorderStyle = BorderStyle.Fixed3D;
             pbCircle.BorderStyle = BorderStyle.Fixed3D;
-            btnUndo.Visible = true;
-            btnUndoCircle.Visible = false;
+            btnUndoCircle.Visible = true;
 
             linePen.Color = color1;
         }
@@ -397,8 +398,7 @@ namespace SistemaOdonto
             pbPenBlue.BorderStyle = BorderStyle.FixedSingle;
             pbPenRed.BorderStyle = BorderStyle.Fixed3D;
             pbCircle.BorderStyle = BorderStyle.Fixed3D;
-            btnUndo.Visible = true;
-            btnUndoCircle.Visible = false;
+            btnUndoCircle.Visible = true;
 
             linePen.Color = color2;
         }
@@ -409,8 +409,7 @@ namespace SistemaOdonto
             pbPenBlue.BorderStyle = BorderStyle.Fixed3D;
             pbPenRed.BorderStyle = BorderStyle.FixedSingle;
             pbCircle.BorderStyle = BorderStyle.Fixed3D;
-            btnUndo.Visible = true;
-            btnUndoCircle.Visible = false;
+            btnUndoCircle.Visible = true;
 
             linePen.Color = color3;
         }
@@ -429,19 +428,24 @@ namespace SistemaOdonto
             AtualizarSelecaoFaces();
         }
 
-        private void btnUndo_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
-            int numUndos = 10; // Defina o número de traços a serem desfeitos
-            while (_undoStack.Count > 0 && numUndos > 0)
-            {
-                imagemCarregada = _undoStack.Pop();
-                numUndos--;
-            }
-            pbImgOdontograma.Image = imagemModificada;
-            pbImgOdontograma.Invalidate();
+            string diretorioInstalacao = AppDomain.CurrentDomain.BaseDirectory;
+            string imagemPadrao = Path.Combine(diretorioInstalacao, "Resource", "ImagemPadrao", "odontogramaPadrao.jpg");
 
-            AtualizarSelecaoFaces();
-        }       
+            if (File.Exists(imagemPadrao))
+            {
+                imagemModificada = new Bitmap(imagemPadrao);
+
+                // Carregar a imagem na PictureBox
+                pbImgOdontograma.Image = imagemModificada;
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível localizar a Imagem Odontograma padrão! Entre em contato com o Suporte.");
+            }
+        }
+
 
         private void btnFecharFichaClinica_Click(object sender, EventArgs e)
         {
@@ -2144,5 +2148,7 @@ namespace SistemaOdonto
             }
             return procedimentos;                  
         }
+
+        
     }
 }

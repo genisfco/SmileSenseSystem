@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkBox42 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBox41 = new System.Windows.Forms.CheckBox();
@@ -72,7 +72,6 @@
             this.pbPenBlue = new System.Windows.Forms.PictureBox();
             this.pbImgOdontograma = new System.Windows.Forms.PictureBox();
             this.btnUndoCircle = new System.Windows.Forms.Button();
-            this.btnUndo = new System.Windows.Forms.Button();
             this.pbPenBlack = new System.Windows.Forms.PictureBox();
             this.btnFecharFichaClinica = new System.Windows.Forms.Button();
             this.btnAtualizarOdtProcds = new System.Windows.Forms.Button();
@@ -99,6 +98,7 @@
             this.checkBox22 = new System.Windows.Forms.CheckBox();
             this.checkBox21 = new System.Windows.Forms.CheckBox();
             this.lblCodOdt = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProcedimentos)).BeginInit();
@@ -357,9 +357,9 @@
             // 
             // Elemento
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.Elemento.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.Elemento.DefaultCellStyle = dataGridViewCellStyle5;
             this.Elemento.HeaderText = "Dente";
             this.Elemento.MinimumWidth = 8;
             this.Elemento.Name = "Elemento";
@@ -369,9 +369,9 @@
             // 
             // Face
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.Face.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.Face.DefaultCellStyle = dataGridViewCellStyle6;
             this.Face.HeaderText = "Face";
             this.Face.MinimumWidth = 8;
             this.Face.Name = "Face";
@@ -380,8 +380,8 @@
             // 
             // Dentista
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Dentista.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Dentista.DefaultCellStyle = dataGridViewCellStyle7;
             this.Dentista.HeaderText = "Cirurgião";
             this.Dentista.MinimumWidth = 8;
             this.Dentista.Name = "Dentista";
@@ -398,8 +398,8 @@
             // 
             // Procedimento
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Info;
-            this.Procedimento.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Info;
+            this.Procedimento.DefaultCellStyle = dataGridViewCellStyle8;
             this.Procedimento.HeaderText = "Procedimento";
             this.Procedimento.MinimumWidth = 8;
             this.Procedimento.Name = "Procedimento";
@@ -619,19 +619,9 @@
             this.btnUndoCircle.Name = "btnUndoCircle";
             this.btnUndoCircle.Size = new System.Drawing.Size(86, 41);
             this.btnUndoCircle.TabIndex = 134;
-            this.btnUndoCircle.Text = "undocircle";
+            this.btnUndoCircle.Text = "desfazer";
             this.btnUndoCircle.UseVisualStyleBackColor = true;
             this.btnUndoCircle.Click += new System.EventHandler(this.btnUndoCircle_Click);
-            // 
-            // btnUndo
-            // 
-            this.btnUndo.Location = new System.Drawing.Point(343, 97);
-            this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(86, 41);
-            this.btnUndo.TabIndex = 130;
-            this.btnUndo.Text = "undoline";
-            this.btnUndo.UseVisualStyleBackColor = true;
-            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // pbPenBlack
             // 
@@ -924,12 +914,23 @@
             this.lblCodOdt.TabIndex = 139;
             this.lblCodOdt.Text = "Id Odt";
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(678, 77);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(182, 61);
+            this.btnClear.TabIndex = 140;
+            this.btnClear.Text = "Limpar Desenhos";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // FrmEditarOdtProcedimentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1915, 966);
+            this.ClientSize = new System.Drawing.Size(1915, 1000);
             this.ControlBox = false;
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lblCodOdt);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox5);
@@ -942,7 +943,6 @@
             this.Controls.Add(this.pbPenBlue);
             this.Controls.Add(this.pbImgOdontograma);
             this.Controls.Add(this.btnUndoCircle);
-            this.Controls.Add(this.btnUndo);
             this.Controls.Add(this.pbPenBlack);
             this.Controls.Add(this.btnFecharFichaClinica);
             this.Controls.Add(this.btnAtualizarOdtProcds);
@@ -1017,7 +1017,6 @@
         private System.Windows.Forms.PictureBox pbPenBlue;
         private System.Windows.Forms.PictureBox pbImgOdontograma;
         private System.Windows.Forms.Button btnUndoCircle;
-        private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.PictureBox pbPenBlack;
         private System.Windows.Forms.Button btnFecharFichaClinica;
         private System.Windows.Forms.Button btnAtualizarOdtProcds;
@@ -1050,5 +1049,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Especialidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Procedimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.Button btnClear;
     }
 }
