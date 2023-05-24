@@ -1093,6 +1093,8 @@ namespace SistemaOdonto
             // Limpa a PictureBox antes de desenhar novamente
             pbImgOdontograma.Refresh();
 
+            int vertY = 63;
+
             // Itera sobre as linhas da DataGridView
             foreach (DataGridViewRow row in dataGridProcedimentos.Rows)
             {
@@ -1207,14 +1209,523 @@ namespace SistemaOdonto
                             using (SolidBrush brush = new SolidBrush(Color.Green))
                             {
                                 if (face.Contains("M"))
-                                    g.FillRectangle(brush, 206, 159, 5, 20);
+                                    g.FillRectangle(brush, 204, 159, 5, 20);
                                 if (face.Contains("D"))
                                     g.FillRectangle(brush, 189, 159, 5, 20);
 
                                 if (face.Contains("V"))
-                                    g.FillRectangle(brush, 192, 152, 14, 8);
+                                    g.FillRectangle(brush, 192, 153, 14, 8);
                                 if (face.Contains("P"))
                                     g.FillRectangle(brush, 192, 178, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "12")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 237, 159 , 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 222, 159, 5, 20);
+                                
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 225, 153, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 225, 178, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "11")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 272, 159, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 256, 159, 5, 20);
+                                
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 259, 153, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 259, 178, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "21")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 306, 159, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 291, 159, 5, 20);
+
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 294, 153, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 294, 178, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "22")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 341, 159, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 326, 159, 5, 20);
+
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 329, 153, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 329, 178, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "23")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 374, 159, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 358, 159, 5, 20);
+
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 361, 153, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 361, 178, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "24")
+                    {
+
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 408, 159, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 391, 159, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 397, 162, 10, 14);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 395, 152, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 395, 178, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "25")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 442, 159, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 425, 159, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 431, 162, 10, 14);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 429, 152, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 429, 178, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "26")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 476, 159, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 459, 159, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 465, 162, 10, 14);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 463, 152, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 463, 178, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "27")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 510, 159, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 493, 159, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 499, 162, 10, 14);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 497, 152, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 497, 178, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "28")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 544, 159, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 527, 159, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 533, 162, 10, 14);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 531, 152, 14, 8);
+                                if (face.Contains("P"))
+                                    g.FillRectangle(brush, 531, 178, 14, 8);
+                            }
+                        }
+                    }
+
+
+                    else if (elemento == "48")
+                    {
+
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 36, 159 + vertY, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 19, 159 + vertY, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 25, 162 + vertY, 10, 14);
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 23, 152 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 23, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+                    else if (elemento == "47")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 70, 159 + vertY, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 53, 159 + vertY, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 59, 162 + vertY, 10, 14);
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 57, 152 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 57, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+                    else if (elemento == "46")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 104, 159 + vertY, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 87, 159 + vertY, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 93, 162 + vertY, 10, 14);
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 91, 152 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 91, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+                    else if (elemento == "45")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 138, 159 + vertY, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 121, 159 + vertY, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 127, 162 + vertY, 10, 14);
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 125, 152 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 125, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+                    else if (elemento == "44")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 172, 159 + vertY, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 155, 159 + vertY, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 161, 162 + vertY, 10, 14);
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 159, 152 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 159, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "43")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 204, 159 + vertY, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 189, 159 + vertY, 5, 20);
+
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 192, 154 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 192, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "42")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 237, 159 + vertY, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 222, 159 + vertY, 5, 20);
+
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 225, 154 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 225, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "41")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 272, 159 + vertY, 5, 20);
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 256, 159 + vertY, 5, 20);
+
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 259, 154 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 259, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "31")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 306, 159 + vertY, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 291, 159 + vertY, 5, 20);
+
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 294, 154 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 294, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "32")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 341, 159 + vertY, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 326, 159 + vertY, 5, 20);
+
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 329, 154 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 329, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "33")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 374, 159 + vertY, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 358, 159 + vertY, 5, 20);
+
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 361, 154 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 361, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "34")
+                    {
+
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 408, 159 + vertY, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 391, 159 + vertY, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 397, 162 + vertY, 10, 14);
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 395, 152 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 395, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "35")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 442, 159 + vertY, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 425, 159 + vertY, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 431, 162 + vertY, 10, 14);
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 429, 152 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 429, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "36")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 476, 159 + vertY, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 459, 159 + vertY, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 465, 162 + vertY, 10, 14);
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 463, 152 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 463, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "37")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 510, 159 + vertY, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 493, 159 + vertY, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 499, 162 + vertY, 10, 14);
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 497, 152 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 497, 178 + vertY, 14, 8);
+                            }
+                        }
+                    }
+
+                    else if (elemento == "38")
+                    {
+                        using (Graphics g = pbImgOdontograma.CreateGraphics())
+                        {
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                            {
+                                if (face.Contains("D"))
+                                    g.FillRectangle(brush, 544, 159 + vertY, 5, 20);
+                                if (face.Contains("M"))
+                                    g.FillRectangle(brush, 527, 159 + vertY, 5, 20);
+                                if (face.Contains("O"))
+                                    g.FillRectangle(brush, 533, 162 + vertY, 10, 14);
+                                if (face.Contains("L"))
+                                    g.FillRectangle(brush, 531, 152 + vertY, 14, 8);
+                                if (face.Contains("V"))
+                                    g.FillRectangle(brush, 531, 178 + vertY, 14, 8);
                             }
                         }
                     }
