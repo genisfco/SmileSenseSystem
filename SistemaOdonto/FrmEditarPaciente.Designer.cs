@@ -111,7 +111,7 @@
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(94, 100);
-            this.btnExcluir.TabIndex = 37;
+            this.btnExcluir.TabIndex = 19;
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
@@ -127,7 +127,7 @@
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(94, 100);
-            this.btnEditar.TabIndex = 36;
+            this.btnEditar.TabIndex = 18;
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -149,7 +149,7 @@
             this.btnBuscaCEP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscaCEP.Name = "btnBuscaCEP";
             this.btnBuscaCEP.Size = new System.Drawing.Size(177, 57);
-            this.btnBuscaCEP.TabIndex = 96;
+            this.btnBuscaCEP.TabIndex = 10;
             this.btnBuscaCEP.Text = "Buscar CEP";
             this.btnBuscaCEP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscaCEP.UseVisualStyleBackColor = true;
@@ -180,7 +180,8 @@
             this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
             this.masktxtCPFPaciente.ReadOnly = true;
             this.masktxtCPFPaciente.Size = new System.Drawing.Size(122, 26);
-            this.masktxtCPFPaciente.TabIndex = 94;
+            this.masktxtCPFPaciente.TabIndex = 4;
+            this.masktxtCPFPaciente.Enter += new System.EventHandler(this.masktxtCPFPaciente_Enter);
             // 
             // masktxtRGPaciente
             // 
@@ -189,7 +190,8 @@
             this.masktxtRGPaciente.Name = "masktxtRGPaciente";
             this.masktxtRGPaciente.ReadOnly = true;
             this.masktxtRGPaciente.Size = new System.Drawing.Size(104, 26);
-            this.masktxtRGPaciente.TabIndex = 95;
+            this.masktxtRGPaciente.TabIndex = 3;
+            this.masktxtRGPaciente.Enter += new System.EventHandler(this.masktxtRGPaciente_Enter);
             // 
             // cbSexo
             // 
@@ -202,7 +204,7 @@
             this.cbSexo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(190, 28);
-            this.cbSexo.TabIndex = 91;
+            this.cbSexo.TabIndex = 2;
             // 
             // label9
             // 
@@ -231,8 +233,9 @@
             this.txtCEP.Mask = "00000-000";
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(94, 26);
-            this.txtCEP.TabIndex = 85;
+            this.txtCEP.TabIndex = 9;
             this.txtCEP.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtCEP.Enter += new System.EventHandler(this.txtCEP_Enter);
             // 
             // txtCelular
             // 
@@ -241,8 +244,9 @@
             this.txtCelular.Mask = "(00) 90000-0000";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(128, 26);
-            this.txtCelular.TabIndex = 84;
+            this.txtCelular.TabIndex = 13;
             this.txtCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtCelular.Enter += new System.EventHandler(this.txtCelular_Enter);
             // 
             // txtTelefone
             // 
@@ -251,8 +255,9 @@
             this.txtTelefone.Mask = "(00) 0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(128, 26);
-            this.txtTelefone.TabIndex = 83;
+            this.txtTelefone.TabIndex = 12;
             this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtTelefone.Enter += new System.EventHandler(this.txtTelefone_Enter);
             // 
             // txtEmail
             // 
@@ -260,7 +265,8 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(349, 26);
-            this.txtEmail.TabIndex = 82;
+            this.txtEmail.TabIndex = 8;
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // txtNome
             // 
@@ -268,7 +274,8 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(346, 26);
-            this.txtNome.TabIndex = 81;
+            this.txtNome.TabIndex = 1;
+            this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
             // 
             // label6
             // 
@@ -381,21 +388,24 @@
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(432, 26);
-            this.txtEndereco.TabIndex = 84;
+            this.txtEndereco.TabIndex = 14;
+            this.txtEndereco.Enter += new System.EventHandler(this.txtEndereco_Enter);
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(104, 82);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(166, 26);
-            this.txtBairro.TabIndex = 85;
+            this.txtBairro.TabIndex = 15;
+            this.txtBairro.Enter += new System.EventHandler(this.txtBairro_Enter);
             // 
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(370, 82);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(164, 26);
-            this.txtCidade.TabIndex = 86;
+            this.txtCidade.TabIndex = 16;
+            this.txtCidade.Enter += new System.EventHandler(this.txtCidade_Enter);
             // 
             // label2
             // 
@@ -411,14 +421,16 @@
             this.txtNum.Location = new System.Drawing.Point(620, 38);
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(42, 26);
-            this.txtNum.TabIndex = 76;
+            this.txtNum.TabIndex = 11;
+            this.txtNum.Enter += new System.EventHandler(this.txtNum_Enter);
             // 
             // txtUF
             // 
             this.txtUF.Location = new System.Drawing.Point(620, 83);
             this.txtUF.Name = "txtUF";
             this.txtUF.Size = new System.Drawing.Size(42, 26);
-            this.txtUF.TabIndex = 79;
+            this.txtUF.TabIndex = 17;
+            this.txtUF.Enter += new System.EventHandler(this.txtUF_Enter);
             // 
             // btnAbrirAnamnese
             // 
@@ -426,7 +438,7 @@
             this.btnAbrirAnamnese.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAbrirAnamnese.Name = "btnAbrirAnamnese";
             this.btnAbrirAnamnese.Size = new System.Drawing.Size(144, 100);
-            this.btnAbrirAnamnese.TabIndex = 98;
+            this.btnAbrirAnamnese.TabIndex = 20;
             this.btnAbrirAnamnese.Text = "Anamnese";
             this.btnAbrirAnamnese.UseVisualStyleBackColor = true;
             this.btnAbrirAnamnese.Click += new System.EventHandler(this.btnAbrirAnamnese_Click);
@@ -437,7 +449,7 @@
             this.btnAbrirOdontograma.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAbrirOdontograma.Name = "btnAbrirOdontograma";
             this.btnAbrirOdontograma.Size = new System.Drawing.Size(144, 100);
-            this.btnAbrirOdontograma.TabIndex = 99;
+            this.btnAbrirOdontograma.TabIndex = 21;
             this.btnAbrirOdontograma.Text = "Odontograma";
             this.btnAbrirOdontograma.UseVisualStyleBackColor = true;
             this.btnAbrirOdontograma.Click += new System.EventHandler(this.btnAbrirOdontograma_Click);
@@ -447,46 +459,6 @@
             this.cbAno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAno.FormattingEnabled = true;
             this.cbAno.Items.AddRange(new object[] {
-            "1900",
-            "1901",
-            "1902",
-            "1903",
-            "1904",
-            "1905",
-            "1906",
-            "1907",
-            "1908",
-            "1909",
-            "1910",
-            "1911",
-            "1912",
-            "1913",
-            "1914",
-            "1915",
-            "1916",
-            "1917",
-            "1918",
-            "1919",
-            "1920",
-            "1921",
-            "1922",
-            "1923",
-            "1924",
-            "1925",
-            "1926",
-            "1927",
-            "1928",
-            "1929",
-            "1930",
-            "1931",
-            "1932",
-            "1933",
-            "1934",
-            "1935",
-            "1936",
-            "1937",
-            "1938",
-            "1939",
             "1940",
             "1941",
             "1942",
@@ -587,172 +559,12 @@
             "2037",
             "2038",
             "2039",
-            "2040",
-            "2041",
-            "2042",
-            "2043",
-            "2044",
-            "2045",
-            "2046",
-            "2047",
-            "2048",
-            "2049",
-            "2050",
-            "2051",
-            "2052",
-            "2053",
-            "2054",
-            "2055",
-            "2056",
-            "2057",
-            "2058",
-            "2059",
-            "2060",
-            "2061",
-            "2062",
-            "2063",
-            "2064",
-            "2065",
-            "2066",
-            "2067",
-            "2068",
-            "2069",
-            "2070",
-            "2071",
-            "2072",
-            "2073",
-            "2074",
-            "2075",
-            "2076",
-            "2077",
-            "2078",
-            "2079",
-            "2080",
-            "2081",
-            "2082",
-            "2083",
-            "2084",
-            "2085",
-            "2086",
-            "2087",
-            "2088",
-            "2089",
-            "2090",
-            "2091",
-            "2092",
-            "2093",
-            "2094",
-            "2095",
-            "2096",
-            "2097",
-            "2098",
-            "2099",
-            "2100",
-            "2101",
-            "2102",
-            "2103",
-            "2104",
-            "2105",
-            "2106",
-            "2107",
-            "2108",
-            "2109",
-            "2110",
-            "2111",
-            "2112",
-            "2113",
-            "2114",
-            "2115",
-            "2116",
-            "2117",
-            "2118",
-            "2119",
-            "2120",
-            "2121",
-            "2122",
-            "2123",
-            "2124",
-            "2125",
-            "2126",
-            "2127",
-            "2128",
-            "2129",
-            "2130",
-            "2131",
-            "2132",
-            "2133",
-            "2134",
-            "2135",
-            "2136",
-            "2137",
-            "2138",
-            "2139",
-            "2140",
-            "2141",
-            "2142",
-            "2143",
-            "2144",
-            "2145",
-            "2146",
-            "2147",
-            "2148",
-            "2149",
-            "2150",
-            "2151",
-            "2152",
-            "2153",
-            "2154",
-            "2155",
-            "2156",
-            "2157",
-            "2158",
-            "2159",
-            "2160",
-            "2161",
-            "2162",
-            "2163",
-            "2164",
-            "2165",
-            "2166",
-            "2167",
-            "2168",
-            "2169",
-            "2170",
-            "2171",
-            "2172",
-            "2173",
-            "2174",
-            "2175",
-            "2176",
-            "2177",
-            "2178",
-            "2179",
-            "2180",
-            "2181",
-            "2182",
-            "2183",
-            "2184",
-            "2185",
-            "2186",
-            "2187",
-            "2188",
-            "2189",
-            "2190",
-            "2191",
-            "2192",
-            "2193",
-            "2194",
-            "2195",
-            "2196",
-            "2197",
-            "2198",
-            "2199",
-            "2200"});
+            "2040"});
             this.cbAno.Location = new System.Drawing.Point(610, 83);
             this.cbAno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbAno.Name = "cbAno";
             this.cbAno.Size = new System.Drawing.Size(76, 28);
-            this.cbAno.TabIndex = 102;
+            this.cbAno.TabIndex = 7;
             // 
             // cbMes
             // 
@@ -775,7 +587,7 @@
             this.cbMes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbMes.Name = "cbMes";
             this.cbMes.Size = new System.Drawing.Size(52, 28);
-            this.cbMes.TabIndex = 101;
+            this.cbMes.TabIndex = 6;
             // 
             // cbDia
             // 
@@ -817,7 +629,7 @@
             this.cbDia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbDia.Name = "cbDia";
             this.cbDia.Size = new System.Drawing.Size(52, 28);
-            this.cbDia.TabIndex = 100;
+            this.cbDia.TabIndex = 5;
             // 
             // FrmEditarPaciente
             // 

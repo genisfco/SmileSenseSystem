@@ -23,6 +23,8 @@ namespace SistemaOdonto
             InitializeComponent();
         }
 
+
+
         private string ValidarCad()
         {
             ts.ForeColor = Color.Red;
@@ -71,6 +73,47 @@ namespace SistemaOdonto
                 ts.ForeColor = Color.Black;
                 return "Dados preenchidos";
             }
+        }
+
+
+        private void txtCRO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.ToUpper(e.KeyChar);
+        }
+
+        private void txtNome_Enter(object sender, EventArgs e)
+        {
+            txtNome.Select(0, 0);
+        }
+
+        private void txtCRO_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => txtCRO.Select(0, 0)));
+        }
+
+        private void maskRGDent_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => maskRGDent.Select(0, 0)));
+        }
+
+        private void maskCPFDent_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => maskCPFDent.Select(0, 0)));
+        }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            txtEmail.Select(0, 0);
+        }
+
+        private void txtTelefone_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => txtTelefone.Select(0, 0)));
+        }
+
+        private void txtCelular_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => txtCelular.Select(0, 0)));
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -154,9 +197,5 @@ namespace SistemaOdonto
             comboxEspecialidade2 .Text = string.Empty;
         }
 
-        private void txtCRO_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.KeyChar = char.ToUpper(e.KeyChar);
-        }
     }
 }

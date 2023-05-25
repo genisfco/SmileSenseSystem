@@ -53,7 +53,7 @@
             this.cbPaciente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbPaciente.Name = "cbPaciente";
             this.cbPaciente.Size = new System.Drawing.Size(212, 28);
-            this.cbPaciente.TabIndex = 47;
+            this.cbPaciente.TabIndex = 10;
             // 
             // label9
             // 
@@ -72,7 +72,7 @@
             this.dtData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtData.Name = "dtData";
             this.dtData.Size = new System.Drawing.Size(212, 26);
-            this.dtData.TabIndex = 45;
+            this.dtData.TabIndex = 30;
             // 
             // label8
             // 
@@ -91,7 +91,7 @@
             this.txtAnotacoes.Multiline = true;
             this.txtAnotacoes.Name = "txtAnotacoes";
             this.txtAnotacoes.Size = new System.Drawing.Size(613, 113);
-            this.txtAnotacoes.TabIndex = 43;
+            this.txtAnotacoes.TabIndex = 50;
             // 
             // label7
             // 
@@ -113,7 +113,7 @@
             this.cbDentista.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbDentista.Name = "cbDentista";
             this.cbDentista.Size = new System.Drawing.Size(212, 28);
-            this.cbDentista.TabIndex = 49;
+            this.cbDentista.TabIndex = 20;
             // 
             // label1
             // 
@@ -134,7 +134,7 @@
             this.dtHora.Name = "dtHora";
             this.dtHora.ShowUpDown = true;
             this.dtHora.Size = new System.Drawing.Size(212, 26);
-            this.dtHora.TabIndex = 51;
+            this.dtHora.TabIndex = 40;
             // 
             // label2
             // 
@@ -183,7 +183,7 @@
             this.btnConsulta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(212, 83);
-            this.btnConsulta.TabIndex = 55;
+            this.btnConsulta.TabIndex = 70;
             this.btnConsulta.Text = "Consultar Agenda";
             this.btnConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConsulta.UseVisualStyleBackColor = true;
@@ -199,7 +199,7 @@
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(212, 83);
-            this.btnSalvar.TabIndex = 56;
+            this.btnSalvar.TabIndex = 60;
             this.btnSalvar.Text = "Cadastrar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.UseVisualStyleBackColor = true;

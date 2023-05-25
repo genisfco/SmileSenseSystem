@@ -118,6 +118,67 @@ namespace SistemaOdonto
 
         }
 
+        private void masktxtRGPaciente_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => masktxtRGPaciente.Select(0, 0)));
+        }
+
+        private void masktxtCPFPaciente_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => masktxtCPFPaciente.Select(0, 0)));
+        }
+
+        private void txtNome_Enter(object sender, EventArgs e)
+        {
+            txtNome.Select(0, 0);
+        }
+
+        private void txtCEP_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => txtCEP.Select(0, 0)));
+        }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            txtEmail.Select(0, 0);
+        }
+
+        private void txtTelefone_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => txtTelefone.Select(0, 0)));
+        }
+
+        private void txtCelular_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => txtCelular.Select(0, 0)));
+        }
+
+        private void txtEndereco_Enter(object sender, EventArgs e)
+        {
+            txtEndereco.Select(0, 0);
+        }
+
+        private void txtNum_Enter(object sender, EventArgs e)
+        {
+            txtNum.Select(0, 0);
+        }
+
+        private void txtBairro_Enter(object sender, EventArgs e)
+        {
+            txtBairro.Select(0, 0);
+        }
+
+        private void txtCidade_Enter(object sender, EventArgs e)
+        {
+            txtCidade.Select(0, 0);
+        }
+
+        private void txtUF_Enter(object sender, EventArgs e)
+        {
+            txtUF.Select(0, 0);
+        }
+
+
 
         private string ValidarCad()
         {
@@ -260,6 +321,6 @@ namespace SistemaOdonto
                 frmOdtProcd.ShowDialog();
             }
         }
-
+       
     }
 }

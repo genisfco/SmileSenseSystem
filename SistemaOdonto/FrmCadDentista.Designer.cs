@@ -110,7 +110,8 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(443, 26);
-            this.txtNome.TabIndex = 7;
+            this.txtNome.TabIndex = 1;
+            this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
             // 
             // txtEmail
             // 
@@ -118,7 +119,8 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(443, 26);
-            this.txtEmail.TabIndex = 8;
+            this.txtEmail.TabIndex = 7;
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // txtTelefone
             // 
@@ -127,8 +129,9 @@
             this.txtTelefone.Mask = "(00) 0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(136, 26);
-            this.txtTelefone.TabIndex = 9;
+            this.txtTelefone.TabIndex = 8;
             this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtTelefone.Enter += new System.EventHandler(this.txtTelefone_Enter);
             // 
             // txtCelular
             // 
@@ -137,8 +140,9 @@
             this.txtCelular.Mask = "(00) 90000-0000";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(136, 26);
-            this.txtCelular.TabIndex = 10;
+            this.txtCelular.TabIndex = 9;
             this.txtCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtCelular.Enter += new System.EventHandler(this.txtCelular_Enter);
             // 
             // txtCRO
             // 
@@ -147,8 +151,9 @@
             this.txtCRO.Mask = "LL 000-000";
             this.txtCRO.Name = "txtCRO";
             this.txtCRO.Size = new System.Drawing.Size(103, 26);
-            this.txtCRO.TabIndex = 11;
+            this.txtCRO.TabIndex = 2;
             this.txtCRO.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtCRO.Enter += new System.EventHandler(this.txtCRO_Enter);
             this.txtCRO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCRO_KeyPress);
             // 
             // statusStrip1
@@ -189,7 +194,7 @@
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(94, 100);
-            this.btnLimpar.TabIndex = 17;
+            this.btnLimpar.TabIndex = 11;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnConsulta_Click);
@@ -205,7 +210,7 @@
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(94, 100);
-            this.btnSalvar.TabIndex = 13;
+            this.btnSalvar.TabIndex = 10;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -234,7 +239,8 @@
             this.maskRGDent.Mask = "00.000.000-C";
             this.maskRGDent.Name = "maskRGDent";
             this.maskRGDent.Size = new System.Drawing.Size(104, 26);
-            this.maskRGDent.TabIndex = 87;
+            this.maskRGDent.TabIndex = 3;
+            this.maskRGDent.Enter += new System.EventHandler(this.maskRGDent_Enter);
             // 
             // maskCPFDent
             // 
@@ -242,7 +248,8 @@
             this.maskCPFDent.Mask = "000.000.000-00";
             this.maskCPFDent.Name = "maskCPFDent";
             this.maskCPFDent.Size = new System.Drawing.Size(122, 26);
-            this.maskCPFDent.TabIndex = 86;
+            this.maskCPFDent.TabIndex = 4;
+            this.maskCPFDent.Enter += new System.EventHandler(this.maskCPFDent_Enter);
             // 
             // especialidade1
             // 
@@ -269,7 +276,7 @@
             this.comboxEspecialidade1.Location = new System.Drawing.Point(76, 141);
             this.comboxEspecialidade1.Name = "comboxEspecialidade1";
             this.comboxEspecialidade1.Size = new System.Drawing.Size(155, 28);
-            this.comboxEspecialidade1.TabIndex = 89;
+            this.comboxEspecialidade1.TabIndex = 5;
             // 
             // especialidade2
             // 
@@ -296,7 +303,7 @@
             this.comboxEspecialidade2.Location = new System.Drawing.Point(364, 141);
             this.comboxEspecialidade2.Name = "comboxEspecialidade2";
             this.comboxEspecialidade2.Size = new System.Drawing.Size(155, 28);
-            this.comboxEspecialidade2.TabIndex = 91;
+            this.comboxEspecialidade2.TabIndex = 6;
             // 
             // FrmCadDentista
             // 

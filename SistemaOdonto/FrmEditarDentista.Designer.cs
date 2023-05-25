@@ -94,7 +94,7 @@
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(94, 100);
-            this.btnExcluir.TabIndex = 32;
+            this.btnExcluir.TabIndex = 11;
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
@@ -110,7 +110,7 @@
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(94, 100);
-            this.btnEditar.TabIndex = 31;
+            this.btnEditar.TabIndex = 10;
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -149,7 +149,7 @@
             this.comboxEspecialidade1.Location = new System.Drawing.Point(76, 181);
             this.comboxEspecialidade1.Name = "comboxEspecialidade1";
             this.comboxEspecialidade1.Size = new System.Drawing.Size(155, 28);
-            this.comboxEspecialidade1.TabIndex = 107;
+            this.comboxEspecialidade1.TabIndex = 5;
             // 
             // especialidade2
             // 
@@ -176,7 +176,7 @@
             this.comboxEspecialidade2.Location = new System.Drawing.Point(364, 181);
             this.comboxEspecialidade2.Name = "comboxEspecialidade2";
             this.comboxEspecialidade2.Size = new System.Drawing.Size(155, 28);
-            this.comboxEspecialidade2.TabIndex = 109;
+            this.comboxEspecialidade2.TabIndex = 6;
             // 
             // rgEspecialista
             // 
@@ -203,7 +203,7 @@
             this.masktxtRGEspecialista.Name = "masktxtRGEspecialista";
             this.masktxtRGEspecialista.ReadOnly = true;
             this.masktxtRGEspecialista.Size = new System.Drawing.Size(104, 26);
-            this.masktxtRGEspecialista.TabIndex = 105;
+            this.masktxtRGEspecialista.TabIndex = 3;
             // 
             // masktxtCPFEspecialista
             // 
@@ -212,7 +212,7 @@
             this.masktxtCPFEspecialista.Name = "masktxtCPFEspecialista";
             this.masktxtCPFEspecialista.ReadOnly = true;
             this.masktxtCPFEspecialista.Size = new System.Drawing.Size(122, 26);
-            this.masktxtCPFEspecialista.TabIndex = 104;
+            this.masktxtCPFEspecialista.TabIndex = 4;
             // 
             // txtCRO
             // 
@@ -222,7 +222,7 @@
             this.txtCRO.Name = "txtCRO";
             this.txtCRO.ReadOnly = true;
             this.txtCRO.Size = new System.Drawing.Size(103, 26);
-            this.txtCRO.TabIndex = 101;
+            this.txtCRO.TabIndex = 2;
             this.txtCRO.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txtCelular
@@ -232,8 +232,9 @@
             this.txtCelular.Mask = "(00) 90000-0000";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(136, 26);
-            this.txtCelular.TabIndex = 100;
+            this.txtCelular.TabIndex = 9;
             this.txtCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtCelular.Enter += new System.EventHandler(this.txtCelular_Enter);
             // 
             // txtTelefone
             // 
@@ -242,8 +243,9 @@
             this.txtTelefone.Mask = "(00) 0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(136, 26);
-            this.txtTelefone.TabIndex = 99;
+            this.txtTelefone.TabIndex = 8;
             this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtTelefone.Enter += new System.EventHandler(this.txtTelefone_Enter);
             // 
             // txtEmail
             // 
@@ -251,7 +253,7 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(443, 26);
-            this.txtEmail.TabIndex = 98;
+            this.txtEmail.TabIndex = 7;
             // 
             // txtNome
             // 
@@ -259,7 +261,7 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(443, 26);
-            this.txtNome.TabIndex = 97;
+            this.txtNome.TabIndex = 1;
             // 
             // label6
             // 

@@ -135,6 +135,17 @@ namespace SistemaOdonto
                 return true;
             else
                 return false;
-        }        
+        }
+
+        private void txtTelefone_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => txtTelefone.Select(0, 0)));
+        }
+
+        private void txtCelular_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => txtCelular.Select(0, 0)));
+
+        }
     }
 }
