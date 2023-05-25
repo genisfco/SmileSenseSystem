@@ -468,6 +468,8 @@
     <None Include="Resources\logo21.jpg" />
     <None Include="Resources\lock.ico" />
     <None Include="Resources\file.ico" />
+    <None Include="Resources\Eye256_25057.png" />
+    <None Include="Resources\eye_41524.ico" />
     <Content Include="Resources\MAjuda.Image.png" />
     <Content Include="Resources\MSair.Image.png" />
     <None Include="Resources\odontograma2.2.jpg" />

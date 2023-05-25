@@ -34,18 +34,19 @@
             this.btn_Sair = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_UserName
             // 
             this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_UserName.Location = new System.Drawing.Point(123, 155);
+            this.txt_UserName.Location = new System.Drawing.Point(27, 77);
             this.txt_UserName.Name = "txt_UserName";
             this.txt_UserName.Size = new System.Drawing.Size(228, 26);
             this.txt_UserName.TabIndex = 7;
@@ -54,7 +55,7 @@
             // txt_Senha
             // 
             this.txt_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Senha.Location = new System.Drawing.Point(123, 233);
+            this.txt_Senha.Location = new System.Drawing.Point(27, 155);
             this.txt_Senha.Name = "txt_Senha";
             this.txt_Senha.PasswordChar = '*';
             this.txt_Senha.Size = new System.Drawing.Size(228, 26);
@@ -66,12 +67,11 @@
             this.btn_Logar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Logar.Image = global::SistemaOdonto.Properties.Resources.btnLogin_Image;
             this.btn_Logar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Logar.Location = new System.Drawing.Point(123, 297);
+            this.btn_Logar.Location = new System.Drawing.Point(27, 234);
             this.btn_Logar.Name = "btn_Logar";
-            this.btn_Logar.Size = new System.Drawing.Size(118, 39);
+            this.btn_Logar.Size = new System.Drawing.Size(228, 39);
             this.btn_Logar.TabIndex = 9;
             this.btn_Logar.Text = "Logar   ";
-            this.btn_Logar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Logar.UseVisualStyleBackColor = true;
             this.btn_Logar.Click += new System.EventHandler(this.btn_Logar_Click);
             // 
@@ -80,12 +80,11 @@
             this.btn_Sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sair.Image = global::SistemaOdonto.Properties.Resources.delete;
             this.btn_Sair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Sair.Location = new System.Drawing.Point(247, 297);
+            this.btn_Sair.Location = new System.Drawing.Point(27, 290);
             this.btn_Sair.Name = "btn_Sair";
-            this.btn_Sair.Size = new System.Drawing.Size(104, 39);
+            this.btn_Sair.Size = new System.Drawing.Size(228, 39);
             this.btn_Sair.TabIndex = 10;
             this.btn_Sair.Text = "Sair   ";
-            this.btn_Sair.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
             // 
@@ -93,10 +92,10 @@
             // 
             this.label3.AllowDrop = true;
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Turquoise;
+            this.label3.BackColor = System.Drawing.Color.Honeydew;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(165, 117);
+            this.label3.Location = new System.Drawing.Point(69, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 24);
             this.label3.TabIndex = 11;
@@ -107,34 +106,23 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Turquoise;
+            this.label4.BackColor = System.Drawing.Color.Honeydew;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(165, 207);
+            this.label4.Location = new System.Drawing.Point(69, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 24);
             this.label4.TabIndex = 12;
             this.label4.Text = "Senha:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label1.Location = new System.Drawing.Point(1, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(457, 24);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Sistema gerenciador de clínica odontológica";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.MintCream;
             this.pictureBox1.BackgroundImage = global::SistemaOdonto.Properties.Resources.users;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(123, 117);
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 39);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 25);
             this.pictureBox1.TabIndex = 24;
@@ -142,9 +130,11 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.MintCream;
             this.pictureBox2.BackgroundImage = global::SistemaOdonto.Properties.Resources._lock;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(123, 207);
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox2.Location = new System.Drawing.Point(27, 129);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(41, 24);
             this.pictureBox2.TabIndex = 25;
@@ -153,45 +143,60 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.White;
+            this.checkBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(213, 265);
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkBox1.Image = global::SistemaOdonto.Properties.Resources.Eye256_25057;
+            this.checkBox1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.checkBox1.Location = new System.Drawing.Point(205, 187);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(138, 20);
+            this.checkBox1.Size = new System.Drawing.Size(50, 32);
             this.checkBox1.TabIndex = 32;
-            this.checkBox1.Text = "visualizar senha";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Text = "      ";
+            this.checkBox1.UseVisualStyleBackColor = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.txt_UserName);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.txt_Senha);
+            this.panel1.Controls.Add(this.btn_Logar);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.btn_Sair);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(5, 7);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(289, 375);
+            this.panel1.TabIndex = 33;
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.BackgroundImage = global::SistemaOdonto.Properties.Resources.logo24;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(470, 416);
+            this.ClientSize = new System.Drawing.Size(300, 388);
             this.ControlBox = false;
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btn_Sair);
-            this.Controls.Add(this.btn_Logar);
-            this.Controls.Add(this.txt_Senha);
-            this.Controls.Add(this.txt_UserName);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SmileSense System";
+            this.Text = "                           SmileSense System";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -203,9 +208,9 @@
         private System.Windows.Forms.Button btn_Sair;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
