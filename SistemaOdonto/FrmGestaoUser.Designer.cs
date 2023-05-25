@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_Usuarios = new System.Windows.Forms.DataGridView();
-            this.btnFechar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_ID = new System.Windows.Forms.TextBox();
@@ -47,6 +46,7 @@
             this.txt_Senha = new System.Windows.Forms.TextBox();
             this.txt_Username = new System.Windows.Forms.TextBox();
             this.txt_NomeUsuario = new System.Windows.Forms.TextBox();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.btnExcluirUser = new System.Windows.Forms.Button();
             this.btnSalvarAlterUser = new System.Windows.Forms.Button();
             this.btnNovoUser = new System.Windows.Forms.Button();
@@ -70,7 +70,7 @@
             this.dgv_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Usuarios.EnableHeadersVisualStyles = false;
             this.dgv_Usuarios.Location = new System.Drawing.Point(239, 20);
-            this.dgv_Usuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_Usuarios.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Usuarios.MultiSelect = false;
             this.dgv_Usuarios.Name = "dgv_Usuarios";
             this.dgv_Usuarios.ReadOnly = true;
@@ -82,21 +82,6 @@
             this.dgv_Usuarios.TabIndex = 46;
             this.dgv_Usuarios.SelectionChanged += new System.EventHandler(this.dgv_Usuarios_SelectionChanged);
             // 
-            // btnFechar
-            // 
-            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFechar.Image = global::SistemaOdonto.Properties.Resources.delete;
-            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(477, 2);
-            this.btnFechar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(99, 43);
-            this.btnFechar.TabIndex = 3;
-            this.btnFechar.Text = "Fechar";
-            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnFechar);
@@ -105,7 +90,7 @@
             this.panel1.Controls.Add(this.btnNovoUser);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 235);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(587, 45);
             this.panel1.TabIndex = 45;
@@ -123,7 +108,7 @@
             // txt_ID
             // 
             this.txt_ID.Location = new System.Drawing.Point(12, 20);
-            this.txt_ID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_ID.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ID.Name = "txt_ID";
             this.txt_ID.ReadOnly = true;
             this.txt_ID.Size = new System.Drawing.Size(75, 20);
@@ -163,7 +148,7 @@
             // nup_Nivel
             // 
             this.nup_Nivel.Location = new System.Drawing.Point(15, 166);
-            this.nup_Nivel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nup_Nivel.Margin = new System.Windows.Forms.Padding(2);
             this.nup_Nivel.Maximum = new decimal(new int[] {
             3,
             0,
@@ -191,7 +176,7 @@
             "B",
             "D"});
             this.cb_Status.Location = new System.Drawing.Point(111, 166);
-            this.cb_Status.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_Status.Margin = new System.Windows.Forms.Padding(2);
             this.cb_Status.Name = "cb_Status";
             this.cb_Status.Size = new System.Drawing.Size(109, 21);
             this.cb_Status.TabIndex = 38;
@@ -249,7 +234,7 @@
             // txt_Senha
             // 
             this.txt_Senha.Location = new System.Drawing.Point(111, 117);
-            this.txt_Senha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Senha.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Senha.Name = "txt_Senha";
             this.txt_Senha.PasswordChar = '*';
             this.txt_Senha.Size = new System.Drawing.Size(109, 20);
@@ -258,7 +243,7 @@
             // txt_Username
             // 
             this.txt_Username.Location = new System.Drawing.Point(12, 117);
-            this.txt_Username.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Username.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(75, 20);
             this.txt_Username.TabIndex = 31;
@@ -266,10 +251,25 @@
             // txt_NomeUsuario
             // 
             this.txt_NomeUsuario.Location = new System.Drawing.Point(12, 69);
-            this.txt_NomeUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_NomeUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txt_NomeUsuario.Name = "txt_NomeUsuario";
             this.txt_NomeUsuario.Size = new System.Drawing.Size(208, 20);
             this.txt_NomeUsuario.TabIndex = 30;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechar.Image = global::SistemaOdonto.Properties.Resources.delete;
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFechar.Location = new System.Drawing.Point(477, 2);
+            this.btnFechar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(99, 43);
+            this.btnFechar.TabIndex = 3;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // btnExcluirUser
             // 
@@ -320,6 +320,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(587, 280);
             this.Controls.Add(this.dgv_Usuarios);
             this.Controls.Add(this.panel1);
@@ -338,7 +339,7 @@
             this.Controls.Add(this.txt_Senha);
             this.Controls.Add(this.txt_Username);
             this.Controls.Add(this.txt_NomeUsuario);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmGestaoUser";
             this.Text = "Gestão de Usuários";
             this.Load += new System.EventHandler(this.FrmGestaoUser_Load);
