@@ -428,6 +428,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\search.ico" />
+    <None Include="Resources\save.ico" />
     <None Include="Resources\user-online.ico" />
     <None Include="Resources\user2.ico" />
     <None Include="Resources\user-offline.ico" />
@@ -470,6 +472,7 @@
     <None Include="Resources\file.ico" />
     <None Include="Resources\Eye256_25057.png" />
     <None Include="Resources\eye_41524.ico" />
+    <None Include="Resources\find-file.ico" />
     <Content Include="Resources\MAjuda.Image.png" />
     <Content Include="Resources\MSair.Image.png" />
     <None Include="Resources\odontograma2.2.jpg" />
