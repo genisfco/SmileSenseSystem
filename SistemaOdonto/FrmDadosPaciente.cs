@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Globais;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,10 +13,9 @@ using WcfService;
 
 namespace SistemaOdonto
 {
-    public partial class FrmDadosPaciente : Form
-    {
+    public partial class FrmDadosPaciente : Form    {
 
-        PacienteService service = new PacienteService();
+        PacienteService serviceP = new PacienteService();
 
         public FrmDadosPaciente()
         {
@@ -25,7 +25,7 @@ namespace SistemaOdonto
 
         public void IniciarForm()
         {
-            var lista = service.Listar();
+            var lista = serviceP.Listar();
             if (lista == null)
             {
                 MessageBox.Show("Não existem dados cadastrados");
@@ -91,10 +91,7 @@ namespace SistemaOdonto
             dg.Columns.Add("Celular", "Celular");
 
             dg.CellContentClick += new DataGridViewCellEventHandler(this.tb_click);
-
         }
-
-
 
         private void GerarLinha(DataGridView data, Paciente dado)
         {
@@ -105,8 +102,6 @@ namespace SistemaOdonto
             data.Rows[linhaAtual].Cells[3].Value = dado.Celular.ToString("(00) 00000-0000");
         }
 
-
-
         private void tb_click(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dg = sender as DataGridView;
@@ -116,7 +111,7 @@ namespace SistemaOdonto
                 {
                     var id = dg.Rows[e.RowIndex].Cells[0].Value;
                    
-                    Paciente obj = service.Buscar(Convert.ToInt32(id));
+                    Paciente obj = serviceP.Buscar(Convert.ToInt32(id));
 
                     var form = new FrmEditarPaciente(obj);
                     form.ShowDialog();
@@ -132,17 +127,23 @@ namespace SistemaOdonto
                         dg.Rows.RemoveAt(e.RowIndex);
                         GerarLinha(dg, obj);
                     }
-
-
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Erro ao selecionar o Paciente " + ex.Message);
             }
         }
 
+        private void btnBuscarPaciente_Click(object sender, EventArgs e)
+        {
+            string cpf = masktxtCPFPaciente.Text;
+            cpf = cpf.Replace(",", "").Replace("-", "");
 
+            MessageBox.Show(cpf);
+            //Paciente obj = serviceP.BuscarPaciente(cpfpaciente);
+
+            //dgViewPaciente.DataSource = serviceP.BuscarPaciente(cpfpaciente);
+        }
     }
 }

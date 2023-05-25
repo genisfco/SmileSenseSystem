@@ -26,7 +26,6 @@ namespace WcfService
             return rep.Buscar(id);
         }
 
-
         public List<Paciente> Listar()
         {
             return rep.Listar();

@@ -31,8 +31,8 @@ namespace SistemaOdonto
             lblCodigo.Text = this.obj.Id.ToString();
             txtNome.Text = this.obj.Nome;
             txtCRO.Text = this.obj.CRO;
-            masktxtRGEspecialista.Text = this.obj.RGDent;
-            masktxtCPFEspecialista.Text = this.obj.CPFDent;
+            maskRGDentist.Text = this.obj.RGDent;
+            maskCPFDentist.Text = this.obj.CPFDent;
             comboxEspecialidade1.Text = this.obj.Especialidade1;
             comboxEspecialidade2.Text = this.obj.Especialidade2;
             txtEmail.Text = this.obj.Email;
@@ -54,8 +54,8 @@ namespace SistemaOdonto
                 else
                 {
                     //TRATAMENTO DADOS RG E CPF Dentista
-                    string rgdentista = masktxtRGEspecialista.Text;
-                    string cpfdentista = masktxtCPFEspecialista.Text;
+                    string rgdentista = maskRGDentist.Text;
+                    string cpfdentista = maskCPFDentist.Text;
 
                     rgdentista = rgdentista.Replace(",", "").Replace("-", "");
                     cpfdentista = cpfdentista.Replace(",", "").Replace("-", "");
@@ -135,6 +135,31 @@ namespace SistemaOdonto
                 return true;
             else
                 return false;
+        }
+
+        private void txtNome_Enter(object sender, EventArgs e)
+        {
+            txtNome.Select(0, 0);
+        }
+
+        private void txtCRO_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => txtCRO.Select(0, 0)));
+        }
+
+        private void maskRGDentist_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => maskRGDentist.Select(0, 0)));
+        }
+
+        private void maskCPFDentist_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => maskCPFDentist.Select(0, 0)));
+        }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            txtEmail.Select(0, 0);
         }
 
         private void txtTelefone_Enter(object sender, EventArgs e)

@@ -40,8 +40,8 @@
             this.comboxEspecialidade2 = new System.Windows.Forms.ComboBox();
             this.rgEspecialista = new System.Windows.Forms.Label();
             this.cpfEspecialista = new System.Windows.Forms.Label();
-            this.masktxtRGEspecialista = new System.Windows.Forms.MaskedTextBox();
-            this.masktxtCPFEspecialista = new System.Windows.Forms.MaskedTextBox();
+            this.maskRGDentist = new System.Windows.Forms.MaskedTextBox();
+            this.maskCPFDentist = new System.Windows.Forms.MaskedTextBox();
             this.txtCRO = new System.Windows.Forms.MaskedTextBox();
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -196,23 +196,25 @@
             this.cpfEspecialista.TabIndex = 103;
             this.cpfEspecialista.Text = "CPF";
             // 
-            // masktxtRGEspecialista
+            // maskRGDentist
             // 
-            this.masktxtRGEspecialista.Location = new System.Drawing.Point(232, 112);
-            this.masktxtRGEspecialista.Mask = "00.000.000-C";
-            this.masktxtRGEspecialista.Name = "masktxtRGEspecialista";
-            this.masktxtRGEspecialista.ReadOnly = true;
-            this.masktxtRGEspecialista.Size = new System.Drawing.Size(104, 26);
-            this.masktxtRGEspecialista.TabIndex = 3;
+            this.maskRGDentist.Location = new System.Drawing.Point(232, 112);
+            this.maskRGDentist.Mask = "00.000.000-C";
+            this.maskRGDentist.Name = "maskRGDentist";
+            this.maskRGDentist.ReadOnly = true;
+            this.maskRGDentist.Size = new System.Drawing.Size(104, 26);
+            this.maskRGDentist.TabIndex = 3;
+            this.maskRGDentist.Enter += new System.EventHandler(this.maskRGDentist_Enter);
             // 
-            // masktxtCPFEspecialista
+            // maskCPFDentist
             // 
-            this.masktxtCPFEspecialista.Location = new System.Drawing.Point(394, 112);
-            this.masktxtCPFEspecialista.Mask = "000.000.000-00";
-            this.masktxtCPFEspecialista.Name = "masktxtCPFEspecialista";
-            this.masktxtCPFEspecialista.ReadOnly = true;
-            this.masktxtCPFEspecialista.Size = new System.Drawing.Size(122, 26);
-            this.masktxtCPFEspecialista.TabIndex = 4;
+            this.maskCPFDentist.Location = new System.Drawing.Point(394, 112);
+            this.maskCPFDentist.Mask = "000.000.000-00";
+            this.maskCPFDentist.Name = "maskCPFDentist";
+            this.maskCPFDentist.ReadOnly = true;
+            this.maskCPFDentist.Size = new System.Drawing.Size(122, 26);
+            this.maskCPFDentist.TabIndex = 4;
+            this.maskCPFDentist.Enter += new System.EventHandler(this.maskCPFDentist_Enter);
             // 
             // txtCRO
             // 
@@ -224,6 +226,7 @@
             this.txtCRO.Size = new System.Drawing.Size(103, 26);
             this.txtCRO.TabIndex = 2;
             this.txtCRO.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtCRO.Enter += new System.EventHandler(this.txtCRO_Enter);
             // 
             // txtCelular
             // 
@@ -254,6 +257,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(443, 26);
             this.txtEmail.TabIndex = 7;
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // txtNome
             // 
@@ -262,6 +266,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(443, 26);
             this.txtNome.TabIndex = 1;
+            this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
             // 
             // label6
             // 
@@ -324,8 +329,8 @@
             this.Controls.Add(this.comboxEspecialidade2);
             this.Controls.Add(this.rgEspecialista);
             this.Controls.Add(this.cpfEspecialista);
-            this.Controls.Add(this.masktxtRGEspecialista);
-            this.Controls.Add(this.masktxtCPFEspecialista);
+            this.Controls.Add(this.maskRGDentist);
+            this.Controls.Add(this.maskCPFDentist);
             this.Controls.Add(this.txtCRO);
             this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.txtTelefone);
@@ -367,8 +372,8 @@
         private System.Windows.Forms.ComboBox comboxEspecialidade2;
         private System.Windows.Forms.Label rgEspecialista;
         private System.Windows.Forms.Label cpfEspecialista;
-        private System.Windows.Forms.MaskedTextBox masktxtRGEspecialista;
-        private System.Windows.Forms.MaskedTextBox masktxtCPFEspecialista;
+        private System.Windows.Forms.MaskedTextBox maskRGDentist;
+        private System.Windows.Forms.MaskedTextBox maskCPFDentist;
         private System.Windows.Forms.MaskedTextBox txtCRO;
         private System.Windows.Forms.MaskedTextBox txtCelular;
         private System.Windows.Forms.MaskedTextBox txtTelefone;

@@ -28,15 +28,6 @@ namespace SistemaOdonto
             txt_NomeUsuario.Focus();
         }
 
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-            txt_NomeUsuario.Clear();
-            txt_Username.Clear();
-            txt_Senha.Clear();
-            cb_Status.Text = "";
-            nup_Nivel.Value = 1;
-            txt_NomeUsuario.Focus();
-        }
 
         private void btnSalvarUser_Click(object sender, EventArgs e)
         {
