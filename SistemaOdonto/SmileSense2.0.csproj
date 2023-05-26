@@ -455,6 +455,8 @@
     <None Include="Resources\banner.jpg" />
     <None Include="Resources\banner2.2.png" />
     <None Include="Resources\banner2.21.png" />
+    <None Include="Resources\botao-salvar.ico" />
+    <None Include="Resources\botao-de-deletar.ico" />
     <Content Include="Resources\btnConsulta.BackgroundImage.png" />
     <Content Include="Resources\btnEditar.BackgroundImage.png" />
     <Content Include="Resources\btnExcluir.BackgroundImage.png" />
