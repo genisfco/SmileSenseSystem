@@ -26,6 +26,11 @@ namespace WcfService
             return rep.Buscar(id);
         }
 
+        public Paciente BuscarPorCPF(string cpf)
+        {
+            return rep.BuscarPorCPF(cpf);
+        }
+
         public List<Paciente> Listar()
         {
             return rep.Listar();

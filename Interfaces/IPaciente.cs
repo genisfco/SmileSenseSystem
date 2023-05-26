@@ -19,6 +19,9 @@ namespace Interfaces
             Paciente Buscar(int id);
 
             [OperationContract]
+            Paciente BuscarPorCPF(string cpf);
+
+            [OperationContract]
             List<Paciente> Listar();
 
             [OperationContract]

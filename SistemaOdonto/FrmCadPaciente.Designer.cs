@@ -555,10 +555,10 @@
             this.btnBuscaCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscaCEP.Image = global::SistemaOdonto.Properties.Resources.search;
             this.btnBuscaCEP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscaCEP.Location = new System.Drawing.Point(519, 212);
+            this.btnBuscaCEP.Location = new System.Drawing.Point(506, 204);
             this.btnBuscaCEP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscaCEP.Name = "btnBuscaCEP";
-            this.btnBuscaCEP.Size = new System.Drawing.Size(186, 60);
+            this.btnBuscaCEP.Size = new System.Drawing.Size(190, 60);
             this.btnBuscaCEP.TabIndex = 10;
             this.btnBuscaCEP.Text = "Buscar CEP";
             this.btnBuscaCEP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

@@ -30,6 +30,16 @@ namespace Controllers.Repositorios
             return obj;
         }
 
+        public Paciente BuscarPorCPF(string cpf)
+        {
+            using (var ctx = new SistemaContext())
+            {
+                var paciente = ctx.Pacientes.FirstOrDefault(p => p.CPF == cpf);
+                return paciente;
+            }
+        }
+
+
 
         public List<Paciente> Listar()
         {

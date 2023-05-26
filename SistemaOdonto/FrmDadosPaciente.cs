@@ -140,10 +140,15 @@ namespace SistemaOdonto
             string cpf = masktxtCPFPaciente.Text;
             cpf = cpf.Replace(",", "").Replace("-", "");
 
-            MessageBox.Show(cpf);
-            //Paciente obj = serviceP.BuscarPaciente(cpfpaciente);
-
-            //dgViewPaciente.DataSource = serviceP.BuscarPaciente(cpfpaciente);
-        }
+           
+            Paciente paciente = serviceP.BuscarPorCPF(cpf);
+            // Criar uma lista de objetos anônimos contendo apenas as propriedades desejadas do paciente
+            
+            dgViewPaciente.Rows.Clear();
+            dgViewPaciente.Rows[0].Cells[0].Value = paciente.Nome;
+            dgViewPaciente.Rows[0].Cells[1].Value = paciente.Telefone;
+            dgViewPaciente.Rows[0].Cells[2].Value = paciente.Celular;
+            dgViewPaciente.Rows[0].Cells[3].Value = paciente.Email;            
+        }        
     }
 }
