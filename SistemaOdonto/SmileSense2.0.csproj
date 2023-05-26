@@ -475,6 +475,8 @@
     <None Include="Resources\Eye256_25057.png" />
     <None Include="Resources\eye_41524.ico" />
     <None Include="Resources\find-file.ico" />
+    <None Include="Resources\edit.ico" />
+    <None Include="Resources\insert.ico" />
     <Content Include="Resources\MAjuda.Image.png" />
     <Content Include="Resources\MSair.Image.png" />
     <None Include="Resources\odontograma2.2.jpg" />
