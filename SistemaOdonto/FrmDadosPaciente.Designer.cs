@@ -42,20 +42,35 @@
             // 
             // tc
             // 
-            this.tc.Location = new System.Drawing.Point(3, 139);
-            this.tc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tc.Location = new System.Drawing.Point(2, 90);
             this.tc.Name = "tc";
             this.tc.SelectedIndex = 0;
-            this.tc.Size = new System.Drawing.Size(1198, 447);
+            this.tc.Size = new System.Drawing.Size(799, 291);
             this.tc.TabIndex = 1;
             // 
             // masktxtCPFPaciente
             // 
-            this.masktxtCPFPaciente.Location = new System.Drawing.Point(12, 69);
+            this.masktxtCPFPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.masktxtCPFPaciente.Location = new System.Drawing.Point(8, 25);
+            this.masktxtCPFPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.masktxtCPFPaciente.Mask = "000.000.000-00";
             this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
-            this.masktxtCPFPaciente.Size = new System.Drawing.Size(122, 26);
-            this.masktxtCPFPaciente.TabIndex = 48;
+            this.masktxtCPFPaciente.Size = new System.Drawing.Size(119, 26);
+            this.masktxtCPFPaciente.TabIndex = 44;
+            // 
+            // btnBuscarPaciente
+            // 
+            this.btnBuscarPaciente.Image = global::SistemaOdonto.Properties.Resources.find_file;
+            this.btnBuscarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(131, 16);
+            this.btnBuscarPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
+            this.btnBuscarPaciente.Size = new System.Drawing.Size(81, 35);
+            this.btnBuscarPaciente.TabIndex = 45;
+            this.btnBuscarPaciente.Text = "Buscar";
+            this.btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarPaciente.UseVisualStyleBackColor = true;
+            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
             // 
             // dgViewPaciente
             // 
@@ -132,16 +147,17 @@
             // 
             // FrmDadosPaciente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1196, 592);
             this.Controls.Add(this.masktxtCPFPaciente);
             this.Controls.Add(this.dgViewPaciente);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.dgViewPaciente);
             this.Controls.Add(this.btnBuscarPaciente);
+            this.Controls.Add(this.masktxtCPFPaciente);
             this.Controls.Add(this.tc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "FrmDadosPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

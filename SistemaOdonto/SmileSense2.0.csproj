@@ -455,6 +455,8 @@
     <None Include="Resources\banner.jpg" />
     <None Include="Resources\banner2.2.png" />
     <None Include="Resources\banner2.21.png" />
+    <None Include="Resources\botao-salvar.ico" />
+    <None Include="Resources\botao-de-deletar.ico" />
     <Content Include="Resources\btnConsulta.BackgroundImage.png" />
     <Content Include="Resources\btnEditar.BackgroundImage.png" />
     <Content Include="Resources\btnExcluir.BackgroundImage.png" />
@@ -473,6 +475,8 @@
     <None Include="Resources\Eye256_25057.png" />
     <None Include="Resources\eye_41524.ico" />
     <None Include="Resources\find-file.ico" />
+    <None Include="Resources\edit.ico" />
+    <None Include="Resources\insert.ico" />
     <Content Include="Resources\MAjuda.Image.png" />
     <Content Include="Resources\MSair.Image.png" />
     <None Include="Resources\odontograma2.2.jpg" />

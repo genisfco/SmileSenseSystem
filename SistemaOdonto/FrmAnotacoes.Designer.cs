@@ -28,28 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAdicionarLembrete = new System.Windows.Forms.Button();
             this.btnAmarelo = new System.Windows.Forms.Button();
             this.btnRosa = new System.Windows.Forms.Button();
             this.btnRoxo = new System.Windows.Forms.Button();
             this.btnLaranja = new System.Windows.Forms.Button();
             this.btnVerde = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btnAdicionarLembrete = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnAdicionarLembrete
-            // 
-            this.btnAdicionarLembrete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAdicionarLembrete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAdicionarLembrete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarLembrete.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionarLembrete.Location = new System.Drawing.Point(20, 10);
-            this.btnAdicionarLembrete.Name = "btnAdicionarLembrete";
-            this.btnAdicionarLembrete.Size = new System.Drawing.Size(75, 23);
-            this.btnAdicionarLembrete.TabIndex = 13;
-            this.btnAdicionarLembrete.Text = "Adicionar";
-            this.btnAdicionarLembrete.UseVisualStyleBackColor = false;
-            this.btnAdicionarLembrete.Click += new System.EventHandler(this.btnAdicionarLembrete_Click);
             // 
             // btnAmarelo
             // 
@@ -57,7 +43,7 @@
             this.btnAmarelo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAmarelo.Location = new System.Drawing.Point(140, 9);
             this.btnAmarelo.Name = "btnAmarelo";
-            this.btnAmarelo.Size = new System.Drawing.Size(24, 24);
+            this.btnAmarelo.Size = new System.Drawing.Size(24, 46);
             this.btnAmarelo.TabIndex = 12;
             this.btnAmarelo.UseVisualStyleBackColor = false;
             this.btnAmarelo.Click += new System.EventHandler(this.btnAmarelo_Click);
@@ -68,7 +54,7 @@
             this.btnRosa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRosa.Location = new System.Drawing.Point(260, 9);
             this.btnRosa.Name = "btnRosa";
-            this.btnRosa.Size = new System.Drawing.Size(24, 24);
+            this.btnRosa.Size = new System.Drawing.Size(24, 46);
             this.btnRosa.TabIndex = 11;
             this.btnRosa.UseVisualStyleBackColor = false;
             this.btnRosa.Click += new System.EventHandler(this.btnRosa_Click);
@@ -79,7 +65,7 @@
             this.btnRoxo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRoxo.Location = new System.Drawing.Point(230, 9);
             this.btnRoxo.Name = "btnRoxo";
-            this.btnRoxo.Size = new System.Drawing.Size(24, 24);
+            this.btnRoxo.Size = new System.Drawing.Size(24, 46);
             this.btnRoxo.TabIndex = 10;
             this.btnRoxo.UseVisualStyleBackColor = false;
             this.btnRoxo.Click += new System.EventHandler(this.btnRoxo_Click);
@@ -90,7 +76,7 @@
             this.btnLaranja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLaranja.Location = new System.Drawing.Point(200, 9);
             this.btnLaranja.Name = "btnLaranja";
-            this.btnLaranja.Size = new System.Drawing.Size(24, 24);
+            this.btnLaranja.Size = new System.Drawing.Size(24, 46);
             this.btnLaranja.TabIndex = 9;
             this.btnLaranja.UseVisualStyleBackColor = false;
             this.btnLaranja.Click += new System.EventHandler(this.btnLaranja_Click);
@@ -101,7 +87,7 @@
             this.btnVerde.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVerde.Location = new System.Drawing.Point(170, 9);
             this.btnVerde.Name = "btnVerde";
-            this.btnVerde.Size = new System.Drawing.Size(24, 24);
+            this.btnVerde.Size = new System.Drawing.Size(24, 46);
             this.btnVerde.TabIndex = 8;
             this.btnVerde.UseVisualStyleBackColor = false;
             this.btnVerde.Click += new System.EventHandler(this.btnVerde_Click);
@@ -109,14 +95,31 @@
             // richTextBox1
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(7, 45);
+            this.richTextBox1.Location = new System.Drawing.Point(7, 61);
             this.richTextBox1.MaxLength = 144;
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(285, 213);
+            this.richTextBox1.Size = new System.Drawing.Size(285, 197);
             this.richTextBox1.TabIndex = 7;
             this.richTextBox1.Text = "";
             // 
-            // frmAnotacoes
+            // btnAdicionarLembrete
+            // 
+            this.btnAdicionarLembrete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAdicionarLembrete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdicionarLembrete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionarLembrete.ForeColor = System.Drawing.Color.White;
+            this.btnAdicionarLembrete.Image = global::SistemaOdonto.Properties.Resources.insert;
+            this.btnAdicionarLembrete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdicionarLembrete.Location = new System.Drawing.Point(12, 9);
+            this.btnAdicionarLembrete.Name = "btnAdicionarLembrete";
+            this.btnAdicionarLembrete.Size = new System.Drawing.Size(99, 46);
+            this.btnAdicionarLembrete.TabIndex = 13;
+            this.btnAdicionarLembrete.Text = "Adicionar";
+            this.btnAdicionarLembrete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdicionarLembrete.UseVisualStyleBackColor = false;
+            this.btnAdicionarLembrete.Click += new System.EventHandler(this.btnAdicionarLembrete_Click);
+            // 
+            // FrmAnotacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,7 +132,7 @@
             this.Controls.Add(this.btnVerde);
             this.Controls.Add(this.richTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "frmAnotacoes";
+            this.Name = "FrmAnotacoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nova Anotação";
             this.ResumeLayout(false);
