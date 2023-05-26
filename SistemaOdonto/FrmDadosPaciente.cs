@@ -148,7 +148,8 @@ namespace SistemaOdonto
             dgViewPaciente.Rows[0].Cells[0].Value = paciente.Nome;
             dgViewPaciente.Rows[0].Cells[1].Value = paciente.Telefone;
             dgViewPaciente.Rows[0].Cells[2].Value = paciente.Celular;
-            dgViewPaciente.Rows[0].Cells[3].Value = paciente.Email;            
+            dgViewPaciente.Rows[0].Cells[3].Value = paciente.Email; 
+            
         }        
     }
 }
