@@ -32,7 +32,6 @@
             this.ts = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsNenhuma = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.btnBuscaCEP = new System.Windows.Forms.Button();
             this.rgpaciente = new System.Windows.Forms.Label();
             this.cpfpaciente = new System.Windows.Forms.Label();
             this.masktxtCPFPaciente = new System.Windows.Forms.MaskedTextBox();
@@ -61,11 +60,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNum = new System.Windows.Forms.TextBox();
             this.txtUF = new System.Windows.Forms.TextBox();
-            this.btnAbrirAnamnese = new System.Windows.Forms.Button();
-            this.btnAbrirOdontograma = new System.Windows.Forms.Button();
             this.cbAno = new System.Windows.Forms.ComboBox();
             this.cbMes = new System.Windows.Forms.ComboBox();
             this.cbDia = new System.Windows.Forms.ComboBox();
+            this.btnAbrirOdontograma = new System.Windows.Forms.Button();
+            this.btnAbrirAnamnese = new System.Windows.Forms.Button();
+            this.btnBuscaCEP = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
@@ -107,20 +107,6 @@
             this.lblCodigo.TabIndex = 35;
             this.lblCodigo.Text = "cod.";
             // 
-            // btnBuscaCEP
-            // 
-            this.btnBuscaCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscaCEP.Image = global::SistemaOdonto.Properties.Resources.search;
-            this.btnBuscaCEP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscaCEP.Location = new System.Drawing.Point(331, 132);
-            this.btnBuscaCEP.Name = "btnBuscaCEP";
-            this.btnBuscaCEP.Size = new System.Drawing.Size(127, 37);
-            this.btnBuscaCEP.TabIndex = 10;
-            this.btnBuscaCEP.Text = "Buscar CEP";
-            this.btnBuscaCEP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscaCEP.UseVisualStyleBackColor = true;
-            this.btnBuscaCEP.Click += new System.EventHandler(this.btnBuscaCEP_Click);
-            // 
             // rgpaciente
             // 
             this.rgpaciente.AutoSize = true;
@@ -144,7 +130,7 @@
             // masktxtCPFPaciente
             // 
             this.masktxtCPFPaciente.Location = new System.Drawing.Point(200, 55);
-            this.masktxtCPFPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.masktxtCPFPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.masktxtCPFPaciente.Mask = "000.000.000-00";
             this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
             this.masktxtCPFPaciente.ReadOnly = true;
@@ -155,7 +141,7 @@
             // masktxtRGPaciente
             // 
             this.masktxtRGPaciente.Location = new System.Drawing.Point(51, 55);
-            this.masktxtRGPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.masktxtRGPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.masktxtRGPaciente.Mask = "00.000.000-C";
             this.masktxtRGPaciente.Name = "masktxtRGPaciente";
             this.masktxtRGPaciente.ReadOnly = true;
@@ -297,9 +283,9 @@
             this.groupBox1.Controls.Add(this.txtNum);
             this.groupBox1.Controls.Add(this.txtUF);
             this.groupBox1.Location = new System.Drawing.Point(9, 185);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(449, 84);
             this.groupBox1.TabIndex = 97;
             this.groupBox1.TabStop = false;
@@ -356,7 +342,7 @@
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(69, 53);
-            this.txtBairro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBairro.Margin = new System.Windows.Forms.Padding(2);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(112, 20);
             this.txtBairro.TabIndex = 15;
@@ -365,7 +351,7 @@
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(247, 53);
-            this.txtCidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCidade.Margin = new System.Windows.Forms.Padding(2);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(111, 20);
             this.txtCidade.TabIndex = 16;
@@ -384,7 +370,7 @@
             // txtNum
             // 
             this.txtNum.Location = new System.Drawing.Point(413, 25);
-            this.txtNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(29, 20);
             this.txtNum.TabIndex = 11;
@@ -393,31 +379,11 @@
             // txtUF
             // 
             this.txtUF.Location = new System.Drawing.Point(413, 54);
-            this.txtUF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUF.Margin = new System.Windows.Forms.Padding(2);
             this.txtUF.Name = "txtUF";
             this.txtUF.Size = new System.Drawing.Size(29, 20);
             this.txtUF.TabIndex = 17;
             this.txtUF.Enter += new System.EventHandler(this.txtUF_Enter);
-            // 
-            // btnAbrirAnamnese
-            // 
-            this.btnAbrirAnamnese.Location = new System.Drawing.Point(9, 307);
-            this.btnAbrirAnamnese.Name = "btnAbrirAnamnese";
-            this.btnAbrirAnamnese.Size = new System.Drawing.Size(96, 44);
-            this.btnAbrirAnamnese.TabIndex = 20;
-            this.btnAbrirAnamnese.Text = "Anamnese";
-            this.btnAbrirAnamnese.UseVisualStyleBackColor = true;
-            this.btnAbrirAnamnese.Click += new System.EventHandler(this.btnAbrirAnamnese_Click);
-            // 
-            // btnAbrirOdontograma
-            // 
-            this.btnAbrirOdontograma.Location = new System.Drawing.Point(129, 307);
-            this.btnAbrirOdontograma.Name = "btnAbrirOdontograma";
-            this.btnAbrirOdontograma.Size = new System.Drawing.Size(96, 46);
-            this.btnAbrirOdontograma.TabIndex = 21;
-            this.btnAbrirOdontograma.Text = "Odontograma";
-            this.btnAbrirOdontograma.UseVisualStyleBackColor = true;
-            this.btnAbrirOdontograma.Click += new System.EventHandler(this.btnAbrirOdontograma_Click);
             // 
             // cbAno
             // 
@@ -593,6 +559,46 @@
             this.cbDia.Size = new System.Drawing.Size(36, 21);
             this.cbDia.TabIndex = 5;
             // 
+            // btnAbrirOdontograma
+            // 
+            this.btnAbrirOdontograma.Image = global::SistemaOdonto.Properties.Resources.Odontograma;
+            this.btnAbrirOdontograma.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAbrirOdontograma.Location = new System.Drawing.Point(129, 307);
+            this.btnAbrirOdontograma.Name = "btnAbrirOdontograma";
+            this.btnAbrirOdontograma.Size = new System.Drawing.Size(121, 45);
+            this.btnAbrirOdontograma.TabIndex = 21;
+            this.btnAbrirOdontograma.Text = "Odontograma";
+            this.btnAbrirOdontograma.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAbrirOdontograma.UseVisualStyleBackColor = true;
+            this.btnAbrirOdontograma.Click += new System.EventHandler(this.btnAbrirOdontograma_Click);
+            // 
+            // btnAbrirAnamnese
+            // 
+            this.btnAbrirAnamnese.Image = global::SistemaOdonto.Properties.Resources.anamnese;
+            this.btnAbrirAnamnese.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAbrirAnamnese.Location = new System.Drawing.Point(9, 307);
+            this.btnAbrirAnamnese.Name = "btnAbrirAnamnese";
+            this.btnAbrirAnamnese.Size = new System.Drawing.Size(100, 45);
+            this.btnAbrirAnamnese.TabIndex = 20;
+            this.btnAbrirAnamnese.Text = "Anamnese";
+            this.btnAbrirAnamnese.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAbrirAnamnese.UseVisualStyleBackColor = true;
+            this.btnAbrirAnamnese.Click += new System.EventHandler(this.btnAbrirAnamnese_Click);
+            // 
+            // btnBuscaCEP
+            // 
+            this.btnBuscaCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscaCEP.Image = global::SistemaOdonto.Properties.Resources.search;
+            this.btnBuscaCEP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscaCEP.Location = new System.Drawing.Point(331, 132);
+            this.btnBuscaCEP.Name = "btnBuscaCEP";
+            this.btnBuscaCEP.Size = new System.Drawing.Size(127, 37);
+            this.btnBuscaCEP.TabIndex = 10;
+            this.btnBuscaCEP.Text = "Buscar CEP";
+            this.btnBuscaCEP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscaCEP.UseVisualStyleBackColor = true;
+            this.btnBuscaCEP.Click += new System.EventHandler(this.btnBuscaCEP_Click);
+            // 
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.Transparent;
@@ -618,7 +624,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Image = global::SistemaOdonto.Properties.Resources.edit;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(256, 309);
+            this.btnEditar.Location = new System.Drawing.Point(268, 309);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(87, 43);
             this.btnEditar.TabIndex = 18;

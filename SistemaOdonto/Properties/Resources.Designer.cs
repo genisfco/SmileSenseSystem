@@ -103,6 +103,16 @@ namespace SistemaOdonto.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anamnese {
+            get {
+                object obj = ResourceManager.GetObject("anamnese", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap banner {
             get {
                 object obj = ResourceManager.GetObject("banner", resourceCulture);
@@ -476,6 +486,16 @@ namespace SistemaOdonto.Properties {
         internal static System.Drawing.Bitmap MSair_Image {
             get {
                 object obj = ResourceManager.GetObject("MSair.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Odontograma {
+            get {
+                object obj = ResourceManager.GetObject("Odontograma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

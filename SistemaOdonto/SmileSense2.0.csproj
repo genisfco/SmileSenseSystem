@@ -458,6 +458,7 @@
     <None Include="Resources\botao-salvar.ico" />
     <None Include="Resources\botao-de-deletar.ico" />
     <None Include="Resources\botao-play.ico" />
+    <None Include="Resources\anamnese.ico" />
     <Content Include="Resources\btnConsulta.BackgroundImage.png" />
     <Content Include="Resources\btnEditar.BackgroundImage.png" />
     <Content Include="Resources\btnExcluir.BackgroundImage.png" />
@@ -482,6 +483,7 @@
     <Content Include="Resources\MSair.Image.png" />
     <None Include="Resources\odontograma2.2.jpg" />
     <None Include="Resources\odontograma2.21.jpg" />
+    <None Include="Resources\Odontograma.ico" />
     <Content Include="Resources\panel1.BackgroundImage.jpg" />
     <Content Include="Resources\panel1.BackgroundImage.png" />
     <None Include="Resources\penBlack.jpg" />
