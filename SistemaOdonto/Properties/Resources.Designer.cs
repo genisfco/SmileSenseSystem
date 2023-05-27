@@ -143,6 +143,16 @@ namespace SistemaOdonto.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap botao_play {
+            get {
+                object obj = ResourceManager.GetObject("botao-play", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap botao_salvar {
             get {
                 object obj = ResourceManager.GetObject("botao-salvar", resourceCulture);
