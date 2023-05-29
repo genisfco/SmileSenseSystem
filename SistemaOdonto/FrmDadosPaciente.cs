@@ -13,7 +13,8 @@ using WcfService;
 
 namespace SistemaOdonto
 {
-    public partial class FrmDadosPaciente : Form    {
+    public partial class FrmDadosPaciente : Form
+    {
 
         PacienteService serviceP = new PacienteService();
 
@@ -110,7 +111,7 @@ namespace SistemaOdonto
                 if (e.ColumnIndex == 1 && e.RowIndex != -1)
                 {
                     var id = dg.Rows[e.RowIndex].Cells[0].Value;
-                   
+
                     Paciente obj = serviceP.Buscar(Convert.ToInt32(id));
 
                     var form = new FrmEditarPaciente(obj);
@@ -140,16 +141,51 @@ namespace SistemaOdonto
             string cpf = masktxtCPFPaciente.Text;
             cpf = cpf.Replace(",", "").Replace("-", "");
 
-           
+
             Paciente paciente = serviceP.BuscarPorCPF(cpf);
             // Criar uma lista de objetos anônimos contendo apenas as propriedades desejadas do paciente
-            
+
             dgViewPaciente.Rows.Clear();
-            dgViewPaciente.Rows[0].Cells[0].Value = paciente.Nome;
-            dgViewPaciente.Rows[0].Cells[1].Value = paciente.Telefone;
-            dgViewPaciente.Rows[0].Cells[2].Value = paciente.Celular;
-            dgViewPaciente.Rows[0].Cells[3].Value = paciente.Email; 
-            
-        }        
+            dgViewPaciente.Rows[0].Cells[0].Value = paciente.Id;
+            dgViewPaciente.Rows[0].Cells[1].Value = paciente.Nome;
+            dgViewPaciente.Rows[0].Cells[2].Value = paciente.Telefone;
+            dgViewPaciente.Rows[0].Cells[3].Value = paciente.Celular;
+            dgViewPaciente.Rows[0].Cells[4].Value = paciente.Email;
+        }
+
+        private void masktxtCPFPaciente_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => masktxtCPFPaciente.Select(0, 0)));
+        }
+
+        private void dgViewPaciente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica se o clique foi feito em uma linha válida
+            if (e.RowIndex >= 0)
+            {
+                DataGridView dg = sender as DataGridView;
+
+                var id = dg.Rows[e.RowIndex].Cells[0].Value;
+
+                Paciente obj = serviceP.Buscar(Convert.ToInt32(id));
+
+                var form = new FrmEditarPaciente(obj);
+                form.ShowDialog();
+
+                if (form.status == "apagado")
+                {
+                    this.Close();
+                    FrmDadosPaciente frm = new FrmDadosPaciente();
+                    frm.ShowDialog();
+                }
+                if (form.status == "editado")
+                {
+                    dg.Rows.RemoveAt(e.RowIndex);
+                    GerarLinha(dg, obj);
+                }
+
+
+            }
+        }
     }
 }
