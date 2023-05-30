@@ -31,13 +31,13 @@
             this.tc = new System.Windows.Forms.TabControl();
             this.masktxtCPFPaciente = new System.Windows.Forms.MaskedTextBox();
             this.dgViewPaciente = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscarPaciente = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscarPaciente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewPaciente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,11 +52,11 @@
             // 
             // masktxtCPFPaciente
             // 
-            this.masktxtCPFPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.masktxtCPFPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.masktxtCPFPaciente.Location = new System.Drawing.Point(12, 59);
             this.masktxtCPFPaciente.Mask = "000.000.000-00";
             this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
-            this.masktxtCPFPaciente.Size = new System.Drawing.Size(176, 35);
+            this.masktxtCPFPaciente.Size = new System.Drawing.Size(152, 30);
             this.masktxtCPFPaciente.TabIndex = 44;
             this.masktxtCPFPaciente.Enter += new System.EventHandler(this.masktxtCPFPaciente_Enter);
             // 
@@ -81,29 +81,6 @@
             this.dgViewPaciente.Size = new System.Drawing.Size(809, 102);
             this.dgViewPaciente.TabIndex = 50;
             this.dgViewPaciente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewPaciente_CellDoubleClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 20);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "CPF";
-            // 
-            // btnBuscarPaciente
-            // 
-            this.btnBuscarPaciente.Image = global::SistemaOdonto.Properties.Resources.find_file;
-            this.btnBuscarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarPaciente.Location = new System.Drawing.Point(207, 35);
-            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
-            this.btnBuscarPaciente.Size = new System.Drawing.Size(154, 68);
-            this.btnBuscarPaciente.TabIndex = 49;
-            this.btnBuscarPaciente.Text = "Buscar";
-            this.btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarPaciente.UseVisualStyleBackColor = true;
-            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
             // 
             // ID
             // 
@@ -150,6 +127,29 @@
             this.Email.ReadOnly = true;
             this.Email.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Email.Width = 190;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 20);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "CPF";
+            // 
+            // btnBuscarPaciente
+            // 
+            this.btnBuscarPaciente.Image = global::SistemaOdonto.Properties.Resources.find_file;
+            this.btnBuscarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(181, 26);
+            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
+            this.btnBuscarPaciente.Size = new System.Drawing.Size(154, 68);
+            this.btnBuscarPaciente.TabIndex = 49;
+            this.btnBuscarPaciente.Text = "Buscar";
+            this.btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarPaciente.UseVisualStyleBackColor = true;
+            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
             // 
             // FrmDadosPaciente
             // 

@@ -197,6 +197,7 @@
             this.btnLimpar.Size = new System.Drawing.Size(186, 66);
             this.btnLimpar.TabIndex = 11;
             this.btnLimpar.Text = "Novo/Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
@@ -298,7 +299,7 @@
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Image = global::SistemaOdonto.Properties.Resources.save;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(12, 348);
+            this.btnSalvar.Location = new System.Drawing.Point(24, 348);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(186, 66);
@@ -312,7 +313,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(550, 515);
             this.Controls.Add(this.especialidade1);
             this.Controls.Add(this.comboxEspecialidade1);
