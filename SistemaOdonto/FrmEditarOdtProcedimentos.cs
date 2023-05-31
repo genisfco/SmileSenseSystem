@@ -2094,22 +2094,15 @@ namespace SistemaOdonto
             imagemModificada.Save(caminhoBackup);
         }
 
-        //private void SalvarImagemBackup()
-        //{
-        //    // Caminho pré-determinado para salvar o arquivo de backup
-        //    string caminhoBackup = Path.Combine(Path.GetDirectoryName(objOdt.CaminhoImagem), "odontogramaBackup.jpg");
-
-        //    // Salvar a imagem modificada como o arquivo de backup
-        //    imagemModificada.Save(caminhoBackup);
-        //}
-
-
 
         public List<Procedimento> ObjProcedimentoGerado()
         {
             int idPaciente = Convert.ToInt32(lblCodigo.Text);
 
             List<Procedimento> procedimentos = new List<Procedimento>();
+
+            DateTime horaAtual = DateTime.Now;
+            DateTime horaLimite = horaAtual.AddHours(-3); // Subtrai 3 horas da hora atual
 
             // Percorre todas as linhas do DataGridView
             foreach (DataGridViewRow row in dataGridProcedimentos.Rows)
@@ -2123,14 +2116,13 @@ namespace SistemaOdonto
                 DateTime data = Convert.ToDateTime(row.Cells[5].Value);
 
                 // Verifica se a data do procedimento é igual à data atual
-                if (data.Date == DateTime.Today)
+                if (data.Date == DateTime.Today && data >= horaLimite && data <= horaAtual)
                 {
-                    //Buscando id do Dentista pelo nome do dentista na linha atual
+                    // Buscando id do Dentista pelo nome do dentista na linha atual
                     int idDentista = ObterIdDentistaPorNome(dentista);
 
                     // Busca o ID do odontograma a partir do ID do paciente
                     int idOdontograma = ObterIdOdontogramaPorIdPaciente(idPaciente);
-
 
                     //GERANDO O OBJETO PROCEDIMENTO PARA CADASTRAR NO BANCO.
                     Procedimento objProcd = new Procedimento();
@@ -2146,9 +2138,10 @@ namespace SistemaOdonto
                     procedimentos.Add(objProcd);
                 }
             }
-            return procedimentos;                  
+            return procedimentos;
         }
 
-        
+
+
     }
 }
