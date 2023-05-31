@@ -43,22 +43,25 @@
             this.tsNenhuma = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnConsulta = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnBuscarPaciente = new System.Windows.Forms.Button();
+            this.masktxtCPFPaciente = new System.Windows.Forms.MaskedTextBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbPaciente
             // 
             this.cbPaciente.FormattingEnabled = true;
-            this.cbPaciente.Location = new System.Drawing.Point(144, 46);
+            this.cbPaciente.Location = new System.Drawing.Point(17, 134);
             this.cbPaciente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbPaciente.Name = "cbPaciente";
-            this.cbPaciente.Size = new System.Drawing.Size(212, 28);
+            this.cbPaciente.Size = new System.Drawing.Size(317, 28);
             this.cbPaciente.TabIndex = 10;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(36, 51);
+            this.label9.Location = new System.Drawing.Point(13, 109);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 20);
@@ -68,7 +71,7 @@
             // dtData
             // 
             this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtData.Location = new System.Drawing.Point(544, 40);
+            this.dtData.Location = new System.Drawing.Point(421, 136);
             this.dtData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtData.Name = "dtData";
             this.dtData.Size = new System.Drawing.Size(212, 26);
@@ -77,7 +80,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(453, 46);
+            this.label8.Location = new System.Drawing.Point(417, 109);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 20);
@@ -86,7 +89,7 @@
             // 
             // txtAnotacoes
             // 
-            this.txtAnotacoes.Location = new System.Drawing.Point(144, 162);
+            this.txtAnotacoes.Location = new System.Drawing.Point(19, 301);
             this.txtAnotacoes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAnotacoes.Multiline = true;
             this.txtAnotacoes.Name = "txtAnotacoes";
@@ -96,7 +99,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(36, 168);
+            this.label7.Location = new System.Drawing.Point(13, 276);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 20);
@@ -109,16 +112,16 @@
             this.cbDentista.Items.AddRange(new object[] {
             "Masculino",
             "Feminino"});
-            this.cbDentista.Location = new System.Drawing.Point(144, 102);
+            this.cbDentista.Location = new System.Drawing.Point(17, 211);
             this.cbDentista.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbDentista.Name = "cbDentista";
-            this.cbDentista.Size = new System.Drawing.Size(212, 28);
+            this.cbDentista.Size = new System.Drawing.Size(317, 28);
             this.cbDentista.TabIndex = 20;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 106);
+            this.label1.Location = new System.Drawing.Point(15, 186);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 20);
@@ -129,7 +132,7 @@
             // 
             this.dtHora.CustomFormat = "HH:mm";
             this.dtHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtHora.Location = new System.Drawing.Point(544, 103);
+            this.dtHora.Location = new System.Drawing.Point(421, 213);
             this.dtHora.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtHora.Name = "dtHora";
             this.dtHora.ShowUpDown = true;
@@ -139,7 +142,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(453, 109);
+            this.label2.Location = new System.Drawing.Point(417, 186);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 20);
@@ -154,10 +157,10 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ts,
             this.tsNenhuma});
-            this.statusStrip1.Location = new System.Drawing.Point(6, 445);
+            this.statusStrip1.Location = new System.Drawing.Point(9, 577);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(753, 34);
+            this.statusStrip1.Size = new System.Drawing.Size(624, 34);
             this.statusStrip1.TabIndex = 52;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -179,7 +182,7 @@
             this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnSalvar.Image = global::SistemaOdonto.Properties.Resources.save;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(144, 345);
+            this.btnSalvar.Location = new System.Drawing.Point(19, 470);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(212, 68);
@@ -195,7 +198,7 @@
             this.btnConsulta.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnConsulta.Image = global::SistemaOdonto.Properties.Resources.find_file;
             this.btnConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsulta.Location = new System.Drawing.Point(544, 345);
+            this.btnConsulta.Location = new System.Drawing.Point(421, 470);
             this.btnConsulta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(212, 68);
@@ -205,12 +208,48 @@
             this.btnConsulta.UseVisualStyleBackColor = true;
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 28);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 20);
+            this.label3.TabIndex = 73;
+            this.label3.Text = "CPF";
+            // 
+            // btnBuscarPaciente
+            // 
+            this.btnBuscarPaciente.Image = global::SistemaOdonto.Properties.Resources.find_file;
+            this.btnBuscarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(178, 29);
+            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
+            this.btnBuscarPaciente.Size = new System.Drawing.Size(157, 57);
+            this.btnBuscarPaciente.TabIndex = 72;
+            this.btnBuscarPaciente.Text = "Buscar Paciente";
+            this.btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarPaciente.UseVisualStyleBackColor = true;
+            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
+            // 
+            // masktxtCPFPaciente
+            // 
+            this.masktxtCPFPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.masktxtCPFPaciente.Location = new System.Drawing.Point(17, 51);
+            this.masktxtCPFPaciente.Mask = "000.000.000-00";
+            this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
+            this.masktxtCPFPaciente.Size = new System.Drawing.Size(131, 30);
+            this.masktxtCPFPaciente.TabIndex = 71;
+            this.masktxtCPFPaciente.Enter += new System.EventHandler(this.masktxtCPFPaciente_Enter);
+            // 
             // FrmCadConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(814, 474);
+            this.ClientSize = new System.Drawing.Size(650, 629);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnBuscarPaciente);
+            this.Controls.Add(this.masktxtCPFPaciente);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.statusStrip1);
@@ -254,5 +293,8 @@
         private System.Windows.Forms.ToolStripStatusLabel tsNenhuma;
         private System.Windows.Forms.Button btnConsulta;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnBuscarPaciente;
+        private System.Windows.Forms.MaskedTextBox masktxtCPFPaciente;
     }
 }

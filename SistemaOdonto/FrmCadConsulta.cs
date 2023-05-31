@@ -146,5 +146,22 @@ namespace SistemaOdonto
 
             return obj;
         }
+
+        private void masktxtCPFPaciente_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => masktxtCPFPaciente.Select(0, 0)));
+
+        }
+
+        private void btnBuscarPaciente_Click(object sender, EventArgs e)
+        {
+            string cpf = masktxtCPFPaciente.Text;
+            cpf = cpf.Replace(",", "").Replace("-", "");
+
+
+            Paciente paciente = serviceP.BuscarPorCPF(cpf);
+
+            cbPaciente.Text = paciente.Nome.ToString();
+        }
     }
 }

@@ -43,17 +43,17 @@
             // 
             // tc
             // 
-            this.tc.Location = new System.Drawing.Point(3, 138);
+            this.tc.Location = new System.Drawing.Point(3, 172);
             this.tc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tc.Name = "tc";
             this.tc.SelectedIndex = 0;
-            this.tc.Size = new System.Drawing.Size(1198, 448);
+            this.tc.Size = new System.Drawing.Size(1198, 414);
             this.tc.TabIndex = 1;
             // 
             // masktxtCPFPaciente
             // 
             this.masktxtCPFPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.masktxtCPFPaciente.Location = new System.Drawing.Point(12, 59);
+            this.masktxtCPFPaciente.Location = new System.Drawing.Point(12, 92);
             this.masktxtCPFPaciente.Mask = "000.000.000-00";
             this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
             this.masktxtCPFPaciente.Size = new System.Drawing.Size(152, 30);
@@ -131,7 +131,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 26);
+            this.label1.Location = new System.Drawing.Point(13, 59);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 20);
@@ -142,7 +142,7 @@
             // 
             this.btnBuscarPaciente.Image = global::SistemaOdonto.Properties.Resources.find_file;
             this.btnBuscarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarPaciente.Location = new System.Drawing.Point(181, 26);
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(185, 59);
             this.btnBuscarPaciente.Name = "btnBuscarPaciente";
             this.btnBuscarPaciente.Size = new System.Drawing.Size(154, 68);
             this.btnBuscarPaciente.TabIndex = 49;

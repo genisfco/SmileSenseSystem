@@ -19,7 +19,7 @@ namespace SistemaOdonto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Enviado para o Suporte");
+            MessageBox.Show("Mensagem encaminhada para o suporte, aguarde nosso contato.");
         }
     }
 }

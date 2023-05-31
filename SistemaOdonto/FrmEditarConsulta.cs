@@ -135,12 +135,19 @@ namespace SistemaOdonto
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             tsNenhuma.Text = "";
-            if (ValidarExclusao())
+
+            // Exibe uma mensagem de confirmação antes de excluir
+            DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir a Consulta?", "Confirmação de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
             {
-                service.Deletar(this.consulta.IdConsulta);
-                MessageBox.Show("Excluido com sucesso!");
-                
-                this.Close();
+                if (ValidarExclusao())
+                {
+                    service.Deletar(this.consulta.IdConsulta);
+                    MessageBox.Show("Consulta excluída com sucesso!");
+
+                    this.Close();
+                }
             }
         }
 
@@ -151,6 +158,23 @@ namespace SistemaOdonto
                 return true;
             else
                 return false;
+        }
+
+        private void masktxtCPFPaciente_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => masktxtCPFPaciente.Select(0, 0)));
+
+        }
+
+        private void btnBuscarPaciente_Click(object sender, EventArgs e)
+        {
+            string cpf = masktxtCPFPaciente.Text;
+            cpf = cpf.Replace(",", "").Replace("-", "");
+
+
+            Paciente paciente = serviceP.BuscarPorCPF(cpf);
+
+            cbPaciente.Text = paciente.Nome.ToString();
         }
     }
 }
