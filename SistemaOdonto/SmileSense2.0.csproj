@@ -479,6 +479,8 @@
     <None Include="Resources\find-file.ico" />
     <None Include="Resources\edit.ico" />
     <None Include="Resources\insert.ico" />
+    <None Include="Resources\iconesquerda.png" />
+    <None Include="Resources\iconedireita.png" />
     <Content Include="Resources\MAjuda.Image.png" />
     <Content Include="Resources\MSair.Image.png" />
     <None Include="Resources\odontograma2.2.jpg" />

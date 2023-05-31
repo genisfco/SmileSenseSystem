@@ -29,34 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultas));
-            this.btnBuscarData = new System.Windows.Forms.Button();
             this.dtpDataMostrada = new System.Windows.Forms.DateTimePicker();
-            this.btnVoltar = new System.Windows.Forms.Button();
-            this.btnAvancar = new System.Windows.Forms.Button();
             this.tabControlAgenda = new System.Windows.Forms.TabControl();
             this.HomeAgenda = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscarData = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnAvancar = new System.Windows.Forms.Button();
             this.tabControlAgenda.SuspendLayout();
             this.HomeAgenda.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnBuscarData
-            // 
-            this.btnBuscarData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBuscarData.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscarData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarData.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarData.Image = global::SistemaOdonto.Properties.Resources.find_file;
-            this.btnBuscarData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarData.Location = new System.Drawing.Point(475, 11);
-            this.btnBuscarData.Name = "btnBuscarData";
-            this.btnBuscarData.Size = new System.Drawing.Size(95, 27);
-            this.btnBuscarData.TabIndex = 18;
-            this.btnBuscarData.Text = "Buscar";
-            this.btnBuscarData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarData.UseVisualStyleBackColor = false;
-            this.btnBuscarData.Click += new System.EventHandler(this.btnBuscarData_Click);
             // 
             // dtpDataMostrada
             // 
@@ -65,27 +48,6 @@
             this.dtpDataMostrada.Name = "dtpDataMostrada";
             this.dtpDataMostrada.Size = new System.Drawing.Size(327, 26);
             this.dtpDataMostrada.TabIndex = 17;
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(597, 127);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(44, 46);
-            this.btnVoltar.TabIndex = 16;
-            this.btnVoltar.UseVisualStyleBackColor = true;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
-            // btnAvancar
-            // 
-            this.btnAvancar.BackColor = System.Drawing.Color.White;
-            this.btnAvancar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAvancar.Location = new System.Drawing.Point(597, 74);
-            this.btnAvancar.Name = "btnAvancar";
-            this.btnAvancar.Size = new System.Drawing.Size(44, 46);
-            this.btnAvancar.TabIndex = 15;
-            this.btnAvancar.UseVisualStyleBackColor = false;
-            this.btnAvancar.Click += new System.EventHandler(this.btnAvancar_Click);
             // 
             // tabControlAgenda
             // 
@@ -106,7 +68,7 @@
             this.HomeAgenda.Controls.Add(this.label1);
             this.HomeAgenda.Location = new System.Drawing.Point(23, 4);
             this.HomeAgenda.Name = "HomeAgenda";
-            this.HomeAgenda.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.HomeAgenda.Padding = new System.Windows.Forms.Padding(3);
             this.HomeAgenda.Size = new System.Drawing.Size(550, 489);
             this.HomeAgenda.TabIndex = 0;
             this.HomeAgenda.Text = "Inicio";
@@ -131,6 +93,46 @@
             this.label1.Size = new System.Drawing.Size(243, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Esta é a Agenda das Consultas";
+            // 
+            // btnBuscarData
+            // 
+            this.btnBuscarData.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnBuscarData.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscarData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarData.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarData.Image = global::SistemaOdonto.Properties.Resources.find_file;
+            this.btnBuscarData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarData.Location = new System.Drawing.Point(475, 11);
+            this.btnBuscarData.Name = "btnBuscarData";
+            this.btnBuscarData.Size = new System.Drawing.Size(95, 27);
+            this.btnBuscarData.TabIndex = 18;
+            this.btnBuscarData.Text = "Buscar";
+            this.btnBuscarData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarData.UseVisualStyleBackColor = false;
+            this.btnBuscarData.Click += new System.EventHandler(this.btnBuscarData_Click);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVoltar.Image = global::SistemaOdonto.Properties.Resources.iconedireita;
+            this.btnVoltar.Location = new System.Drawing.Point(597, 127);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(44, 46);
+            this.btnVoltar.TabIndex = 16;
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // btnAvancar
+            // 
+            this.btnAvancar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAvancar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAvancar.Image = global::SistemaOdonto.Properties.Resources.iconesquerda;
+            this.btnAvancar.Location = new System.Drawing.Point(597, 74);
+            this.btnAvancar.Name = "btnAvancar";
+            this.btnAvancar.Size = new System.Drawing.Size(44, 46);
+            this.btnAvancar.TabIndex = 15;
+            this.btnAvancar.UseVisualStyleBackColor = false;
+            this.btnAvancar.Click += new System.EventHandler(this.btnAvancar_Click);
             // 
             // FrmConsultas
             // 
