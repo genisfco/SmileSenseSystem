@@ -570,7 +570,6 @@
             this.btnConsulta.BackColor = System.Drawing.Color.Transparent;
             this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsulta.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsulta.Image = global::SistemaOdonto.Properties.Resources.find_file;
             this.btnConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsulta.Location = new System.Drawing.Point(502, 460);
@@ -588,7 +587,6 @@
             this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
             this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Image = global::SistemaOdonto.Properties.Resources.file;
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLimpar.Location = new System.Drawing.Point(258, 460);
@@ -607,7 +605,6 @@
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Image = global::SistemaOdonto.Properties.Resources.save;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalvar.Location = new System.Drawing.Point(14, 460);
