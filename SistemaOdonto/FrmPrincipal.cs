@@ -26,6 +26,58 @@ namespace SistemaOdonto
             login.ShowDialog();
 
             IniciarFormulario();
+
+            // para status
+            pictureBoxes = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5 };
+            imageLabels = new Label[pictureBoxes.Length];
+
+            for (int i = 0; i < pictureBoxes.Length; i++)
+            {
+                PictureBox pictureBox = pictureBoxes[i];
+                Label label = new Label();
+                label.Text = imageMessages[i];
+                label.ForeColor = Color.Blue;
+                label.BackColor = Color.Transparent;
+                label.AutoSize = true;
+                label.Location = new Point(pictureBox.Location.X + 10, pictureBox.Location.Y + 10);
+                label.Visible = false;
+                Controls.Add(label);
+                imageLabels[i] = label;
+
+                pictureBox.MouseEnter += PictureBox_MouseEnter;
+                pictureBox.MouseLeave += PictureBox_MouseLeave;
+            }
+        }
+
+        // para status
+        private PictureBox[] pictureBoxes;
+        private Label[] imageLabels;
+        private string[] imageMessages = { "Confirmado", "Em atendimento", "Não confirmado", "Já chegou", "Desmarcado" };
+
+        // para status
+        private void PictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            int index = Array.IndexOf(pictureBoxes, pictureBox);
+
+            if (index >= 0 && index < imageLabels.Length)
+            {
+                Label label = imageLabels[index];
+                label.Visible = true;
+                label.BringToFront();
+            }
+        }
+        // para status
+        private void PictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            int index = Array.IndexOf(pictureBoxes, pictureBox);
+
+            if (index >= 0 && index < imageLabels.Length)
+            {
+                Label label = imageLabels[index];
+                label.Visible = false;
+            }
         }
 
         private void IniciarFormulario()
@@ -345,6 +397,11 @@ namespace SistemaOdonto
                 FrmLogin frmlogin = new FrmLogin(this);
                 frmlogin.ShowDialog();
             }            
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
