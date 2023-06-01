@@ -44,20 +44,22 @@
             // dtpDataMostrada
             // 
             this.dtpDataMostrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDataMostrada.Location = new System.Drawing.Point(146, 12);
+            this.dtpDataMostrada.Location = new System.Drawing.Point(219, 18);
+            this.dtpDataMostrada.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpDataMostrada.Name = "dtpDataMostrada";
-            this.dtpDataMostrada.Size = new System.Drawing.Size(327, 26);
+            this.dtpDataMostrada.Size = new System.Drawing.Size(488, 35);
             this.dtpDataMostrada.TabIndex = 17;
             // 
             // tabControlAgenda
             // 
             this.tabControlAgenda.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.tabControlAgenda.Controls.Add(this.HomeAgenda);
-            this.tabControlAgenda.Location = new System.Drawing.Point(-3, 42);
+            this.tabControlAgenda.Location = new System.Drawing.Point(-4, 65);
+            this.tabControlAgenda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControlAgenda.Multiline = true;
             this.tabControlAgenda.Name = "tabControlAgenda";
             this.tabControlAgenda.SelectedIndex = 0;
-            this.tabControlAgenda.Size = new System.Drawing.Size(577, 497);
+            this.tabControlAgenda.Size = new System.Drawing.Size(866, 765);
             this.tabControlAgenda.TabIndex = 14;
             this.tabControlAgenda.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlAgenda_Selecting);
             // 
@@ -66,10 +68,11 @@
             this.HomeAgenda.BackColor = System.Drawing.Color.White;
             this.HomeAgenda.Controls.Add(this.label2);
             this.HomeAgenda.Controls.Add(this.label1);
-            this.HomeAgenda.Location = new System.Drawing.Point(23, 4);
+            this.HomeAgenda.Location = new System.Drawing.Point(28, 4);
+            this.HomeAgenda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.HomeAgenda.Name = "HomeAgenda";
-            this.HomeAgenda.Padding = new System.Windows.Forms.Padding(3);
-            this.HomeAgenda.Size = new System.Drawing.Size(550, 489);
+            this.HomeAgenda.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.HomeAgenda.Size = new System.Drawing.Size(834, 757);
             this.HomeAgenda.TabIndex = 0;
             this.HomeAgenda.Text = "Inicio";
             // 
@@ -77,9 +80,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(20, 67);
+            this.label2.Location = new System.Drawing.Point(30, 103);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(471, 65);
+            this.label2.Size = new System.Drawing.Size(698, 100);
             this.label2.TabIndex = 1;
             this.label2.Text = resources.GetString("label2.Text");
             // 
@@ -88,9 +92,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(22, 28);
+            this.label1.Location = new System.Drawing.Point(33, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 18);
+            this.label1.Size = new System.Drawing.Size(374, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Esta é a Agenda das Consultas";
             // 
@@ -102,9 +107,10 @@
             this.btnBuscarData.ForeColor = System.Drawing.Color.White;
             this.btnBuscarData.Image = global::SistemaOdonto.Properties.Resources.find_file;
             this.btnBuscarData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarData.Location = new System.Drawing.Point(475, 11);
+            this.btnBuscarData.Location = new System.Drawing.Point(712, 17);
+            this.btnBuscarData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscarData.Name = "btnBuscarData";
-            this.btnBuscarData.Size = new System.Drawing.Size(95, 27);
+            this.btnBuscarData.Size = new System.Drawing.Size(142, 42);
             this.btnBuscarData.TabIndex = 18;
             this.btnBuscarData.Text = "Buscar";
             this.btnBuscarData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -114,10 +120,11 @@
             // btnVoltar
             // 
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Image = global::SistemaOdonto.Properties.Resources.iconedireita;
-            this.btnVoltar.Location = new System.Drawing.Point(597, 127);
+            this.btnVoltar.Image = global::SistemaOdonto.Properties.Resources.iconesquerda;
+            this.btnVoltar.Location = new System.Drawing.Point(896, 146);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(44, 46);
+            this.btnVoltar.Size = new System.Drawing.Size(66, 71);
             this.btnVoltar.TabIndex = 16;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -126,24 +133,26 @@
             // 
             this.btnAvancar.BackColor = System.Drawing.SystemColors.Control;
             this.btnAvancar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAvancar.Image = global::SistemaOdonto.Properties.Resources.iconesquerda;
-            this.btnAvancar.Location = new System.Drawing.Point(597, 74);
+            this.btnAvancar.Image = global::SistemaOdonto.Properties.Resources.iconedireita;
+            this.btnAvancar.Location = new System.Drawing.Point(896, 65);
+            this.btnAvancar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAvancar.Name = "btnAvancar";
-            this.btnAvancar.Size = new System.Drawing.Size(44, 46);
+            this.btnAvancar.Size = new System.Drawing.Size(66, 71);
             this.btnAvancar.TabIndex = 15;
-            this.btnAvancar.UseVisualStyleBackColor = false;
+            this.btnAvancar.UseVisualStyleBackColor = true;
             this.btnAvancar.Click += new System.EventHandler(this.btnAvancar_Click);
             // 
             // FrmConsultas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 570);
+            this.ClientSize = new System.Drawing.Size(998, 877);
             this.Controls.Add(this.btnBuscarData);
             this.Controls.Add(this.dtpDataMostrada);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnAvancar);
             this.Controls.Add(this.tabControlAgenda);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmConsultas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda de Consultas";

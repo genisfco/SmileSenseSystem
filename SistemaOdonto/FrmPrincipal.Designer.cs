@@ -71,6 +71,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrosToolStripMenuItem,
@@ -80,10 +81,10 @@
             this.MAjuda,
             this.MSair});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.menuStrip1.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(863, 38);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1478, 40);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -95,27 +96,27 @@
             this.menuPaciente});
             this.cadastrosToolStripMenuItem.Image = global::SistemaOdonto.Properties.Resources.insert;
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(93, 36);
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(127, 36);
             this.cadastrosToolStripMenuItem.Text = "Cadastrar";
             // 
             // menuConsulta
             // 
             this.menuConsulta.Name = "menuConsulta";
-            this.menuConsulta.Size = new System.Drawing.Size(180, 22);
+            this.menuConsulta.Size = new System.Drawing.Size(230, 34);
             this.menuConsulta.Text = "Nova Consulta";
             this.menuConsulta.Click += new System.EventHandler(this.menuConsulta_Click);
             // 
             // menuDentista
             // 
             this.menuDentista.Name = "menuDentista";
-            this.menuDentista.Size = new System.Drawing.Size(180, 22);
+            this.menuDentista.Size = new System.Drawing.Size(230, 34);
             this.menuDentista.Text = "Novo Dentista";
             this.menuDentista.Click += new System.EventHandler(this.menuDentista_Click);
             // 
             // menuPaciente
             // 
             this.menuPaciente.Name = "menuPaciente";
-            this.menuPaciente.Size = new System.Drawing.Size(180, 22);
+            this.menuPaciente.Size = new System.Drawing.Size(230, 34);
             this.menuPaciente.Text = "Novo Paciente";
             this.menuPaciente.Click += new System.EventHandler(this.menuPaciente_Click);
             // 
@@ -127,20 +128,20 @@
             this.consultarDadosToolStripMenuItem.Image = global::SistemaOdonto.Properties.Resources.find_file;
             this.consultarDadosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.consultarDadosToolStripMenuItem.Name = "consultarDadosToolStripMenuItem";
-            this.consultarDadosToolStripMenuItem.Size = new System.Drawing.Size(138, 36);
+            this.consultarDadosToolStripMenuItem.Size = new System.Drawing.Size(192, 36);
             this.consultarDadosToolStripMenuItem.Text = "Consultar Dados";
             // 
             // menuDadosDentistas
             // 
             this.menuDadosDentistas.Name = "menuDadosDentistas";
-            this.menuDadosDentistas.Size = new System.Drawing.Size(180, 22);
+            this.menuDadosDentistas.Size = new System.Drawing.Size(187, 34);
             this.menuDadosDentistas.Text = "Dentistas";
             this.menuDadosDentistas.Click += new System.EventHandler(this.menuDadosDentistas_Click);
             // 
             // menuDadosPacientes
             // 
             this.menuDadosPacientes.Name = "menuDadosPacientes";
-            this.menuDadosPacientes.Size = new System.Drawing.Size(180, 22);
+            this.menuDadosPacientes.Size = new System.Drawing.Size(187, 34);
             this.menuDadosPacientes.Text = "Pacientes";
             this.menuDadosPacientes.Click += new System.EventHandler(this.menuDadosPacientes_Click);
             // 
@@ -150,13 +151,13 @@
             this.menuAgConsultas});
             this.agendasToolStripMenuItem.Image = global::SistemaOdonto.Properties.Resources.agendasToolStripMenuItem_Image;
             this.agendasToolStripMenuItem.Name = "agendasToolStripMenuItem";
-            this.agendasToolStripMenuItem.Size = new System.Drawing.Size(84, 36);
+            this.agendasToolStripMenuItem.Size = new System.Drawing.Size(114, 36);
             this.agendasToolStripMenuItem.Text = "Agenda";
             // 
             // menuAgConsultas
             // 
             this.menuAgConsultas.Name = "menuAgConsultas";
-            this.menuAgConsultas.Size = new System.Drawing.Size(180, 22);
+            this.menuAgConsultas.Size = new System.Drawing.Size(220, 34);
             this.menuAgConsultas.Text = "Abrir Agenda";
             this.menuAgConsultas.Click += new System.EventHandler(this.menuAgConsultas_Click);
             // 
@@ -167,20 +168,20 @@
             this.stripGestaoUser});
             this.usuáriosToolStripMenuItem.Image = global::SistemaOdonto.Properties.Resources.users;
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(88, 36);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(120, 36);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             // 
             // stripNovoUser
             // 
             this.stripNovoUser.Name = "stripNovoUser";
-            this.stripNovoUser.Size = new System.Drawing.Size(180, 22);
+            this.stripNovoUser.Size = new System.Drawing.Size(267, 34);
             this.stripNovoUser.Text = "Novo Usuário";
             this.stripNovoUser.Click += new System.EventHandler(this.stripNovoUser_Click);
             // 
             // stripGestaoUser
             // 
             this.stripGestaoUser.Name = "stripGestaoUser";
-            this.stripGestaoUser.Size = new System.Drawing.Size(180, 22);
+            this.stripGestaoUser.Size = new System.Drawing.Size(267, 34);
             this.stripGestaoUser.Text = "Gestão de Usuários";
             this.stripGestaoUser.Click += new System.EventHandler(this.stripGestaoUser_Click);
             // 
@@ -190,13 +191,13 @@
             this.menuSuporte});
             this.MAjuda.Image = global::SistemaOdonto.Properties.Resources.MAjuda_Image;
             this.MAjuda.Name = "MAjuda";
-            this.MAjuda.Size = new System.Drawing.Size(74, 36);
+            this.MAjuda.Size = new System.Drawing.Size(98, 36);
             this.MAjuda.Text = "Ajuda";
             // 
             // menuSuporte
             // 
             this.menuSuporte.Name = "menuSuporte";
-            this.menuSuporte.Size = new System.Drawing.Size(180, 22);
+            this.menuSuporte.Size = new System.Drawing.Size(177, 34);
             this.menuSuporte.Text = "Suporte";
             this.menuSuporte.Click += new System.EventHandler(this.menuSuporte_Click);
             // 
@@ -204,7 +205,7 @@
             // 
             this.MSair.Image = global::SistemaOdonto.Properties.Resources.delete;
             this.MSair.Name = "MSair";
-            this.MSair.Size = new System.Drawing.Size(62, 36);
+            this.MSair.Size = new System.Drawing.Size(81, 36);
             this.MSair.Text = "Sair";
             this.MSair.Click += new System.EventHandler(this.MSair_Click);
             // 
@@ -212,18 +213,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 42);
+            this.label1.Location = new System.Drawing.Point(18, 63);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 15);
+            this.label1.Size = new System.Drawing.Size(147, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "Consultas do Dia";
             // 
             // cbDentista
             // 
             this.cbDentista.FormattingEnabled = true;
-            this.cbDentista.Location = new System.Drawing.Point(129, 42);
+            this.cbDentista.Location = new System.Drawing.Point(194, 63);
+            this.cbDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbDentista.Name = "cbDentista";
-            this.cbDentista.Size = new System.Drawing.Size(210, 21);
+            this.cbDentista.Size = new System.Drawing.Size(313, 28);
             this.cbDentista.TabIndex = 2;
             this.cbDentista.SelectionChangeCommitted += new System.EventHandler(this.cbDentista_SelectionChangeCommitted);
             this.cbDentista.Click += new System.EventHandler(this.cbDentista_Click);
@@ -238,10 +241,11 @@
             this.Paciente,
             this.Status,
             this.CodigoPaciente});
-            this.dg.Location = new System.Drawing.Point(15, 78);
+            this.dg.Location = new System.Drawing.Point(22, 117);
+            this.dg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dg.Name = "dg";
             this.dg.RowHeadersWidth = 62;
-            this.dg.Size = new System.Drawing.Size(324, 544);
+            this.dg.Size = new System.Drawing.Size(486, 816);
             this.dg.TabIndex = 3;
             this.dg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_CellContentClick);
             // 
@@ -286,9 +290,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(367, 295);
+            this.label2.Location = new System.Drawing.Point(550, 442);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 17);
+            this.label2.Size = new System.Drawing.Size(106, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Anotações";
             // 
@@ -299,9 +304,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(443, 293);
+            this.button1.Location = new System.Drawing.Point(664, 440);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 23);
+            this.button1.Size = new System.Drawing.Size(50, 34);
             this.button1.TabIndex = 6;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = false;
@@ -310,73 +316,67 @@
             // anot
             // 
             this.anot.AutoScroll = true;
-            this.anot.Location = new System.Drawing.Point(370, 315);
+            this.anot.Location = new System.Drawing.Point(555, 472);
+            this.anot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.anot.Name = "anot";
-            this.anot.Size = new System.Drawing.Size(830, 304);
+            this.anot.Size = new System.Drawing.Size(1245, 456);
             this.anot.TabIndex = 7;
             // 
             // pnlBarraLogin
             // 
-            this.pnlBarraLogin.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.pnlBarraLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pnlBarraLogin.Controls.Add(this.lb_NomeUsuario);
             this.pnlBarraLogin.Controls.Add(this.label24);
             this.pnlBarraLogin.Controls.Add(this.lb_Acesso);
             this.pnlBarraLogin.Controls.Add(this.label26);
             this.pnlBarraLogin.Controls.Add(this.pb_ledLogado);
-            this.pnlBarraLogin.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBarraLogin.Location = new System.Drawing.Point(0, 625);
-            this.pnlBarraLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlBarraLogin.Location = new System.Drawing.Point(0, 937);
             this.pnlBarraLogin.Name = "pnlBarraLogin";
-            this.pnlBarraLogin.Size = new System.Drawing.Size(863, 25);
+            this.pnlBarraLogin.Size = new System.Drawing.Size(1980, 38);
             this.pnlBarraLogin.TabIndex = 29;
             // 
             // lb_NomeUsuario
             // 
             this.lb_NomeUsuario.AutoSize = true;
-            this.lb_NomeUsuario.Location = new System.Drawing.Point(127, 5);
-            this.lb_NomeUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_NomeUsuario.Location = new System.Drawing.Point(190, 8);
             this.lb_NomeUsuario.Name = "lb_NomeUsuario";
-            this.lb_NomeUsuario.Size = new System.Drawing.Size(16, 13);
+            this.lb_NomeUsuario.Size = new System.Drawing.Size(24, 20);
             this.lb_NomeUsuario.TabIndex = 4;
             this.lb_NomeUsuario.Text = "---";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(32, 5);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Location = new System.Drawing.Point(48, 8);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(81, 13);
+            this.label24.Size = new System.Drawing.Size(120, 20);
             this.label24.TabIndex = 3;
             this.label24.Text = "Usuário logado:";
             // 
             // lb_Acesso
             // 
             this.lb_Acesso.AutoSize = true;
-            this.lb_Acesso.Location = new System.Drawing.Point(360, 5);
-            this.lb_Acesso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_Acesso.Location = new System.Drawing.Point(540, 8);
             this.lb_Acesso.Name = "lb_Acesso";
-            this.lb_Acesso.Size = new System.Drawing.Size(13, 13);
+            this.lb_Acesso.Size = new System.Drawing.Size(18, 20);
             this.lb_Acesso.TabIndex = 2;
             this.lb_Acesso.Text = "0";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(284, 5);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Location = new System.Drawing.Point(426, 8);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(74, 13);
+            this.label26.Size = new System.Drawing.Size(103, 20);
             this.label26.TabIndex = 1;
             this.label26.Text = "Nível Acesso:";
             // 
             // pb_ledLogado
             // 
             this.pb_ledLogado.Image = global::SistemaOdonto.Properties.Resources.Circle_Red;
-            this.pb_ledLogado.Location = new System.Drawing.Point(3, 3);
-            this.pb_ledLogado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_ledLogado.Location = new System.Drawing.Point(4, 4);
             this.pb_ledLogado.Name = "pb_ledLogado";
-            this.pb_ledLogado.Size = new System.Drawing.Size(20, 21);
+            this.pb_ledLogado.Size = new System.Drawing.Size(30, 32);
             this.pb_ledLogado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_ledLogado.TabIndex = 0;
             this.pb_ledLogado.TabStop = false;
@@ -384,9 +384,10 @@
             // panel1
             // 
             this.panel1.BackgroundImage = global::SistemaOdonto.Properties.Resources.banner2_2;
-            this.panel1.Location = new System.Drawing.Point(370, 42);
+            this.panel1.Location = new System.Drawing.Point(555, 63);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(830, 244);
+            this.panel1.Size = new System.Drawing.Size(1245, 366);
             this.panel1.TabIndex = 4;
             // 
             // btnLimparNotes
@@ -396,9 +397,10 @@
             this.btnLimparNotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimparNotes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLimparNotes.Location = new System.Drawing.Point(481, 293);
+            this.btnLimparNotes.Location = new System.Drawing.Point(722, 440);
+            this.btnLimparNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLimparNotes.Name = "btnLimparNotes";
-            this.btnLimparNotes.Size = new System.Drawing.Size(33, 23);
+            this.btnLimparNotes.Size = new System.Drawing.Size(50, 34);
             this.btnLimparNotes.TabIndex = 30;
             this.btnLimparNotes.Text = "-";
             this.btnLimparNotes.UseVisualStyleBackColor = false;
@@ -406,10 +408,10 @@
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(863, 650);
+            this.ClientSize = new System.Drawing.Size(1478, 978);
             this.Controls.Add(this.btnLimparNotes);
             this.Controls.Add(this.pnlBarraLogin);
             this.Controls.Add(this.anot);
@@ -421,8 +423,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SmileSense";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
@@ -466,13 +470,13 @@
         private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stripGestaoUser;
         private System.Windows.Forms.ToolStripMenuItem stripNovoUser;
-        private System.Windows.Forms.Panel pnlBarraLogin;
         public System.Windows.Forms.Label lb_NomeUsuario;
         private System.Windows.Forms.Label label24;
         public System.Windows.Forms.Label lb_Acesso;
         private System.Windows.Forms.Label label26;
         public System.Windows.Forms.PictureBox pb_ledLogado;
         private System.Windows.Forms.Button btnLimparNotes;
+        private System.Windows.Forms.Panel pnlBarraLogin;
     }
 }
 
