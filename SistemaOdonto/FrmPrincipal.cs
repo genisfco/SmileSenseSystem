@@ -299,7 +299,7 @@ namespace SistemaOdonto
         private void MSair_Click(object sender, EventArgs e)
         {           
 
-            if (MessageBox.Show("Tem certeza de que deseja sair?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Tem certeza que deseja sair e fechar o sistema?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 lb_Acesso.Text = "0";
                 lb_NomeUsuario.Text = "---";
@@ -324,6 +324,27 @@ namespace SistemaOdonto
                     anot.Controls.Remove(control);
                 }
             }
+        }
+
+       
+
+        
+
+        private void MLogoff_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza que deseja deslogar do sistema?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                lb_Acesso.Text = "0";
+                lb_NomeUsuario.Text = "---";
+                pb_ledLogado.Image = Properties.Resources.Circle_Red;
+
+                Globais.Global.nivel = 0;
+                Globais.Global.logado = false;
+
+
+                FrmLogin frmlogin = new FrmLogin(this);
+                frmlogin.ShowDialog();
+            }            
         }
     }
 }

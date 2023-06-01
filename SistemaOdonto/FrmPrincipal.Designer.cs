@@ -43,6 +43,7 @@
             this.stripGestaoUser = new System.Windows.Forms.ToolStripMenuItem();
             this.MAjuda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSuporte = new System.Windows.Forms.ToolStripMenuItem();
+            this.MLogoff = new System.Windows.Forms.ToolStripMenuItem();
             this.MSair = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.cbDentista = new System.Windows.Forms.ComboBox();
@@ -79,11 +80,11 @@
             this.agendasToolStripMenuItem,
             this.usuáriosToolStripMenuItem,
             this.MAjuda,
+            this.MLogoff,
             this.MSair});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1478, 40);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -201,6 +202,13 @@
             this.menuSuporte.Text = "Suporte";
             this.menuSuporte.Click += new System.EventHandler(this.menuSuporte_Click);
             // 
+            // MLogoff
+            // 
+            this.MLogoff.Name = "MLogoff";
+            this.MLogoff.Size = new System.Drawing.Size(81, 36);
+            this.MLogoff.Text = "Logoff";
+            this.MLogoff.Click += new System.EventHandler(this.MLogoff_Click);
+            // 
             // MSair
             // 
             this.MSair.Image = global::SistemaOdonto.Properties.Resources.delete;
@@ -224,7 +232,7 @@
             // 
             this.cbDentista.FormattingEnabled = true;
             this.cbDentista.Location = new System.Drawing.Point(194, 63);
-            this.cbDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDentista.Margin = new System.Windows.Forms.Padding(4);
             this.cbDentista.Name = "cbDentista";
             this.cbDentista.Size = new System.Drawing.Size(313, 28);
             this.cbDentista.TabIndex = 2;
@@ -242,7 +250,7 @@
             this.Status,
             this.CodigoPaciente});
             this.dg.Location = new System.Drawing.Point(22, 117);
-            this.dg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dg.Margin = new System.Windows.Forms.Padding(4);
             this.dg.Name = "dg";
             this.dg.RowHeadersWidth = 62;
             this.dg.Size = new System.Drawing.Size(486, 816);
@@ -305,7 +313,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(664, 440);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 34);
             this.button1.TabIndex = 6;
@@ -317,7 +325,7 @@
             // 
             this.anot.AutoScroll = true;
             this.anot.Location = new System.Drawing.Point(555, 472);
-            this.anot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.anot.Margin = new System.Windows.Forms.Padding(4);
             this.anot.Name = "anot";
             this.anot.Size = new System.Drawing.Size(1245, 456);
             this.anot.TabIndex = 7;
@@ -385,7 +393,7 @@
             // 
             this.panel1.BackgroundImage = global::SistemaOdonto.Properties.Resources.banner2_2;
             this.panel1.Location = new System.Drawing.Point(555, 63);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1245, 366);
             this.panel1.TabIndex = 4;
@@ -398,7 +406,7 @@
             this.btnLimparNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimparNotes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLimparNotes.Location = new System.Drawing.Point(722, 440);
-            this.btnLimparNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimparNotes.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimparNotes.Name = "btnLimparNotes";
             this.btnLimparNotes.Size = new System.Drawing.Size(50, 34);
             this.btnLimparNotes.TabIndex = 30;
@@ -423,7 +431,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -477,6 +485,7 @@
         public System.Windows.Forms.PictureBox pb_ledLogado;
         private System.Windows.Forms.Button btnLimparNotes;
         private System.Windows.Forms.Panel pnlBarraLogin;
+        private System.Windows.Forms.ToolStripMenuItem MLogoff;
     }
 }
 
