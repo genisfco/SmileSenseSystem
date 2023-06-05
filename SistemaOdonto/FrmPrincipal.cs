@@ -356,6 +356,7 @@ namespace SistemaOdonto
                 lb_Acesso.Text = "0";
                 lb_NomeUsuario.Text = "---";
                 pb_ledLogado.Image = Properties.Resources.Circle_Red;
+                pnlBarraLogin.BackColor = Color.Red;
 
                 Globais.Global.nivel = 0;
                 Globais.Global.logado = false;
@@ -389,6 +390,8 @@ namespace SistemaOdonto
                 lb_Acesso.Text = "0";
                 lb_NomeUsuario.Text = "---";
                 pb_ledLogado.Image = Properties.Resources.Circle_Red;
+                pnlBarraLogin.BackColor = Color.Red;
+                pnlBarraLogin.BackColor = Color.FromArgb(255, 160, 160);
 
                 Globais.Global.nivel = 0;
                 Globais.Global.logado = false;

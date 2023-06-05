@@ -43,6 +43,7 @@ namespace SistemaOdonto
                 frmPrincipal.lb_Acesso.Text = dt.Rows[0].ItemArray[5].ToString();
                 frmPrincipal.lb_NomeUsuario.Text = dt.Rows[0].Field<string>("nome_user");
                 frmPrincipal.pb_ledLogado.Image = Properties.Resources.Circle_Green;
+                frmPrincipal.pnlBarraLogin.BackColor = Color.FromArgb(192, 255, 192);
 
                 Global.nivel = int.Parse(dt.Rows[0].Field<int>("nivel_user").ToString());
                 Global.logado = true;

@@ -82,7 +82,6 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrosToolStripMenuItem,
@@ -95,7 +94,6 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1478, 40);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -114,21 +112,21 @@
             // menuConsulta
             // 
             this.menuConsulta.Name = "menuConsulta";
-            this.menuConsulta.Size = new System.Drawing.Size(230, 34);
+            this.menuConsulta.Size = new System.Drawing.Size(270, 34);
             this.menuConsulta.Text = "Nova Consulta";
             this.menuConsulta.Click += new System.EventHandler(this.menuConsulta_Click);
             // 
             // menuDentista
             // 
             this.menuDentista.Name = "menuDentista";
-            this.menuDentista.Size = new System.Drawing.Size(230, 34);
+            this.menuDentista.Size = new System.Drawing.Size(270, 34);
             this.menuDentista.Text = "Novo Dentista";
             this.menuDentista.Click += new System.EventHandler(this.menuDentista_Click);
             // 
             // menuPaciente
             // 
             this.menuPaciente.Name = "menuPaciente";
-            this.menuPaciente.Size = new System.Drawing.Size(230, 34);
+            this.menuPaciente.Size = new System.Drawing.Size(270, 34);
             this.menuPaciente.Text = "Novo Paciente";
             this.menuPaciente.Click += new System.EventHandler(this.menuPaciente_Click);
             // 
@@ -243,7 +241,7 @@
             // 
             this.cbDentista.FormattingEnabled = true;
             this.cbDentista.Location = new System.Drawing.Point(194, 63);
-            this.cbDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDentista.Margin = new System.Windows.Forms.Padding(4);
             this.cbDentista.Name = "cbDentista";
             this.cbDentista.Size = new System.Drawing.Size(313, 28);
             this.cbDentista.TabIndex = 2;
@@ -261,7 +259,7 @@
             this.Status,
             this.CodigoPaciente});
             this.dg.Location = new System.Drawing.Point(22, 148);
-            this.dg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dg.Margin = new System.Windows.Forms.Padding(4);
             this.dg.Name = "dg";
             this.dg.RowHeadersWidth = 62;
             this.dg.Size = new System.Drawing.Size(486, 780);
@@ -324,7 +322,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(664, 440);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 34);
             this.button1.TabIndex = 6;
@@ -336,14 +334,14 @@
             // 
             this.anot.AutoScroll = true;
             this.anot.Location = new System.Drawing.Point(555, 472);
-            this.anot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.anot.Margin = new System.Windows.Forms.Padding(4);
             this.anot.Name = "anot";
             this.anot.Size = new System.Drawing.Size(1245, 456);
             this.anot.TabIndex = 7;
             // 
             // pnlBarraLogin
             // 
-            this.pnlBarraLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnlBarraLogin.BackColor = System.Drawing.SystemColors.Control;
             this.pnlBarraLogin.Controls.Add(this.lb_NomeUsuario);
             this.pnlBarraLogin.Controls.Add(this.label24);
             this.pnlBarraLogin.Controls.Add(this.lb_Acesso);
@@ -404,7 +402,7 @@
             // 
             this.panel1.BackgroundImage = global::SistemaOdonto.Properties.Resources.banner2_2;
             this.panel1.Location = new System.Drawing.Point(555, 63);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1245, 366);
             this.panel1.TabIndex = 4;
@@ -417,7 +415,7 @@
             this.btnLimparNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimparNotes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLimparNotes.Location = new System.Drawing.Point(722, 440);
-            this.btnLimparNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimparNotes.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimparNotes.Name = "btnLimparNotes";
             this.btnLimparNotes.Size = new System.Drawing.Size(50, 34);
             this.btnLimparNotes.TabIndex = 30;
@@ -428,8 +426,8 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::SistemaOdonto.Properties.Resources.Circle_Red;
-            this.pictureBox5.Location = new System.Drawing.Point(475, 106);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(249, 106);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(33, 33);
             this.pictureBox5.TabIndex = 40;
@@ -438,8 +436,8 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::SistemaOdonto.Properties.Resources.Circle_Orange;
-            this.pictureBox4.Location = new System.Drawing.Point(365, 106);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(362, 106);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(30, 33);
             this.pictureBox4.TabIndex = 39;
@@ -448,8 +446,8 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::SistemaOdonto.Properties.Resources.Circle_Grey;
-            this.pictureBox3.Location = new System.Drawing.Point(251, 106);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(22, 106);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(34, 33);
             this.pictureBox3.TabIndex = 38;
@@ -458,8 +456,8 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SistemaOdonto.Properties.Resources.Circle_Green;
-            this.pictureBox2.Location = new System.Drawing.Point(137, 106);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(472, 106);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(34, 33);
             this.pictureBox2.TabIndex = 37;
@@ -468,8 +466,8 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SistemaOdonto.Properties.Resources.Circle_Blue;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 106);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(136, 106);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(33, 33);
             this.pictureBox1.TabIndex = 36;
@@ -497,7 +495,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -556,13 +554,13 @@
         private System.Windows.Forms.Label label26;
         public System.Windows.Forms.PictureBox pb_ledLogado;
         private System.Windows.Forms.Button btnLimparNotes;
-        private System.Windows.Forms.Panel pnlBarraLogin;
         private System.Windows.Forms.ToolStripMenuItem MLogoff;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Panel pnlBarraLogin;
     }
 }
 
