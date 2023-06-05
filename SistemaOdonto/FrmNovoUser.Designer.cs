@@ -149,6 +149,7 @@
             0,
             0});
             this.nup_Nivel.Name = "nup_Nivel";
+            this.nup_Nivel.ReadOnly = true;
             this.nup_Nivel.Size = new System.Drawing.Size(111, 26);
             this.nup_Nivel.TabIndex = 23;
             this.nup_Nivel.TabStop = false;
@@ -160,6 +161,7 @@
             // 
             // cb_Status
             // 
+            this.cb_Status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_Status.FormattingEnabled = true;
             this.cb_Status.Items.AddRange(new object[] {
             "A",
@@ -218,6 +220,7 @@
             // txt_Senha
             // 
             this.txt_Senha.Location = new System.Drawing.Point(304, 109);
+            this.txt_Senha.MaxLength = 10;
             this.txt_Senha.Name = "txt_Senha";
             this.txt_Senha.PasswordChar = '*';
             this.txt_Senha.Size = new System.Drawing.Size(247, 26);
@@ -226,6 +229,7 @@
             // txt_Username
             // 
             this.txt_Username.Location = new System.Drawing.Point(20, 109);
+            this.txt_Username.MaxLength = 8;
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(236, 26);
             this.txt_Username.TabIndex = 15;
@@ -233,9 +237,11 @@
             // txt_NomeUsuario
             // 
             this.txt_NomeUsuario.Location = new System.Drawing.Point(20, 32);
+            this.txt_NomeUsuario.MaxLength = 30;
             this.txt_NomeUsuario.Name = "txt_NomeUsuario";
             this.txt_NomeUsuario.Size = new System.Drawing.Size(692, 26);
             this.txt_NomeUsuario.TabIndex = 14;
+            this.txt_NomeUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NomeUsuario_KeyPress);
             // 
             // pictureBox3
             // 
