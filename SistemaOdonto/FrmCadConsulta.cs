@@ -158,10 +158,25 @@ namespace SistemaOdonto
             string cpf = masktxtCPFPaciente.Text;
             cpf = cpf.Replace(",", "").Replace("-", "");
 
+            if (cpf.Length < 11 || cpf == "")
+            {
+                MessageBox.Show("Digite o CPF completo!");
+                return;
+            }
 
-            Paciente paciente = serviceP.BuscarPorCPF(cpf);
+            try
+            {
+                Paciente paciente = serviceP.BuscarPorCPF(cpf);
 
-            cbPaciente.Text = paciente.Nome.ToString();
+                if (paciente == null) { MessageBox.Show("Paciente não localizado com este CPF."); return; }
+
+                cbPaciente.Text = paciente.Nome.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível localizar os dados:" + ex.Message);
+            }         
+
         }
     }
 }

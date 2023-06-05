@@ -141,16 +141,30 @@ namespace SistemaOdonto
             string cpf = masktxtCPFPaciente.Text;
             cpf = cpf.Replace(",", "").Replace("-", "");
 
+            if (cpf.Length <11 || cpf == "")
+            {
+                MessageBox.Show("Digite o CPF completo!");
+                return;
+            }            
 
-            Paciente paciente = serviceP.BuscarPorCPF(cpf);
-            // Criar uma lista de objetos anônimos contendo apenas as propriedades desejadas do paciente
+            try
+            {
+                Paciente paciente = serviceP.BuscarPorCPF(cpf);
 
-            dgViewPaciente.Rows.Clear();
-            dgViewPaciente.Rows[0].Cells[0].Value = paciente.Id;
-            dgViewPaciente.Rows[0].Cells[1].Value = paciente.Nome;
-            dgViewPaciente.Rows[0].Cells[2].Value = paciente.Telefone;
-            dgViewPaciente.Rows[0].Cells[3].Value = paciente.Celular;
-            dgViewPaciente.Rows[0].Cells[4].Value = paciente.Email;
+                if (paciente == null) { MessageBox.Show("Paciente não localizado com este CPF."); return; }
+
+                dgViewPaciente.Rows.Clear();
+                dgViewPaciente.Rows[0].Cells[0].Value = paciente.Id;
+                dgViewPaciente.Rows[0].Cells[1].Value = paciente.Nome;
+                dgViewPaciente.Rows[0].Cells[2].Value = paciente.Telefone;
+                dgViewPaciente.Rows[0].Cells[3].Value = paciente.Celular;
+                dgViewPaciente.Rows[0].Cells[4].Value = paciente.Email;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível localizar os dados:"+ ex.Message);
+            }           
         }
 
         private void masktxtCPFPaciente_Enter(object sender, EventArgs e)
