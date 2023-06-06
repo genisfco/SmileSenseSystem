@@ -214,8 +214,9 @@
             // 
             // MLogoff
             // 
+            this.MLogoff.Image = global::SistemaOdonto.Properties.Resources.group;
             this.MLogoff.Name = "MLogoff";
-            this.MLogoff.Size = new System.Drawing.Size(54, 36);
+            this.MLogoff.Size = new System.Drawing.Size(78, 36);
             this.MLogoff.Text = "Logoff";
             this.MLogoff.Click += new System.EventHandler(this.MLogoff_Click);
             // 
