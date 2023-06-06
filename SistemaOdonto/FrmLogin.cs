@@ -44,6 +44,28 @@ namespace SistemaOdonto
                 frmPrincipal.lb_NomeUsuario.Text = dt.Rows[0].Field<string>("nome_user");
                 frmPrincipal.pb_ledLogado.Image = Properties.Resources.Circle_Green;
                 frmPrincipal.pnlBarraLogin.BackColor = Color.FromArgb(192, 255, 192);
+                //caso de usso
+                int nivelUser = dt.Rows[0].Field<int>("nivel_user");
+                if (nivelUser == 3)
+                {
+                    frmPrincipal.usuáriosToolStripMenuItem.Visible = true;
+                }
+                else if (nivelUser == 2)
+                {
+                    frmPrincipal.usuáriosToolStripMenuItem.Visible = false;
+                    frmPrincipal.menuDentista.Visible = false;
+
+                }
+                else if (nivelUser == 1)
+                {
+                    frmPrincipal.usuáriosToolStripMenuItem.Visible = false;
+                    frmPrincipal.menuDentista.Visible = false;
+
+                }
+                else
+                {
+                    frmPrincipal.usuáriosToolStripMenuItem.Visible = false;
+                }
 
                 Global.nivel = int.Parse(dt.Rows[0].Field<int>("nivel_user").ToString());
                 Global.logado = true;

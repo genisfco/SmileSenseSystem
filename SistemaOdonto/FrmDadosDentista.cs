@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using Globais;
 using WcfService;
 
 namespace SistemaOdonto
@@ -109,36 +110,53 @@ namespace SistemaOdonto
         private void tb_click(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dg = sender as DataGridView;
+
             try
             {
-                if(e.ColumnIndex == 1 && e.RowIndex != -1)
+                if (e.ColumnIndex == 1 && e.RowIndex != -1)
                 {
                     var id = dg.Rows[e.RowIndex].Cells[0].Value;
                     Dentista obj = service.Buscar(Convert.ToInt32(id));
 
+                    int nivelUser = Global.nivel; // Obtenha o nível do usuário a partir da variável global Global.nivel
+
+                    if (nivelUser != 3)
+                    {
+                        // Impedir que o DataGridView seja clicado
+                        dg.Enabled = false;
+                        MessageBox.Show("Você não tem permissão para editar o dentista.");
+                        return;
+                    }
+
                     var form = new FrmEditarDentista(obj);
                     form.ShowDialog();
-                    
-                    if(form.status == "apagado")
+
+                    // Restabelecer a funcionalidade do DataGridView após o fechamento do formulário de edição
+                    dg.Enabled = true;
+
+                    if (form.status == "apagado")
                     {
                         this.Close();
                         FrmDadosDentista frm = new FrmDadosDentista();
                         frm.ShowDialog();
                     }
-                    if(form.status == "editado")
+
+                    if (form.status == "editado")
                     {
                         dg.Rows.RemoveAt(e.RowIndex);
                         GerarLinha(dg, obj);
                     }
-
-
                 }
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Erro ao selecionar o dentista " + ex.Message);
+                MessageBox.Show("Erro ao selecionar o dentista: " + ex.Message);
             }
+        }
+
+        private void tc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

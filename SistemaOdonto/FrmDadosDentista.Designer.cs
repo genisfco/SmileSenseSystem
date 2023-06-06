@@ -38,8 +38,9 @@
             this.tc.SelectedIndex = 0;
             this.tc.Size = new System.Drawing.Size(799, 331);
             this.tc.TabIndex = 0;
+            this.tc.SelectedIndexChanged += new System.EventHandler(this.tc_SelectedIndexChanged);
             // 
-            // frmConDentista
+            // FrmDadosDentista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -47,7 +48,7 @@
             this.Controls.Add(this.tc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "frmConDentista";
+            this.Name = "FrmDadosDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dentistas";
             this.ResumeLayout(false);
