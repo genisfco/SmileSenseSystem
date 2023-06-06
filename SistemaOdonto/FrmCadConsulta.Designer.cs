@@ -51,6 +51,7 @@
             // 
             // cbPaciente
             // 
+            this.cbPaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPaciente.FormattingEnabled = true;
             this.cbPaciente.Location = new System.Drawing.Point(17, 134);
             this.cbPaciente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -108,6 +109,7 @@
             // 
             // cbDentista
             // 
+            this.cbDentista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDentista.FormattingEnabled = true;
             this.cbDentista.Items.AddRange(new object[] {
             "Masculino",

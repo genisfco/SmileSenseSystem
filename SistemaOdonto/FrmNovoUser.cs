@@ -28,7 +28,6 @@ namespace SistemaOdonto
             txt_NomeUsuario.Focus();
         }
 
-
         private void btnSalvarUser_Click(object sender, EventArgs e)
         {
             string nome = txt_NomeUsuario.Text;

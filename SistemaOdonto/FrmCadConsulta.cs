@@ -86,6 +86,12 @@ namespace SistemaOdonto
             {
                 return "Escolha uma data!";
             }
+
+            else if (dtData.Value < DateTime.Now.Date)
+            {
+                return "Escolha uma data válida!";
+            }           
+
             else if (dtHora.Text == String.Empty)
             {
                 return "Escolha o Horário!";
@@ -111,6 +117,16 @@ namespace SistemaOdonto
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             tsNenhuma.Text = "";
+
+            string str_mensagem = string.Format("Paciente: {0}\r\n\r\nDentista: {1}\r\n\r\nAgendamento na Data: {2} e Hora: {3} ", cbPaciente.Text, cbDentista.Text, dtData.Value.ToShortDateString(), dtHora.Value.ToShortTimeString());            
+
+            DialogResult confirmacao = MessageBox.Show(str_mensagem, "Confirmação de Agendamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if(confirmacao == DialogResult.No)
+            {
+                return;
+            }            
+
             try
             {
                 ts.Text = ValidarCad();
@@ -127,8 +143,6 @@ namespace SistemaOdonto
 
                 MessageBox.Show("Erro ao Salvar " + ex.Message);
             }
-
-
         }
 
 

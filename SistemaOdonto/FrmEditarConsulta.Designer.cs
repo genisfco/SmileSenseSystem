@@ -77,6 +77,7 @@
             // 
             // cbDentista
             // 
+            this.cbDentista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDentista.FormattingEnabled = true;
             this.cbDentista.Location = new System.Drawing.Point(17, 211);
             this.cbDentista.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -96,6 +97,7 @@
             // 
             // cbPaciente
             // 
+            this.cbPaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPaciente.FormattingEnabled = true;
             this.cbPaciente.Location = new System.Drawing.Point(17, 134);
             this.cbPaciente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

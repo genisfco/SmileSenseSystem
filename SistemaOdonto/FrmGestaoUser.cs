@@ -27,6 +27,16 @@ namespace SistemaOdonto
 
         private void btnSalvarAlterUser_Click(object sender, EventArgs e)
         {
+            string nome = txt_NomeUsuario.Text;
+            string user_name = txt_Username.Text;
+            string password = txt_Senha.Text;
+
+            if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(user_name) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Por gentileza, preencha todos os Campos");
+                return;
+            }
+
             int linha = dgv_Usuarios.SelectedRows[0].Index;
             Usuario u = new Usuario();
 
@@ -43,7 +53,7 @@ namespace SistemaOdonto
 
         private void btnExcluirUser_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Deseja realmente Excluir?", "Exclusão de Usuário", MessageBoxButtons.YesNo);
+            DialogResult res = MessageBox.Show("Deseja realmente Excluir o Usuário?", "Exclusão de Usuário", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
                 DataConnection.ExcluirDadosUsuario(txt_ID.Text);
@@ -82,6 +92,14 @@ namespace SistemaOdonto
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txt_NomeUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

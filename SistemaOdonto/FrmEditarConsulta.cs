@@ -114,8 +114,19 @@ namespace SistemaOdonto
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
-        {
+        {          
+
             tsNenhuma.Text = "";
+
+            string str_mensagem = string.Format("Paciente: {0}\r\n\r\nDentista: {1}\r\n\r\nAgendamento na Data: {2} e Hora: {3} ", cbPaciente.Text, cbDentista.Text, dtData.Value.ToShortDateString(), dtHora.Value.ToShortTimeString());
+
+            DialogResult confirmacao = MessageBox.Show(str_mensagem, "Confirmação de Edição no Agendamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (confirmacao == DialogResult.No)
+            {
+                return;
+            }
+
             ts.Text = ValidarCad();
             if (ts.Text == "Sucesso")
             {

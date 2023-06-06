@@ -271,9 +271,8 @@ namespace SistemaOdonto
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erro ao Salvar " + ex.Message);                    
-                }
-                
-            }          
+                }                
+            } 
                      
         }
 
