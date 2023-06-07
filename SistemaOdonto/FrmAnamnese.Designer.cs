@@ -74,12 +74,18 @@ namespace SistemaOdonto
             // 
             // btnFecharAnamnese
             // 
-            this.btnFecharAnamnese.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFecharAnamnese.BackColor = System.Drawing.Color.White;
+            this.btnFecharAnamnese.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnFecharAnamnese.FlatAppearance.BorderSize = 3;
+            this.btnFecharAnamnese.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnFecharAnamnese.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFecharAnamnese.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFecharAnamnese.Image = global::SistemaOdonto.Properties.Resources.delete;
             this.btnFecharAnamnese.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFecharAnamnese.Location = new System.Drawing.Point(632, 446);
+            this.btnFecharAnamnese.Location = new System.Drawing.Point(421, 290);
+            this.btnFecharAnamnese.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFecharAnamnese.Name = "btnFecharAnamnese";
-            this.btnFecharAnamnese.Size = new System.Drawing.Size(306, 60);
+            this.btnFecharAnamnese.Size = new System.Drawing.Size(204, 39);
             this.btnFecharAnamnese.TabIndex = 113;
             this.btnFecharAnamnese.Text = "Fechar Ficha";
             this.btnFecharAnamnese.UseVisualStyleBackColor = false;
@@ -87,12 +93,18 @@ namespace SistemaOdonto
             // 
             // btnSalvarAnamnese
             // 
-            this.btnSalvarAnamnese.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSalvarAnamnese.BackColor = System.Drawing.Color.White;
+            this.btnSalvarAnamnese.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSalvarAnamnese.FlatAppearance.BorderSize = 3;
+            this.btnSalvarAnamnese.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnSalvarAnamnese.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSalvarAnamnese.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarAnamnese.Image = global::SistemaOdonto.Properties.Resources.botao_salvar;
             this.btnSalvarAnamnese.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvarAnamnese.Location = new System.Drawing.Point(84, 446);
+            this.btnSalvarAnamnese.Location = new System.Drawing.Point(56, 290);
+            this.btnSalvarAnamnese.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalvarAnamnese.Name = "btnSalvarAnamnese";
-            this.btnSalvarAnamnese.Size = new System.Drawing.Size(306, 60);
+            this.btnSalvarAnamnese.Size = new System.Drawing.Size(204, 39);
             this.btnSalvarAnamnese.TabIndex = 112;
             this.btnSalvarAnamnese.Text = "Salvar Anamnese";
             this.btnSalvarAnamnese.UseVisualStyleBackColor = false;
@@ -101,9 +113,10 @@ namespace SistemaOdonto
             // chboxDoencaCongNAO
             // 
             this.chboxDoencaCongNAO.AutoSize = true;
-            this.chboxDoencaCongNAO.Location = new System.Drawing.Point(393, 389);
+            this.chboxDoencaCongNAO.Location = new System.Drawing.Point(262, 253);
+            this.chboxDoencaCongNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxDoencaCongNAO.Name = "chboxDoencaCongNAO";
-            this.chboxDoencaCongNAO.Size = new System.Drawing.Size(64, 24);
+            this.chboxDoencaCongNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxDoencaCongNAO.TabIndex = 111;
             this.chboxDoencaCongNAO.Text = "Não";
             this.chboxDoencaCongNAO.UseVisualStyleBackColor = true;
@@ -111,9 +124,10 @@ namespace SistemaOdonto
             // chboxDoencaCongSIM
             // 
             this.chboxDoencaCongSIM.AutoSize = true;
-            this.chboxDoencaCongSIM.Location = new System.Drawing.Point(326, 389);
+            this.chboxDoencaCongSIM.Location = new System.Drawing.Point(217, 253);
+            this.chboxDoencaCongSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxDoencaCongSIM.Name = "chboxDoencaCongSIM";
-            this.chboxDoencaCongSIM.Size = new System.Drawing.Size(62, 24);
+            this.chboxDoencaCongSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxDoencaCongSIM.TabIndex = 110;
             this.chboxDoencaCongSIM.Text = "Sim";
             this.chboxDoencaCongSIM.UseVisualStyleBackColor = true;
@@ -121,9 +135,10 @@ namespace SistemaOdonto
             // chboxComplOdontoNAO
             // 
             this.chboxComplOdontoNAO.AutoSize = true;
-            this.chboxComplOdontoNAO.Location = new System.Drawing.Point(393, 348);
+            this.chboxComplOdontoNAO.Location = new System.Drawing.Point(262, 226);
+            this.chboxComplOdontoNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxComplOdontoNAO.Name = "chboxComplOdontoNAO";
-            this.chboxComplOdontoNAO.Size = new System.Drawing.Size(64, 24);
+            this.chboxComplOdontoNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxComplOdontoNAO.TabIndex = 109;
             this.chboxComplOdontoNAO.Text = "Não";
             this.chboxComplOdontoNAO.UseVisualStyleBackColor = true;
@@ -131,9 +146,10 @@ namespace SistemaOdonto
             // chboxComplOdontoSIM
             // 
             this.chboxComplOdontoSIM.AutoSize = true;
-            this.chboxComplOdontoSIM.Location = new System.Drawing.Point(326, 348);
+            this.chboxComplOdontoSIM.Location = new System.Drawing.Point(217, 226);
+            this.chboxComplOdontoSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxComplOdontoSIM.Name = "chboxComplOdontoSIM";
-            this.chboxComplOdontoSIM.Size = new System.Drawing.Size(62, 24);
+            this.chboxComplOdontoSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxComplOdontoSIM.TabIndex = 108;
             this.chboxComplOdontoSIM.Text = "Sim";
             this.chboxComplOdontoSIM.UseVisualStyleBackColor = true;
@@ -141,9 +157,10 @@ namespace SistemaOdonto
             // chboxProblHemorragNAO
             // 
             this.chboxProblHemorragNAO.AutoSize = true;
-            this.chboxProblHemorragNAO.Location = new System.Drawing.Point(393, 306);
+            this.chboxProblHemorragNAO.Location = new System.Drawing.Point(262, 199);
+            this.chboxProblHemorragNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxProblHemorragNAO.Name = "chboxProblHemorragNAO";
-            this.chboxProblHemorragNAO.Size = new System.Drawing.Size(64, 24);
+            this.chboxProblHemorragNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxProblHemorragNAO.TabIndex = 107;
             this.chboxProblHemorragNAO.Text = "Não";
             this.chboxProblHemorragNAO.UseVisualStyleBackColor = true;
@@ -151,9 +168,10 @@ namespace SistemaOdonto
             // chboxProblHemorragSIM
             // 
             this.chboxProblHemorragSIM.AutoSize = true;
-            this.chboxProblHemorragSIM.Location = new System.Drawing.Point(326, 306);
+            this.chboxProblHemorragSIM.Location = new System.Drawing.Point(217, 199);
+            this.chboxProblHemorragSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxProblHemorragSIM.Name = "chboxProblHemorragSIM";
-            this.chboxProblHemorragSIM.Size = new System.Drawing.Size(62, 24);
+            this.chboxProblHemorragSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxProblHemorragSIM.TabIndex = 106;
             this.chboxProblHemorragSIM.Text = "Sim";
             this.chboxProblHemorragSIM.UseVisualStyleBackColor = true;
@@ -161,9 +179,10 @@ namespace SistemaOdonto
             // chboxAlergiaMedicamentosaNAO
             // 
             this.chboxAlergiaMedicamentosaNAO.AutoSize = true;
-            this.chboxAlergiaMedicamentosaNAO.Location = new System.Drawing.Point(393, 263);
+            this.chboxAlergiaMedicamentosaNAO.Location = new System.Drawing.Point(262, 171);
+            this.chboxAlergiaMedicamentosaNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxAlergiaMedicamentosaNAO.Name = "chboxAlergiaMedicamentosaNAO";
-            this.chboxAlergiaMedicamentosaNAO.Size = new System.Drawing.Size(64, 24);
+            this.chboxAlergiaMedicamentosaNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxAlergiaMedicamentosaNAO.TabIndex = 105;
             this.chboxAlergiaMedicamentosaNAO.Text = "Não";
             this.chboxAlergiaMedicamentosaNAO.UseVisualStyleBackColor = true;
@@ -171,9 +190,10 @@ namespace SistemaOdonto
             // chboxAlergiaMedicamentosaSIM
             // 
             this.chboxAlergiaMedicamentosaSIM.AutoSize = true;
-            this.chboxAlergiaMedicamentosaSIM.Location = new System.Drawing.Point(326, 263);
+            this.chboxAlergiaMedicamentosaSIM.Location = new System.Drawing.Point(217, 171);
+            this.chboxAlergiaMedicamentosaSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxAlergiaMedicamentosaSIM.Name = "chboxAlergiaMedicamentosaSIM";
-            this.chboxAlergiaMedicamentosaSIM.Size = new System.Drawing.Size(62, 24);
+            this.chboxAlergiaMedicamentosaSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxAlergiaMedicamentosaSIM.TabIndex = 104;
             this.chboxAlergiaMedicamentosaSIM.Text = "Sim";
             this.chboxAlergiaMedicamentosaSIM.UseVisualStyleBackColor = true;
@@ -181,9 +201,10 @@ namespace SistemaOdonto
             // chboxUsoMedicamentosNAO
             // 
             this.chboxUsoMedicamentosNAO.AutoSize = true;
-            this.chboxUsoMedicamentosNAO.Location = new System.Drawing.Point(393, 218);
+            this.chboxUsoMedicamentosNAO.Location = new System.Drawing.Point(262, 142);
+            this.chboxUsoMedicamentosNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxUsoMedicamentosNAO.Name = "chboxUsoMedicamentosNAO";
-            this.chboxUsoMedicamentosNAO.Size = new System.Drawing.Size(64, 24);
+            this.chboxUsoMedicamentosNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxUsoMedicamentosNAO.TabIndex = 103;
             this.chboxUsoMedicamentosNAO.Text = "Não";
             this.chboxUsoMedicamentosNAO.UseVisualStyleBackColor = true;
@@ -191,9 +212,10 @@ namespace SistemaOdonto
             // chboxUsoMedicamentosSIM
             // 
             this.chboxUsoMedicamentosSIM.AutoSize = true;
-            this.chboxUsoMedicamentosSIM.Location = new System.Drawing.Point(326, 218);
+            this.chboxUsoMedicamentosSIM.Location = new System.Drawing.Point(217, 142);
+            this.chboxUsoMedicamentosSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxUsoMedicamentosSIM.Name = "chboxUsoMedicamentosSIM";
-            this.chboxUsoMedicamentosSIM.Size = new System.Drawing.Size(62, 24);
+            this.chboxUsoMedicamentosSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxUsoMedicamentosSIM.TabIndex = 102;
             this.chboxUsoMedicamentosSIM.Text = "Sim";
             this.chboxUsoMedicamentosSIM.UseVisualStyleBackColor = true;
@@ -201,9 +223,10 @@ namespace SistemaOdonto
             // chboxCardiopatiaNAO
             // 
             this.chboxCardiopatiaNAO.AutoSize = true;
-            this.chboxCardiopatiaNAO.Location = new System.Drawing.Point(393, 175);
+            this.chboxCardiopatiaNAO.Location = new System.Drawing.Point(262, 114);
+            this.chboxCardiopatiaNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxCardiopatiaNAO.Name = "chboxCardiopatiaNAO";
-            this.chboxCardiopatiaNAO.Size = new System.Drawing.Size(64, 24);
+            this.chboxCardiopatiaNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxCardiopatiaNAO.TabIndex = 101;
             this.chboxCardiopatiaNAO.Text = "Não";
             this.chboxCardiopatiaNAO.UseVisualStyleBackColor = true;
@@ -211,9 +234,10 @@ namespace SistemaOdonto
             // chboxCardiopatiaSIM
             // 
             this.chboxCardiopatiaSIM.AutoSize = true;
-            this.chboxCardiopatiaSIM.Location = new System.Drawing.Point(326, 175);
+            this.chboxCardiopatiaSIM.Location = new System.Drawing.Point(217, 114);
+            this.chboxCardiopatiaSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxCardiopatiaSIM.Name = "chboxCardiopatiaSIM";
-            this.chboxCardiopatiaSIM.Size = new System.Drawing.Size(62, 24);
+            this.chboxCardiopatiaSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxCardiopatiaSIM.TabIndex = 100;
             this.chboxCardiopatiaSIM.Text = "Sim";
             this.chboxCardiopatiaSIM.UseVisualStyleBackColor = true;
@@ -221,9 +245,10 @@ namespace SistemaOdonto
             // chboxHipertensaoNAO
             // 
             this.chboxHipertensaoNAO.AutoSize = true;
-            this.chboxHipertensaoNAO.Location = new System.Drawing.Point(393, 132);
+            this.chboxHipertensaoNAO.Location = new System.Drawing.Point(262, 86);
+            this.chboxHipertensaoNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxHipertensaoNAO.Name = "chboxHipertensaoNAO";
-            this.chboxHipertensaoNAO.Size = new System.Drawing.Size(64, 24);
+            this.chboxHipertensaoNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxHipertensaoNAO.TabIndex = 99;
             this.chboxHipertensaoNAO.Text = "Não";
             this.chboxHipertensaoNAO.UseVisualStyleBackColor = true;
@@ -231,9 +256,10 @@ namespace SistemaOdonto
             // chboxHipertensaoSIM
             // 
             this.chboxHipertensaoSIM.AutoSize = true;
-            this.chboxHipertensaoSIM.Location = new System.Drawing.Point(326, 132);
+            this.chboxHipertensaoSIM.Location = new System.Drawing.Point(217, 86);
+            this.chboxHipertensaoSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxHipertensaoSIM.Name = "chboxHipertensaoSIM";
-            this.chboxHipertensaoSIM.Size = new System.Drawing.Size(62, 24);
+            this.chboxHipertensaoSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxHipertensaoSIM.TabIndex = 98;
             this.chboxHipertensaoSIM.Text = "Sim";
             this.chboxHipertensaoSIM.UseVisualStyleBackColor = true;
@@ -241,9 +267,10 @@ namespace SistemaOdonto
             // chboxDiabetesNAO
             // 
             this.chboxDiabetesNAO.AutoSize = true;
-            this.chboxDiabetesNAO.Location = new System.Drawing.Point(393, 89);
+            this.chboxDiabetesNAO.Location = new System.Drawing.Point(262, 58);
+            this.chboxDiabetesNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxDiabetesNAO.Name = "chboxDiabetesNAO";
-            this.chboxDiabetesNAO.Size = new System.Drawing.Size(64, 24);
+            this.chboxDiabetesNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxDiabetesNAO.TabIndex = 97;
             this.chboxDiabetesNAO.Text = "Não";
             this.chboxDiabetesNAO.UseVisualStyleBackColor = true;
@@ -251,217 +278,241 @@ namespace SistemaOdonto
             // chboxDiabetesSIM
             // 
             this.chboxDiabetesSIM.AutoSize = true;
-            this.chboxDiabetesSIM.Location = new System.Drawing.Point(326, 89);
+            this.chboxDiabetesSIM.Location = new System.Drawing.Point(217, 58);
+            this.chboxDiabetesSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chboxDiabetesSIM.Name = "chboxDiabetesSIM";
-            this.chboxDiabetesSIM.Size = new System.Drawing.Size(62, 24);
+            this.chboxDiabetesSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxDiabetesSIM.TabIndex = 96;
             this.chboxDiabetesSIM.Text = "Sim";
             this.chboxDiabetesSIM.UseVisualStyleBackColor = true;
             // 
             // txtAlergiaQualMedicamento
             // 
-            this.txtAlergiaQualMedicamento.Location = new System.Drawing.Point(621, 258);
+            this.txtAlergiaQualMedicamento.Location = new System.Drawing.Point(414, 168);
+            this.txtAlergiaQualMedicamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAlergiaQualMedicamento.Name = "txtAlergiaQualMedicamento";
-            this.txtAlergiaQualMedicamento.Size = new System.Drawing.Size(368, 26);
+            this.txtAlergiaQualMedicamento.Size = new System.Drawing.Size(247, 20);
             this.txtAlergiaQualMedicamento.TabIndex = 95;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(562, 268);
+            this.label12.Location = new System.Drawing.Point(375, 174);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 20);
+            this.label12.Size = new System.Drawing.Size(35, 13);
             this.label12.TabIndex = 94;
             this.label12.Text = "Qual?";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(72, 268);
+            this.label13.Location = new System.Drawing.Point(48, 174);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(175, 20);
+            this.label13.Size = new System.Drawing.Size(117, 13);
             this.label13.TabIndex = 93;
             this.label13.Text = "Alergia Medicamentosa";
             // 
             // lbCPF
             // 
             this.lbCPF.AutoSize = true;
-            this.lbCPF.Location = new System.Drawing.Point(38, 23);
+            this.lbCPF.Location = new System.Drawing.Point(25, 15);
+            this.lbCPF.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCPF.Name = "lbCPF";
-            this.lbCPF.Size = new System.Drawing.Size(40, 20);
+            this.lbCPF.Size = new System.Drawing.Size(27, 13);
             this.lbCPF.TabIndex = 92;
             this.lbCPF.Text = "CPF";
             // 
             // maskCPFPaciente
             // 
             this.maskCPFPaciente.BackColor = System.Drawing.SystemColors.Control;
-            this.maskCPFPaciente.Location = new System.Drawing.Point(84, 17);
+            this.maskCPFPaciente.Location = new System.Drawing.Point(56, 11);
+            this.maskCPFPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskCPFPaciente.Mask = "000.000.000-00";
             this.maskCPFPaciente.Name = "maskCPFPaciente";
             this.maskCPFPaciente.ReadOnly = true;
-            this.maskCPFPaciente.Size = new System.Drawing.Size(122, 26);
+            this.maskCPFPaciente.Size = new System.Drawing.Size(83, 20);
             this.maskCPFPaciente.TabIndex = 91;
             this.maskCPFPaciente.TabStop = false;
             // 
             // txtDoenca
             // 
-            this.txtDoenca.Location = new System.Drawing.Point(621, 385);
+            this.txtDoenca.Location = new System.Drawing.Point(414, 250);
+            this.txtDoenca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDoenca.Name = "txtDoenca";
-            this.txtDoenca.Size = new System.Drawing.Size(368, 26);
+            this.txtDoenca.Size = new System.Drawing.Size(247, 20);
             this.txtDoenca.TabIndex = 90;
             // 
             // txtComplicacoes
             // 
-            this.txtComplicacoes.Location = new System.Drawing.Point(621, 342);
+            this.txtComplicacoes.Location = new System.Drawing.Point(414, 222);
+            this.txtComplicacoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtComplicacoes.Name = "txtComplicacoes";
-            this.txtComplicacoes.Size = new System.Drawing.Size(368, 26);
+            this.txtComplicacoes.Size = new System.Drawing.Size(247, 20);
             this.txtComplicacoes.TabIndex = 89;
             // 
             // txtMotivoProblemas
             // 
-            this.txtMotivoProblemas.Location = new System.Drawing.Point(621, 300);
+            this.txtMotivoProblemas.Location = new System.Drawing.Point(414, 195);
+            this.txtMotivoProblemas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMotivoProblemas.Name = "txtMotivoProblemas";
-            this.txtMotivoProblemas.Size = new System.Drawing.Size(368, 26);
+            this.txtMotivoProblemas.Size = new System.Drawing.Size(247, 20);
             this.txtMotivoProblemas.TabIndex = 88;
             // 
             // txtUsoQualMedicamento
             // 
-            this.txtUsoQualMedicamento.Location = new System.Drawing.Point(621, 215);
+            this.txtUsoQualMedicamento.Location = new System.Drawing.Point(414, 140);
+            this.txtUsoQualMedicamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsoQualMedicamento.Name = "txtUsoQualMedicamento";
-            this.txtUsoQualMedicamento.Size = new System.Drawing.Size(368, 26);
+            this.txtUsoQualMedicamento.Size = new System.Drawing.Size(247, 20);
             this.txtUsoQualMedicamento.TabIndex = 87;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(562, 392);
+            this.label11.Location = new System.Drawing.Point(375, 255);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 20);
+            this.label11.Size = new System.Drawing.Size(35, 13);
             this.label11.TabIndex = 86;
             this.label11.Text = "Qual?";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(38, 392);
+            this.label10.Location = new System.Drawing.Point(25, 255);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(239, 20);
+            this.label10.Size = new System.Drawing.Size(162, 13);
             this.label10.TabIndex = 85;
             this.label10.Text = "Doença congenita ou adquirida?";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(542, 352);
+            this.label9.Location = new System.Drawing.Point(361, 229);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 20);
+            this.label9.Size = new System.Drawing.Size(50, 13);
             this.label9.TabIndex = 84;
             this.label9.Text = "Por quê?";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 352);
+            this.label8.Location = new System.Drawing.Point(5, 229);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(302, 20);
+            this.label8.Size = new System.Drawing.Size(203, 13);
             this.label8.TabIndex = 83;
             this.label8.Text = "Complicações em consulta odontológica?";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(555, 311);
+            this.label7.Location = new System.Drawing.Point(370, 202);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 20);
+            this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 82;
             this.label7.Text = "Motivo:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(464, 222);
+            this.label6.Location = new System.Drawing.Point(309, 144);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 20);
+            this.label6.Size = new System.Drawing.Size(102, 13);
             this.label6.TabIndex = 81;
             this.label6.Text = "Qual Medicamento?";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(60, 311);
+            this.label5.Location = new System.Drawing.Point(40, 202);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(187, 20);
+            this.label5.Size = new System.Drawing.Size(124, 13);
             this.label5.TabIndex = 80;
             this.label5.Text = "Problemas Hemorrágicos";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 222);
+            this.label4.Location = new System.Drawing.Point(25, 144);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(233, 20);
+            this.label4.Size = new System.Drawing.Size(158, 13);
             this.label4.TabIndex = 79;
             this.label4.Text = "Uso contínuo de medicamentos";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(110, 175);
+            this.label3.Location = new System.Drawing.Point(73, 114);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 20);
+            this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 78;
             this.label3.Text = "Cardiopatia";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(110, 132);
+            this.label2.Location = new System.Drawing.Point(73, 86);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 20);
+            this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 77;
             this.label2.Text = "Hipertensão";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(122, 89);
+            this.label1.Location = new System.Drawing.Point(81, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 20);
+            this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 76;
             this.label1.Text = "Diabetes";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(376, 17);
+            this.txtNome.Location = new System.Drawing.Point(251, 11);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNome.Name = "txtNome";
             this.txtNome.ReadOnly = true;
-            this.txtNome.Size = new System.Drawing.Size(616, 26);
+            this.txtNome.Size = new System.Drawing.Size(412, 20);
             this.txtNome.TabIndex = 75;
             this.txtNome.TabStop = false;
             // 
             // lbPaciente
             // 
             this.lbPaciente.AutoSize = true;
-            this.lbPaciente.Location = new System.Drawing.Point(300, 23);
+            this.lbPaciente.Location = new System.Drawing.Point(200, 15);
+            this.lbPaciente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPaciente.Name = "lbPaciente";
-            this.lbPaciente.Size = new System.Drawing.Size(71, 20);
+            this.lbPaciente.Size = new System.Drawing.Size(49, 13);
             this.lbPaciente.TabIndex = 74;
             this.lbPaciente.Text = "Paciente";
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(637, 93);
+            this.lblCodigo.Location = new System.Drawing.Point(425, 60);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(35, 20);
+            this.lblCodigo.Size = new System.Drawing.Size(25, 13);
             this.lblCodigo.TabIndex = 114;
             this.lblCodigo.Text = "cod";
             // 
             // FrmAnamnese
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 518);
+            this.ClientSize = new System.Drawing.Size(669, 337);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.btnFecharAnamnese);
             this.Controls.Add(this.btnSalvarAnamnese);
@@ -504,7 +555,6 @@ namespace SistemaOdonto
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lbPaciente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAnamnese";
             this.Text = "Ficha Anamnese";
             this.ResumeLayout(false);

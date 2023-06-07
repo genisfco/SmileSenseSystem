@@ -104,10 +104,14 @@
             // 
             // btnAdicionarLembrete
             // 
-            this.btnAdicionarLembrete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAdicionarLembrete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdicionarLembrete.BackColor = System.Drawing.Color.White;
+            this.btnAdicionarLembrete.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAdicionarLembrete.FlatAppearance.BorderSize = 3;
+            this.btnAdicionarLembrete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnAdicionarLembrete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAdicionarLembrete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarLembrete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarLembrete.ForeColor = System.Drawing.Color.White;
+            this.btnAdicionarLembrete.ForeColor = System.Drawing.Color.Black;
             this.btnAdicionarLembrete.Image = global::SistemaOdonto.Properties.Resources.insert;
             this.btnAdicionarLembrete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdicionarLembrete.Location = new System.Drawing.Point(12, 9);
