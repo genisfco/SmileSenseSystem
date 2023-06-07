@@ -48,11 +48,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbDentista = new System.Windows.Forms.ComboBox();
             this.dg = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Paciente = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Status = new System.Windows.Forms.DataGridViewImageColumn();
-            this.CodigoPaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.anot = new System.Windows.Forms.FlowLayoutPanel();
@@ -69,6 +64,11 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paciente = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Status = new System.Windows.Forms.DataGridViewImageColumn();
+            this.CodigoPaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.pnlBarraLogin.SuspendLayout();
@@ -113,21 +113,21 @@
             // menuConsulta
             // 
             this.menuConsulta.Name = "menuConsulta";
-            this.menuConsulta.Size = new System.Drawing.Size(270, 34);
+            this.menuConsulta.Size = new System.Drawing.Size(230, 34);
             this.menuConsulta.Text = "Nova Consulta";
             this.menuConsulta.Click += new System.EventHandler(this.menuConsulta_Click);
             // 
             // menuDentista
             // 
             this.menuDentista.Name = "menuDentista";
-            this.menuDentista.Size = new System.Drawing.Size(270, 34);
+            this.menuDentista.Size = new System.Drawing.Size(230, 34);
             this.menuDentista.Text = "Novo Dentista";
             this.menuDentista.Click += new System.EventHandler(this.menuDentista_Click);
             // 
             // menuPaciente
             // 
             this.menuPaciente.Name = "menuPaciente";
-            this.menuPaciente.Size = new System.Drawing.Size(270, 34);
+            this.menuPaciente.Size = new System.Drawing.Size(230, 34);
             this.menuPaciente.Text = "Novo Paciente";
             this.menuPaciente.Click += new System.EventHandler(this.menuPaciente_Click);
             // 
@@ -263,47 +263,11 @@
             this.dg.Location = new System.Drawing.Point(22, 148);
             this.dg.Margin = new System.Windows.Forms.Padding(4);
             this.dg.Name = "dg";
+            this.dg.RowHeadersVisible = false;
             this.dg.RowHeadersWidth = 62;
-            this.dg.Size = new System.Drawing.Size(486, 780);
+            this.dg.Size = new System.Drawing.Size(485, 780);
             this.dg.TabIndex = 3;
             this.dg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_CellContentClick);
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "ColunaCodigo";
-            this.Codigo.MinimumWidth = 8;
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Visible = false;
-            this.Codigo.Width = 150;
-            // 
-            // Hora
-            // 
-            this.Hora.HeaderText = "Hora";
-            this.Hora.MinimumWidth = 8;
-            this.Hora.Name = "Hora";
-            this.Hora.Width = 70;
-            // 
-            // Paciente
-            // 
-            this.Paciente.HeaderText = "Paciente";
-            this.Paciente.MinimumWidth = 8;
-            this.Paciente.Name = "Paciente";
-            this.Paciente.Width = 150;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 8;
-            this.Status.Name = "Status";
-            this.Status.Width = 60;
-            // 
-            // CodigoPaciente
-            // 
-            this.CodigoPaciente.HeaderText = "CodigoPaciente";
-            this.CodigoPaciente.MinimumWidth = 8;
-            this.CodigoPaciente.Name = "CodigoPaciente";
-            this.CodigoPaciente.Visible = false;
-            this.CodigoPaciente.Width = 75;
             // 
             // label2
             // 
@@ -475,6 +439,48 @@
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "ColunaCodigo";
+            this.Codigo.MinimumWidth = 8;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Codigo.Visible = false;
+            this.Codigo.Width = 10;
+            // 
+            // Hora
+            // 
+            this.Hora.HeaderText = "Hora";
+            this.Hora.MinimumWidth = 8;
+            this.Hora.Name = "Hora";
+            this.Hora.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Hora.Width = 50;
+            // 
+            // Paciente
+            // 
+            this.Paciente.HeaderText = "Paciente";
+            this.Paciente.MinimumWidth = 8;
+            this.Paciente.Name = "Paciente";
+            this.Paciente.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Paciente.Width = 220;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 8;
+            this.Status.Name = "Status";
+            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Status.Width = 50;
+            // 
+            // CodigoPaciente
+            // 
+            this.CodigoPaciente.HeaderText = "CodigoPaciente";
+            this.CodigoPaciente.MinimumWidth = 8;
+            this.CodigoPaciente.Name = "CodigoPaciente";
+            this.CodigoPaciente.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.CodigoPaciente.Visible = false;
+            this.CodigoPaciente.Width = 10;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -530,11 +536,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbDentista;
         private System.Windows.Forms.DataGridView dg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
-        private System.Windows.Forms.DataGridViewLinkColumn Paciente;
-        private System.Windows.Forms.DataGridViewImageColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPaciente;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
@@ -563,6 +564,11 @@
         public System.Windows.Forms.ToolStripMenuItem menuDadosDentistas;
         public System.Windows.Forms.ToolStripMenuItem menuPaciente;
         public System.Windows.Forms.ToolStripMenuItem menuConsulta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
+        private System.Windows.Forms.DataGridViewLinkColumn Paciente;
+        private System.Windows.Forms.DataGridViewImageColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPaciente;
     }
 }
 

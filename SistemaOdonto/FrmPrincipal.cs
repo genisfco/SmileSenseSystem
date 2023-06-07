@@ -31,6 +31,10 @@ namespace SistemaOdonto
             dg.Columns["Hora"].ReadOnly = true;
             dg.Columns["Paciente"].ReadOnly = true;
 
+            dg.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dg.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dg.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             // para status
             pictureBoxes = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5 };
             imageLabels = new Label[pictureBoxes.Length];
@@ -139,10 +143,14 @@ namespace SistemaOdonto
                     int linha = dg.Rows.Add();
                     dg.Rows[linha].Cells[0].Value = item.IdConsulta;
                     dg.Rows[linha].Cells[1].Value = item.HoraMarcada.Value.ToString("HH:mm");
-                    dg.Rows[linha].Cells[2].Value = serviceP.Buscar(item.IdPaciente).Nome; 
+                    dg.Rows[linha].Cells[1].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dg.Rows[linha].Cells[2].Value = serviceP.Buscar(item.IdPaciente).Nome;
+                    dg.Rows[linha].Cells[2].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dg.Rows[linha].Cells[3].Value = imagemStatus(item.Status);
+                    dg.Rows[linha].Cells[3].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dg.Rows[linha].Cells[4].Value = item.IdPaciente;
                 }
+                
             }
         }
 
