@@ -27,6 +27,10 @@ namespace SistemaOdonto
 
             IniciarFormulario();
 
+            
+            dg.Columns["Hora"].ReadOnly = true;
+            dg.Columns["Paciente"].ReadOnly = true;
+
             // para status
             pictureBoxes = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5 };
             imageLabels = new Label[pictureBoxes.Length];
@@ -237,37 +241,40 @@ namespace SistemaOdonto
                 FrmEditarPaciente frm = new FrmEditarPaciente(p);
                 frm.Show();
             }
-
-            if (e.ColumnIndex == 3 && e.RowIndex != -1)
+            if (e.ColumnIndex == 3 && e.RowIndex != -1 && dg.Rows[e.RowIndex].Cells[3].Value != null && dg.Rows[e.RowIndex].Cells[3].Value.ToString() != "")
             {
                 int id = Convert.ToInt32(dg.Rows[e.RowIndex].Cells[0].Value);
                 Consulta c = service.Buscar(id);
-                string s = c.Status;
 
-                switch (s)
+                if (c != null)
                 {
-                    case "Confirmado":
-                        c.Status = "Desmarcado";
-                        break;
-                    case "Desmarcado":
-                        c.Status = "Ja chegou";
-                        break;
-                    case "Ja chegou":
-                        c.Status = "Em atendimento";
-                        break;
-                    case "Em atendimento":
-                        c.Status = "Nao confirmado";
-                        break;
-                    case "Nao confirmado":
-                        c.Status = "Confirmado";
-                        break;
-                    default:
-                        c.Status = "Nao confirmado";
-                        break;
-                }
+                    string s = c.Status;
 
-                service.Editar(c);
-                atualizarAgenda(Convert.ToInt32(cbDentista.SelectedValue));
+                    switch (s)
+                    {
+                        case "Confirmado":
+                            c.Status = "Desmarcado";
+                            break;
+                        case "Desmarcado":
+                            c.Status = "Ja chegou";
+                            break;
+                        case "Ja chegou":
+                            c.Status = "Em atendimento";
+                            break;
+                        case "Em atendimento":
+                            c.Status = "Nao confirmado";
+                            break;
+                        case "Nao confirmado":
+                            c.Status = "Confirmado";
+                            break;
+                        default:
+                            c.Status = "Nao confirmado";
+                            break;
+                    }
+
+                    service.Editar(c);
+                    atualizarAgenda(Convert.ToInt32(cbDentista.SelectedValue));
+                }
             }
 
 
