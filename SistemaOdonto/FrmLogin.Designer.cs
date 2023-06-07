@@ -64,6 +64,11 @@
             // 
             // btn_Logar
             // 
+            this.btn_Logar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btn_Logar.FlatAppearance.BorderSize = 3;
+            this.btn_Logar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btn_Logar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btn_Logar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Logar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Logar.Image = global::SistemaOdonto.Properties.Resources.btnLogin_Image;
             this.btn_Logar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -77,6 +82,11 @@
             // 
             // btn_Sair
             // 
+            this.btn_Sair.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btn_Sair.FlatAppearance.BorderSize = 3;
+            this.btn_Sair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Sair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_Sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sair.Image = global::SistemaOdonto.Properties.Resources.delete;
             this.btn_Sair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
