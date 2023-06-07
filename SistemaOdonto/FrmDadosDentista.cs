@@ -28,7 +28,7 @@ namespace SistemaOdonto
             var lista = service.Listar();
             if(lista == null)
             {
-                MessageBox.Show("Não existem dentistas cadastrados");
+                MessageBox.Show("Não existem Dentistas cadastrados");
             }
             else
             {
@@ -118,15 +118,15 @@ namespace SistemaOdonto
                     var id = dg.Rows[e.RowIndex].Cells[0].Value;
                     Dentista obj = service.Buscar(Convert.ToInt32(id));
 
-                    int nivelUser = Global.nivel; // Obtenha o nível do usuário a partir da variável global Global.nivel
+                    //int nivelUser = Global.nivel; // Obtenha o nível do usuário a partir da variável global Global.nivel
 
-                    if (nivelUser != 3)
-                    {
-                        // Impedir que o DataGridView seja clicado
-                        dg.Enabled = false;
-                        MessageBox.Show("Você não tem permissão para editar o dentista.");
-                        return;
-                    }
+                    //if (nivelUser != 3)
+                    //{
+                    //    // Impedir que o DataGridView seja clicado
+                    //    dg.Enabled = false;
+                    //    MessageBox.Show("Desculpe, você não tem permissão para Editar os Dados de Dentistas.");
+                    //    return;
+                    //}
 
                     var form = new FrmEditarDentista(obj);
                     form.ShowDialog();
@@ -152,11 +152,6 @@ namespace SistemaOdonto
             {
                 MessageBox.Show("Erro ao selecionar o dentista: " + ex.Message);
             }
-        }
-
-        private void tc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        }        
     }
 }

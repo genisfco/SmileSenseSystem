@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Globais;
 
@@ -14,12 +9,15 @@ namespace SistemaOdonto
     public partial class FrmLogin : Form
     {
         FrmPrincipal frmPrincipal;
+
         DataTable dt = new DataTable();        
 
-        public FrmLogin(FrmPrincipal frm)
+        public FrmLogin(FrmPrincipal frmP)
         {
             InitializeComponent();
-            frmPrincipal = frm; 
+            frmPrincipal = frmP;
+            //frmEdtPaciente = frmEdP;
+            //frmEdtDentista = frmEdD;
         }
 
         private void btn_Logar_Click(object sender, EventArgs e)
@@ -44,27 +42,28 @@ namespace SistemaOdonto
                 frmPrincipal.lb_NomeUsuario.Text = dt.Rows[0].Field<string>("nome_user");
                 frmPrincipal.pb_ledLogado.Image = Properties.Resources.Circle_Green;
                 frmPrincipal.pnlBarraLogin.BackColor = Color.FromArgb(192, 255, 192);
-                //caso de usso
+                
+                
                 int nivelUser = dt.Rows[0].Field<int>("nivel_user");
-                if (nivelUser == 3)
+                
+                if (nivelUser == 1)
                 {
-                    frmPrincipal.usuáriosToolStripMenuItem.Visible = true;
+                    //sem acesso aos cadastros de dados (dentistas)
+                    frmPrincipal.menuDentista.Enabled = false;
+
+                    //não poderá consultar dados de dentistas
+                    frmPrincipal.menuDadosDentistas.Enabled = false;
+
+                    //sem acesso aos usuários
+                    frmPrincipal.usuáriosToolStripMenuItem.Visible = false;
+
+                    //sem acesso ao Suporte
+                    frmPrincipal.MenuAjuda.Visible = false;                    
                 }
                 else if (nivelUser == 2)
-                {
-                    frmPrincipal.usuáriosToolStripMenuItem.Visible = false;
-                    frmPrincipal.menuDentista.Visible = false;
-
-                }
-                else if (nivelUser == 1)
-                {
-                    frmPrincipal.usuáriosToolStripMenuItem.Visible = false;
-                    frmPrincipal.menuDentista.Visible = false;
-
-                }
-                else
-                {
-                    frmPrincipal.usuáriosToolStripMenuItem.Visible = false;
+                {                    
+                    //sem acesso aos usuários
+                    frmPrincipal.usuáriosToolStripMenuItem.Visible = false;                    
                 }
 
                 Global.nivel = int.Parse(dt.Rows[0].Field<int>("nivel_user").ToString());
@@ -79,19 +78,12 @@ namespace SistemaOdonto
         }
         private void btn_Sair_Click(object sender, EventArgs e)
         {
+            Global.logado = false;
+            Global.nivel = 0;
+
             Application.Exit(); 
-        }
-
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        }        
+       
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)

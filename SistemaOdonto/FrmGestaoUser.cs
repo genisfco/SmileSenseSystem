@@ -49,6 +49,8 @@ namespace SistemaOdonto
 
             DataConnection.AtualizarDadosUsuario(u);
             dgv_Usuarios[1, linha].Value = txt_NomeUsuario.Text;
+
+            MessageBox.Show("Dados atualizados com sucesso!");
         }
 
         private void btnExcluirUser_Click(object sender, EventArgs e)

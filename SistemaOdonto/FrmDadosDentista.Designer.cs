@@ -38,7 +38,6 @@
             this.tc.SelectedIndex = 0;
             this.tc.Size = new System.Drawing.Size(799, 331);
             this.tc.TabIndex = 0;
-            this.tc.SelectedIndexChanged += new System.EventHandler(this.tc_SelectedIndexChanged);
             // 
             // FrmDadosDentista
             // 

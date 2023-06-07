@@ -678,7 +678,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmEditarPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editar Paciente";
+            this.Text = "Paciente Cadastrado";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -693,7 +693,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel ts;
         private System.Windows.Forms.ToolStripStatusLabel tsNenhuma;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Button btnBuscaCEP;
@@ -730,5 +729,6 @@
         private System.Windows.Forms.ComboBox cbAno;
         private System.Windows.Forms.ComboBox cbMes;
         private System.Windows.Forms.ComboBox cbDia;
+        public System.Windows.Forms.Button btnExcluir;
     }
 }

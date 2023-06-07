@@ -23,6 +23,15 @@ namespace SistemaOdonto
             InitializeComponent();
             lblCodigo.Visible = false;
             IniciarFormulario(obj);
+
+            if (Globais.Global.nivel == 1 || Globais.Global.nivel == 2)
+            {
+                btnExcluir.Enabled = false;
+            }
+            else
+            {
+                btnExcluir.Enabled = true;
+            }
         }
 
         private void IniciarFormulario(Dentista objP)

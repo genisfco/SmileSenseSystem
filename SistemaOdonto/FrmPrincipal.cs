@@ -396,7 +396,6 @@ namespace SistemaOdonto
                 Globais.Global.nivel = 0;
                 Globais.Global.logado = false;
 
-
                 FrmLogin frmlogin = new FrmLogin(this);
                 frmlogin.ShowDialog();
             }            
