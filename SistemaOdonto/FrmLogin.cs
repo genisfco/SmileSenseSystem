@@ -81,7 +81,14 @@ namespace SistemaOdonto
             Global.logado = false;
             Global.nivel = 0;
 
-            Application.Exit(); 
+            DialogResult resultado = MessageBox.Show("Deseja sair da aplicação?", "Confirmação de saída",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                // Lógica para sair da aplicação
+                Application.Exit();
+            }
         }        
        
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

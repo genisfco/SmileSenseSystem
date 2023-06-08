@@ -52,7 +52,7 @@ namespace SistemaOdonto
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            this.Close();
+                        this.Close();
         }
 
         private void txt_NomeUsuario_KeyPress(object sender, KeyPressEventArgs e)

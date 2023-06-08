@@ -376,7 +376,14 @@ namespace SistemaOdonto
                 Globais.Global.nivel = 0;
                 Globais.Global.logado = false;
 
-                Application.Exit();
+                DialogResult resultado = MessageBox.Show("Deseja sair da aplicação?", "Confirmação de saída",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Lógica para sair da aplicação
+                    Application.Exit();
+                }
             }            
         }
 
