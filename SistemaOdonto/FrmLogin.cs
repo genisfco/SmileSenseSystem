@@ -27,12 +27,12 @@ namespace SistemaOdonto
 
             if (username == "" || senha == "")
             {
-                MessageBox.Show("Usuário e/ou Senha inválidos!");
+                MessageBox.Show("Usuário e/ou Senha inválidos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_UserName.Focus();
                 return;
             }
-
-            string sql = "SELECT * FROM Usuarios WHERE username='" + username + "' AND senha_user='" + senha + "'";
+                            
+             string sql = "SELECT * FROM Usuarios WHERE username='" + username + "' AND senha_user='" + senha + "'";
             dt = DataConnection.consulta(sql);
 
 
@@ -73,7 +73,8 @@ namespace SistemaOdonto
             }
             else
             {
-                MessageBox.Show("Usuário não encontrado!");
+                MessageBox.Show("Usuário não encontrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
             }
         }
         private void btn_Sair_Click(object sender, EventArgs e)
