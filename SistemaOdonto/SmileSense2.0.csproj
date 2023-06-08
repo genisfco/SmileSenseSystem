@@ -482,6 +482,7 @@
     <None Include="Resources\iconesquerda.png" />
     <None Include="Resources\iconedireita.png" />
     <None Include="Resources\group.ico" />
+    <None Include="Resources\ico.png" />
     <Content Include="Resources\MAjuda.Image.png" />
     <Content Include="Resources\MSair.Image.png" />
     <None Include="Resources\odontograma2.2.jpg" />
