@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadDentista));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ts = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsNenhuma = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.rgEspecialista = new System.Windows.Forms.Label();
             this.cpfEspecialista = new System.Windows.Forms.Label();
             this.maskRGDent = new System.Windows.Forms.MaskedTextBox();
@@ -50,8 +50,9 @@
             this.comboxEspecialidade1 = new System.Windows.Forms.ComboBox();
             this.especialidade2 = new System.Windows.Forms.Label();
             this.comboxEspecialidade2 = new System.Windows.Forms.ComboBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -177,25 +178,6 @@
             this.tsNenhuma.Size = new System.Drawing.Size(60, 17);
             this.tsNenhuma.Text = "Nenhuma";
             // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackColor = System.Drawing.Color.White;
-            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.Image = global::SistemaOdonto.Properties.Resources.file;
-            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpar.Location = new System.Drawing.Point(224, 224);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(124, 43);
-            this.btnLimpar.TabIndex = 11;
-            this.btnLimpar.Text = "Novo/Limpar";
-            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpar.UseVisualStyleBackColor = false;
-            this.btnLimpar.Click += new System.EventHandler(this.btnConsulta_Click);
-            // 
             // rgEspecialista
             // 
             this.rgEspecialista.AutoSize = true;
@@ -297,25 +279,6 @@
             this.comboxEspecialidade2.Size = new System.Drawing.Size(105, 21);
             this.comboxEspecialidade2.TabIndex = 6;
             // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.Color.White;
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Image = global::SistemaOdonto.Properties.Resources.save;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(19, 224);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(124, 43);
-            this.btnSalvar.TabIndex = 10;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
@@ -344,6 +307,44 @@
             this.panel1.Size = new System.Drawing.Size(360, 298);
             this.panel1.TabIndex = 91;
             // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.White;
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.Image = global::SistemaOdonto.Properties.Resources.file;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpar.Location = new System.Drawing.Point(224, 224);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(124, 43);
+            this.btnLimpar.TabIndex = 11;
+            this.btnLimpar.Text = "Novo/Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.White;
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Image = global::SistemaOdonto.Properties.Resources.save;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(19, 224);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(124, 43);
+            this.btnSalvar.TabIndex = 10;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
             // FrmCadDentista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,6 +354,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmCadDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

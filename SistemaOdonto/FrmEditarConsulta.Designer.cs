@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarConsulta));
             this.dtHora = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.cbDentista = new System.Windows.Forms.ComboBox();
@@ -46,12 +47,12 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ts = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsNenhuma = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnBuscarPaciente = new System.Windows.Forms.Button();
             this.masktxtCPFPaciente = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnBuscarPaciente = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -224,44 +225,6 @@
             this.tsNenhuma.Size = new System.Drawing.Size(60, 17);
             this.tsNenhuma.Text = "Nenhuma";
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.Color.White;
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Image = global::SistemaOdonto.Properties.Resources.botao_de_deletar;
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(283, 328);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(144, 44);
-            this.btnExcluir.TabIndex = 70;
-            this.btnExcluir.Text = "Excluir Consulta";
-            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.White;
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Image = global::SistemaOdonto.Properties.Resources.edit;
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(17, 328);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(141, 44);
-            this.btnEditar.TabIndex = 69;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -270,26 +233,6 @@
             this.label3.Size = new System.Drawing.Size(27, 13);
             this.label3.TabIndex = 76;
             this.label3.Text = "CPF";
-            // 
-            // btnBuscarPaciente
-            // 
-            this.btnBuscarPaciente.BackColor = System.Drawing.Color.White;
-            this.btnBuscarPaciente.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnBuscarPaciente.FlatAppearance.BorderSize = 2;
-            this.btnBuscarPaciente.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscarPaciente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnBuscarPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarPaciente.Image = global::SistemaOdonto.Properties.Resources.find_file;
-            this.btnBuscarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarPaciente.Location = new System.Drawing.Point(121, 23);
-            this.btnBuscarPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
-            this.btnBuscarPaciente.Size = new System.Drawing.Size(105, 37);
-            this.btnBuscarPaciente.TabIndex = 75;
-            this.btnBuscarPaciente.Text = "Buscar";
-            this.btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarPaciente.UseVisualStyleBackColor = false;
-            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
             // 
             // masktxtCPFPaciente
             // 
@@ -330,6 +273,64 @@
             this.panel1.Size = new System.Drawing.Size(435, 389);
             this.panel1.TabIndex = 77;
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.White;
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Image = global::SistemaOdonto.Properties.Resources.botao_de_deletar;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcluir.Location = new System.Drawing.Point(283, 328);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(144, 44);
+            this.btnExcluir.TabIndex = 70;
+            this.btnExcluir.Text = "Excluir Consulta";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.White;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Image = global::SistemaOdonto.Properties.Resources.edit;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(17, 328);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(141, 44);
+            this.btnEditar.TabIndex = 69;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnBuscarPaciente
+            // 
+            this.btnBuscarPaciente.BackColor = System.Drawing.Color.White;
+            this.btnBuscarPaciente.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnBuscarPaciente.FlatAppearance.BorderSize = 2;
+            this.btnBuscarPaciente.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscarPaciente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnBuscarPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarPaciente.Image = global::SistemaOdonto.Properties.Resources.find_file;
+            this.btnBuscarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(121, 23);
+            this.btnBuscarPaciente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
+            this.btnBuscarPaciente.Size = new System.Drawing.Size(105, 37);
+            this.btnBuscarPaciente.TabIndex = 75;
+            this.btnBuscarPaciente.Text = "Buscar";
+            this.btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarPaciente.UseVisualStyleBackColor = false;
+            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
+            // 
             // frmEditarConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,6 +340,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEditarConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edição das Consultas";

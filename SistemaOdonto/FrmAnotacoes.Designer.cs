@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAnotacoes));
             this.btnAmarelo = new System.Windows.Forms.Button();
             this.btnRosa = new System.Windows.Forms.Button();
             this.btnRoxo = new System.Windows.Forms.Button();
             this.btnLaranja = new System.Windows.Forms.Button();
             this.btnVerde = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.btnAdicionarLembrete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAdicionarLembrete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +105,21 @@
             this.richTextBox1.TabIndex = 7;
             this.richTextBox1.Text = "";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Controls.Add(this.btnAdicionarLembrete);
+            this.panel1.Controls.Add(this.btnVerde);
+            this.panel1.Controls.Add(this.btnAmarelo);
+            this.panel1.Controls.Add(this.btnLaranja);
+            this.panel1.Controls.Add(this.btnRosa);
+            this.panel1.Controls.Add(this.btnRoxo);
+            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(298, 263);
+            this.panel1.TabIndex = 14;
+            // 
             // btnAdicionarLembrete
             // 
             this.btnAdicionarLembrete.BackColor = System.Drawing.Color.White;
@@ -124,21 +140,6 @@
             this.btnAdicionarLembrete.UseVisualStyleBackColor = false;
             this.btnAdicionarLembrete.Click += new System.EventHandler(this.btnAdicionarLembrete_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Controls.Add(this.btnAdicionarLembrete);
-            this.panel1.Controls.Add(this.btnVerde);
-            this.panel1.Controls.Add(this.btnAmarelo);
-            this.panel1.Controls.Add(this.btnLaranja);
-            this.panel1.Controls.Add(this.btnRosa);
-            this.panel1.Controls.Add(this.btnRoxo);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(298, 263);
-            this.panel1.TabIndex = 14;
-            // 
             // FrmAnotacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,6 +148,7 @@
             this.ClientSize = new System.Drawing.Size(304, 266);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAnotacoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nova Anotação";

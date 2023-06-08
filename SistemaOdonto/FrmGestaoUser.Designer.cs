@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestaoUser));
             this.dgv_Usuarios = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnExcluirUser = new System.Windows.Forms.Button();
-            this.btnSalvarAlterUser = new System.Windows.Forms.Button();
-            this.btnNovoUser = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_ID = new System.Windows.Forms.TextBox();
             this.nup_Nivel = new System.Windows.Forms.NumericUpDown();
@@ -47,34 +44,38 @@
             this.txt_Senha = new System.Windows.Forms.TextBox();
             this.txt_Username = new System.Windows.Forms.TextBox();
             this.txt_NomeUsuario = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnExcluirUser = new System.Windows.Forms.Button();
+            this.btnSalvarAlterUser = new System.Windows.Forms.Button();
+            this.btnNovoUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Usuarios)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nup_Nivel)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_Usuarios
             // 
             this.dgv_Usuarios.AllowUserToAddRows = false;
             this.dgv_Usuarios.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Usuarios.EnableHeadersVisualStyles = false;
             this.dgv_Usuarios.Location = new System.Drawing.Point(232, 17);
@@ -103,82 +104,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(593, 45);
             this.panel1.TabIndex = 45;
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFechar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Image = global::SistemaOdonto.Properties.Resources.delete;
-            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(491, 1);
-            this.btnFechar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(99, 43);
-            this.btnFechar.TabIndex = 3;
-            this.btnFechar.Text = "Fechar";
-            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // btnExcluirUser
-            // 
-            this.btnExcluirUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluirUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExcluirUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExcluirUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExcluirUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluirUser.Image = global::SistemaOdonto.Properties.Resources.delete_user;
-            this.btnExcluirUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluirUser.Location = new System.Drawing.Point(328, 2);
-            this.btnExcluirUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnExcluirUser.Name = "btnExcluirUser";
-            this.btnExcluirUser.Size = new System.Drawing.Size(126, 41);
-            this.btnExcluirUser.TabIndex = 2;
-            this.btnExcluirUser.Text = "Excluir Usuário";
-            this.btnExcluirUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcluirUser.UseVisualStyleBackColor = true;
-            this.btnExcluirUser.Click += new System.EventHandler(this.btnExcluirUser_Click);
-            // 
-            // btnSalvarAlterUser
-            // 
-            this.btnSalvarAlterUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvarAlterUser.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSalvarAlterUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSalvarAlterUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSalvarAlterUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvarAlterUser.Image = global::SistemaOdonto.Properties.Resources.reload;
-            this.btnSalvarAlterUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvarAlterUser.Location = new System.Drawing.Point(154, 1);
-            this.btnSalvarAlterUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSalvarAlterUser.Name = "btnSalvarAlterUser";
-            this.btnSalvarAlterUser.Size = new System.Drawing.Size(136, 41);
-            this.btnSalvarAlterUser.TabIndex = 1;
-            this.btnSalvarAlterUser.Text = "Salvar alterações";
-            this.btnSalvarAlterUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvarAlterUser.UseVisualStyleBackColor = true;
-            this.btnSalvarAlterUser.Click += new System.EventHandler(this.btnSalvarAlterUser_Click);
-            // 
-            // btnNovoUser
-            // 
-            this.btnNovoUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovoUser.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnNovoUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNovoUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnNovoUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovoUser.Image = global::SistemaOdonto.Properties.Resources.file;
-            this.btnNovoUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovoUser.Location = new System.Drawing.Point(0, 2);
-            this.btnNovoUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnNovoUser.Name = "btnNovoUser";
-            this.btnNovoUser.Size = new System.Drawing.Size(119, 41);
-            this.btnNovoUser.TabIndex = 0;
-            this.btnNovoUser.Text = "Novo Usuário";
-            this.btnNovoUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoUser.UseVisualStyleBackColor = true;
-            this.btnNovoUser.Click += new System.EventHandler(this.btnNovoUser_Click);
             // 
             // label9
             // 
@@ -317,39 +242,6 @@
             this.txt_NomeUsuario.TabIndex = 30;
             this.txt_NomeUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NomeUsuario_KeyPress);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::SistemaOdonto.Properties.Resources.user_online;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(543, 179);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(27, 30);
-            this.pictureBox3.TabIndex = 52;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::SistemaOdonto.Properties.Resources.user2;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(388, 179);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 30);
-            this.pictureBox1.TabIndex = 51;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::SistemaOdonto.Properties.Resources.user_offline;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(228, 179);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 30);
-            this.pictureBox2.TabIndex = 50;
-            this.pictureBox2.TabStop = false;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -407,6 +299,115 @@
             this.panel2.Size = new System.Drawing.Size(586, 219);
             this.panel2.TabIndex = 53;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::SistemaOdonto.Properties.Resources.user_online;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(543, 179);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(27, 30);
+            this.pictureBox3.TabIndex = 52;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::SistemaOdonto.Properties.Resources.user2;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(388, 179);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 30);
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::SistemaOdonto.Properties.Resources.user_offline;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(228, 179);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(28, 30);
+            this.pictureBox2.TabIndex = 50;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Image = global::SistemaOdonto.Properties.Resources.delete;
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFechar.Location = new System.Drawing.Point(491, 1);
+            this.btnFechar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(99, 43);
+            this.btnFechar.TabIndex = 3;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // btnExcluirUser
+            // 
+            this.btnExcluirUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluirUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluirUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnExcluirUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluirUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluirUser.Image = global::SistemaOdonto.Properties.Resources.delete_user;
+            this.btnExcluirUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcluirUser.Location = new System.Drawing.Point(328, 2);
+            this.btnExcluirUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExcluirUser.Name = "btnExcluirUser";
+            this.btnExcluirUser.Size = new System.Drawing.Size(126, 41);
+            this.btnExcluirUser.TabIndex = 2;
+            this.btnExcluirUser.Text = "Excluir Usuário";
+            this.btnExcluirUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcluirUser.UseVisualStyleBackColor = true;
+            this.btnExcluirUser.Click += new System.EventHandler(this.btnExcluirUser_Click);
+            // 
+            // btnSalvarAlterUser
+            // 
+            this.btnSalvarAlterUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvarAlterUser.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSalvarAlterUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalvarAlterUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSalvarAlterUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvarAlterUser.Image = global::SistemaOdonto.Properties.Resources.reload;
+            this.btnSalvarAlterUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvarAlterUser.Location = new System.Drawing.Point(154, 1);
+            this.btnSalvarAlterUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalvarAlterUser.Name = "btnSalvarAlterUser";
+            this.btnSalvarAlterUser.Size = new System.Drawing.Size(136, 41);
+            this.btnSalvarAlterUser.TabIndex = 1;
+            this.btnSalvarAlterUser.Text = "Salvar alterações";
+            this.btnSalvarAlterUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvarAlterUser.UseVisualStyleBackColor = true;
+            this.btnSalvarAlterUser.Click += new System.EventHandler(this.btnSalvarAlterUser_Click);
+            // 
+            // btnNovoUser
+            // 
+            this.btnNovoUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovoUser.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnNovoUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNovoUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnNovoUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoUser.Image = global::SistemaOdonto.Properties.Resources.file;
+            this.btnNovoUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoUser.Location = new System.Drawing.Point(0, 2);
+            this.btnNovoUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNovoUser.Name = "btnNovoUser";
+            this.btnNovoUser.Size = new System.Drawing.Size(119, 41);
+            this.btnNovoUser.TabIndex = 0;
+            this.btnNovoUser.Text = "Novo Usuário";
+            this.btnNovoUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovoUser.UseVisualStyleBackColor = true;
+            this.btnNovoUser.Click += new System.EventHandler(this.btnNovoUser_Click);
+            // 
             // FrmGestaoUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,6 +416,7 @@
             this.ClientSize = new System.Drawing.Size(593, 272);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmGestaoUser";
             this.Text = "Gestão de Usuários";
@@ -422,11 +424,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Usuarios)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nup_Nivel)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

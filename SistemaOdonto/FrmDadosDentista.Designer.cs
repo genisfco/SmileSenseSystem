@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDadosDentista));
             this.tc = new System.Windows.Forms.TabControl();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             this.ClientSize = new System.Drawing.Size(804, 334);
             this.Controls.Add(this.tc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmDadosDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -29,8 +29,7 @@ namespace SistemaOdonto
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnFecharAnamnese = new System.Windows.Forms.Button();
-            this.btnSalvarAnamnese = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAnamnese));
             this.chboxDoencaCongNAO = new System.Windows.Forms.CheckBox();
             this.chboxDoencaCongSIM = new System.Windows.Forms.CheckBox();
             this.chboxComplOdontoNAO = new System.Windows.Forms.CheckBox();
@@ -71,44 +70,10 @@ namespace SistemaOdonto
             this.lbPaciente = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFecharAnamnese = new System.Windows.Forms.Button();
+            this.btnSalvarAnamnese = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnFecharAnamnese
-            // 
-            this.btnFecharAnamnese.BackColor = System.Drawing.Color.White;
-            this.btnFecharAnamnese.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnFecharAnamnese.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFecharAnamnese.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnFecharAnamnese.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFecharAnamnese.Image = global::SistemaOdonto.Properties.Resources.delete;
-            this.btnFecharAnamnese.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFecharAnamnese.Location = new System.Drawing.Point(424, 286);
-            this.btnFecharAnamnese.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnFecharAnamnese.Name = "btnFecharAnamnese";
-            this.btnFecharAnamnese.Size = new System.Drawing.Size(204, 39);
-            this.btnFecharAnamnese.TabIndex = 113;
-            this.btnFecharAnamnese.Text = "Fechar Ficha";
-            this.btnFecharAnamnese.UseVisualStyleBackColor = false;
-            this.btnFecharAnamnese.Click += new System.EventHandler(this.btnFecharAnamnese_Click);
-            // 
-            // btnSalvarAnamnese
-            // 
-            this.btnSalvarAnamnese.BackColor = System.Drawing.Color.White;
-            this.btnSalvarAnamnese.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSalvarAnamnese.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSalvarAnamnese.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSalvarAnamnese.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvarAnamnese.Image = global::SistemaOdonto.Properties.Resources.botao_salvar;
-            this.btnSalvarAnamnese.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvarAnamnese.Location = new System.Drawing.Point(59, 286);
-            this.btnSalvarAnamnese.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSalvarAnamnese.Name = "btnSalvarAnamnese";
-            this.btnSalvarAnamnese.Size = new System.Drawing.Size(204, 39);
-            this.btnSalvarAnamnese.TabIndex = 112;
-            this.btnSalvarAnamnese.Text = "Salvar Anamnese";
-            this.btnSalvarAnamnese.UseVisualStyleBackColor = false;
-            this.btnSalvarAnamnese.Click += new System.EventHandler(this.btnSalvarAnamnese_Click);
             // 
             // chboxDoencaCongNAO
             // 
@@ -557,6 +522,42 @@ namespace SistemaOdonto
             this.panel1.Size = new System.Drawing.Size(670, 331);
             this.panel1.TabIndex = 115;
             // 
+            // btnFecharAnamnese
+            // 
+            this.btnFecharAnamnese.BackColor = System.Drawing.Color.White;
+            this.btnFecharAnamnese.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFecharAnamnese.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFecharAnamnese.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFecharAnamnese.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFecharAnamnese.Image = global::SistemaOdonto.Properties.Resources.delete;
+            this.btnFecharAnamnese.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFecharAnamnese.Location = new System.Drawing.Point(424, 286);
+            this.btnFecharAnamnese.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFecharAnamnese.Name = "btnFecharAnamnese";
+            this.btnFecharAnamnese.Size = new System.Drawing.Size(204, 39);
+            this.btnFecharAnamnese.TabIndex = 113;
+            this.btnFecharAnamnese.Text = "Fechar Ficha";
+            this.btnFecharAnamnese.UseVisualStyleBackColor = false;
+            this.btnFecharAnamnese.Click += new System.EventHandler(this.btnFecharAnamnese_Click);
+            // 
+            // btnSalvarAnamnese
+            // 
+            this.btnSalvarAnamnese.BackColor = System.Drawing.Color.White;
+            this.btnSalvarAnamnese.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSalvarAnamnese.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalvarAnamnese.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSalvarAnamnese.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvarAnamnese.Image = global::SistemaOdonto.Properties.Resources.botao_salvar;
+            this.btnSalvarAnamnese.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvarAnamnese.Location = new System.Drawing.Point(59, 286);
+            this.btnSalvarAnamnese.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalvarAnamnese.Name = "btnSalvarAnamnese";
+            this.btnSalvarAnamnese.Size = new System.Drawing.Size(204, 39);
+            this.btnSalvarAnamnese.TabIndex = 112;
+            this.btnSalvarAnamnese.Text = "Salvar Anamnese";
+            this.btnSalvarAnamnese.UseVisualStyleBackColor = false;
+            this.btnSalvarAnamnese.Click += new System.EventHandler(this.btnSalvarAnamnese_Click);
+            // 
             // FrmAnamnese
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -565,6 +566,7 @@ namespace SistemaOdonto
             this.ClientSize = new System.Drawing.Size(677, 341);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAnamnese";
             this.Text = "Ficha Anamnese";
             this.panel1.ResumeLayout(false);

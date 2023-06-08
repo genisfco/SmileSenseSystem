@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDadosPaciente));
             this.tc = new System.Windows.Forms.TabControl();
             this.masktxtCPFPaciente = new System.Windows.Forms.MaskedTextBox();
             this.dgViewPaciente = new System.Windows.Forms.DataGridView();
@@ -37,8 +38,8 @@
             this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscarPaciente = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscarPaciente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewPaciente)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -138,26 +139,6 @@
             this.label1.TabIndex = 51;
             this.label1.Text = "CPF";
             // 
-            // btnBuscarPaciente
-            // 
-            this.btnBuscarPaciente.BackColor = System.Drawing.Color.White;
-            this.btnBuscarPaciente.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnBuscarPaciente.FlatAppearance.BorderSize = 2;
-            this.btnBuscarPaciente.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscarPaciente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnBuscarPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarPaciente.Image = global::SistemaOdonto.Properties.Resources.find_file;
-            this.btnBuscarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarPaciente.Location = new System.Drawing.Point(120, 37);
-            this.btnBuscarPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
-            this.btnBuscarPaciente.Size = new System.Drawing.Size(103, 44);
-            this.btnBuscarPaciente.TabIndex = 49;
-            this.btnBuscarPaciente.Text = "Buscar";
-            this.btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarPaciente.UseVisualStyleBackColor = false;
-            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
@@ -169,6 +150,26 @@
             this.panel1.Size = new System.Drawing.Size(799, 100);
             this.panel1.TabIndex = 52;
             // 
+            // btnBuscarPaciente
+            // 
+            this.btnBuscarPaciente.BackColor = System.Drawing.Color.White;
+            this.btnBuscarPaciente.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnBuscarPaciente.FlatAppearance.BorderSize = 2;
+            this.btnBuscarPaciente.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscarPaciente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnBuscarPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarPaciente.Image = global::SistemaOdonto.Properties.Resources.find_file;
+            this.btnBuscarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(120, 37);
+            this.btnBuscarPaciente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
+            this.btnBuscarPaciente.Size = new System.Drawing.Size(103, 44);
+            this.btnBuscarPaciente.TabIndex = 49;
+            this.btnBuscarPaciente.Text = "Buscar";
+            this.btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarPaciente.UseVisualStyleBackColor = false;
+            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
+            // 
             // FrmDadosPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +180,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmDadosPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

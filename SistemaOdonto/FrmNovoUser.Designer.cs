@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNovoUser));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnSalvarUser = new System.Windows.Forms.Button();
-            this.btnNovoUser = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,16 +43,19 @@
             this.txt_Senha = new System.Windows.Forms.TextBox();
             this.txt_Username = new System.Windows.Forms.TextBox();
             this.txt_NomeUsuario = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnSalvarUser = new System.Windows.Forms.Button();
+            this.btnNovoUser = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nup_Nivel)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,63 +70,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(483, 47);
             this.panel1.TabIndex = 27;
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFechar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Image = global::SistemaOdonto.Properties.Resources.delete;
-            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(385, 2);
-            this.btnFechar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(95, 42);
-            this.btnFechar.TabIndex = 3;
-            this.btnFechar.Text = "Fechar";
-            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // btnSalvarUser
-            // 
-            this.btnSalvarUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvarUser.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSalvarUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSalvarUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSalvarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvarUser.Image = global::SistemaOdonto.Properties.Resources.add_user;
-            this.btnSalvarUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvarUser.Location = new System.Drawing.Point(203, 3);
-            this.btnSalvarUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSalvarUser.Name = "btnSalvarUser";
-            this.btnSalvarUser.Size = new System.Drawing.Size(102, 42);
-            this.btnSalvarUser.TabIndex = 1;
-            this.btnSalvarUser.Text = "Salvar";
-            this.btnSalvarUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvarUser.UseVisualStyleBackColor = true;
-            this.btnSalvarUser.Click += new System.EventHandler(this.btnSalvarUser_Click);
-            // 
-            // btnNovoUser
-            // 
-            this.btnNovoUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovoUser.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnNovoUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNovoUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnNovoUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovoUser.Image = global::SistemaOdonto.Properties.Resources.file;
-            this.btnNovoUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovoUser.Location = new System.Drawing.Point(2, 3);
-            this.btnNovoUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnNovoUser.Name = "btnNovoUser";
-            this.btnNovoUser.Size = new System.Drawing.Size(113, 42);
-            this.btnNovoUser.TabIndex = 0;
-            this.btnNovoUser.Text = "Novo/Limpar";
-            this.btnNovoUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoUser.UseVisualStyleBackColor = true;
-            this.btnNovoUser.Click += new System.EventHandler(this.btnNovoUser_Click);
             // 
             // label8
             // 
@@ -275,6 +219,30 @@
             this.txt_NomeUsuario.TabIndex = 14;
             this.txt_NomeUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NomeUsuario_KeyPress);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.txt_NomeUsuario);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.txt_Username);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.txt_Senha);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.nup_Nivel);
+            this.panel2.Controls.Add(this.cb_Status);
+            this.panel2.Location = new System.Drawing.Point(2, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(478, 191);
+            this.panel2.TabIndex = 31;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImage = global::SistemaOdonto.Properties.Resources.user_online;
@@ -308,29 +276,62 @@
             this.pictureBox2.TabIndex = 28;
             this.pictureBox2.TabStop = false;
             // 
-            // panel2
+            // btnFechar
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.txt_NomeUsuario);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.txt_Username);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.txt_Senha);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.nup_Nivel);
-            this.panel2.Controls.Add(this.cb_Status);
-            this.panel2.Location = new System.Drawing.Point(2, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(478, 191);
-            this.panel2.TabIndex = 31;
+            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Image = global::SistemaOdonto.Properties.Resources.delete;
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFechar.Location = new System.Drawing.Point(385, 2);
+            this.btnFechar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(95, 42);
+            this.btnFechar.TabIndex = 3;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // btnSalvarUser
+            // 
+            this.btnSalvarUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvarUser.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSalvarUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalvarUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSalvarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvarUser.Image = global::SistemaOdonto.Properties.Resources.add_user;
+            this.btnSalvarUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvarUser.Location = new System.Drawing.Point(203, 3);
+            this.btnSalvarUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalvarUser.Name = "btnSalvarUser";
+            this.btnSalvarUser.Size = new System.Drawing.Size(102, 42);
+            this.btnSalvarUser.TabIndex = 1;
+            this.btnSalvarUser.Text = "Salvar";
+            this.btnSalvarUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvarUser.UseVisualStyleBackColor = true;
+            this.btnSalvarUser.Click += new System.EventHandler(this.btnSalvarUser_Click);
+            // 
+            // btnNovoUser
+            // 
+            this.btnNovoUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovoUser.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnNovoUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNovoUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnNovoUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoUser.Image = global::SistemaOdonto.Properties.Resources.file;
+            this.btnNovoUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoUser.Location = new System.Drawing.Point(2, 3);
+            this.btnNovoUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNovoUser.Name = "btnNovoUser";
+            this.btnNovoUser.Size = new System.Drawing.Size(113, 42);
+            this.btnNovoUser.TabIndex = 0;
+            this.btnNovoUser.Text = "Novo/Limpar";
+            this.btnNovoUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovoUser.UseVisualStyleBackColor = true;
+            this.btnNovoUser.Click += new System.EventHandler(this.btnNovoUser_Click);
             // 
             // FrmNovoUser
             // 
@@ -340,16 +341,17 @@
             this.ClientSize = new System.Drawing.Size(483, 244);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmNovoUser";
             this.Text = "Novo Usuário";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nup_Nivel)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

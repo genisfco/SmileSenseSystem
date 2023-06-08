@@ -34,10 +34,10 @@
             this.HomeAgenda = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscarData = new System.Windows.Forms.Button();
-            this.btnVoltar = new System.Windows.Forms.Button();
-            this.btnAvancar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscarData = new System.Windows.Forms.Button();
+            this.btnAvancar = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControlAgenda.SuspendLayout();
             this.HomeAgenda.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -96,6 +96,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Esta é a Agenda das Consultas";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.tabControlAgenda);
+            this.panel1.Controls.Add(this.btnBuscarData);
+            this.panel1.Controls.Add(this.btnAvancar);
+            this.panel1.Controls.Add(this.dtpDataMostrada);
+            this.panel1.Controls.Add(this.btnVoltar);
+            this.panel1.Location = new System.Drawing.Point(4, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(660, 532);
+            this.panel1.TabIndex = 19;
+            // 
             // btnBuscarData
             // 
             this.btnBuscarData.BackColor = System.Drawing.Color.White;
@@ -117,23 +130,6 @@
             this.btnBuscarData.UseVisualStyleBackColor = false;
             this.btnBuscarData.Click += new System.EventHandler(this.btnBuscarData_Click);
             // 
-            // btnVoltar
-            // 
-            this.btnVoltar.BackColor = System.Drawing.Color.White;
-            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnVoltar.FlatAppearance.BorderSize = 2;
-            this.btnVoltar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Image = global::SistemaOdonto.Properties.Resources.iconesquerda;
-            this.btnVoltar.Location = new System.Drawing.Point(603, 85);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(44, 46);
-            this.btnVoltar.TabIndex = 16;
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
             // btnAvancar
             // 
             this.btnAvancar.BackColor = System.Drawing.Color.White;
@@ -151,18 +147,22 @@
             this.btnAvancar.UseVisualStyleBackColor = false;
             this.btnAvancar.Click += new System.EventHandler(this.btnAvancar_Click);
             // 
-            // panel1
+            // btnVoltar
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.tabControlAgenda);
-            this.panel1.Controls.Add(this.btnBuscarData);
-            this.panel1.Controls.Add(this.btnAvancar);
-            this.panel1.Controls.Add(this.dtpDataMostrada);
-            this.panel1.Controls.Add(this.btnVoltar);
-            this.panel1.Location = new System.Drawing.Point(4, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(660, 532);
-            this.panel1.TabIndex = 19;
+            this.btnVoltar.BackColor = System.Drawing.Color.White;
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVoltar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnVoltar.FlatAppearance.BorderSize = 2;
+            this.btnVoltar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Image = global::SistemaOdonto.Properties.Resources.iconesquerda;
+            this.btnVoltar.Location = new System.Drawing.Point(603, 85);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(44, 46);
+            this.btnVoltar.TabIndex = 16;
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // FrmConsultas
             // 
@@ -171,6 +171,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
             this.ClientSize = new System.Drawing.Size(667, 538);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda de Consultas";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarPaciente));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ts = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsNenhuma = new System.Windows.Forms.ToolStripStatusLabel();
@@ -63,12 +64,12 @@
             this.cbAno = new System.Windows.Forms.ComboBox();
             this.cbMes = new System.Windows.Forms.ComboBox();
             this.cbDia = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAbrirOdontograma = new System.Windows.Forms.Button();
             this.btnAbrirAnamnese = new System.Windows.Forms.Button();
             this.btnBuscaCEP = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -568,6 +569,79 @@
             this.cbDia.Size = new System.Drawing.Size(36, 21);
             this.cbDia.TabIndex = 5;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.lblCodigo);
+            this.panel1.Controls.Add(this.cbAno);
+            this.panel1.Controls.Add(this.btnEditar);
+            this.panel1.Controls.Add(this.cbMes);
+            this.panel1.Controls.Add(this.btnExcluir);
+            this.panel1.Controls.Add(this.cbDia);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.btnAbrirOdontograma);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btnAbrirAnamnese);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.btnBuscaCEP);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.rgpaciente);
+            this.panel1.Controls.Add(this.txtNome);
+            this.panel1.Controls.Add(this.cpfpaciente);
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.masktxtCPFPaciente);
+            this.panel1.Controls.Add(this.txtTelefone);
+            this.panel1.Controls.Add(this.masktxtRGPaciente);
+            this.panel1.Controls.Add(this.txtCelular);
+            this.panel1.Controls.Add(this.cbSexo);
+            this.panel1.Controls.Add(this.txtCEP);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(475, 379);
+            this.panel1.TabIndex = 98;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.White;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Image = global::SistemaOdonto.Properties.Resources.edit;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(278, 310);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(87, 43);
+            this.btnEditar.TabIndex = 18;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.White;
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Image = global::SistemaOdonto.Properties.Resources.delete_user;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcluir.Location = new System.Drawing.Point(379, 310);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(87, 43);
+            this.btnExcluir.TabIndex = 19;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // btnAbrirOdontograma
             // 
             this.btnAbrirOdontograma.BackColor = System.Drawing.Color.White;
@@ -624,79 +698,6 @@
             this.btnBuscaCEP.UseVisualStyleBackColor = false;
             this.btnBuscaCEP.Click += new System.EventHandler(this.btnBuscaCEP_Click);
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.Color.White;
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Image = global::SistemaOdonto.Properties.Resources.delete_user;
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(379, 310);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(87, 43);
-            this.btnExcluir.TabIndex = 19;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.White;
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Image = global::SistemaOdonto.Properties.Resources.edit;
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(278, 310);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(87, 43);
-            this.btnEditar.TabIndex = 18;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.lblCodigo);
-            this.panel1.Controls.Add(this.cbAno);
-            this.panel1.Controls.Add(this.btnEditar);
-            this.panel1.Controls.Add(this.cbMes);
-            this.panel1.Controls.Add(this.btnExcluir);
-            this.panel1.Controls.Add(this.cbDia);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.btnAbrirOdontograma);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.btnAbrirAnamnese);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.btnBuscaCEP);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.rgpaciente);
-            this.panel1.Controls.Add(this.txtNome);
-            this.panel1.Controls.Add(this.cpfpaciente);
-            this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.masktxtCPFPaciente);
-            this.panel1.Controls.Add(this.txtTelefone);
-            this.panel1.Controls.Add(this.masktxtRGPaciente);
-            this.panel1.Controls.Add(this.txtCelular);
-            this.panel1.Controls.Add(this.cbSexo);
-            this.panel1.Controls.Add(this.txtCEP);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(475, 379);
-            this.panel1.TabIndex = 98;
-            // 
             // FrmEditarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -706,6 +707,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmEditarPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

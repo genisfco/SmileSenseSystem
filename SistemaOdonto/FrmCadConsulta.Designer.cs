@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadConsulta));
             this.cbPaciente = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dtData = new System.Windows.Forms.DateTimePicker();
@@ -41,12 +42,12 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ts = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsNenhuma = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnConsulta = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnBuscarPaciente = new System.Windows.Forms.Button();
             this.masktxtCPFPaciente = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscarPaciente = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnConsulta = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -171,6 +172,69 @@
             this.tsNenhuma.Size = new System.Drawing.Size(60, 17);
             this.tsNenhuma.Text = "Nenhuma";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.TabIndex = 73;
+            this.label3.Text = "CPF";
+            // 
+            // masktxtCPFPaciente
+            // 
+            this.masktxtCPFPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.masktxtCPFPaciente.Location = new System.Drawing.Point(5, 28);
+            this.masktxtCPFPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.masktxtCPFPaciente.Mask = "000.000.000-00";
+            this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
+            this.masktxtCPFPaciente.Size = new System.Drawing.Size(89, 23);
+            this.masktxtCPFPaciente.TabIndex = 71;
+            this.masktxtCPFPaciente.Enter += new System.EventHandler(this.masktxtCPFPaciente_Enter);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.btnBuscarPaciente);
+            this.panel1.Controls.Add(this.txtAnotacoes);
+            this.panel1.Controls.Add(this.masktxtCPFPaciente);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.btnSalvar);
+            this.panel1.Controls.Add(this.dtData);
+            this.panel1.Controls.Add(this.btnConsulta);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.cbPaciente);
+            this.panel1.Controls.Add(this.dtHora);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.cbDentista);
+            this.panel1.Location = new System.Drawing.Point(3, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(426, 359);
+            this.panel1.TabIndex = 74;
+            // 
+            // btnBuscarPaciente
+            // 
+            this.btnBuscarPaciente.BackColor = System.Drawing.Color.White;
+            this.btnBuscarPaciente.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnBuscarPaciente.FlatAppearance.BorderSize = 2;
+            this.btnBuscarPaciente.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscarPaciente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnBuscarPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarPaciente.Image = global::SistemaOdonto.Properties.Resources.find_file;
+            this.btnBuscarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(113, 14);
+            this.btnBuscarPaciente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
+            this.btnBuscarPaciente.Size = new System.Drawing.Size(105, 37);
+            this.btnBuscarPaciente.TabIndex = 72;
+            this.btnBuscarPaciente.Text = "Buscar Paciente";
+            this.btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarPaciente.UseVisualStyleBackColor = false;
+            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
+            // 
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.White;
@@ -209,69 +273,6 @@
             this.btnConsulta.UseVisualStyleBackColor = false;
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
-            this.label3.TabIndex = 73;
-            this.label3.Text = "CPF";
-            // 
-            // btnBuscarPaciente
-            // 
-            this.btnBuscarPaciente.BackColor = System.Drawing.Color.White;
-            this.btnBuscarPaciente.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnBuscarPaciente.FlatAppearance.BorderSize = 2;
-            this.btnBuscarPaciente.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscarPaciente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnBuscarPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarPaciente.Image = global::SistemaOdonto.Properties.Resources.find_file;
-            this.btnBuscarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarPaciente.Location = new System.Drawing.Point(113, 14);
-            this.btnBuscarPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
-            this.btnBuscarPaciente.Size = new System.Drawing.Size(105, 37);
-            this.btnBuscarPaciente.TabIndex = 72;
-            this.btnBuscarPaciente.Text = "Buscar Paciente";
-            this.btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarPaciente.UseVisualStyleBackColor = false;
-            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
-            // 
-            // masktxtCPFPaciente
-            // 
-            this.masktxtCPFPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.masktxtCPFPaciente.Location = new System.Drawing.Point(5, 28);
-            this.masktxtCPFPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.masktxtCPFPaciente.Mask = "000.000.000-00";
-            this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
-            this.masktxtCPFPaciente.Size = new System.Drawing.Size(89, 23);
-            this.masktxtCPFPaciente.TabIndex = 71;
-            this.masktxtCPFPaciente.Enter += new System.EventHandler(this.masktxtCPFPaciente_Enter);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.btnBuscarPaciente);
-            this.panel1.Controls.Add(this.txtAnotacoes);
-            this.panel1.Controls.Add(this.masktxtCPFPaciente);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.btnSalvar);
-            this.panel1.Controls.Add(this.dtData);
-            this.panel1.Controls.Add(this.btnConsulta);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.cbPaciente);
-            this.panel1.Controls.Add(this.dtHora);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.cbDentista);
-            this.panel1.Location = new System.Drawing.Point(3, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(426, 359);
-            this.panel1.TabIndex = 74;
-            // 
             // FrmCadConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +282,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmCadConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

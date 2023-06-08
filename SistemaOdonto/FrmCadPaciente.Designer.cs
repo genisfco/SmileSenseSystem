@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadPaciente));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ts = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsNenhuma = new System.Windows.Forms.ToolStripStatusLabel();
@@ -62,11 +63,11 @@
             this.cbDia = new System.Windows.Forms.ComboBox();
             this.cbMes = new System.Windows.Forms.ComboBox();
             this.cbAno = new System.Windows.Forms.ComboBox();
-            this.btnBuscaCEP = new System.Windows.Forms.Button();
-            this.btnConsulta = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscaCEP = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnConsulta = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -557,83 +558,6 @@
             this.cbAno.Size = new System.Drawing.Size(52, 21);
             this.cbAno.TabIndex = 7;
             // 
-            // btnBuscaCEP
-            // 
-            this.btnBuscaCEP.BackColor = System.Drawing.Color.White;
-            this.btnBuscaCEP.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnBuscaCEP.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscaCEP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnBuscaCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscaCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscaCEP.Image = global::SistemaOdonto.Properties.Resources.search;
-            this.btnBuscaCEP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscaCEP.Location = new System.Drawing.Point(320, 128);
-            this.btnBuscaCEP.Name = "btnBuscaCEP";
-            this.btnBuscaCEP.Size = new System.Drawing.Size(133, 39);
-            this.btnBuscaCEP.TabIndex = 10;
-            this.btnBuscaCEP.Text = "Buscar CEP";
-            this.btnBuscaCEP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscaCEP.UseVisualStyleBackColor = false;
-            this.btnBuscaCEP.Click += new System.EventHandler(this.btnBuscaCEP_Click);
-            // 
-            // btnConsulta
-            // 
-            this.btnConsulta.BackColor = System.Drawing.Color.White;
-            this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsulta.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnConsulta.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnConsulta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta.Image = global::SistemaOdonto.Properties.Resources.find_file;
-            this.btnConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsulta.Location = new System.Drawing.Point(329, 288);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(124, 43);
-            this.btnConsulta.TabIndex = 16;
-            this.btnConsulta.Text = "Pesquisar";
-            this.btnConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnConsulta.UseVisualStyleBackColor = false;
-            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackColor = System.Drawing.Color.White;
-            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.Image = global::SistemaOdonto.Properties.Resources.file;
-            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpar.Location = new System.Drawing.Point(166, 288);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(124, 43);
-            this.btnLimpar.TabIndex = 15;
-            this.btnLimpar.Text = "Novo/Limpar";
-            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpar.UseVisualStyleBackColor = false;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.Color.White;
-            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Image = global::SistemaOdonto.Properties.Resources.save;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(3, 288);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(124, 43);
-            this.btnSalvar.TabIndex = 14;
-            this.btnSalvar.Text = "Salvar Dados";
-            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
@@ -667,6 +591,83 @@
             this.panel1.Size = new System.Drawing.Size(463, 350);
             this.panel1.TabIndex = 82;
             // 
+            // btnBuscaCEP
+            // 
+            this.btnBuscaCEP.BackColor = System.Drawing.Color.White;
+            this.btnBuscaCEP.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnBuscaCEP.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscaCEP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnBuscaCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscaCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscaCEP.Image = global::SistemaOdonto.Properties.Resources.search;
+            this.btnBuscaCEP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscaCEP.Location = new System.Drawing.Point(320, 128);
+            this.btnBuscaCEP.Name = "btnBuscaCEP";
+            this.btnBuscaCEP.Size = new System.Drawing.Size(133, 39);
+            this.btnBuscaCEP.TabIndex = 10;
+            this.btnBuscaCEP.Text = "Buscar CEP";
+            this.btnBuscaCEP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscaCEP.UseVisualStyleBackColor = false;
+            this.btnBuscaCEP.Click += new System.EventHandler(this.btnBuscaCEP_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.White;
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Image = global::SistemaOdonto.Properties.Resources.save;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(3, 288);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(124, 43);
+            this.btnSalvar.TabIndex = 14;
+            this.btnSalvar.Text = "Salvar Dados";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.White;
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.Image = global::SistemaOdonto.Properties.Resources.file;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpar.Location = new System.Drawing.Point(166, 288);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(124, 43);
+            this.btnLimpar.TabIndex = 15;
+            this.btnLimpar.Text = "Novo/Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.BackColor = System.Drawing.Color.White;
+            this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsulta.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnConsulta.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnConsulta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsulta.Image = global::SistemaOdonto.Properties.Resources.find_file;
+            this.btnConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsulta.Location = new System.Drawing.Point(329, 288);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(124, 43);
+            this.btnConsulta.TabIndex = 16;
+            this.btnConsulta.Text = "Pesquisar";
+            this.btnConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConsulta.UseVisualStyleBackColor = false;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
             // FrmCadPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -676,6 +677,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "FrmCadPaciente";

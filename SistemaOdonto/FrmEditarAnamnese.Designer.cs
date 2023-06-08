@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAtualizarAnm = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarAnamnese));
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.btnFecharAnamnese = new System.Windows.Forms.Button();
             this.chboxDoencaCongNAO = new System.Windows.Forms.CheckBox();
             this.chboxDoencaCongSIM = new System.Windows.Forms.CheckBox();
             this.chboxComplOdontoNAO = new System.Windows.Forms.CheckBox();
@@ -71,26 +70,10 @@
             this.lbPaciente = new System.Windows.Forms.Label();
             this.lblCodAnm = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAtualizarAnm = new System.Windows.Forms.Button();
+            this.btnFecharAnamnese = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnAtualizarAnm
-            // 
-            this.btnAtualizarAnm.BackColor = System.Drawing.Color.White;
-            this.btnAtualizarAnm.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.btnAtualizarAnm.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAtualizarAnm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnAtualizarAnm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizarAnm.Image = global::SistemaOdonto.Properties.Resources.reload;
-            this.btnAtualizarAnm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAtualizarAnm.Location = new System.Drawing.Point(47, 280);
-            this.btnAtualizarAnm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnAtualizarAnm.Name = "btnAtualizarAnm";
-            this.btnAtualizarAnm.Size = new System.Drawing.Size(204, 39);
-            this.btnAtualizarAnm.TabIndex = 157;
-            this.btnAtualizarAnm.Text = "Atualizar Anamnese";
-            this.btnAtualizarAnm.UseVisualStyleBackColor = false;
-            this.btnAtualizarAnm.Click += new System.EventHandler(this.btnAtualizarAnm_Click);
             // 
             // lblCodigo
             // 
@@ -101,24 +84,6 @@
             this.lblCodigo.Size = new System.Drawing.Size(49, 13);
             this.lblCodigo.TabIndex = 156;
             this.lblCodigo.Text = "ID.Pacte";
-            // 
-            // btnFecharAnamnese
-            // 
-            this.btnFecharAnamnese.BackColor = System.Drawing.Color.White;
-            this.btnFecharAnamnese.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnFecharAnamnese.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFecharAnamnese.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnFecharAnamnese.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFecharAnamnese.Image = global::SistemaOdonto.Properties.Resources.delete;
-            this.btnFecharAnamnese.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFecharAnamnese.Location = new System.Drawing.Point(418, 280);
-            this.btnFecharAnamnese.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnFecharAnamnese.Name = "btnFecharAnamnese";
-            this.btnFecharAnamnese.Size = new System.Drawing.Size(204, 39);
-            this.btnFecharAnamnese.TabIndex = 155;
-            this.btnFecharAnamnese.Text = "Fechar Ficha";
-            this.btnFecharAnamnese.UseVisualStyleBackColor = false;
-            this.btnFecharAnamnese.Click += new System.EventHandler(this.btnFecharAnamnese_Click);
             // 
             // chboxDoencaCongNAO
             // 
@@ -568,6 +533,42 @@
             this.panel1.Size = new System.Drawing.Size(712, 327);
             this.panel1.TabIndex = 159;
             // 
+            // btnAtualizarAnm
+            // 
+            this.btnAtualizarAnm.BackColor = System.Drawing.Color.White;
+            this.btnAtualizarAnm.FlatAppearance.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAtualizarAnm.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAtualizarAnm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAtualizarAnm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarAnm.Image = global::SistemaOdonto.Properties.Resources.reload;
+            this.btnAtualizarAnm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAtualizarAnm.Location = new System.Drawing.Point(47, 280);
+            this.btnAtualizarAnm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAtualizarAnm.Name = "btnAtualizarAnm";
+            this.btnAtualizarAnm.Size = new System.Drawing.Size(204, 39);
+            this.btnAtualizarAnm.TabIndex = 157;
+            this.btnAtualizarAnm.Text = "Atualizar Anamnese";
+            this.btnAtualizarAnm.UseVisualStyleBackColor = false;
+            this.btnAtualizarAnm.Click += new System.EventHandler(this.btnAtualizarAnm_Click);
+            // 
+            // btnFecharAnamnese
+            // 
+            this.btnFecharAnamnese.BackColor = System.Drawing.Color.White;
+            this.btnFecharAnamnese.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFecharAnamnese.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFecharAnamnese.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFecharAnamnese.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFecharAnamnese.Image = global::SistemaOdonto.Properties.Resources.delete;
+            this.btnFecharAnamnese.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFecharAnamnese.Location = new System.Drawing.Point(418, 280);
+            this.btnFecharAnamnese.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFecharAnamnese.Name = "btnFecharAnamnese";
+            this.btnFecharAnamnese.Size = new System.Drawing.Size(204, 39);
+            this.btnFecharAnamnese.TabIndex = 155;
+            this.btnFecharAnamnese.Text = "Fechar Ficha";
+            this.btnFecharAnamnese.UseVisualStyleBackColor = false;
+            this.btnFecharAnamnese.Click += new System.EventHandler(this.btnFecharAnamnese_Click);
+            // 
             // FrmEditarAnamnese
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,6 +576,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
             this.ClientSize = new System.Drawing.Size(718, 330);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmEditarAnamnese";
             this.Text = "Ficha Anamnese";
