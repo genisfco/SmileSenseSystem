@@ -365,10 +365,7 @@ namespace SistemaOdonto
 
         private void MSair_Click(object sender, EventArgs e)
         {           
-
-            
-               
-
+                                       
                 DialogResult resultado = MessageBox.Show("Deseja sair da aplicação?", "Confirmação de saída",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -407,8 +404,12 @@ namespace SistemaOdonto
 
         private void MLogoff_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Tem certeza que deseja deslogar do sistema?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            DialogResult resultado = MessageBox.Show("Tem certeza que deseja deslogar do sistema?", "Confirmação",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
             {
+                // Lógica para sair da aplicação
                 lb_Acesso.Text = "0";
                 lb_NomeUsuario.Text = "---";
                 pb_ledLogado.Image = Properties.Resources.Circle_Red;
@@ -420,7 +421,8 @@ namespace SistemaOdonto
 
                 FrmLogin frmlogin = new FrmLogin(this);
                 frmlogin.ShowDialog();
-            }            
+            }
+                                             
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
