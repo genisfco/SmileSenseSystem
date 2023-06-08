@@ -46,64 +46,60 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscarPaciente = new System.Windows.Forms.Button();
             this.masktxtCPFPaciente = new System.Windows.Forms.MaskedTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.statusStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbPaciente
             // 
             this.cbPaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPaciente.FormattingEnabled = true;
-            this.cbPaciente.Location = new System.Drawing.Point(16, 134);
-            this.cbPaciente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbPaciente.Location = new System.Drawing.Point(5, 82);
             this.cbPaciente.Name = "cbPaciente";
-            this.cbPaciente.Size = new System.Drawing.Size(318, 28);
+            this.cbPaciente.Size = new System.Drawing.Size(213, 21);
             this.cbPaciente.TabIndex = 10;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 109);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(3, 66);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 20);
+            this.label9.Size = new System.Drawing.Size(52, 13);
             this.label9.TabIndex = 46;
             this.label9.Text = "Paciente:";
             // 
             // dtData
             // 
             this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtData.Location = new System.Drawing.Point(422, 135);
-            this.dtData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtData.Location = new System.Drawing.Point(275, 83);
             this.dtData.Name = "dtData";
-            this.dtData.Size = new System.Drawing.Size(212, 26);
+            this.dtData.Size = new System.Drawing.Size(143, 20);
             this.dtData.TabIndex = 30;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(417, 109);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(272, 66);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 20);
+            this.label8.Size = new System.Drawing.Size(33, 13);
             this.label8.TabIndex = 44;
             this.label8.Text = "Data:";
             // 
             // txtAnotacoes
             // 
-            this.txtAnotacoes.Location = new System.Drawing.Point(20, 302);
-            this.txtAnotacoes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtAnotacoes.Location = new System.Drawing.Point(7, 191);
             this.txtAnotacoes.Multiline = true;
             this.txtAnotacoes.Name = "txtAnotacoes";
-            this.txtAnotacoes.Size = new System.Drawing.Size(613, 113);
+            this.txtAnotacoes.Size = new System.Drawing.Size(410, 75);
             this.txtAnotacoes.TabIndex = 50;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 275);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(3, 174);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 20);
+            this.label7.Size = new System.Drawing.Size(61, 13);
             this.label7.TabIndex = 42;
             this.label7.Text = "Anotações:";
             // 
@@ -114,19 +110,17 @@
             this.cbDentista.Items.AddRange(new object[] {
             "Masculino",
             "Feminino"});
-            this.cbDentista.Location = new System.Drawing.Point(16, 211);
-            this.cbDentista.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbDentista.Location = new System.Drawing.Point(5, 132);
             this.cbDentista.Name = "cbDentista";
-            this.cbDentista.Size = new System.Drawing.Size(318, 28);
+            this.cbDentista.Size = new System.Drawing.Size(213, 21);
             this.cbDentista.TabIndex = 20;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 186);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(4, 116);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 20);
+            this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 48;
             this.label1.Text = "Dentista:";
             // 
@@ -134,20 +128,18 @@
             // 
             this.dtHora.CustomFormat = "HH:mm";
             this.dtHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtHora.Location = new System.Drawing.Point(422, 212);
-            this.dtHora.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtHora.Location = new System.Drawing.Point(275, 133);
             this.dtHora.Name = "dtHora";
             this.dtHora.ShowUpDown = true;
-            this.dtHora.Size = new System.Drawing.Size(212, 26);
+            this.dtHora.Size = new System.Drawing.Size(143, 20);
             this.dtHora.TabIndex = 40;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(417, 186);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(272, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 20);
+            this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 50;
             this.label2.Text = "Hora:";
             // 
@@ -159,23 +151,24 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ts,
             this.tsNenhuma});
-            this.statusStrip1.Location = new System.Drawing.Point(9, 577);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 369);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(624, 34);
+            this.statusStrip1.Size = new System.Drawing.Size(426, 22);
             this.statusStrip1.TabIndex = 52;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // ts
             // 
+            this.ts.BackColor = System.Drawing.Color.White;
             this.ts.Name = "ts";
-            this.ts.Size = new System.Drawing.Size(104, 27);
+            this.ts.Size = new System.Drawing.Size(69, 17);
             this.ts.Text = "Mensagem:";
             // 
             // tsNenhuma
             // 
+            this.tsNenhuma.BackColor = System.Drawing.Color.White;
             this.tsNenhuma.Name = "tsNenhuma";
-            this.tsNenhuma.Size = new System.Drawing.Size(89, 27);
+            this.tsNenhuma.Size = new System.Drawing.Size(60, 17);
             this.tsNenhuma.Text = "Nenhuma";
             // 
             // btnSalvar
@@ -188,10 +181,9 @@
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Image = global::SistemaOdonto.Properties.Resources.save;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(20, 471);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSalvar.Location = new System.Drawing.Point(7, 301);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(212, 68);
+            this.btnSalvar.Size = new System.Drawing.Size(141, 44);
             this.btnSalvar.TabIndex = 60;
             this.btnSalvar.Text = "Cadastrar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -208,10 +200,9 @@
             this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsulta.Image = global::SistemaOdonto.Properties.Resources.find_file;
             this.btnConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsulta.Location = new System.Drawing.Point(422, 471);
-            this.btnConsulta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnConsulta.Location = new System.Drawing.Point(275, 301);
             this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(212, 68);
+            this.btnConsulta.Size = new System.Drawing.Size(141, 44);
             this.btnConsulta.TabIndex = 70;
             this.btnConsulta.Text = "Consultar Agenda";
             this.btnConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -221,10 +212,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 28);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(3, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 20);
+            this.label3.Size = new System.Drawing.Size(27, 13);
             this.label3.TabIndex = 73;
             this.label3.Text = "CPF";
             // 
@@ -238,9 +228,10 @@
             this.btnBuscarPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarPaciente.Image = global::SistemaOdonto.Properties.Resources.find_file;
             this.btnBuscarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarPaciente.Location = new System.Drawing.Point(178, 29);
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(113, 14);
+            this.btnBuscarPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscarPaciente.Name = "btnBuscarPaciente";
-            this.btnBuscarPaciente.Size = new System.Drawing.Size(158, 57);
+            this.btnBuscarPaciente.Size = new System.Drawing.Size(105, 37);
             this.btnBuscarPaciente.TabIndex = 72;
             this.btnBuscarPaciente.Text = "Buscar Paciente";
             this.btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -250,45 +241,55 @@
             // masktxtCPFPaciente
             // 
             this.masktxtCPFPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.masktxtCPFPaciente.Location = new System.Drawing.Point(16, 51);
+            this.masktxtCPFPaciente.Location = new System.Drawing.Point(5, 28);
+            this.masktxtCPFPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.masktxtCPFPaciente.Mask = "000.000.000-00";
             this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
-            this.masktxtCPFPaciente.Size = new System.Drawing.Size(132, 30);
+            this.masktxtCPFPaciente.Size = new System.Drawing.Size(89, 23);
             this.masktxtCPFPaciente.TabIndex = 71;
             this.masktxtCPFPaciente.Enter += new System.EventHandler(this.masktxtCPFPaciente_Enter);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.btnBuscarPaciente);
+            this.panel1.Controls.Add(this.txtAnotacoes);
+            this.panel1.Controls.Add(this.masktxtCPFPaciente);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.btnSalvar);
+            this.panel1.Controls.Add(this.dtData);
+            this.panel1.Controls.Add(this.btnConsulta);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.cbPaciente);
+            this.panel1.Controls.Add(this.dtHora);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.cbDentista);
+            this.panel1.Location = new System.Drawing.Point(3, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(426, 359);
+            this.panel1.TabIndex = 74;
+            // 
             // FrmCadConsulta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(650, 629);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnBuscarPaciente);
-            this.Controls.Add(this.masktxtCPFPaciente);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.btnConsulta);
+            this.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.ClientSize = new System.Drawing.Size(433, 394);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.dtHora);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbDentista);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbPaciente);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.dtData);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtAnotacoes);
-            this.Controls.Add(this.label7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "FrmCadConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Consultas";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -312,5 +313,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnBuscarPaciente;
         private System.Windows.Forms.MaskedTextBox masktxtCPFPaciente;
+        private System.Windows.Forms.Panel panel1;
     }
 }

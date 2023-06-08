@@ -33,7 +33,7 @@
             // 
             // tc
             // 
-            this.tc.Location = new System.Drawing.Point(2, 3);
+            this.tc.Location = new System.Drawing.Point(2, 1);
             this.tc.Name = "tc";
             this.tc.SelectedIndex = 0;
             this.tc.Size = new System.Drawing.Size(799, 331);
@@ -43,7 +43,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 331);
+            this.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.ClientSize = new System.Drawing.Size(804, 334);
             this.Controls.Add(this.tc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

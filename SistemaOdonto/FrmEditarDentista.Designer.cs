@@ -52,7 +52,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.statusStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -63,23 +65,24 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ts,
             this.tsNenhuma});
-            this.statusStrip1.Location = new System.Drawing.Point(8, 474);
+            this.statusStrip1.Location = new System.Drawing.Point(5, 306);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(510, 34);
+            this.statusStrip1.Size = new System.Drawing.Size(358, 22);
             this.statusStrip1.TabIndex = 33;
             this.statusStrip1.Text = "tsNenhuma";
             // 
             // ts
             // 
+            this.ts.BackColor = System.Drawing.Color.White;
             this.ts.Name = "ts";
-            this.ts.Size = new System.Drawing.Size(104, 27);
+            this.ts.Size = new System.Drawing.Size(69, 17);
             this.ts.Text = "Mensagem:";
             // 
             // tsNenhuma
             // 
+            this.tsNenhuma.BackColor = System.Drawing.Color.White;
             this.tsNenhuma.Name = "tsNenhuma";
-            this.tsNenhuma.Size = new System.Drawing.Size(89, 27);
+            this.tsNenhuma.Size = new System.Drawing.Size(60, 17);
             this.tsNenhuma.Text = "Nenhuma";
             // 
             // btnExcluir
@@ -92,10 +95,9 @@
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Image = global::SistemaOdonto.Properties.Resources.delete_user;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(328, 355);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExcluir.Location = new System.Drawing.Point(223, 231);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(186, 66);
+            this.btnExcluir.Size = new System.Drawing.Size(124, 43);
             this.btnExcluir.TabIndex = 11;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -112,10 +114,9 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Image = global::SistemaOdonto.Properties.Resources.edit;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(26, 355);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEditar.Location = new System.Drawing.Point(21, 231);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(186, 66);
+            this.btnEditar.Size = new System.Drawing.Size(124, 43);
             this.btnEditar.TabIndex = 10;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -125,19 +126,19 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(-2, 0);
-            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodigo.Location = new System.Drawing.Point(3, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(27, 20);
+            this.lblCodigo.Size = new System.Drawing.Size(19, 13);
             this.lblCodigo.TabIndex = 18;
             this.lblCodigo.Text = "01";
             // 
             // especialidade1
             // 
             this.especialidade1.AutoSize = true;
-            this.especialidade1.Location = new System.Drawing.Point(3, 154);
+            this.especialidade1.Location = new System.Drawing.Point(6, 100);
+            this.especialidade1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.especialidade1.Name = "especialidade1";
-            this.especialidade1.Size = new System.Drawing.Size(67, 20);
+            this.especialidade1.Size = new System.Drawing.Size(46, 13);
             this.especialidade1.TabIndex = 106;
             this.especialidade1.Text = "Espec.1";
             // 
@@ -155,17 +156,19 @@
             "Ortodontia",
             "Periodontia",
             "Outra"});
-            this.comboxEspecialidade1.Location = new System.Drawing.Point(75, 148);
+            this.comboxEspecialidade1.Location = new System.Drawing.Point(54, 96);
+            this.comboxEspecialidade1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboxEspecialidade1.Name = "comboxEspecialidade1";
-            this.comboxEspecialidade1.Size = new System.Drawing.Size(156, 28);
+            this.comboxEspecialidade1.Size = new System.Drawing.Size(105, 21);
             this.comboxEspecialidade1.TabIndex = 5;
             // 
             // especialidade2
             // 
             this.especialidade2.AutoSize = true;
-            this.especialidade2.Location = new System.Drawing.Point(290, 154);
+            this.especialidade2.Location = new System.Drawing.Point(197, 100);
+            this.especialidade2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.especialidade2.Name = "especialidade2";
-            this.especialidade2.Size = new System.Drawing.Size(67, 20);
+            this.especialidade2.Size = new System.Drawing.Size(46, 13);
             this.especialidade2.TabIndex = 108;
             this.especialidade2.Text = "Espec.2";
             // 
@@ -183,98 +186,98 @@
             "Ortodontia",
             "Periodontia",
             "Outra"});
-            this.comboxEspecialidade2.Location = new System.Drawing.Point(363, 148);
+            this.comboxEspecialidade2.Location = new System.Drawing.Point(246, 96);
+            this.comboxEspecialidade2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboxEspecialidade2.Name = "comboxEspecialidade2";
-            this.comboxEspecialidade2.Size = new System.Drawing.Size(156, 28);
+            this.comboxEspecialidade2.Size = new System.Drawing.Size(105, 21);
             this.comboxEspecialidade2.TabIndex = 6;
             // 
             // rgEspecialista
             // 
             this.rgEspecialista.AutoSize = true;
-            this.rgEspecialista.Location = new System.Drawing.Point(188, 83);
+            this.rgEspecialista.Location = new System.Drawing.Point(129, 54);
+            this.rgEspecialista.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.rgEspecialista.Name = "rgEspecialista";
-            this.rgEspecialista.Size = new System.Drawing.Size(34, 20);
+            this.rgEspecialista.Size = new System.Drawing.Size(23, 13);
             this.rgEspecialista.TabIndex = 102;
             this.rgEspecialista.Text = "RG";
             // 
             // cpfEspecialista
             // 
             this.cpfEspecialista.AutoSize = true;
-            this.cpfEspecialista.Location = new System.Drawing.Point(344, 83);
+            this.cpfEspecialista.Location = new System.Drawing.Point(233, 54);
+            this.cpfEspecialista.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.cpfEspecialista.Name = "cpfEspecialista";
-            this.cpfEspecialista.Size = new System.Drawing.Size(40, 20);
+            this.cpfEspecialista.Size = new System.Drawing.Size(27, 13);
             this.cpfEspecialista.TabIndex = 103;
             this.cpfEspecialista.Text = "CPF";
             // 
             // maskRGDentist
             // 
-            this.maskRGDentist.Location = new System.Drawing.Point(231, 77);
+            this.maskRGDentist.Location = new System.Drawing.Point(158, 50);
+            this.maskRGDentist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskRGDentist.Mask = "00.000.000-C";
             this.maskRGDentist.Name = "maskRGDentist";
             this.maskRGDentist.ReadOnly = true;
-            this.maskRGDentist.Size = new System.Drawing.Size(104, 26);
+            this.maskRGDentist.Size = new System.Drawing.Size(71, 20);
             this.maskRGDentist.TabIndex = 3;
             this.maskRGDentist.Enter += new System.EventHandler(this.maskRGDentist_Enter);
             // 
             // maskCPFDentist
             // 
-            this.maskCPFDentist.Location = new System.Drawing.Point(393, 77);
+            this.maskCPFDentist.Location = new System.Drawing.Point(266, 50);
+            this.maskCPFDentist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskCPFDentist.Mask = "000.000.000-00";
             this.maskCPFDentist.Name = "maskCPFDentist";
             this.maskCPFDentist.ReadOnly = true;
-            this.maskCPFDentist.Size = new System.Drawing.Size(122, 26);
+            this.maskCPFDentist.Size = new System.Drawing.Size(83, 20);
             this.maskCPFDentist.TabIndex = 4;
             this.maskCPFDentist.Enter += new System.EventHandler(this.maskCPFDentist_Enter);
             // 
             // txtCRO
             // 
-            this.txtCRO.Location = new System.Drawing.Point(75, 77);
-            this.txtCRO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCRO.Location = new System.Drawing.Point(54, 50);
             this.txtCRO.Mask = "LL 00-000";
             this.txtCRO.Name = "txtCRO";
             this.txtCRO.ReadOnly = true;
-            this.txtCRO.Size = new System.Drawing.Size(103, 26);
+            this.txtCRO.Size = new System.Drawing.Size(70, 20);
             this.txtCRO.TabIndex = 2;
             this.txtCRO.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtCRO.Enter += new System.EventHandler(this.txtCRO_Enter);
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(381, 268);
-            this.txtCelular.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCelular.Location = new System.Drawing.Point(258, 174);
             this.txtCelular.Mask = "(00) 90000-0000";
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(136, 26);
+            this.txtCelular.Size = new System.Drawing.Size(92, 20);
             this.txtCelular.TabIndex = 9;
             this.txtCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtCelular.Enter += new System.EventHandler(this.txtCelular_Enter);
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(75, 268);
-            this.txtTelefone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTelefone.Location = new System.Drawing.Point(54, 174);
             this.txtTelefone.Mask = "(00) 0000-0000";
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(136, 26);
+            this.txtTelefone.Size = new System.Drawing.Size(92, 20);
             this.txtTelefone.TabIndex = 8;
             this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtTelefone.Enter += new System.EventHandler(this.txtTelefone_Enter);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(75, 217);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEmail.Location = new System.Drawing.Point(54, 141);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(444, 26);
+            this.txtEmail.Size = new System.Drawing.Size(297, 20);
             this.txtEmail.TabIndex = 7;
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(75, 31);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNome.Location = new System.Drawing.Point(54, 20);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(444, 26);
+            this.txtNome.Size = new System.Drawing.Size(297, 20);
             this.txtNome.TabIndex = 1;
             this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
             this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
@@ -282,90 +285,95 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 83);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(17, 54);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 20);
+            this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 96;
             this.label6.Text = "CRO:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(314, 272);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(213, 177);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 20);
+            this.label5.Size = new System.Drawing.Size(42, 13);
             this.label5.TabIndex = 95;
             this.label5.Text = "Celular:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 272);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(9, 177);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 94;
             this.label4.Text = "Fone:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 223);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(6, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 93;
             this.label3.Text = "Email:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 32);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(13, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 20);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 92;
             this.label2.Text = "Nome:";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.lblCodigo);
+            this.panel1.Controls.Add(this.especialidade1);
+            this.panel1.Controls.Add(this.btnEditar);
+            this.panel1.Controls.Add(this.comboxEspecialidade1);
+            this.panel1.Controls.Add(this.btnExcluir);
+            this.panel1.Controls.Add(this.especialidade2);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.comboxEspecialidade2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.rgEspecialista);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.cpfEspecialista);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.maskRGDentist);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.maskCPFDentist);
+            this.panel1.Controls.Add(this.txtNome);
+            this.panel1.Controls.Add(this.txtCRO);
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.txtCelular);
+            this.panel1.Controls.Add(this.txtTelefone);
+            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(360, 301);
+            this.panel1.TabIndex = 109;
+            // 
             // FrmEditarDentista
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 529);
-            this.Controls.Add(this.especialidade1);
-            this.Controls.Add(this.comboxEspecialidade1);
-            this.Controls.Add(this.especialidade2);
-            this.Controls.Add(this.comboxEspecialidade2);
-            this.Controls.Add(this.rgEspecialista);
-            this.Controls.Add(this.cpfEspecialista);
-            this.Controls.Add(this.maskRGDentist);
-            this.Controls.Add(this.maskCPFDentist);
-            this.Controls.Add(this.txtCRO);
-            this.Controls.Add(this.txtCelular);
-            this.Controls.Add(this.txtTelefone);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.ClientSize = new System.Drawing.Size(366, 329);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.lblCodigo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "FrmEditarDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dentista Cadastrado";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -395,5 +403,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Panel panel1;
     }
 }
