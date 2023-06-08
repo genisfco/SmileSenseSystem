@@ -366,25 +366,25 @@ namespace SistemaOdonto
         private void MSair_Click(object sender, EventArgs e)
         {           
 
-            if (MessageBox.Show("Tem certeza que deseja sair e fechar o sistema?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                lb_Acesso.Text = "0";
-                lb_NomeUsuario.Text = "---";
-                pb_ledLogado.Image = Properties.Resources.Circle_Red;
-                pnlBarraLogin.BackColor = Color.Red;
-
-                Globais.Global.nivel = 0;
-                Globais.Global.logado = false;
+            
+               
 
                 DialogResult resultado = MessageBox.Show("Deseja sair da aplicação?", "Confirmação de saída",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.Yes)
                 {
+                    lb_Acesso.Text = "0";
+                    lb_NomeUsuario.Text = "---";
+                    pb_ledLogado.Image = Properties.Resources.Circle_Red;
+                    pnlBarraLogin.BackColor = Color.Red;
+
+                    Globais.Global.nivel = 0;
+                    Globais.Global.logado = false;
                     // Lógica para sair da aplicação
                     Application.Exit();
                 }
-            }            
+                      
         }
 
         private void btnLimparNotes_Click(object sender, EventArgs e)
