@@ -22,10 +22,10 @@ namespace SistemaOdonto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //
+            
             try
             {
-                string destinatario = "maicondexon@gmail.com";
+                string destinatario = "emaildosuporte@gmail.com";
                 string assunto = "Assunto do email";
                 string corpo = "Corpo do email";
 

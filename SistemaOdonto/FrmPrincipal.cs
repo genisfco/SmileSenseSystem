@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -428,6 +429,54 @@ namespace SistemaOdonto
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void blocoDeNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start("notepad.exe");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao abrir o Bloco de Notas: " + ex.Message);
+            }
+        }
+
+        private void calculadoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start("calc.exe");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao abrir a Calculadora: " + ex.Message);
+            }
+        }
+
+        private void wordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start("winword.exe");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao abrir o Microsoft Word: " + ex.Message);
+            }
+        }
+
+        private void excelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start("excel.exe");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao abrir o Microsoft Excel: " + ex.Message);
+            }
         }
     }
 }
