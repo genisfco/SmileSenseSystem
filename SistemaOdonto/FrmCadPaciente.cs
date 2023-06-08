@@ -220,11 +220,22 @@ namespace SistemaOdonto
 
         public void Limpar()
         {
-            txtNome.Text = "";
-            txtEmail.Text = "";
-            
+            txtNome.Text = string.Empty;
+            cbSexo.SelectedIndex = -1;
+            masktxtRGPaciente.Text = string.Empty;
+            masktxtCPFPaciente.Text = string.Empty;
+            cbDia.SelectedIndex = -1;
+            cbMes.SelectedIndex = -1;
+            cbAno.SelectedIndex = -1;
+            txtEmail.Text = string.Empty;            
             txtTelefone.Text = string.Empty;
             txtCelular.Text = string.Empty;
+            txtCEP.Text = string.Empty;
+            txtEndereco.Text = string.Empty;
+            txtNum.Text = string.Empty;
+            txtBairro.Text = string.Empty;
+            txtCidade.Text = string.Empty;
+            txtUF.Text = string.Empty;
         }
 
         private void btnConsulta_Click(object sender, EventArgs e)
@@ -249,6 +260,32 @@ namespace SistemaOdonto
                 {
                     MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void masktxtRGPaciente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar se o caractere digitado é uma letra
+            if (char.IsLetter(e.KeyChar) && masktxtRGPaciente.MaskCompleted && masktxtRGPaciente.SelectionStart == masktxtRGPaciente.Text.Length)
+            {
+                // Converter a letra para maiúsculo
+                e.KeyChar = char.ToUpper(e.KeyChar);
             }
         }
     }

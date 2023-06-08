@@ -164,7 +164,6 @@ namespace SistemaOdonto
         private void masktxtCPFPaciente_Enter(object sender, EventArgs e)
         {
             BeginInvoke(new Action(() => masktxtCPFPaciente.Select(0, 0)));
-
         }
 
         private void btnBuscarPaciente_Click(object sender, EventArgs e)

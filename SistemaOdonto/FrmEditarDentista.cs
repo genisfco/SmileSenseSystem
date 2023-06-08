@@ -62,6 +62,7 @@ namespace SistemaOdonto
                 }
                 else
                 {
+
                     //TRATAMENTO DADOS RG E CPF Dentista
                     string rgdentista = maskRGDentist.Text;
                     string cpfdentista = maskCPFDentist.Text;
@@ -69,7 +70,7 @@ namespace SistemaOdonto
                     rgdentista = rgdentista.Replace(",", "").Replace("-", "");
                     cpfdentista = cpfdentista.Replace(",", "").Replace("-", "");
 
-                    status = "editado";
+                    
                     this.obj.Nome = txtNome.Text;
                     this.obj.CRO = txtCRO.Text;
                     this.obj.RGDent = rgdentista;
@@ -79,10 +80,21 @@ namespace SistemaOdonto
                     this.obj.Email = txtEmail.Text;
                     obj.Telefone = txtTelefone.Text != "" ? Convert.ToInt64(txtTelefone.Text) : 0;
                     obj.Celular = txtCelular.Text != "" ? Convert.ToInt64(txtCelular.Text) : 0;
-                    service.Editar(this.obj);
 
-                    MessageBox.Show("Dados Atualizados!");
-                    this.Close();
+                    try
+                    {
+                        service.Editar(this.obj);
+                        status = "editado";
+                        MessageBox.Show("Dados Atualizados com Sucesso!");
+                        this.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Não foi possível atualizar: ", ex.Message);    
+                    }
+                    
                 }
             }
 
@@ -128,23 +140,27 @@ namespace SistemaOdonto
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             tsNenhuma.Text = "";
-            if (ValidarExclusao())
-            {
-                service.Deletar(this.obj.Id);
-                MessageBox.Show("Excluído com sucesso!");
-                status = "apagado";
-                this.Close();
-            }
-        }
 
-        public bool ValidarExclusao()
-        {
-            DialogResult con = MessageBox.Show("ATENÇÃO: Tem certeza que deseja excluir este registro?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-            if (con.ToString().ToUpper() == "YES")
-                return true;
-            else
-                return false;
-        }
+            // Exibe uma mensagem de confirmação antes de excluir
+            DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir o Dentista?", "Confirmação de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+
+                try
+                {
+                    service.Deletar(this.obj.Id);
+                    MessageBox.Show("Dentista Excluído com sucesso!");
+                    status = "apagado";
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Não foi possível fazer a exclusão: ", ex.Message);
+                }
+            }            
+            
+        }        
 
         private void txtNome_Enter(object sender, EventArgs e)
         {
@@ -180,6 +196,14 @@ namespace SistemaOdonto
         {
             BeginInvoke(new Action(() => txtCelular.Select(0, 0)));
 
+        }
+
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

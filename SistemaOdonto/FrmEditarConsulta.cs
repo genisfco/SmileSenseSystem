@@ -130,7 +130,6 @@ namespace SistemaOdonto
             ts.Text = ValidarCad();
             if (ts.Text == "Sucesso")
             {
-
                 this.consulta.IdPaciente = Convert.ToInt32(cbPaciente.SelectedValue);
                 this.consulta.IdDentista = Convert.ToInt32(cbDentista.SelectedValue);
                 this.consulta.Data = Convert.ToDateTime(dtData.Text);
@@ -138,8 +137,18 @@ namespace SistemaOdonto
                 this.consulta.HoraInicio = Convert.ToDateTime(dtInicio.Text);
                 this.consulta.HoraFim = Convert.ToDateTime(dtFim.Text);
                 this.consulta.Observacao = txtAnotacoes.Text;
-                service.Editar(this.consulta);
-                this.Close();
+
+                try
+                {                   
+                    service.Editar(this.consulta);
+
+                    MessageBox.Show("Consulta atualizada com Sucesso!");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Não foi possível atualizar a Consulta: ", ex.Message);
+                }
             }
         }
 
@@ -151,25 +160,23 @@ namespace SistemaOdonto
             DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir a Consulta?", "Confirmação de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
-            {
-                if (ValidarExclusao())
+            {                
+                try
                 {
                     service.Deletar(this.consulta.IdConsulta);
                     MessageBox.Show("Consulta excluída com sucesso!");
 
                     this.Close();
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Não foi possível fazer a exclusão: ", ex.Message);
+                }            
+                
             }
         }
 
-        private bool ValidarExclusao()
-        {
-            DialogResult con = MessageBox.Show("Deseja excluir este registro?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-            if (con.ToString().ToUpper() == "YES")
-                return true;
-            else
-                return false;
-        }
+        
 
         private void masktxtCPFPaciente_Enter(object sender, EventArgs e)
         {
@@ -182,10 +189,24 @@ namespace SistemaOdonto
             string cpf = masktxtCPFPaciente.Text;
             cpf = cpf.Replace(",", "").Replace("-", "");
 
+            if (cpf.Length < 11 || cpf == "")
+            {
+                MessageBox.Show("Digite o CPF completo!");
+                return;
+            }
 
-            Paciente paciente = serviceP.BuscarPorCPF(cpf);
+            try
+            {
+                Paciente paciente = serviceP.BuscarPorCPF(cpf);
 
-            cbPaciente.Text = paciente.Nome.ToString();
+                if (paciente == null) { MessageBox.Show("Paciente não localizado com este CPF."); return; }
+
+                cbPaciente.Text = paciente.Nome.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível localizar os dados:" + ex.Message);
+            }
         }
     }
 }

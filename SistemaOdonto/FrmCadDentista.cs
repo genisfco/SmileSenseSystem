@@ -197,5 +197,22 @@ namespace SistemaOdonto
             comboxEspecialidade2 .Text = string.Empty;
         }
 
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void maskRGDent_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar se o caractere digitado é uma letra
+            if (char.IsLetter(e.KeyChar) && maskRGDent.MaskCompleted && maskRGDent.SelectionStart == maskRGDent.Text.Length)
+            {
+                // Converter a letra para maiúsculo
+                e.KeyChar = char.ToUpper(e.KeyChar);
+            }
+        }
     }
 }
