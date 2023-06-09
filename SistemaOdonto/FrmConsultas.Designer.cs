@@ -70,7 +70,7 @@
             this.HomeAgenda.Controls.Add(this.label1);
             this.HomeAgenda.Location = new System.Drawing.Point(23, 4);
             this.HomeAgenda.Name = "HomeAgenda";
-            this.HomeAgenda.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.HomeAgenda.Padding = new System.Windows.Forms.Padding(3);
             this.HomeAgenda.Size = new System.Drawing.Size(550, 489);
             this.HomeAgenda.TabIndex = 0;
             this.HomeAgenda.Text = "Inicio";

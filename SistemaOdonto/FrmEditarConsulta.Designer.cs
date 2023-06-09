@@ -238,7 +238,7 @@
             // 
             this.masktxtCPFPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.masktxtCPFPaciente.Location = new System.Drawing.Point(13, 37);
-            this.masktxtCPFPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.masktxtCPFPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.masktxtCPFPaciente.Mask = "000.000.000-00";
             this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
             this.masktxtCPFPaciente.Size = new System.Drawing.Size(89, 23);

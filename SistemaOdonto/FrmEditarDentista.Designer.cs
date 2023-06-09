@@ -120,7 +120,7 @@
             "Periodontia",
             "Outra"});
             this.comboxEspecialidade1.Location = new System.Drawing.Point(54, 96);
-            this.comboxEspecialidade1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboxEspecialidade1.Margin = new System.Windows.Forms.Padding(2);
             this.comboxEspecialidade1.Name = "comboxEspecialidade1";
             this.comboxEspecialidade1.Size = new System.Drawing.Size(105, 21);
             this.comboxEspecialidade1.TabIndex = 5;
@@ -150,7 +150,7 @@
             "Periodontia",
             "Outra"});
             this.comboxEspecialidade2.Location = new System.Drawing.Point(246, 96);
-            this.comboxEspecialidade2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboxEspecialidade2.Margin = new System.Windows.Forms.Padding(2);
             this.comboxEspecialidade2.Name = "comboxEspecialidade2";
             this.comboxEspecialidade2.Size = new System.Drawing.Size(105, 21);
             this.comboxEspecialidade2.TabIndex = 6;
@@ -178,7 +178,7 @@
             // maskRGDentist
             // 
             this.maskRGDentist.Location = new System.Drawing.Point(158, 50);
-            this.maskRGDentist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskRGDentist.Margin = new System.Windows.Forms.Padding(2);
             this.maskRGDentist.Mask = "00.000.000-C";
             this.maskRGDentist.Name = "maskRGDentist";
             this.maskRGDentist.ReadOnly = true;
@@ -189,7 +189,7 @@
             // maskCPFDentist
             // 
             this.maskCPFDentist.Location = new System.Drawing.Point(266, 50);
-            this.maskCPFDentist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskCPFDentist.Margin = new System.Windows.Forms.Padding(2);
             this.maskCPFDentist.Mask = "000.000.000-00";
             this.maskCPFDentist.Name = "maskCPFDentist";
             this.maskCPFDentist.ReadOnly = true;

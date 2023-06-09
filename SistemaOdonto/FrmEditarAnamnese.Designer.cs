@@ -89,7 +89,7 @@
             // 
             this.chboxDoencaCongNAO.AutoSize = true;
             this.chboxDoencaCongNAO.Location = new System.Drawing.Point(266, 246);
-            this.chboxDoencaCongNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxDoencaCongNAO.Margin = new System.Windows.Forms.Padding(2);
             this.chboxDoencaCongNAO.Name = "chboxDoencaCongNAO";
             this.chboxDoencaCongNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxDoencaCongNAO.TabIndex = 153;
@@ -100,7 +100,7 @@
             // 
             this.chboxDoencaCongSIM.AutoSize = true;
             this.chboxDoencaCongSIM.Location = new System.Drawing.Point(221, 246);
-            this.chboxDoencaCongSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxDoencaCongSIM.Margin = new System.Windows.Forms.Padding(2);
             this.chboxDoencaCongSIM.Name = "chboxDoencaCongSIM";
             this.chboxDoencaCongSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxDoencaCongSIM.TabIndex = 152;
@@ -111,7 +111,7 @@
             // 
             this.chboxComplOdontoNAO.AutoSize = true;
             this.chboxComplOdontoNAO.Location = new System.Drawing.Point(266, 219);
-            this.chboxComplOdontoNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxComplOdontoNAO.Margin = new System.Windows.Forms.Padding(2);
             this.chboxComplOdontoNAO.Name = "chboxComplOdontoNAO";
             this.chboxComplOdontoNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxComplOdontoNAO.TabIndex = 151;
@@ -122,7 +122,7 @@
             // 
             this.chboxComplOdontoSIM.AutoSize = true;
             this.chboxComplOdontoSIM.Location = new System.Drawing.Point(221, 219);
-            this.chboxComplOdontoSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxComplOdontoSIM.Margin = new System.Windows.Forms.Padding(2);
             this.chboxComplOdontoSIM.Name = "chboxComplOdontoSIM";
             this.chboxComplOdontoSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxComplOdontoSIM.TabIndex = 150;
@@ -133,7 +133,7 @@
             // 
             this.chboxProblHemorragNAO.AutoSize = true;
             this.chboxProblHemorragNAO.Location = new System.Drawing.Point(266, 192);
-            this.chboxProblHemorragNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxProblHemorragNAO.Margin = new System.Windows.Forms.Padding(2);
             this.chboxProblHemorragNAO.Name = "chboxProblHemorragNAO";
             this.chboxProblHemorragNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxProblHemorragNAO.TabIndex = 149;
@@ -144,7 +144,7 @@
             // 
             this.chboxProblHemorragSIM.AutoSize = true;
             this.chboxProblHemorragSIM.Location = new System.Drawing.Point(221, 192);
-            this.chboxProblHemorragSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxProblHemorragSIM.Margin = new System.Windows.Forms.Padding(2);
             this.chboxProblHemorragSIM.Name = "chboxProblHemorragSIM";
             this.chboxProblHemorragSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxProblHemorragSIM.TabIndex = 148;
@@ -155,7 +155,7 @@
             // 
             this.chboxAlergiaMedicamentosaNAO.AutoSize = true;
             this.chboxAlergiaMedicamentosaNAO.Location = new System.Drawing.Point(266, 164);
-            this.chboxAlergiaMedicamentosaNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxAlergiaMedicamentosaNAO.Margin = new System.Windows.Forms.Padding(2);
             this.chboxAlergiaMedicamentosaNAO.Name = "chboxAlergiaMedicamentosaNAO";
             this.chboxAlergiaMedicamentosaNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxAlergiaMedicamentosaNAO.TabIndex = 147;
@@ -166,7 +166,7 @@
             // 
             this.chboxAlergiaMedicamentosaSIM.AutoSize = true;
             this.chboxAlergiaMedicamentosaSIM.Location = new System.Drawing.Point(221, 164);
-            this.chboxAlergiaMedicamentosaSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxAlergiaMedicamentosaSIM.Margin = new System.Windows.Forms.Padding(2);
             this.chboxAlergiaMedicamentosaSIM.Name = "chboxAlergiaMedicamentosaSIM";
             this.chboxAlergiaMedicamentosaSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxAlergiaMedicamentosaSIM.TabIndex = 146;
@@ -177,7 +177,7 @@
             // 
             this.chboxUsoMedicamentosNAO.AutoSize = true;
             this.chboxUsoMedicamentosNAO.Location = new System.Drawing.Point(266, 135);
-            this.chboxUsoMedicamentosNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxUsoMedicamentosNAO.Margin = new System.Windows.Forms.Padding(2);
             this.chboxUsoMedicamentosNAO.Name = "chboxUsoMedicamentosNAO";
             this.chboxUsoMedicamentosNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxUsoMedicamentosNAO.TabIndex = 145;
@@ -188,7 +188,7 @@
             // 
             this.chboxUsoMedicamentosSIM.AutoSize = true;
             this.chboxUsoMedicamentosSIM.Location = new System.Drawing.Point(221, 135);
-            this.chboxUsoMedicamentosSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxUsoMedicamentosSIM.Margin = new System.Windows.Forms.Padding(2);
             this.chboxUsoMedicamentosSIM.Name = "chboxUsoMedicamentosSIM";
             this.chboxUsoMedicamentosSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxUsoMedicamentosSIM.TabIndex = 144;
@@ -199,7 +199,7 @@
             // 
             this.chboxCardiopatiaNAO.AutoSize = true;
             this.chboxCardiopatiaNAO.Location = new System.Drawing.Point(266, 107);
-            this.chboxCardiopatiaNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxCardiopatiaNAO.Margin = new System.Windows.Forms.Padding(2);
             this.chboxCardiopatiaNAO.Name = "chboxCardiopatiaNAO";
             this.chboxCardiopatiaNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxCardiopatiaNAO.TabIndex = 143;
@@ -210,7 +210,7 @@
             // 
             this.chboxCardiopatiaSIM.AutoSize = true;
             this.chboxCardiopatiaSIM.Location = new System.Drawing.Point(221, 107);
-            this.chboxCardiopatiaSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxCardiopatiaSIM.Margin = new System.Windows.Forms.Padding(2);
             this.chboxCardiopatiaSIM.Name = "chboxCardiopatiaSIM";
             this.chboxCardiopatiaSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxCardiopatiaSIM.TabIndex = 142;
@@ -221,7 +221,7 @@
             // 
             this.chboxHipertensaoNAO.AutoSize = true;
             this.chboxHipertensaoNAO.Location = new System.Drawing.Point(266, 79);
-            this.chboxHipertensaoNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxHipertensaoNAO.Margin = new System.Windows.Forms.Padding(2);
             this.chboxHipertensaoNAO.Name = "chboxHipertensaoNAO";
             this.chboxHipertensaoNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxHipertensaoNAO.TabIndex = 141;
@@ -232,7 +232,7 @@
             // 
             this.chboxHipertensaoSIM.AutoSize = true;
             this.chboxHipertensaoSIM.Location = new System.Drawing.Point(221, 79);
-            this.chboxHipertensaoSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxHipertensaoSIM.Margin = new System.Windows.Forms.Padding(2);
             this.chboxHipertensaoSIM.Name = "chboxHipertensaoSIM";
             this.chboxHipertensaoSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxHipertensaoSIM.TabIndex = 140;
@@ -243,7 +243,7 @@
             // 
             this.chboxDiabetesNAO.AutoSize = true;
             this.chboxDiabetesNAO.Location = new System.Drawing.Point(266, 51);
-            this.chboxDiabetesNAO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxDiabetesNAO.Margin = new System.Windows.Forms.Padding(2);
             this.chboxDiabetesNAO.Name = "chboxDiabetesNAO";
             this.chboxDiabetesNAO.Size = new System.Drawing.Size(46, 17);
             this.chboxDiabetesNAO.TabIndex = 139;
@@ -254,7 +254,7 @@
             // 
             this.chboxDiabetesSIM.AutoSize = true;
             this.chboxDiabetesSIM.Location = new System.Drawing.Point(221, 51);
-            this.chboxDiabetesSIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chboxDiabetesSIM.Margin = new System.Windows.Forms.Padding(2);
             this.chboxDiabetesSIM.Name = "chboxDiabetesSIM";
             this.chboxDiabetesSIM.Size = new System.Drawing.Size(43, 17);
             this.chboxDiabetesSIM.TabIndex = 138;
@@ -264,7 +264,7 @@
             // txtAlergiaQualMedicamento
             // 
             this.txtAlergiaQualMedicamento.Location = new System.Drawing.Point(418, 161);
-            this.txtAlergiaQualMedicamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAlergiaQualMedicamento.Margin = new System.Windows.Forms.Padding(2);
             this.txtAlergiaQualMedicamento.Name = "txtAlergiaQualMedicamento";
             this.txtAlergiaQualMedicamento.Size = new System.Drawing.Size(247, 20);
             this.txtAlergiaQualMedicamento.TabIndex = 137;
@@ -303,7 +303,7 @@
             // 
             this.maskCPFPaciente.BackColor = System.Drawing.SystemColors.Control;
             this.maskCPFPaciente.Location = new System.Drawing.Point(60, 4);
-            this.maskCPFPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskCPFPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.maskCPFPaciente.Mask = "000.000.000-00";
             this.maskCPFPaciente.Name = "maskCPFPaciente";
             this.maskCPFPaciente.ReadOnly = true;
@@ -314,7 +314,7 @@
             // txtDoenca
             // 
             this.txtDoenca.Location = new System.Drawing.Point(418, 243);
-            this.txtDoenca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDoenca.Margin = new System.Windows.Forms.Padding(2);
             this.txtDoenca.Name = "txtDoenca";
             this.txtDoenca.Size = new System.Drawing.Size(247, 20);
             this.txtDoenca.TabIndex = 132;
@@ -322,7 +322,7 @@
             // txtComplicacoes
             // 
             this.txtComplicacoes.Location = new System.Drawing.Point(418, 215);
-            this.txtComplicacoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtComplicacoes.Margin = new System.Windows.Forms.Padding(2);
             this.txtComplicacoes.Name = "txtComplicacoes";
             this.txtComplicacoes.Size = new System.Drawing.Size(247, 20);
             this.txtComplicacoes.TabIndex = 131;
@@ -330,7 +330,7 @@
             // txtMotivoProblemas
             // 
             this.txtMotivoProblemas.Location = new System.Drawing.Point(418, 188);
-            this.txtMotivoProblemas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMotivoProblemas.Margin = new System.Windows.Forms.Padding(2);
             this.txtMotivoProblemas.Name = "txtMotivoProblemas";
             this.txtMotivoProblemas.Size = new System.Drawing.Size(247, 20);
             this.txtMotivoProblemas.TabIndex = 130;
@@ -338,7 +338,7 @@
             // txtUsoQualMedicamento
             // 
             this.txtUsoQualMedicamento.Location = new System.Drawing.Point(418, 134);
-            this.txtUsoQualMedicamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsoQualMedicamento.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsoQualMedicamento.Name = "txtUsoQualMedicamento";
             this.txtUsoQualMedicamento.Size = new System.Drawing.Size(247, 20);
             this.txtUsoQualMedicamento.TabIndex = 129;
@@ -456,7 +456,7 @@
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(254, 4);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(2);
             this.txtNome.Name = "txtNome";
             this.txtNome.ReadOnly = true;
             this.txtNome.Size = new System.Drawing.Size(412, 20);
@@ -577,7 +577,7 @@
             this.ClientSize = new System.Drawing.Size(718, 330);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmEditarAnamnese";
             this.Text = "Ficha Anamnese";
             this.panel1.ResumeLayout(false);

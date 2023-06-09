@@ -201,7 +201,7 @@
             // maskRGDent
             // 
             this.maskRGDent.Location = new System.Drawing.Point(158, 45);
-            this.maskRGDent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskRGDent.Margin = new System.Windows.Forms.Padding(2);
             this.maskRGDent.Mask = "00.000.000-C";
             this.maskRGDent.Name = "maskRGDent";
             this.maskRGDent.Size = new System.Drawing.Size(71, 20);
@@ -212,7 +212,7 @@
             // maskCPFDent
             // 
             this.maskCPFDent.Location = new System.Drawing.Point(266, 45);
-            this.maskCPFDent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskCPFDent.Margin = new System.Windows.Forms.Padding(2);
             this.maskCPFDent.Mask = "000.000.000-00";
             this.maskCPFDent.Name = "maskCPFDent";
             this.maskCPFDent.Size = new System.Drawing.Size(83, 20);
@@ -244,7 +244,7 @@
             "Periodontia",
             "Outra"});
             this.comboxEspecialidade1.Location = new System.Drawing.Point(54, 90);
-            this.comboxEspecialidade1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboxEspecialidade1.Margin = new System.Windows.Forms.Padding(2);
             this.comboxEspecialidade1.Name = "comboxEspecialidade1";
             this.comboxEspecialidade1.Size = new System.Drawing.Size(105, 21);
             this.comboxEspecialidade1.TabIndex = 5;
@@ -274,7 +274,7 @@
             "Periodontia",
             "Outra"});
             this.comboxEspecialidade2.Location = new System.Drawing.Point(246, 90);
-            this.comboxEspecialidade2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboxEspecialidade2.Margin = new System.Windows.Forms.Padding(2);
             this.comboxEspecialidade2.Name = "comboxEspecialidade2";
             this.comboxEspecialidade2.Size = new System.Drawing.Size(105, 21);
             this.comboxEspecialidade2.TabIndex = 6;
@@ -359,6 +359,7 @@
             this.Name = "FrmCadDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Dentistas";
+            this.Load += new System.EventHandler(this.FrmCadDentista_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);

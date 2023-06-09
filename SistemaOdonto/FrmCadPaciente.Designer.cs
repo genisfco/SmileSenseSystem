@@ -246,7 +246,7 @@
             // masktxtCPFPaciente
             // 
             this.masktxtCPFPaciente.Location = new System.Drawing.Point(194, 52);
-            this.masktxtCPFPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.masktxtCPFPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.masktxtCPFPaciente.Mask = "000.000.000-00";
             this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
             this.masktxtCPFPaciente.Size = new System.Drawing.Size(83, 20);
@@ -257,7 +257,7 @@
             // 
             this.masktxtRGPaciente.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.masktxtRGPaciente.Location = new System.Drawing.Point(45, 52);
-            this.masktxtRGPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.masktxtRGPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.masktxtRGPaciente.Mask = "00.000.000-C";
             this.masktxtRGPaciente.Name = "masktxtRGPaciente";
             this.masktxtRGPaciente.Size = new System.Drawing.Size(71, 20);
@@ -268,7 +268,7 @@
             // txtNum
             // 
             this.txtNum.Location = new System.Drawing.Point(416, 28);
-            this.txtNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtNum.MaxLength = 5;
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(29, 20);
@@ -279,7 +279,7 @@
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(69, 53);
-            this.txtBairro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBairro.Margin = new System.Windows.Forms.Padding(2);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(112, 20);
             this.txtBairro.TabIndex = 18;
@@ -288,7 +288,7 @@
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(247, 53);
-            this.txtCidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCidade.Margin = new System.Windows.Forms.Padding(2);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(111, 20);
             this.txtCidade.TabIndex = 19;
@@ -298,7 +298,7 @@
             // 
             this.txtUF.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUF.Location = new System.Drawing.Point(416, 57);
-            this.txtUF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUF.Margin = new System.Windows.Forms.Padding(2);
             this.txtUF.MaxLength = 2;
             this.txtUF.Name = "txtUF";
             this.txtUF.Size = new System.Drawing.Size(29, 20);
@@ -328,9 +328,9 @@
             this.groupBox1.Controls.Add(this.txtBairro);
             this.groupBox1.Controls.Add(this.txtCidade);
             this.groupBox1.Location = new System.Drawing.Point(3, 183);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(449, 84);
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;

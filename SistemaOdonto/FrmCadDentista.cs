@@ -214,5 +214,10 @@ namespace SistemaOdonto
                 e.KeyChar = char.ToUpper(e.KeyChar);
             }
         }
+
+        private void FrmCadDentista_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

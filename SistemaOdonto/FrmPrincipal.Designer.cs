@@ -30,30 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbDentista = new System.Windows.Forms.ComboBox();
-            this.dg = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Paciente = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Status = new System.Windows.Forms.DataGridViewImageColumn();
-            this.CodigoPaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.anot = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlBarraLogin = new System.Windows.Forms.Panel();
-            this.lb_NomeUsuario = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.lb_Acesso = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.btnLimparNotes = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pb_ledLogado = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuConsulta = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDentista = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,15 +51,39 @@
             this.blocoDeNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbDentista = new System.Windows.Forms.ComboBox();
+            this.dg = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paciente = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Status = new System.Windows.Forms.DataGridViewImageColumn();
+            this.CodigoPaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.anot = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlBarraLogin = new System.Windows.Forms.Panel();
+            this.lb_NomeUsuario = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lb_Acesso = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.pb_ledLogado = new System.Windows.Forms.PictureBox();
+            this.btnLimparNotes = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.pnlBarraLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ledLogado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ledLogado)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -105,252 +105,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(985, 38);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Consultas do Dia";
-            // 
-            // cbDentista
-            // 
-            this.cbDentista.FormattingEnabled = true;
-            this.cbDentista.Location = new System.Drawing.Point(129, 42);
-            this.cbDentista.Name = "cbDentista";
-            this.cbDentista.Size = new System.Drawing.Size(210, 21);
-            this.cbDentista.TabIndex = 2;
-            this.cbDentista.SelectionChangeCommitted += new System.EventHandler(this.cbDentista_SelectionChangeCommitted);
-            this.cbDentista.Click += new System.EventHandler(this.cbDentista_Click);
-            // 
-            // dg
-            // 
-            this.dg.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
-            this.Hora,
-            this.Paciente,
-            this.Status,
-            this.CodigoPaciente});
-            this.dg.Location = new System.Drawing.Point(15, 99);
-            this.dg.Name = "dg";
-            this.dg.RowHeadersVisible = false;
-            this.dg.RowHeadersWidth = 62;
-            this.dg.Size = new System.Drawing.Size(323, 520);
-            this.dg.TabIndex = 3;
-            this.dg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_CellContentClick);
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "ColunaCodigo";
-            this.Codigo.MinimumWidth = 8;
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Codigo.Visible = false;
-            this.Codigo.Width = 10;
-            // 
-            // Hora
-            // 
-            this.Hora.HeaderText = "Hora";
-            this.Hora.MinimumWidth = 8;
-            this.Hora.Name = "Hora";
-            this.Hora.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Hora.Width = 50;
-            // 
-            // Paciente
-            // 
-            this.Paciente.HeaderText = "Paciente";
-            this.Paciente.MinimumWidth = 8;
-            this.Paciente.Name = "Paciente";
-            this.Paciente.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Paciente.Width = 220;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 8;
-            this.Status.Name = "Status";
-            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Status.Width = 50;
-            // 
-            // CodigoPaciente
-            // 
-            this.CodigoPaciente.HeaderText = "CodigoPaciente";
-            this.CodigoPaciente.MinimumWidth = 8;
-            this.CodigoPaciente.Name = "CodigoPaciente";
-            this.CodigoPaciente.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.CodigoPaciente.Visible = false;
-            this.CodigoPaciente.Width = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(367, 295);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Anotações";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(443, 293);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // anot
-            // 
-            this.anot.AutoScroll = true;
-            this.anot.Location = new System.Drawing.Point(370, 315);
-            this.anot.Name = "anot";
-            this.anot.Size = new System.Drawing.Size(830, 304);
-            this.anot.TabIndex = 7;
-            // 
-            // pnlBarraLogin
-            // 
-            this.pnlBarraLogin.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlBarraLogin.Controls.Add(this.lb_NomeUsuario);
-            this.pnlBarraLogin.Controls.Add(this.label24);
-            this.pnlBarraLogin.Controls.Add(this.lb_Acesso);
-            this.pnlBarraLogin.Controls.Add(this.label26);
-            this.pnlBarraLogin.Controls.Add(this.pb_ledLogado);
-            this.pnlBarraLogin.Location = new System.Drawing.Point(0, 625);
-            this.pnlBarraLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pnlBarraLogin.Name = "pnlBarraLogin";
-            this.pnlBarraLogin.Size = new System.Drawing.Size(1320, 25);
-            this.pnlBarraLogin.TabIndex = 29;
-            // 
-            // lb_NomeUsuario
-            // 
-            this.lb_NomeUsuario.AutoSize = true;
-            this.lb_NomeUsuario.Location = new System.Drawing.Point(127, 5);
-            this.lb_NomeUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_NomeUsuario.Name = "lb_NomeUsuario";
-            this.lb_NomeUsuario.Size = new System.Drawing.Size(16, 13);
-            this.lb_NomeUsuario.TabIndex = 4;
-            this.lb_NomeUsuario.Text = "---";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(32, 5);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(81, 13);
-            this.label24.TabIndex = 3;
-            this.label24.Text = "Usuário logado:";
-            // 
-            // lb_Acesso
-            // 
-            this.lb_Acesso.AutoSize = true;
-            this.lb_Acesso.Location = new System.Drawing.Point(360, 5);
-            this.lb_Acesso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_Acesso.Name = "lb_Acesso";
-            this.lb_Acesso.Size = new System.Drawing.Size(13, 13);
-            this.lb_Acesso.TabIndex = 2;
-            this.lb_Acesso.Text = "0";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(284, 5);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(74, 13);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "Nível Acesso:";
-            // 
-            // btnLimparNotes
-            // 
-            this.btnLimparNotes.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimparNotes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimparNotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimparNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimparNotes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLimparNotes.Location = new System.Drawing.Point(481, 293);
-            this.btnLimparNotes.Name = "btnLimparNotes";
-            this.btnLimparNotes.Size = new System.Drawing.Size(33, 23);
-            this.btnLimparNotes.TabIndex = 30;
-            this.btnLimparNotes.Text = "-";
-            this.btnLimparNotes.UseVisualStyleBackColor = false;
-            this.btnLimparNotes.Click += new System.EventHandler(this.btnLimparNotes_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::SistemaOdonto.Properties.Resources.Circle_Red;
-            this.pictureBox5.Location = new System.Drawing.Point(166, 71);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(22, 22);
-            this.pictureBox5.TabIndex = 40;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::SistemaOdonto.Properties.Resources.Circle_Orange;
-            this.pictureBox4.Location = new System.Drawing.Point(241, 71);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 22);
-            this.pictureBox4.TabIndex = 39;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::SistemaOdonto.Properties.Resources.Circle_Grey;
-            this.pictureBox3.Location = new System.Drawing.Point(15, 71);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(23, 22);
-            this.pictureBox3.TabIndex = 38;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SistemaOdonto.Properties.Resources.Circle_Green;
-            this.pictureBox2.Location = new System.Drawing.Point(315, 71);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
-            this.pictureBox2.TabIndex = 37;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SistemaOdonto.Properties.Resources.Circle_Blue;
-            this.pictureBox1.Location = new System.Drawing.Point(91, 71);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(22, 22);
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pb_ledLogado
-            // 
-            this.pb_ledLogado.Image = global::SistemaOdonto.Properties.Resources.Circle_Red;
-            this.pb_ledLogado.Location = new System.Drawing.Point(3, 3);
-            this.pb_ledLogado.Margin = new System.Windows.Forms.Padding(2);
-            this.pb_ledLogado.Name = "pb_ledLogado";
-            this.pb_ledLogado.Size = new System.Drawing.Size(20, 21);
-            this.pb_ledLogado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_ledLogado.TabIndex = 0;
-            this.pb_ledLogado.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::SistemaOdonto.Properties.Resources.banner2_2;
-            this.panel1.Location = new System.Drawing.Point(370, 42);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(830, 244);
-            this.panel1.TabIndex = 4;
             // 
             // cadastrosToolStripMenuItem
             // 
@@ -495,30 +249,276 @@
             // calculadoraToolStripMenuItem
             // 
             this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
-            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.calculadoraToolStripMenuItem.Text = "Calculadora";
             this.calculadoraToolStripMenuItem.Click += new System.EventHandler(this.calculadoraToolStripMenuItem_Click);
             // 
             // blocoDeNotasToolStripMenuItem
             // 
             this.blocoDeNotasToolStripMenuItem.Name = "blocoDeNotasToolStripMenuItem";
-            this.blocoDeNotasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.blocoDeNotasToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.blocoDeNotasToolStripMenuItem.Text = "Bloco de Notas";
             this.blocoDeNotasToolStripMenuItem.Click += new System.EventHandler(this.blocoDeNotasToolStripMenuItem_Click);
             // 
             // wordToolStripMenuItem
             // 
             this.wordToolStripMenuItem.Name = "wordToolStripMenuItem";
-            this.wordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.wordToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.wordToolStripMenuItem.Text = "Word";
             this.wordToolStripMenuItem.Click += new System.EventHandler(this.wordToolStripMenuItem_Click);
             // 
             // excelToolStripMenuItem
             // 
             this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
-            this.excelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excelToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.excelToolStripMenuItem.Text = "Excel";
             this.excelToolStripMenuItem.Click += new System.EventHandler(this.excelToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Consultas do Dia";
+            // 
+            // cbDentista
+            // 
+            this.cbDentista.FormattingEnabled = true;
+            this.cbDentista.Location = new System.Drawing.Point(129, 42);
+            this.cbDentista.Name = "cbDentista";
+            this.cbDentista.Size = new System.Drawing.Size(210, 21);
+            this.cbDentista.TabIndex = 2;
+            this.cbDentista.SelectionChangeCommitted += new System.EventHandler(this.cbDentista_SelectionChangeCommitted);
+            this.cbDentista.Click += new System.EventHandler(this.cbDentista_Click);
+            // 
+            // dg
+            // 
+            this.dg.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Hora,
+            this.Paciente,
+            this.Status,
+            this.CodigoPaciente});
+            this.dg.Location = new System.Drawing.Point(15, 99);
+            this.dg.Name = "dg";
+            this.dg.RowHeadersVisible = false;
+            this.dg.RowHeadersWidth = 62;
+            this.dg.Size = new System.Drawing.Size(323, 520);
+            this.dg.TabIndex = 3;
+            this.dg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_CellContentClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "ColunaCodigo";
+            this.Codigo.MinimumWidth = 8;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Codigo.Visible = false;
+            this.Codigo.Width = 10;
+            // 
+            // Hora
+            // 
+            this.Hora.HeaderText = "Hora";
+            this.Hora.MinimumWidth = 8;
+            this.Hora.Name = "Hora";
+            this.Hora.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Hora.Width = 50;
+            // 
+            // Paciente
+            // 
+            this.Paciente.HeaderText = "Paciente";
+            this.Paciente.MinimumWidth = 8;
+            this.Paciente.Name = "Paciente";
+            this.Paciente.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Paciente.Width = 220;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 8;
+            this.Status.Name = "Status";
+            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Status.Width = 50;
+            // 
+            // CodigoPaciente
+            // 
+            this.CodigoPaciente.HeaderText = "CodigoPaciente";
+            this.CodigoPaciente.MinimumWidth = 8;
+            this.CodigoPaciente.Name = "CodigoPaciente";
+            this.CodigoPaciente.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.CodigoPaciente.Visible = false;
+            this.CodigoPaciente.Width = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(367, 295);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Anotações";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(443, 293);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // anot
+            // 
+            this.anot.AutoScroll = true;
+            this.anot.Location = new System.Drawing.Point(370, 315);
+            this.anot.Name = "anot";
+            this.anot.Size = new System.Drawing.Size(830, 304);
+            this.anot.TabIndex = 7;
+            // 
+            // pnlBarraLogin
+            // 
+            this.pnlBarraLogin.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlBarraLogin.Controls.Add(this.lb_NomeUsuario);
+            this.pnlBarraLogin.Controls.Add(this.label24);
+            this.pnlBarraLogin.Controls.Add(this.lb_Acesso);
+            this.pnlBarraLogin.Controls.Add(this.label26);
+            this.pnlBarraLogin.Controls.Add(this.pb_ledLogado);
+            this.pnlBarraLogin.Location = new System.Drawing.Point(0, 625);
+            this.pnlBarraLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlBarraLogin.Name = "pnlBarraLogin";
+            this.pnlBarraLogin.Size = new System.Drawing.Size(1320, 25);
+            this.pnlBarraLogin.TabIndex = 29;
+            // 
+            // lb_NomeUsuario
+            // 
+            this.lb_NomeUsuario.AutoSize = true;
+            this.lb_NomeUsuario.Location = new System.Drawing.Point(127, 5);
+            this.lb_NomeUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_NomeUsuario.Name = "lb_NomeUsuario";
+            this.lb_NomeUsuario.Size = new System.Drawing.Size(16, 13);
+            this.lb_NomeUsuario.TabIndex = 4;
+            this.lb_NomeUsuario.Text = "---";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(32, 5);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(81, 13);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "Usuário logado:";
+            // 
+            // lb_Acesso
+            // 
+            this.lb_Acesso.AutoSize = true;
+            this.lb_Acesso.Location = new System.Drawing.Point(360, 5);
+            this.lb_Acesso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_Acesso.Name = "lb_Acesso";
+            this.lb_Acesso.Size = new System.Drawing.Size(13, 13);
+            this.lb_Acesso.TabIndex = 2;
+            this.lb_Acesso.Text = "0";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(284, 5);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(74, 13);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Nível Acesso:";
+            // 
+            // pb_ledLogado
+            // 
+            this.pb_ledLogado.Image = global::SistemaOdonto.Properties.Resources.Circle_Red;
+            this.pb_ledLogado.Location = new System.Drawing.Point(3, 3);
+            this.pb_ledLogado.Margin = new System.Windows.Forms.Padding(2);
+            this.pb_ledLogado.Name = "pb_ledLogado";
+            this.pb_ledLogado.Size = new System.Drawing.Size(20, 21);
+            this.pb_ledLogado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_ledLogado.TabIndex = 0;
+            this.pb_ledLogado.TabStop = false;
+            // 
+            // btnLimparNotes
+            // 
+            this.btnLimparNotes.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLimparNotes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimparNotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimparNotes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLimparNotes.Location = new System.Drawing.Point(481, 293);
+            this.btnLimparNotes.Name = "btnLimparNotes";
+            this.btnLimparNotes.Size = new System.Drawing.Size(33, 23);
+            this.btnLimparNotes.TabIndex = 30;
+            this.btnLimparNotes.Text = "-";
+            this.btnLimparNotes.UseVisualStyleBackColor = false;
+            this.btnLimparNotes.Click += new System.EventHandler(this.btnLimparNotes_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::SistemaOdonto.Properties.Resources.Circle_Red;
+            this.pictureBox5.Location = new System.Drawing.Point(166, 71);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(22, 22);
+            this.pictureBox5.TabIndex = 40;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SistemaOdonto.Properties.Resources.Circle_Orange;
+            this.pictureBox4.Location = new System.Drawing.Point(241, 71);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(20, 22);
+            this.pictureBox4.TabIndex = 39;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SistemaOdonto.Properties.Resources.Circle_Grey;
+            this.pictureBox3.Location = new System.Drawing.Point(15, 71);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(23, 22);
+            this.pictureBox3.TabIndex = 38;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SistemaOdonto.Properties.Resources.Circle_Green;
+            this.pictureBox2.Location = new System.Drawing.Point(315, 71);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
+            this.pictureBox2.TabIndex = 37;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaOdonto.Properties.Resources.Circle_Blue;
+            this.pictureBox1.Location = new System.Drawing.Point(91, 71);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(22, 22);
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::SistemaOdonto.Properties.Resources.banner2_2;
+            this.panel1.Location = new System.Drawing.Point(370, 42);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(830, 244);
+            this.panel1.TabIndex = 4;
             // 
             // FrmPrincipal
             // 
@@ -554,12 +554,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
             this.pnlBarraLogin.ResumeLayout(false);
             this.pnlBarraLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ledLogado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ledLogado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
