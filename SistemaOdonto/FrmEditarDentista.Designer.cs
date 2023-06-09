@@ -65,9 +65,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ts,
             this.tsNenhuma});
-            this.statusStrip1.Location = new System.Drawing.Point(5, 306);
+            this.statusStrip1.Location = new System.Drawing.Point(2, 306);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(358, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(360, 22);
             this.statusStrip1.TabIndex = 33;
             this.statusStrip1.Text = "tsNenhuma";
             // 
@@ -313,7 +313,7 @@
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtCelular);
             this.panel1.Controls.Add(this.txtTelefone);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(360, 301);
             this.panel1.TabIndex = 109;
@@ -361,10 +361,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
-            this.ClientSize = new System.Drawing.Size(366, 329);
+            this.ClientSize = new System.Drawing.Size(364, 329);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "FrmEditarDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

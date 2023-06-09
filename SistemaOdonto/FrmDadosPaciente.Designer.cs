@@ -178,7 +178,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tc);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "FrmDadosPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

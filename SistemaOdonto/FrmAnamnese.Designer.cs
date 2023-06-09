@@ -516,7 +516,7 @@ namespace SistemaOdonto
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.txtAlergiaQualMedicamento);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Location = new System.Drawing.Point(4, 5);
+            this.panel1.Location = new System.Drawing.Point(1, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(670, 331);
             this.panel1.TabIndex = 115;
@@ -562,9 +562,9 @@ namespace SistemaOdonto
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
-            this.ClientSize = new System.Drawing.Size(677, 341);
+            this.ClientSize = new System.Drawing.Size(674, 338);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmAnamnese";
             this.Text = "Ficha Anamnese";
             this.panel1.ResumeLayout(false);

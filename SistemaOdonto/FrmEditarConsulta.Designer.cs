@@ -204,7 +204,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ts,
             this.tsNenhuma});
-            this.statusStrip1.Location = new System.Drawing.Point(6, 395);
+            this.statusStrip1.Location = new System.Drawing.Point(4, 395);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(432, 22);
             this.statusStrip1.TabIndex = 71;
@@ -267,7 +267,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dtHora);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(1, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(435, 389);
             this.panel1.TabIndex = 77;
@@ -335,10 +335,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
-            this.ClientSize = new System.Drawing.Size(441, 420);
+            this.ClientSize = new System.Drawing.Size(438, 420);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmEditarConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edição das Consultas";

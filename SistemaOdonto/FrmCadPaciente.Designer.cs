@@ -675,7 +675,7 @@
             this.ClientSize = new System.Drawing.Size(467, 380);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "FrmCadPaciente";

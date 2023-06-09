@@ -104,7 +104,7 @@
             this.panel1.Controls.Add(this.btnAvancar);
             this.panel1.Controls.Add(this.dtpDataMostrada);
             this.panel1.Controls.Add(this.btnVoltar);
-            this.panel1.Location = new System.Drawing.Point(4, 3);
+            this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(660, 532);
             this.panel1.TabIndex = 19;
@@ -169,8 +169,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
-            this.ClientSize = new System.Drawing.Size(667, 538);
+            this.ClientSize = new System.Drawing.Size(664, 538);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmConsultas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda de Consultas";

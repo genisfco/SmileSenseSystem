@@ -97,7 +97,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(3, 60);
+            this.richTextBox1.Location = new System.Drawing.Point(5, 60);
             this.richTextBox1.MaxLength = 144;
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(285, 197);
@@ -114,7 +114,7 @@
             this.panel1.Controls.Add(this.btnLaranja);
             this.panel1.Controls.Add(this.btnRosa);
             this.panel1.Controls.Add(this.btnRoxo);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(298, 263);
             this.panel1.TabIndex = 14;
@@ -144,9 +144,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
-            this.ClientSize = new System.Drawing.Size(304, 266);
+            this.ClientSize = new System.Drawing.Size(301, 269);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmAnotacoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nova Anotação";

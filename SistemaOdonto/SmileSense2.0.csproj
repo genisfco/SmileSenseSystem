@@ -509,6 +509,8 @@
     <None Include="Resources\iconedireita.png" />
     <None Include="Resources\group.ico" />
     <None Include="Resources\ico.png" />
+    <None Include="Resources\ferramentas1.ico" />
+    <None Include="Resources\ferramentas2.ico" />
     <Content Include="Resources\MAjuda.Image.png" />
     <Content Include="Resources\MSair.Image.png" />
     <None Include="Resources\odontograma2.2.jpg" />

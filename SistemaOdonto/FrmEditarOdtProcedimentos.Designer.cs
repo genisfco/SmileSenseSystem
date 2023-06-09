@@ -1048,7 +1048,7 @@
             this.Controls.Add(this.lbPaciente);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1295, 704);

@@ -1034,7 +1034,7 @@ namespace SistemaOdonto
             this.Controls.Add(this.masktxtCPFPaciente);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lbPaciente);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1295, 704);
             this.MinimumSize = new System.Drawing.Size(1067, 554);

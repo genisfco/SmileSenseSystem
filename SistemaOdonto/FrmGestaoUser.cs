@@ -103,5 +103,10 @@ namespace SistemaOdonto
                 e.Handled = true;
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

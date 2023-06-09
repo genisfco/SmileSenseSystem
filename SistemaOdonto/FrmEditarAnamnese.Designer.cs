@@ -527,7 +527,7 @@
             this.panel1.Controls.Add(this.chboxDiabetesSIM);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.txtAlergiaQualMedicamento);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(712, 327);
             this.panel1.TabIndex = 159;
@@ -573,8 +573,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
-            this.ClientSize = new System.Drawing.Size(718, 330);
+            this.ClientSize = new System.Drawing.Size(715, 332);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmEditarAnamnese";
             this.Text = "Ficha Anamnese";

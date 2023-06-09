@@ -151,7 +151,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ts,
             this.tsNenhuma});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 369);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 364);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(426, 22);
             this.statusStrip1.TabIndex = 52;
@@ -209,7 +209,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbDentista);
-            this.panel1.Location = new System.Drawing.Point(3, 5);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(426, 359);
             this.panel1.TabIndex = 74;
@@ -277,10 +277,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
-            this.ClientSize = new System.Drawing.Size(433, 394);
+            this.ClientSize = new System.Drawing.Size(430, 389);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "FrmCadConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
