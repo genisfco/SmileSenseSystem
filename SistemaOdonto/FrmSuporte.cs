@@ -24,13 +24,12 @@ namespace SistemaOdonto
                 string campo2 = textBox2.Text;
                 string campo3 = textBox3.Text;
                 string campo4 = textBox4.Text;
+                                                
+                string corpo = $"Nome: {campo1}{Environment.NewLine}{Environment.NewLine}" +
+                               $"Telefone: {campo2}{Environment.NewLine}{Environment.NewLine}" +
+                               $"Endereço: {campo3}{Environment.NewLine}{Environment.NewLine}" +
+                               $"Mensagem: {campo4}{Environment.NewLine}{Environment.NewLine}";
 
-
-                string corpo = $"Nome : {campo1}{Environment.NewLine}" +
-                               $"Telefone : {campo2}{Environment.NewLine}" +
-                               $"Endereço: {campo3}{Environment.NewLine}" +
-                               $"Mensagem: {campo4}{Environment.NewLine}";
-                            
 
                 string url = $"mailto:{destinatario}?subject={Uri.EscapeDataString(assunto)}&body={Uri.EscapeDataString(corpo)}";
 

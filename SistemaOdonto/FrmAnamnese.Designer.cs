@@ -566,6 +566,7 @@ namespace SistemaOdonto
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmAnamnese";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ficha Anamnese";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
