@@ -29,7 +29,6 @@ namespace SistemaOdonto
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAnamnese));
             this.chboxDoencaCongNAO = new System.Windows.Forms.CheckBox();
             this.chboxDoencaCongSIM = new System.Windows.Forms.CheckBox();
             this.chboxComplOdontoNAO = new System.Windows.Forms.CheckBox();
@@ -566,7 +565,6 @@ namespace SistemaOdonto
             this.ClientSize = new System.Drawing.Size(677, 341);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAnamnese";
             this.Text = "Ficha Anamnese";
             this.panel1.ResumeLayout(false);
