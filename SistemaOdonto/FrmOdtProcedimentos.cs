@@ -127,6 +127,30 @@ namespace SistemaOdonto
                 "\n\n6. Na imagem de Odontograma do quadro esquerdo faça as anotações necessárias." +
                 "\n\n7. Para salvar as informações: Clique em Salvar Odontograma." +
                 "", "Instruções para Preenchimento dos Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            CriarPastaImagemOdontogramaPadrao();
+        }
+
+        private void CriarPastaImagemOdontogramaPadrao()
+        {
+            string diretorioInstalacao = AppDomain.CurrentDomain.BaseDirectory;
+            string resourceFolderPath = Path.Combine(diretorioInstalacao, "Resource");
+            string imagemPadraoFolderPath = Path.Combine(resourceFolderPath, "ImagemPadrao");
+            string imagemPadraoPath = Path.Combine(imagemPadraoFolderPath, "odontogramaPadrao.jpg");
+
+            // Verifica se a pasta ImagemPadrao já existe
+            if (!Directory.Exists(imagemPadraoFolderPath))
+            {
+                Directory.CreateDirectory(imagemPadraoFolderPath);
+            }
+
+            // Verifica se a imagem odontogramaPadrao já existe
+            if (!File.Exists(imagemPadraoPath))
+            {
+                Bitmap imagemPadrao = new Bitmap(pbImgOdontograma.Width, pbImgOdontograma.Height);
+                pbImgOdontograma.DrawToBitmap(imagemPadrao, new Rectangle(0, 0, pbImgOdontograma.Width, pbImgOdontograma.Height));
+                imagemPadrao.Save(imagemPadraoPath, ImageFormat.Jpeg);
+            }
         }
 
         private void ListarDentistas()
@@ -2082,7 +2106,5 @@ namespace SistemaOdonto
             }
             return procedimentos;
         }
-
-        
     }
 }
