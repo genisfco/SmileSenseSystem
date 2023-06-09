@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Mail;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Diagnostics;
+using System.Net.Mail;
+using System.Windows.Forms;
+using MimeKit;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemaOdonto
 {
@@ -22,12 +16,21 @@ namespace SistemaOdonto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
             try
             {
                 string destinatario = "emaildosuporte@gmail.com";
-                string assunto = "Assunto do email";
-                string corpo = "Corpo do email";
+                string assunto = textBox5.Text;
+                string campo1 = textBox1.Text;
+                string campo2 = textBox2.Text;
+                string campo3 = textBox3.Text;
+                string campo4 = textBox4.Text;
+
+
+                string corpo = $"Nome : {campo1}{Environment.NewLine}" +
+                               $"Telefone : {campo2}{Environment.NewLine}" +
+                               $"Endereço: {campo3}{Environment.NewLine}" +
+                               $"Mensagem: {campo4}{Environment.NewLine}";
+                            
 
                 string url = $"mailto:{destinatario}?subject={Uri.EscapeDataString(assunto)}&body={Uri.EscapeDataString(corpo)}";
 
@@ -37,6 +40,7 @@ namespace SistemaOdonto
             {
                 MessageBox.Show("Ocorreu um erro ao abrir o cliente de email: " + ex.Message);
             }
+                                   
         }
     }
 }
