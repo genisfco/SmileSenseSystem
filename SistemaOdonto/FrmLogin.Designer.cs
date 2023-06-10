@@ -48,19 +48,21 @@
             // txt_UserName
             // 
             this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_UserName.Location = new System.Drawing.Point(33, 104);
+            this.txt_UserName.Location = new System.Drawing.Point(50, 160);
+            this.txt_UserName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_UserName.Name = "txt_UserName";
-            this.txt_UserName.Size = new System.Drawing.Size(228, 26);
+            this.txt_UserName.Size = new System.Drawing.Size(340, 35);
             this.txt_UserName.TabIndex = 7;
             this.txt_UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Senha
             // 
             this.txt_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Senha.Location = new System.Drawing.Point(33, 182);
+            this.txt_Senha.Location = new System.Drawing.Point(50, 280);
+            this.txt_Senha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Senha.Name = "txt_Senha";
             this.txt_Senha.PasswordChar = '*';
-            this.txt_Senha.Size = new System.Drawing.Size(228, 26);
+            this.txt_Senha.Size = new System.Drawing.Size(340, 35);
             this.txt_Senha.TabIndex = 8;
             this.txt_Senha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -68,12 +70,13 @@
             // 
             this.label3.AllowDrop = true;
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Honeydew;
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(75, 77);
+            this.label3.Location = new System.Drawing.Point(112, 118);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 24);
+            this.label3.Size = new System.Drawing.Size(132, 33);
             this.label3.TabIndex = 11;
             this.label3.Text = "Usuário:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -81,12 +84,13 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Honeydew;
+            this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(75, 156);
+            this.label4.Location = new System.Drawing.Point(112, 240);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 24);
+            this.label4.Size = new System.Drawing.Size(112, 33);
             this.label4.TabIndex = 12;
             this.label4.Text = "Senha:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -105,18 +109,20 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btn_Sair);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Location = new System.Drawing.Point(5, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(296, 384);
+            this.panel1.Size = new System.Drawing.Size(440, 590);
             this.panel1.TabIndex = 33;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImage = global::SistemaOdonto.Properties.Resources.ico;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(161, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(301, 9);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 71);
+            this.pictureBox3.Size = new System.Drawing.Size(89, 93);
             this.pictureBox3.TabIndex = 33;
             this.pictureBox3.TabStop = false;
             // 
@@ -126,9 +132,10 @@
             this.pictureBox1.BackgroundImage = global::SistemaOdonto.Properties.Resources.users;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 77);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 118);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 25);
+            this.pictureBox1.Size = new System.Drawing.Size(60, 36);
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
@@ -141,9 +148,10 @@
             this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.checkBox1.Image = global::SistemaOdonto.Properties.Resources.Eye256_25057;
             this.checkBox1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.checkBox1.Location = new System.Drawing.Point(211, 214);
+            this.checkBox1.Location = new System.Drawing.Point(316, 329);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 32);
+            this.checkBox1.Size = new System.Drawing.Size(74, 32);
             this.checkBox1.TabIndex = 32;
             this.checkBox1.Text = "      ";
             this.checkBox1.UseVisualStyleBackColor = false;
@@ -155,9 +163,10 @@
             this.pictureBox2.BackgroundImage = global::SistemaOdonto.Properties.Resources._lock;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Location = new System.Drawing.Point(33, 156);
+            this.pictureBox2.Location = new System.Drawing.Point(50, 240);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(41, 24);
+            this.pictureBox2.Size = new System.Drawing.Size(60, 35);
             this.pictureBox2.TabIndex = 25;
             this.pictureBox2.TabStop = false;
             // 
@@ -170,9 +179,10 @@
             this.btn_Logar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Logar.Image = global::SistemaOdonto.Properties.Resources.btnLogin_Image;
             this.btn_Logar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Logar.Location = new System.Drawing.Point(33, 261);
+            this.btn_Logar.Location = new System.Drawing.Point(50, 402);
+            this.btn_Logar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Logar.Name = "btn_Logar";
-            this.btn_Logar.Size = new System.Drawing.Size(228, 39);
+            this.btn_Logar.Size = new System.Drawing.Size(342, 60);
             this.btn_Logar.TabIndex = 9;
             this.btn_Logar.Text = "Logar   ";
             this.btn_Logar.UseVisualStyleBackColor = true;
@@ -187,9 +197,10 @@
             this.btn_Sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sair.Image = global::SistemaOdonto.Properties.Resources.delete;
             this.btn_Sair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Sair.Location = new System.Drawing.Point(33, 317);
+            this.btn_Sair.Location = new System.Drawing.Point(50, 488);
+            this.btn_Sair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Sair.Name = "btn_Sair";
-            this.btn_Sair.Size = new System.Drawing.Size(228, 39);
+            this.btn_Sair.Size = new System.Drawing.Size(342, 60);
             this.btn_Sair.TabIndex = 10;
             this.btn_Sair.Text = "Sair   ";
             this.btn_Sair.UseVisualStyleBackColor = true;
@@ -197,15 +208,14 @@
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(302, 390);
+            this.ClientSize = new System.Drawing.Size(454, 608);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLogin";

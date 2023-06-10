@@ -37,28 +37,26 @@
             this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnBuscarPaciente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewPaciente)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tc
             // 
-            this.tc.Location = new System.Drawing.Point(2, 104);
+            this.tc.Location = new System.Drawing.Point(6, 147);
+            this.tc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tc.Name = "tc";
             this.tc.SelectedIndex = 0;
-            this.tc.Size = new System.Drawing.Size(799, 269);
+            this.tc.Size = new System.Drawing.Size(1198, 427);
             this.tc.TabIndex = 1;
             // 
             // masktxtCPFPaciente
             // 
             this.masktxtCPFPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.masktxtCPFPaciente.Location = new System.Drawing.Point(5, 59);
-            this.masktxtCPFPaciente.Margin = new System.Windows.Forms.Padding(2);
+            this.masktxtCPFPaciente.Location = new System.Drawing.Point(12, 86);
             this.masktxtCPFPaciente.Mask = "000.000.000-00";
             this.masktxtCPFPaciente.Name = "masktxtCPFPaciente";
-            this.masktxtCPFPaciente.Size = new System.Drawing.Size(103, 23);
+            this.masktxtCPFPaciente.Size = new System.Drawing.Size(152, 30);
             this.masktxtCPFPaciente.TabIndex = 44;
             this.masktxtCPFPaciente.Enter += new System.EventHandler(this.masktxtCPFPaciente_Enter);
             // 
@@ -72,14 +70,15 @@
             this.Telefone,
             this.Celular,
             this.Email});
-            this.dgViewPaciente.Location = new System.Drawing.Point(252, 16);
+            this.dgViewPaciente.Location = new System.Drawing.Point(393, 14);
+            this.dgViewPaciente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgViewPaciente.Name = "dgViewPaciente";
             this.dgViewPaciente.ReadOnly = true;
             this.dgViewPaciente.RowHeadersVisible = false;
             this.dgViewPaciente.RowHeadersWidth = 62;
             this.dgViewPaciente.RowTemplate.Height = 28;
             this.dgViewPaciente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgViewPaciente.Size = new System.Drawing.Size(539, 66);
+            this.dgViewPaciente.Size = new System.Drawing.Size(808, 102);
             this.dgViewPaciente.TabIndex = 50;
             this.dgViewPaciente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewPaciente_CellDoubleClick);
             // 
@@ -132,22 +131,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(753, 43);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(8, 63);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.Size = new System.Drawing.Size(43, 20);
             this.label1.TabIndex = 51;
             this.label1.Text = "CPF";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.btnBuscarPaciente);
-            this.panel1.Controls.Add(this.masktxtCPFPaciente);
-            this.panel1.Controls.Add(this.dgViewPaciente);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(799, 100);
-            this.panel1.TabIndex = 52;
             // 
             // btnBuscarPaciente
             // 
@@ -159,10 +150,9 @@
             this.btnBuscarPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarPaciente.Image = global::SistemaOdonto.Properties.Resources.find_file;
             this.btnBuscarPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarPaciente.Location = new System.Drawing.Point(120, 37);
-            this.btnBuscarPaciente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(200, 62);
             this.btnBuscarPaciente.Name = "btnBuscarPaciente";
-            this.btnBuscarPaciente.Size = new System.Drawing.Size(103, 44);
+            this.btnBuscarPaciente.Size = new System.Drawing.Size(166, 54);
             this.btnBuscarPaciente.TabIndex = 49;
             this.btnBuscarPaciente.Text = "Buscar";
             this.btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -171,21 +161,22 @@
             // 
             // FrmDadosPaciente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
-            this.ClientSize = new System.Drawing.Size(804, 376);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1212, 585);
             this.Controls.Add(this.tc);
+            this.Controls.Add(this.dgViewPaciente);
+            this.Controls.Add(this.btnBuscarPaciente);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.masktxtCPFPaciente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "FrmDadosPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consuta de Pacientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgViewPaciente)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,6 +194,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.Panel panel1;
     }
 }

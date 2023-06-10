@@ -33,20 +33,22 @@
             // 
             // tc
             // 
-            this.tc.Location = new System.Drawing.Point(2, 1);
+            this.tc.Location = new System.Drawing.Point(6, 6);
+            this.tc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tc.Name = "tc";
             this.tc.SelectedIndex = 0;
-            this.tc.Size = new System.Drawing.Size(799, 331);
+            this.tc.Size = new System.Drawing.Size(1198, 509);
             this.tc.TabIndex = 0;
             // 
             // FrmDadosDentista
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
-            this.ClientSize = new System.Drawing.Size(804, 334);
+            this.ClientSize = new System.Drawing.Size(1212, 526);
             this.Controls.Add(this.tc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "FrmDadosDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

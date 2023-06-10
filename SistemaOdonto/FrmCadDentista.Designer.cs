@@ -59,91 +59,101 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 16);
+            this.label2.Location = new System.Drawing.Point(18, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nome:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 140);
+            this.label3.Location = new System.Drawing.Point(9, 215);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Email:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 172);
+            this.label4.Location = new System.Drawing.Point(12, 265);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.Size = new System.Drawing.Size(50, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Fone:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(212, 172);
+            this.label5.Location = new System.Drawing.Point(318, 265);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 13);
+            this.label5.Size = new System.Drawing.Size(62, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "Celular:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 49);
+            this.label6.Location = new System.Drawing.Point(24, 75);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 13);
+            this.label6.Size = new System.Drawing.Size(48, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "CRO:";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(54, 14);
+            this.txtNome.Location = new System.Drawing.Point(81, 22);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(297, 20);
+            this.txtNome.Size = new System.Drawing.Size(444, 26);
             this.txtNome.TabIndex = 1;
             this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
             this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(54, 136);
+            this.txtEmail.Location = new System.Drawing.Point(81, 209);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(297, 20);
+            this.txtEmail.Size = new System.Drawing.Size(444, 26);
             this.txtEmail.TabIndex = 7;
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(54, 168);
+            this.txtTelefone.Location = new System.Drawing.Point(81, 258);
+            this.txtTelefone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTelefone.Mask = "(00) 0000-0000";
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(92, 20);
+            this.txtTelefone.Size = new System.Drawing.Size(136, 26);
             this.txtTelefone.TabIndex = 8;
             this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtTelefone.Enter += new System.EventHandler(this.txtTelefone_Enter);
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(258, 168);
+            this.txtCelular.Location = new System.Drawing.Point(387, 258);
+            this.txtCelular.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCelular.Mask = "(00) 90000-0000";
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(92, 20);
+            this.txtCelular.Size = new System.Drawing.Size(136, 26);
             this.txtCelular.TabIndex = 9;
             this.txtCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtCelular.Enter += new System.EventHandler(this.txtCelular_Enter);
             // 
             // txtCRO
             // 
-            this.txtCRO.Location = new System.Drawing.Point(54, 45);
+            this.txtCRO.Location = new System.Drawing.Point(81, 69);
+            this.txtCRO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCRO.Mask = "LL 000-000";
             this.txtCRO.Name = "txtCRO";
-            this.txtCRO.Size = new System.Drawing.Size(70, 20);
+            this.txtCRO.Size = new System.Drawing.Size(103, 26);
             this.txtCRO.TabIndex = 2;
             this.txtCRO.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtCRO.Enter += new System.EventHandler(this.txtCRO_Enter);
@@ -152,14 +162,14 @@
             // statusStrip1
             // 
             this.statusStrip1.AutoSize = false;
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ts,
             this.tsNenhuma});
-            this.statusStrip1.Location = new System.Drawing.Point(2, 304);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 475);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(360, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(554, 34);
             this.statusStrip1.TabIndex = 16;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -167,64 +177,59 @@
             // 
             this.ts.BackColor = System.Drawing.Color.White;
             this.ts.Name = "ts";
-            this.ts.Size = new System.Drawing.Size(69, 17);
+            this.ts.Size = new System.Drawing.Size(104, 27);
             this.ts.Text = "Mensagem:";
             // 
             // tsNenhuma
             // 
             this.tsNenhuma.BackColor = System.Drawing.Color.White;
             this.tsNenhuma.Name = "tsNenhuma";
-            this.tsNenhuma.Size = new System.Drawing.Size(60, 17);
+            this.tsNenhuma.Size = new System.Drawing.Size(89, 27);
             this.tsNenhuma.Text = "Nenhuma";
             // 
             // rgEspecialista
             // 
             this.rgEspecialista.AutoSize = true;
-            this.rgEspecialista.Location = new System.Drawing.Point(129, 49);
-            this.rgEspecialista.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.rgEspecialista.Location = new System.Drawing.Point(194, 75);
             this.rgEspecialista.Name = "rgEspecialista";
-            this.rgEspecialista.Size = new System.Drawing.Size(23, 13);
+            this.rgEspecialista.Size = new System.Drawing.Size(34, 20);
             this.rgEspecialista.TabIndex = 84;
             this.rgEspecialista.Text = "RG";
             // 
             // cpfEspecialista
             // 
             this.cpfEspecialista.AutoSize = true;
-            this.cpfEspecialista.Location = new System.Drawing.Point(233, 49);
-            this.cpfEspecialista.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.cpfEspecialista.Location = new System.Drawing.Point(350, 75);
             this.cpfEspecialista.Name = "cpfEspecialista";
-            this.cpfEspecialista.Size = new System.Drawing.Size(27, 13);
+            this.cpfEspecialista.Size = new System.Drawing.Size(40, 20);
             this.cpfEspecialista.TabIndex = 85;
             this.cpfEspecialista.Text = "CPF";
             // 
             // maskRGDent
             // 
-            this.maskRGDent.Location = new System.Drawing.Point(158, 45);
-            this.maskRGDent.Margin = new System.Windows.Forms.Padding(2);
+            this.maskRGDent.Location = new System.Drawing.Point(237, 69);
             this.maskRGDent.Mask = "00.000.000-C";
             this.maskRGDent.Name = "maskRGDent";
-            this.maskRGDent.Size = new System.Drawing.Size(71, 20);
+            this.maskRGDent.Size = new System.Drawing.Size(104, 26);
             this.maskRGDent.TabIndex = 3;
             this.maskRGDent.Enter += new System.EventHandler(this.maskRGDent_Enter);
             this.maskRGDent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskRGDent_KeyPress);
             // 
             // maskCPFDent
             // 
-            this.maskCPFDent.Location = new System.Drawing.Point(266, 45);
-            this.maskCPFDent.Margin = new System.Windows.Forms.Padding(2);
+            this.maskCPFDent.Location = new System.Drawing.Point(399, 69);
             this.maskCPFDent.Mask = "000.000.000-00";
             this.maskCPFDent.Name = "maskCPFDent";
-            this.maskCPFDent.Size = new System.Drawing.Size(83, 20);
+            this.maskCPFDent.Size = new System.Drawing.Size(122, 26);
             this.maskCPFDent.TabIndex = 4;
             this.maskCPFDent.Enter += new System.EventHandler(this.maskCPFDent_Enter);
             // 
             // especialidade1
             // 
             this.especialidade1.AutoSize = true;
-            this.especialidade1.Location = new System.Drawing.Point(6, 95);
-            this.especialidade1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.especialidade1.Location = new System.Drawing.Point(9, 146);
             this.especialidade1.Name = "especialidade1";
-            this.especialidade1.Size = new System.Drawing.Size(46, 13);
+            this.especialidade1.Size = new System.Drawing.Size(67, 20);
             this.especialidade1.TabIndex = 88;
             this.especialidade1.Text = "Espec.1";
             // 
@@ -242,19 +247,17 @@
             "Ortodontia",
             "Periodontia",
             "Outra"});
-            this.comboxEspecialidade1.Location = new System.Drawing.Point(54, 90);
-            this.comboxEspecialidade1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboxEspecialidade1.Location = new System.Drawing.Point(81, 138);
             this.comboxEspecialidade1.Name = "comboxEspecialidade1";
-            this.comboxEspecialidade1.Size = new System.Drawing.Size(105, 21);
+            this.comboxEspecialidade1.Size = new System.Drawing.Size(156, 28);
             this.comboxEspecialidade1.TabIndex = 5;
             // 
             // especialidade2
             // 
             this.especialidade2.AutoSize = true;
-            this.especialidade2.Location = new System.Drawing.Point(196, 95);
-            this.especialidade2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.especialidade2.Location = new System.Drawing.Point(294, 146);
             this.especialidade2.Name = "especialidade2";
-            this.especialidade2.Size = new System.Drawing.Size(46, 13);
+            this.especialidade2.Size = new System.Drawing.Size(67, 20);
             this.especialidade2.TabIndex = 90;
             this.especialidade2.Text = "Espec.2";
             // 
@@ -272,15 +275,15 @@
             "Ortodontia",
             "Periodontia",
             "Outra"});
-            this.comboxEspecialidade2.Location = new System.Drawing.Point(246, 90);
-            this.comboxEspecialidade2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboxEspecialidade2.Location = new System.Drawing.Point(369, 138);
             this.comboxEspecialidade2.Name = "comboxEspecialidade2";
-            this.comboxEspecialidade2.Size = new System.Drawing.Size(105, 21);
+            this.comboxEspecialidade2.Size = new System.Drawing.Size(156, 28);
             this.comboxEspecialidade2.TabIndex = 6;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.especialidade1);
             this.panel1.Controls.Add(this.label3);
@@ -301,9 +304,10 @@
             this.panel1.Controls.Add(this.btnLimpar);
             this.panel1.Controls.Add(this.txtCRO);
             this.panel1.Controls.Add(this.btnSalvar);
-            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Location = new System.Drawing.Point(6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 298);
+            this.panel1.Size = new System.Drawing.Size(540, 458);
             this.panel1.TabIndex = 91;
             // 
             // btnLimpar
@@ -316,9 +320,10 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Image = global::SistemaOdonto.Properties.Resources.file;
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpar.Location = new System.Drawing.Point(224, 224);
+            this.btnLimpar.Location = new System.Drawing.Point(336, 345);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(124, 43);
+            this.btnLimpar.Size = new System.Drawing.Size(186, 66);
             this.btnLimpar.TabIndex = 11;
             this.btnLimpar.Text = "Novo/Limpar";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -335,9 +340,10 @@
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Image = global::SistemaOdonto.Properties.Resources.save;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(19, 224);
+            this.btnSalvar.Location = new System.Drawing.Point(28, 345);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(124, 43);
+            this.btnSalvar.Size = new System.Drawing.Size(186, 66);
             this.btnSalvar.TabIndex = 10;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -346,13 +352,14 @@
             // 
             // FrmCadDentista
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
-            this.ClientSize = new System.Drawing.Size(364, 329);
+            this.ClientSize = new System.Drawing.Size(554, 509);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "FrmCadDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
