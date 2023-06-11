@@ -68,57 +68,12 @@ namespace SistemaOdonto
                 txtNum.Text = enderecoPartes[1].Trim();
                 txtBairro.Text = enderecoPartes[2].Trim();
                 txtCidade.Text = enderecoPartes[3].Trim();
-                txtUF.Text = enderecoPartes[4].Trim();
+                txtUF.Text = enderecoPartes[4].Trim();                
             }
             else
             {
-                // Limpar os controles se o objeto for nulo
-                lblCodigo.Text = string.Empty;
-                txtNome.Text = string.Empty;
-                cbSexo.Text = string.Empty;
-                cbDia.Text = string.Empty;
-                cbMes.Text = string.Empty;
-                cbAno.Text = string.Empty;
-                masktxtRGPaciente.Text = string.Empty;
-                masktxtCPFPaciente.Text = string.Empty;
-                txtEmail.Text = string.Empty;
-                txtTelefone.Text = string.Empty;
-                txtCelular.Text = string.Empty;
-                txtCEP.Text = string.Empty;
-                txtEndereco.Text = string.Empty;
-                txtNum.Text = string.Empty;
-                txtBairro.Text = string.Empty;
-                txtCidade.Text = string.Empty;
-                txtUF.Text = string.Empty;
-            }
-            //this.obj = objP;
-
-            ////DISTRIBUINDO OS DADOS NO FORMS
-            //lblCodigo.Text = this.obj.Id.ToString();
-            //txtNome.Text = this.obj.Nome;
-            //cbSexo.Text = this.obj.Sexo;
-
-            ////DISTRIBUIR A DATA DE NASCIMENTO
-            //cbDia.Text = this.obj.Nascimento.ToString("dd");
-            //cbMes.Text = this.obj.Nascimento.ToString("MM");
-            //cbAno.Text = this.obj.Nascimento.Year.ToString();
-
-            //masktxtRGPaciente.Text = this.obj.RG;
-            //masktxtCPFPaciente.Text = this.obj.CPF;
-            //txtEmail.Text = this.obj.Email;
-            //txtTelefone.Text = this.obj.Telefone.ToString();
-            //txtCelular.Text = this.obj.Celular.ToString();
-
-            //txtCEP.Text = this.obj.CEP;
-
-            //// LEITURA DO ENDEREÇO E DIVISÃO DA STRING PARA TEXTBOX CORRESPONDENTE
-            //string enderecoCompleto = objP.Endereco;
-            //string[] enderecoPartes = enderecoCompleto.Split(new char[] { ',', '-' });
-            //txtEndereco.Text = enderecoPartes[0].Trim();
-            //txtNum.Text = enderecoPartes[1].Trim();
-            //txtBairro.Text = enderecoPartes[2].Trim();
-            //txtCidade.Text = enderecoPartes[3].Trim();
-            //txtUF.Text = enderecoPartes[4].Trim();            
+                MessageBox.Show("Não foi possível localizar os dados do Paciente!");
+            }            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

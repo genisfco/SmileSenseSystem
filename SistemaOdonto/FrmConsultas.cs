@@ -57,7 +57,7 @@ namespace SistemaOdonto
             dgv.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgv.Columns.Add("ColunaCodigoConsulta", "CodigoConsulta");
             dgv.Columns[0].Visible = false;
-            dgv.Columns.Add("ColunaHora", "");
+            dgv.Columns.Add("ColunaHora", "Horário");
             DataGridViewLinkColumn colPaciente = new DataGridViewLinkColumn();
             colPaciente.HeaderText = "Paciente";
             colPaciente.Name = "ColunaNomePaciente";
@@ -68,35 +68,54 @@ namespace SistemaOdonto
             colConsulta.Name = "ColunaVerConsulta";
             dgv.Columns.Add(colConsulta);
             dgv.CellContentClick += new DataGridViewCellEventHandler(this.Tabela_Clicada);
+            dgv.ColumnHeaderMouseClick += new DataGridViewCellMouseEventHandler(this.Cabecalho_Clicado);
+        }
+
+        private void Cabecalho_Clicado(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // Desabilitar classificação temporariamente
+            DataGridView dgv = (DataGridView)sender;
+            dgv.Columns[e.ColumnIndex].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            // Reabilitar classificação após o evento ter sido acionado
+            dgv.BeginInvoke(new Action(() =>
+            {
+                dgv.Columns[e.ColumnIndex].SortMode = DataGridViewColumnSortMode.Automatic;
+            }));
         }
 
         private void Tabela_Clicada(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
-            var idConsulta = dgv.Rows[e.RowIndex].Cells[0].Value;
-            Consulta c = service.Buscar(Convert.ToInt32(idConsulta));
-           
-            try
+
+            if (e.RowIndex >= 0 && e.RowIndex < dgv.Rows.Count)
             {
-                if (e.ColumnIndex == 2 && e.RowIndex != -1)
+                var idConsulta = dgv.Rows[e.RowIndex].Cells[0].Value;
+                Consulta c = service.Buscar(Convert.ToInt32(idConsulta));
+
+                try
                 {
-                    Paciente p = serviceP.Buscar(c.IdPaciente);
-                    FrmEditarPaciente frm = new FrmEditarPaciente(p);
-                    frm.ShowDialog();
-                    AtualizarLinhas();
+                    if (e.ColumnIndex == 2 && e.RowIndex != -1)
+                    {
+                        Paciente p = serviceP.Buscar(c.IdPaciente);
+                        FrmEditarPaciente frm = new FrmEditarPaciente(p);
+                        frm.ShowDialog();
+                        AtualizarLinhas();
+                    }
+                    if (e.ColumnIndex == 4 && e.RowIndex != -1)
+                    {
+                        var Form = new frmEditarConsulta(c);
+                        Form.ShowDialog();
+                        AtualizarLinhas();
+                    }
                 }
-                if (e.ColumnIndex == 4 && e.RowIndex != -1)
+                catch (Exception)
                 {
-                    var Form = new frmEditarConsulta(c);
-                    Form.ShowDialog();
-                    AtualizarLinhas();
+                    MessageBox.Show("Ocorreu um erro, favor entrar em contato com o administrador do sistema", "Ops!");
                 }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ocorreu um erro, favor entrar em contato com o adminstrador do sistema", "Ops!");
             }
         }
+
 
         public void GerarLinha(DataGridView dgv, int dentistaId)
         {

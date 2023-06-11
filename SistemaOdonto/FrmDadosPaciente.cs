@@ -179,6 +179,23 @@ namespace SistemaOdonto
             {
                 DataGridView dg = sender as DataGridView;
 
+                // Verifica se existem dados na linha
+                bool hasData = false;
+                foreach (DataGridViewCell cell in dg.Rows[e.RowIndex].Cells)
+                {
+                    if (cell.Value != null && !string.IsNullOrEmpty(cell.Value.ToString()))
+                    {
+                        hasData = true;
+                        break;
+                    }
+                }
+
+                // Retorna imediatamente se não houver dados na linha
+                if (!hasData)
+                {
+                    return;
+                }                
+
                 var id = dg.Rows[e.RowIndex].Cells[0].Value;
 
                 Paciente obj = serviceP.Buscar(Convert.ToInt32(id));
@@ -197,8 +214,6 @@ namespace SistemaOdonto
                     dg.Rows.RemoveAt(e.RowIndex);
                     GerarLinha(dg, obj);
                 }
-
-
             }
         }
     }

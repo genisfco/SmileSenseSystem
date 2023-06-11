@@ -240,7 +240,7 @@
             this.btnBuscarPaciente.Name = "btnBuscarPaciente";
             this.btnBuscarPaciente.Size = new System.Drawing.Size(158, 57);
             this.btnBuscarPaciente.TabIndex = 72;
-            this.btnBuscarPaciente.Text = "Buscar Paciente";
+            this.btnBuscarPaciente.Text = "Buscar";
             this.btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscarPaciente.UseVisualStyleBackColor = false;
             this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
