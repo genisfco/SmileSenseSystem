@@ -38,11 +38,20 @@ namespace SistemaOdonto
 
             if (dt.Rows.Count == 1)
             {
+                string status = dt.Rows[0].Field<string>("status_user");
+
+                if (status == "B" || status == "D")
+                {                
+
+                    MessageBox.Show("Desculpe, não será possível Logar!\r\n" +
+                        "Usuário com acesso bloqueado ao sistema!", "Acesso Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 frmPrincipal.lb_Acesso.Text = dt.Rows[0].ItemArray[5].ToString();
                 frmPrincipal.lb_NomeUsuario.Text = dt.Rows[0].Field<string>("nome_user");
                 frmPrincipal.pb_ledLogado.Image = Properties.Resources.Circle_Green;
-                frmPrincipal.pnlBarraLogin.BackColor = Color.FromArgb(192, 255, 192);
-                
+                frmPrincipal.pnlBarraLogin.BackColor = Color.FromArgb(192, 255, 192);                              
                 
                 int nivelUser = dt.Rows[0].Field<int>("nivel_user");
                 
@@ -73,10 +82,11 @@ namespace SistemaOdonto
             }
             else
             {
-                MessageBox.Show("Usuário não encontrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                
+                MessageBox.Show("Usuário não encontrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
             }
         }
+
+
         private void btn_Sair_Click(object sender, EventArgs e)
         {
             Global.logado = false;

@@ -37,7 +37,6 @@ namespace Controllers.Context
         public DbSet<Odontograma> Odontogramas { get; set; }
         public DbSet<Procedimento> Procedimentos { get; set; }
 
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Database.SetInitializer<SistemaContext>(null);
