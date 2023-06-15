@@ -26,10 +26,10 @@ namespace SistemaOdonto
         
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbCPF = new System.Windows.Forms.Label();
             this.masktxtCPFPaciente = new System.Windows.Forms.MaskedTextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -619,9 +619,9 @@ namespace SistemaOdonto
             // 
             // Elemento
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.Elemento.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.Elemento.DefaultCellStyle = dataGridViewCellStyle5;
             this.Elemento.HeaderText = "Dente";
             this.Elemento.MinimumWidth = 8;
             this.Elemento.Name = "Elemento";
@@ -631,9 +631,9 @@ namespace SistemaOdonto
             // 
             // Face
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.Face.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.Face.DefaultCellStyle = dataGridViewCellStyle6;
             this.Face.HeaderText = "Face";
             this.Face.MinimumWidth = 8;
             this.Face.Name = "Face";
@@ -643,8 +643,8 @@ namespace SistemaOdonto
             // 
             // Dentista
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Dentista.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Dentista.DefaultCellStyle = dataGridViewCellStyle7;
             this.Dentista.HeaderText = "Cirurgião";
             this.Dentista.MinimumWidth = 8;
             this.Dentista.Name = "Dentista";
@@ -661,8 +661,8 @@ namespace SistemaOdonto
             // 
             // Procedimento
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Info;
-            this.Procedimento.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Info;
+            this.Procedimento.DefaultCellStyle = dataGridViewCellStyle8;
             this.Procedimento.HeaderText = "Procedimento";
             this.Procedimento.MinimumWidth = 8;
             this.Procedimento.Name = "Procedimento";
@@ -947,7 +947,7 @@ namespace SistemaOdonto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1738, 966);
+            this.ClientSize = new System.Drawing.Size(1892, 966);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -973,7 +973,7 @@ namespace SistemaOdonto
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1930, 1051);
-            this.MinimumSize = new System.Drawing.Size(1588, 820);
+            this.MinimumSize = new System.Drawing.Size(1918, 1006);
             this.Name = "FrmOdtProcedimentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Odontograma e Procedimentos";

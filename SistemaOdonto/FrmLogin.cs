@@ -74,6 +74,14 @@ namespace SistemaOdonto
                     //sem acesso aos usuários
                     frmPrincipal.usuáriosToolStripMenuItem.Visible = false;                    
                 }
+                else if (nivelUser == 3)
+                {
+                    frmPrincipal.menuDentista.Enabled = true;
+                    frmPrincipal.menuDadosDentistas.Enabled = true;
+                    frmPrincipal.usuáriosToolStripMenuItem.Visible = true;
+
+                    frmPrincipal.MenuAjuda.Visible = true;
+                }
 
                 Global.nivel = int.Parse(dt.Rows[0].Field<int>("nivel_user").ToString());
                 Global.logado = true;
