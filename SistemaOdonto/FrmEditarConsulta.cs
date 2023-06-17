@@ -157,9 +157,21 @@ namespace SistemaOdonto
             tsNenhuma.Text = "";
 
             // Exibe uma mensagem de confirmação antes de excluir
-            DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir a Consulta?", "Confirmação de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (resultado == DialogResult.Yes)
+            string str_mensagem = string.Format("Paciente: {0}\r\n\r\n" +
+                                                "Dentista: {1}\r\n\r\n" +
+                                                "Agendamento na Data: {2} e Hora: {3}\r\n\r\n" +
+                                                "Tem certeza que deseja excluir a Consulta?" +
+                "", cbPaciente.Text, cbDentista.Text, dtData.Value.ToShortDateString(), dtHora.Value.ToShortTimeString());
+
+            DialogResult confirmacao = MessageBox.Show(str_mensagem, "Confirmação de Exclusão da Consulta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmacao == DialogResult.No)
+            {
+                return;
+            }
+
+            else if (confirmacao == DialogResult.Yes)
             {                
                 try
                 {
