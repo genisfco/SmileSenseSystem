@@ -139,7 +139,7 @@ namespace SistemaOdonto
                     try
                     {
                         service.Cadastrar(objGerado());
-                        MessageBox.Show("Novo Dentista Cadastrado com Sucesso!");
+                        MessageBox.Show("Novo Dentista Cadastrado com Sucesso!", "Dados Cadastrados!");
                         this.Close();
                     }
                     catch (Exception ex)

@@ -1996,7 +1996,7 @@ namespace SistemaOdonto
 
                 if (procedimentos.Count == 0)
                 {
-                    MessageBox.Show("Não há procedimentos para serem salvos.");
+                    MessageBox.Show("Não há procedimentos para serem salvos.", "Atenção!");
                     return;
                 }
 
@@ -2013,7 +2013,7 @@ namespace SistemaOdonto
                 return;
             }
 
-            MessageBox.Show("Odontograma e Procedimentos salvos com sucesso!");
+            MessageBox.Show("Odontograma e Procedimentos salvos com sucesso!", "Ação Realizada!");
             this.Close();
         }
 

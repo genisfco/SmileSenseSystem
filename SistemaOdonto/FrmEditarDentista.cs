@@ -58,7 +58,7 @@ namespace SistemaOdonto
                 if(lblCodigo.Text != this.obj.Id.ToString())
                 {
                     status = "apagado";
-                    MessageBox.Show("Este Registro acabou de ser excluido por outro usuário");
+                    MessageBox.Show("Este Registro acabou de ser excluido por outro usuário", "Atenção!");
                 }
                 else
                 {
@@ -85,7 +85,7 @@ namespace SistemaOdonto
                     {
                         service.Editar(this.obj);
                         status = "editado";
-                        MessageBox.Show("Dados Atualizados com Sucesso!");
+                        MessageBox.Show("Dados Atualizados com Sucesso!", "Ação Realizada!");
                         this.Close();
 
                     }
@@ -150,7 +150,7 @@ namespace SistemaOdonto
                 try
                 {
                     service.Deletar(this.obj.Id);
-                    MessageBox.Show("Dentista Excluído com sucesso!");
+                    MessageBox.Show("Dentista Excluído com sucesso!", "Ação Realizada!");
                     status = "apagado";
                     this.Close();
                 }
@@ -158,7 +158,12 @@ namespace SistemaOdonto
                 {
                     MessageBox.Show("Não foi possível fazer a exclusão: ", ex.Message);
                 }
-            }            
+            }
+            
+            else if (resultado == DialogResult.No)
+            {
+                return;
+            }
             
         }        
 

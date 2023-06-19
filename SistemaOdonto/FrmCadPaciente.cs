@@ -143,12 +143,12 @@ namespace SistemaOdonto
 
                 if (ClassValidation.ValidationDocs.validarCpf(masktxtCPFPaciente.Text) == false)
                 {
-                    MessageBox.Show("CPF inválido!");
+                    MessageBox.Show("CPF inválido!", "Atenção!");
                     masktxtCPFPaciente.Focus();
                 }
                 else if (ClassValidation.ValidationDocs.validarRg(masktxtRGPaciente.Text) == false)
                 {
-                    MessageBox.Show("RG inválido!");
+                    MessageBox.Show("RG inválido!", "Atenção!");
                     masktxtRGPaciente.Focus();
                 }
                 else
@@ -156,7 +156,7 @@ namespace SistemaOdonto
                     try
                     {
                         serviceP.Cadastrar(objGerado());
-                        MessageBox.Show("Novo Paciente Cadastrado com Sucesso!");
+                        MessageBox.Show("Novo Paciente Cadastrado com Sucesso!", "Dados Cadastrados!");
                         this.Close();
                     }
                     catch (Exception ex)

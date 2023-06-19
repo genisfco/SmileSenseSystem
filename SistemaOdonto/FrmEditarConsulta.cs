@@ -176,7 +176,7 @@ namespace SistemaOdonto
                 try
                 {
                     service.Deletar(this.consulta.IdConsulta);
-                    MessageBox.Show("Consulta excluída com sucesso!");
+                    MessageBox.Show("Consulta excluída com sucesso!", "Ação Realizada");
 
                     this.Close();
                 }

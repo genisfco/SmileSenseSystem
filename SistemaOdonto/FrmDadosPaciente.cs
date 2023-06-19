@@ -151,7 +151,7 @@ namespace SistemaOdonto
             {
                 Paciente paciente = serviceP.BuscarPorCPF(cpf);
 
-                if (paciente == null) { MessageBox.Show("Paciente não localizado com este CPF."); return; }
+                if (paciente == null) { MessageBox.Show("Paciente não localizado com este CPF.", "Erro ao Localizar!"); return; }
 
                 dgViewPaciente.Rows.Clear();
                 dgViewPaciente.Rows[0].Cells[0].Value = paciente.Id;

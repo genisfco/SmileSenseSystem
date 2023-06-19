@@ -27,7 +27,7 @@ namespace SistemaOdonto
 
             if (username == "" || senha == "")
             {
-                MessageBox.Show("Usuário e/ou Senha inválidos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuário e/ou Senha inválidos!", "Erro ao Logar!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_UserName.Focus();
                 return;
             }

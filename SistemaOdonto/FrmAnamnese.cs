@@ -162,14 +162,14 @@ namespace SistemaOdonto
             //VERIFICANDO SE O FORM ESTÁ VALIDO
             if (ValidarForm() == false)
             {
-                MessageBox.Show("Ficha Anamnese não preenchida corretamente. Verifique campos duplicados!");
+                MessageBox.Show("Ficha Anamnese não preenchida corretamente. Verifique campos duplicados!", "Erro no preenchimento!");
             }
             else
             {
                 try
                 {
                     serviceAnm.Cadastrar(ObjGerado());
-                    MessageBox.Show("Anamnese do Paciente Cadastrada com Sucesso!");
+                    MessageBox.Show("Anamnese do Paciente Cadastrada com Sucesso!", "Cadastro realizado!");
                     this.Close();
                 }
                 catch (Exception ex)

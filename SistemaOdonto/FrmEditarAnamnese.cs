@@ -162,7 +162,7 @@ namespace SistemaOdonto
             //VERIFICANDO SE O FORM ESTÁ VALIDO
             if (ValidarForm() == false)
             {
-                MessageBox.Show("Ficha Anamnese não preenchida corretamente. Verifique campos duplicados!");
+                MessageBox.Show("Ficha Anamnese não preenchida corretamente. Verifique campos duplicados!", "Erro no preenchimento!");
             }
             else
             {
@@ -264,7 +264,7 @@ namespace SistemaOdonto
                     this.obj.Qual_Doenca = txtDoenca.Text;
 
                     serviceAnm.Editar(this.obj);
-                    MessageBox.Show("Anamnese do Paciente Atualizada com Sucesso!");
+                    MessageBox.Show("Anamnese do Paciente Atualizada com Sucesso!", "Dados atualizados!");
                     this.Close();
 
                 }

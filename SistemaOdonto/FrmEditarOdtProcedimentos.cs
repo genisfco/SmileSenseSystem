@@ -2053,7 +2053,7 @@ namespace SistemaOdonto
 
                 if (procedimentos.Count == 0)
                 {
-                    MessageBox.Show("Não há procedimentos para serem salvos.");
+                    MessageBox.Show("Não há procedimentos para serem salvos.", "Atenção!");
                     return;
                 }
 
@@ -2062,7 +2062,7 @@ namespace SistemaOdonto
                     serviceProcd.Cadastrar(procedimento);
                 }
 
-                MessageBox.Show("Odontograma e Procedimentos salvos com sucesso!");
+                MessageBox.Show("Odontograma e Procedimentos salvos com sucesso!", "Cadastro realizado!");
                 this.Close();
             }
             catch (System.Exception ex)
@@ -2140,8 +2140,5 @@ namespace SistemaOdonto
             }
             return procedimentos;
         }
-
-
-
     }
 }

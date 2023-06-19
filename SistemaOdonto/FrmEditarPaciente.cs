@@ -85,7 +85,7 @@ namespace SistemaOdonto
                 if (lblCodigo.Text != this.obj.Id.ToString())
                 {
                     status = "apagado";
-                    MessageBox.Show("Este Registro acabou de ser excluido por outro usuário");
+                    MessageBox.Show("Este Registro acabou de ser excluido por outro usuário", "Atenção!");
                 }
                 else
                 {
@@ -130,7 +130,7 @@ namespace SistemaOdonto
                     {
                         service.Editar(this.obj);
                         status = "editado";
-                        MessageBox.Show("Dados Atualizados com Sucesso!");
+                        MessageBox.Show("Dados Atualizados com Sucesso!", "Ação Realizada!");
                         this.Close();
 
                     }
@@ -247,7 +247,7 @@ namespace SistemaOdonto
                     tsNenhuma.Text = "";
 
                     service.Deletar(this.obj.Id);
-                    MessageBox.Show("Paciente Excluído com sucesso!");
+                    MessageBox.Show("Paciente Excluído com sucesso!", "Ação Realizada!");
                     status = "apagado";
                     this.Close();
                 }
@@ -258,15 +258,6 @@ namespace SistemaOdonto
             }
         }
 
-
-        public bool ValidarExclusao()
-        {
-            DialogResult con = MessageBox.Show("Deseja excluir este registro?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-            if (con.ToString().ToUpper() == "YES")
-                return true;
-            else
-                return false;
-        }
 
         private void btnBuscaCEP_Click(object sender, EventArgs e)
         {
@@ -311,7 +302,7 @@ namespace SistemaOdonto
             }
             else if(anamnese == null)
             {
-                MessageBox.Show("O Paciente não possui Ficha Anamnese. Preencha e Salve a Ficha!");
+                MessageBox.Show("O Paciente não possui Ficha Anamnese. Preencha e Salve a Ficha!", "Atenção!");
 
                 FrmAnamnese frmAnm = new FrmAnamnese();
 
@@ -351,7 +342,7 @@ namespace SistemaOdonto
             }
             else if (odontograma == null)
             {
-                MessageBox.Show("O Paciente não possui Odontograma cadastrado. Preencha e Salve a Ficha!");
+                MessageBox.Show("O Paciente não possui Odontograma cadastrado. Preencha e Salve a Ficha!", "Atenção!");
 
                 FrmOdtProcedimentos frmOdtProcd = new FrmOdtProcedimentos();
                 frmOdtProcd.lblCodigo.Text = lblCodigo.Text;

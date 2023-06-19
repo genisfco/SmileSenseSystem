@@ -133,7 +133,7 @@ namespace SistemaOdonto
                 if (ts.Text == "Sucesso")
                 {
                     service.Cadastrar(objGerado());
-                    MessageBox.Show("Consulta Cadastrada com Sucesso");
+                    MessageBox.Show("Consulta Cadastrada com Sucesso", "Ação Realizada!");
                     this.Close();
                 }
 
@@ -181,7 +181,7 @@ namespace SistemaOdonto
             {
                 Paciente paciente = serviceP.BuscarPorCPF(cpf);
 
-                if (paciente == null) { MessageBox.Show("Paciente não localizado com este CPF."); return; }
+                if (paciente == null) { MessageBox.Show("Paciente não localizado com este CPF.", "Erro ao localizar!"); return; }
 
                 cbPaciente.Text = paciente.Nome.ToString();
             }

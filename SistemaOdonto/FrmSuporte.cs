@@ -18,7 +18,7 @@ namespace SistemaOdonto
         {
             try
             {
-                string destinatario = "emaildosuporte@gmail.com";
+                string destinatario = "suporte@smilesense.com";
                 string assunto = textBox5.Text;
                 string campo1 = textBox1.Text;
                 string campo2 = textBox2.Text;
