@@ -633,6 +633,16 @@ namespace SistemaOdonto.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap QMARK4 {
+            get {
+                object obj = ResourceManager.GetObject("QMARK4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap reload {
             get {
                 object obj = ResourceManager.GetObject("reload", resourceCulture);

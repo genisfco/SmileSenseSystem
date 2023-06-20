@@ -136,8 +136,8 @@
   <data name="iconesquerda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconesquerda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\banner.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Circle_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Circle_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -150,6 +150,9 @@
   </data>
   <data name="address171" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\address171.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\banner.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eye_41524" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye_41524.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,17 +172,11 @@
   <data name="odontograma2.2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\odontograma2.2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user-offline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-offline.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="group" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\group.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delete-user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete-user.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnLogin.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnLogin.Image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="anamnese" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\anamnese.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,14 +187,20 @@
   <data name="botao-play" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\botao-play.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Circle_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Circle_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="group" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\group.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Eye256_25057" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Eye256_25057.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ferramentas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ferramentas1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="penBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\penBlack.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Circle_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Circle_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,8 +262,8 @@
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete-user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete-user.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user-offline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-offline.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -271,8 +274,8 @@
   <data name="odontograma21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\odontograma2.21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lock.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnLogin.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnLogin.Image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Circle_Grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Circle_Grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,8 +286,11 @@
   <data name="btnConsulta.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnConsulta.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Eye256_25057" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Eye256_25057.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ferramentas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ferramentas2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="penBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\penBlack.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="botao-de-deletar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\botao-de-deletar.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,10 +310,7 @@
   <data name="panel11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panel1.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ferramentas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ferramentas1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ferramentas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ferramentas2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="QMARK4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QMARK4.ICO;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
