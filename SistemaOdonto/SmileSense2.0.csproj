@@ -454,6 +454,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\word.ico" />
+    <None Include="Resources\txt.ico" />
     <None Include="Resources\search.ico" />
     <None Include="Resources\save.ico" />
     <None Include="Resources\user-online.ico" />
@@ -467,6 +469,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Resources\add-user.ico" />
+    <None Include="Resources\01 Excel.ico" />
     <Content Include="Resources\add.ico" />
     <None Include="Resources\address171.png" />
     <Content Include="Resources\agenda.ico" />
@@ -494,6 +497,7 @@
     <Content Include="Resources\cadastrosToolStripMenuItem.Image.png" />
     <None Include="Resources\delete.ico" />
     <None Include="Resources\delete-user.ico" />
+    <None Include="Resources\calculator.ico" />
     <Content Include="Resources\dentista.ico" />
     <None Include="Resources\logo.jpeg" />
     <None Include="Resources\logo2.jpg" />
@@ -511,6 +515,7 @@
     <None Include="Resources\ico.png" />
     <None Include="Resources\ferramentas1.ico" />
     <None Include="Resources\ferramentas2.ico" />
+    <None Include="Resources\excel.ico" />
     <Content Include="Resources\MAjuda.Image.png" />
     <Content Include="Resources\MSair.Image.png" />
     <None Include="Resources\odontograma2.2.jpg" />
