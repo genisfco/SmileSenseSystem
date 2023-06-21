@@ -633,9 +633,39 @@ namespace SistemaOdonto.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap QMARK2 {
+            get {
+                object obj = ResourceManager.GetObject("QMARK2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QMARK3 {
+            get {
+                object obj = ResourceManager.GetObject("QMARK3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap QMARK4 {
             get {
                 object obj = ResourceManager.GetObject("QMARK4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QMARK7 {
+            get {
+                object obj = ResourceManager.GetObject("QMARK7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

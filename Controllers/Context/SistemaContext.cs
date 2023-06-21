@@ -13,15 +13,15 @@ namespace Controllers.Context
 {
     class SistemaContext : DbContext
     {
-        //public SistemaContext() : base("Server=ACERASPIRE-5\\SQLEXPRESS;Database=SmileSense;Integrated Security=True;")
-        //{
-
-        //}
-
-        public SistemaContext() : base("Server=MDX2000\\SQLEXPRESS;Database=SmileSense;Integrated Security=True;")
+        public SistemaContext() : base("Server=ACERASPIRE-5\\SQLEXPRESS;Database=SmileSense;Integrated Security=True;")
         {
 
         }
+
+        //public SistemaContext() : base("Server=MDX2000\\SQLEXPRESS;Database=SmileSense;Integrated Security=True;")
+        //{
+
+        //}
 
 
 

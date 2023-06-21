@@ -115,11 +115,10 @@ namespace SistemaOdonto
             AtualizarSelecaoFaces();
         }
 
-        private void FrmEditarOdtProcedimentos_Load(object sender, EventArgs e)
+        private void ExibirInstruções()
         {
             // Exibir caixa de diálogo com instruções
-            MessageBox.Show("Bem-vindo ao Odontograma!" +
-                "\n\nInstruções de como preencher corretamente os Procedimentos:" +
+            MessageBox.Show("Como preencher corretamente o Odontograma e Procedimentos:" +
                 "\n\n1. Selecione o Elemento desejado no canto superior direito." +
                 "\n\n2. No quadro de Procedimentos Selecione o Dentista." +
                 "\n\n3. Selecione a Face do Elemento, a Especialidade e selecione ou digite o Procedimento." +
@@ -127,7 +126,12 @@ namespace SistemaOdonto
                 "\n\n5. Repita o processo para cada Elemento." +
                 "\n\n6. Na imagem de Odontograma do quadro esquerdo faça as anotações necessárias." +
                 "\n\n7. Para salvar as informações: Clique em Salvar Odontograma." +
-                "", "Instruções para Preenchimento dos Procedimentos", MessageBoxButtons.OK, MessageBoxIcon.Information);           
+                "", "Instruções para Preenchimento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void FrmEditarOdtProcedimentos_Load(object sender, EventArgs e)
+        {
+            ExibirInstruções();      
         }
 
 
@@ -2139,6 +2143,11 @@ namespace SistemaOdonto
                 }
             }
             return procedimentos;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ExibirInstruções();
         }
     }
 }

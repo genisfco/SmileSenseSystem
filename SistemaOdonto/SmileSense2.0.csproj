@@ -523,6 +523,9 @@
     <None Include="Resources\penRed2.0.jpg" />
     <None Include="Resources\reload.ico" />
     <None Include="Resources\QMARK4.ICO" />
+    <None Include="Resources\QMARK2.ICO" />
+    <None Include="Resources\QMARK3.ICO" />
+    <None Include="Resources\QMARK7.ICO" />
     <Content Include="Resources\sair.ico" />
   </ItemGroup>
   <ItemGroup>

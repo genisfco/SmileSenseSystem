@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkBox42 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBox41 = new System.Windows.Forms.CheckBox();
@@ -99,6 +99,7 @@
             this.pbPenBlack = new System.Windows.Forms.PictureBox();
             this.btnFecharFichaClinica = new System.Windows.Forms.Button();
             this.btnAtualizarOdtProcds = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProcedimentos)).BeginInit();
@@ -307,6 +308,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.button1);
             this.groupBox5.Controls.Add(this.cboxDentista);
             this.groupBox5.Controls.Add(this.dataGridProcedimentos);
             this.groupBox5.Controls.Add(this.cboxFaces);
@@ -357,9 +359,9 @@
             // 
             // Elemento
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.Elemento.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            this.Elemento.DefaultCellStyle = dataGridViewCellStyle17;
             this.Elemento.HeaderText = "Dente";
             this.Elemento.MinimumWidth = 8;
             this.Elemento.Name = "Elemento";
@@ -369,9 +371,9 @@
             // 
             // Face
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.Face.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            this.Face.DefaultCellStyle = dataGridViewCellStyle18;
             this.Face.HeaderText = "Face";
             this.Face.MinimumWidth = 8;
             this.Face.Name = "Face";
@@ -380,8 +382,8 @@
             // 
             // Dentista
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Dentista.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Dentista.DefaultCellStyle = dataGridViewCellStyle19;
             this.Dentista.HeaderText = "Cirurgião";
             this.Dentista.MinimumWidth = 8;
             this.Dentista.Name = "Dentista";
@@ -398,8 +400,8 @@
             // 
             // Procedimento
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Info;
-            this.Procedimento.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Info;
+            this.Procedimento.DefaultCellStyle = dataGridViewCellStyle20;
             this.Procedimento.HeaderText = "Procedimento";
             this.Procedimento.MinimumWidth = 8;
             this.Procedimento.Name = "Procedimento";
@@ -504,8 +506,9 @@
             // 
             // btnAdicionarProcedimento
             // 
-            this.btnAdicionarProcedimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnAdicionarProcedimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
             this.btnAdicionarProcedimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionarProcedimento.ForeColor = System.Drawing.Color.White;
             this.btnAdicionarProcedimento.Location = new System.Drawing.Point(963, 82);
             this.btnAdicionarProcedimento.Name = "btnAdicionarProcedimento";
             this.btnAdicionarProcedimento.Size = new System.Drawing.Size(56, 43);
@@ -954,6 +957,24 @@
             this.btnAtualizarOdtProcds.UseVisualStyleBackColor = false;
             this.btnAtualizarOdtProcds.Click += new System.EventHandler(this.btnAtualizarOdtProcds_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::SistemaOdonto.Properties.Resources.QMARK2;
+            this.button1.Location = new System.Drawing.Point(968, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(51, 51);
+            this.button1.TabIndex = 115;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmEditarOdtProcedimentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -988,7 +1009,7 @@
             this.MinimumSize = new System.Drawing.Size(1918, 1006);
             this.Name = "FrmEditarOdtProcedimentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEditarOdtProcedimentos";
+            this.Text = "Odontograma e Procedimentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmEditarOdtProcedimentos_Load);
             this.groupBox3.ResumeLayout(false);
@@ -1080,5 +1101,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Procedimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button button1;
     }
 }
