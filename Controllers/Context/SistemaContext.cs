@@ -16,19 +16,7 @@ namespace Controllers.Context
         public SistemaContext() : base("Server=ACERASPIRE-5\\SQLEXPRESS;Database=SmileSense;Integrated Security=True;")
         {
 
-        }
-
-        //public SistemaContext() : base("Server=MDX2000\\SQLEXPRESS;Database=SmileSense;Integrated Security=True;")
-        //{
-
-        //}
-
-
-
-        //public SistemaContext() : base("workstation id=SmileSense.mssql.somee.com;packet size=4096;user id=genis_SQLLogin_1;pwd=#Tcc2023;data source=SmileSense.mssql.somee.com;persist security info=False;initial catalog=SmileSense")
-        //{
-        //    // BANCO HOSPEDADO
-        //}
+        }        
 
         public DbSet<Consulta> Consultas{ get; set;}
         public DbSet<Paciente> Pacientes { get; set; }
