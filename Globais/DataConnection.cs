@@ -11,7 +11,8 @@ namespace Globais
 
         private static SqlConnection ConexaoBanco()
         {
-            string connection_sql = @"Server=ACERASPIRE-5\SQLEXPRESS;Database=SmileSense;Integrated Security=True;";            
+            string connection_sql = @"Server=ACERASPIRE-5\SQLEXPRESS;Database=SmileSense;Integrated Security=True;";
+            
 
             SqlConnection msConnection = new SqlConnection();
             msConnection.ConnectionString = connection_sql;
