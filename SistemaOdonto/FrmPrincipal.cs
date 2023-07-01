@@ -428,7 +428,11 @@ namespace SistemaOdonto
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+            if (Globais.Global.logado == false)
+            {
+                MessageBox.Show("Nenhum Usuário logado!");
+                this.Close();
+            }
         }
 
         private void blocoDeNotasToolStripMenuItem_Click(object sender, EventArgs e)

@@ -11,12 +11,19 @@ using System.Threading.Tasks;
 
 namespace Controllers.Context
 {
-    class SistemaContext : DbContext
+    public class SistemaContext : DbContext
     {
-        public SistemaContext() : base("Server=ACERASPIRE-5\\SQLEXPRESS;Database=SmileSense;Integrated Security=True;")
+        public static string ConnectionString { get; set; }
+
+        //public SistemaContext() : base("Server=ACERASPIRE-5\\SQLEXPRESS;Database=SmileSense;Integrated Security=True;")
+        //{
+
+        //}
+
+        public SistemaContext() : base(ConnectionString)
         {
 
-        }        
+        }
 
         public DbSet<Consulta> Consultas{ get; set;}
         public DbSet<Paciente> Pacientes { get; set; }

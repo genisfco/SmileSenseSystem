@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
+using cript;
 using Globais;
+using Controllers;
 
 namespace SistemaOdonto
 {
@@ -16,9 +19,67 @@ namespace SistemaOdonto
         {
             InitializeComponent();
             frmPrincipal = frmP;
-            //frmEdtPaciente = frmEdP;
-            //frmEdtDentista = frmEdD;
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            string diretorioInstalacao = AppDomain.CurrentDomain.BaseDirectory;
+            string smileconfigFolderPath = Path.Combine(diretorioInstalacao, "SmileSenseConfig");
+
+            // Verifica se a pasta SmileSenseConfig já existe
+            if (!Directory.Exists(smileconfigFolderPath))
+            {
+                Directory.CreateDirectory(smileconfigFolderPath);
+            }
+
+            string configFilePath = Path.Combine(smileconfigFolderPath, "config.pws");
+
+            if (!File.Exists(configFilePath))
+            {
+                MessageBox.Show("Arquivo de configuração do banco não encontrado.\n Clique em OK para configurar a conexão.");
+                Form frmConfig = new FormConfig();
+                frmConfig.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                string[] configLines = File.ReadAllLines(configFilePath);
+
+                ClassCript clCript = new ClassCript();
+
+                if (configLines.Length == 4)
+                {
+                    string server = clCript.Descriptografa(configLines[0]);
+                    string user = clCript.Descriptografa(configLines[1]);
+                    string password = clCript.Descriptografa(configLines[2]);
+                    string database = clCript.Descriptografa(configLines[3]);
+
+                    string connectionString = $"Server={server};Database={database};User ID={user};Password={password};";
+
+                    // Determina as strings de conexão
+                    DataConnection.ConnectionString = connectionString;
+                    Controllers.Context.SistemaContext.ConnectionString = connectionString;
+                }               
+
+                else if (configLines.Length == 2)
+                {
+                    string server = clCript.Descriptografa(configLines[0]);
+                    string database = clCript.Descriptografa(configLines[1]);
+
+                    string connectionString = $"Server={server};Database={database};Integrated Security=True;";
+
+                    // Use a connectionString no lugar das strings de conexão existentes
+                    DataConnection.ConnectionString = connectionString;
+                    Controllers.Context.SistemaContext.ConnectionString = connectionString;
+                }
+
+                else
+                {
+                    MessageBox.Show("O arquivo de configuração está incompleto.");
+                }
+            }
+        }
+
 
         private void btn_Logar_Click(object sender, EventArgs e)
         {

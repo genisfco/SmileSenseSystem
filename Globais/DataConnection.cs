@@ -9,9 +9,12 @@ namespace Globais
     {
         public static SqlConnection msConnection;
 
+        public static string ConnectionString { get; set; }
+
         private static SqlConnection ConexaoBanco()
         {
-            string connection_sql = @"Server=ACERASPIRE-5\SQLEXPRESS;Database=SmileSense;Integrated Security=True;";            
+            //string connection_sql = @"Server=ACERASPIRE-5\SQLEXPRESS;Database=SmileSense;Integrated Security=True;";            
+            string connection_sql = ConnectionString;            
 
             SqlConnection msConnection = new SqlConnection();
             msConnection.ConnectionString = connection_sql;

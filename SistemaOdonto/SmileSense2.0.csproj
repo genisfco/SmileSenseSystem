@@ -90,6 +90,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="FormConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfig.Designer.cs">
+      <DependentUpon>FormConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAnamnese.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormConfig.resx">
+      <DependentUpon>FormConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAnamnese.resx">
       <DependentUpon>FrmAnamnese.cs</DependentUpon>
     </EmbeddedResource>
@@ -537,6 +546,10 @@
     <ProjectReference Include="..\ClassValidation\ClassValidation.csproj">
       <Project>{09e871a3-4508-488e-a23f-5ecad79e1a32}</Project>
       <Name>ClassValidation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controllers\Controllers.csproj">
+      <Project>{b697dc2c-3021-4647-b81c-3c5623844eb9}</Project>
+      <Name>Controllers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{F0C358DB-79C7-4EF7-AB79-2F541D57CDA2}</Project>

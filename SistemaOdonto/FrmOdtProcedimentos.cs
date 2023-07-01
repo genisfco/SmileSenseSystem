@@ -130,7 +130,7 @@ namespace SistemaOdonto
 
         private void FrmOdtProcedimentos_Load(object sender, EventArgs e)
         {
-            ExibirInstruções();           
+            ExibirInstruções();          
 
             CriarPastaImagemOdontogramaPadrao();
         }
