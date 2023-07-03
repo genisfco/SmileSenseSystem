@@ -13,7 +13,6 @@ namespace Globais
 
         private static SqlConnection ConexaoBanco()
         {
-            //string connection_sql = @"Server=ACERASPIRE-5\SQLEXPRESS;Database=SmileSense;Integrated Security=True;";            
             string connection_sql = ConnectionString;            
 
             SqlConnection msConnection = new SqlConnection();
@@ -23,7 +22,7 @@ namespace Globais
                 return msConnection;
             } 
             catch (Exception err) { 
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.Message, "Erro de Conexão de Dados");
                 return null;
             }        
         }
@@ -62,7 +61,9 @@ namespace Globais
                 var vcon = ConexaoBanco();
                 if (vcon==null)
                 {
-                    MessageBox.Show("Não foi possivel estabelecer a conexão com o banco de dados");
+                    MessageBox.Show("Não foi possivel estabelecer a conexão com o banco de dados.\r\n" +
+                        "Verifique o arquivo de configuração do banco ou entre em contato com o Suporte.", "Atenção!");
+
                     return null;
                 }
                 var cmd = vcon.CreateCommand();

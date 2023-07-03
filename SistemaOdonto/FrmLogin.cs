@@ -29,6 +29,7 @@ namespace SistemaOdonto
             // Verifica se a pasta SmileSenseConfig já existe
             if (!Directory.Exists(smileconfigFolderPath))
             {
+                //criando a pasta SmileSenseConfig
                 Directory.CreateDirectory(smileconfigFolderPath);
             }
 
@@ -36,7 +37,7 @@ namespace SistemaOdonto
 
             if (!File.Exists(configFilePath))
             {
-                MessageBox.Show("Arquivo de configuração do banco não encontrado.\n Clique em OK para configurar a conexão.");
+                MessageBox.Show("Arquivo de configuração do banco não encontrado.\r\nClique em OK para configurar a conexão.", "Atenção!");
                 Form frmConfig = new FormConfig();
                 frmConfig.ShowDialog();
                 this.Close();
@@ -75,7 +76,10 @@ namespace SistemaOdonto
 
                 else
                 {
-                    MessageBox.Show("O arquivo de configuração está incompleto.");
+                    MessageBox.Show("O arquivo de configuração está incompleto. Configure novamente!", "Atenção!");
+                    Form frmConfig = new FormConfig();
+                    frmConfig.ShowDialog();
+                    this.Close();
                 }
             }
         }

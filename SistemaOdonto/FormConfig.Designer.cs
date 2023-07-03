@@ -29,59 +29,60 @@
         private void InitializeComponent()
         {
             this.textBoxBanco = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelBanco = new System.Windows.Forms.Label();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelPass = new System.Windows.Forms.Label();
             this.buttonGravar = new System.Windows.Forms.Button();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelUser = new System.Windows.Forms.Label();
             this.textBoxLocal = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelLocal = new System.Windows.Forms.Label();
+            this.checkBoxAutentWind = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBoxBanco
             // 
-            this.textBoxBanco.Location = new System.Drawing.Point(284, 99);
+            this.textBoxBanco.Location = new System.Drawing.Point(16, 97);
             this.textBoxBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxBanco.Name = "textBoxBanco";
-            this.textBoxBanco.Size = new System.Drawing.Size(127, 26);
+            this.textBoxBanco.Size = new System.Drawing.Size(262, 26);
             this.textBoxBanco.TabIndex = 22;
             // 
-            // label4
+            // labelBanco
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(280, 76);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 20);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Banco";
+            this.labelBanco.AutoSize = true;
+            this.labelBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBanco.Location = new System.Drawing.Point(12, 74);
+            this.labelBanco.Name = "labelBanco";
+            this.labelBanco.Size = new System.Drawing.Size(60, 20);
+            this.labelBanco.TabIndex = 21;
+            this.labelBanco.Text = "Banco";
             // 
             // textBoxSenha
             // 
-            this.textBoxSenha.Location = new System.Drawing.Point(150, 99);
+            this.textBoxSenha.Location = new System.Drawing.Point(151, 173);
             this.textBoxSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(127, 26);
             this.textBoxSenha.TabIndex = 20;
             // 
-            // label3
+            // labelPass
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(146, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 20);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Senha";
+            this.labelPass.AutoSize = true;
+            this.labelPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPass.Location = new System.Drawing.Point(147, 150);
+            this.labelPass.Name = "labelPass";
+            this.labelPass.Size = new System.Drawing.Size(61, 20);
+            this.labelPass.TabIndex = 19;
+            this.labelPass.Text = "Senha";
             // 
             // buttonGravar
             // 
             this.buttonGravar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGravar.Location = new System.Drawing.Point(137, 173);
+            this.buttonGravar.Location = new System.Drawing.Point(12, 277);
             this.buttonGravar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonGravar.Name = "buttonGravar";
-            this.buttonGravar.Size = new System.Drawing.Size(122, 51);
+            this.buttonGravar.Size = new System.Drawing.Size(266, 51);
             this.buttonGravar.TabIndex = 18;
             this.buttonGravar.Text = "Gravar";
             this.buttonGravar.UseVisualStyleBackColor = true;
@@ -89,54 +90,68 @@
             // 
             // textBoxUsuario
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(17, 99);
+            this.textBoxUsuario.Location = new System.Drawing.Point(18, 173);
             this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(127, 26);
             this.textBoxUsuario.TabIndex = 17;
             // 
-            // label2
+            // labelUser
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 20);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Usuario";
+            this.labelUser.AutoSize = true;
+            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.Location = new System.Drawing.Point(13, 150);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(71, 20);
+            this.labelUser.TabIndex = 16;
+            this.labelUser.Text = "Usuario";
             // 
             // textBoxLocal
             // 
             this.textBoxLocal.Location = new System.Drawing.Point(17, 33);
             this.textBoxLocal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLocal.Name = "textBoxLocal";
-            this.textBoxLocal.Size = new System.Drawing.Size(223, 26);
+            this.textBoxLocal.Size = new System.Drawing.Size(261, 26);
             this.textBoxLocal.TabIndex = 15;
             // 
-            // label1
+            // labelLocal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 20);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Local";
+            this.labelLocal.AutoSize = true;
+            this.labelLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLocal.Location = new System.Drawing.Point(12, 9);
+            this.labelLocal.Name = "labelLocal";
+            this.labelLocal.Size = new System.Drawing.Size(52, 20);
+            this.labelLocal.TabIndex = 14;
+            this.labelLocal.Text = "Local";
+            // 
+            // checkBoxAutentWind
+            // 
+            this.checkBoxAutentWind.AutoSize = true;
+            this.checkBoxAutentWind.Location = new System.Drawing.Point(17, 213);
+            this.checkBoxAutentWind.Name = "checkBoxAutentWind";
+            this.checkBoxAutentWind.Size = new System.Drawing.Size(219, 24);
+            this.checkBoxAutentWind.TabIndex = 23;
+            this.checkBoxAutentWind.Text = "Autenticação do Windows";
+            this.checkBoxAutentWind.UseVisualStyleBackColor = true;
+            this.checkBoxAutentWind.CheckedChanged += new System.EventHandler(this.checkBoxAutentWind_CheckedChanged);
             // 
             // FormConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 243);
+            this.ClientSize = new System.Drawing.Size(294, 339);
+            this.Controls.Add(this.checkBoxAutentWind);
             this.Controls.Add(this.textBoxBanco);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelBanco);
             this.Controls.Add(this.textBoxSenha);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelPass);
             this.Controls.Add(this.buttonGravar);
             this.Controls.Add(this.textBoxUsuario);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelUser);
             this.Controls.Add(this.textBoxLocal);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelLocal);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormConfig";
             this.Text = "Configuração Banco";
             this.ResumeLayout(false);
@@ -147,13 +162,14 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBoxBanco;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelBanco;
         private System.Windows.Forms.TextBox textBoxSenha;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelPass;
         private System.Windows.Forms.Button buttonGravar;
         private System.Windows.Forms.TextBox textBoxUsuario;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.TextBox textBoxLocal;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelLocal;
+        private System.Windows.Forms.CheckBox checkBoxAutentWind;
     }
 }

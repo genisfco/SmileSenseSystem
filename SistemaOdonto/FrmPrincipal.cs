@@ -430,7 +430,7 @@ namespace SistemaOdonto
         {
             if (Globais.Global.logado == false)
             {
-                MessageBox.Show("Nenhum Usuário logado!");
+                MessageBox.Show("Nenhum Usuário logado!\r\nPor segurança, o sistema será encerrado", "Atenção");
                 this.Close();
             }
         }
