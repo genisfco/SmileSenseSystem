@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDadosPaciente));
             this.tc = new System.Windows.Forms.TabControl();
             this.masktxtCPFPaciente = new System.Windows.Forms.MaskedTextBox();
             this.dgViewPaciente = new System.Windows.Forms.DataGridView();
@@ -171,6 +172,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.masktxtCPFPaciente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "FrmDadosPaciente";

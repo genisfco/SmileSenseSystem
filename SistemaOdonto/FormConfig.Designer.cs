@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfig));
             this.textBoxBanco = new System.Windows.Forms.TextBox();
             this.labelBanco = new System.Windows.Forms.Label();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
@@ -150,6 +151,7 @@
             this.Controls.Add(this.labelUser);
             this.Controls.Add(this.textBoxLocal);
             this.Controls.Add(this.labelLocal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormConfig";

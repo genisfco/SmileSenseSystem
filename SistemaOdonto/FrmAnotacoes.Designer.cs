@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAnotacoes));
             this.btnAmarelo = new System.Windows.Forms.Button();
             this.btnRosa = new System.Windows.Forms.Button();
             this.btnRoxo = new System.Windows.Forms.Button();
@@ -156,6 +157,7 @@
             this.ClientSize = new System.Drawing.Size(461, 422);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAnotacoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

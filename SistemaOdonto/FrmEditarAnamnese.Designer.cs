@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarAnamnese));
             this.lblCodigo = new System.Windows.Forms.Label();
             this.chboxDoencaCongNAO = new System.Windows.Forms.CheckBox();
             this.chboxDoencaCongSIM = new System.Windows.Forms.CheckBox();
@@ -536,6 +537,7 @@
             this.ClientSize = new System.Drawing.Size(1036, 519);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "FrmEditarAnamnese";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
