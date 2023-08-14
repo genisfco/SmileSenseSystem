@@ -102,7 +102,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(886, 69);
             this.panel1.TabIndex = 45;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnFechar
             // 
@@ -403,6 +402,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmGestaoUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

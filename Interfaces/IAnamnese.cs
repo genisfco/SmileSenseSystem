@@ -13,7 +13,7 @@ namespace Interfaces
     public interface IAnamnese
     {
         [OperationContract]
-        void Cadastrar(Anamnese obj);
+        Task<int> Cadastrar(Anamnese obj);
 
         [OperationContract(Name = "BuscarPorIdPacte")]
         Anamnese Buscar(int id);

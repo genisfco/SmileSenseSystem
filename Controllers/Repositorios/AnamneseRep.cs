@@ -10,14 +10,24 @@ namespace Controllers.Repositorios
 {
     public class AnamneseRep
     {
-        public void Cadastrar(Anamnese obj)
+        //public void Cadastrar(Anamnese obj)
+        //{
+        //    using (var ctx = new SistemaContext())
+        //    {
+        //        ctx.Anamneses.Add(obj);
+        //        ctx.SaveChanges();
+        //    }
+        //}
+
+        public async Task<int> Cadastrar(Anamnese obj)
         {
             using (var ctx = new SistemaContext())
             {
                 ctx.Anamneses.Add(obj);
-                ctx.SaveChanges();
-            }
+                await ctx.SaveChangesAsync();
 
+                return obj.IdAnamnese;
+            }
         }
 
         //BUSCA ANAMNESE PELO ID DO PACIENTE

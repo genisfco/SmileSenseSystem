@@ -68,7 +68,7 @@ namespace SistemaOdonto
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbPaciente = new System.Windows.Forms.Label();
-            this.lblCodigo = new System.Windows.Forms.Label();
+            this.lblCodigoIDPacte = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnFecharAnamnese = new System.Windows.Forms.Button();
             this.btnSalvarAnamnese = new System.Windows.Forms.Button();
@@ -425,21 +425,21 @@ namespace SistemaOdonto
             this.lbPaciente.TabIndex = 74;
             this.lbPaciente.Text = "Paciente";
             // 
-            // lblCodigo
+            // lblCodigoIDPacte
             // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(642, 86);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(35, 20);
-            this.lblCodigo.TabIndex = 114;
-            this.lblCodigo.Text = "cod";
+            this.lblCodigoIDPacte.AutoSize = true;
+            this.lblCodigoIDPacte.Location = new System.Drawing.Point(642, 86);
+            this.lblCodigoIDPacte.Name = "lblCodigoIDPacte";
+            this.lblCodigoIDPacte.Size = new System.Drawing.Size(71, 20);
+            this.lblCodigoIDPacte.TabIndex = 114;
+            this.lblCodigoIDPacte.Text = "ID.Pacte";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.lbCPF);
-            this.panel1.Controls.Add(this.lblCodigo);
+            this.panel1.Controls.Add(this.lblCodigoIDPacte);
             this.panel1.Controls.Add(this.lbPaciente);
             this.panel1.Controls.Add(this.btnFecharAnamnese);
             this.panel1.Controls.Add(this.txtNome);
@@ -580,7 +580,7 @@ namespace SistemaOdonto
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lbPaciente;
-        public System.Windows.Forms.Label lblCodigo;
+        public System.Windows.Forms.Label lblCodigoIDPacte;
         private System.Windows.Forms.Panel panel1;
     }
 }

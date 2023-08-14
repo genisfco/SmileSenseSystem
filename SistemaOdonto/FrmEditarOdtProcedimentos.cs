@@ -36,6 +36,8 @@ namespace SistemaOdonto
         OdontogramaService serviceOdt = new OdontogramaService();
         ProcedimentoService serviceProcd = new ProcedimentoService();
 
+        LoggerService loggerService = new LoggerService();
+
         //OPÇÃO DE CORES PARA DESENHO
         private Color color1 = Color.Black;
         private Color color2 = Color.Blue;
@@ -2044,7 +2046,7 @@ namespace SistemaOdonto
             }
         }
 
-        private void btnAtualizarOdtProcds_Click(object sender, EventArgs e)
+        private async void btnAtualizarOdtProcds_Click(object sender, EventArgs e)
         {
             try
             {
@@ -2063,7 +2065,9 @@ namespace SistemaOdonto
 
                 foreach (Procedimento procedimento in procedimentos)
                 {
-                    serviceProcd.Cadastrar(procedimento);
+                    //serviceProcd.Cadastrar(procedimento);
+                    int procedimentoID = await serviceProcd.Cadastrar(procedimento);
+                    loggerService.Cadastrar(objLogGerado(procedimentoID));
                 }
 
                 MessageBox.Show("Odontograma e Procedimentos salvos com sucesso!", "Cadastro realizado!");
@@ -2106,7 +2110,7 @@ namespace SistemaOdonto
             List<Procedimento> procedimentos = new List<Procedimento>();
 
             DateTime horaAtual = DateTime.Now;
-            DateTime horaLimite = horaAtual.AddHours(-3); // Subtrai 3 horas da hora atual
+            DateTime horaLimite = horaAtual.AddHours(-2); // Subtrai 2 horas da hora atual
 
             // Percorre todas as linhas do DataGridView
             foreach (DataGridViewRow row in dataGridProcedimentos.Rows)
@@ -2143,6 +2147,18 @@ namespace SistemaOdonto
                 }
             }
             return procedimentos;
+        }
+
+        public Logger objLogGerado(int procedID)
+        {
+            Logger objLog = new Logger();
+            objLog.IDUser = Globais.Global.id;
+            objLog.Data_Logger = DateTime.Now;
+            objLog.Tipo_Logger = "Cadastro";
+            objLog.Tabela_Logger = "Procedimento";
+            objLog.ID_Tabela = procedID;
+
+            return objLog;
         }
 
         private void button1_Click(object sender, EventArgs e)

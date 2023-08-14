@@ -1,13 +1,10 @@
 ﻿using Entidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WcfService;
 
@@ -27,7 +24,6 @@ namespace SistemaOdonto
             login.ShowDialog();
 
             IniciarFormulario();
-
             
             dg.Columns["Hora"].ReadOnly = true;
             dg.Columns["Paciente"].ReadOnly = true;
@@ -93,7 +89,6 @@ namespace SistemaOdonto
         {
             atualizarCb();
         }
-
 
         private void atualizarCb()
         {
@@ -193,21 +188,12 @@ namespace SistemaOdonto
             frm.ShowDialog();
         }
 
-        private void menuAgDentistas_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void menuPaciente_Click(object sender, EventArgs e)
         {
             FrmCadPaciente frm = new FrmCadPaciente();
             frm.ShowDialog();
-        }
-
-        private void menuAgPacientes_Click(object sender, EventArgs e)
-        {
-            
-        }
+        }    
 
         private void menuConsulta_Click(object sender, EventArgs e)
         {
@@ -225,14 +211,7 @@ namespace SistemaOdonto
         {
             frmSuporte frm = new frmSuporte();
             frm.ShowDialog();
-        }
-
-        private void menuSair_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        
+        }               
 
         private void cbDentista_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -367,22 +346,22 @@ namespace SistemaOdonto
         private void MSair_Click(object sender, EventArgs e)
         {           
                                        
-                DialogResult resultado = MessageBox.Show("Deseja sair da aplicação?", "Confirmação de saída",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("Deseja sair da aplicação?", "Confirmação de saída",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (resultado == DialogResult.Yes)
-                {
-                    lb_Acesso.Text = "0";
-                    lb_NomeUsuario.Text = "---";
-                    pb_ledLogado.Image = Properties.Resources.Circle_Red;
-                    pnlBarraLogin.BackColor = Color.Red;
-
-                    Globais.Global.nivel = 0;
-                    Globais.Global.logado = false;
-                    // Lógica para sair da aplicação
-                    Application.Exit();
-                }
-                      
+            if (resultado == DialogResult.Yes)
+            {
+                lb_Acesso.Text = "0";
+                lb_NomeUsuario.Text = "---";
+                pb_ledLogado.Image = Properties.Resources.Circle_Red;
+                pnlBarraLogin.BackColor = Color.Red;
+                    
+                Globais.Global.id = 0;
+                Globais.Global.nivel = 0;
+                Globais.Global.logado = false;
+                    
+                Application.Exit();
+            }                      
         }
 
         private void btnLimparNotes_Click(object sender, EventArgs e)
@@ -397,11 +376,7 @@ namespace SistemaOdonto
                     anot.Controls.Remove(control);
                 }
             }
-        }
-
-       
-
-        
+        }        
 
         private void MLogoff_Click(object sender, EventArgs e)
         {
@@ -417,6 +392,7 @@ namespace SistemaOdonto
                 pnlBarraLogin.BackColor = Color.Red;
                 pnlBarraLogin.BackColor = Color.FromArgb(255, 160, 160);
 
+                Globais.Global.id = 0;
                 Globais.Global.nivel = 0;
                 Globais.Global.logado = false;
 
@@ -427,7 +403,8 @@ namespace SistemaOdonto
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
+        {            
+
             if (Globais.Global.logado == false)
             {
                 MessageBox.Show("Nenhum Usuário logado!\r\nPor segurança, o sistema será encerrado", "Atenção");
@@ -481,6 +458,27 @@ namespace SistemaOdonto
             {
                 MessageBox.Show("Ocorreu um erro ao abrir o Microsoft Excel: " + ex.Message);
             }
+        }
+
+        private void stripRelatorios_Click(object sender, EventArgs e)
+        {
+            if (Globais.Global.logado == true)
+            {
+                if (Globais.Global.nivel == 3)
+                {
+                    FrmRelatorioLoggers abrirRelatorioUser = new FrmRelatorioLoggers();
+                    abrirRelatorioUser.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Acesso não permitido!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Necessário ter um Usuário logado!");
+            }
+
         }
     }
 }

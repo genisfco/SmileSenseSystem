@@ -10,6 +10,7 @@ using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
 using Controllers;
+using System.Threading.Tasks;
 
 namespace WcfService
 {
@@ -17,10 +18,16 @@ namespace WcfService
     {
         private ProcedimentoRep rep = new ProcedimentoRep();
 
-        public void Cadastrar(Procedimento obj)
+        //public void Cadastrar(Procedimento obj)
+        //{
+        //    rep.Cadastrar(obj);
+        //}
+
+        public async Task<int> Cadastrar(Procedimento obj)
         {
-            rep.Cadastrar(obj);
-        }        
+            int procedimentoID = await rep.Cadastrar(obj);
+            return procedimentoID;
+        }
 
         public Procedimento BuscarProcdporIdOdt(int idOdontograma)
         {

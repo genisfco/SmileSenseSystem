@@ -13,7 +13,7 @@ namespace Interfaces
     public interface IProcedimento
     {
         [OperationContract]
-        void Cadastrar(Procedimento obj);
+        Task<int> Cadastrar(Procedimento obj);
 
         [OperationContract(Name = "BuscarPorIdOdontograma")]
         Procedimento BuscarProcdporIdOdt(int idOdontograma);

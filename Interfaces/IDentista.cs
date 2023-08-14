@@ -11,8 +11,11 @@ namespace Interfaces
     [ServiceContract]
     public interface IDentista
     {
+        //[OperationContract]
+        //void Cadastrar(Dentista obj);
+
         [OperationContract]
-        void Cadastrar(Dentista obj);
+        Task<int> Cadastrar(Dentista obj);
 
         [OperationContract]
         Dentista Buscar(int id);

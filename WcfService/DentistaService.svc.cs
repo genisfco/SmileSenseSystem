@@ -8,6 +8,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace WcfService
 {
@@ -17,9 +18,15 @@ namespace WcfService
     {
         private DentistaRep rep = new DentistaRep();
         
-        public void Cadastrar(Dentista obj)
+        //public void Cadastrar(Dentista obj)
+        //{
+        //    rep.Cadastrar(obj);
+        //}
+
+        public async Task<int> Cadastrar(Dentista obj)
         {
-            rep.Cadastrar(obj);
+            int dentistaId = await rep.Cadastrar(obj);
+            return dentistaId;
         }
 
         public Dentista Buscar(int id)

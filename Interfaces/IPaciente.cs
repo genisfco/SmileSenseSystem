@@ -10,25 +10,27 @@ namespace Interfaces
 {
     [ServiceContract]
     public interface IPaciente
-    {       
-       
-            [OperationContract]
-            void Cadastrar(Paciente obj);
+    {
+        //[OperationContract]
+        //void Cadastrar(Paciente obj);
 
-            [OperationContract]
-            Paciente Buscar(int id);
+        [OperationContract]
+        Task<int> Cadastrar(Paciente obj);
 
-            [OperationContract]
-            Paciente BuscarPorCPF(string cpf);
+        [OperationContract]
+        Paciente Buscar(int id);
 
-            [OperationContract]
-            List<Paciente> Listar();
+        [OperationContract]
+        Paciente BuscarPorCPF(string cpf);
 
-            [OperationContract]
-            void Deletar(int id);
+        [OperationContract]
+        List<Paciente> Listar();
 
-            [OperationContract]
-            void Editar(Paciente objNovo);
+        [OperationContract]
+        void Deletar(int id);
+
+        [OperationContract]
+        void Editar(Paciente objNovo);
         
     }
 }

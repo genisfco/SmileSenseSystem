@@ -10,16 +10,26 @@ namespace Controllers.Repositorios
 {
     public class ProcedimentoRep
     {
-        public void Cadastrar(Procedimento obj)
+        //public void Cadastrar(Procedimento obj)
+        //{
+        //    using (var ctx = new SistemaContext())
+        //    {
+        //        ctx.Procedimentos.Add(obj);
+        //        ctx.SaveChanges();
+        //    }
+
+        //}
+
+        public async Task<int> Cadastrar(Procedimento obj)
         {
             using (var ctx = new SistemaContext())
             {
                 ctx.Procedimentos.Add(obj);
-                ctx.SaveChanges();
-            }
+                await ctx.SaveChangesAsync();
 
+                return obj.IdProcedimento;
+            }
         }
-        
 
         public Procedimento BuscarProcdporIdOdt(int idOdontograma)
         {

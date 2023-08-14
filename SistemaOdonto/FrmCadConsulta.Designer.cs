@@ -37,7 +37,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbDentista = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtHora = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ts = new System.Windows.Forms.ToolStripStatusLabel();
@@ -48,6 +47,7 @@
             this.btnBuscarPaciente = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnConsulta = new System.Windows.Forms.Button();
+            this.cboxHora = new System.Windows.Forms.ComboBox();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -75,16 +75,16 @@
             // dtData
             // 
             this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtData.Location = new System.Drawing.Point(412, 128);
+            this.dtData.Location = new System.Drawing.Point(489, 128);
             this.dtData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtData.Name = "dtData";
-            this.dtData.Size = new System.Drawing.Size(212, 26);
+            this.dtData.Size = new System.Drawing.Size(135, 26);
             this.dtData.TabIndex = 30;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(408, 102);
+            this.label8.Location = new System.Drawing.Point(485, 102);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 20);
@@ -133,21 +133,10 @@
             this.label1.TabIndex = 48;
             this.label1.Text = "Dentista:";
             // 
-            // dtHora
-            // 
-            this.dtHora.CustomFormat = "HH:mm";
-            this.dtHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtHora.Location = new System.Drawing.Point(412, 205);
-            this.dtHora.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dtHora.Name = "dtHora";
-            this.dtHora.ShowUpDown = true;
-            this.dtHora.Size = new System.Drawing.Size(212, 26);
-            this.dtHora.TabIndex = 40;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(408, 178);
+            this.label2.Location = new System.Drawing.Point(485, 178);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 20);
@@ -206,6 +195,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.cboxHora);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.btnBuscarPaciente);
@@ -217,7 +207,6 @@
             this.panel1.Controls.Add(this.btnConsulta);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.cbPaciente);
-            this.panel1.Controls.Add(this.dtHora);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbDentista);
@@ -286,6 +275,112 @@
             this.btnConsulta.UseVisualStyleBackColor = false;
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
+            // cboxHora
+            // 
+            this.cboxHora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxHora.FormattingEnabled = true;
+            this.cboxHora.Items.AddRange(new object[] {
+            "00:00",
+            "00:15",
+            "00:30",
+            "00:45",
+            "01:00",
+            "01:15",
+            "01:30",
+            "01:45",
+            "02:00",
+            "02:15",
+            "02:30",
+            "02:45",
+            "03:00",
+            "03:15",
+            "03:30",
+            "03:45",
+            "04:00",
+            "04:15",
+            "04:30",
+            "04:45",
+            "05:00",
+            "05:15",
+            "05:30",
+            "05:45",
+            "06:00",
+            "06:15",
+            "06:30",
+            "06:45",
+            "07:00",
+            "07:15",
+            "07:30",
+            "07:45",
+            "08:00",
+            "08:15",
+            "08:30",
+            "08:45",
+            "09:00",
+            "09:15",
+            "09:30",
+            "09:45",
+            "10:00",
+            "10:15",
+            "10:30",
+            "10:45",
+            "11:00",
+            "11:15",
+            "11:30",
+            "11:45",
+            "12:00",
+            "12:15",
+            "12:30",
+            "12:45",
+            "13:00",
+            "13:15",
+            "13:30",
+            "13:45",
+            "14:00",
+            "14:15",
+            "14:30",
+            "14:45",
+            "15:00",
+            "15:15",
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15",
+            "16:30",
+            "16:45",
+            "17:00",
+            "17:15",
+            "17:30",
+            "17:45",
+            "18:00",
+            "18:15",
+            "18:30",
+            "18:45",
+            "19:00",
+            "19:15",
+            "19:30",
+            "19:45",
+            "20:00",
+            "20:15",
+            "20:30",
+            "20:45",
+            "21:00",
+            "21:15",
+            "21:30",
+            "21:45",
+            "22:00",
+            "22:15",
+            "22:30",
+            "22:45",
+            "23:00",
+            "23:15",
+            "23:30",
+            "23:45"});
+            this.cboxHora.Location = new System.Drawing.Point(489, 203);
+            this.cboxHora.Name = "cboxHora";
+            this.cboxHora.Size = new System.Drawing.Size(135, 28);
+            this.cboxHora.TabIndex = 74;
+            // 
             // FrmCadConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -319,7 +414,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbDentista;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtHora;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel ts;
@@ -330,5 +424,6 @@
         private System.Windows.Forms.Button btnBuscarPaciente;
         private System.Windows.Forms.MaskedTextBox masktxtCPFPaciente;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cboxHora;
     }
 }

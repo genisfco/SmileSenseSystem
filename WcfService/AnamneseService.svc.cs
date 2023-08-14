@@ -9,6 +9,7 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace WcfService
 {
@@ -16,23 +17,26 @@ namespace WcfService
     {
         private AnamneseRep rep = new AnamneseRep();
 
-        public void Cadastrar(Anamnese obj)
+        //public void Cadastrar(Anamnese obj)
+        //{
+        //    rep.Cadastrar(obj);
+        //}
+
+        public async Task<int> Cadastrar(Anamnese obj)
         {
-            rep.Cadastrar(obj);
+            int anamneseID = await rep.Cadastrar(obj);
+            return anamneseID;
         }
 
         public Anamnese Buscar(int id)
         {
             return rep.Buscar(id);
         }
-       
-
         
         public List<Anamnese> Listar()
         {
             return rep.Listar();
         }
-
 
         public void Deletar(int id)
         {
@@ -42,8 +46,6 @@ namespace WcfService
         public void Editar(Anamnese objNovo)
         {
             rep.Editar(objNovo);
-        }
-
-        
+        }        
     }
 }

@@ -1,4 +1,5 @@
-﻿using Globais;
+﻿using Entidades;
+using Globais;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,11 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using WcfService;
 
 namespace SistemaOdonto
 {
     public partial class FrmGestaoUser : Form
     {
+        LoggerService serviceLog = new LoggerService();
+
         public FrmGestaoUser()
         {
             InitializeComponent();
@@ -22,8 +27,9 @@ namespace SistemaOdonto
         {
             FrmNovoUser telaNovoUser = new FrmNovoUser();
             telaNovoUser.ShowDialog();
-            dgv_Usuarios.DataSource = DataConnection.ObterUsuariosIdNome();
+            dgv_Usuarios.DataSource = RepositUser.ObterUsuariosIdNome();
         }
+
 
         private void btnSalvarAlterUser_Click(object sender, EventArgs e)
         {
@@ -47,27 +53,63 @@ namespace SistemaOdonto
             u.status = cb_Status.Text;
             u.nivel = Convert.ToInt32(Math.Round(nup_Nivel.Value));
 
-            DataConnection.AtualizarDadosUsuario(u);
+            RepositUser.AtualizarDadosUsuario(u);
             dgv_Usuarios[1, linha].Value = txt_NomeUsuario.Text;
-
             MessageBox.Show("Dados atualizados com sucesso!");
+
+            string tipoLogger = "Atualização";
+            serviceLog.Cadastrar(objLogGerado(tipoLogger));
         }
 
         private void btnExcluirUser_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Deseja realmente Excluir o Usuário?", "Exclusão de Usuário", MessageBoxButtons.YesNo);
-            if (res == DialogResult.Yes)
+            string str_mensagem = string.Format("Nome: {0}\r\n\r\n" +
+                                               "Usuário: {1}\r\n\r\n" +
+                                               "Tem certeza que deseja excluir o Usuário selecionado?" +
+               "", txt_NomeUsuario.Text, txt_Username.Text);
+
+            DialogResult confirmacao = MessageBox.Show(str_mensagem, "Confirmação de Exclusão de Usuário", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmacao == DialogResult.No)
             {
-                DataConnection.ExcluirDadosUsuario(txt_ID.Text);
-                dgv_Usuarios.Rows.Remove(dgv_Usuarios.CurrentRow);
+                return;
             }
+
+            else if (confirmacao == DialogResult.Yes)
+            {
+                try
+                {
+                    RepositUser.ExcluirDadosUsuario(txt_ID.Text);
+                    dgv_Usuarios.Rows.Remove(dgv_Usuarios.CurrentRow);
+                    MessageBox.Show("Usuário excluído com sucesso!");
+
+                    string tipoLogger = "Deleção";
+                    serviceLog.Cadastrar(objLogGerado(tipoLogger));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Desculpe, não foi possível fazer a exclusão: ", ex.Message);
+                }
+            }            
+        }
+
+        public Logger objLogGerado(string tipoLogger)
+        {
+            Logger objLog = new Logger();
+            objLog.IDUser = Globais.Global.id;
+            objLog.Data_Logger = DateTime.Now;
+            objLog.Tipo_Logger = tipoLogger;
+            objLog.Tabela_Logger = "Usuário";
+            objLog.ID_Tabela = Convert.ToInt32(txt_ID.Text);
+
+            return objLog;
         }
 
         private void FrmGestaoUser_Load(object sender, EventArgs e)
         {
-            dgv_Usuarios.DataSource = DataConnection.ObterUsuariosIdNome();
+            dgv_Usuarios.DataSource = RepositUser.ObterUsuariosIdNome();
             dgv_Usuarios.Columns[0].Width = 80;
-            dgv_Usuarios.Columns[1].Width = 200;
+            dgv_Usuarios.Columns[1].Width = 235;
         }
 
         private void dgv_Usuarios_SelectionChanged(object sender, EventArgs e)
@@ -79,7 +121,7 @@ namespace SistemaOdonto
                 DataTable dt = new DataTable();
                 string vid = dgv.SelectedRows[0].Cells[0].Value.ToString();
 
-                dt = DataConnection.ObterDadosUsuarios(vid);
+                dt = RepositUser.ObterDadosUsuarios(vid);
 
                 txt_ID.Text = dt.Rows[0].Field<int>("id_user").ToString();
                 txt_NomeUsuario.Text = dt.Rows[0].Field<string>("nome_user").ToString();
@@ -87,7 +129,6 @@ namespace SistemaOdonto
                 txt_Senha.Text = dt.Rows[0].Field<string>("senha_user").ToString();
                 cb_Status.Text = dt.Rows[0].Field<string>("status_user").ToString();
                 nup_Nivel.Value = dt.Rows[0].Field<int>("nivel_user");
-
             }
         }
 
@@ -102,11 +143,6 @@ namespace SistemaOdonto
             {
                 e.Handled = true;
             }
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        }        
     }
 }

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace SistemaOdonto
     {
 
         PacienteService serviceP = new PacienteService();
+        LoggerService serviceLog = new LoggerService();
 
         public FrmCadPaciente()
         {
@@ -133,7 +135,7 @@ namespace SistemaOdonto
             txtUF.Select(0, 0);
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private async void btnSalvar_Click(object sender, EventArgs e)
         {
             tsNenhuma.Text = "";
 
@@ -155,18 +157,18 @@ namespace SistemaOdonto
                 {
                     try
                     {
-                        serviceP.Cadastrar(objGerado());
+                        //serviceP.Cadastrar(objGerado());
+                        int pacienteID = await serviceP.Cadastrar(objGerado());
+                        //serviceLog.Cadastrar(objLogGerado());
+                        serviceLog.Cadastrar(objLogGerado(pacienteID));
                         MessageBox.Show("Novo Paciente Cadastrado com Sucesso!", "Dados Cadastrados!");
                         this.Close();
                     }
                     catch (Exception ex)
                     {
-
                         MessageBox.Show("Erro ao Salvar " + ex.Message);
                     }
-
                 }
-
             }
         }
        
@@ -174,7 +176,6 @@ namespace SistemaOdonto
         {
             //TRATAMENTO DATA DE NASCIMENTO
             string dataNascimento = $"{cbAno.Text}-{cbMes.SelectedIndex + 1:00}-{cbDia.Text:00}";
-
 
             //TRATAMENTO DADOS RG E CPF PACIENTE
             string rgpaciente = masktxtRGPaciente.Text;
@@ -198,6 +199,7 @@ namespace SistemaOdonto
             string enderecoCompleto = endereco.ToString();
 
             Paciente obj = new Paciente();
+            
             obj.Nome = txtNome.Text;
             obj.RG = rgpaciente;
             obj.CPF = cpfpaciente;
@@ -209,7 +211,19 @@ namespace SistemaOdonto
             obj.CEP = txtCEP.Text;
             obj.Endereco = enderecoCompleto;
 
-            return obj;            
+            return obj;
+        }
+
+        public Logger objLogGerado(int IDpacte)
+        {
+            Logger objLog = new Logger();
+            objLog.IDUser = Globais.Global.id;
+            objLog.Data_Logger = DateTime.Now;
+            objLog.Tipo_Logger = "Cadastro";            
+            objLog.Tabela_Logger = "Paciente";
+            objLog.ID_Tabela = IDpacte ;
+
+            return objLog;
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)

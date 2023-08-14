@@ -40,11 +40,12 @@
             this.agendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAgConsultas = new System.Windows.Forms.ToolStripMenuItem();
             this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blocoDeNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stripRelatorios = new System.Windows.Forms.ToolStripMenuItem();
             this.stripNovoUser = new System.Windows.Forms.ToolStripMenuItem();
             this.stripGestaoUser = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuAjuda = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,7 +103,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1892, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1892, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -114,7 +115,7 @@
             this.menuPaciente});
             this.cadastrosToolStripMenuItem.Image = global::SistemaOdonto.Properties.Resources.insert;
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(127, 36);
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(127, 38);
             this.cadastrosToolStripMenuItem.Text = "Cadastrar";
             // 
             // menuConsulta
@@ -146,7 +147,7 @@
             this.consultarDadosToolStripMenuItem.Image = global::SistemaOdonto.Properties.Resources.find_file;
             this.consultarDadosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.consultarDadosToolStripMenuItem.Name = "consultarDadosToolStripMenuItem";
-            this.consultarDadosToolStripMenuItem.Size = new System.Drawing.Size(192, 36);
+            this.consultarDadosToolStripMenuItem.Size = new System.Drawing.Size(192, 38);
             this.consultarDadosToolStripMenuItem.Text = "Consultar Dados";
             // 
             // menuDadosDentistas
@@ -169,7 +170,7 @@
             this.menuAgConsultas});
             this.agendasToolStripMenuItem.Image = global::SistemaOdonto.Properties.Resources.agendasToolStripMenuItem_Image;
             this.agendasToolStripMenuItem.Name = "agendasToolStripMenuItem";
-            this.agendasToolStripMenuItem.Size = new System.Drawing.Size(114, 36);
+            this.agendasToolStripMenuItem.Size = new System.Drawing.Size(114, 38);
             this.agendasToolStripMenuItem.Text = "Agenda";
             // 
             // menuAgConsultas
@@ -182,23 +183,14 @@
             // ferramentasToolStripMenuItem
             // 
             this.ferramentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.calculadoraToolStripMenuItem,
             this.blocoDeNotasToolStripMenuItem,
+            this.calculadoraToolStripMenuItem,
             this.wordToolStripMenuItem,
             this.excelToolStripMenuItem});
             this.ferramentasToolStripMenuItem.Image = global::SistemaOdonto.Properties.Resources.ferramentas1;
             this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
-            this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
+            this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(149, 38);
             this.ferramentasToolStripMenuItem.Text = "Ferramentas";
-            // 
-            // calculadoraToolStripMenuItem
-            // 
-            this.calculadoraToolStripMenuItem.Image = global::SistemaOdonto.Properties.Resources.calculator;
-            this.calculadoraToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
-            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
-            this.calculadoraToolStripMenuItem.Text = "Calculadora";
-            this.calculadoraToolStripMenuItem.Click += new System.EventHandler(this.calculadoraToolStripMenuItem_Click);
             // 
             // blocoDeNotasToolStripMenuItem
             // 
@@ -208,6 +200,15 @@
             this.blocoDeNotasToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
             this.blocoDeNotasToolStripMenuItem.Text = "Bloco de Notas";
             this.blocoDeNotasToolStripMenuItem.Click += new System.EventHandler(this.blocoDeNotasToolStripMenuItem_Click);
+            // 
+            // calculadoraToolStripMenuItem
+            // 
+            this.calculadoraToolStripMenuItem.Image = global::SistemaOdonto.Properties.Resources.calculator;
+            this.calculadoraToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
+            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.calculadoraToolStripMenuItem.Text = "Calculadora";
+            this.calculadoraToolStripMenuItem.Click += new System.EventHandler(this.calculadoraToolStripMenuItem_Click);
             // 
             // wordToolStripMenuItem
             // 
@@ -230,12 +231,20 @@
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stripRelatorios,
             this.stripNovoUser,
             this.stripGestaoUser});
             this.usuáriosToolStripMenuItem.Image = global::SistemaOdonto.Properties.Resources.users;
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(120, 36);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(120, 38);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
+            // 
+            // stripRelatorios
+            // 
+            this.stripRelatorios.Name = "stripRelatorios";
+            this.stripRelatorios.Size = new System.Drawing.Size(267, 34);
+            this.stripRelatorios.Text = "Relatórios";
+            this.stripRelatorios.Click += new System.EventHandler(this.stripRelatorios_Click);
             // 
             // stripNovoUser
             // 
@@ -257,7 +266,7 @@
             this.menuSuporte});
             this.MenuAjuda.Image = global::SistemaOdonto.Properties.Resources.MAjuda_Image;
             this.MenuAjuda.Name = "MenuAjuda";
-            this.MenuAjuda.Size = new System.Drawing.Size(98, 36);
+            this.MenuAjuda.Size = new System.Drawing.Size(98, 38);
             this.MenuAjuda.Text = "Ajuda";
             // 
             // menuSuporte
@@ -271,7 +280,7 @@
             // 
             this.MLogoff.Image = global::SistemaOdonto.Properties.Resources.group;
             this.MLogoff.Name = "MLogoff";
-            this.MLogoff.Size = new System.Drawing.Size(105, 36);
+            this.MLogoff.Size = new System.Drawing.Size(105, 38);
             this.MLogoff.Text = "Logoff";
             this.MLogoff.Click += new System.EventHandler(this.MLogoff_Click);
             // 
@@ -279,7 +288,7 @@
             // 
             this.MSair.Image = global::SistemaOdonto.Properties.Resources.delete;
             this.MSair.Name = "MSair";
-            this.MSair.Size = new System.Drawing.Size(81, 36);
+            this.MSair.Size = new System.Drawing.Size(81, 38);
             this.MSair.Text = "Sair";
             this.MSair.Click += new System.EventHandler(this.MSair_Click);
             // 
@@ -296,7 +305,10 @@
             // 
             // cbDentista
             // 
+            this.cbDentista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDentista.FormattingEnabled = true;
+            this.cbDentista.Items.AddRange(new object[] {
+            "Todos"});
             this.cbDentista.Location = new System.Drawing.Point(194, 63);
             this.cbDentista.Margin = new System.Windows.Forms.Padding(4);
             this.cbDentista.Name = "cbDentista";
@@ -634,6 +646,7 @@
         private System.Windows.Forms.ToolStripMenuItem blocoDeNotasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stripRelatorios;
     }
 }
 

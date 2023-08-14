@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using SistemaOdonto.WSCorreios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace SistemaOdonto
     {
 
         DentistaService service = new DentistaService();
+        LoggerService serviceLog = new LoggerService();
 
 
         public FrmCadDentista()
@@ -116,14 +118,13 @@ namespace SistemaOdonto
             BeginInvoke(new Action(() => txtCelular.Select(0, 0)));
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private async void btnSalvar_Click(object sender, EventArgs e)
         {
             tsNenhuma.Text = "";            
             
             ts.Text = ValidarCad();
             if(ts.Text == "Dados preenchidos")
-            {
-                
+            {                
                 if (ClassValidation.ValidationDocs.validarCpf(maskCPFDent.Text) == false)
                 {                        
                     MessageBox.Show("CPF inválido!");
@@ -138,22 +139,20 @@ namespace SistemaOdonto
                 {
                     try
                     {
-                        service.Cadastrar(objGerado());
+                        //service.Cadastrar(objGerado());
+                        int dentistaID = await service.Cadastrar(objGerado());
+                        //serviceLog.Cadastrar(objLogGerado());
+                        serviceLog.Cadastrar(objLogGerado(dentistaID));
                         MessageBox.Show("Novo Dentista Cadastrado com Sucesso!", "Dados Cadastrados!");
                         this.Close();
                     }
-                    catch (Exception ex)
+                    catch (System.Exception ex)
                     {
-
                         MessageBox.Show("Erro ao Salvar " + ex.Message);
                     }
-
-                }
-                    
-            }           
-            
+                }                    
+            }             
         }
-
 
         public Dentista objGerado()
         {
@@ -163,7 +162,6 @@ namespace SistemaOdonto
 
             rgdentista = rgdentista.Replace(",", "").Replace("-", "");
             cpfdentista = cpfdentista.Replace(",", "").Replace("-", "");
-
 
             Dentista obj = new Dentista();
             obj.Nome = txtNome.Text;
@@ -177,7 +175,20 @@ namespace SistemaOdonto
             obj.Celular = txtCelular.Text != "" ? Convert.ToInt64(txtCelular.Text) : 0;
 
             return obj;
-        }              
+        }
+
+
+        public Logger objLogGerado(int dentistaID)
+        {
+            Logger objLog = new Logger();
+            objLog.IDUser = Globais.Global.id;
+            objLog.Data_Logger = DateTime.Now;
+            objLog.Tipo_Logger = "Cadastro";
+            objLog.Tabela_Logger = "Dentista";
+            objLog.ID_Tabela = dentistaID;
+
+            return objLog;
+        }
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
@@ -213,11 +224,6 @@ namespace SistemaOdonto
                 // Converter a letra para maiúsculo
                 e.KeyChar = char.ToUpper(e.KeyChar);
             }
-        }
-
-        private void FrmCadDentista_Load(object sender, EventArgs e)
-        {
-
-        }
+        }        
     }
 }

@@ -15,11 +15,6 @@ namespace Controllers.Context
     {
         public static string ConnectionString { get; set; }
 
-        //public SistemaContext() : base("Server=ACERASPIRE-5\\SQLEXPRESS;Database=SmileSense;Integrated Security=True;")
-        //{
-
-        //}
-
         public SistemaContext() : base(ConnectionString)
         {
 
@@ -31,6 +26,7 @@ namespace Controllers.Context
         public DbSet<Anamnese> Anamneses { get; set; }
         public DbSet<Odontograma> Odontogramas { get; set; }
         public DbSet<Procedimento> Procedimentos { get; set; }
+        public DbSet<Logger> Loggers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -41,6 +37,7 @@ namespace Controllers.Context
             modelBuilder.Configurations.Add(new AnamneseMap());
             modelBuilder.Configurations.Add(new OdontogramaMap());
             modelBuilder.Configurations.Add(new ProcedimentoMap());
+            modelBuilder.Configurations.Add(new LoggerMap());
 
             base.OnModelCreating(modelBuilder);
         }

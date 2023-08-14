@@ -35,6 +35,8 @@ namespace SistemaOdonto
         OdontogramaService serviceOdt = new OdontogramaService();
         ProcedimentoService serviceProcd = new ProcedimentoService();
 
+        LoggerService loggerService = new LoggerService();
+
         //OPÇÃO DE CORES PARA DESENHO
         private Color color1 = Color.Black;
         private Color color2 = Color.Blue;
@@ -53,9 +55,6 @@ namespace SistemaOdonto
 
         //dicionário para mapear as checkboxes
         private Dictionary<string, System.Windows.Forms.CheckBox> elementoCheckboxMap = new Dictionary<string, System.Windows.Forms.CheckBox>();
-
-        // Caminho da pasta principal onde as imagens serão armazenadas
-        //string imageFolderPath = "C:\\Users\\genis\\OneDrive\\Área de Trabalho\\SistemaOdonto\\SistemaOdonto\\Resource\\Odontogramas";
 
 
         public FrmOdtProcedimentos()
@@ -114,6 +113,13 @@ namespace SistemaOdonto
             lblCodigo.Visible = false;            
         }
 
+        private void FrmOdtProcedimentos_Load(object sender, EventArgs e)
+        {
+            ExibirInstruções();          
+
+            CriarPastaImagemOdontogramaPadrao();
+        }
+
         private void ExibirInstruções()
         {
             // Exibir caixa de diálogo com instruções
@@ -126,14 +132,8 @@ namespace SistemaOdonto
                 "\n\n6. Na imagem de Odontograma do quadro esquerdo faça as anotações necessárias." +
                 "\n\n7. Para salvar as informações: Clique em Salvar Odontograma." +
                 "", "Instruções para Preenchimento", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }        
-
-        private void FrmOdtProcedimentos_Load(object sender, EventArgs e)
-        {
-            ExibirInstruções();          
-
-            CriarPastaImagemOdontogramaPadrao();
         }
+
 
         private void CriarPastaImagemOdontogramaPadrao()
         {
@@ -177,10 +177,7 @@ namespace SistemaOdonto
 
                 MessageBox.Show("Erro ao carregar a lista!" + ex.Message);
             }
-        }
-
-
-        
+        }        
 
         public int ObterIdDentistaPorNome(string nomeDentista)
         {
@@ -1023,8 +1020,7 @@ namespace SistemaOdonto
 
             // Adiciona os valores como uma nova linha no DataGridView
             dataGridProcedimentos.Rows.Add(elemento, face, dentista, especialidade, procedimento, data);
-            dataGridProcedimentos.CurrentCell = null;
-           
+            dataGridProcedimentos.CurrentCell = null;           
         }
 
         private void AtualizarSelecaoFaces()
@@ -1140,7 +1136,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "13")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1159,7 +1154,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "12")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1178,7 +1172,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "11")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1197,7 +1190,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "21")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1216,7 +1208,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "22")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1235,7 +1226,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "23")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1254,7 +1244,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "24")
                     {
 
@@ -1275,7 +1264,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "25")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1295,7 +1283,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "26")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1315,7 +1302,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "27")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1335,7 +1321,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "28")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1355,8 +1340,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
-
                     else if (elemento == "48")
                     {
 
@@ -1453,7 +1436,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "43")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1472,7 +1454,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "42")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1491,7 +1472,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "41")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1510,7 +1490,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "31")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1529,7 +1508,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "32")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1548,7 +1526,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "33")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1567,7 +1544,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "34")
                     {
 
@@ -1588,7 +1564,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "35")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1608,7 +1583,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "36")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1628,7 +1602,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "37")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1648,7 +1621,6 @@ namespace SistemaOdonto
                             }
                         }
                     }
-
                     else if (elemento == "38")
                     {
                         using (Graphics g = pbImgOdontograma.CreateGraphics())
@@ -1974,7 +1946,7 @@ namespace SistemaOdonto
 
 
 
-        private void btnSalvarFichaClinica_Click(object sender, EventArgs e)
+        private async void btnSalvarFichaClinica_Click(object sender, EventArgs e)
         {
             DesmarcarCheckBoxes(this);
 
@@ -2006,10 +1978,10 @@ namespace SistemaOdonto
 
                 foreach (Procedimento procedimento in procedimentos)
                 {
-                    serviceProcd.Cadastrar(procedimento);
-                }               
-
-                
+                    //serviceProcd.Cadastrar(procedimento);
+                    int procedimentoID = await serviceProcd.Cadastrar(procedimento);
+                    loggerService.Cadastrar(objLogGerado(procedimentoID));
+                }
             }
             catch (System.Exception ex)
             {
@@ -2109,6 +2081,18 @@ namespace SistemaOdonto
                 procedimentos.Add(objProcd);
             }
             return procedimentos;
+        }
+
+        public Logger objLogGerado(int procedID)
+        {
+            Logger objLog = new Logger();
+            objLog.IDUser = Globais.Global.id;
+            objLog.Data_Logger = DateTime.Now;
+            objLog.Tipo_Logger = "Cadastro";
+            objLog.Tabela_Logger = "Procedimento";
+            objLog.ID_Tabela = procedID;
+
+            return objLog;
         }
 
         private void button1_Click(object sender, EventArgs e)

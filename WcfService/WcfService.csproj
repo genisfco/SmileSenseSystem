@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AnamneseService.svc" />
+    <Content Include="LoggerService.svc" />
     <Content Include="ConsultaService.svc" />
     <Content Include="DentistaService.svc" />
     <Content Include="OdontogramaService.svc" />
@@ -72,6 +73,9 @@
   <ItemGroup>
     <Compile Include="AnamneseService.svc.cs">
       <DependentUpon>AnamneseService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="LoggerService.svc.cs">
+      <DependentUpon>LoggerService.svc</DependentUpon>
     </Compile>
     <Compile Include="ConsultaService.svc.cs">
       <DependentUpon>ConsultaService.svc</DependentUpon>

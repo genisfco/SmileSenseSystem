@@ -366,7 +366,6 @@
             this.Name = "FrmCadDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Dentistas";
-            this.Load += new System.EventHandler(this.FrmCadDentista_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);

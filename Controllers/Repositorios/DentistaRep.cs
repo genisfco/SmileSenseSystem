@@ -10,12 +10,23 @@ namespace Controllers.Repositorios
 {
     public class DentistaRep
     {
-        public void Cadastrar(Dentista obj)
+        //public void Cadastrar(Dentista obj)
+        //{
+        //    using (var ctx = new SistemaContext())
+        //    {
+        //        ctx.Dentistas.Add(obj);
+        //        ctx.SaveChanges();
+        //    }
+        //}
+
+        public async Task<int> Cadastrar(Dentista obj)
         {
             using (var ctx = new SistemaContext())
             {
                 ctx.Dentistas.Add(obj);
-                ctx.SaveChanges();
+                await ctx.SaveChangesAsync();
+
+                return obj.Id;
             }
         }
 

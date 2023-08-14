@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarAnamnese));
-            this.lblCodigo = new System.Windows.Forms.Label();
+            this.lblCodIDPacte = new System.Windows.Forms.Label();
             this.chboxDoencaCongNAO = new System.Windows.Forms.CheckBox();
             this.chboxDoencaCongSIM = new System.Windows.Forms.CheckBox();
             this.chboxComplOdontoNAO = new System.Windows.Forms.CheckBox();
@@ -68,21 +68,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbPaciente = new System.Windows.Forms.Label();
-            this.lblCodAnm = new System.Windows.Forms.Label();
+            this.lblCodIDAnm = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAtualizarAnm = new System.Windows.Forms.Button();
             this.btnFecharAnamnese = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblCodigo
+            // lblCodIDPacte
             // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(678, 80);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(71, 20);
-            this.lblCodigo.TabIndex = 156;
-            this.lblCodigo.Text = "ID.Pacte";
+            this.lblCodIDPacte.AutoSize = true;
+            this.lblCodIDPacte.Location = new System.Drawing.Point(678, 80);
+            this.lblCodIDPacte.Name = "lblCodIDPacte";
+            this.lblCodIDPacte.Size = new System.Drawing.Size(71, 20);
+            this.lblCodIDPacte.TabIndex = 156;
+            this.lblCodIDPacte.Text = "ID.Pacte";
             // 
             // chboxDoencaCongNAO
             // 
@@ -434,25 +434,25 @@
             this.lbPaciente.TabIndex = 116;
             this.lbPaciente.Text = "Paciente";
             // 
-            // lblCodAnm
+            // lblCodIDAnm
             // 
-            this.lblCodAnm.AutoSize = true;
-            this.lblCodAnm.Location = new System.Drawing.Point(861, 78);
-            this.lblCodAnm.Name = "lblCodAnm";
-            this.lblCodAnm.Size = new System.Drawing.Size(72, 20);
-            this.lblCodAnm.TabIndex = 158;
-            this.lblCodAnm.Text = "ID.Anam";
+            this.lblCodIDAnm.AutoSize = true;
+            this.lblCodIDAnm.Location = new System.Drawing.Point(861, 78);
+            this.lblCodIDAnm.Name = "lblCodIDAnm";
+            this.lblCodIDAnm.Size = new System.Drawing.Size(72, 20);
+            this.lblCodIDAnm.TabIndex = 158;
+            this.lblCodIDAnm.Text = "ID.Anam";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.lbCPF);
-            this.panel1.Controls.Add(this.lblCodAnm);
+            this.panel1.Controls.Add(this.lblCodIDAnm);
             this.panel1.Controls.Add(this.lbPaciente);
             this.panel1.Controls.Add(this.btnAtualizarAnm);
             this.panel1.Controls.Add(this.txtNome);
-            this.panel1.Controls.Add(this.lblCodigo);
+            this.panel1.Controls.Add(this.lblCodIDPacte);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnFecharAnamnese);
             this.panel1.Controls.Add(this.label2);
@@ -551,7 +551,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnAtualizarAnm;
-        public System.Windows.Forms.Label lblCodigo;
+        public System.Windows.Forms.Label lblCodIDPacte;
         private System.Windows.Forms.Button btnFecharAnamnese;
         private System.Windows.Forms.CheckBox chboxDoencaCongNAO;
         private System.Windows.Forms.CheckBox chboxDoencaCongSIM;
@@ -591,7 +591,7 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lbPaciente;
-        public System.Windows.Forms.Label lblCodAnm;
+        public System.Windows.Forms.Label lblCodIDAnm;
         private System.Windows.Forms.Panel panel1;
     }
 }

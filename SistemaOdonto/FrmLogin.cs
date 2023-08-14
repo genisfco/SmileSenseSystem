@@ -60,6 +60,7 @@ namespace SistemaOdonto
                     // Determina as strings de conexão
                     DataConnection.ConnectionString = connectionString;
                     Controllers.Context.SistemaContext.ConnectionString = connectionString;
+                    FrmRelatorioLoggers.ConnectionString = connectionString;
                 }               
 
                 else if (configLines.Length == 2)
@@ -72,6 +73,8 @@ namespace SistemaOdonto
                     // Use a connectionString no lugar das strings de conexão existentes
                     DataConnection.ConnectionString = connectionString;
                     Controllers.Context.SistemaContext.ConnectionString = connectionString;
+                    FrmRelatorioLoggers.ConnectionString = connectionString;
+
                 }
 
                 else
@@ -98,7 +101,7 @@ namespace SistemaOdonto
             }
                             
              string sql = "SELECT * FROM Usuarios WHERE username='" + username + "' AND senha_user='" + senha + "'";
-            dt = DataConnection.consulta(sql);
+            dt = RepositUser.consulta(sql);
 
 
             if (dt.Rows.Count == 1)
@@ -148,6 +151,7 @@ namespace SistemaOdonto
                     frmPrincipal.MenuAjuda.Visible = true;
                 }
 
+                Global.id = dt.Rows[0].Field<int>("id_user");
                 Global.nivel = int.Parse(dt.Rows[0].Field<int>("nivel_user").ToString());
                 Global.logado = true;
 
@@ -159,18 +163,17 @@ namespace SistemaOdonto
             }
         }
 
-
         private void btn_Sair_Click(object sender, EventArgs e)
         {
             Global.logado = false;
             Global.nivel = 0;
+            Global.id = 0;
 
             DialogResult resultado = MessageBox.Show("Deseja sair da aplicação?", "Confirmação de saída",
             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
-                // Lógica para sair da aplicação
                 Application.Exit();
             }
         }        

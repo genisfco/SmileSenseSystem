@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace WcfService
 {
@@ -16,9 +17,20 @@ namespace WcfService
     {
         private PacienteRep rep = new PacienteRep();
 
-        public void Cadastrar(Paciente obj)
+        //public void Cadastrar(Paciente obj)
+        //{
+        //    rep.Cadastrar(obj);
+        //}
+
+        //public int Cadastrar(Paciente obj)
+        //{
+        //    return rep.Cadastrar(obj);
+        //}
+
+        public async Task<int> Cadastrar(Paciente obj)
         {
-            rep.Cadastrar(obj);
+            int pacienteId = await rep.Cadastrar(obj);
+            return pacienteId;
         }
 
         public Paciente Buscar(int id)

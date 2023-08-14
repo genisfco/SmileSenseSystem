@@ -18,6 +18,7 @@ namespace SistemaOdonto
         ConsultaService service = new ConsultaService();
         DentistaService serviceD = new DentistaService();
         PacienteService serviceP = new PacienteService();
+        LoggerService serviceLog = new LoggerService();
 
         public FrmCadConsulta()
         {
@@ -43,7 +44,7 @@ namespace SistemaOdonto
             catch (Exception ex)
             {
 
-                MessageBox.Show("Erro ao carregar a lista!" + ex.Message);
+                MessageBox.Show("Erro ao carregar a lista de Dentistas!" + ex.Message);
             }
 
 
@@ -63,7 +64,7 @@ namespace SistemaOdonto
             catch (Exception ex)
             {
 
-                MessageBox.Show("Erro ao carregar a lista!" + ex.Message);
+                MessageBox.Show("Erro ao carregar a lista de Pacientes!" + ex.Message);
             }
         }
 
@@ -92,7 +93,7 @@ namespace SistemaOdonto
                 return "Escolha uma data válida!";
             }           
 
-            else if (dtHora.Text == String.Empty)
+            else if (cboxHora.Text == String.Empty)
             {
                 return "Escolha o Horário!";
             }
@@ -102,9 +103,7 @@ namespace SistemaOdonto
                 ts.ForeColor = Color.Black;
                 return "Sucesso";
             }
-
-        }
-       
+        }       
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
@@ -112,13 +111,11 @@ namespace SistemaOdonto
             frm.ShowDialog();
         }
 
-
-
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private async void btnSalvar_Click(object sender, EventArgs e)
         {
             tsNenhuma.Text = "";
 
-            string str_mensagem = string.Format("Paciente: {0}\r\n\r\nDentista: {1}\r\n\r\nAgendamento na Data: {2} e Hora: {3} ", cbPaciente.Text, cbDentista.Text, dtData.Value.ToShortDateString(), dtHora.Value.ToShortTimeString());            
+            string str_mensagem = string.Format("Paciente: {0}\r\n\r\nDentista: {1}\r\n\r\nAgendamento na Data: {2} e Hora: {3} ", cbPaciente.Text, cbDentista.Text, dtData.Value.ToShortDateString(), cboxHora.Text);            
 
             DialogResult confirmacao = MessageBox.Show(str_mensagem, "Confirmação de Agendamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
@@ -131,16 +128,15 @@ namespace SistemaOdonto
             {
                 ts.Text = ValidarCad();
                 if (ts.Text == "Sucesso")
-                {
-                    service.Cadastrar(objGerado());
+                {                    
+                    int consultaID = await service.Cadastrar(objGerado());                    
+                    serviceLog.Cadastrar(objLogGerado(consultaID));
                     MessageBox.Show("Consulta Cadastrada com Sucesso", "Ação Realizada!");
                     this.Close();
                 }
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Erro ao Salvar " + ex.Message);
             }
         }
@@ -152,13 +148,25 @@ namespace SistemaOdonto
             obj.IdDentista = Convert.ToInt32(cbDentista.SelectedValue);
             obj.IdPaciente = Convert.ToInt32(cbPaciente.SelectedValue);
             obj.Data = Convert.ToDateTime(dtData.Value.ToString("dd/MM/yyyy"));
-            obj.HoraMarcada = dtHora.Value;
-            obj.HoraInicio = Convert.ToDateTime("00:00");
-            obj.HoraFim = Convert.ToDateTime("00:00");
+            obj.HoraMarcada = Convert.ToDateTime(cboxHora.Text);
+            //obj.HoraInicio = Convert.ToDateTime("00:00");
+            //obj.HoraFim = Convert.ToDateTime("00:00");
             obj.Observacao = txtAnotacoes.Text;
             obj.Status = "Nao confirmado";
 
             return obj;
+        }
+
+        public Logger objLogGerado(int consultaID)
+        {
+            Logger objLog = new Logger();
+            objLog.IDUser = Globais.Global.id;
+            objLog.Data_Logger = DateTime.Now;
+            objLog.Tipo_Logger = "Cadastro";
+            objLog.Tabela_Logger = "Consulta";
+            objLog.ID_Tabela = consultaID;
+
+            return objLog;
         }
 
         private void masktxtCPFPaciente_Enter(object sender, EventArgs e)
@@ -190,6 +198,7 @@ namespace SistemaOdonto
                 MessageBox.Show("Não foi possível localizar os dados:" + ex.Message);
             }         
 
-        }
+        }  
+        
     }
 }

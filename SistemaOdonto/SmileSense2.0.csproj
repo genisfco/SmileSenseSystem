@@ -96,6 +96,12 @@
     <Compile Include="FormConfig.Designer.cs">
       <DependentUpon>FormConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRelatorioLoggers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRelatorioLoggers.Designer.cs">
+      <DependentUpon>FrmRelatorioLoggers.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAnamnese.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormConfig.resx">
       <DependentUpon>FormConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRelatorioLoggers.resx">
+      <DependentUpon>FrmRelatorioLoggers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAnamnese.resx">
       <DependentUpon>FrmAnamnese.cs</DependentUpon>

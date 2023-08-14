@@ -12,7 +12,7 @@ namespace Interfaces
     public interface IConsulta
     {
         [OperationContract]
-        void Cadastrar(Consulta obj);
+        Task<int> Cadastrar(Consulta obj);
 
         [OperationContract(Name = "BuscarPorId")]
         Consulta Buscar(int id);

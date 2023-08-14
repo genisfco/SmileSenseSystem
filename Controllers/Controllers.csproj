@@ -56,6 +56,7 @@
     <Compile Include="Map\AnamneseMap.cs" />
     <Compile Include="Map\ConsultaMap.cs" />
     <Compile Include="Map\DentistaMap.cs" />
+    <Compile Include="Map\LoggerMap.cs" />
     <Compile Include="Map\OdontogramaMap.cs" />
     <Compile Include="Map\PacienteMap.cs" />
     <Compile Include="Map\ProcedimentoMap.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Repositorios\AnamneseRep.cs" />
     <Compile Include="Repositorios\ConsultaRep.cs" />
     <Compile Include="Repositorios\DentistaRep.cs" />
+    <Compile Include="Repositorios\LoggerRep.cs" />
     <Compile Include="Repositorios\OdontogramaRep.cs" />
     <Compile Include="Repositorios\PacienteRep.cs" />
     <Compile Include="Repositorios\ProcedimentoRep.cs" />

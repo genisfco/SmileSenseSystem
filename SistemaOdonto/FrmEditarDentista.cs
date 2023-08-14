@@ -17,6 +17,7 @@ namespace SistemaOdonto
         public string status;
         Dentista obj = new Dentista();
         DentistaService service = new DentistaService();
+        LoggerService serviceLog = new LoggerService();
 
         public FrmEditarDentista(Dentista obj)
         {
@@ -34,9 +35,9 @@ namespace SistemaOdonto
             }
         }
 
-        private void IniciarFormulario(Dentista objP)
+        private void IniciarFormulario(Dentista objD)
         {
-            this.obj = objP;
+            this.obj = objD;
             lblCodigo.Text = this.obj.Id.ToString();
             txtNome.Text = this.obj.Nome;
             txtCRO.Text = this.obj.CRO;
@@ -62,14 +63,12 @@ namespace SistemaOdonto
                 }
                 else
                 {
-
                     //TRATAMENTO DADOS RG E CPF Dentista
                     string rgdentista = maskRGDentist.Text;
                     string cpfdentista = maskCPFDentist.Text;
 
                     rgdentista = rgdentista.Replace(",", "").Replace("-", "");
                     cpfdentista = cpfdentista.Replace(",", "").Replace("-", "");
-
                     
                     this.obj.Nome = txtNome.Text;
                     this.obj.CRO = txtCRO.Text;
@@ -84,6 +83,8 @@ namespace SistemaOdonto
                     try
                     {
                         service.Editar(this.obj);
+                        string tipoLogger = "Atualização";
+                        serviceLog.Cadastrar(objLogGerado(tipoLogger));
                         status = "editado";
                         MessageBox.Show("Dados Atualizados com Sucesso!", "Ação Realizada!");
                         this.Close();
@@ -93,11 +94,21 @@ namespace SistemaOdonto
                     {
 
                         MessageBox.Show("Não foi possível atualizar: ", ex.Message);    
-                    }
-                    
+                    }                    
                 }
             }
+        }
 
+        public Logger objLogGerado(string tipoLogger)
+        {
+            Logger objLog = new Logger();
+            objLog.IDUser = Globais.Global.id;
+            objLog.Data_Logger = DateTime.Now;
+            objLog.Tipo_Logger = tipoLogger;
+            objLog.Tabela_Logger = "Dentista";
+            objLog.ID_Tabela = Convert.ToInt32(lblCodigo.Text);
+
+            return objLog;
         }
 
 
@@ -150,6 +161,8 @@ namespace SistemaOdonto
                 try
                 {
                     service.Deletar(this.obj.Id);
+                    string tipoLogger = "Deleção";
+                    serviceLog.Cadastrar(objLogGerado(tipoLogger));
                     MessageBox.Show("Dentista Excluído com sucesso!", "Ação Realizada!");
                     status = "apagado";
                     this.Close();

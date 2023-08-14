@@ -8,19 +8,9 @@ namespace Globais
 {
     public class Global
     {
+        public static int id;
         public static string versao = "1.0";
         public static Boolean logado = false;
-        public static int nivel = 0;  //1-Basico, 2-Gerente, 3-Master
+        public static int nivel = 0;  //1-Dentista, 2-Secretaria, 3-Administrador
     }
 }
-
-
-
-/* DADOS DA TABELA USUARIOS
-id_user
-nome_user
-username
-senha_user
-status_user
-nivel_user
- */

@@ -17,8 +17,9 @@ namespace SistemaOdonto
 
         public string status;
         Paciente obj = new Paciente();
-        PacienteService service = new PacienteService();
 
+        PacienteService service = new PacienteService();
+        LoggerService serviceLog = new LoggerService();
 
         public FrmEditarPaciente(Paciente obj)
         {
@@ -85,13 +86,12 @@ namespace SistemaOdonto
                 if (lblCodigo.Text != this.obj.Id.ToString())
                 {
                     status = "apagado";
-                    MessageBox.Show("Este Registro acabou de ser excluido por outro usuário", "Atenção!");
+                    MessageBox.Show("Este Registro foi excluído por outro usuário", "Atenção!");
                 }
                 else
                 {
                     //TRATAMENTO DATA DE NASCIMENTO
                     string dataNascimento = $"{cbAno.Text}-{cbMes.SelectedIndex + 1:00}-{cbDia.Text:00}";
-
 
                     //TRATAMENTO DADOS RG E CPF PACIENTE
                     string rgpaciente = masktxtRGPaciente.Text;
@@ -99,7 +99,6 @@ namespace SistemaOdonto
 
                     rgpaciente = rgpaciente.Replace(",", "").Replace("-", "");
                     cpfpaciente = cpfpaciente.Replace(",", "").Replace("-", "");
-
 
                     /// CONCATENAÇÃO DOS DADOS DE ENDEREÇO PARA SALVAR NO BANCO
                     StringBuilder endereco = new StringBuilder();
@@ -113,7 +112,6 @@ namespace SistemaOdonto
                     endereco.Append(" - ");
                     endereco.Append(txtUF.Text);
                     string enderecoCompleto = endereco.ToString();
-
 
                     this.obj.Nome = txtNome.Text;
                     this.obj.Sexo = cbSexo.Text;
@@ -129,19 +127,30 @@ namespace SistemaOdonto
                     try
                     {
                         service.Editar(this.obj);
+                        string tipoLogger = "Atualização";
+                        serviceLog.Cadastrar(objLogGerado(tipoLogger));
                         status = "editado";
                         MessageBox.Show("Dados Atualizados com Sucesso!", "Ação Realizada!");
                         this.Close();
-
                     }
                     catch (Exception ex)
                     {
-
                         MessageBox.Show("Não foi possível atualizar: ", ex.Message);
                     }
                 }
             }
+        }
 
+        public Logger objLogGerado(string tipoLogger)
+        {
+            Logger objLog = new Logger();
+            objLog.IDUser = Globais.Global.id;
+            objLog.Data_Logger = DateTime.Now;
+            objLog.Tipo_Logger = tipoLogger;
+            objLog.Tabela_Logger = "Paciente";
+            objLog.ID_Tabela = Convert.ToInt32(lblCodigo.Text) ;
+
+            return objLog;
         }
 
         private void masktxtRGPaciente_Enter(object sender, EventArgs e)
@@ -234,19 +243,20 @@ namespace SistemaOdonto
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
-        {           
+        {        
 
             // Exibe uma mensagem de confirmação antes de excluir
             DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir o Paciente?", "Confirmação de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
-
                 try
                 {
                     tsNenhuma.Text = "";
 
                     service.Deletar(this.obj.Id);
+                    string tipoLogger = "Deleção";
+                    serviceLog.Cadastrar(objLogGerado(tipoLogger));
                     MessageBox.Show("Paciente Excluído com sucesso!", "Ação Realizada!");
                     status = "apagado";
                     this.Close();
@@ -294,8 +304,8 @@ namespace SistemaOdonto
             {
                 FrmEditarAnamnese frmEdtAnm = new FrmEditarAnamnese(anamnese);
 
-                frmEdtAnm.lblCodigo.Text = lblCodigo.Text;
-                frmEdtAnm.lblCodAnm.Text = anamnese.IdAnamnese.ToString();
+                frmEdtAnm.lblCodIDPacte.Text = lblCodigo.Text;
+                frmEdtAnm.lblCodIDAnm.Text = anamnese.IdAnamnese.ToString();
                 frmEdtAnm.txtNome.Text = txtNome.Text;
                 frmEdtAnm.maskCPFPaciente.Text = masktxtCPFPaciente.Text;
                 frmEdtAnm.ShowDialog();
@@ -306,7 +316,7 @@ namespace SistemaOdonto
 
                 FrmAnamnese frmAnm = new FrmAnamnese();
 
-                frmAnm.lblCodigo.Text = lblCodigo.Text;
+                frmAnm.lblCodigoIDPacte.Text = lblCodigo.Text;
                 frmAnm.txtNome.Text = txtNome.Text;
                 frmAnm.maskCPFPaciente.Text = masktxtCPFPaciente.Text;
                 frmAnm.ShowDialog();

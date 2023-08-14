@@ -19,15 +19,15 @@ namespace SistemaOdonto
 
         Anamnese obj = new Anamnese();
         AnamneseService serviceAnm = new AnamneseService();
+        LoggerService loggerService = new LoggerService();
 
 
         public FrmEditarAnamnese(Anamnese obj)
         {
             InitializeComponent();
-            lblCodigo.Visible = false;
-            lblCodAnm.Visible = false;
+            lblCodIDPacte.Visible = false;
+            lblCodIDAnm.Visible = false;
             IniciarFormulario(obj);
-
         }
 
         private void IniciarFormulario(Anamnese objA)
@@ -264,6 +264,7 @@ namespace SistemaOdonto
                     this.obj.Qual_Doenca = txtDoenca.Text;
 
                     serviceAnm.Editar(this.obj);
+                    loggerService.Cadastrar(objLogGerado());
                     MessageBox.Show("Anamnese do Paciente Atualizada com Sucesso!", "Dados atualizados!");
                     this.Close();
 
@@ -272,8 +273,19 @@ namespace SistemaOdonto
                 {
                     MessageBox.Show("Erro ao Salvar " + ex.Message);                    
                 }                
-            } 
-                     
+            }                      
+        }
+
+        public Logger objLogGerado()
+        {
+            Logger objLog = new Logger();
+            objLog.IDUser = Globais.Global.id;
+            objLog.Data_Logger = DateTime.Now;
+            objLog.Tipo_Logger = "Atualização";
+            objLog.Tabela_Logger = "Anamnese";
+            objLog.ID_Tabela = Convert.ToInt32(lblCodIDAnm.Text);
+
+            return objLog;
         }
 
         private void btnFecharAnamnese_Click(object sender, EventArgs e)

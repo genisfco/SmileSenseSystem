@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarConsulta));
-            this.dtHora = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.cbDentista = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,16 +39,13 @@
             this.txtAnotacoes = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.dtFim = new System.Windows.Forms.DateTimePicker();
-            this.dtInicio = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ts = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsNenhuma = new System.Windows.Forms.ToolStripStatusLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.masktxtCPFPaciente = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboxHora = new System.Windows.Forms.ComboBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnBuscarPaciente = new System.Windows.Forms.Button();
@@ -57,21 +53,10 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dtHora
-            // 
-            this.dtHora.CustomFormat = "HH:mm";
-            this.dtHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtHora.Location = new System.Drawing.Point(424, 218);
-            this.dtHora.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dtHora.Name = "dtHora";
-            this.dtHora.ShowUpDown = true;
-            this.dtHora.Size = new System.Drawing.Size(212, 26);
-            this.dtHora.TabIndex = 61;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(420, 192);
+            this.label2.Location = new System.Drawing.Point(497, 192);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 20);
@@ -121,16 +106,16 @@
             // dtData
             // 
             this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtData.Location = new System.Drawing.Point(424, 142);
+            this.dtData.Location = new System.Drawing.Point(501, 142);
             this.dtData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtData.Name = "dtData";
-            this.dtData.Size = new System.Drawing.Size(212, 26);
+            this.dtData.Size = new System.Drawing.Size(135, 26);
             this.dtData.TabIndex = 55;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(420, 115);
+            this.label8.Location = new System.Drawing.Point(497, 115);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 20);
@@ -139,17 +124,17 @@
             // 
             // txtAnotacoes
             // 
-            this.txtAnotacoes.Location = new System.Drawing.Point(26, 362);
+            this.txtAnotacoes.Location = new System.Drawing.Point(26, 317);
             this.txtAnotacoes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAnotacoes.Multiline = true;
             this.txtAnotacoes.Name = "txtAnotacoes";
-            this.txtAnotacoes.Size = new System.Drawing.Size(613, 113);
+            this.txtAnotacoes.Size = new System.Drawing.Size(613, 158);
             this.txtAnotacoes.TabIndex = 53;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 337);
+            this.label7.Location = new System.Drawing.Point(16, 292);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 20);
@@ -165,52 +150,6 @@
             this.lblCodigo.Size = new System.Drawing.Size(27, 20);
             this.lblCodigo.TabIndex = 63;
             this.lblCodigo.Text = "01";
-            // 
-            // dtFim
-            // 
-            this.dtFim.CustomFormat = "HH:mm";
-            this.dtFim.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtFim.Location = new System.Drawing.Point(525, 278);
-            this.dtFim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dtFim.Name = "dtFim";
-            this.dtFim.ShowUpDown = true;
-            this.dtFim.Size = new System.Drawing.Size(109, 26);
-            this.dtFim.TabIndex = 68;
-            this.dtFim.Value = new System.DateTime(2015, 2, 3, 0, 0, 0, 0);
-            // 
-            // dtInicio
-            // 
-            this.dtInicio.CustomFormat = "HH:mm";
-            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtInicio.Location = new System.Drawing.Point(124, 278);
-            this.dtInicio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dtInicio.Name = "dtInicio";
-            this.dtInicio.ShowUpDown = true;
-            this.dtInicio.Size = new System.Drawing.Size(109, 26);
-            this.dtInicio.TabIndex = 67;
-            this.dtInicio.Value = new System.DateTime(2015, 2, 3, 0, 0, 0, 0);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(436, 282);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 22);
-            this.label6.TabIndex = 66;
-            this.label6.Text = "Fim:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 282);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 22);
-            this.label5.TabIndex = 65;
-            this.label5.Text = "Início:";
             // 
             // statusStrip1
             // 
@@ -264,6 +203,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.cboxHora);
             this.panel1.Controls.Add(this.lblCodigo);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnExcluir);
@@ -276,19 +216,121 @@
             this.panel1.Controls.Add(this.dtData);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.cbPaciente);
-            this.panel1.Controls.Add(this.dtFim);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dtInicio);
             this.panel1.Controls.Add(this.cbDentista);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.dtHora);
             this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(652, 598);
             this.panel1.TabIndex = 77;
+            // 
+            // cboxHora
+            // 
+            this.cboxHora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxHora.FormatString = "t";
+            this.cboxHora.FormattingEnabled = true;
+            this.cboxHora.Items.AddRange(new object[] {
+            "00:00",
+            "00:15",
+            "00:30",
+            "00:45",
+            "01:00",
+            "01:15",
+            "01:30",
+            "01:45",
+            "02:00",
+            "02:15",
+            "02:30",
+            "02:45",
+            "03:00",
+            "03:15",
+            "03:30",
+            "03:45",
+            "04:00",
+            "04:15",
+            "04:30",
+            "04:45",
+            "05:00",
+            "05:15",
+            "05:30",
+            "05:45",
+            "06:00",
+            "06:15",
+            "06:30",
+            "06:45",
+            "07:00",
+            "07:15",
+            "07:30",
+            "07:45",
+            "08:00",
+            "08:15",
+            "08:30",
+            "08:45",
+            "09:00",
+            "09:15",
+            "09:30",
+            "09:45",
+            "10:00",
+            "10:15",
+            "10:30",
+            "10:45",
+            "11:00",
+            "11:15",
+            "11:30",
+            "11:45",
+            "12:00",
+            "12:15",
+            "12:30",
+            "12:45",
+            "13:00",
+            "13:15",
+            "13:30",
+            "13:45",
+            "14:00",
+            "14:15",
+            "14:30",
+            "14:45",
+            "15:00",
+            "15:15",
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15",
+            "16:30",
+            "16:45",
+            "17:00",
+            "17:15",
+            "17:30",
+            "17:45",
+            "18:00",
+            "18:15",
+            "18:30",
+            "18:45",
+            "19:00",
+            "19:15",
+            "19:30",
+            "19:45",
+            "20:00",
+            "20:15",
+            "20:30",
+            "20:45",
+            "21:00",
+            "21:15",
+            "21:30",
+            "21:45",
+            "22:00",
+            "22:15",
+            "22:30",
+            "22:45",
+            "23:00",
+            "23:15",
+            "23:30",
+            "23:45"});
+            this.cboxHora.Location = new System.Drawing.Point(501, 217);
+            this.cboxHora.Name = "cboxHora";
+            this.cboxHora.Size = new System.Drawing.Size(135, 28);
+            this.cboxHora.TabIndex = 77;
             // 
             // btnExcluir
             // 
@@ -373,8 +415,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dtHora;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbDentista;
         private System.Windows.Forms.Label label1;
@@ -385,10 +425,6 @@
         private System.Windows.Forms.TextBox txtAnotacoes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.DateTimePicker dtFim;
-        private System.Windows.Forms.DateTimePicker dtInicio;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel ts;
         private System.Windows.Forms.ToolStripStatusLabel tsNenhuma;
@@ -398,5 +434,6 @@
         private System.Windows.Forms.Button btnBuscarPaciente;
         private System.Windows.Forms.MaskedTextBox masktxtCPFPaciente;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cboxHora;
     }
 }

@@ -10,15 +10,35 @@ namespace Controllers.Repositorios
 {
     public class PacienteRep
     {
-        public void Cadastrar(Paciente obj)
+        //public void Cadastrar(Paciente obj)
+        //{
+        //    using (var ctx = new SistemaContext())
+        //    {
+        //        ctx.Pacientes.Add(obj);
+        //        ctx.SaveChanges();
+        //    }
+        //}
+
+        //public int Cadastrar(Paciente obj)
+        //{
+        //    using (var ctx = new SistemaContext())
+        //    {
+        //        ctx.Pacientes.Add(obj);
+        //        ctx.SaveChanges();
+        //        return obj.Id; // Supondo que a classe Paciente tenha uma propriedade "Id"
+        //    }
+        //}
+
+        public async Task<int> Cadastrar(Paciente obj)
         {
             using (var ctx = new SistemaContext())
             {
                 ctx.Pacientes.Add(obj);
-                ctx.SaveChanges();
+                await ctx.SaveChangesAsync();
+
+                return obj.Id;
             }
         }
-
 
         public Paciente Buscar(int id)
         {

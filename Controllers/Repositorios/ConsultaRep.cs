@@ -3,24 +3,31 @@ using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Controllers.Repositorios
 {
     public class ConsultaRep
     {
-        public void Cadastrar(Consulta obj)
+        //public void Cadastrar(Consulta obj)
+        //{
+        //    using (var ctx = new SistemaContext())
+        //    {
+        //        ctx.Consultas.Add(obj);
+        //        ctx.SaveChanges();
+        //    }
+        //}
+
+        public async Task<int> Cadastrar(Consulta obj)
         {
             using (var ctx = new SistemaContext())
             {
                 ctx.Consultas.Add(obj);
-                ctx.SaveChanges();
+                await ctx.SaveChangesAsync();
+
+                return obj.IdConsulta;
             }
-
-
         }
-
 
         public Consulta Buscar(int id)
         {
@@ -32,7 +39,6 @@ namespace Controllers.Repositorios
             return obj;
         }
 
-
         public IQueryable<Consulta> Buscar(Dentista dentista)
         {
             var ctx = new SistemaContext();
@@ -40,7 +46,6 @@ namespace Controllers.Repositorios
             var Consultas = ctx.Consultas.Where(c => c.IdDentista == dentista.Id);
             return Consultas;
         }
-
 
         public List<Consulta> Buscar(Dentista dentista, DateTime data)
         {
@@ -56,8 +61,6 @@ namespace Controllers.Repositorios
             }
             return Consultas;
         }
-
-
 
         public void Deletar(int id)
         {
@@ -77,8 +80,8 @@ namespace Controllers.Repositorios
                 objAntigo.IdPaciente = objNovo.IdPaciente;
                 objAntigo.IdDentista = objNovo.IdDentista;
                 objAntigo.HoraMarcada = objNovo.HoraMarcada;
-                objAntigo.HoraInicio = objNovo.HoraInicio;
-                objAntigo.HoraFim = objNovo.HoraFim;
+                //objAntigo.HoraInicio = objNovo.HoraInicio;
+                //objAntigo.HoraFim = objNovo.HoraFim;
                 objAntigo.Data = objNovo.Data;
                 objAntigo.Observacao = objNovo.Observacao;
                 objAntigo.Status = objNovo.Status;
