@@ -124,7 +124,7 @@
             "Anamnese",
             "Procedimento",
             "Usuário"});
-            this.comboxSobre.Location = new System.Drawing.Point(183, 174);
+            this.comboxSobre.Location = new System.Drawing.Point(12, 174);
             this.comboxSobre.Name = "comboxSobre";
             this.comboxSobre.Size = new System.Drawing.Size(146, 28);
             this.comboxSobre.TabIndex = 8;
@@ -144,16 +144,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(179, 151);
+            this.label3.Location = new System.Drawing.Point(8, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 20);
+            this.label3.Size = new System.Drawing.Size(130, 20);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Referente";
+            this.label3.Text = "Busca Referente";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 151);
+            this.label2.Location = new System.Drawing.Point(179, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 20);
             this.label2.TabIndex = 6;
@@ -168,7 +168,7 @@
             "Cadastro",
             "Atualização",
             "Deleção"});
-            this.comboxTipo.Location = new System.Drawing.Point(12, 174);
+            this.comboxTipo.Location = new System.Drawing.Point(183, 174);
             this.comboxTipo.Name = "comboxTipo";
             this.comboxTipo.Size = new System.Drawing.Size(146, 28);
             this.comboxTipo.TabIndex = 1;

@@ -33,6 +33,19 @@ namespace SistemaOdonto
             dataGridRelatorio.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; // Ajusta automaticamente o tamanho das colunas
         }
 
+        private DataTable GetReportData(string consultaSQL)
+        {
+            DataTable reportData = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(consultaSQL, connection);
+                adapter.Fill(reportData);
+            }
+            return reportData;
+        }
+
         private void PreencherComboBoxTipo()
         {
             // Criar uma lista de itens
@@ -42,7 +55,6 @@ namespace SistemaOdonto
             comboxTipo.Items.Clear();
             comboxTipo.Items.AddRange(itens);
             comboxTipo.SelectedIndex = 0;
-
         }
 
         private void FrmAcoesUser_Load(object sender, EventArgs e)
@@ -121,15 +133,14 @@ namespace SistemaOdonto
         {
             switch (comboxSobre.SelectedItem.ToString())
             {
-                case "Pacientes":
+                case "Paciente":
                     chboxBuscaespec.Enabled = true;
-                    // Lógica para ação relacionada a "Pacientes"
 
                     try
                     {
                         var lista = servicePcte.Listar();
                         var listaPcte = new Dictionary<int, string>();
-                        listaPcte.Add(0, "Selecione um Paciente");
+                        //listaPcte.Add(0, "Selecione um Paciente");
                         foreach (var item in lista)
                         {
                             listaPcte.Add(item.Id, item.Nome);
@@ -142,13 +153,12 @@ namespace SistemaOdonto
                     }
                     catch (System.Exception ex)
                     {
-
                         MessageBox.Show("Erro ao carregar a lista de Pacientes!" + ex.Message);
                     }
 
                     break;
 
-                case "Dentistas":
+                case "Dentista":
                     chboxBuscaespec.Enabled = true;
 
                     try
@@ -175,7 +185,7 @@ namespace SistemaOdonto
 
                     break;
 
-                case "Consultas":
+                case "Consulta":
                     chboxBuscaespec.Enabled = false;
                     chboxBuscaespec.Checked = false;
                     comboxBuscaespec.DataSource = null;
@@ -185,7 +195,7 @@ namespace SistemaOdonto
 
                     break;
 
-                case "Anamneses":
+                case "Anamnese":
                     chboxBuscaespec.Enabled = false;
                     chboxBuscaespec.Checked = false;
                     comboxBuscaespec.DataSource = null;
@@ -199,7 +209,7 @@ namespace SistemaOdonto
 
                     break;
 
-                case "Procedimentos":
+                case "Procedimento":
                     chboxBuscaespec.Enabled = false;
                     chboxBuscaespec.Checked = false;
                     comboxBuscaespec.DataSource = null;
@@ -211,7 +221,7 @@ namespace SistemaOdonto
 
                     break;
 
-                case "Usuários":
+                case "Usuário":
                     chboxBuscaespec.Enabled = false;
                     chboxBuscaespec.Checked = false;
                     comboxBuscaespec.DataSource = null;
@@ -235,6 +245,8 @@ namespace SistemaOdonto
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
+            dataGridRelatorio.DataSource = null;
+
             // Obtenha os valores selecionados nos filtros
             string usuario = comboxUsuarios.SelectedValue.ToString();
             string tipoRegistro = comboxTipo.SelectedItem.ToString();
@@ -243,24 +255,39 @@ namespace SistemaOdonto
             DateTime? dataInicio = chboxData.Checked ? dtInicio.Value : (DateTime?)null;
             DateTime? dataFim = chboxData.Checked ? dtFinal.Value : (DateTime?)null;
 
+            //VALIDANDO AS DATAS
+            if (dataInicio.HasValue && dataFim.HasValue)
+            {
+                if (dataInicio.Value == dataFim.Value || dataInicio.Value < dataFim.Value)
+                {
+                    dataInicio = dataInicio.Value.Date.AddHours(00).AddMinutes(00).AddSeconds(00);
+                    dataFim = dataFim.Value.Date.AddHours(23).AddMinutes(59).AddSeconds(59);
+                }               
+
+                else if (dataInicio.Value > dataFim.Value)
+                {
+                    MessageBox.Show("A Data de Início não pode ser maior que a Data Final. Por Favor, Verifique os campos!", "Datas Inválidas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }               
+            }
+
             // Use esses valores para construir sua consulta SQL e obter os dados do relatório
             string consultaSQL = BuildReportQuery(usuario, tipoRegistro, tabela, referenciaTabela, dataInicio, dataFim);
 
-
-            MessageBox.Show(consultaSQL);
+            //MessageBox.Show(consultaSQL); //PARA TESTAR A STRING QUERY DE CONSULTA
 
             DataTable reportData = GetReportData(consultaSQL);
 
             dataGridRelatorio.DataSource = reportData;
-        }
+        }        
 
         private string BuildReportQuery(string usuario, string tipoRegistro, string tabela, int referenciaTabela, DateTime? dataInicio, DateTime? dataFim)
         {
             string query = "SELECT * FROM Loggers WHERE 1 = 1";
 
-            if (!string.IsNullOrEmpty(usuario) && usuario != "Todos")
+            if (usuario.ToString() != "0") //Usuário foi selecionado no filtro de busca
             {
-                query += $" AND ID_USUARIO = {usuario}";
+                query += $" AND ID_USUARIO = {usuario}"; // retorna a busca com o id do usuário selecionado
             }
 
             if (!string.IsNullOrEmpty(tipoRegistro) && tipoRegistro != "Todos")
@@ -280,31 +307,14 @@ namespace SistemaOdonto
 
             if (dataInicio.HasValue)
             {
-                query += $" AND DATA_LOGGER >= '{dataInicio.Value.ToString("yyyy-MM-dd")}'";
+                query += $" AND DATA_LOGGER >= '{dataInicio.Value.ToString("dd-MM-yyyy HH:mm")}'";
             }
 
             if (dataFim.HasValue)
             {
-                query += $" AND DATA_LOGGER <= '{dataFim.Value.ToString("yyyy-MM-dd")}'";
+                query += $" AND DATA_LOGGER <= '{dataFim.Value.ToString("dd-MM-yyyy HH:mm")}'";
             }
-
             return query;
-        }
-
-        private DataTable GetReportData(string consultaSQL)
-        {
-
-
-            DataTable reportData = new DataTable();
-
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                connection.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(consultaSQL, connection);
-                adapter.Fill(reportData);
-            }
-
-            return reportData;
-        }
+        }        
     }
 }
