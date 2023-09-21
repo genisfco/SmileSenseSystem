@@ -36,38 +36,6 @@ namespace Globais
             }
         }
 
-
-        // FUNÇÕES DA TELA NOVO USER
-        //public static void NovoUsuario(Usuario user)
-        //{
-        //    if (existeUserName(user))
-        //    {
-        //        MessageBox.Show("Username já existe!");
-        //        return;
-        //    }
-        //    try
-        //    {
-        //        var vcon = DataConnection.ConexaoBanco();
-        //        var cmd = vcon.CreateCommand();
-        //        cmd.CommandText = "INSERT INTO usuarios (nome_user, username, senha_user, status_user, nivel_user) VALUES (@nome, @username, @password, @status, @nivel)";
-
-        //        cmd.Parameters.AddWithValue("@nome", user.nome);
-        //        cmd.Parameters.AddWithValue("@username", user.username);
-        //        cmd.Parameters.AddWithValue("@password", user.password);
-        //        cmd.Parameters.AddWithValue("@status", user.status);
-        //        cmd.Parameters.AddWithValue("@nivel", user.nivel);
-
-        //        cmd.ExecuteNonQuery();
-
-        //        MessageBox.Show("Novo Usuário Cadastrado!");
-        //        vcon.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Erro ao gravar novo usuário!" + ex);
-        //    }
-        //}
-
         public static async Task<int> NovoUsuario(Usuario user)
         {
             if (existeUserName(user))
@@ -223,6 +191,7 @@ namespace Globais
                 throw ex;
             }
         }
+        
     }
 }
 

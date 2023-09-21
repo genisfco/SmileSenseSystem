@@ -75,6 +75,7 @@ namespace SistemaOdonto
             cbPaciente.Text = serviceP.Buscar(this.consulta.IdPaciente).Nome;
             cbDentista.Text = serviceD.Buscar(this.consulta.IdDentista).Nome;
             dtData.Text = this.consulta.Data.ToString();
+
             DateTime horaMarcada = DateTime.Parse(this.consulta.HoraMarcada.ToString());
             cboxHora.Text = horaMarcada.ToString("HH:mm");
             //dtInicio.Text = this.consulta.HoraInicio.ToString();
@@ -136,11 +137,13 @@ namespace SistemaOdonto
                     try
                     {
                         service.Editar(this.consulta);
+                        MessageBox.Show("Consulta atualizada com Sucesso!");
 
                         string tipoLogger = "Atualização";
-                        serviceLog.Cadastrar(objLogGerado(tipoLogger));
-
-                        MessageBox.Show("Consulta atualizada com Sucesso!");
+                        string observacao = string.Format("        Atualizou para: {0} {1};     {2};    {3}" +
+                        "", dtData.Value.ToShortDateString(), cboxHora.Text, cbPaciente.Text, cbDentista.Text);
+                        
+                        serviceLog.Cadastrar(objLogGerado(tipoLogger, observacao));
                         this.Close();
                     }
                     catch (Exception ex)
@@ -156,7 +159,7 @@ namespace SistemaOdonto
             }
         }
 
-        public Logger objLogGerado(string tipoLogger)
+        public Logger objLogGerado(string tipoLogger, string observacao)
         {
             Logger objLog = new Logger();
             objLog.IDUser = Globais.Global.id;
@@ -164,6 +167,7 @@ namespace SistemaOdonto
             objLog.Tipo_Logger = tipoLogger;
             objLog.Tabela_Logger = "Consulta";
             objLog.ID_Tabela = Convert.ToInt32(lblCodigo.Text);
+            objLog.Observacao = observacao;
 
             return objLog;
         }
@@ -173,13 +177,22 @@ namespace SistemaOdonto
         {
             tsNenhuma.Text = "";
 
-            // Exibe uma mensagem de confirmação antes de excluir
+            // ARMAZENANDO OS DADOS DA CONSULTA EM VARIÁVEIS
+            DateTime data_consulta = DateTime.Parse(this.consulta.Data.ToString());
+            string data_format = data_consulta.ToString("dd/MM/yyyy");
 
+            DateTime hora_consulta = DateTime.Parse(this.consulta.HoraMarcada.ToString());
+            string hora_format = hora_consulta.ToString("HH:mm");
+
+            string nome_paciente = serviceP.Buscar(this.consulta.IdPaciente).Nome;
+            string nome_dentista = serviceD.Buscar(this.consulta.IdDentista).Nome;
+
+            // Exibe uma mensagem de confirmação antes de excluir
             string str_mensagem = string.Format("Paciente: {0}\r\n\r\n" +
                                                 "Dentista: {1}\r\n\r\n" +
                                                 "Agendamento na Data: {2} e Hora: {3}\r\n\r\n" +
                                                 "Tem certeza que deseja excluir a Consulta?" +
-                "", cbPaciente.Text, cbDentista.Text, dtData.Value.ToShortDateString(), cboxHora.Text);
+                "", nome_paciente, nome_dentista, data_format, hora_format);
 
             DialogResult confirmacao = MessageBox.Show(str_mensagem, "Confirmação de Exclusão da Consulta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -191,14 +204,15 @@ namespace SistemaOdonto
             else if (confirmacao == DialogResult.Yes)
             {                
                 try
-                {
+                {                    
                     service.Deletar(this.consulta.IdConsulta);
-
-                    string tipoLogger = "Deleção";
-                    serviceLog.Cadastrar(objLogGerado(tipoLogger));
-
                     MessageBox.Show("Consulta excluída com sucesso!", "Ação Realizada");
 
+                    string tipoLogger = "Deleção";
+                    string observacao = string.Format("   Deletou Consulta: {0} {1};     {2};    {3}" +
+                        "", data_format, hora_format, nome_paciente, nome_dentista);
+
+                    serviceLog.Cadastrar(objLogGerado(tipoLogger, observacao));
                     this.Close();
                 }
                 catch (Exception ex)
@@ -211,7 +225,6 @@ namespace SistemaOdonto
         private void masktxtCPFPaciente_Enter(object sender, EventArgs e)
         {
             BeginInvoke(new Action(() => masktxtCPFPaciente.Select(0, 0)));
-
         }
 
         private void btnBuscarPaciente_Click(object sender, EventArgs e)

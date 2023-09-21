@@ -184,7 +184,6 @@ namespace SistemaOdonto
             rgpaciente = rgpaciente.Replace(",", "").Replace("-", "");
             cpfpaciente = cpfpaciente.Replace(",", "").Replace("-", "");
 
-
             /// CONCATENAÇÃO DOS DADOS DE ENDEREÇO PARA SALVAR NO BANCO
             StringBuilder endereco = new StringBuilder();
             endereco.Append(txtEndereco.Text);
@@ -221,7 +220,7 @@ namespace SistemaOdonto
             objLog.Data_Logger = DateTime.Now;
             objLog.Tipo_Logger = "Cadastro";            
             objLog.Tabela_Logger = "Paciente";
-            objLog.ID_Tabela = IDpacte ;
+            objLog.ID_Tabela = IDpacte;            
 
             return objLog;
         }
@@ -282,6 +281,11 @@ namespace SistemaOdonto
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+            else
+            {
+                // Converte o caractere para maiúscula antes de permitir que ele seja inserido.
+                e.KeyChar = char.ToUpper(e.KeyChar);
             }
         }
 

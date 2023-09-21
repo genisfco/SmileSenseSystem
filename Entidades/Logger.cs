@@ -11,5 +11,7 @@ namespace Entidades
         
         public string Tabela_Logger { get; set; }
         public int ID_Tabela { get; set; }
+
+        public string Observacao { get; set; }
     }
 }

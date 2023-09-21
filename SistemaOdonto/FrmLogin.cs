@@ -100,7 +100,7 @@ namespace SistemaOdonto
                 return;
             }
                             
-             string sql = "SELECT * FROM Usuarios WHERE username='" + username + "' AND senha_user='" + senha + "'";
+            string sql = "SELECT * FROM Usuarios WHERE username='" + username + "' AND senha_user='" + senha + "'";
             dt = RepositUser.consulta(sql);
 
 
@@ -159,7 +159,7 @@ namespace SistemaOdonto
             }
             else
             {
-                MessageBox.Show("Usuário não encontrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
+                MessageBox.Show("Usuário e/ou Senha inválidos!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
             }
         }
 

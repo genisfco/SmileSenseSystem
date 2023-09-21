@@ -23,6 +23,7 @@ namespace SistemaOdonto
         {
             InitializeComponent();
             lblCodigo.Visible = false;
+            btnEditar.Enabled = false;
             IniciarFormulario(obj);
 
             if (Globais.Global.nivel == 1 || Globais.Global.nivel == 2)
@@ -33,6 +34,21 @@ namespace SistemaOdonto
             {
                 btnExcluir.Enabled = true;
             }
+
+            // Evento de alteração dos campos
+            txtNome.TextChanged += ControleAlterado;
+            txtCRO.TextChanged += ControleAlterado;
+            comboxEspecialidade1.TextChanged += ControleAlterado;
+            comboxEspecialidade2.TextChanged += ControleAlterado;
+            txtEmail.TextChanged += ControleAlterado;
+            txtTelefone.TextChanged += ControleAlterado;
+            txtCelular.TextChanged += ControleAlterado;
+        }
+
+        private void ControleAlterado(object sender, EventArgs e)
+        {
+            // Habilitar o botão de Edição quando um controle for alterado
+            btnEditar.Enabled = true;
         }
 
         private void IniciarFormulario(Dentista objD)
@@ -63,10 +79,18 @@ namespace SistemaOdonto
                 }
                 else
                 {
+                    //GUARDANDO OS DADOS ANTIGOS
+                    string nomeAnt = this.obj.Nome;
+                    string CROAnt = this.obj.CRO;
+                    string espec1Ant = this.obj.Especialidade1;
+                    string espec2Ant = this.obj.Especialidade2;
+                    string emailAnt = this.obj.Email;
+                    Int64 foneAnt = this.obj.Telefone;
+                    Int64 celAnt = this.obj.Celular;                                   
+
                     //TRATAMENTO DADOS RG E CPF Dentista
                     string rgdentista = maskRGDentist.Text;
                     string cpfdentista = maskCPFDentist.Text;
-
                     rgdentista = rgdentista.Replace(",", "").Replace("-", "");
                     cpfdentista = cpfdentista.Replace(",", "").Replace("-", "");
                     
@@ -77,14 +101,47 @@ namespace SistemaOdonto
                     this.obj.Especialidade1 = comboxEspecialidade1.Text;
                     this.obj.Especialidade2 = comboxEspecialidade2.Text;
                     this.obj.Email = txtEmail.Text;
-                    obj.Telefone = txtTelefone.Text != "" ? Convert.ToInt64(txtTelefone.Text) : 0;
-                    obj.Celular = txtCelular.Text != "" ? Convert.ToInt64(txtCelular.Text) : 0;
+                    this.obj.Telefone = txtTelefone.Text != "" ? Convert.ToInt64(txtTelefone.Text) : 0000000000;
+                    this.obj.Celular = txtCelular.Text != "" ? Convert.ToInt64(txtCelular.Text) : 00000000000;
+
+                    // COMPARANDO os novos valores com os valores antigos
+                    string observacao = "";
+
+                    if (this.obj.Nome != nomeAnt)
+                    {
+                        observacao += "Nome; ";
+                    }
+                    if (this.obj.CRO != CROAnt)
+                    {                        
+                        observacao += "CRO; ";
+                    }
+                    if (this.obj.Especialidade1 != espec1Ant)
+                    {
+                        observacao += "Especialidade 1; ";
+                    }
+                    if (this.obj.Especialidade2 != espec2Ant)
+                    {
+                        observacao += "Especialidade 2; ";
+                    }
+                    if (this.obj.Email != emailAnt)
+                    {
+                        observacao += "Email; ";
+                    }
+                    if (this.obj.Telefone != foneAnt)
+                    {
+                        observacao += "Telefone; ";
+                    }
+                    if (this.obj.Celular != celAnt)
+                    {
+                        observacao += "Celular; ";
+                    }
 
                     try
                     {
                         service.Editar(this.obj);
+
                         string tipoLogger = "Atualização";
-                        serviceLog.Cadastrar(objLogGerado(tipoLogger));
+                        serviceLog.Cadastrar(objLogGerado(tipoLogger, observacao));
                         status = "editado";
                         MessageBox.Show("Dados Atualizados com Sucesso!", "Ação Realizada!");
                         this.Close();
@@ -92,14 +149,13 @@ namespace SistemaOdonto
                     }
                     catch (Exception ex)
                     {
-
                         MessageBox.Show("Não foi possível atualizar: ", ex.Message);    
                     }                    
                 }
             }
         }
 
-        public Logger objLogGerado(string tipoLogger)
+        public Logger objLogGerado(string tipoLogger, string observacao)
         {
             Logger objLog = new Logger();
             objLog.IDUser = Globais.Global.id;
@@ -107,6 +163,7 @@ namespace SistemaOdonto
             objLog.Tipo_Logger = tipoLogger;
             objLog.Tabela_Logger = "Dentista";
             objLog.ID_Tabela = Convert.ToInt32(lblCodigo.Text);
+            objLog.Observacao = observacao;
 
             return objLog;
         }
@@ -159,10 +216,12 @@ namespace SistemaOdonto
             {
 
                 try
-                {
-                    service.Deletar(this.obj.Id);
+                {                    
                     string tipoLogger = "Deleção";
-                    serviceLog.Cadastrar(objLogGerado(tipoLogger));
+                    string observacao = this.obj.Nome;
+                    serviceLog.Cadastrar(objLogGerado(tipoLogger, observacao));
+
+                    service.Deletar(this.obj.Id);
                     MessageBox.Show("Dentista Excluído com sucesso!", "Ação Realizada!");
                     status = "apagado";
                     this.Close();
@@ -222,6 +281,6 @@ namespace SistemaOdonto
             {
                 e.Handled = true;
             }
-        }
+        }        
     }
 }

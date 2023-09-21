@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using WcfService;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace SistemaOdonto
 {
@@ -21,7 +22,8 @@ namespace SistemaOdonto
         public FrmGestaoUser()
         {
             InitializeComponent();
-        }
+            btnSalvarAlterUser.Enabled = false;            
+        }       
 
         private void btnNovoUser_Click(object sender, EventArgs e)
         {
@@ -33,32 +35,79 @@ namespace SistemaOdonto
 
         private void btnSalvarAlterUser_Click(object sender, EventArgs e)
         {
-            string nome = txt_NomeUsuario.Text;
-            string user_name = txt_Username.Text;
-            string password = txt_Senha.Text;
+            DataTable dt = new DataTable();
+            string vid = txt_ID.Text;
+            dt = RepositUser.ObterDadosUsuarios(vid);
+                
+            //GUARDANDO OS DADOS ANTIGOS
+            string nomeAnt = dt.Rows[0].Field<string>("nome_user").ToString();
+            string userAnt = dt.Rows[0].Field<string>("username").ToString();
+            string passwordAnt = dt.Rows[0].Field<string>("senha_user").ToString();
+            string statusAnt = dt.Rows[0].Field<string>("status_user").ToString();
+            int nivelAnt = dt.Rows[0].Field<int>("nivel_user");
 
-            if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(user_name) || string.IsNullOrEmpty(password))
+            //VERIFICAR SE OS NOVOS DADOS FORAM PREENCHIDOS
+            if (string.IsNullOrEmpty(txt_NomeUsuario.Text) || string.IsNullOrEmpty(txt_Username.Text) || string.IsNullOrEmpty(txt_Senha.Text))
             {
                 MessageBox.Show("Por gentileza, preencha todos os Campos");
                 return;
             }
 
-            int linha = dgv_Usuarios.SelectedRows[0].Index;
-            Usuario u = new Usuario();
+            //GUARDANDO OS NOVOS DADOS
+            string nome = txt_NomeUsuario.Text;
+            string user_name = txt_Username.Text;
+            string password = txt_Senha.Text;
+            string status = cb_Status.Text;
+            int nivel = Convert.ToInt32(Math.Round(nup_Nivel.Value));
 
-            u.id = Convert.ToInt32(txt_ID.Text);
-            u.nome = txt_NomeUsuario.Text;
-            u.username = txt_Username.Text;
-            u.password = txt_Senha.Text;
-            u.status = cb_Status.Text;
-            u.nivel = Convert.ToInt32(Math.Round(nup_Nivel.Value));
+            // COMPARANDO os novos valores com os valores antigos
+            string observacao = "Dados atualizados: ";
 
-            RepositUser.AtualizarDadosUsuario(u);
-            dgv_Usuarios[1, linha].Value = txt_NomeUsuario.Text;
-            MessageBox.Show("Dados atualizados com sucesso!");
+            if (nome != nomeAnt)
+            {
+                observacao += "Nome; ";
+            }
+            if (user_name != userAnt)
+            {
+                observacao += "Login_Usuário; ";
+            }
+            if (password != passwordAnt)
+            {
+                observacao += "Senha; ";
+            }
+            if (status != statusAnt)
+            {
+                observacao += "status; ";
+            }
+            if (nivel != nivelAnt)
+            {
+                observacao += "nível; ";
+            }            
 
-            string tipoLogger = "Atualização";
-            serviceLog.Cadastrar(objLogGerado(tipoLogger));
+            try
+            {
+                //UPDATE DOS DADOS NO BANCO
+                int linha = dgv_Usuarios.SelectedRows[0].Index;
+                Usuario u = new Usuario();
+
+                u.id = Convert.ToInt32(txt_ID.Text);
+                u.nome = nome;
+                u.username = user_name;
+                u.password = password;
+                u.status = status;
+                u.nivel = nivel;
+
+                RepositUser.AtualizarDadosUsuario(u);
+                dgv_Usuarios[1, linha].Value = txt_NomeUsuario.Text;
+                MessageBox.Show("Dados atualizados com sucesso!");
+
+                string tipoLogger = "Atualização";
+                serviceLog.Cadastrar(objLogGerado(tipoLogger, observacao));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Desculpe, não foi possível atualizar os dados: ", ex.Message);                
+            }            
         }
 
         private void btnExcluirUser_Click(object sender, EventArgs e)
@@ -77,23 +126,32 @@ namespace SistemaOdonto
 
             else if (confirmacao == DialogResult.Yes)
             {
+
+                DataTable dt = new DataTable();
+                string vid = txt_ID.Text;
+
+                dt = RepositUser.ObterDadosUsuarios(vid);
+                string nomeAnt = dt.Rows[0].Field<string>("nome_user").ToString();
+                string userAnt = dt.Rows[0].Field<string>("username").ToString();
+
                 try
                 {
-                    RepositUser.ExcluirDadosUsuario(txt_ID.Text);
+                    RepositUser.ExcluirDadosUsuario(vid);
                     dgv_Usuarios.Rows.Remove(dgv_Usuarios.CurrentRow);
                     MessageBox.Show("Usuário excluído com sucesso!");
 
+                    string observacao = nomeAnt + "; Login_Usuário: " + userAnt;
                     string tipoLogger = "Deleção";
-                    serviceLog.Cadastrar(objLogGerado(tipoLogger));
+                    serviceLog.Cadastrar(objLogGerado(tipoLogger, observacao));
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Desculpe, não foi possível fazer a exclusão: ", ex.Message);
                 }
-            }            
+            }
         }
 
-        public Logger objLogGerado(string tipoLogger)
+        public Logger objLogGerado(string tipoLogger, string observacao)
         {
             Logger objLog = new Logger();
             objLog.IDUser = Globais.Global.id;
@@ -101,6 +159,7 @@ namespace SistemaOdonto
             objLog.Tipo_Logger = tipoLogger;
             objLog.Tabela_Logger = "Usuário";
             objLog.ID_Tabela = Convert.ToInt32(txt_ID.Text);
+            objLog.Observacao = observacao;
 
             return objLog;
         }

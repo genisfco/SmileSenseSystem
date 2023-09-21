@@ -1,4 +1,5 @@
-﻿using Globais;
+﻿using Entidades;
+using Globais;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -274,16 +275,91 @@ namespace SistemaOdonto
             // Use esses valores para construir sua consulta SQL e obter os dados do relatório
             string consultaSQL = BuildReportQuery(usuario, tipoRegistro, tabela, referenciaTabela, dataInicio, dataFim);
 
-            //MessageBox.Show(consultaSQL); //PARA TESTAR A STRING QUERY DE CONSULTA
+            MessageBox.Show(consultaSQL); //PARA TESTAR A STRING QUERY DE CONSULTA            
 
             DataTable reportData = GetReportData(consultaSQL);
-
             dataGridRelatorio.DataSource = reportData;
-        }        
+
+            dataGridRelatorio.RowHeadersVisible = false;
+
+            dataGridRelatorio.Columns["DATA_LOGGER"].HeaderText = "DATA_REGISTRO";
+            dataGridRelatorio.Columns["TIPO_LOGGER"].HeaderText = "TIPO_REGISTRO";
+            dataGridRelatorio.Columns["ID_TABELA"].HeaderText = "ID";
+
+            dataGridRelatorio.Columns.Remove("ID_LOGGER");
+            dataGridRelatorio.Columns.Remove("ID_USUARIO");
+            
+            dataGridRelatorio.Columns["USUARIO"].DisplayIndex = 1;
+
+            int qteColunas = dataGridRelatorio.ColumnCount;
+            dataGridRelatorio.Columns["OBSERVACAO"].DisplayIndex = qteColunas-1;
+
+        }
 
         private string BuildReportQuery(string usuario, string tipoRegistro, string tabela, int referenciaTabela, DateTime? dataInicio, DateTime? dataFim)
-        {
-            string query = "SELECT * FROM Loggers WHERE 1 = 1";
+        {            
+            //string query = "SELECT * FROM Loggers WHERE 1 = 1"; 
+            
+            string query = @"
+                    SELECT Loggers.*,                           
+                           Usuarios.nome_user AS USUARIO                  
+
+                    FROM Loggers
+                    LEFT JOIN Usuarios ON Loggers.ID_USUARIO = Usuarios.id_user
+                    
+                    WHERE 1 = 1";
+
+            if (tabela == "Paciente")
+            {
+                query = @"
+                    SELECT Loggers.*, 
+                           Usuarios.nome_user AS USUARIO,
+                           Paciente.NOME_PACIENTE AS NOME_PACIENTE 
+
+                    FROM Loggers
+                    LEFT JOIN Usuarios ON Loggers.ID_USUARIO = Usuarios.id_user
+                    LEFT JOIN Paciente ON Loggers.ID_TABELA = Paciente.ID_PACIENTE
+                    
+                    WHERE Loggers.TABELA = 'Paciente'";
+            }
+
+            else if (tabela == "Dentista")
+            {
+                query = @"
+                    SELECT Loggers.*, 
+                           Usuarios.nome_user AS USUARIO,
+                           Dentista.NOME_DENTISTA 
+
+                    FROM Loggers
+                    LEFT JOIN Usuarios ON Loggers.ID_USUARIO = Usuarios.id_user
+                    LEFT JOIN Dentista ON Loggers.ID_TABELA = Dentista.ID_DENTISTA
+                    
+                    WHERE Loggers.TABELA = 'Dentista'";
+            }
+
+            else if (tabela == "Consulta")
+            {
+                query = @"
+                    SELECT Loggers.*,
+                           Usuarios.nome_user AS USUARIO,
+                           Consulta.HORAMARCADA_CONSULTA AS DATA_HORA_CONSULTA,
+                           Paciente.NOME_PACIENTE, 
+                           Dentista.NOME_DENTISTA
+                           
+                    FROM Loggers
+                    LEFT JOIN Usuarios ON Loggers.ID_USUARIO = Usuarios.id_user
+                    LEFT JOIN Consulta ON Loggers.ID_TABELA = Consulta.ID_CONSULTA
+                    LEFT JOIN Paciente ON Consulta.ID_PACIENTE = Paciente.ID_PACIENTE
+                    LEFT JOIN Dentista ON Consulta.ID_DENTISTA = Dentista.ID_DENTISTA
+                    
+                    WHERE Loggers.TABELA = 'Consulta'";
+            }
+
+            else if (tabela != "Paciente" && tabela != "Dentista" && tabela != "Todos")
+            {
+                query += $" AND TABELA = '{tabela}'";
+            }  
+
 
             if (usuario.ToString() != "0") //Usuário foi selecionado no filtro de busca
             {
@@ -295,15 +371,15 @@ namespace SistemaOdonto
                 query += $" AND TIPO_LOGGER = '{tipoRegistro}'";
             }
 
-            if (!string.IsNullOrEmpty(tabela) && tabela != "Todos")
-            {
-                query += $" AND TABELA = '{tabela}'";
-            }
+            
 
             if (referenciaTabela != 0)
             {
                 query += $" AND ID_TABELA = {referenciaTabela}";
             }
+
+
+            
 
             if (dataInicio.HasValue)
             {
@@ -315,6 +391,6 @@ namespace SistemaOdonto
                 query += $" AND DATA_LOGGER <= '{dataFim.Value.ToString("dd-MM-yyyy HH:mm")}'";
             }
             return query;
-        }        
+        }
     }
 }

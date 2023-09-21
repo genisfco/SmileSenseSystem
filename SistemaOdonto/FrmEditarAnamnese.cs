@@ -32,248 +32,114 @@ namespace SistemaOdonto
 
         private void IniciarFormulario(Anamnese objA)
         {
-            //BUSCANDO OS DADOS DA TABELA
+            // BUSCANDO OS DADOS DA TABELA
             this.obj = objA;
 
-            string diabetes = this.obj.Diabetes.ToString();
-            string hipertensao = this.obj.Hipertensao.ToString();
-            string cardiopatia = this.obj.Cardiopatia.ToString();
-            string uso_cont = this.obj.Uso_Continuo.ToString();
-            string medic_cont = this.obj.Medicamento_Continuo.ToString();
-            string alerg_medic = this.obj.Alergia_Medicamento.ToString();
-            string alergqual_medic = this.obj.Alergia_Qual_Medicamento.ToString();
-            string probl_hemor = this.obj.Problemas_Hemorragicos.ToString();
-            string motivo_probl = this.obj.Motivo_Problemas.ToString();
-            string compl_odont = this.obj.Complicacoes_Odonto.ToString();
-            string porq_compl = this.obj.Porque_Complicacoes.ToString();
-            string doen_cong = this.obj.Doenca_Cong.ToString();
-            string qual_doen = this.obj.Qual_Doenca.ToString();
-            
-            //ANALISANDO OS DADOS PARA PREENCHER O FORMS
-            if (diabetes == "S")
-            {
-                chboxDiabetesSIM.Checked = true;
-            }
-            else if (diabetes == "N")
-            {
-                chboxDiabetesNAO.Checked = true;
-            }
+            // Mapeando os valores diretamente para os controles
+            chboxDiabetesSIM.Checked = (obj.Diabetes == "S");
+            chboxDiabetesNAO.Checked = (obj.Diabetes == "N");
 
-            if (hipertensao == "S")
-            {
-                chboxHipertensaoSIM.Checked = true;
-            }
-            else if (hipertensao == "N")
-            {
-                chboxHipertensaoNAO.Checked = true;
-            }
+            chboxHipertensaoSIM.Checked = (obj.Hipertensao == "S");
+            chboxHipertensaoNAO.Checked = (obj.Hipertensao == "N");
 
-            if (cardiopatia == "S")
-            {
-                chboxCardiopatiaSIM.Checked = true;
-            }
-            else if (cardiopatia == "N")
-            {
-                chboxCardiopatiaNAO.Checked = true;
-            }
+            chboxCardiopatiaSIM.Checked = (obj.Cardiopatia == "S");
+            chboxCardiopatiaNAO.Checked = (obj.Cardiopatia == "N");
 
-            if (uso_cont == "S")
-            {
-                chboxUsoMedicamentosSIM.Checked = true;
-            }
-            else if (uso_cont == "N")
-            {
-                chboxUsoMedicamentosNAO.Checked = true;
-            }
+            chboxUsoMedicamentosSIM.Checked = (obj.Uso_Continuo == "S");
+            chboxUsoMedicamentosNAO.Checked = (obj.Uso_Continuo == "N");
 
-            if (alerg_medic == "S")
-            {
-                chboxAlergiaMedicamentosaSIM.Checked = true;
-            }
-            else if (alerg_medic == "N")
-            {
-                chboxAlergiaMedicamentosaNAO.Checked = true;
-            }
+            chboxAlergiaMedicamentosaSIM.Checked = (obj.Alergia_Medicamento == "S");
+            chboxAlergiaMedicamentosaNAO.Checked = (obj.Alergia_Medicamento == "N");
 
-            if (probl_hemor == "S")
-            {
-                chboxProblHemorragSIM.Checked = true;
-            }
-            else if (probl_hemor == "N")
-            {
-                chboxProblHemorragNAO.Checked = true;
-            }
+            chboxProblHemorragSIM.Checked = (obj.Problemas_Hemorragicos == "S");
+            chboxProblHemorragNAO.Checked = (obj.Problemas_Hemorragicos == "N");
 
-            if (compl_odont == "S")
-            {
-                chboxComplOdontoSIM.Checked = true;
-            }
-            else if (compl_odont == "N")
-            {
-                chboxComplOdontoNAO.Checked = true;
-            }
+            chboxComplOdontoSIM.Checked = (obj.Complicacoes_Odonto == "S");
+            chboxComplOdontoNAO.Checked = (obj.Complicacoes_Odonto == "N");
 
-            if (doen_cong == "S")
-            {
-                chboxDoencaCongSIM.Checked = true;
-            }
-            else if (doen_cong == "N")
-            {
-                chboxDoencaCongNAO.Checked = true;
-            }
+            chboxDoencaCongSIM.Checked = (obj.Doenca_Cong == "S");
+            chboxDoencaCongNAO.Checked = (obj.Doenca_Cong == "N");
 
-            txtUsoQualMedicamento.Text = medic_cont;
-            txtAlergiaQualMedicamento.Text = alergqual_medic;
-            txtMotivoProblemas.Text = motivo_probl;
-            txtComplicacoes.Text = porq_compl;
-            txtDoenca.Text = qual_doen;        
-
+            // Preenchendo os campos de texto
+            txtUsoQualMedicamento.Text = obj.Medicamento_Continuo;
+            txtAlergiaQualMedicamento.Text = obj.Alergia_Qual_Medicamento;
+            txtMotivoProblemas.Text = obj.Motivo_Problemas;
+            txtComplicacoes.Text = obj.Porque_Complicacoes;
+            txtDoenca.Text = obj.Qual_Doenca;
         }
 
         private bool ValidarForm()
         {
-            /// FAZ A VALIDAÇÃO DO FORMULÁRIO ANAMNESE, PARA VERIFICAR SE FOI PREENCHIDO CORRETAMENTE.
-            bool FormValido;
+            bool FormValido = true;
 
-            if (chboxDiabetesSIM.Checked == true && chboxDiabetesNAO.Checked == true)
+            if ((chboxDiabetesSIM.Checked && chboxDiabetesNAO.Checked) ||
+                (chboxHipertensaoSIM.Checked && chboxHipertensaoNAO.Checked) ||
+                (chboxCardiopatiaSIM.Checked && chboxCardiopatiaNAO.Checked) ||
+                (chboxUsoMedicamentosSIM.Checked && chboxUsoMedicamentosNAO.Checked) ||
+                (chboxAlergiaMedicamentosaSIM.Checked && chboxAlergiaMedicamentosaNAO.Checked) ||
+                (chboxProblHemorragSIM.Checked && chboxProblHemorragNAO.Checked) ||
+                (chboxComplOdontoSIM.Checked && chboxComplOdontoNAO.Checked) ||
+                (chboxDoencaCongSIM.Checked && chboxDoencaCongNAO.Checked))
+            {
                 FormValido = false;
-            else if (chboxHipertensaoSIM.Checked == true && chboxHipertensaoNAO.Checked == true)
-                FormValido = false;
-            else if (chboxCardiopatiaSIM.Checked == true && chboxCardiopatiaNAO.Checked == true)
-                FormValido = false;
-            else if (chboxUsoMedicamentosSIM.Checked == true && chboxUsoMedicamentosNAO.Checked == true)
-                FormValido = false;
-            else if (chboxAlergiaMedicamentosaSIM.Checked == true && chboxAlergiaMedicamentosaNAO.Checked == true)
-                FormValido = false;
-            else if (chboxProblHemorragSIM.Checked == true && chboxProblHemorragNAO.Checked == true)
-                FormValido = false;
-            else if (chboxComplOdontoSIM.Checked == true && chboxComplOdontoNAO.Checked == true)
-                FormValido = false;
-            else if (chboxDoencaCongSIM.Checked == true && chboxDoencaCongNAO.Checked == true)
-                FormValido = false;
-            else
-                FormValido = true;
+            }
+
             return FormValido;
         }
 
+        private string ObterValorCheckBox(CheckBox checkBoxSim, CheckBox checkBoxNao)
+        {
+            if (checkBoxSim.Checked)
+            {
+                return "S";
+            }
+            else if (checkBoxNao.Checked)
+            {
+                return "N";
+            }
+            return "X";
+        }
+
+        private void AtualizarObjeto()
+        {
+            this.obj.Diabetes = ObterValorCheckBox(chboxDiabetesSIM, chboxDiabetesNAO);
+            this.obj.Hipertensao = ObterValorCheckBox(chboxHipertensaoSIM, chboxHipertensaoNAO);
+            this.obj.Cardiopatia = ObterValorCheckBox(chboxCardiopatiaSIM, chboxCardiopatiaNAO);
+            this.obj.Uso_Continuo = ObterValorCheckBox(chboxUsoMedicamentosSIM, chboxUsoMedicamentosNAO);
+            this.obj.Medicamento_Continuo = txtUsoQualMedicamento.Text;
+            this.obj.Alergia_Medicamento = ObterValorCheckBox(chboxAlergiaMedicamentosaSIM, chboxAlergiaMedicamentosaNAO);
+            this.obj.Alergia_Qual_Medicamento = txtAlergiaQualMedicamento.Text;
+            this.obj.Problemas_Hemorragicos = ObterValorCheckBox(chboxProblHemorragSIM, chboxProblHemorragNAO);
+            this.obj.Motivo_Problemas = txtMotivoProblemas.Text;
+            this.obj.Complicacoes_Odonto = ObterValorCheckBox(chboxComplOdontoSIM, chboxComplOdontoNAO);
+            this.obj.Porque_Complicacoes = txtComplicacoes.Text;
+            this.obj.Doenca_Cong = ObterValorCheckBox(chboxDoencaCongSIM, chboxDoencaCongNAO);
+            this.obj.Qual_Doenca = txtDoenca.Text;
+        }
 
         private void btnAtualizarAnm_Click(object sender, EventArgs e)
         {
             //VERIFICANDO SE O FORM ESTÁ VALIDO
-            if (ValidarForm() == false)
+            if (!ValidarForm())
             {
                 MessageBox.Show("Ficha Anamnese não preenchida corretamente. Verifique campos duplicados!", "Erro no preenchimento!");
             }
             else
             {
-                string diabetes = "X";
-                string hipertensao = "X";
-                string cardiopatia = "X";
-                string uso_continuo = "X";
-                string alergia_medic = "X";
-                string probl_hemorrag = "X";
-                string compl_odonto = "X";
-                string doenca_cong = "X";
-
-                if (chboxDiabetesSIM.Checked == true && chboxDiabetesNAO.Checked == false)
-                {
-                    diabetes = "S";
-                }
-                else if (chboxDiabetesSIM.Checked == false && chboxDiabetesNAO.Checked == true)
-                {
-                    diabetes = "N";
-                }
-
-                if (chboxHipertensaoSIM.Checked == true && chboxHipertensaoNAO.Checked == false)
-                {
-                    hipertensao = "S";
-                }
-                else if (chboxHipertensaoSIM.Checked == false && chboxHipertensaoNAO.Checked == true)
-                {
-                    hipertensao = "N";
-                }
-
-                if (chboxCardiopatiaSIM.Checked == true && chboxCardiopatiaNAO.Checked == false)
-                {
-                    cardiopatia = "S";
-                }
-                else if (chboxCardiopatiaSIM.Checked == false && chboxCardiopatiaNAO.Checked == true)
-                {
-                    cardiopatia = "N";
-                }
-
-                if (chboxUsoMedicamentosSIM.Checked == true && chboxUsoMedicamentosNAO.Checked == false)
-                {
-                    uso_continuo = "S";
-                }
-                else if (chboxUsoMedicamentosSIM.Checked == false && chboxUsoMedicamentosNAO.Checked == true)
-                {
-                    uso_continuo = "N";
-                }
-
-                if (chboxAlergiaMedicamentosaSIM.Checked == true && chboxAlergiaMedicamentosaNAO.Checked == false)
-                {
-                    alergia_medic = "S";
-                }
-                else if (chboxAlergiaMedicamentosaSIM.Checked == false && chboxAlergiaMedicamentosaNAO.Checked == true)
-                {
-                    alergia_medic = "N";
-                }
-
-                if (chboxProblHemorragSIM.Checked == true && chboxProblHemorragNAO.Checked == false)
-                {
-                    probl_hemorrag = "S";
-                }
-                else if (chboxProblHemorragSIM.Checked == false && chboxProblHemorragNAO.Checked == true)
-                {
-                    probl_hemorrag = "N";
-                }
-
-                if (chboxComplOdontoSIM.Checked == true && chboxComplOdontoNAO.Checked == false)
-                {
-                    compl_odonto = "S";
-                }
-                else if (chboxComplOdontoSIM.Checked == false && chboxComplOdontoNAO.Checked == true)
-                {
-                    compl_odonto = "N";
-                }
-
-                if (chboxDoencaCongSIM.Checked == true && chboxDoencaCongNAO.Checked == false)
-                {
-                    doenca_cong = "S";
-                }
-                else if (chboxDoencaCongSIM.Checked == false && chboxDoencaCongNAO.Checked == true)
-                {
-                    doenca_cong = "N";
-                }
-
                 try
                 {
-                    this.obj.Diabetes = diabetes;
-                    this.obj.Hipertensao = hipertensao;
-                    this.obj.Cardiopatia = cardiopatia;
-                    this.obj.Uso_Continuo = uso_continuo;
-                    this.obj.Medicamento_Continuo = txtUsoQualMedicamento.Text;
-                    this.obj.Alergia_Medicamento = alergia_medic;
-                    this.obj.Alergia_Qual_Medicamento = txtAlergiaQualMedicamento.Text;
-                    this.obj.Problemas_Hemorragicos = probl_hemorrag;
-                    this.obj.Motivo_Problemas = txtMotivoProblemas.Text;
-                    this.obj.Complicacoes_Odonto = compl_odonto;
-                    this.obj.Porque_Complicacoes = txtComplicacoes.Text;
-                    this.obj.Doenca_Cong = doenca_cong;
-                    this.obj.Qual_Doenca = txtDoenca.Text;
+                    AtualizarObjeto();
 
                     serviceAnm.Editar(this.obj);
                     loggerService.Cadastrar(objLogGerado());
                     MessageBox.Show("Anamnese do Paciente Atualizada com Sucesso!", "Dados atualizados!");
                     this.Close();
-
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao Salvar " + ex.Message);                    
-                }                
-            }                      
+                    MessageBox.Show("Erro ao Salvar " + ex.Message);
+                }
+            }
         }
 
         public Logger objLogGerado()

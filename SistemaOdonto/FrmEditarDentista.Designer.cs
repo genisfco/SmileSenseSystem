@@ -194,9 +194,8 @@
             // 
             this.txtCRO.Location = new System.Drawing.Point(81, 77);
             this.txtCRO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCRO.Mask = "LL 00-000";
+            this.txtCRO.Mask = "LL 000-000";
             this.txtCRO.Name = "txtCRO";
-            this.txtCRO.ReadOnly = true;
             this.txtCRO.Size = new System.Drawing.Size(103, 26);
             this.txtCRO.TabIndex = 2;
             this.txtCRO.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;

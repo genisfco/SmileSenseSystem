@@ -20,6 +20,7 @@ namespace Controllers.Map
             this.Property(log => log.Tipo_Logger).HasColumnName("TIPO_LOGGER");
             this.Property(log => log.Tabela_Logger).HasColumnName("TABELA");
             this.Property(log => log.ID_Tabela).HasColumnName("ID_TABELA");
+            this.Property(log => log.Observacao).HasColumnName("OBSERVACAO");
         }
     }
 }

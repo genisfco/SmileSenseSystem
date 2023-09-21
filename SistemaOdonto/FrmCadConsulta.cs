@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using SistemaOdonto.WSCorreios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,12 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WcfService;
+using Exception = System.Exception;
 
 namespace SistemaOdonto
 {
     public partial class FrmCadConsulta : Form
     {
-
         ConsultaService service = new ConsultaService();
         DentistaService serviceD = new DentistaService();
         PacienteService serviceP = new PacienteService();
@@ -43,10 +44,8 @@ namespace SistemaOdonto
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Erro ao carregar a lista de Dentistas!" + ex.Message);
             }
-
 
             try
             {
@@ -63,7 +62,6 @@ namespace SistemaOdonto
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Erro ao carregar a lista de Pacientes!" + ex.Message);
             }
         }
@@ -130,17 +128,22 @@ namespace SistemaOdonto
                 if (ts.Text == "Sucesso")
                 {                    
                     int consultaID = await service.Cadastrar(objGerado());                    
-                    serviceLog.Cadastrar(objLogGerado(consultaID));
                     MessageBox.Show("Consulta Cadastrada com Sucesso", "Ação Realizada!");
+
+                    string tipoLogger = "Cadastro";
+                    string observacao = string.Format("Cadastrou Consulta: {0} {1};     {2};    {3}" +
+                    "", dtData.Value.ToShortDateString(), cboxHora.Text, cbPaciente.Text, cbDentista.Text);
+
+                    serviceLog.Cadastrar(objLogGerado(consultaID, tipoLogger, observacao));
+
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 MessageBox.Show("Erro ao Salvar " + ex.Message);
             }
         }
-
 
         public Consulta objGerado()
         {
@@ -157,14 +160,15 @@ namespace SistemaOdonto
             return obj;
         }
 
-        public Logger objLogGerado(int consultaID)
+        public Logger objLogGerado(int consultaID, string tipoLogger, string observacao)
         {
             Logger objLog = new Logger();
             objLog.IDUser = Globais.Global.id;
             objLog.Data_Logger = DateTime.Now;
-            objLog.Tipo_Logger = "Cadastro";
+            objLog.Tipo_Logger = tipoLogger;
             objLog.Tabela_Logger = "Consulta";
             objLog.ID_Tabela = consultaID;
+            objLog.Observacao = observacao;
 
             return objLog;
         }

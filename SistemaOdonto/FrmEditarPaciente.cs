@@ -14,7 +14,6 @@ namespace SistemaOdonto
 {
     public partial class FrmEditarPaciente : Form
     {
-
         public string status;
         Paciente obj = new Paciente();
 
@@ -25,6 +24,7 @@ namespace SistemaOdonto
         {
             InitializeComponent();
             lblCodigo.Visible = false;
+            btnEditar.Enabled = false;
             IniciarFormulario(obj);
 
             if (Globais.Global.nivel == 1 || Globais.Global.nivel == 2)
@@ -35,7 +35,30 @@ namespace SistemaOdonto
             {
                 btnExcluir.Enabled = true;
             }
+
+            // Evento de alteração dos campos
+            txtNome.TextChanged += ControleAlterado;
+            cbSexo.TextChanged += ControleAlterado;
+            cbDia.TextChanged += ControleAlterado;
+            cbMes.TextChanged += ControleAlterado;
+            cbAno.TextChanged += ControleAlterado;            
+            txtEmail.TextChanged += ControleAlterado;
+            txtTelefone.TextChanged += ControleAlterado;
+            txtCelular.TextChanged += ControleAlterado;
+            txtCEP.TextChanged += ControleAlterado;
+            txtEndereco.TextChanged += ControleAlterado;
+            txtNum.TextChanged += ControleAlterado;
+            txtBairro.TextChanged += ControleAlterado;
+            txtCidade.TextChanged += ControleAlterado;
+            txtUF.TextChanged += ControleAlterado;
         }
+
+        private void ControleAlterado(object sender, EventArgs e)
+        {
+            // Habilitar o botão de Edição quando um controle for alterado
+            btnEditar.Enabled = true;
+        }
+    
 
         private void IniciarFormulario(Paciente objP)
         {
@@ -90,13 +113,20 @@ namespace SistemaOdonto
                 }
                 else
                 {
-                    //TRATAMENTO DATA DE NASCIMENTO
+                    //GUARDANDO OS DADOS ANTIGOS
+                    string nomeAnt = this.obj.Nome;
+                    string sexoAnt = this.obj.Sexo;
+                    DateTime nascimentoAnt = this.obj.Nascimento;
+                    string emailAnt = this.obj.Email;
+                    string cepAnt = this.obj.CEP;
+                    Int64 foneAnt = this.obj.Telefone;
+                    Int64 celAnt = this.obj.Celular;
+                    string endAnt = this.obj.Endereco;
+                    
+                    //GUARDANDO OS NOVOS DADOS
                     string dataNascimento = $"{cbAno.Text}-{cbMes.SelectedIndex + 1:00}-{cbDia.Text:00}";
-
-                    //TRATAMENTO DADOS RG E CPF PACIENTE
                     string rgpaciente = masktxtRGPaciente.Text;
                     string cpfpaciente = masktxtCPFPaciente.Text;
-
                     rgpaciente = rgpaciente.Replace(",", "").Replace("-", "");
                     cpfpaciente = cpfpaciente.Replace(",", "").Replace("-", "");
 
@@ -122,13 +152,49 @@ namespace SistemaOdonto
                     obj.Telefone = txtTelefone.Text != "" ? Convert.ToInt64(txtTelefone.Text) : 0;
                     obj.Celular = txtCelular.Text != "" ? Convert.ToInt64(txtCelular.Text) : 0;
                     this.obj.CEP = txtCEP.Text;
-                    this.obj.Endereco = enderecoCompleto;                    
+                    this.obj.Endereco = enderecoCompleto;
+
+                    // COMPARANDO os novos valores com os valores antigos
+                    string observacao = "Dados atualizados: ";
+
+                    if (this.obj.Nome != nomeAnt)
+                    {
+                        observacao += "Nome; ";
+                    }
+                    if (this.obj.Sexo != sexoAnt)
+                    {
+                        observacao += "Sexo; ";
+                    }
+                    if (this.obj.Nascimento != nascimentoAnt)
+                    {
+                        observacao += "Data Nascimento; ";
+                    }
+                    if (this.obj.Email != emailAnt)
+                    {
+                        observacao += "Email; ";
+                    }
+                    if (this.obj.CEP != cepAnt)
+                    {
+                        observacao += "CEP; ";
+                    }
+                    if (this.obj.Telefone != foneAnt)
+                    {
+                        observacao += "Telefone; ";
+                    }
+                    if (this.obj.Celular != celAnt)
+                    {
+                        observacao += "Celular; ";
+                    }
+                    if (this.obj.Endereco != endAnt)
+                    {
+                        observacao += "Endereço; ";
+                    }                    
 
                     try
                     {
                         service.Editar(this.obj);
                         string tipoLogger = "Atualização";
-                        serviceLog.Cadastrar(objLogGerado(tipoLogger));
+                        serviceLog.Cadastrar(objLogGerado(tipoLogger, observacao));
                         status = "editado";
                         MessageBox.Show("Dados Atualizados com Sucesso!", "Ação Realizada!");
                         this.Close();
@@ -141,7 +207,7 @@ namespace SistemaOdonto
             }
         }
 
-        public Logger objLogGerado(string tipoLogger)
+        public Logger objLogGerado(string tipoLogger, string observacao)
         {
             Logger objLog = new Logger();
             objLog.IDUser = Globais.Global.id;
@@ -149,6 +215,7 @@ namespace SistemaOdonto
             objLog.Tipo_Logger = tipoLogger;
             objLog.Tabela_Logger = "Paciente";
             objLog.ID_Tabela = Convert.ToInt32(lblCodigo.Text) ;
+            objLog.Observacao = observacao;
 
             return objLog;
         }
@@ -226,10 +293,10 @@ namespace SistemaOdonto
             {
                 return "Preencha o campo Celular";
             }
-            else if (txtTelefone.Text == string.Empty)
-            {
-                return "Preencha o campo Telefone";
-            }
+            //else if (txtTelefone.Text == string.Empty)
+            //{
+            //    return "Preencha o campo Telefone";
+            //}
             else if (txtEmail.Text == string.Empty)
             {
                 return "Preencha o campo Email";
@@ -252,11 +319,14 @@ namespace SistemaOdonto
             {
                 try
                 {
-                    tsNenhuma.Text = "";
+                    tsNenhuma.Text = "";                    
 
                     service.Deletar(this.obj.Id);
+
                     string tipoLogger = "Deleção";
-                    serviceLog.Cadastrar(objLogGerado(tipoLogger));
+                    string observacao = this.obj.Nome;
+                    serviceLog.Cadastrar(objLogGerado(tipoLogger, observacao));
+
                     MessageBox.Show("Paciente Excluído com sucesso!", "Ação Realizada!");
                     status = "apagado";
                     this.Close();
@@ -367,6 +437,11 @@ namespace SistemaOdonto
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+            else
+            {
+                // Converte o caractere para maiúscula antes de permitir que ele seja inserido.
+                e.KeyChar = char.ToUpper(e.KeyChar);
             }
         }
 

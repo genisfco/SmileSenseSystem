@@ -25,141 +25,50 @@ namespace SistemaOdonto
         {
             InitializeComponent();
             lblCodigoIDPacte.Visible = false;
-        } 
-        
+        }
 
         private bool ValidarForm()
         {
             /// FAZ A VALIDAÇÃO DO FORMULÁRIO ANAMNESE, PARA VERIFICAR SE FOI PREENCHIDO CORRETAMENTE.
-            bool FormValido;
+            bool FormValido = true;
 
-            if (chboxDiabetesSIM.Checked == true && chboxDiabetesNAO.Checked == true)
+            if ((chboxDiabetesSIM.Checked && chboxDiabetesNAO.Checked) ||
+                (chboxHipertensaoSIM.Checked && chboxHipertensaoNAO.Checked) ||
+                (chboxCardiopatiaSIM.Checked && chboxCardiopatiaNAO.Checked) ||
+                (chboxUsoMedicamentosSIM.Checked && chboxUsoMedicamentosNAO.Checked) ||
+                (chboxAlergiaMedicamentosaSIM.Checked && chboxAlergiaMedicamentosaNAO.Checked) ||
+                (chboxProblHemorragSIM.Checked && chboxProblHemorragNAO.Checked) ||
+                (chboxComplOdontoSIM.Checked && chboxComplOdontoNAO.Checked) ||
+                (chboxDoencaCongSIM.Checked && chboxDoencaCongNAO.Checked))
+            {
                 FormValido = false;
-            else if (chboxHipertensaoSIM.Checked == true && chboxHipertensaoNAO.Checked == true)
-                FormValido = false;
-            else if (chboxCardiopatiaSIM.Checked == true && chboxCardiopatiaNAO.Checked == true)
-                FormValido = false;
-            else if (chboxUsoMedicamentosSIM.Checked == true && chboxUsoMedicamentosNAO.Checked == true)
-                FormValido = false;
-            else if (chboxAlergiaMedicamentosaSIM.Checked == true && chboxAlergiaMedicamentosaNAO.Checked == true)
-                FormValido = false;
-            else if (chboxProblHemorragSIM.Checked == true && chboxProblHemorragNAO.Checked == true)
-                FormValido = false;
-            else if (chboxComplOdontoSIM.Checked == true && chboxComplOdontoNAO.Checked == true)
-                FormValido = false;
-            else if (chboxDoencaCongSIM.Checked == true && chboxDoencaCongNAO.Checked == true)
-                FormValido = false;
-            else
-                FormValido = true;
+            }
             return FormValido;
         }
-        
 
-        private async void btnSalvarAnamnese_Click(object sender, EventArgs e)
+        private string ObterValorCheckBox(CheckBox checkBoxSim, CheckBox checkBoxNao)
         {
-            //VERIFICANDO SE O FORM ESTÁ VALIDO
-            if (ValidarForm() == false)
+            if (checkBoxSim.Checked)
             {
-                MessageBox.Show("Ficha Anamnese não preenchida corretamente. Verifique campos duplicados!", "Erro no preenchimento!");
+                return "S";
             }
-            else
+            else if (checkBoxNao.Checked)
             {
-                try
-                {
-                    int anamneseID = await serviceAnm.Cadastrar(objGerado());
-                    serviceLog.Cadastrar(objLogGerado(anamneseID));
-                    MessageBox.Show("Anamnese do Paciente Cadastrada com Sucesso!", "Cadastro realizado!");
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao Salvar " + ex.Message);
-                }
-            }            
+                return "N";
+            }
+            return "X"; // Valor padrão caso nenhum esteja marcado
         }
 
-        public Anamnese objGerado()
+        private Anamnese GerarAnamnese()
         {
-            string diabetes = "X";
-            string hipertensao = "X";
-            string cardiopatia = "X";
-            string uso_continuo = "X";
-            string alergia_medic = "X";
-            string probl_hemorrag = "X";
-            string compl_odonto = "X";
-            string doenca_cong = "X";
-
-            if (chboxDiabetesSIM.Checked == true && chboxDiabetesNAO.Checked == false)
-            {
-                diabetes = "S";
-            }
-            else if (chboxDiabetesSIM.Checked == false && chboxDiabetesNAO.Checked == true)
-            {
-                diabetes = "N";
-            }
-
-            if (chboxHipertensaoSIM.Checked == true && chboxHipertensaoNAO.Checked == false)
-            {
-                hipertensao = "S";
-            }
-            else if (chboxHipertensaoSIM.Checked == false && chboxHipertensaoNAO.Checked == true)
-            {
-                hipertensao = "N";
-            }
-
-            if (chboxCardiopatiaSIM.Checked == true && chboxCardiopatiaNAO.Checked == false)
-            {
-                cardiopatia = "S";
-            }
-            else if (chboxCardiopatiaSIM.Checked == false && chboxCardiopatiaNAO.Checked == true)
-            {
-                cardiopatia = "N";
-            }
-
-            if (chboxUsoMedicamentosSIM.Checked == true && chboxUsoMedicamentosNAO.Checked == false)
-            {
-                uso_continuo = "S";
-            }
-            else if (chboxUsoMedicamentosSIM.Checked == false && chboxUsoMedicamentosNAO.Checked == true)
-            {
-                uso_continuo = "N";
-            }
-
-            if (chboxAlergiaMedicamentosaSIM.Checked == true && chboxAlergiaMedicamentosaNAO.Checked == false)
-            {
-                alergia_medic = "S";
-            }
-            else if (chboxAlergiaMedicamentosaSIM.Checked == false && chboxAlergiaMedicamentosaNAO.Checked == true)
-            {
-                alergia_medic = "N";
-            }
-
-            if (chboxProblHemorragSIM.Checked == true && chboxProblHemorragNAO.Checked == false)
-            {
-                probl_hemorrag = "S";
-            }
-            else if (chboxProblHemorragSIM.Checked == false && chboxProblHemorragNAO.Checked == true)
-            {
-                probl_hemorrag = "N";
-            }
-
-            if (chboxComplOdontoSIM.Checked == true && chboxComplOdontoNAO.Checked == false)
-            {
-                compl_odonto = "S";
-            }
-            else if (chboxComplOdontoSIM.Checked == false && chboxComplOdontoNAO.Checked == true)
-            {
-                compl_odonto = "N";
-            }
-
-            if (chboxDoencaCongSIM.Checked == true && chboxDoencaCongNAO.Checked == false)
-            {
-                doenca_cong = "S";
-            }
-            else if (chboxDoencaCongSIM.Checked == false && chboxDoencaCongNAO.Checked == true)
-            {
-                doenca_cong = "N";
-            }
+            string diabetes = ObterValorCheckBox(chboxDiabetesSIM, chboxDiabetesNAO);
+            string hipertensao = ObterValorCheckBox(chboxHipertensaoSIM, chboxHipertensaoNAO);
+            string cardiopatia = ObterValorCheckBox(chboxCardiopatiaSIM, chboxCardiopatiaNAO);
+            string uso_continuo = ObterValorCheckBox(chboxUsoMedicamentosSIM, chboxUsoMedicamentosNAO);
+            string alergia_medic = ObterValorCheckBox(chboxAlergiaMedicamentosaSIM, chboxAlergiaMedicamentosaNAO);
+            string probl_hemorrag = ObterValorCheckBox(chboxProblHemorragSIM, chboxProblHemorragNAO);
+            string compl_odonto = ObterValorCheckBox(chboxComplOdontoSIM, chboxComplOdontoNAO);
+            string doenca_cong = ObterValorCheckBox(chboxDoencaCongSIM, chboxDoencaCongNAO);
 
             //GERANDO O OBJETO PARA CADASTRAR NO BANCO.
             Anamnese objAnm = new Anamnese();
@@ -181,7 +90,34 @@ namespace SistemaOdonto
             return objAnm;
         }
 
-        public Logger objLogGerado(int anamnID)
+        private async void btnSalvarAnamnese_Click(object sender, EventArgs e)
+        {
+            //VERIFICANDO SE O FORM ESTÁ VALIDO
+            if (!ValidarForm())
+            {
+                MessageBox.Show("Ficha Anamnese não preenchida corretamente. Verifique campos duplicados!", "Erro no preenchimento!");
+            }
+            else
+            {
+                try
+                {
+                    Anamnese objAnamnese = GerarAnamnese();
+
+                    int anamneseID = await serviceAnm.Cadastrar(objAnamnese);
+                    MessageBox.Show("Anamnese do Paciente Cadastrada com Sucesso!", "Cadastro realizado!");
+
+                    string observacao = txtNome.Text;
+                    serviceLog.Cadastrar(objLogGerado(anamneseID, observacao));
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao Salvar " + ex.Message);
+                }
+            }
+        }
+
+        public Logger objLogGerado(int anamnID, string observacao)
         {
             Logger objLog = new Logger();
             objLog.IDUser = Globais.Global.id;
@@ -189,11 +125,10 @@ namespace SistemaOdonto
             objLog.Tipo_Logger = "Cadastro";
             objLog.Tabela_Logger = "Anamnese";
             objLog.ID_Tabela = anamnID;
+            objLog.Observacao = observacao;
 
             return objLog;
         }
-
-
 
         private void btnFecharAnamnese_Click(object sender, EventArgs e)
         {

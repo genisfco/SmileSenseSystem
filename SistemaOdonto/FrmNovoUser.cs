@@ -77,11 +77,12 @@ namespace SistemaOdonto
 
             if (newUserId != -1)
             {
-                serviceLog.Cadastrar(objLogGerado(newUserId));
+                string observacao = txt_NomeUsuario.Text;
+                serviceLog.Cadastrar(objLogGerado(newUserId, observacao));
             }
         }
 
-        public Logger objLogGerado(int newUserID)
+        public Logger objLogGerado(int newUserID, string observacao)
         {
             Logger objLog = new Logger();
             objLog.IDUser = Globais.Global.id;
@@ -89,6 +90,7 @@ namespace SistemaOdonto
             objLog.Tipo_Logger = "Cadastro";
             objLog.Tabela_Logger = "Usuário";
             objLog.ID_Tabela = newUserID;
+            objLog.Observacao = observacao;
 
             return objLog;
         }

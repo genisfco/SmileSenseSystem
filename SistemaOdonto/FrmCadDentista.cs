@@ -15,17 +15,13 @@ namespace SistemaOdonto
 {
     public partial class FrmCadDentista : Form
     {
-
         DentistaService service = new DentistaService();
         LoggerService serviceLog = new LoggerService();
-
 
         public FrmCadDentista()
         {
             InitializeComponent();
         }
-
-
 
         private string ValidarCad()
         {
@@ -139,9 +135,9 @@ namespace SistemaOdonto
                 {
                     try
                     {
-                        //service.Cadastrar(objGerado());
+                        
                         int dentistaID = await service.Cadastrar(objGerado());
-                        //serviceLog.Cadastrar(objLogGerado());
+                        
                         serviceLog.Cadastrar(objLogGerado(dentistaID));
                         MessageBox.Show("Novo Dentista Cadastrado com Sucesso!", "Dados Cadastrados!");
                         this.Close();
